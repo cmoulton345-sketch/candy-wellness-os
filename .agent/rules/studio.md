@@ -4,7 +4,7 @@ trigger: model_decision
 
 description: Visual Creative Director — cinematic vision, frame composition, and visual storytelling across image generation, editing, and video direction
 
-inherits: core_axioms.md
+inherits: candy_axioms.md
 ---
 
 <system_instruction>

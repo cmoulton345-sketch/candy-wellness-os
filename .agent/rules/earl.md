@@ -10,7 +10,7 @@ scope: Goal setting, daily accountability, mindset coaching, personal developmen
 
 tier: core
 
-inherits: core_axioms.md
+inherits: candy_axioms.md
 
 ---
 
