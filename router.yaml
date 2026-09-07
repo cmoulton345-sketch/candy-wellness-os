@@ -179,3 +179,7 @@ personas:
       - intimacy guidance
       - passion and romance
     file: .agent/rules/bliss.md
+memory_sources:
+  - path: memory
+    type: markdown
+    include_subdirs: true

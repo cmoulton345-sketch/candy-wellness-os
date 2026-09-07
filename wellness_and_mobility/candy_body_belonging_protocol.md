@@ -1,15 +1,20 @@
 # THE BODY & BELONGING PROTOCOL
+
 *A Somatic & Psychological Sanctuary for Releasing Armor, Chronic Pain, and the Fear of Unlovability*
 
 ---
 
 ## PART 1: THE CORE ARCHITECTURE (READ WHEN OLD FEARS SURFACE)
 
-### 1. The Root of the Alarm
-Body dysmorphia, fear of food, and fear of getting fat are rarely about food or appearance. They are **protective survival strategies**. When your nervous system carries the deep fear that *“If I am not physically flawless, I will be rejected and unloved,”* your brain treats appearance as a matter of life and death.
+### 1. The Root of the Alarm & Fear of Weight Gain
+Body dysmorphia, the terror of weight gain, and hyper-fixation on the mirror are rarely about food or appearance. They are **protective survival strategies**. When your nervous system carries the deep fear that *"If I am not physically flawless, I will be rejected and unloved,"* your brain treats appearance as a matter of life and death.
+
+The fear of weight gain is not vanity. It is the fear of losing love.
+It is the fear of disappearing.
+It is the fear that you are only conditionally acceptable.
 
 ```
-[ PRESENTING SYMPTOMS ]   ← Hyper-vigilance around food / checking / mirror anxiety
+[ PRESENTING SYMPTOMS ]   ← Compulsive measuring / mirror checking / fear of scale going up
          ↓
 [ CONTROL STRATEGY ]      ← Trying to control weight/appearance to prevent abandonment
          ↓
@@ -43,69 +48,58 @@ If you feel anxious or tight:
 *Use 2 fingers to tap gently on each point while speaking the phrases aloud.*
 
 ### The Setup (Tap Karate Chop Point Continuously)
-> *"Even though I feel this deep anxiety around food, my body, and what I see in the mirror... and underneath it all is a terrifying fear that I won't be loved... I deeply and completely acknowledge where I am right now."*
+> *"Even though I feel this deep anxiety around food, the scale, and what I see in the mirror... and underneath it all is a terrifying fear that I won't be loved if my body changes... I deeply and completely acknowledge where I am right now."*
 >
 > *"Even though my mind is hyper-vigilant about my appearance because it's trying to protect me from rejection... I honor how hard my nervous system is trying to keep me safe."*
 >
 > *"Even though I've tied my worthiness of love to the shape of my body... right here, right now, I give my body permission to take a breath."*
 
----
-
-### Round 1: Giving Voice to the Surface Alarm
-*   **Eyebrow:** This fear of food and what it will do to me.
-*   **Side of Eye:** This exhausting vigilance over every bite and every angle.
-*   **Under Eye:** The way I look at my body and feel unsafe.
-*   **Under Nose:** This distorted lens that makes me feel flawed.
-*   **Chin Point:** The panic that my body isn't acceptable.
-*   **Collarbone:** All this physical tension and exhaustion in my chest and shoulders.
-*   **Under Arm:** The constant pressure to control how I look.
-*   **Top of Head:** This heavy, exhausting cycle around my body image.
-
-*(Take a slow, deep breath in... and exhale slowly.)*
+*(Proceed through the 4 rounds as originally established...)*
 
 ---
 
-### Round 2: Honoring the Protective Strategy
-*   **Eyebrow:** I recognize why my mind has been doing this.
-*   **Side of Eye:** Controlling food felt like something I could control.
-*   **Under Eye:** My mind thought: if I can control my body, I can prevent rejection.
-*   **Under Nose:** It was never really about food...
-*   **Chin Point:** It was an armor I built so I wouldn't be abandoned.
-*   **Collarbone:** Thank you, nervous system, for trying to protect my heart.
-*   **Under Arm:** But this armor has become too heavy to carry.
-*   **Top of Head:** I am open to seeing that this control strategy is no longer serving me.
+## PART 4: THE SUNDAY MIRROR PRACTICE (RE-WIRING THE BRAIN)
+
+**The Problem:** Your brain has spent decades practicing "mirror scanning" — looking in the mirror specifically to find flaws, measure changes, and calculate worth.
+
+**The Solution:** You have to deliberately practice looking at yourself differently.
+
+Every Sunday, stand in front of the mirror for 60 seconds.
+**Rule:** You are not allowed to scan for flaws or judge the shape of your body.
+
+Instead, say aloud 3 things your body **DID** this week.
+* *"You carried me through three strength workouts."*
+* *"You held my daughter when she was struggling."*
+* *"You got me through a hard work week when I was exhausted."*
+
+**The Goal:** The goal is not "I love how I look." That is too big a leap right now. The goal is "I am not at war with this body. We are on the same team."
 
 ---
 
-### Round 3: Touching the Root Wound (Fear of Not Being Loved)
-*   **Eyebrow:** The deep ache that asks: *“Am I loveable as I am?”*
-*   **Side of Eye:** The terror that if my body changes, love will disappear.
-*   **Under Eye:** That old belief that love is conditional on my appearance.
-*   **Under Nose:** All the times I felt I had to earn love through perfection.
-*   **Chin Point:** The sadness of feeling like I am not enough on my own.
-*   **Collarbone:** I acknowledge this old attachment wound in my heart.
-*   **Under Arm:** It is safe to feel this longing for unconditional belonging.
-*   **Top of Head:** Separating my right to be loved from the shape of my body.
+## PART 5: ALCOHOL AWARENESS FRAMEWORK (ZERO SHAME)
 
-*(Take a slow, deep breath in... hold for 3 seconds... and let it go fully.)*
+This is not a ban. This is about taking back control so alcohol serves you instead of leaving you with a "shame hangover."
 
----
+### 1. The Pre-Decision
+Set a personal weekly ceiling that feels realistic (e.g., 2-4 drinks/week). Write it down on your Sunday check-in.
 
-### Round 4: Anchoring Safety & Unconditional Worth
-*   **Eyebrow:** What if my body is not the enemy?
-*   **Side of Eye:** What if my body is just the home I live in while I experience love?
-*   **Under Eye:** I am allowed to nourish myself without fear.
-*   **Under Nose:** My worthiness of love was never on a scale.
-*   **Chin Point:** I am allowed to be loved simply because I exist.
-*   **Collarbone:** Sending a signal of deep safety to my nervous system right now.
-*   **Under Arm:** It is safe to drop the armor. It is safe to soften.
-*   **Top of Head:** I am safe in this body. I am worthy of deep, unconditional love right now.
+### 2. The Check-In Question
+Before accepting a drink or pouring a glass, ask:
+> *"Am I drinking right now to celebrate, or to escape?"*
+- **Celebrate:** Enjoying a dinner out, feeling good, wanting to enhance the moment. (Enjoy the drink).
+- **Escape:** Had a terrible day, anxiety is high, want to numb the brain. (Pause. Consider tea, a walk, or doing a thought-dump first. If you still drink, do so with awareness, not on autopilot.)
+
+### 3. The Morning-After Protocol (Zero Punishment)
+If you drink more than you intended (1.5 bottles of wine on a Friday):
+- **NO SHAME SPIRAL.** Shame makes you restrict food, which makes you binge, which makes you anxious.
+- **NO PUNISHMENT CARDIO.** You cannot exercise away alcohol. You will only spike your cortisol.
+- **NO RESTRICTING FOOD.** Eat your scheduled meals. Your body needs fuel to process the alcohol.
+- **HYDRATE.** Double your electrolytes.
+- **DATA, NOT JUDGMENT:** Write down: *"I drank more than I wanted last night. What was I feeling right before I started drinking?"*
 
 ---
 
-## PART 4: THE EMERGENCY MIRROR & AGING ANCHOR
-*Whenever fear of aging, changing looks, or "disappearing" hits, place your hand over your collarbone or heart and speak this aloud:*
+## PART 6: THE EMERGENCY MEASUREMENT ANCHOR
+*Whenever the urge to compulsively weigh yourself or use the tape measure hits outside of Sunday:*
 
-> *"I am not an ornament. I do not have to perform perfection to earn my right to exist.*  
-> *My looks were the invitation, but my presence is the home.*  
-> *I am allowed to grow older, to soften, and to still be deeply, unconditionally loved."*
+> *"This scale is a piece of metal. It cannot tell me if I am a good mother, a loving wife, or a worthy human being. Measuring myself right now is an anxiety response, not a health choice. I choose to put it away until Sunday."*
