@@ -1,7 +1,0 @@
-name = "r2-upload"
-main = "worker.js"
-compatibility_date = "2024-11-06"
-
-[[r2_buckets]]
-binding = "SOCIAL_IMAGES"
-bucket_name = "flowstatesocialimages"
