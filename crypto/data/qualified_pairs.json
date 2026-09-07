@@ -1,0 +1,28 @@
+[
+    {
+        "coin": "ARB",
+        "price": 0.09389,
+        "volume_24h": 14789637.360934993,
+        "metrics": {
+            "EMA_21": 0.0955,
+            "EMA_50": 0.0942,
+            "EMA_Gap_Pct": 1.4,
+            "BBW_Pct": 7.62,
+            "BB_Position": 0.17,
+            "scan_mode": "chop_opportunity"
+        }
+    },
+    {
+        "coin": "LIT",
+        "price": 2.6237,
+        "volume_24h": 22781915.27369999,
+        "metrics": {
+            "EMA_21": 2.6319,
+            "EMA_50": 2.6032,
+            "EMA_Gap_Pct": 1.1,
+            "BBW_Pct": 5.81,
+            "BB_Position": 0.4,
+            "scan_mode": "chop_opportunity"
+        }
+    }
+]

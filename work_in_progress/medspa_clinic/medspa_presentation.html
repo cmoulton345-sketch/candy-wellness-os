@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Automation for Medical Spas & Clinics | FlowstateAI</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; background: #0a0a1a; color: #fff; overflow: hidden; }
+  .slide { display: none; width: 100vw; height: 100vh; padding: 60px 80px; position: relative; overflow: hidden; flex-direction: column; justify-content: center; }
+  .slide.active { display: flex; }
+  .slide-hero { background: linear-gradient(135deg, #0f0a1f 0%, #1a0a3a 50%, #0f0a1f 100%); }
+  .slide-dark { background: linear-gradient(135deg, #0d0d1f 0%, #111827 100%); }
+  .slide-purple { background: linear-gradient(135deg, #1a0550 0%, #2e1065 100%); }
+  .slide-pink { background: linear-gradient(135deg, #3d0030 0%, #831843 100%); }
+  .slide-teal { background: linear-gradient(135deg, #042f2e 0%, #134e4a 100%); }
+  .slide::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(168,85,247,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(168,85,247,0.04) 1px, transparent 1px); background-size: 50px 50px; pointer-events: none; }
+  .badge { display: inline-block; background: rgba(168,85,247,0.15); border: 1px solid rgba(168,85,247,0.35); color: #d8b4fe; padding: 6px 16px; border-radius: 20px; font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 24px; }
+  .badge-pink { background: rgba(236,72,153,0.15); border-color: rgba(236,72,153,0.35); color: #f9a8d4; }
+  .badge-blue { background: rgba(59,130,246,0.15); border-color: rgba(59,130,246,0.35); color: #93c5fd; }
+  .badge-red { background: rgba(239,68,68,0.15); border-color: rgba(239,68,68,0.35); color: #fca5a5; }
+  .badge-green { background: rgba(34,197,94,0.15); border-color: rgba(34,197,94,0.35); color: #86efac; }
+  h1 { font-size: 64px; font-weight: 900; line-height: 1.1; letter-spacing: -2px; }
+  h2 { font-size: 44px; font-weight: 800; line-height: 1.2; letter-spacing: -1px; margin-bottom: 16px; }
+  p { font-size: 18px; line-height: 1.7; color: #94a3b8; }
+  .lead { font-size: 22px; color: #cbd5e1; line-height: 1.6; max-width: 800px; }
+  .gradient-text { background: linear-gradient(135deg, #c084fc, #f472b6); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+  .gradient-text-warm { background: linear-gradient(135deg, #f97316, #ef4444); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+  .text-purple { color: #c084fc; }
+  .text-pink { color: #f472b6; }
+  .text-blue { color: #60a5fa; }
+  .text-green { color: #4ade80; }
+  .text-red { color: #f87171; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; margin-top: 40px; }
+  .grid-4 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 20px; margin-top: 40px; }
+  .card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 28px; }
+  .card-purple { border-color: rgba(168,85,247,0.3); background: rgba(168,85,247,0.05); }
+  .card-pink { border-color: rgba(236,72,153,0.3); background: rgba(236,72,153,0.05); }
+  .card-blue { border-color: rgba(59,130,246,0.3); background: rgba(59,130,246,0.05); }
+  .card-green { border-color: rgba(34,197,94,0.3); background: rgba(34,197,94,0.05); }
+  .card-red { border-color: rgba(239,68,68,0.3); background: rgba(239,68,68,0.05); }
+  .card .icon { font-size: 36px; margin-bottom: 16px; display: block; }
+  .card h3 { font-size: 18px; font-weight: 700; color: #f1f5f9; margin-bottom: 8px; }
+  .card p { font-size: 14px; color: #94a3b8; }
+  .divider { width: 60px; height: 4px; background: linear-gradient(90deg, #a855f7, #ec4899); border-radius: 2px; margin: 20px 0; }
+  .logo-bar { position: absolute; bottom: 40px; left: 80px; display: flex; align-items: center; gap: 12px; }
+  .logo-mark { width: 32px; height: 32px; background: linear-gradient(135deg, #a855f7, #ec4899); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 14px; }
+  .logo-text { font-size: 14px; font-weight: 700; color: #64748b; }
+  .slide-num { position: absolute; bottom: 40px; right: 80px; font-size: 12px; color: #334155; font-weight: 600; }
+  .highlight-box { background: rgba(168,85,247,0.08); border: 1px solid rgba(168,85,247,0.2); border-left: 4px solid #a855f7; border-radius: 0 12px 12px 0; padding: 24px 28px; margin: 24px 0; }
+  .highlight-box-blue { background: rgba(59,130,246,0.08); border: 1px solid rgba(59,130,246,0.2); border-left: 4px solid #3b82f6; border-radius: 0 12px 12px 0; padding: 24px 28px; margin: 24px 0; }
+  ul.check-list { list-style: none; margin-top: 20px; }
+  ul.check-list li { padding: 10px 0; color: #cbd5e1; font-size: 17px; display: flex; align-items: flex-start; gap: 12px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+  ul.check-list li:last-child { border-bottom: none; }
+  ul.check-list li::before { content: '✓'; color: #c084fc; font-weight: 900; flex-shrink: 0; margin-top: 2px; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+  .numbered-list { list-style: none; margin-top: 20px; }
+  .numbered-list li { display: flex; gap: 20px; align-items: flex-start; padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+  .numbered-list li .num { background: linear-gradient(135deg, #a855f7, #ec4899); width: 36px; height: 36px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 14px; flex-shrink: 0; }
+  .numbered-list li .content h4 { font-size: 16px; color: #f1f5f9; margin-bottom: 4px; }
+  .numbered-list li .content p { font-size: 14px; color: #64748b; }
+  .stat-big { font-size: 72px; font-weight: 900; line-height: 1; }
+  .stat-label { font-size: 14px; color: #64748b; margin-top: 8px; text-transform: uppercase; letter-spacing: 1px; }
+  .nav-btn { position: fixed; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #fff; width: 48px; height: 48px; border-radius: 50%; font-size: 20px; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 100; transition: all 0.2s; }
+  .nav-btn:hover { background: rgba(168,85,247,0.2); border-color: rgba(168,85,247,0.5); }
+  #prev { left: 20px; } #next { right: 20px; }
+  .progress-bar { position: fixed; bottom: 0; left: 0; height: 3px; background: linear-gradient(90deg, #a855f7, #ec4899); transition: width 0.3s ease; z-index: 100; }
+</style>
+</head>
+<body>
+
+<!-- SLIDE 1: TITLE -->
+<div class="slide slide-hero active" id="slide-1">
+  <div>
+    <div class="badge">FlowstateAI Automation</div>
+    <h1>The AI Advantage in<br><span class="gradient-text">Medical Spas & Clinics</span></h1>
+    <div class="divider"></div>
+    <p class="lead" style="margin-top:20px;">What the leading practices are doing right now — and what it means for yours.</p>
+  </div>
+  <div class="logo-bar"><div class="logo-mark">F</div><span class="logo-text">flowstateaiautomation.ai</span></div>
+  <div class="slide-num">1 / 9</div>
+</div>
+
+<!-- SLIDE 2: THE SHIFT -->
+<div class="slide slide-dark" id="slide-2">
+  <div>
+    <div class="badge badge-pink">The Business Landscape is Changing</div>
+    <h2>The highest-growth clinics aren't<br>just great at treatments.<br><span class="gradient-text">They're great at systems.</span></h2>
+    <div class="divider"></div>
+    <p class="lead">Client experience has always mattered in high-end aesthetics. What's changed is how leading practices build and maintain those relationships at scale — without adding staff or sacrificing the personalized touch their clients expect.</p>
+    <div class="grid-3" style="margin-top:40px;">
+      <div class="card card-purple"><h3 class="text-purple">5×</h3><p>more expensive to acquire a new client than to retain an existing one</p></div>
+      <div class="card card-red"><h3 class="text-red">40%</h3><p>of high-value appointment revenue lost to no-shows and late cancellations</p></div>
+      <div class="card card-pink"><h3 class="text-pink">68%</h3><p>of clients leave not because of poor service — but because they felt forgotten between visits</p></div>
+    </div>
+  </div>
+  <div class="logo-bar"><div class="logo-mark">F</div><span class="logo-text">flowstateaiautomation.ai</span></div>
+  <div class="slide-num">2 / 9</div>
+</div>
+
+<!-- SLIDE 3: RETENTION IS THE GAME -->
+<div class="slide slide-purple" id="slide-3">
+  <div class="two-col">
+    <div>
+      <div class="badge badge-red">The Retention Gap</div>
+      <h2>Lifetime client value<br><span class="text-purple">is everything in this business.</span></h2>
+      <div class="divider"></div>
+      <p class="lead">In medical aesthetics, the most profitable client is the one who comes back — repeatedly, refers friends, and trusts you with high-value procedures. AI automation is how leading clinics build those lifelong relationships systematically.</p>
+      <div class="highlight-box" style="margin-top:32px;">
+        <p style="color:#d8b4fe; font-size:17px; font-weight:600;">The clinics winning aren't working harder — they're staying top of mind between every appointment, automatically, at a scale no front desk team can match manually.</p>
+      </div>
+    </div>
+    <div>
+      <div class="card card-purple" style="margin-bottom:20px;">
+        <span class="icon">🏆</span>
+        <h3 style="color:#c084fc;">Top Clinics Using AI</h3>
+        <ul class="check-list" style="margin-top:12px;">
+          <li style="font-size:15px;">Zero no-shows with 3-touch automated reminders</li>
+          <li style="font-size:15px;">Re-booking prompts sent at exactly the right moment</li>
+          <li style="font-size:15px;">Lapsed clients re-engaged automatically</li>
+          <li style="font-size:15px;">3–5x more Google reviews generated on autopilot</li>
+        </ul>
+      </div>
+      <div class="card card-red">
+        <span class="icon">⚠️</span>
+        <h3 style="color:#f87171;">Clinics Without These Systems</h3>
+        <ul class="check-list" style="margin-top:12px;">
+          <li style="font-size:15px;">Empty bays from no-shows with no waitlist fill</li>
+          <li style="font-size:15px;">Clients drifting to competitors between sessions</li>
+          <li style="font-size:15px;">Staff spending hours on tasks AI does in seconds</li>
+          <li style="font-size:15px;">Past clients forgotten — and lost to competitors</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="logo-bar"><div class="logo-mark">F</div><span class="logo-text">flowstateaiautomation.ai</span></div>
+  <div class="slide-num">3 / 9</div>
+</div>
+
+<!-- SLIDE 4: WHAT TOP CLINICS ARE DOING -->
+<div class="slide slide-dark" id="slide-4">
+  <div>
+    <div class="badge">What Top Practices Are Already Doing</div>
+    <h2>The clinics pulling ahead are<br>running these <span class="gradient-text">AI systems right now.</span></h2>
+    <div class="divider"></div>
+    <div class="grid-3" style="margin-top:36px;">
+      <div class="card"><span class="icon">📅</span><h3>24/7 Online Booking</h3><p>Clients book their own appointments any time — days, evenings, weekends. No hold times, no missed calls, no receptionist managing the schedule manually.</p></div>
+      <div class="card"><span class="icon">🔔</span><h3>No-Show Prevention</h3><p>A 3-touch automated reminder sequence reduces no-shows by up to 40% — and a waitlist automation fills cancelled slots immediately, turning lost revenue into recovered revenue.</p></div>
+      <div class="card"><span class="icon">💌</span><h3>Post-Treatment Sequences</h3><p>Aftercare instructions, results check-ins, and re-booking prompts sent at exactly the right time — increasing repeat booking rates significantly without any manual follow-up.</p></div>
+      <div class="card"><span class="icon">🔄</span><h3>Lapsed Client Re-Engagement</h3><p>Clients who haven't visited in 60–90 days receive a personalized re-engagement campaign automatically — bringing back revenue from clients you'd otherwise have lost permanently.</p></div>
+      <div class="card"><span class="icon">⭐</span><h3>Review Generation</h3><p>After every successful treatment, AI sends a perfectly timed review request. Clinics using this generate 3–5x more Google reviews — which drives the most qualified new client inquiries.</p></div>
+      <div class="card"><span class="icon">💎</span><h3>VIP & Loyalty Programs</h3><p>High-value clients identified automatically and given personalized recognition, early access to new treatments, and exclusive offers — building loyalty that protects against competition.</p></div>
+    </div>
+  </div>
+  <div class="logo-bar"><div class="logo-mark">F</div><span class="logo-text">flowstateaiautomation.ai</span></div>
+  <div class="slide-num">4 / 9</div>
+</div>
+
+<!-- SLIDE 5: YOUR CLINIC -->
+<div class="slide slide-pink" id="slide-5">
+  <div>
+    <div class="badge badge-blue">What This Looks Like for You</div>
+    <h2>AI automation built for<br><span class="gradient-text">high-end aesthetics & medical clinics.</span></h2>
+    <div class="divider"></div>
+    <div class="two-col" style="margin-top:36px; gap:40px;">
+      <div>
+        <p style="color:#94a3b8; font-size:16px; margin-bottom:20px;">Your business runs on repeat bookings, referrals, and the trust you've built with each client. Here's where AI automation makes the biggest impact for a practice like yours:</p>
+        <ul class="check-list">
+          <li><strong>Treatment cycles</strong> — Botox, fillers, laser all require repeat sessions. AI sends re-booking reminders at the exact right interval, keeping clients on their plan</li>
+          <li><strong>High no-show cost</strong> — every empty treatment chair is significant lost revenue. Automation eliminates no-shows and fills gaps automatically</li>
+          <li><strong>Seasonal demand peaks</strong> — pre-summer, holiday, New Year. Seasonal promotions sent automatically to the right client segments</li>
+          <li><strong>Referral-driven business</strong> — after every visit, AI makes it easy for your happiest clients to refer friends and family</li>
+          <li><strong>Retail & package upsells</strong> — product recommendations matched to what each client received, increasing revenue per visit without any hard selling</li>
+        </ul>
+      </div>
+      <div>
+        <div class="card card-purple" style="margin-bottom:20px;">
+          <span class="icon">💉</span>
+          <h3>Injectable & Filler Clients</h3>
+          <p>Typically book every 3–6 months. AI sends perfectly timed re-booking reminders so they never go to a competitor simply because no one reached out.</p>
+        </div>
+        <div class="card card-pink" style="margin-bottom:20px;">
+          <span class="icon">✨</span>
+          <h3>Laser & Skin Treatment Clients</h3>
+          <p>Multi-session treatment plans require consistent re-booking. AI manages the full treatment cycle communication — from session reminders to completion follow-ups.</p>
+        </div>
+        <div class="card card-blue">
+          <span class="icon">🏥</span>
+          <h3>High-Value Procedure Clients</h3>
+          <p>Consultation to procedure to aftercare — AI nurtures prospects through the full decision journey and supports post-procedure recovery communication automatically.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="logo-bar"><div class="logo-mark">F</div><span class="logo-text">flowstateaiautomation.ai</span></div>
+  <div class="slide-num">5 / 9</div>
+</div>
+
+<!-- SLIDE 6: TOP 5 -->
+<div class="slide slide-teal" id="slide-6">
+  <div>
+    <div class="badge badge-green">Our Recommendations</div>
+    <h2>The 5 automations we'd<br>build first for <span class="gradient-text">your practice.</span></h2>
+    <div class="divider"></div>
+    <ol class="numbered-list" style="margin-top:30px;">
+      <li><div class="num">1</div><div class="content"><h4>No-Show Prevention + Online Booking</h4><p>24/7 booking with a 3-touch reminder sequence. Recovering 2–3 no-shows per week in a high-value treatment environment typically covers the full cost of the system immediately.</p></div></li>
+      <li><div class="num">2</div><div class="content"><h4>Post-Treatment Follow-Up & Re-Booking Sequence</h4><p>Aftercare instructions, results check-in, and a timed re-booking prompt after every appointment. Typically responsible for a 20–30% increase in repeat booking rates.</p></div></li>
+      <li><div class="num">3</div><div class="content"><h4>Lapsed Client Re-Engagement Campaign</h4><p>Automatically contact clients who haven't visited in 60–90 days. For most clinics, this generates significant immediate revenue from existing clients who simply needed a nudge.</p></div></li>
+      <li><div class="num">4</div><div class="content"><h4>Review Generation System</h4><p>A perfectly timed post-visit review request. More Google reviews = more inbound calls. The single highest-ROI reputation investment for a local aesthetics business.</p></div></li>
+      <li><div class="num">5</div><div class="content"><h4>Seasonal Promotion & Upsell Campaigns</h4><p>Targeted seasonal campaigns and product/package upsell sequences — bringing clients back between regular appointments and increasing average revenue per visit.</p></div></li>
+    </ol>
+  </div>
+  <div class="logo-bar"><div class="logo-mark">F</div><span class="logo-text">flowstateaiautomation.ai</span></div>
+  <div class="slide-num">6 / 9</div>
+</div>
+
+<!-- SLIDE 7: ROI -->
+<div class="slide slide-dark" id="slide-7">
+  <div>
+    <div class="badge badge-blue">The Numbers</div>
+    <h2>What clinics typically see<br>in the first <span class="gradient-text">90 days.</span></h2>
+    <div class="divider"></div>
+    <div class="grid-4" style="margin-top:40px;">
+      <div class="card card-purple" style="text-align:center; padding:40px 20px;"><div class="stat-big text-purple">40%</div><div class="stat-label">reduction in no-shows</div></div>
+      <div class="card card-pink" style="text-align:center; padding:40px 20px;"><div class="stat-big text-pink">30%</div><div class="stat-label">increase in repeat booking rates</div></div>
+      <div class="card card-blue" style="text-align:center; padding:40px 20px;"><div class="stat-big text-blue">5×</div><div class="stat-label">more Google reviews generated monthly</div></div>
+      <div class="card card-green" style="text-align:center; padding:40px 20px;"><div class="stat-big text-green">10+</div><div class="stat-label">hours per week reclaimed by front desk</div></div>
+    </div>
+    <div class="highlight-box-blue" style="margin-top:40px;">
+      <p style="color:#93c5fd; font-size:17px;"><strong>Most clinics recover the full cost of implementation in the first 30 days</strong> through recovered no-shows and re-engaged lapsed clients alone — before the referral, review, and upsell systems compound the return.</p>
+    </div>
+  </div>
+  <div class="logo-bar"><div class="logo-mark">F</div><span class="logo-text">flowstateaiautomation.ai</span></div>
+  <div class="slide-num">7 / 9</div>
+</div>
+
+<!-- SLIDE 8: ABOUT -->
+<div class="slide slide-dark" id="slide-8">
+  <div class="two-col">
+    <div>
+      <div class="badge">About FlowstateAI</div>
+      <h2>Atlantic Canadian.<br><span class="gradient-text">Built for Atlantic Canadian businesses.</span></h2>
+      <div class="divider"></div>
+      <p class="lead">We're not a national software company flying in for a demo. We're right here — building AI automation systems for businesses in New Brunswick, Nova Scotia, and PEI.</p>
+      <ul class="check-list" style="margin-top:28px;">
+        <li>Complete systems implemented in 30 days or less</li>
+        <li>No technical knowledge required on your end</li>
+        <li>Built specifically for your treatment menu and client base</li>
+        <li>Ongoing support — we grow the system as you grow</li>
+        <li>We understand Atlantic Canadian clients and culture</li>
+      </ul>
+    </div>
+    <div>
+      <div class="card card-purple" style="margin-bottom:20px; padding:36px;">
+        <span class="icon">🚀</span>
+        <h3>How We Work</h3>
+        <p>Start with a Free Systems Audit — 30 minutes to map your biggest automation opportunities. Then we build, test, and launch. You see results before the end of month one.</p>
+      </div>
+      <div class="card" style="padding:36px;">
+        <span class="icon">📍</span>
+        <h3>Local. Accountable. Invested.</h3>
+        <p>We live and work in the same communities your clients come from. Your success is our reputation — something no national vendor can offer.</p>
+      </div>
+    </div>
+  </div>
+  <div class="logo-bar"><div class="logo-mark">F</div><span class="logo-text">flowstateaiautomation.ai</span></div>
+  <div class="slide-num">8 / 9</div>
+</div>
+
+<!-- SLIDE 9: CTA -->
+<div class="slide slide-hero" id="slide-9">
+  <div style="text-align:center; max-width:800px; margin:0 auto;">
+    <div class="badge">Next Step</div>
+    <h2 style="font-size:52px;">Let's build your<br><span class="gradient-text">client retention machine.</span></h2>
+    <div class="divider" style="margin:24px auto;"></div>
+    <p class="lead" style="text-align:center; margin:0 auto;">Start with a Free 30-Minute Systems Audit. We'll map exactly where AI automation can make the biggest impact for your practice — no pitch, no pressure.</p>
+    <div style="margin-top:48px; display:flex; gap:20px; justify-content:center; flex-wrap:wrap;">
+      <div style="background:rgba(168,85,247,0.1); border:1px solid rgba(168,85,247,0.3); border-radius:12px; padding:24px 36px; text-align:center;">
+        <div style="font-size:13px; color:#64748b; margin-bottom:4px; text-transform:uppercase; letter-spacing:1px;">Email</div>
+        <div style="color:#c084fc; font-weight:700; font-size:18px;">joe@flowstateaiautomation.ai</div>
+      </div>
+      <div style="background:rgba(236,72,153,0.1); border:1px solid rgba(236,72,153,0.3); border-radius:12px; padding:24px 36px; text-align:center;">
+        <div style="font-size:13px; color:#64748b; margin-bottom:4px; text-transform:uppercase; letter-spacing:1px;">Website</div>
+        <div style="color:#f472b6; font-weight:700; font-size:18px;">flowstateaiautomation.ai</div>
+      </div>
+    </div>
+    <p style="margin-top:48px; font-size:15px; color:#475569;">The practices that will dominate their market in 3 years are building their systems today.</p>
+  </div>
+  <div class="logo-bar"><div class="logo-mark">F</div><span class="logo-text">flowstateaiautomation.ai</span></div>
+  <div class="slide-num">9 / 9</div>
+</div>
+
+<button class="nav-btn" id="prev">←</button>
+<button class="nav-btn" id="next">→</button>
+<div class="progress-bar" id="progress"></div>
+<script>
+  const slides = document.querySelectorAll('.slide');
+  const total = slides.length;
+  let current = 0;
+  function show(n) { slides[current].classList.remove('active'); current = (n + total) % total; slides[current].classList.add('active'); document.getElementById('progress').style.width = ((current + 1) / total * 100) + '%'; }
+  document.getElementById('next').onclick = () => show(current + 1);
+  document.getElementById('prev').onclick = () => show(current - 1);
+  document.addEventListener('keydown', e => { if (e.key === 'ArrowRight' || e.key === ' ') show(current + 1); if (e.key === 'ArrowLeft') show(current - 1); });
+  document.getElementById('progress').style.width = (1 / total * 100) + '%';
+</script>
+</body>
+</html>

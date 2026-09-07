@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+  <title>FlowstateAI — Book 30 Minutes. Leave With One Automation Running — Free.</title>
+  <meta name="description" content="I'll build one automation live in your business before we hang up. Yours to keep whether you hire me or not. Atlantic Canadian businesses only." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #080b12;
+      --bg2: #0d1117;
+      --surface: rgba(255,255,255,0.04);
+      --border: rgba(255,255,255,0.08);
+      --accent: #00c2ff;
+      --accent2: #0077ff;
+      --text: #f0f4f8;
+      --muted: #8899aa;
+      --danger: #ff4d6d;
+      --green: #00e5a0;
+      --radius: 14px;
+      --max: 780px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 17px;
+    }
+
+    /* NAV */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(8,11,18,0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 24px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo img { height: 96px; width: auto; display: block; }
+    .nav-cta {
+      background: linear-gradient(135deg, var(--accent2), var(--accent));
+      color: #fff; font-weight: 700; font-size: 14px;
+      padding: 10px 22px; border-radius: 8px; text-decoration: none;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+    .nav-cta:hover { opacity: 0.88; transform: translateY(-1px); }
+
+    /* HERO */
+    .hero {
+      min-height: 92vh;
+      display: flex; align-items: center; justify-content: center;
+      text-align: center;
+      padding: 80px 24px;
+      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(0,119,255,0.12) 0%, transparent 70%);
+    }
+    .hero-inner { max-width: var(--max); }
+    .hero-tag {
+      display: inline-block;
+      background: rgba(0,194,255,0.12);
+      border: 1px solid rgba(0,194,255,0.25);
+      color: var(--accent);
+      font-size: 13px; font-weight: 600; letter-spacing: 0.5px;
+      padding: 6px 16px; border-radius: 100px;
+      margin-bottom: 28px;
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      font-weight: 900;
+      line-height: 1.15;
+      letter-spacing: -1.5px;
+      margin-bottom: 24px;
+    }
+    .hero h1 .highlight {
+      background: linear-gradient(90deg, var(--accent2), var(--accent));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .hero-sub {
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      color: #b0bec5;
+      max-width: 600px; margin: 0 auto 36px;
+      line-height: 1.65;
+    }
+    .hero-cta {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--accent2), var(--accent));
+      color: #fff; font-weight: 800; font-size: 18px;
+      padding: 18px 44px; border-radius: 12px; text-decoration: none;
+      box-shadow: 0 8px 40px rgba(0,119,255,0.35);
+      transition: transform 0.2s, box-shadow 0.2s;
+      letter-spacing: -0.3px;
+    }
+    .hero-cta:hover { transform: translateY(-3px); box-shadow: 0 14px 50px rgba(0,119,255,0.45); }
+    .hero-note {
+      margin-top: 16px; font-size: 13px; color: var(--muted);
+    }
+    .hero-note span { color: var(--accent); font-weight: 600; }
+
+    /* SECTIONS */
+    section { padding: 90px 24px; }
+    .container { max-width: var(--max); margin: 0 auto; }
+
+    .section-label {
+      font-size: 12px; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--accent);
+      margin-bottom: 16px;
+    }
+    h2 {
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      font-weight: 800; letter-spacing: -0.8px;
+      line-height: 1.2; margin-bottom: 24px;
+    }
+    p { color: #b0bec5; margin-bottom: 16px; }
+    p strong { color: var(--text); }
+
+    /* PAIN */
+    .pain { background: var(--bg2); }
+    .pain-stat {
+      display: inline-block;
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 900;
+      background: linear-gradient(90deg, var(--danger), #ff8a65);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      letter-spacing: -2px; margin-bottom: 8px;
+    }
+
+    /* STEPS */
+    .steps-grid {
+      display: grid; gap: 20px; margin-top: 40px;
+    }
+    .step {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px 28px;
+      display: flex; gap: 20px; align-items: flex-start;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .step:hover { border-color: rgba(0,194,255,0.3); transform: translateY(-2px); }
+    .step-num {
+      flex-shrink: 0;
+      width: 44px; height: 44px;
+      background: linear-gradient(135deg, var(--accent2), var(--accent));
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 900; font-size: 18px; color: #fff;
+    }
+    .step h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; color: var(--text); }
+    .step p { margin: 0; font-size: 15px; }
+
+    /* FOR / NOT FOR */
+    .qualify { background: var(--bg2); }
+    .qualify-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 40px; }
+    @media(max-width: 600px) { .qualify-grid { grid-template-columns: 1fr; } }
+    .qualify-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+    }
+    .qualify-card.yes { border-color: rgba(0,229,160,0.2); }
+    .qualify-card.no { border-color: rgba(255,77,109,0.2); }
+    .qualify-card h3 {
+      font-size: 15px; font-weight: 700; margin-bottom: 16px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .qualify-card.yes h3 { color: var(--green); }
+    .qualify-card.no h3 { color: var(--danger); }
+    .qualify-card ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .qualify-card ul li {
+      font-size: 15px; color: #b0bec5;
+      padding-left: 20px; position: relative;
+    }
+    .qualify-card ul li::before {
+      content: ''; position: absolute; left: 0; top: 9px;
+      width: 7px; height: 7px; border-radius: 50%;
+    }
+    .qualify-card.yes ul li::before { background: var(--green); }
+    .qualify-card.no ul li::before { background: var(--danger); }
+
+    /* STORY */
+    .story-wrap { display: grid; grid-template-columns: 220px 1fr; gap: 40px; align-items: start; margin-top: 40px; }
+    @media(max-width: 680px) { .story-wrap { grid-template-columns: 1fr; } }
+    .story-photo { width: 100%; border-radius: var(--radius); overflow: hidden; }
+    .story-photo img { width: 100%; height: auto; display: block; border-radius: var(--radius); object-fit: cover; }
+    .story-name { font-weight: 700; font-size: 15px; color: var(--text); margin-top: 12px; }
+    .story-title { font-size: 13px; color: var(--muted); }
+    .story-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 40px;
+      margin-top: 40px;
+      position: relative;
+    }
+    .story-card::before {
+      content: '"';
+      position: absolute; top: -20px; left: 32px;
+      font-size: 100px; line-height: 1;
+      color: var(--accent2); opacity: 0.25;
+      font-family: Georgia, serif;
+    }
+
+    /* OBJECTIONS */
+    .objections { background: var(--bg2); }
+    .objection {
+      border-bottom: 1px solid var(--border);
+      padding: 28px 0;
+    }
+    .objection:last-child { border-bottom: none; }
+    .objection-q {
+      font-weight: 700; color: var(--muted); font-size: 15px;
+      font-style: italic; margin-bottom: 10px;
+    }
+    .objection-a { color: #b0bec5; font-size: 15px; margin: 0; }
+    .objection-a strong { color: var(--text); }
+
+    /* FINAL CTA */
+    .final-cta {
+      text-align: center;
+      background: radial-gradient(ellipse 80% 80% at 50% 100%, rgba(0,119,255,0.14) 0%, transparent 70%);
+    }
+    .final-cta h2 { margin-bottom: 16px; }
+    .final-cta p { max-width: 520px; margin: 0 auto 36px; }
+    .cta-group { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+    .final-btn {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--accent2), var(--accent));
+      color: #fff; font-weight: 800; font-size: 19px;
+      padding: 20px 52px; border-radius: 14px; text-decoration: none;
+      box-shadow: 0 8px 40px rgba(0,119,255,0.35);
+      transition: transform 0.2s, box-shadow 0.2s;
+      letter-spacing: -0.3px;
+    }
+    .final-btn:hover { transform: translateY(-3px); box-shadow: 0 16px 54px rgba(0,119,255,0.45); }
+    .final-note { font-size: 13px; color: var(--muted); margin: 0; }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 24px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    footer a { color: var(--muted); text-decoration: none; margin: 0 12px; }
+    footer a:hover { color: var(--accent); }
+
+    /* PHONE */
+    .phone-bar {
+      display: flex; align-items: center; justify-content: center;
+      gap: 8px; margin-top: 24px;
+      font-size: 15px; color: var(--muted);
+    }
+    .phone-bar a { color: var(--accent); text-decoration: none; font-weight: 600; }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo"><img src="images/logo.png" alt="FlowstateAI Automation"></div>
+  <a href="javascript:void(0)" onclick="Calendly.initPopupWidget({url:'https://calendly.com/flowstateai_automation/30min?hide_gdpr_banner=1&background_color=0a0a0f&text_color=f0f0f5&primary_color=3b82f6'});return false;" class="nav-cta" id="nav-book-btn">Book Free Build Session →</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">Atlantic Canada Small Businesses</div>
+    <h1>Book 30 Minutes.<br/><span class="highlight">Leave With One Automation<br/>Running In Your Business — Free.</span></h1>
+    <p class="hero-sub">
+      I'll build it live on the call. Yours to keep — no purchase required.<br/>
+      No pitch. No invoice. No strings.
+    </p>
+    <a href="javascript:void(0)" onclick="Calendly.initPopupWidget({url:'https://calendly.com/flowstateai_automation/30min?hide_gdpr_banner=1&background_color=0a0a0f&text_color=f0f0f5&primary_color=3b82f6'});return false;" class="hero-cta" id="hero-book-btn">
+      → Book My Free Build Session
+    </a>
+    <p class="hero-note">I personally run every call. <span>3 spots available per week.</span> Book yours.</p>
+  </div>
+</section>
+
+<!-- PAIN -->
+<section class="pain">
+  <div class="container">
+    <div class="section-label">Sound Familiar?</div>
+    <h2>Your business runs on your time. <br/>That's the problem.</h2>
+    <p>You're great at what you do. But between responding to inquiries, chasing follow-ups, confirming bookings, and handling admin — half your day is gone before you've done any real work.</p>
+    <p>It's not a leads problem. It's not a speed problem. <strong>It's a systems problem.</strong> The tasks that should run automatically are still running through you.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;margin-top:36px;">
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px;">
+        <div style="font-size:2rem;font-weight:900;color:#ff4d6d;letter-spacing:-1px;">15 hrs</div>
+        <div style="color:#b0bec5;font-size:14px;margin-top:6px;">Average response time to a new inquiry. Your prospect moved on hours ago.</div>
+      </div>
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px;">
+        <div style="font-size:2rem;font-weight:900;color:#ff4d6d;letter-spacing:-1px;">3–5 hrs</div>
+        <div style="color:#b0bec5;font-size:14px;margin-top:6px;">Lost daily to admin, scheduling, and follow-ups that a system should handle.</div>
+      </div>
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px;">
+        <div style="font-size:2rem;font-weight:900;color:#ff4d6d;letter-spacing:-1px;">24/7</div>
+        <div style="color:#b0bec5;font-size:14px;margin-top:6px;">When your competitors' AI systems are running — including Saturday at 2am when yours isn't.</div>
+      </div>
+    </div>
+    <p style="margin-top:28px;">And it's fixable — in less time than this call takes.</p>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section>
+  <div class="container">
+    <div class="section-label">What Happens On The Call</div>
+    <h2>Three steps. One working automation. Before we hang up.</h2>
+    <div class="steps-grid">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div>
+          <h3>You tell me what is slipping through the cracks</h3>
+          <p>Walk me through your day — how clients find you, how you follow up, what admin tasks eat your hours. I listen for the highest-impact place to plug the gap.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div>
+          <h3>I identify the highest-impact fix for your business</h3>
+          <p>Not a generic solution — your specific bottleneck. Whether that's a follow-up, a booking confirmation, a 2am response, or something else entirely.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div>
+          <h3>We build it together. Live. Before we hang up.</h3>
+          <p>You watch it get built. You see it run. You own it. No invoice, no pitch, no obligation. That automation is yours whether we ever work together again or not.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUALIFY -->
+<section class="qualify">
+  <div class="container">
+    <div class="section-label">Is This For You?</div>
+    <h2>Straight answer. No fluff.</h2>
+    <div class="qualify-grid">
+      <div class="qualify-card yes">
+        <h3>✓ &nbsp;This is for you if...</h3>
+        <ul>
+          <li>You run a service business in Atlantic Canada with 1–20 people</li>
+          <li>Things fall through the cracks before you can get to them</li>
+          <li>You're spending time on tasks that should run themselves</li>
+          <li>You want to SEE automation work — not read about it</li>
+          <li>You're generating at least 5 inquiries a month</li>
+        </ul>
+      </div>
+      <div class="qualify-card no">
+        <h3>✗ &nbsp;This is NOT for you if...</h3>
+        <ul>
+          <li>You want a presentation, not a result</li>
+          <li>You're not willing to implement what we build</li>
+          <li>You generate fewer than 5 inquiries a month</li>
+          <li>You want AI to replace genuine human relationships</li>
+          <li>You're looking for a magic fix, not a real system</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section>
+  <div class="container">
+    <div class="section-label">Who I Am</div>
+    <h2>I was the client first.</h2>
+    <div class="story-wrap">
+      <div class="story-photo">
+        <img src="images/joe_moulton.jpg" alt="Joe Moulton — Founder, FlowstateAI Automation">
+        <div class="story-name">Joe Moulton</div>
+        <div class="story-title">Founder & Automation Architect<br>Clinical Hypnotist · Author</div>
+      </div>
+      <div class="story-card">
+      <p>I'm Joe. Clinical hypnotist. Author of <em>The Unspoken Contract</em>.</p>
+      <p>When I was marketing my book, I hit a wall. The self-help industry rewards the loudest, not the best. I needed to show up everywhere — but I was busy actually helping people. So I built a system instead.</p>
+      <p>When someone booked an appointment, a welcome email went out automatically. An intake form. A notification with their details. Three tasks I never had to touch again.</p>
+      <p><strong>That was the moment I understood: most businesses don't have a skill problem. They have a systems problem.</strong></p>
+      <p style="margin-bottom:0;">That's what I've been solving ever since — starting with yours.</p>
+    </div>
+    </div><!-- end story-wrap -->
+    <div class="phone-bar">
+      <span>Prefer to call?</span>
+      <a href="tel:+15066071791">(506) 607-1791</a>
+    </div>
+  </div>
+</section>
+
+<!-- OBJECTIONS -->
+<section class="objections">
+  <div class="container">
+    <div class="section-label">You're Probably Thinking...</div>
+    <h2>Fair questions. Honest answers.</h2>
+
+    <div class="objection">
+      <div class="objection-q">"I'm too small for automation."</div>
+      <p class="objection-a">If you're getting 5+ inquiries a month, you're exactly the right size. <strong>Automation makes the biggest difference when you don't have an army. We become yours.</strong></p>
+    </div>
+
+    <div class="objection">
+      <div class="objection-q">"What's the catch?"</div>
+      <p class="objection-a">There isn't one. The call is free. The automation is free. <strong>If you want to keep going after, we can talk. If not, you still leave with something running in your business.</strong> That's the whole point.</p>
+    </div>
+
+    <div class="objection">
+      <div class="objection-q">"I don't have time for a 30-minute call."</div>
+      <p class="objection-a"><strong>Thirty minutes to get time back permanently.</strong> The irony of that objection is not lost on either of us.</p>
+    </div>
+
+    <div class="objection">
+      <div class="objection-q">"I don't want AI replacing my team."</div>
+      <p class="objection-a">We don't automate relationships. We automate the admin that keeps you from them. <strong>Your team gets more time to do what actually matters — be with people.</strong></p>
+    </div>
+
+    <div class="objection">
+      <div class="objection-q">"I tried something like this before and it didn't work."</div>
+      <p class="objection-a">Most AI implementations fail because they're sold, not built. <strong>You'll see this one built. In front of you. Before the call ends.</strong> You decide if it works.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="container">
+    <div class="section-label">Ready?</div>
+    <h2>Let's Build Something.</h2>
+    <p>30 minutes. One automation. Running in your business before we hang up. No credit card. No contract. No pitch until you ask.</p>
+    <div class="cta-group">
+      <a href="javascript:void(0)" onclick="Calendly.initPopupWidget({url:'https://calendly.com/flowstateai_automation/30min?hide_gdpr_banner=1&background_color=0a0a0f&text_color=f0f0f5&primary_color=3b82f6'});return false;" class="final-btn" id="footer-book-btn">
+        → Book My Free Build Session
+      </a>
+      <p class="final-note">I personally run every call — 3 spots per week. Atlantic Canada small businesses only.</p>
+    </div>
+    <div class="phone-bar" style="margin-top:32px;">
+      <span>Or call directly:</span>
+      <a href="tel:+15066071791">(506) 607-1791</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 FlowstateAI Automation. All rights reserved.</p>
+  <p style="margin-top:8px;">
+    <a href="/privacy">Privacy</a>
+    <a href="/terms">Terms</a>
+  </p>
+</footer>
+
+<!-- FLOATING AI CHAT WIDGET & CALENDLY EVENT LISTENER -->
+<style>
+  /* Floating Action Button (FAB) */
+  #flowstate-chat-fab {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 99999;
+    background: linear-gradient(135deg, #0077ff, #00c2ff);
+    color: #ffffff;
+    border: none;
+    border-radius: 50px;
+    padding: 14px 22px;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 8px 32px rgba(0, 119, 255, 0.4);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.25s ease;
+  }
+  #flowstate-chat-fab:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 12px 40px rgba(0, 194, 255, 0.5);
+  }
+  .chat-pulse-dot {
+    width: 10px;
+    height: 10px;
+    background-color: #00e5a0;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #00e5a0;
+    animation: pulseGlow 2s infinite;
+  }
+  @keyframes pulseGlow {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 229, 160, 0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(0, 229, 160, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 229, 160, 0); }
+  }
+
+  /* Chat Modal Window */
+  #flowstate-chat-window {
+    position: fixed;
+    bottom: 90px;
+    right: 24px;
+    z-index: 99998;
+    width: 380px;
+    max-width: calc(100vw - 32px);
+    height: 540px;
+    max-height: calc(100vh - 120px);
+    background: rgba(13, 17, 23, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 18px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7), 0 0 30px rgba(0, 119, 255, 0.15);
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    font-family: 'Inter', sans-serif;
+    animation: slideUpFade 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  #flowstate-chat-window.active {
+    display: flex;
+  }
+  @keyframes slideUpFade {
+    from { opacity: 0; transform: translateY(20px) scale(0.96); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+
+  /* Chat Header */
+  .chat-header {
+    background: rgba(255, 255, 255, 0.03);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .chat-header-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .chat-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #0077ff, #00c2ff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    font-size: 14px;
+    color: #fff;
+    box-shadow: 0 0 12px rgba(0, 194, 255, 0.4);
+  }
+  .chat-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #f0f4f8;
+  }
+  .chat-subtitle {
+    font-size: 12px;
+    color: #00e5a0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .chat-close-btn {
+    background: none;
+    border: none;
+    color: #8899aa;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 6px;
+    transition: color 0.2s, background 0.2s;
+  }
+  .chat-close-btn:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  /* Chat Body */
+  .chat-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    background: radial-gradient(circle at 50% 0%, rgba(0, 119, 255, 0.05), transparent 70%);
+  }
+  .chat-message {
+    max-width: 84%;
+    padding: 12px 16px;
+    border-radius: 14px;
+    font-size: 14px;
+    line-height: 1.55;
+    word-wrap: break-word;
+  }
+  .chat-message.assistant {
+    align-self: flex-start;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #f0f4f8;
+    border-bottom-left-radius: 4px;
+  }
+  .chat-message.user {
+    align-self: flex-end;
+    background: linear-gradient(135deg, #0077ff, #00a2ff);
+    color: #ffffff;
+    border-bottom-right-radius: 4px;
+    box-shadow: 0 4px 14px rgba(0, 119, 255, 0.3);
+  }
+
+  /* Typing Indicator */
+  .typing-indicator {
+    display: none;
+    align-self: flex-start;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 12px 16px;
+    border-radius: 14px;
+    border-bottom-left-radius: 4px;
+  }
+  .typing-indicator span {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background-color: #8899aa;
+    border-radius: 50%;
+    margin-right: 4px;
+    animation: typingBounce 1.4s infinite ease-in-out both;
+  }
+  .typing-indicator span:nth-child(1) { animation-delay: 0s; }
+  .typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
+  .typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
+  @keyframes typingBounce {
+    0%, 80%, 100% { transform: scale(0.6); opacity: 0.4; }
+    40% { transform: scale(1); opacity: 1; }
+  }
+
+  /* Chat Footer Input */
+  .chat-footer {
+    padding: 14px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(8, 11, 18, 0.9);
+    display: flex;
+    gap: 10px;
+  }
+  .chat-input {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 10px;
+    padding: 12px 14px;
+    color: #f0f4f8;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .chat-input:focus {
+    border-color: #00c2ff;
+  }
+  .chat-send-btn {
+    background: linear-gradient(135deg, #0077ff, #00c2ff);
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    padding: 0 16px;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+  }
+  .chat-send-btn:hover {
+    opacity: 0.9;
+  }
+</style>
+
+<!-- CHAT WIDGET HTML -->
+<button id="flowstate-chat-fab" onclick="toggleChatWindow()">
+  <span class="chat-pulse-dot"></span>
+  <span>💬 Chat with AI Assistant</span>
+</button>
+
+<div id="flowstate-chat-window">
+  <div class="chat-header">
+    <div class="chat-header-info">
+      <div class="chat-avatar">AI</div>
+      <div>
+        <div class="chat-title">Flowstate AI Assistant</div>
+        <div class="chat-subtitle">🟢 Live • Instant Lead Response</div>
+      </div>
+    </div>
+    <button class="chat-close-btn" onclick="toggleChatWindow()">✕</button>
+  </div>
+  
+  <div class="chat-body" id="chat-messages-container">
+    <div class="chat-message assistant">
+      Hey! 👋 I'm Flowstate's AI Assistant. We build custom 24/7 automated lead response & follow-up systems for Atlantic Canadian businesses.
+      <br><br>
+      What type of business do you run, or what follow-up bottleneck are you looking to fix?
+    </div>
+    <div class="typing-indicator" id="chat-typing-indicator">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+
+  <div class="chat-footer">
+    <input type="text" id="chat-user-input" class="chat-input" placeholder="Describe your business or bottleneck..." onkeydown="handleChatKeyDown(event)" />
+    <button class="chat-send-btn" onclick="sendChatMessage()">Send</button>
+  </div>
+</div>
+
+<!-- CHAT & CALENDLY EVENT INTEGRATION SCRIPT -->
+<script>
+  // LIVE VPS N8N WEBHOOK ENDPOINT
+  const N8N_VPS_WEBHOOK_URL = 'https://ax.flowstateaiautomation.ai/webhook/flowstate-lead';
+
+  let conversationHistory = [];
+
+  function toggleChatWindow() {
+    const chatWin = document.getElementById('flowstate-chat-window');
+    chatWin.classList.toggle('active');
+    if (chatWin.classList.contains('active')) {
+      document.getElementById('chat-user-input').focus();
+    }
+  }
+
+  function handleChatKeyDown(event) {
+    if (event.key === 'Enter') {
+      sendChatMessage();
+    }
+  }
+
+  function appendMessage(sender, text) {
+    const container = document.getElementById('chat-messages-container');
+    const typingIndicator = document.getElementById('chat-typing-indicator');
+    
+    const msgDiv = document.createElement('div');
+    msgDiv.className = `chat-message ${sender}`;
+    msgDiv.innerHTML = text.replace(/\n/g, '<br>');
+    
+    container.insertBefore(msgDiv, typingIndicator);
+    container.scrollTop = container.scrollHeight;
+
+    conversationHistory.push({ role: sender, content: text, timestamp: new Date().toISOString() });
+  }
+
+  function showTyping(show) {
+    const indicator = document.getElementById('chat-typing-indicator');
+    indicator.style.display = show ? 'block' : 'none';
+    const container = document.getElementById('chat-messages-container');
+    container.scrollTop = container.scrollHeight;
+  }
+
+  let chatState = {
+    stage: 'identify',       // identify → qualify → diagnose → offer
+    industry: null,
+    industryRaw: '',
+    painPoint: null,
+    currentProcess: null
+  };
+  let queueNoticeSent = false;
+
+  function launchInChatCalendly() {
+    if (typeof Calendly !== 'undefined') {
+      Calendly.initPopupWidget({
+        url: 'https://calendly.com/flowstateai_automation/30min?hide_gdpr_banner=1&background_color=0a0a0f&text_color=f0f0f5&primary_color=3b82f6'
+      });
+    } else {
+      window.open('https://calendly.com/flowstateai_automation/30min', '_blank');
+    }
+  }
+
+  function getQueuePrefix() {
+    if (!queueNoticeSent) {
+      queueNoticeSent = true;
+      return "Got it! There are a couple of customers ahead of you right now, but I've flagged your message at the top of Joe's inbox so he sees it the moment he's free.<br><br>";
+    }
+    return "";
+  }
+
+  function detectIndustry(lower) {
+    const map = {
+      medical: ['doctor','medical','clinic','physician','health','dental','medspa','optom','chiro','physio','nurse','hospital','patient'],
+      gym: ['gym','fitness','crossfit','trainer','yoga','pilates','martial','boxing','sport'],
+      law: ['law','legal','attorney','paralegal','notary'],
+      trades: ['hvac','plumb','roof','construct','contractor','trade','electric','weld','carpenter','landscap','paint','renovation','handyman'],
+      realestate: ['realtor','real estate','property','broker','mortgage','listing'],
+      restaurant: ['restaurant','cafe','bar','catering','food','bakery','coffee','pub','diner'],
+      retail: ['retail','shop','store','boutique','ecommerce','e-commerce'],
+      auto: ['auto','mechanic','body shop','dealership','car wash','tire','detailing'],
+      salon: ['salon','barber','hair','spa','nail','beauty','aesthetic','tattoo'],
+      accounting: ['account','cpa','bookkeep','tax','financial advis'],
+      insurance: ['insurance','broker','underwrite','adjuster'],
+      sales: ['sales','commission','lead','prospect','pipeline','crm','b2b','b2c','outbound','cold call','rep']
+    };
+    for (const [key, terms] of Object.entries(map)) {
+      for (const term of terms) {
+        if (lower.includes(term)) return key;
+      }
+    }
+    return null;
+  }
+
+  function getIndustryLabel() {
+    const labels = {
+      medical:'practice', gym:'gym', law:'firm', trades:'business',
+      realestate:'brokerage', restaurant:'restaurant', retail:'store',
+      auto:'shop', salon:'salon', accounting:'firm', insurance:'agency', sales:'team'
+    };
+    return labels[chatState.industry] || chatState.industryRaw || 'business';
+  }
+
+  function generateSmartResponse(userText) {
+    const lower = userText.toLowerCase();
+    const prefix = getQueuePrefix();
+
+    // Always try to detect industry from any message
+    const detected = detectIndustry(lower);
+    if (detected) {
+      chatState.industry = detected;
+      chatState.industryRaw = userText.trim();
+    }
+
+    // Pricing questions can fire at any stage
+    if (lower.includes('cost') || lower.includes('price') || lower.includes('how much') || lower.includes('fee') || lower.includes('rate') || lower.includes('afford')) {
+      return prefix + "Our 30-minute build session is completely free — Joe builds one working automation for your business live on the call, yours to keep whether you hire us or not.<br><br>If you want full multi-tier automation infrastructure built after that, packages start at flat-rate agency pricing with zero lock-in contracts.<br><br>Would you like to pick a time for your free build call?<br><br><button class='in-chat-btn' onclick='launchInChatCalendly()'>📅 Pick a 30-Min Time on Joe's Calendar →</button>";
+    }
+
+    // How does it work questions can fire at any stage
+    if (lower.includes('how does it work') || lower.includes('what happens') || lower.includes('what do you do') || lower.includes('tell me more')) {
+      return prefix + "Here's how it works: You book a free 30-minute Zoom/Teams call with Joe. You tell him your biggest follow-up or lead response headache. He shares his screen and builds the complete automated system live in front of you — yours to keep.<br><br>What type of business are you in? I'd love to give you a more specific picture of what we'd build for you.";
+    }
+
+    const label = getIndustryLabel();
+
+    // ─── STAGE: IDENTIFY (Who are they?) ───
+    if (chatState.stage === 'identify') {
+      if (chatState.industry) {
+        chatState.stage = 'qualify';
+        const hooks = {
+          medical: "For medical practices, the biggest revenue leak is usually between first inquiry and actually getting the patient in the door — or keeping them coming back.<br><br>What's your biggest headache right now — handling incoming patient inquiries, reducing no-shows, or staying in touch with existing patients?",
+          gym: "For gyms and fitness centers, prospective members who don't hear back within 5 minutes usually sign up somewhere else.<br><br>What's your biggest challenge right now — capturing new member leads, reducing cancellations, or getting members to refer friends?",
+          law: "For law firms, the difference between winning and losing a client often comes down to who responds first.<br><br>What's your biggest intake challenge — managing incoming consultation requests, following up with prospects who don't book, or keeping existing clients updated on their case?",
+          trades: "For trades and contractors, you're often on a job site when the phone rings, and that missed call goes straight to a competitor.<br><br>What's hitting you hardest — missed calls while on site, quoting follow-up, or getting reviews from finished jobs?",
+          realestate: "For real estate, speed-to-lead is everything. The first agent to respond to an online inquiry wins the showing.<br><br>What's your biggest pain point — responding to listing inquiries fast enough, nurturing cold leads, or staying top-of-mind with past clients?",
+          restaurant: "For restaurants and food businesses, no-show reservations and slow review collection are two of the biggest margin killers.<br><br>What would help you most — reducing no-shows, automating review requests after meals, or filling slow nights with targeted promos?",
+          retail: "For retail and ecommerce, abandoned carts and lapsed customers represent massive lost revenue that automation recovers instantly.<br><br>What's your biggest challenge — recovering abandoned carts/inquiries, getting repeat purchases, or building up Google reviews?",
+          auto: "For auto shops and dealerships, customers usually call 2-3 places and go with whoever responds first.<br><br>What's hitting your revenue hardest — missed service calls, no-show appointments, or not enough online reviews?",
+          salon: "For salons and beauty businesses, no-show appointments and rebooking gaps quietly drain thousands per month.<br><br>What would make the biggest impact for you — reducing no-shows, automatic rebooking reminders, or getting more 5-star Google reviews?",
+          accounting: "For accounting and financial firms, client intake and document collection is usually the most manual, time-consuming bottleneck.<br><br>What's eating the most staff time right now — onboarding new clients, chasing documents, or staying in regular touch with existing clients?",
+          insurance: "For insurance agencies, speed-to-quote and policy renewal follow-up are the two biggest revenue drivers that most agencies still handle manually.<br><br>What's your biggest operational bottleneck — responding to quote requests, renewal reminders, or cross-sell follow-ups?",
+          sales: "For sales teams, the leads that don't get followed up within the first hour go cold fast — and manual CRM updates eat into selling time.<br><br>What's your biggest bottleneck — speed-to-lead on inbound inquiries, follow-up sequences for cold leads, or keeping your pipeline organized?"
+        };
+        return prefix + (hooks[chatState.industry] || `Interesting — we work with a lot of ${label} owners.<br><br>What's your biggest operational headache right now — responding to new inquiries fast enough, following up with existing customers, or something else entirely?`);
+      }
+
+      // No industry detected yet — ask warmly
+      chatState.stage = 'identify';
+      return prefix + `Thanks for reaching out! To give you the most relevant picture of what we can automate, could you tell me a bit about your business? What industry are you in, and roughly how many customer inquiries do you handle per week?`;
+    }
+
+    // ─── STAGE: QUALIFY (What's their pain point?) ───
+    if (chatState.stage === 'qualify') {
+      chatState.stage = 'diagnose';
+
+      // CHECK COMPOUND PHRASES FIRST (before single keywords)
+
+      // Missed appointments / maintenance / no-shows (check BEFORE generic "missed")
+      if (lower.includes('no-show') || lower.includes('no show') || lower.includes('cancel') ||
+          lower.includes('appointment') || lower.includes('booking') || lower.includes('schedule') ||
+          lower.includes('maintenance') || lower.includes('service visit') || lower.includes('recall') ||
+          (lower.includes('missed') && (lower.includes('appoint') || lower.includes('mainten') || lower.includes('visit') || lower.includes('session') || lower.includes('check')))) {
+        chatState.painPoint = 'no_shows';
+        return prefix + `Missed appointments and no-shows are a huge revenue drain — and most of the time, it's not that customers don't want to come in, it's that they simply forgot or life got busy.<br><br>How do you currently remind customers before their appointment? Are you sending any kind of text or email confirmation beforehand, or is it mostly hoping they remember?`;
+      }
+
+      // Missed phone calls / slow response (only when NOT about appointments)
+      if (lower.includes('missed call') || lower.includes('phone') || lower.includes('voicemail') || lower.includes('ring') ||
+          (lower.includes('missed') && !lower.includes('appoint') && !lower.includes('mainten') && !lower.includes('visit'))) {
+        chatState.painPoint = 'missed_calls';
+        return prefix + `Missed calls are the #1 source of lost revenue for service businesses — when someone doesn't hear back, 80% just move on to a competitor without leaving a message.<br><br>How are you currently handling that? Is it going to standard voicemail, or does someone on your team try to call back manually when they notice?`;
+      }
+
+      // Speed-to-respond / slow response time
+      if (lower.includes('respond') || lower.includes('response time') || lower.includes('slow') || lower.includes('too long')) {
+        chatState.painPoint = 'slow_response';
+        return prefix + `Response speed is everything — studies show that responding within 5 minutes makes you 21x more likely to win the customer.<br><br>When a new inquiry comes in right now, roughly how long does it take before someone on your team responds?`;
+      }
+
+      // Reviews / reputation
+      if (lower.includes('review') || lower.includes('google') || lower.includes('star') || lower.includes('reputation') || lower.includes('rating')) {
+        chatState.painPoint = 'reviews';
+        return prefix + `Online reviews are one of the most powerful drivers of new business — but most owners only ask when they remember to.<br><br>Do you have any system in place to request reviews after a service, or is it more of a "when we remember" situation?`;
+      }
+
+      // Follow-up / retention / staying in touch
+      if (lower.includes('follow') || lower.includes('nurture') || lower.includes('touch') || lower.includes('contact') || lower.includes('retention') || lower.includes('lapsed') || lower.includes('repeat') || lower.includes('come back')) {
+        chatState.painPoint = 'retention';
+        return prefix + `Client retention and follow-up is where most ${label} owners leak the most revenue without even realizing it.<br><br>How are you currently staying in touch with past customers — manual emails, phone calls, or is it mostly falling through the cracks?`;
+      }
+
+      // Lead generation / pipeline
+      if (lower.includes('lead') || lower.includes('inquir') || lower.includes('prospect') || lower.includes('pipeline') || lower.includes('inbound') || lower.includes('cold') || lower.includes('outreach')) {
+        chatState.painPoint = 'leads';
+        return prefix + `Lead response speed makes or breaks conversion — studies show responding within 5 minutes makes you 21x more likely to close.<br><br>When a new lead comes in right now, what does your response process look like? Manual email, phone call back, or something else?`;
+      }
+
+      // Generic qualify — still ask a probing question, never dump to CTA
+      return prefix + `Got it — that's a common challenge for ${label} owners.<br><br>Walk me through what that looks like day-to-day: when that problem comes up, what's the current process for handling it? Is your team doing it manually, or do you have some kind of software in place?`;
+    }
+
+    // ─── STAGE: DIAGNOSE (How are they handling it now?) ───
+    if (chatState.stage === 'diagnose') {
+      chatState.stage = 'offer';
+
+      if (lower.includes('manual') || lower.includes('by hand') || lower.includes('myself') || lower.includes('staff') || lower.includes('forget') || lower.includes('crack') || lower.includes('nothing') || lower.includes('don\'t have') || lower.includes('no system') || lower.includes('not really')) {
+        return prefix + `That's exactly where most ${label} owners are — and it's not a criticism, it's just where the biggest opportunity lives. Every manual step is a place where leads and revenue slip through when you get busy.<br><br>Here's what I'd suggest: On a free 30-minute build session, Joe will literally build a working automated system for your ${label} right in front of you — live, on the call. You keep it whether you hire us or not.<br><br>Would you like to grab a slot on his calendar?<br><br><button class='in-chat-btn' onclick='launchInChatCalendly()'>📅 Reserve Your Free 30-Min Build Session →</button>`;
+      }
+
+      if (lower.includes('tool') || lower.includes('software') || lower.includes('app') || lower.includes('crm') || lower.includes('mailchimp') || lower.includes('hubspot') || lower.includes('go high level') || lower.includes('ghl') || lower.includes('platform')) {
+        return prefix + `Replacing clunky or overpriced software is one of the biggest wins we deliver. Most off-the-shelf tools force you into monthly subscription traps and still don't connect cleanly to your actual workflow.<br><br>We build private, custom automation infrastructure tailored specifically for your ${label} — zero monthly software locks.<br><br>Would you like Joe to show you exactly what a replacement would look like on a free 30-minute build call?<br><br><button class='in-chat-btn' onclick='launchInChatCalendly()'>📅 Reserve Your Free 30-Min Build Session →</button>`;
+      }
+
+      // Generic diagnose → offer
+      return prefix + `Thanks for walking me through that. Based on what you've described, there's a clear automation opportunity that could save your ${label} hours every week and make sure nothing falls through the cracks.<br><br>On a free 30-minute build session, Joe will build a working automated system for your ${label} right in front of you — yours to keep whether you hire us or not.<br><br>Want to grab a slot?<br><br><button class='in-chat-btn' onclick='launchInChatCalendly()'>📅 Reserve Your Free 30-Min Build Session →</button>`;
+    }
+
+    // ─── STAGE: OFFER (Already presented CTA — handle follow-ups) ───
+    if (lower.includes('yes') || lower.includes('sure') || lower.includes('ok') || lower.includes('let\'s') || lower.includes('book') || lower.includes('ready') || lower.includes('sign') || lower.includes('interested')) {
+      return prefix + `Great! Go ahead and pick the time that works best for you below. Joe keeps only a few spots open per week, so lock one in while they're available:<br><br><button class='in-chat-btn' onclick='launchInChatCalendly()'>📅 Pick Your 30-Min Slot on Joe's Calendar →</button>`;
+    }
+
+    if (lower.includes('not sure') || lower.includes('maybe') || lower.includes('think about') || lower.includes('later') || lower.includes('not ready')) {
+      return prefix + `No pressure at all. The 30-minute session is free, no contracts, and you keep whatever gets built. Joe's calendar fills up fast since he only runs a few per week — but whenever you're ready, the link is right here:<br><br><button class='in-chat-btn' onclick='launchInChatCalendly()'>📅 Joe's Calendar (Pick Any Open Slot) →</button>`;
+    }
+
+    // Catch-all for post-offer conversation
+    return prefix + `Joe has your full conversation notes in his inbox. If you have any other questions, feel free to keep chatting here — otherwise, grab a free 30-minute slot and he'll build a working automation for your ${label} live on the call:<br><br><button class='in-chat-btn' onclick='launchInChatCalendly()'>📅 Reserve Your Free 30-Min Build Session →</button>`;
+  }
+
+  async function sendChatMessage() {
+    const inputEl = document.getElementById('chat-user-input');
+    const userText = inputEl.value.trim();
+    if (!userText) return;
+
+    inputEl.value = '';
+    appendMessage('user', userText);
+    showTyping(true);
+
+    let serverReply = null;
+
+    try {
+      // Send message & chat context to VPS n8n Webhook
+      const response = await fetch(N8N_VPS_WEBHOOK_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          event_type: 'live_chat_message',
+          user_message: userText,
+          conversation_history: conversationHistory,
+          page_url: window.location.href,
+          timestamp: new Date().toISOString()
+        })
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        if (data.reply || data.message) {
+          serverReply = data.reply || data.message;
+        }
+      }
+    } catch (err) {
+      console.warn('VPS Webhook notice (using smart fallback engine):', err);
+    }
+
+    showTyping(false);
+
+    if (serverReply) {
+      appendMessage('assistant', serverReply);
+    } else {
+      // Output smart queue notice & industry engagement with Calendly CTA
+      const smartReply = generateSmartResponse(userText);
+      appendMessage('assistant', smartReply);
+    }
+  }
+
+  /* CALENDLY JS EVENT LISTENER + ABANDONMENT NUDGE */
+  let calendlyAbandonTimer = null;
+
+  window.addEventListener('message', function(e) {
+    if (e.data && e.data.event) {
+      // 1. Calendly Modal Opened — start 3-minute abandonment timer
+      if (e.data.event === 'calendly.event_type_viewed') {
+        console.log('📅 Calendly Scheduler Opened');
+
+        // Clear any existing timer
+        if (calendlyAbandonTimer) clearTimeout(calendlyAbandonTimer);
+
+        // Start 3-minute abandonment nudge
+        calendlyAbandonTimer = setTimeout(function() {
+          const chatWin = document.getElementById('flowstate-chat-window');
+          if (!chatWin.classList.contains('active')) {
+            toggleChatWindow();
+          }
+          appendMessage('assistant', "Hey! 👋 I noticed you were checking out Joe's calendar. No pressure at all — but if you have any questions about what the free build session covers or want help picking a time, I'm right here.<br><br>The session is 100% free, and you walk away with a working automation whether you hire us or not.<br><br><button class='in-chat-btn' onclick='launchInChatCalendly()'>📅 Pick a Time on Joe's Calendar →</button>");
+        }, 180000); // 3 minutes = 180,000ms
+      }
+
+      // 2. Calendly Booking Complete — clear abandonment timer
+      if (e.data.event === 'calendly.event_scheduled') {
+        console.log('🎉 Calendly Event Scheduled:', e.data.payload);
+
+        // Clear the abandonment timer — they booked!
+        if (calendlyAbandonTimer) {
+          clearTimeout(calendlyAbandonTimer);
+          calendlyAbandonTimer = null;
+        }
+
+        const payload = e.data.payload || {};
+        const invitee = payload.invitee || {};
+        const eventDetails = payload.event || {};
+
+        const bookingPayload = {
+          event_type: 'calendly_booking_completed',
+          invitee_name: invitee.name || 'Prospect',
+          invitee_email: invitee.email || '',
+          event_type_name: eventDetails.name || '30 Min Build Session',
+          start_time: eventDetails.start_time || '',
+          conversation_history: conversationHistory,
+          timestamp: new Date().toISOString()
+        };
+
+        // Post booking event to VPS n8n Webhook for instant email alert to Joe
+        fetch(N8N_VPS_WEBHOOK_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(bookingPayload)
+        }).catch(err => console.error('Calendly webhook post error:', err));
+
+        // Open Chat Widget and show instant confirmation
+        const chatWin = document.getElementById('flowstate-chat-window');
+        if (!chatWin.classList.contains('active')) {
+          toggleChatWindow();
+        }
+        appendMessage('assistant', `🎉 **Booking Confirmed!** Thanks ${bookingPayload.invitee_name}! Your free build session is locked in. Joe has received an instant email notification with your details.`);
+      }
+
+      // 3. Calendly Modal Closed (without booking) — handled by abandonment timer
+      if (e.data.event === 'calendly.profile_page_viewed') {
+        console.log('📋 Calendly Profile Page Viewed');
+      }
+    }
+  });
+</script>
+
+</body>
+</html>

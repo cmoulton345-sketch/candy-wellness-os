@@ -1,0 +1,52 @@
+# OS generated files
+.DS_Store
+Thumbs.db
+desktop.ini
+ehthumbs.db
+
+# Editor directories and files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temp files
+*.tmp
+*.bak
+*.log
+*.exe
+_temp/
+
+# Node (if ever used)
+node_modules/
+
+# Wrangler local state (caches, R2 blobs, sqlite)
+.wrangler/state/
+.wrangler/tmp/
+.wrangler/cache/
+.wrangler/cloudflare_api_v4_user_tokens.txt
+
+.env
+.env.local
+.env.vps
+
+# n8n workflow files (may contain embedded API keys)
+n8n_workflows/*.json
+
+# Test/scratch files
+test*.pdf
+
+# Service log rotation (keep current, ignore dated)
+services/*-202*.log
+
+# Gemini scratch files
+.gemini/scratch/
+
+git-sync.log
+
+# Voice engine runtime state
+speak.pid
+stop.flag
+stop_speech.txt
+.speak_active

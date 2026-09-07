@@ -1,0 +1,67 @@
+{
+  "name": "FlowstateAI Instant Lead Response & WhatsApp Founder Alert",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "free-call",
+        "options": {}
+      },
+      "id": "webhook-trigger",
+      "name": "Form Submission Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1.1,
+      "position": [200, 300],
+      "webhookId": "flowstate-free-call-webhook"
+    },
+    {
+      "parameters": {
+        "fromEmail": "joe@flowstateaiautomation.ai",
+        "toEmail": "={{ $json.body.email }}",
+        "subject": "⚡ Request Received: Your {{ $json.body.automation }} Build Session",
+        "html": "<div style=\"font-family: 'Helvetica Neue', Arial, sans-serif; color: #1e293b; max-width: 600px; margin: 0 auto; padding: 24px; background: #ffffff; border-radius: 12px;\">\n  <h2 style=\"color: #0077ff; margin-top: 0;\">Request Received — Agent Reviewing</h2>\n  <p>Hi {{ $json.body.name }},</p>\n  <p>Thank you for requesting a <strong>{{ $json.body.automation }}</strong> build session for <strong>{{ $json.body.business }}</strong>.</p>\n  <p>Our automation architect (Ax) is reviewing your submission right now, and Joe Moulton has been notified directly on his phone.</p>\n  <div style=\"background: #f1f5f9; padding: 16px; border-radius: 8px; border-left: 4px solid #00c2ff; margin: 20px 0;\">\n    <strong>Next Step:</strong> Lock in your 30-minute build session time if you haven't already, or reply directly to this email with any quick questions.\n  </div>\n  <p>Talk soon,<br><strong>Joe Moulton & Team FlowstateAI</strong><br><a href=\"https://flowstateaiautomation.ai\">flowstateaiautomation.ai</a> | (506) 607-1791</p>\n</div>",
+        "options": {}
+      },
+      "id": "email-prospect-agent",
+      "name": "Agent Response to Prospect",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2,
+      "position": [480, 200]
+    },
+    {
+      "parameters": {
+        "fromEmail": "joe@flowstateaiautomation.ai",
+        "toEmail": "joe@flowstateaiautomation.ai",
+        "subject": "🚨 NEW LEAD SUBMITTED: {{ $json.body.name }} ({{ $json.body.business }})",
+        "html": "<h3>🚨 NEW FLOWSTATEAI LEAD SUBMITTED</h3>\n<ul>\n  <li><strong>Name:</strong> {{ $json.body.name }}</li>\n  <li><strong>Business:</strong> {{ $json.body.business }}</li>\n  <li><strong>Phone:</strong> <a href=\"tel:{{ $json.body.phone }}\">{{ $json.body.phone }}</a></li>\n  <li><strong>Email:</strong> {{ $json.body.email }}</li>\n  <li><strong>Automation Focus:</strong> {{ $json.body.automation }}</li>\n  <li><strong>Timestamp:</strong> {{ $json.body.timestamp }}</li>\n</ul>\n<p><strong>WhatsApp / Call Action:</strong> Reach out immediately at {{ $json.body.phone }}.</p>",
+        "options": {}
+      },
+      "id": "whatsapp-founder-alert",
+      "name": "WhatsApp / SMS Alert to Joe (506 607-1791)",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2,
+      "position": [480, 400]
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Form Submission Webhook": {
+      "main": [
+        [
+          {
+            "node": "Agent Response to Prospect",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "WhatsApp / SMS Alert to Joe (506 607-1791)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {}
+}

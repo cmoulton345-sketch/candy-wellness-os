@@ -1,0 +1,74 @@
+{
+    "name": "FlowstateAI Calendly Audit Intake",
+    "nodes": [
+        {
+            "parameters": {
+                "webhookId": "flowstate-audit-intake-webhook",
+                "options": {}
+            },
+            "id": "calendly-trigger-node",
+            "name": "Calendly Webhook",
+            "type": "n8n-nodes-base.webhook",
+            "typeVersion": 1,
+            "position": [
+                200,
+                300
+            ]
+        },
+        {
+            "parameters": {
+                "fromEmail": "joe@flowstateaiautomation.ai",
+                "toEmail": "={{ $json.body.payload.email }}",
+                "subject": "System Audit Confirmed: What to Expect",
+                "html": "<div style=\"font-family: 'Helvetica Neue', Arial, sans-serif; color: #333; max-width: 600px; margin: 0 auto; padding: 20px; line-height: 1.6;\">\n    <div style=\"text-align: center; margin-bottom: 30px;\">\n        <img src=\"https://flowstateaiautomation.ai/images/logo.png\" alt=\"FlowstateAI\" style=\"max-height: 60px;\">\n    </div>\n    <p style=\"font-size: 16px;\">Hi {{ $json.body.payload.name }},</p>\n    <p style=\"font-size: 16px;\">Your Free Systems Audit is locked in for <strong>{{ new Date($json.body.payload.event.start_time).toLocaleString('en-US', { weekday: 'long', month: 'long', day: 'numeric', hour: 'numeric', minute: '2-digit', timeZoneName: 'short' }) }}</strong>.</p>\n    <h3 style=\"color: #0a0a0f; margin-top: 25px;\">What to expect:</h3>\n    <p style=\"font-size: 16px;\">This isn't a high-pressure sales pitch. It's an X-ray of your current operations. We'll spend 30 minutes looking at where you are spending your manual hours, and I'll map out exactly how we can automate the bottlenecks.</p>\n    <h3 style=\"color: #0a0a0f; border-left: 4px solid #3b82f6; padding-left: 10px; margin-top: 25px;\">Required Pre-Call Step:</h3>\n    <p style=\"font-size: 16px;\">To ensure we don't waste your time during the call, please take 90 seconds to fill out this intake form so I know your exact tech stack before we meet:</p>\n    <p style=\"text-align: center; margin: 30px 0;\">\n        <a href=\"[INSERT_TYPEFORM_OR_GOOGLE_FORM_LINK]\" style=\"background-color: #3b82f6; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold; display: inline-block;\">Complete The Intake Form</a>\n    </p>\n    <p style=\"font-size: 16px;\">Talk soon,</p>\n    <div style=\"margin-top: 30px; display: flex; align-items: center; border-top: 1px solid #eee; padding-top: 20px;\">\n        <img src=\"https://flowstateaiautomation.ai/images/joe_moulton.jpg\" alt=\"Joe Moulton\" style=\"width: 60px; height: 60px; border-radius: 50%; margin-right: 15px; object-fit: cover;\">\n        <div>\n            <p style=\"margin: 0; font-weight: bold; font-size: 16px;\">Joe Moulton</p>\n            <p style=\"margin: 2px 0 0 0; font-size: 14px; color: #666;\">Founder, FlowstateAI Automation</p>\n            <p style=\"margin: 2px 0 0 0; font-size: 13px;\"><a href=\"https://flowstateaiautomation.ai\" style=\"color: #3b82f6; text-decoration: none;\">flowstateaiautomation.ai</a></p>\n        </div>\n    </div>\n</div>",
+                "options": {}
+            },
+            "id": "email-prospect-node",
+            "name": "Email Prospect",
+            "type": "n8n-nodes-base.emailSend",
+            "typeVersion": 2,
+            "position": [
+                480,
+                200
+            ]
+        },
+        {
+            "parameters": {
+                "fromEmail": "joe@flowstateaiautomation.ai",
+                "toEmail": "joe@flowstateaiautomation.ai",
+                "subject": "🚨 NEW AUDIT BOOKED: {{ $json.body.payload.name }}",
+                "html": "<h3>New Audit Call Booked!</h3>\n<ul>\n    <li><strong>Name:</strong> {{ $json.body.payload.name }}</li>\n    <li><strong>Email:</strong> {{ $json.body.payload.email }}</li>\n    <li><strong>Time:</strong> {{ $json.body.payload.event.start_time }}</li>\n</ul>\n<p>Log into Calendly to view their full questionnaire responses.</p>",
+                "options": {}
+            },
+            "id": "notify-founder-node",
+            "name": "Notify Founder",
+            "type": "n8n-nodes-base.emailSend",
+            "typeVersion": 2,
+            "position": [
+                480,
+                400
+            ]
+        }
+    ],
+    "pinData": {},
+    "connections": {
+        "Calendly Webhook": {
+            "main": [
+                [
+                    {
+                        "node": "Email Prospect",
+                        "type": "main",
+                        "index": 0
+                    },
+                    {
+                        "node": "Notify Founder",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        }
+    },
+    "active": false,
+    "settings": {}
+}

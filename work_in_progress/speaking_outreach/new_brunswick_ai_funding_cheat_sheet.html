@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>New Brunswick AI Funding Programs Cheat Sheet</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    @page {
+      size: letter;
+      margin: 0;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: #f4f5f7;
+      color: #1a1a2e;
+      line-height: 1.5;
+      font-size: 13.5px;
+      display: flex;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .page {
+      width: 8.5in;
+      height: 11in;
+      background: #ffffff;
+      box-shadow: 0 4px 40px rgba(0,0,0,0.08);
+      border-radius: 4px;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* --- HEADER --- */
+    .header {
+      background: linear-gradient(135deg, #0a0f1a 0%, #141c2e 100%);
+      padding: 36px 48px;
+      color: #ffffff;
+      border-bottom: 3px solid #00c2ff;
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .header-text h1 {
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 4px;
+      color: #ffffff;
+    }
+
+    .header-text .subtitle {
+      font-size: 13px;
+      font-weight: 500;
+      color: #00c2ff;
+    }
+
+    .brand-logo {
+      font-size: 16px;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: -0.3px;
+      text-align: right;
+    }
+
+    .brand-logo span {
+      color: #00c2ff;
+    }
+
+    .brand-tagline {
+      font-size: 10px;
+      color: rgba(255, 255, 255, 0.5);
+      font-weight: 400;
+    }
+
+    /* --- CONTENT --- */
+    .content {
+      padding: 36px 48px;
+      flex-grow: 1;
+    }
+
+    .intro-text {
+      font-size: 13.5px;
+      color: #4a5568;
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+
+    .intro-text strong {
+      color: #1a1a2e;
+    }
+
+    /* --- PROGRAM CARDS --- */
+    .program-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-left: 4px solid #0077ff;
+      border-radius: 6px;
+      padding: 20px 24px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+    }
+
+    .program-card:last-of-type {
+      margin-bottom: 0;
+    }
+
+    .program-card.nb-cbdc {
+      border-left-color: #00c2ff;
+    }
+
+    .program-card.nbif {
+      border-left-color: #0077ff;
+    }
+
+    .program-card.fed {
+      border-left-color: #1a1a2e;
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 12px;
+    }
+
+    .program-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: #1a1a2e;
+    }
+
+    .grant-amount {
+      font-size: 14px;
+      font-weight: 700;
+      color: #0077ff;
+      background: rgba(0, 119, 255, 0.08);
+      padding: 3px 10px;
+      border-radius: 4px;
+    }
+
+    .program-card.nb-cbdc .grant-amount {
+      color: #0099cc;
+      background: rgba(0, 194, 255, 0.08);
+    }
+
+    .details-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+    }
+
+    .details-table td {
+      padding: 6px 0;
+      vertical-align: top;
+      font-size: 12.5px;
+    }
+
+    .details-table td.label {
+      width: 130px;
+      font-weight: 600;
+      color: #4a5568;
+    }
+
+    .details-table td.value {
+      color: #2d3748;
+    }
+
+    /* --- FOOTER --- */
+    .footer {
+      padding: 24px 48px;
+      border-top: 1px solid #eef1f6;
+      background: #fafbfc;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-left {
+      font-size: 11px;
+      color: #718096;
+    }
+
+    .footer-right {
+      font-size: 11px;
+      color: #4a5568;
+      text-align: right;
+    }
+
+    .footer-right a {
+      color: #0077ff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    /* Print styles */
+    @media print {
+      body { background: white; padding: 0; }
+      .page { box-shadow: none; border-radius: 0; width: 8.5in; height: 11in; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-content">
+      <div class="header-text">
+        <h1>New Brunswick AI Funding Programs</h1>
+        <div class="subtitle">A 1-Page Cheat Sheet for Growth-Stage Operators</div>
+      </div>
+      <div>
+        <div class="brand-logo">Flowstate<span>AI</span></div>
+        <div class="brand-tagline">Automation Agency</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="content">
+    <div class="intro-text">
+      Many growth-stage businesses in New Brunswick are actively adopting AI to capture leads instantly, eliminate manual admin, and scale operations. To offset implementation costs, provincial and federal agencies offer several targeted funding streams. <strong>Below is a summary of the primary active programs available to NB operators.</strong>
+    </div>
+
+    <!-- PROGRAM 1: CYBERSECURE NB -->
+    <div class="program-card nb-cbdc">
+      <div class="card-header">
+        <div class="program-title">Cybersecure NB & Tech Adoption Program</div>
+        <span class="grant-amount">Up to $3,000</span>
+      </div>
+      <table class="details-table">
+        <tr>
+          <td class="label">Administered by</td>
+          <td class="value">CBDC Network + Province of New Brunswick</td>
+        </tr>
+        <tr>
+          <td class="label">Funding Level</td>
+          <td class="value">Non-repayable grant covering up to $3,000 for technology adoption and secure AI tools.</td>
+        </tr>
+        <tr>
+          <td class="label">Eligibility</td>
+          <td class="value">New Brunswick SMEs with a registered office and at least $30,000 in annual revenue.</td>
+        </tr>
+        <tr>
+          <td class="label">Best Used For</td>
+          <td class="value">Deploying secure local AI tools, automating operational messaging, and integrating client nurture workflows that reduce administrative overhead.</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- PROGRAM 2: NBIF AI FUND -->
+    <div class="program-card nbif">
+      <div class="card-header">
+        <div class="program-title">NBIF AI Fund & Research Support</div>
+        <span class="grant-amount">Project-Based Support</span>
+      </div>
+      <table class="details-table">
+        <tr>
+          <td class="label">Administered by</td>
+          <td class="value">New Brunswick Innovation Foundation (NBIF) + ACOA</td>
+        </tr>
+        <tr>
+          <td class="label">Funding Level</td>
+          <td class="value">Direct investment, matching grants, or applied research support for technology projects.</td>
+        </tr>
+        <tr>
+          <td class="label">Eligibility</td>
+          <td class="value">NB-based companies partnering with research institutions, or implementing innovative proprietary AI applications.</td>
+        </tr>
+        <tr>
+          <td class="label">Best Used For</td>
+          <td class="value">Integrating advanced AI models into company-specific platforms or testing novel machine learning workflows to gain a regional competitive advantage.</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- PROGRAM 3: ACOA -->
+    <div class="program-card fed">
+      <div class="card-header">
+        <div class="program-title">Regional Economic Growth / Productivity (REGI / BSP)</div>
+        <span class="grant-amount">Scalable Funding</span>
+      </div>
+      <table class="details-table">
+        <tr>
+          <td class="label">Administered by</td>
+          <td class="value">Atlantic Canada Opportunities Agency (ACOA) — NB Offices</td>
+        </tr>
+        <tr>
+          <td class="label">Funding Level</td>
+          <td class="value">Direct project funding, scale-up loans, or regional initiative grants.</td>
+        </tr>
+        <tr>
+          <td class="label">Eligibility</td>
+          <td class="value">New Brunswick SMEs focused on increasing productivity, scaling operations, or regional business development.</td>
+        </tr>
+        <tr>
+          <td class="label">Best Used For</td>
+          <td class="value">Larger-scale digital infrastructure overhauls where custom AI agent systems, automated databases, and multi-tool workflows are built to scale production without expanding headcount.</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-left">
+      Prepared by <strong>Joe Moulton</strong>, Founder & Automation Architect
+    </div>
+    <div class="footer-right">
+      <a href="mailto:joe@flowstateaiautomation.ai">joe@flowstateaiautomation.ai</a> &nbsp;|&nbsp; 
+      <a href="https://flowstateaiautomation.ai" target="_blank">flowstateaiautomation.ai</a>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

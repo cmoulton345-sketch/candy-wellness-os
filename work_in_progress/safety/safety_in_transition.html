@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Safety in Transition | Woodfibre LNG Safety Moment</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --wf-blue-deep:   #1A5096;
+      --wf-blue-mid:    #2E7BC4;
+      --wf-blue-light:  #5BAAD8;
+      --wf-green:       #7DC24B;
+      --wf-green-dark:  #4D9A1A;
+      --wf-green-dim:   rgba(125,194,75,0.15);
+      --wf-blue-dim:    rgba(46,123,196,0.15);
+      --bg:       #050E1C;
+      --surface:  #091828;
+      --card:     #0D2040;
+      --border:   rgba(46,123,196,0.18);
+      --text:   #EEF4FB;
+      --muted:  #7FA8CC;
+      --white:  #ffffff;
+    }
+
+    html, body { width: 100%; height: 100%; overflow: hidden; background: var(--bg); font-family: 'Inter', sans-serif; color: var(--text); }
+
+    body::before {
+      content: ''; position: fixed; inset: 0;
+      background-image: linear-gradient(rgba(46,123,196,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(46,123,196,0.04) 1px, transparent 1px);
+      background-size: 48px 48px; pointer-events: none; z-index: 0;
+    }
+
+    #progress-bar {
+      position: fixed; top: 0; left: 0; height: 3px;
+      background: linear-gradient(90deg, var(--wf-blue-deep), var(--wf-blue-mid), var(--wf-green));
+      transition: width 0.4s ease; z-index: 200;
+      box-shadow: 0 0 10px rgba(46,123,196,0.7);
+    }
+    #slide-counter { position: fixed; bottom: 24px; right: 32px; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; color: var(--muted); z-index: 200; }
+    .nav-btn {
+      position: fixed; bottom: 16px;
+      background: rgba(26,80,150,0.15); border: 1px solid rgba(46,123,196,0.35);
+      color: var(--wf-blue-light); width: 44px; height: 44px; border-radius: 50%;
+      font-size: 18px; cursor: pointer; display: flex; align-items: center; justify-content: center;
+      transition: all 0.2s; z-index: 200;
+    }
+    .nav-btn:hover { background: rgba(46,123,196,0.3); border-color: var(--wf-blue-mid); }
+    #btn-prev { left: calc(50% - 56px); }
+    #btn-next { left: calc(50% + 12px); }
+    #key-hint { position: fixed; bottom: 24px; left: 24px; font-size: 11px; color: rgba(127,168,204,0.4); z-index: 200; }
+
+    /* LOGO */
+    .wf-logo {
+      position: absolute; top: 18px; z-index: 50;
+      display: flex; align-items: center; gap: 8px; opacity: 0.9;
+    }
+    .wf-logo.left  { left: 24px; }
+    .wf-logo.right { right: 24px; flex-direction: row-reverse; }
+    .wf-logo svg { width: 44px; height: 44px; flex-shrink: 0; }
+    .wf-logo-text { display: flex; flex-direction: column; line-height: 1.1; }
+    .wf-logo-text span:first-child { font-weight: 700; font-size: 13px; color: var(--wf-blue-light); }
+    .wf-logo-text span:last-child  { font-weight: 700; font-size: 13px; color: var(--wf-green); }
+
+    #deck { width: 100%; height: 100%; position: relative; }
+    .slide {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      padding: 88px 64px 60px;
+      opacity: 0; transform: translateX(60px);
+      transition: opacity 0.45s ease, transform 0.45s ease;
+      pointer-events: none;
+    }
+    .slide.active  { opacity: 1; transform: translateX(0); pointer-events: all; }
+    .slide.exit-left { opacity: 0; transform: translateX(-60px); }
+    .slide > * { position: relative; z-index: 1; }
+
+    .slide-label { font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--wf-blue-light); margin-bottom: 14px; }
+    .slide-headline { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; text-align: center; line-height: 1.05; text-transform: uppercase; }
+    .divider { width: 64px; height: 3px; background: linear-gradient(90deg, var(--wf-green), transparent); border-radius: 2px; margin: 18px auto; }
+
+    /* SLIDE 1 */
+    #s1 { background: radial-gradient(ellipse 80% 55% at 50% -10%, rgba(26,80,150,0.35) 0%, transparent 70%), var(--bg); }
+    #s1::after { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--wf-blue-deep), var(--wf-blue-mid), var(--wf-green)); }
+    #s1 .main-title {
+      font-family: 'Barlow Condensed', sans-serif; font-weight: 800;
+      font-size: clamp(3rem, 7vw, 6.5rem); text-transform: uppercase; text-align: center; line-height: 1;
+      background: linear-gradient(135deg, var(--white) 0%, var(--wf-blue-light) 50%, var(--wf-green) 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    #s1 .subtitle { font-size: 1.05rem; color: var(--muted); text-align: center; letter-spacing: 0.04em; margin-top: 14px; }
+    #s1 .badge-row { display: flex; gap: 10px; margin-top: 30px; flex-wrap: wrap; justify-content: center; }
+    .badge { padding: 6px 16px; border-radius: 999px; border: 1px solid var(--border); background: var(--card); font-size: 12px; font-weight: 600; letter-spacing: 0.07em; color: var(--muted); }
+    #s1 .globe-icon { font-size: 2.8rem; margin-bottom: 20px; filter: drop-shadow(0 0 18px rgba(46,123,196,0.8)); }
+
+    /* SLIDE 2 */
+    .phase-track { display: flex; align-items: flex-start; gap: 0; width: 100%; max-width: 860px; margin: 36px 0 24px; }
+    .phase-node { display: flex; flex-direction: column; align-items: center; flex: 1; position: relative; }
+    .phase-node::after { content: ''; position: absolute; top: 28px; left: calc(50% + 28px); width: calc(100% - 56px); height: 2px; background: var(--border); }
+    .phase-node:last-child::after { display: none; }
+    .phase-node.done::after    { background: linear-gradient(90deg, var(--wf-green), var(--border)); }
+    .phase-node.current::after { background: linear-gradient(90deg, var(--wf-blue-mid), var(--border)); }
+    .phase-icon { width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 22px; border: 2px solid var(--border); background: var(--card); color: var(--muted); }
+    .phase-node.done .phase-icon    { border-color: var(--wf-green); color: var(--wf-green); background: rgba(125,194,75,0.1); }
+    .phase-node.current .phase-icon { border-color: var(--wf-blue-mid); color: var(--wf-blue-light); background: var(--wf-blue-dim); box-shadow: 0 0 22px rgba(46,123,196,0.45); }
+    .phase-label { margin-top: 10px; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; text-align: center; color: var(--muted); }
+    .phase-node.done .phase-label    { color: var(--wf-green); }
+    .phase-node.current .phase-label { color: var(--wf-blue-light); }
+    .you-are-here { margin-top: 6px; font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--wf-blue-mid); background: var(--wf-blue-dim); padding: 2px 8px; border-radius: 999px; border: 1px solid rgba(46,123,196,0.35); }
+    .phase-caption { max-width: 620px; text-align: center; color: var(--muted); font-size: 1rem; line-height: 1.75; margin-top: 8px; }
+
+    /* SLIDE 3 */
+    #s3 { background: radial-gradient(ellipse 70% 50% at 50% 50%, rgba(125,194,75,0.07) 0%, transparent 70%), var(--bg); }
+    .definition-card { max-width: 840px; border: 1px solid rgba(46,123,196,0.25); border-radius: 20px; background: linear-gradient(135deg, rgba(26,80,150,0.08), rgba(5,14,28,0.9)); padding: 46px 54px; position: relative; margin-top: 20px; }
+    .definition-card::before { content: '\201C'; position: absolute; top: -16px; left: 32px; font-size: 110px; line-height: 1; color: rgba(46,123,196,0.18); font-family: Georgia, serif; }
+    .definition-text { font-size: clamp(1rem, 2vw, 1.22rem); font-weight: 400; line-height: 1.8; color: var(--text); text-align: center; }
+    .definition-text em { color: var(--wf-blue-light); font-style: normal; font-weight: 600; }
+    .definition-text em.green { color: var(--wf-green); }
+    .definition-warning { margin-top: 26px; padding: 13px 20px; background: rgba(26,80,150,0.12); border: 1px solid rgba(46,123,196,0.28); border-radius: 12px; font-size: 0.9rem; color: var(--wf-blue-light); text-align: center; font-weight: 500; }
+
+    /* SLIDES 4-8 */
+    .means-slide { background: var(--bg); }
+    .means-icon-wrap { width: 96px; height: 96px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 40px; margin-bottom: 22px; position: relative; background: var(--wf-blue-dim); border: 2px solid rgba(46,123,196,0.4); }
+    .means-icon-wrap::after { content: ''; position: absolute; inset: -8px; border-radius: 50%; border: 1px solid var(--wf-blue-mid); animation: pulse-ring 2.5s ease-out infinite; }
+    @keyframes pulse-ring { 0% { opacity: 0.55; transform: scale(1); } 100% { opacity: 0; transform: scale(1.38); } }
+    .means-number { font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--wf-blue-light); margin-bottom: 8px; }
+    .means-title { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: clamp(2.8rem, 6vw, 5.2rem); text-transform: uppercase; background: linear-gradient(135deg, var(--white) 0%, var(--wf-blue-light) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1; margin-bottom: 8px; }
+    .means-question { font-size: 0.95rem; font-style: italic; color: var(--wf-green); margin-bottom: 22px; font-weight: 500; }
+    .means-body { max-width: 640px; text-align: center; color: var(--muted); line-height: 1.78; font-size: 1rem; }
+    .means-body strong { color: var(--text); font-weight: 600; }
+    .means-callout { margin-top: 22px; padding: 12px 24px; border-radius: 12px; background: var(--wf-blue-dim); border: 1px solid rgba(46,123,196,0.28); color: var(--wf-blue-light); font-weight: 700; font-size: 0.9rem; }
+
+    #s5 .means-icon-wrap { background: var(--wf-green-dim); border-color: rgba(125,194,75,0.4); }
+    #s5 .means-icon-wrap::after { border-color: var(--wf-green); }
+    #s5 .means-title { background: linear-gradient(135deg, var(--white) 0%, var(--wf-green) 100%); -webkit-background-clip: text; background-clip: text; }
+    #s5 .means-callout { background: var(--wf-green-dim); border-color: rgba(125,194,75,0.28); color: var(--wf-green); }
+    #s5 .means-number { color: var(--wf-green); } #s5 .means-question { color: var(--wf-blue-light); }
+
+    #s6 .means-icon-wrap { background: rgba(91,170,216,0.12); border-color: rgba(91,170,216,0.4); }
+    #s6 .means-icon-wrap::after { border-color: var(--wf-blue-light); }
+    #s6 .means-title { background: linear-gradient(135deg, var(--white) 0%, var(--wf-blue-light) 100%); -webkit-background-clip: text; background-clip: text; }
+    #s6 .means-callout { background: rgba(91,170,216,0.12); border-color: rgba(91,170,216,0.28); color: var(--wf-blue-light); }
+    #s6 .means-number { color: var(--wf-blue-light); } #s6 .means-question { color: var(--wf-green); }
+
+    #s7 .means-icon-wrap { background: rgba(234,160,40,0.1); border-color: rgba(234,160,40,0.38); }
+    #s7 .means-icon-wrap::after { border-color: #EAA028; }
+    #s7 .means-title { background: linear-gradient(135deg, var(--white) 0%, #EAA028 100%); -webkit-background-clip: text; background-clip: text; }
+    #s7 .means-callout { background: rgba(234,160,40,0.1); border-color: rgba(234,160,40,0.28); color: #EAA028; }
+    #s7 .means-number { color: #EAA028; } #s7 .means-question { color: var(--wf-blue-light); }
+
+    #s8 .means-icon-wrap { background: rgba(125,194,75,0.12); border-color: rgba(125,194,75,0.4); }
+    #s8 .means-icon-wrap::after { border-color: var(--wf-green); }
+    #s8 .means-title { background: linear-gradient(135deg, var(--white) 0%, var(--wf-green) 100%); -webkit-background-clip: text; background-clip: text; }
+    #s8 .means-callout { background: var(--wf-green-dim); border-color: rgba(125,194,75,0.28); color: var(--wf-green); }
+    #s8 .means-number { color: var(--wf-green); } #s8 .means-question { color: var(--wf-blue-light); }
+
+    /* SLIDE 9 */
+    #s9 { background: radial-gradient(ellipse 80% 60% at 50% 50%, rgba(26,80,150,0.18) 0%, transparent 70%), var(--bg); }
+    .pillars-grid { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; max-width: 820px; margin: 26px 0 18px; }
+    .pillar-chip { display: flex; align-items: center; gap: 8px; padding: 11px 18px; border-radius: 12px; border: 1px solid var(--border); background: var(--card); font-size: 0.88rem; font-weight: 600; color: var(--text); animation: chip-in 0.5s ease both; }
+    .pillar-chip .chip-icon { font-size: 1.05rem; }
+    @keyframes chip-in { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+    .pillar-chip:nth-child(1) { animation-delay: 0.1s; border-color: rgba(46,123,196,0.4); }
+    .pillar-chip:nth-child(2) { animation-delay: 0.2s; border-color: rgba(125,194,75,0.4); }
+    .pillar-chip:nth-child(3) { animation-delay: 0.3s; border-color: rgba(91,170,216,0.4); }
+    .pillar-chip:nth-child(4) { animation-delay: 0.4s; border-color: rgba(234,160,40,0.4); }
+    .pillar-chip:nth-child(5) { animation-delay: 0.5s; border-color: rgba(125,194,75,0.5); }
+    .result-box { padding: 20px 44px; border-radius: 16px; background: linear-gradient(135deg, rgba(26,80,150,0.2), rgba(46,123,196,0.08)); border: 1px solid rgba(46,123,196,0.4); text-align: center; }
+    .result-label { font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--wf-blue-light); margin-bottom: 6px; }
+    .result-title { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: clamp(1.8rem, 4vw, 2.8rem); text-transform: uppercase; background: linear-gradient(135deg, var(--white) 0%, var(--wf-green) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+    /* SLIDE 10 */
+    #s10 { background: radial-gradient(ellipse 60% 80% at 0% 100%, rgba(26,80,150,0.12) 0%, transparent 60%), var(--bg); }
+    .commitment-list { list-style: none; max-width: 660px; width: 100%; margin: 24px 0; display: flex; flex-direction: column; gap: 11px; }
+    .commitment-item { display: flex; align-items: flex-start; gap: 14px; padding: 15px 20px; border-radius: 12px; background: var(--card); border: 1px solid var(--border); font-size: 0.95rem; color: var(--text); font-weight: 500; animation: item-in 0.4s ease both; line-height: 1.4; }
+    .commitment-item:nth-child(1) { animation-delay: 0.1s; }
+    .commitment-item:nth-child(2) { animation-delay: 0.2s; }
+    .commitment-item:nth-child(3) { animation-delay: 0.3s; }
+    .commitment-item:nth-child(4) { animation-delay: 0.4s; }
+    .commitment-item:nth-child(5) { animation-delay: 0.5s; }
+    @keyframes item-in { from { opacity: 0; transform: translateX(-16px); } to { opacity: 1; transform: translateX(0); } }
+    .check-circle { width: 28px; height: 28px; min-width: 28px; border-radius: 50%; background: linear-gradient(135deg, var(--wf-blue-deep), var(--wf-blue-mid)); display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 900; color: var(--white); }
+    .closing-line { margin-top: 6px; font-size: 1rem; font-weight: 700; color: var(--wf-green); text-align: center; font-style: italic; }
+  </style>
+</head>
+<body>
+
+<div id="progress-bar"></div>
+<div id="slide-counter">1 / 10</div>
+<div id="key-hint">← → Arrow keys to navigate</div>
+<button class="nav-btn" id="btn-prev">&#8592;</button>
+<button class="nav-btn" id="btn-next">&#8594;</button>
+
+<template id="logo-tpl">
+  <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <radialGradient id="blueG" cx="55%" cy="60%" r="55%">
+        <stop offset="0%"   stop-color="#5BAAD8"/>
+        <stop offset="60%"  stop-color="#2E7BC4"/>
+        <stop offset="100%" stop-color="#1A5096"/>
+      </radialGradient>
+      <radialGradient id="greenG" cx="30%" cy="30%" r="70%">
+        <stop offset="0%"   stop-color="#A8D96A"/>
+        <stop offset="100%" stop-color="#4D9A1A"/>
+      </radialGradient>
+      <clipPath id="circClip">
+        <circle cx="30" cy="30" r="28"/>
+      </clipPath>
+    </defs>
+    <circle cx="30" cy="30" r="28" fill="url(#blueG)"/>
+    <ellipse cx="18" cy="16" rx="18" ry="13" transform="rotate(-30 18 16)" fill="url(#greenG)" clip-path="url(#circClip)"/>
+    <path d="M 4 26 Q 28 18 56 30 Q 28 38 4 26 Z" fill="white" opacity="0.55" clip-path="url(#circClip)"/>
+    <ellipse cx="22" cy="18" rx="8" ry="4" fill="white" opacity="0.25" clip-path="url(#circClip)"/>
+    <circle cx="30" cy="30" r="28" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+  </svg>
+  <div class="wf-logo-text">
+    <span>Woodfibre</span>
+    <span>LNG</span>
+  </div>
+</template>
+
+<div id="deck">
+
+  <div class="slide active" id="s1">
+    <div class="globe-icon">🌐</div>
+    <div class="slide-label">Woodfibre LNG — Safety Moment</div>
+    <div class="main-title">Safety in<br>Transition</div>
+    <div class="subtitle">From Construction to Operations — Getting There Together</div>
+    <div class="badge-row">
+      <div class="badge">🏗️ Construction</div>
+      <div class="badge">⚙️ Precommissioning</div>
+      <div class="badge">🔥 Commissioning</div>
+      <div class="badge">🌐 Operations</div>
+    </div>
+  </div>
+
+  <div class="slide" id="s2">
+    <div class="slide-label">The Journey</div>
+    <div class="slide-headline" style="font-size:clamp(2rem,4vw,3.2rem); color:var(--wf-blue-light); -webkit-text-fill-color:var(--wf-blue-light);">Where Are We?</div>
+    <div class="divider"></div>
+    <div class="phase-track">
+      <div class="phase-node done"><div class="phase-icon">🏗️</div><div class="phase-label">Construction</div></div>
+      <div class="phase-node current"><div class="phase-icon">⚙️</div><div class="phase-label">Precomm</div><div class="you-are-here">▶ You are here</div></div>
+      <div class="phase-node"><div class="phase-icon">🔥</div><div class="phase-label">Commissioning</div></div>
+      <div class="phase-node"><div class="phase-icon">🌐</div><div class="phase-label">Operations</div></div>
+    </div>
+    <p class="phase-caption">We are crossing a threshold. The hazards on this site change <strong style="color:var(--wf-green)">every single day</strong>. A system that was safe to work on yesterday may be energized, pressurized, or live with gas tomorrow.</p>
+  </div>
+
+  <div class="slide" id="s3">
+    <div class="slide-label">The Official Definition</div>
+    <div class="slide-headline" style="font-size:clamp(1.8rem,3.5vw,2.8rem); color:var(--wf-blue-light); -webkit-text-fill-color:var(--wf-blue-light);">What Is Safety in Transition?</div>
+    <div class="definition-card">
+      <p class="definition-text">"The <em>methodical transition</em> of systems, equipment, and personnel from one phase of facility development to the next — ensuring that <em>hazard controls</em>, <em class="green">competencies</em>, <em class="green">procedures</em>, and <em>accountability structures</em> keep pace with the <em class="green">evolving risk profile</em> of the facility at every stage."</p>
+      <div class="definition-warning">⚠️ &nbsp; The rules of the game are changing. If we don't change with them — people get hurt.</div>
+    </div>
+  </div>
+
+  <div class="slide means-slide" id="s4">
+    <div class="means-number">Pillar 01 of 05</div>
+    <div class="means-icon-wrap">🗣️</div>
+    <div class="means-title">Communication</div>
+    <div class="means-question">"Before that system goes live — does everyone know?"</div>
+    <p class="means-body">In transition, one crew hands systems to another. <strong>Construction to precomm. Precomm to commissioning. Commissioning to operations.</strong> Every handover is a moment where information can fall through the cracks — and in this industry, a gap in communication can cost someone their life.</p>
+    <div class="means-callout">If you're not sure — ask. If the answer isn't clear — stop work.</div>
+  </div>
+
+  <div class="slide means-slide" id="s5">
+    <div class="means-number">Pillar 02 of 05</div>
+    <div class="means-icon-wrap">🤝</div>
+    <div class="means-title">Cooperation</div>
+    <div class="means-question">"Construction, Precomm, Commissioning, Ops — one team."</div>
+    <p class="means-body">Multiple disciplines. Multiple contractors. Multiple crews. All working in the same space, on overlapping scopes, at the same time. Cooperation means we <strong>look out for each other across the boundaries</strong>. If you see something wrong — even in someone else's area — you say something.</p>
+    <div class="means-callout">One team. One site. One outcome.</div>
+  </div>
+
+  <div class="slide means-slide" id="s6">
+    <div class="means-number">Pillar 03 of 05</div>
+    <div class="means-icon-wrap">👁️</div>
+    <div class="means-title">Vigilance</div>
+    <div class="means-question">"The hazard landscape changes every day. So must your awareness."</div>
+    <p class="means-body">Electrical systems are being energized. Pressurized systems are being tested. Hydrocarbons will enter this facility. <strong>New exclusion zones. New energy isolations. New permit requirements.</strong> You cannot walk onto this site and assume yesterday's conditions still apply.</p>
+    <div class="means-callout">Never assume. Always verify.</div>
+  </div>
+
+  <div class="slide means-slide" id="s7">
+    <div class="means-number">Pillar 04 of 05</div>
+    <div class="means-icon-wrap">📋</div>
+    <div class="means-title">Discipline</div>
+    <div class="means-question">"The pressure will be on. The procedure still applies."</div>
+    <p class="means-body">As we move toward first gas, the schedule pressure builds. Milestones are tracked. Every day of delay is visible. The push to move fast will be real. <strong>Your discipline is your armour against that pressure.</strong> Follow the permit process. Complete the hazard assessment. Verify the isolation — every time.</p>
+    <div class="means-callout">Shortcuts in transition are how serious incidents happen.</div>
+  </div>
+
+  <div class="slide means-slide" id="s8">
+    <div class="means-number">Pillar 05 of 05</div>
+    <div class="means-icon-wrap">🏆</div>
+    <div class="means-title">Achievement</div>
+    <div class="means-question">"You helped build one of the most significant energy facilities in Canada."</div>
+    <p class="means-body">Look at this site. Look at what has been built. Every weld, every bolt, every cable pull — that was someone in this room. <strong>You built this.</strong> Getting from construction to first gas safely is one of the hardest things to do in the energy industry. Very few workforces in the world get to say they did it.</p>
+    <div class="means-callout">That achievement is within reach. Let's finish this the right way.</div>
+  </div>
+
+  <div class="slide" id="s9">
+    <div class="slide-label">What It All Adds Up To</div>
+    <div class="slide-headline" style="font-size:clamp(2rem,4vw,3rem); color:var(--white); -webkit-text-fill-color:var(--white);">Safety in Transition Means...</div>
+    <div class="pillars-grid">
+      <div class="pillar-chip"><span class="chip-icon">🗣️</span> Communication</div>
+      <div class="pillar-chip"><span class="chip-icon">🤝</span> Cooperation</div>
+      <div class="pillar-chip"><span class="chip-icon">👁️</span> Vigilance</div>
+      <div class="pillar-chip"><span class="chip-icon">📋</span> Discipline</div>
+      <div class="pillar-chip"><span class="chip-icon">🏆</span> Achievement</div>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px;margin:6px 0 18px;width:100%;max-width:480px;">
+      <div style="flex:1;height:1px;background:var(--border);"></div>
+      <span style="color:var(--muted);font-size:1.3rem;">=</span>
+      <div style="flex:1;height:1px;background:var(--border);"></div>
+    </div>
+    <div class="result-box">
+      <div class="result-label">Equals</div>
+      <div class="result-title">Operational Readiness</div>
+    </div>
+    <p style="margin-top:18px;font-size:1.1rem;font-weight:700;color:var(--white);text-align:center;">"That is what Safety in Transition means."</p>
+  </div>
+
+  <div class="slide" id="s10">
+    <div class="slide-label">Your Commitment Today</div>
+    <div class="slide-headline" style="font-size:clamp(1.8rem,3.5vw,2.5rem); color:var(--white); -webkit-text-fill-color:var(--white);">Before You Go to Work</div>
+    <ul class="commitment-list">
+      <li class="commitment-item"><div class="check-circle">✓</div> Know what systems are live before you start work.</li>
+      <li class="commitment-item"><div class="check-circle">✓</div> Raise the alarm when something doesn't look right — regardless of scope.</li>
+      <li class="commitment-item"><div class="check-circle">✓</div> Follow the permit and isolation process — every time.</li>
+      <li class="commitment-item"><div class="check-circle">✓</div> Ask if you're unsure. Stop work if you're not.</li>
+      <li class="commitment-item"><div class="check-circle">✓</div> Look out for the person beside you.</li>
+    </ul>
+    <div class="closing-line">"We didn't come this far to cut corners now."</div>
+  </div>
+
+</div>
+
+<script>
+  const tpl = document.getElementById('logo-tpl');
+  document.querySelectorAll('.slide').forEach(slide => {
+    ['left','right'].forEach(side => {
+      const wrap = document.createElement('div');
+      wrap.className = `wf-logo ${side}`;
+      wrap.innerHTML = tpl.innerHTML;
+      slide.appendChild(wrap);
+    });
+  });
+
+  const slides = document.querySelectorAll('.slide');
+  const total  = slides.length;
+  let current  = 0;
+  const progressBar = document.getElementById('progress-bar');
+  const counter     = document.getElementById('slide-counter');
+
+  function goTo(idx) {
+    if (idx < 0 || idx >= total) return;
+    slides[current].classList.remove('active');
+    if (idx > current) slides[current].classList.add('exit-left');
+    setTimeout(() => slides.forEach(s => s.classList.remove('exit-left')), 450);
+    current = idx;
+    slides[current].classList.add('active');
+    progressBar.style.width = ((current + 1) / total * 100) + '%';
+    counter.textContent = `${current + 1} / ${total}`;
+  }
+
+  document.getElementById('btn-next').addEventListener('click', () => goTo(current + 1));
+  document.getElementById('btn-prev').addEventListener('click', () => goTo(current - 1));
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight' || e.key === ' ') goTo(current + 1);
+    if (e.key === 'ArrowLeft') goTo(current - 1);
+  });
+
+  progressBar.style.width = (1 / total * 100) + '%';
+</script>
+</body>
+</html>

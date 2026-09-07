@@ -1,0 +1,15 @@
+Prefix,Hazard Category,Description & Examples,Mapped Register
+CRIT,Critical SIMOPS & Commissioning,"Bypasses, first gas introduction, SIMOPS ignition sources.",Transition Register
+LOTO,Lockout / Tagout,"Energy isolation controls, boundary lockboxes, and handovers.",Transition Register
+CSE,Confined Space Entry,"Tank/vessel entry, blind lists, atmospheric testing, and sentry logs.",Transition Register
+WAT,Over-Water Work,"Jetty access, falls over marine environments, and personal flotation.",Transition Register
+UTIL,Purging & Utilities,"Nitrogen asphyxiation, high-voltage switching, and arc flash.",Transition Register
+CHEM,Hazardous Chemicals,"Ammonia leak detection, deluge systems, and chemical handling.",Transition Register
+MAR,Marine Terminal Operations,"Loading arm cryogenic tests, ERS validation, and vessel berthing.",Transition Register
+TS,Pressure Testing,"Hydrotest boundary lines, transducer calibration, and line rupture.",Transition Register
+ENV,Environmental Compliance,"Acoustic limits, vessel speeds, flaring limits, MMO logs.",Transition Register
+OPS,Commissioning & Ops,"Thermal shock cool-down, CUI piping checks, document packages.",Transition Register
+REG,Regulatory Approvals,"BCER permit conditions, Federal/Provincial Leave to Open.",Transition Register
+LIFT,SIMOPS Critical Lifting,"Crane lifts, module rigging, and drop zones.",Transition Register
+VEH,Mobile Equipment,"Traffic management, speed control, pedestrian separation.",Transition Register
+OPS-CRIT,Continuous Process Safety,"BLEVE vapor clouds, RPT, tank rollover, alarm flooding.",Operations Register

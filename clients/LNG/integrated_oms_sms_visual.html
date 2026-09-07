@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integrated OMS/SMS Pillars Interactive Map</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0b0f19;
+            --card-bg: rgba(17, 24, 39, 0.75);
+            --border-color: rgba(255, 255, 255, 0.08);
+            --text-primary: #f3f4f6;
+            --text-secondary: #9ca3af;
+            --accent-cyan: #06b6d4;
+            --accent-indigo: #6366f1;
+            --accent-purple: #a855f7;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            min-height: 100vh;
+            padding: 3rem 2rem;
+            background-image: radial-gradient(circle at top center, rgba(99, 102, 241, 0.08), transparent 50%),
+                              radial-gradient(circle at bottom center, rgba(6, 182, 212, 0.05), transparent 50%);
+            background-attachment: fixed;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: -0.05em;
+            background: linear-gradient(135deg, #f3f4f6, #a855f7, #06b6d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.75rem;
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Interactive Grid Layout */
+        .dashboard-layout {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 2.5rem;
+            align-items: start;
+        }
+
+        .pillars-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .pillar-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 1.5rem;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .pillar-card::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 4px;
+            background: transparent;
+            transition: all 0.3s ease;
+        }
+
+        .pillar-card:hover {
+            transform: translateX(8px);
+            border-color: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .pillar-card.active {
+            background: rgba(31, 41, 55, 0.6);
+            border-color: var(--accent-indigo);
+            box-shadow: 0 0 20px rgba(99, 102, 241, 0.15);
+        }
+
+        .pillar-card.active::before {
+            background: linear-gradient(to bottom, var(--accent-indigo), var(--accent-cyan));
+        }
+
+        .pillar-num {
+            font-size: 2.25rem;
+            font-weight: 800;
+            color: rgba(255, 255, 255, 0.05);
+            line-height: 1;
+            transition: all 0.3s ease;
+        }
+
+        .pillar-card.active .pillar-num {
+            color: var(--accent-cyan);
+            opacity: 0.3;
+        }
+
+        .pillar-info {
+            flex: 1;
+        }
+
+        .pillar-title {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            color: var(--text-primary);
+        }
+
+        .pillar-desc {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.4;
+        }
+
+        /* Detail Panel */
+        .detail-panel {
+            background: rgba(17, 24, 39, 0.85);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+            min-height: 550px;
+            position: sticky;
+            top: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.3s ease;
+        }
+
+        .detail-header {
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1.5rem;
+        }
+
+        .detail-badge {
+            display: inline-block;
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 0.35rem 0.75rem;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .detail-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .detail-section {
+            margin-bottom: 2rem;
+        }
+
+        .section-label {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--accent-cyan);
+            margin-bottom: 0.75rem;
+        }
+
+        .integration-box {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.25rem;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: var(--text-secondary);
+        }
+
+        .integration-box strong {
+            color: var(--text-primary);
+        }
+
+        .standards-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .standard-tag {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border-color);
+            padding: 0.4rem 0.8rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .controls-list {
+            list-style-type: none;
+        }
+
+        .control-item {
+            position: relative;
+            padding-left: 1.75rem;
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: var(--text-secondary);
+        }
+
+        .control-item::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            top: 0.1rem;
+            color: var(--accent-cyan);
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .print-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, var(--accent-indigo), var(--accent-cyan));
+            color: #ffffff;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 12px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            margin-top: 1.5rem;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+        }
+
+        .print-btn svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .print-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(6, 182, 212, 0.4);
+            filter: brightness(1.1);
+        }
+
+        .print-btn:active {
+            transform: translateY(0);
+        }
+
+        .print-section {
+            display: none;
+        }
+
+        @media (max-width: 1024px) {
+            .dashboard-layout {
+                grid-template-columns: 1fr;
+            }
+            .detail-panel {
+                position: relative;
+                top: 0;
+                min-height: auto;
+            }
+        }
+
+        @media print {
+            body {
+                background: white !important;
+                color: #111827 !important;
+                padding: 0 !important;
+                margin: 15mm 15mm 15mm 15mm !important;
+                background-image: none !important;
+            }
+            
+            header {
+                margin-bottom: 2rem !important;
+                text-align: left !important;
+            }
+
+            h1 {
+                background: none !important;
+                -webkit-text-fill-color: initial !important;
+                color: #111827 !important;
+                font-size: 2.25rem !important;
+                border-bottom: 2px solid #e5e7eb !important;
+                padding-bottom: 0.5rem !important;
+                margin-bottom: 0.5rem !important;
+            }
+            
+            .subtitle {
+                color: #4b5563 !important;
+                font-size: 1rem !important;
+                max-width: 100% !important;
+                margin: 0 !important;
+            }
+
+            .dashboard-layout, .print-btn {
+                display: none !important;
+            }
+
+            .print-section {
+                display: block !important;
+            }
+
+            .print-pillar {
+                margin-bottom: 2rem;
+                page-break-inside: avoid;
+                break-inside: avoid;
+                border-bottom: 1px solid #e5e7eb;
+                padding-bottom: 1.5rem;
+            }
+            
+            .print-pillar:last-child {
+                border-bottom: none;
+            }
+
+            .print-pillar-header {
+                display: flex;
+                align-items: baseline;
+                gap: 0.75rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .print-pillar-num {
+                font-size: 1.25rem;
+                font-weight: 800;
+                color: #4f46e5;
+            }
+
+            .print-pillar-title {
+                font-size: 1.35rem;
+                font-weight: 700;
+                color: #111827;
+            }
+
+            .print-pillar-desc {
+                font-style: italic;
+                color: #4b5563;
+                margin-bottom: 1rem;
+                font-size: 0.95rem;
+                line-height: 1.4;
+            }
+
+            .print-sub-section {
+                margin-bottom: 1rem;
+            }
+
+            .print-sub-label {
+                font-size: 0.8rem;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+                color: #0891b2;
+                margin-bottom: 0.25rem;
+            }
+
+            .print-integration {
+                font-size: 0.95rem;
+                line-height: 1.5;
+                color: #374151;
+            }
+            
+            .print-integration strong {
+                color: #111827;
+            }
+
+            .print-standards {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+                margin-top: 0.25rem;
+            }
+
+            .print-standard-tag {
+                border: 1px solid #cbd5e1;
+                padding: 0.2rem 0.5rem;
+                border-radius: 4px;
+                font-size: 0.8rem;
+                font-weight: 500;
+                color: #374151;
+                background: #f8fafc;
+            }
+
+            .print-controls {
+                list-style-type: none;
+                padding-left: 0;
+            }
+
+            .print-control-item {
+                position: relative;
+                padding-left: 1.25rem;
+                margin-bottom: 0.4rem;
+                font-size: 0.95rem;
+                line-height: 1.4;
+                color: #374151;
+            }
+
+            .print-control-item::before {
+                content: '✓';
+                position: absolute;
+                left: 0;
+                top: 0;
+                color: #0891b2;
+                font-weight: 700;
+            }
+            
+            .print-control-item strong {
+                color: #111827;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Integrated Operational & Safety Management System</h1>
+            <div class="subtitle">The 7 Pillars of safety and process controls embedded directly into LNG terminal operations.</div>
+            <button class="print-btn" onclick="window.print()">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
+                </svg>
+                <span>Print Report</span>
+            </button>
+        </header>
+
+        <div class="dashboard-layout">
+            <!-- Left Side: Interactive Cards -->
+            <div class="pillars-list" id="pillars-container">
+                <!-- Pillar 1 -->
+                <div class="pillar-card active" data-pillar="1">
+                    <div class="pillar-num">01</div>
+                    <div class="pillar-info">
+                        <div class="pillar-title">Leadership & Governance</div>
+                        <div class="pillar-desc">Operational accountability, executive safety commitment, and regulatory oversight structures.</div>
+                    </div>
+                </div>
+
+                <!-- Pillar 2 -->
+                <div class="pillar-card" data-pillar="2">
+                    <div class="pillar-num">02</div>
+                    <div class="pillar-info">
+                        <div class="pillar-title">Risk Assessment (HIRA & PHA)</div>
+                        <div class="pillar-desc">Methodologies for analyzing process safety, identifying occupational hazards, and mapping envelopes.</div>
+                    </div>
+                </div>
+
+                <!-- Pillar 3 -->
+                <div class="pillar-card" data-pillar="3">
+                    <div class="pillar-num">03</div>
+                    <div class="pillar-info">
+                        <div class="pillar-title">Safe Systems of Work (Work Control)</div>
+                        <div class="pillar-desc">Permit to Work systems, Lock-Out/Tag-Out boundaries, and marine zone safety controls.</div>
+                    </div>
+                </div>
+
+                <!-- Pillar 4 -->
+                <div class="pillar-card" data-pillar="4">
+                    <div class="pillar-num">04</div>
+                    <div class="pillar-info">
+                        <div class="pillar-title">Asset Integrity (SCE & CUI)</div>
+                        <div class="pillar-desc">Maintenance cycles prioritizing Safety-Critical Elements and managing cryogenic corrosion.</div>
+                    </div>
+                </div>
+
+                <!-- Pillar 5 -->
+                <div class="pillar-card" data-pillar="5">
+                    <div class="pillar-num">05</div>
+                    <div class="pillar-info">
+                        <div class="pillar-title">Management of Change (MOC)</div>
+                        <div class="pillar-desc">Safety reviews before any physical, operational, process system, or organization changes.</div>
+                    </div>
+                </div>
+
+                <!-- Pillar 6 -->
+                <div class="pillar-card" data-pillar="6">
+                    <div class="pillar-num">06</div>
+                    <div class="pillar-info">
+                        <div class="pillar-title">Operator Competency & Training</div>
+                        <div class="pillar-desc">Control room simulator training, fatigue logging, and contractor safety vetting.</div>
+                    </div>
+                </div>
+
+                <!-- Pillar 7 -->
+                <div class="pillar-card" data-pillar="7">
+                    <div class="pillar-num">07</div>
+                    <div class="pillar-info">
+                        <div class="pillar-title">Incident Investigation & Learning</div>
+                        <div class="pillar-desc">Structured root cause analysis, action item tracking, and safety sharing protocols.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side: Detail Panel -->
+            <div class="detail-panel" id="detail-panel">
+                <div>
+                    <div class="detail-header">
+                        <div class="detail-badge" id="panel-pillar-num">PILLAR 1</div>
+                        <div class="detail-title" id="panel-title">Leadership, Governance & Accountability</div>
+                    </div>
+
+                    <div class="detail-section">
+                        <div class="section-label">OMS Integration Touchpoint</div>
+                        <div class="integration-box" id="panel-integration">
+                            How the SMS relates to the OMS...
+                        </div>
+                    </div>
+
+                    <div class="detail-section">
+                        <div class="section-label">Governing Regulations & Standards</div>
+                        <div class="standards-tags" id="panel-standards">
+                            <span class="standard-tag">CSA Z1000</span>
+                        </div>
+                    </div>
+
+                    <div class="detail-section">
+                        <div class="section-label">Critical Operational Controls</div>
+                        <ul class="controls-list" id="panel-controls">
+                            <li class="control-item">Control item details go here...</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const pillarData = {
+            1: {
+                num: "PILLAR 1",
+                title: "Leadership, Governance & Accountability",
+                integration: "Capital allocation, operational KPI setting, and organizational design must reflect safety commitments. **Safety performance is evaluated alongside production metrics** in executive leadership reviews.",
+                standards: ["WCA s. 21", "CSA Z1000 Clause 4", "BCER s. 23"],
+                controls: [
+                    "**Safety Leadership Charter:** Written commitment from the Executive team establishing authority to shut down operations if safe conditions fail.",
+                    "**Safety Critical Roles Matrix:** Clear definition of operational personnel with legal responsibility under the Workers Compensation Act.",
+                    "**Active Field Presence Program:** Mandatory safety leadership walkdowns by superintendents and directors."
+                ]
+            },
+            2: {
+                num: "PILLAR 2",
+                title: "Risk Assessment (HIRA & PHA)",
+                integration: "Risk assessments must directly dictate standard operating procedures (SOPs) and maintenance scheduling. Operational limits must align with design pressure and temperature envelopes.",
+                standards: ["WorkSafeBC OHS Reg 3.14", "CSA Z1002 (HIRA)", "CSA Z276 Clause 10", "NFPA 59A"],
+                controls: [
+                    "**Process Hazard Analysis (PHA):** Mandatory HAZOP and LOPA reviews completed and signed off before gassing up.",
+                    "**Field-Level Hazard Assessment (FLHA):** Daily pre-task assessments completed by field teams before work.",
+                    "**Safe Operating Limits (SOL) Registry:** Clear boundaries for process parameters (temperature, pressure, flow) with automated trips."
+                ]
+            },
+            3: {
+                num: "PILLAR 3",
+                title: "Safe Systems of Work (Work Control)",
+                integration: "The **Permit to Work (PTW)** system is the daily operational gatekeeper. Maintenance is prohibited from execution without permit authorization aligning isolation boundaries.",
+                standards: ["WorkSafeBC Part 9 (Confined Space)", "WorkSafeBC Part 10 (LOTO)", "WorkSafeBC Part 23 (Oil & Gas)", "NB Reg 91-191"],
+                controls: [
+                    "**Integrated Permit to Work (PTW):** Coordinated system tracking hot work, confined space, and ground disturbance.",
+                    "**Operational Lock-Out/Tag-Out (LOTO):** Double block & bleed or blinding isolation policies for live hydrocarbons, verified by zero-energy tests.",
+                    "**Marine Exclusion Zones:** Automatic visual and radar exclusion zones around LNG berths and carriers."
+                ]
+            },
+            4: {
+                num: "PILLAR 4",
+                title: "Asset Integrity (SCE & CUI)",
+                integration: "Preventive maintenance scheduling must prioritize **Safety-Critical Elements (SCEs)** over production equipment. Asset maintenance history directly informs the operational risk profile.",
+                standards: ["BCER LNG Reg s. 4", "CSA Z276 Clause 11.5", "API 570 (Piping Inspection)"],
+                controls: [
+                    "**Safety-Critical Elements (SCE) Registry:** Tagging and tracking of ESD valves, gas detectors, fire pumps, and relief valves.",
+                    "**SCE Maintenance Compliance:** Zero-tolerance backlog limits for preventive maintenance on safety-critical items.",
+                    "**CUI Management Program:** Continuous non-destructive testing (pulsed eddy current, radiography) on cryogenic lines."
+                ]
+            },
+            5: {
+                num: "PILLAR 5",
+                title: "Management of Change (MOC)",
+                integration: "Any modification to physical equipment, chemical compositions, software setpoints, or operations staff structures requires safety sign-off before implementation.",
+                standards: ["CSA Z276 Clause 11.1", "CCPS Guidelines for MOC"],
+                controls: [
+                    "**MOC Registry & Workflow:** Mandatory review process requiring process safety, operations, and EHS sign-offs before physical changes.",
+                    "**Temporary MOC (T-MOC) Registry:** Strict time limits and validation loops for bypasses or manual control overrides.",
+                    "**Pre-Start Safety Review (PSSR):** Standardized process verifying design matches construction, testing is complete, and training is done before start-up."
+                ]
+            },
+            6: {
+                num: "PILLAR 6",
+                title: "Operator Competency & Training",
+                integration: "Competency assessments govern who is authorized to operate the DCS (Distributed Control System) or perform safety-sensitive field activities, preventing human-factor failures.",
+                standards: ["WorkSafeBC s. 23.3", "CSA Z276 Clause 11.2"],
+                controls: [
+                    "**Control Room Operator (CRO) Competency Matrix:** Mandatory simulator training (OTS) focusing on startups and emergencies.",
+                    "**Fatigue Management Policy:** Automatic shift log tracking to prevent fatigue-related operational errors.",
+                    "**Contractor EHS Prequalification:** Third-party screening (e.g. ISNetworld) matching contractor training to facility standards."
+                ]
+            },
+            7: {
+                num: "PILLAR 7",
+                title: "Incident Investigation & Learning",
+                integration: "Operational reviews must analyze safety near-miss trends alongside production downtime to identify systemic failures before they cause loss of containment.",
+                standards: ["WCA s. 68-73", "WorkSafeBC OHS Reg 3.4"],
+                controls: [
+                    "**Root Cause Analysis (RCA):** TapRooT® or ICAM methodology mandated for all high-potential near-misses.",
+                    "**Corrective Action Tracking (CATS):** Automated tool tracking corrective actions with escalation path for delayed items.",
+                    "**Toolbox Talk Programs:** Disseminating EHS alerts and lessons learned from industry-wide incidents to field shifts."
+                ]
+            }
+        };
+
+        const cards = document.querySelectorAll('.pillar-card');
+        
+        function updatePanel(pillarId) {
+            const data = pillarData[pillarId];
+            if (!data) return;
+
+            document.getElementById('panel-pillar-num').innerText = data.num;
+            document.getElementById('panel-title').innerText = data.title;
+            
+            // Format markdown-like bolding for description
+            let formattedIntegration = data.integration.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+            document.getElementById('panel-integration').innerHTML = formattedIntegration;
+
+            // Update standards tags
+            const standardsContainer = document.getElementById('panel-standards');
+            standardsContainer.innerHTML = '';
+            data.standards.forEach(std => {
+                const tag = document.createElement('span');
+                tag.className = 'standard-tag';
+                tag.innerText = std;
+                standardsContainer.appendChild(tag);
+            });
+
+            // Update controls list
+            const controlsContainer = document.getElementById('panel-controls');
+            controlsContainer.innerHTML = '';
+            data.controls.forEach(ctrl => {
+                const li = document.createElement('li');
+                li.className = 'control-item';
+                li.innerHTML = ctrl.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+                controlsContainer.appendChild(li);
+            });
+        }
+
+        cards.forEach(card => {
+            card.addEventListener('click', () => {
+                cards.forEach(c => c.classList.remove('active'));
+                card.classList.add('active');
+                
+                const pillarId = card.getAttribute('data-pillar');
+                
+                // Fade out panel momentarily for clean transition
+                const panel = document.getElementById('detail-panel');
+                panel.style.opacity = 0;
+                panel.style.transform = 'translateY(10px)';
+                
+                setTimeout(() => {
+                    updatePanel(pillarId);
+                    panel.style.opacity = 1;
+                    panel.style.transform = 'translateY(0)';
+                }, 200);
+            });
+        });
+
+        // Initialize panel with Pillar 1 data
+        updatePanel(1);
+
+        // Generate print-only content immediately
+        (function generatePrintContent() {
+            const printSection = document.createElement('div');
+            printSection.className = 'print-section';
+
+            for (let i = 1; i <= 7; i++) {
+                const data = pillarData[i];
+                if (!data) continue;
+
+                const pillarDiv = document.createElement('div');
+                pillarDiv.className = 'print-pillar';
+
+                // Header (Num + Title)
+                const headerDiv = document.createElement('div');
+                headerDiv.className = 'print-pillar-header';
+                
+                const numSpan = document.createElement('span');
+                numSpan.className = 'print-pillar-num';
+                numSpan.innerText = `0${i}`;
+                
+                const titleSpan = document.createElement('span');
+                titleSpan.className = 'print-pillar-title';
+                titleSpan.innerText = data.title;
+                
+                headerDiv.appendChild(numSpan);
+                headerDiv.appendChild(titleSpan);
+                pillarDiv.appendChild(headerDiv);
+
+                // Description
+                const cardDesc = document.querySelector(`.pillar-card[data-pillar="${i}"] .pillar-desc`);
+                if (cardDesc) {
+                    const descDiv = document.createElement('div');
+                    descDiv.className = 'print-pillar-desc';
+                    descDiv.innerText = cardDesc.innerText;
+                    pillarDiv.appendChild(descDiv);
+                }
+
+                // Integration Section
+                const integrationSec = document.createElement('div');
+                integrationSec.className = 'print-sub-section';
+                
+                const integrationLabel = document.createElement('div');
+                integrationLabel.className = 'print-sub-label';
+                integrationLabel.innerText = "OMS Integration Touchpoint";
+                
+                const integrationVal = document.createElement('div');
+                integrationVal.className = 'print-integration';
+                integrationVal.innerHTML = data.integration.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+                
+                integrationSec.appendChild(integrationLabel);
+                integrationSec.appendChild(integrationVal);
+                pillarDiv.appendChild(integrationSec);
+
+                // Standards Section
+                const standardsSec = document.createElement('div');
+                standardsSec.className = 'print-sub-section';
+                
+                const standardsLabel = document.createElement('div');
+                standardsLabel.className = 'print-sub-label';
+                standardsLabel.innerText = "Governing Regulations & Standards";
+                
+                const standardsVal = document.createElement('div');
+                standardsVal.className = 'print-standards';
+                
+                data.standards.forEach(std => {
+                    const tag = document.createElement('span');
+                    tag.className = 'print-standard-tag';
+                    tag.innerText = std;
+                    standardsVal.appendChild(tag);
+                });
+                
+                standardsSec.appendChild(standardsLabel);
+                standardsSec.appendChild(standardsVal);
+                pillarDiv.appendChild(standardsSec);
+
+                // Controls Section
+                const controlsSec = document.createElement('div');
+                controlsSec.className = 'print-sub-section';
+                
+                const controlsLabel = document.createElement('div');
+                controlsLabel.className = 'print-sub-label';
+                controlsLabel.innerText = "Critical Operational Controls";
+                
+                const controlsVal = document.createElement('ul');
+                controlsVal.className = 'print-controls';
+                
+                data.controls.forEach(ctrl => {
+                    const li = document.createElement('li');
+                    li.className = 'print-control-item';
+                    li.innerHTML = ctrl.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+                    controlsVal.appendChild(li);
+                });
+                
+                controlsSec.appendChild(controlsLabel);
+                controlsSec.appendChild(controlsVal);
+                pillarDiv.appendChild(controlsSec);
+
+                printSection.appendChild(pillarDiv);
+            }
+
+            document.body.appendChild(printSection);
+        })();
+    </script>
+</body>
+</html>

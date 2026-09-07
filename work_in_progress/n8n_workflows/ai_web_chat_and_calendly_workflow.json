@@ -1,0 +1,242 @@
+{
+  "name": "FlowstateAI Web Chat, AI Response, Sheets Logger & Calendly Pipeline",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "flowstate-lead",
+        "responseMode": "responseNode",
+        "options": {
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "Access-Control-Allow-Origin",
+                "value": "*"
+              }
+            ]
+          }
+        }
+      },
+      "name": "Webhook Receiver",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1.1,
+      "position": [250, 300]
+    },
+    {
+      "parameters": {
+        "dataType": "string",
+        "value1": "={{ $json.body.event_type }}",
+        "rules": {
+          "rules": [
+            {
+              "value2": "calendly_booking_completed",
+              "output": 0
+            },
+            {
+              "value2": "live_chat_message",
+              "output": 1
+            }
+          ]
+        }
+      },
+      "name": "Route Event Type",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 1,
+      "position": [480, 300]
+    },
+
+    {
+      "parameters": {
+        "model": "gpt-4o-mini",
+        "messages": {
+          "values": [
+            {
+              "role": "system",
+              "content": "You are the AI assistant for FlowstateAI Automation — a done-for-you automation agency run by Joe Moulton. Your job is to have a warm, professional, consultative conversation with website visitors to understand their business, their pain points, and guide them toward booking a free 30-minute build session with Joe.\n\nRULES:\n1. NEVER give Joe's personal phone number or suggest the visitor call him directly. Always steer toward the Calendly booking.\n2. Be conversational, not robotic. Ask one question at a time. Dig deeper into their specific situation.\n3. Mirror the visitor's language and industry. If they say 'missed maintenance appointments', talk about appointment reminders — not missed phone calls.\n4. Only present the booking CTA after you understand their situation (minimum 2-3 exchanges).\n5. When you do present the CTA, describe it as: 'a free 30-minute build session where Joe builds a working automation for your business live on the call — yours to keep whether you hire us or not.'\n6. Keep responses concise (2-4 sentences max per turn).\n7. If the visitor mentions they are already a customer or have a support question, let them know Joe will follow up directly via email.\n8. Exude quiet confidence. You know automation saves businesses money and time. You don't need to oversell.\n9. Format your response as plain text with <br> tags for line breaks. Do NOT use markdown.\n10. If the visitor asks about pricing: the build session is free. Full automation packages are flat-rate with zero lock-in contracts. Specific pricing is discussed on the call."
+            },
+            {
+              "role": "user",
+              "content": "=Here is the full conversation so far:\n{{ JSON.stringify($json.body.conversation_history) }}\n\nThe visitor's latest message is:\n{{ $json.body.user_message }}"
+            }
+          ]
+        },
+        "options": {
+          "temperature": 0.7,
+          "maxTokens": 300
+        }
+      },
+      "name": "AI Chat Response (OpenAI)",
+      "type": "n8n-nodes-base.openAi",
+      "typeVersion": 1,
+      "position": [720, 450],
+      "notes": "Uses OpenAI GPT-4o-mini for dynamic conversational responses. Replace with your preferred model. Requires OpenAI API credentials configured in n8n."
+    },
+
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={\n  \"status\": \"success\",\n  \"reply\": \"{{ $json.choices[0].message.content.replace(/\"/g, '\\\\\"').replace(/\\n/g, '<br>') }}\"\n}",
+        "options": {}
+      },
+      "name": "Respond to Webhook (AI Reply)",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [1150, 350]
+    },
+
+    {
+      "parameters": {
+        "fromEmail": "notifications@flowstateaiautomation.ai",
+        "toEmail": "joe@flowstateaiautomation.ai",
+        "subject": "=💬 NEW WEBSITE CHAT: Lead Inquiry",
+        "html": "=<h2>💬 New Live Website Chat Message</h2><p><strong>Latest Message:</strong> {{ $json.body.user_message }}</p><p><strong>AI Response:</strong> {{ $node['AI Chat Response (OpenAI)'].json.choices[0].message.content }}</p><p><strong>Page URL:</strong> {{ $json.body.page_url }}</p><p><strong>Timestamp:</strong> {{ $json.body.timestamp }}</p><h3>Full Conversation History:</h3><pre>{{ JSON.stringify($json.body.conversation_history, null, 2) }}</pre>"
+      },
+      "name": "Email Alert to Joe (Chat)",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2,
+      "position": [960, 550]
+    },
+
+    {
+      "parameters": {
+        "fromEmail": "notifications@flowstateaiautomation.ai",
+        "toEmail": "joe@flowstateaiautomation.ai",
+        "subject": "=🚨 NEW CALENDLY BOOKING: {{ $json.body.invitee_name }}",
+        "html": "=<h2>🎉 New Calendly Appointment Scheduled!</h2><p><strong>Name:</strong> {{ $json.body.invitee_name }}</p><p><strong>Email:</strong> {{ $json.body.invitee_email }}</p><p><strong>Event:</strong> {{ $json.body.event_type_name }}</p><p><strong>Start Time:</strong> {{ $json.body.start_time }}</p><p><strong>Timestamp:</strong> {{ $json.body.timestamp }}</p><h3>Chat History Before Booking:</h3><pre>{{ JSON.stringify($json.body.conversation_history, null, 2) }}</pre>"
+      },
+      "name": "Email Alert to Joe (Booking)",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2,
+      "position": [720, 150]
+    },
+
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "YOUR_GOOGLE_SHEET_ID_HERE"
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "name",
+          "value": "Leads"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Timestamp": "={{ $json.body.timestamp }}",
+            "Event Type": "={{ $json.body.event_type }}",
+            "Visitor Message": "={{ $json.body.user_message || '' }}",
+            "AI Response": "={{ $node['AI Chat Response (OpenAI)'].json.choices[0].message.content || '' }}",
+            "Page URL": "={{ $json.body.page_url || '' }}",
+            "Invitee Name": "={{ $json.body.invitee_name || '' }}",
+            "Invitee Email": "={{ $json.body.invitee_email || '' }}",
+            "Booking Time": "={{ $json.body.start_time || '' }}",
+            "Conversation History": "={{ JSON.stringify($json.body.conversation_history || []) }}"
+          }
+        },
+        "options": {}
+      },
+      "name": "Log Lead to Google Sheets",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.1,
+      "position": [960, 700],
+      "notes": "Logs every chat message and Calendly booking to Google Sheets. Create a Google Sheet with columns: Timestamp, Event Type, Visitor Message, AI Response, Page URL, Invitee Name, Invitee Email, Booking Time, Conversation History. Replace YOUR_GOOGLE_SHEET_ID_HERE with the actual Sheet ID."
+    },
+
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "YOUR_GOOGLE_SHEET_ID_HERE"
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "name",
+          "value": "Leads"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Timestamp": "={{ $json.body.timestamp }}",
+            "Event Type": "=calendly_booking_completed",
+            "Visitor Message": "",
+            "AI Response": "",
+            "Page URL": "",
+            "Invitee Name": "={{ $json.body.invitee_name || '' }}",
+            "Invitee Email": "={{ $json.body.invitee_email || '' }}",
+            "Booking Time": "={{ $json.body.start_time || '' }}",
+            "Conversation History": "={{ JSON.stringify($json.body.conversation_history || []) }}"
+          }
+        },
+        "options": {}
+      },
+      "name": "Log Booking to Google Sheets",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.1,
+      "position": [960, 50],
+      "notes": "Logs Calendly bookings to same Google Sheet. Uses same Sheet ID as the chat logger."
+    }
+  ],
+  "connections": {
+    "Webhook Receiver": {
+      "main": [
+        [
+          {
+            "node": "Route Event Type",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Route Event Type": {
+      "main": [
+        [
+          {
+            "node": "Email Alert to Joe (Booking)",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Log Booking to Google Sheets",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "AI Chat Response (OpenAI)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Chat Response (OpenAI)": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook (AI Reply)",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Email Alert to Joe (Chat)",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Log Lead to Google Sheets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  }
+}

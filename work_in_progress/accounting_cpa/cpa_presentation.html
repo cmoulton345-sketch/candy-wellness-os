@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Automation for Accounting Firms | FlowstateAI</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; background: #0a0a1a; color: #fff; overflow: hidden; }
+  .slide { display: none; width: 100vw; height: 100vh; padding: 60px 80px; position: relative; overflow: hidden; flex-direction: column; justify-content: center; }
+  .slide.active { display: flex; }
+  .slide-hero { background: linear-gradient(135deg, #0a0f1e 0%, #0d1530 50%, #0a0f1e 100%); }
+  .slide-dark { background: linear-gradient(135deg, #0d0d1f 0%, #111827 100%); }
+  .slide-navy { background: linear-gradient(135deg, #0a0f1e 0%, #1a2744 100%); }
+  .slide-deep { background: linear-gradient(135deg, #050810 0%, #0e1628 100%); }
+  .slide-gray { background: linear-gradient(135deg, #111827 0%, #1f2937 100%); }
+  .slide::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(212,175,55,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(212,175,55,0.04) 1px, transparent 1px); background-size: 50px 50px; pointer-events: none; }
+  .badge { display: inline-block; background: rgba(212,175,55,0.15); border: 1px solid rgba(212,175,55,0.35); color: #fde68a; padding: 6px 16px; border-radius: 20px; font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 24px; }
+  .badge-blue { background: rgba(59,130,246,0.15); border-color: rgba(59,130,246,0.35); color: #93c5fd; }
+  .badge-red { background: rgba(239,68,68,0.15); border-color: rgba(239,68,68,0.35); color: #fca5a5; }
+  .badge-green { background: rgba(34,197,94,0.15); border-color: rgba(34,197,94,0.35); color: #86efac; }
+  h1 { font-size: 64px; font-weight: 900; line-height: 1.1; letter-spacing: -2px; }
+  h2 { font-size: 44px; font-weight: 800; line-height: 1.2; letter-spacing: -1px; margin-bottom: 16px; }
+  p { font-size: 18px; line-height: 1.7; color: #94a3b8; }
+  .lead { font-size: 22px; color: #cbd5e1; line-height: 1.6; max-width: 800px; }
+  .gradient-text { background: linear-gradient(135deg, #fbbf24, #d97706); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+  .gradient-text-cool { background: linear-gradient(135deg, #93c5fd, #6366f1); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+  .text-gold { color: #fbbf24; }
+  .text-blue { color: #60a5fa; }
+  .text-red { color: #f87171; }
+  .text-green { color: #4ade80; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; margin-top: 40px; }
+  .grid-4 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 20px; margin-top: 40px; }
+  .card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 28px; }
+  .card-gold { border-color: rgba(212,175,55,0.3); background: rgba(212,175,55,0.05); }
+  .card-blue { border-color: rgba(59,130,246,0.3); background: rgba(59,130,246,0.05); }
+  .card-red { border-color: rgba(239,68,68,0.3); background: rgba(239,68,68,0.05); }
+  .card-green { border-color: rgba(34,197,94,0.3); background: rgba(34,197,94,0.05); }
+  .card-slate { border-color: rgba(148,163,184,0.2); background: rgba(148,163,184,0.04); }
+  .card .icon { font-size: 36px; margin-bottom: 16px; display: block; }
+  .card h3 { font-size: 18px; font-weight: 700; color: #f1f5f9; margin-bottom: 8px; }
+  .card p { font-size: 14px; color: #94a3b8; }
+  .divider { width: 60px; height: 4px; background: linear-gradient(90deg, #d4af37, #b45309); border-radius: 2px; margin: 20px 0; }
+  .logo-bar { position: absolute; bottom: 40px; left: 80px; display: flex; align-items: center; gap: 12px; }
+  .logo-mark { width: 32px; height: 32px; background: linear-gradient(135deg, #d4af37, #b8860b); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 14px; color: #0a0f1e; }
+  .logo-text { font-size: 14px; font-weight: 700; color: #64748b; }
+  .slide-num { position: absolute; bottom: 40px; right: 80px; font-size: 12px; color: #334155; font-weight: 600; }
+  .highlight-box { background: rgba(212,175,55,0.08); border: 1px solid rgba(212,175,55,0.2); border-left: 4px solid #d4af37; border-radius: 0 12px 12px 0; padding: 24px 28px; margin: 24px 0; }
+  .highlight-box-blue { background: rgba(59,130,246,0.08); border: 1px solid rgba(59,130,246,0.2); border-left: 4px solid #3b82f6; border-radius: 0 12px 12px 0; padding: 24px 28px; margin: 24px 0; }
+  ul.check-list { list-style: none; margin-top: 20px; }
+  ul.check-list li { padding: 10px 0; color: #cbd5e1; font-size: 17px; display: flex; align-items: flex-start; gap: 12px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+  ul.check-list li:last-child { border-bottom: none; }
+  ul.check-list li::before { content: '✓'; color: #fbbf24; font-weight: 900; flex-shrink: 0; margin-top: 2px; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+  .numbered-list { list-style: none; margin-top: 20px; }
+  .numbered-list li { display: flex; gap: 20px; align-items: flex-start; padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+  .numbered-list li .num { background: linear-gradient(135deg, #d4af37, #b45309); width: 36px; height: 36px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 14px; color: #0a0f1e; flex-shrink: 0; }
+  .numbered-list li .content h4 { font-size: 16px; color: #f1f5f9; margin-bottom: 4px; }
+  .numbered-list li .content p { font-size: 14px; color: #64748b; }
+  .stat-big { font-size: 72px; font-weight: 900; line-height: 1; }
+  .stat-label { font-size: 14px; color: #64748b; margin-top: 8px; text-transform: uppercase; letter-spacing: 1px; }
+  .nav-btn { position: fixed; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #fff; width: 48px; height: 48px; border-radius: 50%; font-size: 20px; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 100; transition: all 0.2s; }
+  .nav-btn:hover { background: rgba(212,175,55,0.2); border-color: rgba(212,175,55,0.5); }
+  #prev { left: 20px; } #next { right: 20px; }
+  .progress-bar { position: fixed; bottom: 0; left: 0; height: 3px; background: linear-gradient(90deg, #d4af37, #b45309); transition: width 0.3s ease; z-index: 100; }
+</style>
+</head>
+<body>
+
+<!-- SLIDE 1 -->
+<div class="slide slide-hero active" id="slide-1">
+  <div>
+    <div class="badge">FlowstateAI Automation</div>
+    <h1>The AI Advantage<br><span class="gradient-text">for Accounting Firms</span></h1>
+    <div class="divider"></div>
+    <p class="lead" style="margin-top:20px;">What the leading practices are doing right now — and what it means for yours.</p>
+  </div>
+  <div class="logo-bar"><div class="logo-mark">F</div><span class="logo-text">flowstateaiautomation.ai</span></div>
+  <div class="slide-num">1 / 9</div>
+</div>
+
+<!-- SLIDE 2 -->
+<div class="slide slide-dark" id="slide-2">
+  <div>
+    <div class="badge badge-blue">The Landscape is Shifting</div>
+    <h2>The most successful accounting firms aren't<br>just great at numbers.<br><span class="gradient-text">They're great at running a client-focused business.</span></h2>
+    <div class="divider"></div>
+    <p class="lead">AI automation is transforming how forward-thinking firms handle document collection, client communication, billing, and follow-up — freeing accountants to focus on the advisory work that actually builds the relationship.</p>
+    <div class="grid-3" style="margin-top:40px;">
+      <div class="card card-red"><h3 class="text-red">68%</h3><p>of accounting clients say they've considered switching firms due to slow communication or lack of follow-up</p></div>
+      <div class="card card-gold"><h3 class="text-gold">12 hrs</h3><p>average per week spent chasing client documents during tax season — largely automatable with the right systems</p></div>
+      <div class="card card-blue"><h3 class="text-blue">3×</h3><p>more likely to receive a referral from a client who hears from their accountant year-round vs. only at tax time</p></div>
+    </div>
+  </div>
+  <div class="logo-bar"><div class="logo-mark">F</div><span class="logo-text">flowstateaiautomation.ai</span></div>
+  <div class="slide-num">2 / 9</div>
+</div>
+
+<!-- SLIDE 3 -->
+<div class="slide slide-navy" id="slide-3">
+  <div class="two-col">
+    <div>
+      <div class="badge badge-red">The Competitive Reality</div>
+      <h2>Document chasing and<br>deadline reminders are<br><span class="gradient-text">costing you more</span><br>than you think.</h2>
+      <div class="divider"></div>
+      <p class="lead">Every hour your team spends manually following up on missing documents, unpaid invoices, or unsigned returns is an hour not spent on advisory work, relationship building, or new business development. AI automation reclaims all of it.</p>
+      <div class="highlight-box" style="margin-top:32px;">
+        <p style="color:#fde68a; font-size:17px; font-weight:600;">The firms growing fastest aren't the ones with the most technical knowledge. They're the ones running the most consistent client experience — from engagement letter to year-end review.</p>
+      </div>
+    </div>
+    <div>
+      <div class="card card-gold" style="margin-bottom:20px;">
+        <span class="icon">🏆</span>
+        <h3>Firms Using AI Automation</h3>
+        <ul class="check-list" style="margin-top:12px;">
+          <li style="font-size:15px;">Document requests sent automatically with tracked follow-up</li>
+          <li style="font-size:15px;">Tax deadline reminders running 60 days in advance</li>
+          <li style="font-size:15px;">Invoices paid faster — zero uncomfortable conversations</li>
+          <li style="font-size:15px;">Clients hearing from their accountant year-round</li>
+        </ul>
+      </div>
+      <div class="card card-red">
+        <span class="icon">⚠️</span>
+        <h3>Firms Without AI Systems</h3>
+        <ul class="check-list" style="margin-top:12px;">
+          <li style="font-size:15px;">Staff manually chasing documents during the busiest weeks of the year</li>
+          <li style="font-size:15px;">Clients who only hear from their accountant at tax time</li>
+          <li style="font-size:15px;">Aging A/R from manually followed invoices</li>
+          <li style="font-size:15px;">No consistent system for referrals or reviews</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="logo-bar"><div class="logo-mark">F</div><span class="logo-text">flowstateaiautomation.ai</span></div>
+  <div class="slide-num">3 / 9</div>
+</div>
+
+<!-- SLIDE 4 -->
+<div class="slide slide-dark" id="slide-4">
+  <div>
+    <div class="badge">What Leading Firms Are Already Doing</div>
+    <h2>The firms pulling ahead are running<br>these <span class="gradient-text">AI systems right now.</span></h2>
+    <div class="divider"></div>
+    <div class="grid-3" style="margin-top:36px;">
+      <div class="card"><span class="icon">📋</span><h3>Document Collection Automation</h3><p>AI sends organized document requests with tracking and automatic escalation — eliminating the back-and-forth chase that consumes staff time during peak season.</p></div>
+      <div class="card"><span class="icon">📅</span><h3>Deadline Reminder Sequences</h3><p>Multi-step client reminders beginning 60 days before tax and filing deadlines — keeping clients on track and your team ahead of every critical date.</p></div>
+      <div class="card"><span class="icon">💰</span><h3>Invoice & AR Automation</h3><p>Professional payment reminders at 7, 14, and 30 days — improving cash flow without any awkward conversations between staff and clients.</p></div>
+      <div class="card"><span class="icon">⭐</span><h3>Post-Filing Review Requests</h3><p>A perfectly timed review request sent after every successful filing — when satisfaction is highest and clients are most likely to recommend you.</p></div>
+      <div class="card"><span class="icon">📞</span><h3>Mid-Year Client Check-Ins</h3><p>Automated check-ins with business clients in fall — creating advisory conversations outside of tax season and building the loyalty that generates referrals.</p></div>
+      <div class="card"><span class="icon">⚡</span><h3>24/7 New Inquiry Response</h3><p>Every new prospect inquiry receives an immediate, professional response — regardless of the time of day. The firm that responds first wins the client.</p></div>
+    </div>
+  </div>
+  <div class="logo-bar"><div class="logo-mark">F</div><span class="logo-text">flowstateaiautomation.ai</span></div>
+  <div class="slide-num">4 / 9</div>
+</div>
+
+<!-- SLIDE 5 -->
+<div class="slide slide-deep" id="slide-5">
+  <div>
+    <div class="badge badge-blue">What This Looks Like for You</div>
+    <h2>AI automation built for<br><span class="gradient-text-cool">Atlantic Canadian accounting practices.</span></h2>
+    <div class="divider"></div>
+    <div class="two-col" style="margin-top:36px; gap:40px;">
+      <div>
+        <p style="color:#94a3b8; font-size:16px; margin-bottom:20px;">Your practice depends on trust, accuracy, and the relationships you've built with clients over years. Here's where AI makes the most immediate impact — without touching any of that:</p>
+        <ul class="check-list">
+          <li><strong>Tax season document chaos</strong> — automated requests and follow-up replace the manual chase</li>
+          <li><strong>Year-end engagement kickoff</strong> — corporate clients engaged automatically 6–8 weeks before year-end</li>
+          <li><strong>Aging A/R</strong> — professional automated reminders get invoices paid 30–50% faster</li>
+          <li><strong>Client communication gaps</strong> — mid-year check-ins create advisory relationships that last year-round</li>
+          <li><strong>New business</strong> — 24/7 inquiry response means you never lose a prospect to a competitor who answered first</li>
+        </ul>
+      </div>
+      <div>
+        <div class="card card-gold" style="margin-bottom:20px;">
+          <span class="icon">🏢</span>
+          <h3>Corporate & Business Clients</h3>
+          <p>Year-end preparation sequences, HST and payroll remittance reminders, mid-year planning check-ins, and consistent advisory touchpoints — keeping your firm at the centre of every client's business decisions.</p>
+        </div>
+        <div class="card card-blue" style="margin-bottom:20px;">
+          <span class="icon">👤</span>
+          <h3>Personal Tax Clients</h3>
+          <p>Document collection requests, deadline reminders, filing confirmation sequences, and post-filing review requests — all automated and professionally branded.</p>
+        </div>
+        <div class="card card-slate">
+          <span class="icon">🤝</span>
+          <h3>Referral Partner Network</h3>
+          <p>Automated touchpoints with lawyers, financial advisors, mortgage brokers, and realtors — keeping your firm front of mind when their clients need accounting help.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="logo-bar"><div class="logo-mark">F</div><span class="logo-text">flowstateaiautomation.ai</span></div>
+  <div class="slide-num">5 / 9</div>
+</div>
+
+<!-- SLIDE 6 -->
+<div class="slide slide-gray" id="slide-6">
+  <div>
+    <div class="badge badge-green">Our Recommendations</div>
+    <h2>The 5 automations we'd<br>build first for <span class="gradient-text">your practice.</span></h2>
+    <div class="divider"></div>
+    <ol class="numbered-list" style="margin-top:30px;">
+      <li><div class="num">1</div><div class="content"><h4>Document Collection & Deadline Reminder Sequences</h4><p>The highest time-cost activity in any accounting practice. Automated, multi-step document requests and deadline reminders reclaim hours of staff time — especially during tax season when every hour counts.</p></div></li>
+      <li><div class="num">2</div><div class="content"><h4>Invoice & Accounts Receivable Follow-Up</h4><p>Professional automated payment reminders at 7, 14, and 30 days reduce A/R aging without any uncomfortable client conversations. Most firms see measurable cash flow improvement within the first billing cycle.</p></div></li>
+      <li><div class="num">3</div><div class="content"><h4>Post-Filing Google Review Request</h4><p>Sent after every successful filing when satisfaction is at its peak. More reviews drive inbound inquiries and referrals — the highest-ROI marketing investment for a local accounting practice.</p></div></li>
+      <li><div class="num">4</div><div class="content"><h4>Mid-Year Business Client Check-In Sequence</h4><p>A simple fall touchpoint creates advisory conversations outside tax season — increasing loyalty and generating referrals from clients who feel genuinely looked after year-round.</p></div></li>
+      <li><div class="num">5</div><div class="content"><h4>New Prospect Lead Response (24/7)</h4><p>Every new inquiry receives an immediate, personalized response. The firm that responds to a new prospect first wins the client in the majority of cases — and most accounting firms are responding hours or days later.</p></div></li>
+    </ol>
+  </div>
+  <div class="logo-bar"><div class="logo-mark">F</div><span class="logo-text">flowstateaiautomation.ai</span></div>
+  <div class="slide-num">6 / 9</div>
+</div>
+
+<!-- SLIDE 7 -->
+<div class="slide slide-dark" id="slide-7">
+  <div>
+    <div class="badge badge-blue">The Numbers</div>
+    <h2>What accounting firms typically see<br>in the first <span class="gradient-text">90 days.</span></h2>
+    <div class="divider"></div>
+    <div class="grid-4" style="margin-top:40px;">
+      <div class="card card-gold" style="text-align:center; padding:40px 20px;"><div class="stat-big text-gold">40%</div><div class="stat-label">faster average invoice payment cycle</div></div>
+      <div class="card card-blue" style="text-align:center; padding:40px 20px;"><div class="stat-big text-blue">12hrs</div><div class="stat-label">per week of document-chasing time reclaimed during tax season</div></div>
+      <div class="card card-green" style="text-align:center; padding:40px 20px;"><div class="stat-big text-green">5×</div><div class="stat-label">more Google reviews generated per month</div></div>
+      <div class="card card-slate" style="text-align:center; padding:40px 20px;"><div class="stat-big" style="color:#94a3b8;">3×</div><div class="stat-label">increase in client referrals from year-round communication</div></div>
+    </div>
+    <div class="highlight-box-blue" style="margin-top:40px;">
+      <p style="color:#93c5fd; font-size:17px;"><strong>Most firms recover the full cost of implementation in the first billing cycle</strong> through faster invoice collection and reclaimed staff time — before the referral, review, and retention automations compound the return.</p>
+    </div>
+  </div>
+  <div class="logo-bar"><div class="logo-mark">F</div><span class="logo-text">flowstateaiautomation.ai</span></div>
+  <div class="slide-num">7 / 9</div>
+</div>
+
+<!-- SLIDE 8 -->
+<div class="slide slide-dark" id="slide-8">
+  <div class="two-col">
+    <div>
+      <div class="badge">About FlowstateAI</div>
+      <h2>Atlantic Canadian.<br><span class="gradient-text">Built for Atlantic Canadian businesses.</span></h2>
+      <div class="divider"></div>
+      <p class="lead">We're not a national software company flying in for a demo. We're right here — building AI automation systems for businesses in New Brunswick, Nova Scotia, and PEI.</p>
+      <ul class="check-list" style="margin-top:28px;">
+        <li>Complete systems built and launched in 30 days</li>
+        <li>No technical knowledge required on your end</li>
+        <li>Built specifically around your services, client mix, and practice workflow</li>
+        <li>Ongoing support and optimization included</li>
+        <li>We understand how Atlantic Canadian professional practices operate</li>
+      </ul>
+    </div>
+    <div>
+      <div class="card card-gold" style="margin-bottom:20px; padding:36px;">
+        <span class="icon">🚀</span>
+        <h3>How We Work</h3>
+        <p>Start with a Free Systems Audit — 30 minutes to map your biggest automation opportunities. Then we build, test, and launch. Results visible before end of month one.</p>
+      </div>
+      <div class="card" style="padding:36px;">
+        <span class="icon">📍</span>
+        <h3>Local. Accountable. Invested.</h3>
+        <p>We live and operate in the same communities your clients come from. Your success is our reputation — and that's something no national vendor can match.</p>
+      </div>
+    </div>
+  </div>
+  <div class="logo-bar"><div class="logo-mark">F</div><span class="logo-text">flowstateaiautomation.ai</span></div>
+  <div class="slide-num">8 / 9</div>
+</div>
+
+<!-- SLIDE 9 -->
+<div class="slide slide-hero" id="slide-9">
+  <div style="text-align:center; max-width:800px; margin:0 auto;">
+    <div class="badge">Next Step</div>
+    <h2 style="font-size:52px;">Let's build your<br><span class="gradient-text">competitive advantage.</span></h2>
+    <div class="divider" style="margin:24px auto;"></div>
+    <p class="lead" style="text-align:center; margin:0 auto;">Start with a Free 30-Minute Systems Audit. We'll map exactly where AI automation can make the biggest impact for your practice — no pitch, no pressure, no commitment.</p>
+    <div style="margin-top:48px; display:flex; gap:20px; justify-content:center; flex-wrap:wrap;">
+      <div style="background:rgba(212,175,55,0.1); border:1px solid rgba(212,175,55,0.3); border-radius:12px; padding:24px 36px; text-align:center;">
+        <div style="font-size:13px; color:#64748b; margin-bottom:4px; text-transform:uppercase; letter-spacing:1px;">Email</div>
+        <div style="color:#fbbf24; font-weight:700; font-size:18px;">joe@flowstateaiautomation.ai</div>
+      </div>
+      <div style="background:rgba(59,130,246,0.1); border:1px solid rgba(59,130,246,0.3); border-radius:12px; padding:24px 36px; text-align:center;">
+        <div style="font-size:13px; color:#64748b; margin-bottom:4px; text-transform:uppercase; letter-spacing:1px;">Website</div>
+        <div style="color:#60a5fa; font-weight:700; font-size:18px;">flowstateaiautomation.ai</div>
+      </div>
+    </div>
+    <p style="margin-top:48px; font-size:15px; color:#475569;">The firms that will own their market in 3 years are building their systems today.</p>
+  </div>
+  <div class="logo-bar"><div class="logo-mark">F</div><span class="logo-text">flowstateaiautomation.ai</span></div>
+  <div class="slide-num">9 / 9</div>
+</div>
+
+<button class="nav-btn" id="prev">←</button>
+<button class="nav-btn" id="next">→</button>
+<div class="progress-bar" id="progress"></div>
+<script>
+  const slides = document.querySelectorAll('.slide');
+  const total = slides.length;
+  let current = 0;
+  function show(n) { slides[current].classList.remove('active'); current = (n + total) % total; slides[current].classList.add('active'); document.getElementById('progress').style.width = ((current + 1) / total * 100) + '%'; }
+  document.getElementById('next').onclick = () => show(current + 1);
+  document.getElementById('prev').onclick = () => show(current - 1);
+  document.addEventListener('keydown', e => { if (e.key === 'ArrowRight' || e.key === ' ') show(current + 1); if (e.key === 'ArrowLeft') show(current - 1); });
+  document.getElementById('progress').style.width = (1 / total * 100) + '%';
+</script>
+</body>
+</html>

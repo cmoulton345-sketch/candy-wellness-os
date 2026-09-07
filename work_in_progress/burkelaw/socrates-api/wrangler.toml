@@ -1,0 +1,6 @@
+name = "socrates-api"
+main = "src/index.js"
+compatibility_date = "2024-03-08"
+
+# We will need to set the GEMINI_API_KEY secret via wrangler
+# npx wrangler secret put GEMINI_API_KEY

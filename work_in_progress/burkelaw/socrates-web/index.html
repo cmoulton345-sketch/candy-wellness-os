@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Socrates | Virtual Legal Shadow</title>
+  <meta name="description" content="Socrates — Canadian Legal AI Research & Drafting Assistant. AmLaw 100 calibre analysis." />
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f4f6f8', 100: '#e3e8ef', 200: '#c7d2e0', 300: '#9db4ca',
+              400: '#6c8eaf', 500: '#4e7496', 600: '#3e5c7a', 700: '#334a64',
+              800: '#2d3f54', 900: '#273647', 950: '#1a2532',
+            },
+            surface: '#0f172a',
+            panel: '#1e293b'
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            serif: ['Playfair Display', 'Georgia', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,600;1,600&display=swap');
+
+    body { background-color: #0f172a; color: #f8fafc; }
+
+    .prose h1 { font-size: 1.5rem; font-family: 'Playfair Display', Georgia, serif; font-weight: bold; margin-top: 1.5rem; margin-bottom: 1rem; color: white; }
+    .prose h2 { font-size: 1.25rem; font-family: 'Playfair Display', Georgia, serif; font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.75rem; color: #e2e8f0; border-bottom: 1px solid #334155; padding-bottom: 0.5rem; }
+    .prose h3 { font-size: 1.125rem; font-weight: 600; margin-top: 1rem; margin-bottom: 0.5rem; color: #cbd5e1; }
+    .prose p { color: #cbd5e1; line-height: 1.7; margin-bottom: 1rem; }
+    .prose ul { list-style-type: disc; padding-left: 1.25rem; margin-bottom: 1rem; color: #cbd5e1; }
+    .prose ol { list-style-type: decimal; padding-left: 1.25rem; margin-bottom: 1rem; color: #cbd5e1; }
+    .prose li { margin-bottom: 0.25rem; }
+    .prose li p { margin-bottom: 0; }
+    .prose strong { font-weight: 600; color: white; }
+    .prose em { font-style: italic; color: #94a3b8; }
+    .prose blockquote { border-left: 4px solid #4e7496; padding-left: 1rem; padding-top: 0.25rem; padding-bottom: 0.25rem; margin-top: 1rem; margin-bottom: 1rem; background: rgba(30,41,59,0.5); font-style: italic; color: #cbd5e1; }
+    .prose hr { border-color: #334155; margin-top: 1.5rem; margin-bottom: 1.5rem; }
+    .prose table { width: 100%; margin-bottom: 1rem; border-collapse: collapse; }
+    .prose th { text-align: left; border-bottom: 2px solid #475569; padding-bottom: 0.5rem; color: #e2e8f0; font-weight: 600; }
+    .prose td { border-bottom: 1px solid #334155; padding-top: 0.5rem; padding-bottom: 0.5rem; color: #cbd5e1; }
+  </style>
+</head>
+
+<body class="h-screen flex flex-col font-sans overflow-hidden antialiased selection:bg-brand-500 selection:text-white">
+
+  <!-- Top Navigation -->
+  <header class="bg-panel border-b border-slate-800 shrink-0 h-16 flex items-center px-6 justify-between z-10 shadow-md">
+    <div class="flex items-center gap-3">
+      <div class="h-8 w-8 rounded bg-brand-600 flex items-center justify-center shadow-inner">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1.323l3.954 1.582 1.599-.8a1 1 0 01.894 1.79l-1.233.616 1.738 5.42a1 1 0 01-.285 1.05A3.989 3.989 0 0115 15a3.989 3.989 0 01-2.667-1.019 1 1 0 01-.285-1.05l1.715-5.349L11 6.477V16h2a1 1 0 110 2H7a1 1 0 110-2h2V6.477L6.237 7.582l1.715 5.349a1 1 0 01-.285 1.05A3.989 3.989 0 015 15a3.989 3.989 0 01-2.667-1.019 1 1 0 01-.285-1.05l1.738-5.42-1.233-.617a1 1 0 01.894-1.788l1.599.799L9 4.323V3a1 1 0 011-1zm-5 8.274l-.818 2.552c.25.112.526.174.818.174.292 0 .569-.062.818-.174L5 10.274zm10 0l-.818 2.552c.25.112.526.174.818.174.292 0 .569-.062.818-.174L15 10.274z" clip-rule="evenodd" />
+        </svg>
+      </div>
+      <div>
+        <h1 class="text-xl font-serif font-semibold text-white tracking-wide">Socrates</h1>
+        <p class="text-[10px] tracking-[0.2em] text-brand-300 uppercase">Virtual Legal Shadow</p>
+      </div>
+    </div>
+
+    <div class="flex items-center gap-3 text-sm">
+      <div id="creditBadge" class="px-3 py-1 rounded bg-slate-800 border border-amber-500/40 text-amber-300 font-medium flex items-center gap-2 shadow-sm">
+        <span class="text-amber-400">⚡</span>
+        <span id="creditCount">25</span> / 25 Lifetime Queries
+      </div>
+      <div id="userBadge" class="hidden md:flex px-3 py-1 rounded bg-slate-800 border border-slate-700 text-slate-300 text-xs items-center gap-2">
+        <span class="h-2 w-2 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.8)]"></span>
+        <span id="userEmailDisplay">Pass Active</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Workspace -->
+  <main class="flex-1 flex overflow-hidden">
+    <!-- Left Panel: Input -->
+    <section class="w-1/3 min-w-[350px] max-w-[450px] bg-panel border-r border-slate-800 flex flex-col z-0 shadow-lg relative">
+      <div class="p-6 flex-1 overflow-y-auto space-y-6 relative z-10">
+        <div class="space-y-4">
+          <h2 class="text-xs uppercase tracking-widest text-slate-400 font-semibold mb-3 border-b border-slate-700 pb-2">Analysis Parameters</h2>
+
+          <div>
+            <label class="block text-sm font-medium text-slate-300 mb-1" for="jurisdiction">Governing Jurisdiction <span class="text-red-400">*</span></label>
+            <select id="jurisdiction" class="w-full bg-slate-800 border border-slate-700 rounded-md py-2 px-3 text-white focus:outline-none focus:ring-2 focus:ring-brand-500 text-sm shadow-inner">
+              <option value="" disabled selected>Select Jurisdiction...</option>
+              <optgroup label="Canada">
+                <option value="New Brunswick, Canada">New Brunswick</option>
+                <option value="Nova Scotia, Canada">Nova Scotia</option>
+                <option value="Prince Edward Island, Canada">Prince Edward Island</option>
+                <option value="Ontario, Canada">Ontario</option>
+                <option value="British Columbia, Canada">British Columbia</option>
+                <option value="Federal Law (Canada)">Federal Law (Canada)</option>
+              </optgroup>
+              <optgroup label="United States">
+                <option value="US Federal Law">US Federal Law</option>
+                <option value="New York State, US">New York State</option>
+                <option value="Delaware State, US">Delaware State</option>
+              </optgroup>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-slate-300 mb-1" for="mode">Operational Mode</label>
+            <select id="mode" class="w-full bg-slate-800 border border-slate-700 rounded-md py-2 px-3 text-white focus:outline-none focus:ring-2 focus:ring-brand-500 text-sm shadow-inner">
+              <option value="Comprehensive Legal Analysis">Comprehensive Legal Analysis</option>
+              <option value="Contract & Clause Redlining">Contract & Clause Redlining</option>
+              <option value="Case Law & Statutory Research">Case Law & Statutory Research</option>
+              <option value="Client Advice Memorandum">Client Advice Memorandum</option>
+              <option value="Risk & Exposure Audit">Risk & Exposure Audit</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-slate-300 mb-1" for="prompt">Fact Pattern / Inquiry <span class="text-red-400">*</span></label>
+          <textarea id="prompt" rows="8" placeholder="Paste fact pattern, contract clause, or specific legal inquiry..." class="w-full bg-slate-800 border border-slate-700 rounded-md p-3 text-white focus:outline-none focus:ring-2 focus:ring-brand-500 text-sm shadow-inner resize-none"></textarea>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <input type="checkbox" id="disclaimer" checked class="rounded bg-slate-800 border-slate-700 text-brand-600 focus:ring-brand-500 h-4 w-4">
+          <label for="disclaimer" class="text-xs text-slate-400">Confirm research parameters & privilege safeguards</label>
+        </div>
+
+        <button id="submitBtn" type="button" class="w-full bg-brand-600 hover:bg-brand-500 text-white font-semibold py-3 px-4 rounded-md shadow-md transition-colors text-sm flex items-center justify-center gap-2">
+          <span>Analyze & Draft</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- Right Panel: Output -->
+    <section id="outputContainer" class="flex-1 bg-surface flex flex-col overflow-y-auto relative">
+      <div id="emptyState" class="flex-1 flex flex-col items-center justify-center p-8 text-center">
+        <div class="h-16 w-16 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-400 mb-4 shadow-inner">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-brand-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+          </svg>
+        </div>
+        <h3 class="text-lg font-serif font-semibold text-slate-200 mb-1">Awaiting Inquiry</h3>
+        <p class="text-xs text-slate-400 max-w-sm">Select governing jurisdiction, enter your fact pattern or clause, and click "Analyze & Draft" to receive AmLaw 100 associate output.</p>
+      </div>
+
+      <div id="loadingState" class="hidden flex-1 flex flex-col items-center justify-center p-8 text-center">
+        <div class="animate-spin rounded-full h-10 w-10 border-b-2 border-brand-400 mb-4"></div>
+        <h3 class="text-sm font-semibold text-slate-200">Analyzing Fact Pattern & Precedents...</h3>
+        <p class="text-xs text-slate-400 mt-1">Applying statutory frameworks & case law logic</p>
+      </div>
+
+      <div id="resultState" class="hidden p-8 max-w-4xl mx-auto w-full space-y-6">
+        <div class="prose max-w-none text-slate-200" id="contentRenderer"></div>
+
+        <div class="flex items-center justify-between border-t border-slate-800 pt-4">
+          <div class="flex items-center gap-3">
+            <select id="voiceSelect" class="text-xs bg-slate-800 text-slate-300 px-3 py-2 rounded border border-slate-700">
+              <option value="">Loading voices...</option>
+            </select>
+            <button id="readAloudBtn" type="button" class="text-xs bg-brand-700 hover:bg-brand-600 text-white px-4 py-2 rounded shadow border border-brand-600 flex items-center gap-2">
+              <span id="readAloudLabel">Read Aloud</span>
+            </button>
+            <button id="copyBtn" type="button" class="text-xs bg-slate-800 hover:bg-slate-700 text-slate-300 px-4 py-2 rounded shadow border border-slate-700 flex items-center gap-2">
+              Copy to Clipboard
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal 1: Email Access Gate -->
+  <div id="authModal" class="fixed inset-0 bg-slate-950/90 backdrop-blur-md flex items-center justify-center z-50 p-4">
+    <div class="bg-panel border border-slate-700 rounded-xl max-w-md w-full p-6 shadow-2xl space-y-6 relative overflow-hidden">
+      <div class="flex items-center gap-3">
+        <div class="h-10 w-10 rounded-lg bg-brand-600 flex items-center justify-center shadow-inner shrink-0">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1.323l3.954 1.582 1.599-.8a1 1 0 01.894 1.79l-1.233.616 1.738 5.42a1 1 0 01-.285 1.05A3.989 3.989 0 0115 15a3.989 3.989 0 01-2.667-1.019 1 1 0 01-.285-1.05l1.715-5.349L11 6.477V16h2a1 1 0 110 2H7a1 1 0 110-2h2V6.477L6.237 7.582l1.715 5.349a1 1 0 01-.285 1.05A3.989 3.989 0 015 15a3.989 3.989 0 01-2.667-1.019 1 1 0 01-.285-1.05l1.738-5.42-1.233-.617a1 1 0 01.894-1.788l1.599.799L9 4.323V3a1 1 0 011-1zm-5 8.274l-.818 2.552c.25.112.526.174.818.174.292 0 .569-.062.818-.174L5 10.274zm10 0l-.818 2.552c.25.112.526.174.818.174.292 0 .569-.062.818-.174L15 10.274z" clip-rule="evenodd" />
+          </svg>
+        </div>
+        <div>
+          <h2 class="text-xl font-serif font-semibold text-white">Socrates Online</h2>
+          <p class="text-xs text-brand-300">Canadian Legal AI Research & Drafting Assistant</p>
+        </div>
+      </div>
+
+      <div class="space-y-3">
+        <h3 class="text-sm font-medium text-slate-200">Unlock 25 Free Lifetime Queries</h3>
+        <p class="text-xs text-slate-400 leading-relaxed">
+          Please enter your corporate law firm email to activate your 25 complimentary lifetime research & drafting queries. No credit card required.
+        </p>
+      </div>
+
+      <div class="space-y-4">
+        <div>
+          <label for="userEmail" class="block text-xs font-semibold text-slate-300 mb-1 uppercase tracking-wider">Corporate Email Address</label>
+          <input type="email" id="userEmail" required placeholder="e.g. jdoe@lawfirm.com"
+            class="w-full bg-slate-900 border border-slate-700 rounded-lg py-2.5 px-3.5 text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-brand-500 text-sm shadow-inner" />
+        </div>
+        <button type="button" id="authSubmitBtn"
+          class="w-full bg-brand-600 hover:bg-brand-500 text-white font-semibold py-2.5 px-4 rounded-lg shadow-md transition-all text-sm flex items-center justify-center gap-2 cursor-pointer">
+          <span>Activate 25 Free Queries</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </button>
+      </div>
+      <p class="text-[11px] text-center text-slate-500">Protected by FlowstateAI • Privacy & Canadian Law Compliant</p>
+    </div>
+  </div>
+
+  <!-- Modal 2: Lifetime Limit Reached -->
+  <div id="upgradeModal" class="hidden fixed inset-0 bg-slate-950/90 backdrop-blur-md flex items-center justify-center z-50 p-4">
+    <div class="bg-panel border border-amber-500/40 rounded-xl max-w-md w-full p-6 shadow-2xl space-y-6 relative text-center">
+      <div class="h-12 w-12 rounded-full bg-amber-500/20 border border-amber-500/40 text-amber-400 flex items-center justify-center mx-auto text-xl font-bold">⚡</div>
+      <div class="space-y-2">
+        <h2 class="text-xl font-serif font-bold text-white">Lifetime Free Trial Complete</h2>
+        <p class="text-xs text-amber-300 font-medium">You have used all 25 of your free lifetime queries.</p>
+        <p class="text-xs text-slate-300 leading-relaxed pt-2">
+          Ready to unlock unlimited, firm-wide research and contract drafting speed for your partners and associates?
+        </p>
+      </div>
+
+      <div class="bg-slate-900/80 border border-slate-800 rounded-lg p-4 text-left space-y-2 text-xs text-slate-300">
+        <div class="flex items-center gap-2 font-medium text-emerald-400">✓ Unlimited Canadian Case Law & Statutory Analysis</div>
+        <div class="flex items-center gap-2 font-medium text-emerald-400">✓ Firm-Wide Custom SOPs & Contract Templates</div>
+        <div class="flex items-center gap-2 font-medium text-emerald-400">✓ On-Site or Virtual 30-Min Team Training Included</div>
+      </div>
+
+      <div class="space-y-3 pt-2">
+        <a href="mailto:joe@flowstateaiautomation.ai?subject=Socrates%20Firm-Wide%20Demo%20Request"
+          class="block w-full bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold py-3 px-4 rounded-lg shadow-lg transition-all text-sm">
+          Book 15-Min Firm Demonstration
+        </a>
+        <p class="text-[11px] text-slate-400">Or contact Joe Moulton directly at <span class="text-white font-medium">(506) 607-1791</span></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Markdown Parser (loaded before our script) -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+  <!-- ═══════════════════════════════════════════════════════════════════
+       ALL JAVASCRIPT INLINED — works on file://, localhost, and production
+       ═══════════════════════════════════════════════════════════════════ -->
+  <script>
+    // ── Markdown Config ──
+    if (typeof marked !== 'undefined') {
+      marked.use({ gfm: true, breaks: true });
+    }
+
+    // ── DOM References ──
+    const jurisdictionSelect = document.getElementById('jurisdiction');
+    const modeSelect         = document.getElementById('mode');
+    const promptInput        = document.getElementById('prompt');
+    const disclaimerCheck    = document.getElementById('disclaimer');
+    const submitBtn          = document.getElementById('submitBtn');
+    const emptyState         = document.getElementById('emptyState');
+    const loadingState       = document.getElementById('loadingState');
+    const resultState        = document.getElementById('resultState');
+    const contentRenderer    = document.getElementById('contentRenderer');
+    const copyBtn            = document.getElementById('copyBtn');
+    const authModal          = document.getElementById('authModal');
+    const authSubmitBtn      = document.getElementById('authSubmitBtn');
+    const userEmailInput     = document.getElementById('userEmail');
+    const upgradeModal       = document.getElementById('upgradeModal');
+    const creditCountSpan    = document.getElementById('creditCount');
+    const userEmailDisplay   = document.getElementById('userEmailDisplay');
+    const userBadge          = document.getElementById('userBadge');
+    const readAloudBtn       = document.getElementById('readAloudBtn');
+    const readAloudLabel     = document.getElementById('readAloudLabel');
+    const voiceSelect        = document.getElementById('voiceSelect');
+
+    // ── Constants ──
+    const INITIAL_LIFETIME_CREDITS = 25;
+    const API_URL = 'https://socrates-api.joemoulton2022.workers.dev/';
+
+    // ═══════════════════════════════════════════
+    // AUTH & CREDIT MANAGEMENT
+    // ═══════════════════════════════════════════
+    function getStoredUser() {
+      const email = localStorage.getItem('socrates_user_email');
+      const credits = localStorage.getItem('socrates_lifetime_credits');
+      return {
+        email: email || null,
+        credits: credits !== null ? parseInt(credits, 10) : null
+      };
+    }
+
+    function updateCreditDisplay() {
+      const { email, credits } = getStoredUser();
+      if (email) {
+        authModal.classList.add('hidden');
+        userEmailDisplay.textContent = email;
+        if (userBadge) userBadge.classList.remove('hidden');
+        const currentCredits = credits !== null ? credits : INITIAL_LIFETIME_CREDITS;
+        creditCountSpan.textContent = currentCredits;
+        if (currentCredits <= 0) {
+          upgradeModal.classList.remove('hidden');
+        }
+      } else {
+        authModal.classList.remove('hidden');
+      }
+    }
+
+    function handleAuthSubmit() {
+      const emailVal = userEmailInput.value.trim().toLowerCase();
+      if (emailVal && emailVal.includes('@')) {
+        localStorage.setItem('socrates_user_email', emailVal);
+        if (localStorage.getItem('socrates_lifetime_credits') === null) {
+          localStorage.setItem('socrates_lifetime_credits', INITIAL_LIFETIME_CREDITS.toString());
+        }
+        updateCreditDisplay();
+      } else {
+        alert('Please enter a valid law firm email address.');
+      }
+    }
+
+    // Auth button click
+    authSubmitBtn.addEventListener('click', handleAuthSubmit);
+
+    // Allow Enter key in the email field
+    userEmailInput.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        handleAuthSubmit();
+      }
+    });
+
+    // Initialize auth state immediately
+    updateCreditDisplay();
+
+    // ═══════════════════════════════════════════
+    // SUBMIT TO SOCRATES API
+    // ═══════════════════════════════════════════
+    async function submitToSocrates() {
+      const { email, credits } = getStoredUser();
+
+      if (!email) { authModal.classList.remove('hidden'); return; }
+      if (credits !== null && credits <= 0) { upgradeModal.classList.remove('hidden'); return; }
+
+      const hasJurisdiction = jurisdictionSelect.value !== '';
+      const hasPrompt = promptInput.value.trim().length > 0;
+      const hasDisclaimer = disclaimerCheck.checked;
+
+      if (!hasJurisdiction) { alert('Please select a Governing Jurisdiction.'); return; }
+      if (!hasPrompt) { alert('Please enter your Fact Pattern / Inquiry.'); return; }
+      if (!hasDisclaimer) { alert('Please check the box to acknowledge the disclaimer.'); return; }
+
+      // Show loading state
+      emptyState.classList.add('hidden');
+      resultState.classList.add('hidden');
+      loadingState.classList.remove('hidden');
+      submitBtn.disabled = true;
+
+      try {
+        const response = await fetch(API_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            jurisdiction: jurisdictionSelect.value,
+            mode: modeSelect.value,
+            message: promptInput.value,
+            userEmail: email
+          })
+        });
+
+        if (!response.ok) {
+          const errText = await response.text();
+          throw new Error('API error: ' + errText);
+        }
+
+        const data = await response.json();
+        const aiText = data.response || (data.candidates && data.candidates[0] && data.candidates[0].content && data.candidates[0].content.parts && data.candidates[0].content.parts[0] && data.candidates[0].content.parts[0].text) || 'No response received.';
+
+        // Decrement lifetime credit
+        const currentCredits = credits !== null ? credits : INITIAL_LIFETIME_CREDITS;
+        const newCredits = Math.max(0, currentCredits - 1);
+        localStorage.setItem('socrates_lifetime_credits', newCredits.toString());
+        updateCreditDisplay();
+
+        // Render markdown
+        contentRenderer.innerHTML = typeof marked !== 'undefined' ? marked.parse(aiText) : aiText.replace(/\n/g, '<br>');
+
+        // Show result
+        loadingState.classList.add('hidden');
+        resultState.classList.remove('hidden');
+        document.getElementById('outputContainer').scrollTo({ top: 0, behavior: 'smooth' });
+        submitBtn.disabled = false;
+
+      } catch (error) {
+        console.error(error);
+        loadingState.classList.add('hidden');
+        resultState.classList.remove('hidden');
+        contentRenderer.innerHTML =
+          '<div style="background:rgba(127,29,29,0.5);border-left:4px solid #ef4444;padding:1rem;border-radius:0.5rem;">' +
+          '<h3 style="color:#fca5a5;font-weight:600;margin-bottom:0.5rem;">Connection Error</h3>' +
+          '<p style="color:rgba(254,202,202,0.8);font-size:0.875rem;">' + error.message + '</p>' +
+          '<p style="color:#94a3b8;font-size:0.75rem;margin-top:0.75rem;">Make sure the Socrates API server is running: <code style="background:#1e293b;padding:2px 6px;border-radius:4px;">node server.js</code> in the socrates-api folder.</p>' +
+          '</div>';
+        submitBtn.disabled = false;
+      }
+    }
+
+    // Click handler for "Analyze & Draft" button
+    submitBtn.addEventListener('click', submitToSocrates);
+
+    // Allow Ctrl+Enter in the textarea to submit
+    promptInput.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) {
+        e.preventDefault();
+        submitToSocrates();
+      }
+    });
+
+    // ═══════════════════════════════════════════
+    // READ ALOUD (Web Speech Synthesis)
+    // ═══════════════════════════════════════════
+    let isSpeaking = false;
+    let speechChunks = [];
+    let currentChunkIndex = 0;
+    let currentUtterance = null;
+
+    function resetReadAloudBtn() {
+      isSpeaking = false;
+      speechChunks = [];
+      currentChunkIndex = 0;
+      currentUtterance = null;
+      readAloudLabel.textContent = 'Read Aloud';
+      readAloudBtn.classList.remove('bg-red-700', 'border-red-600');
+      readAloudBtn.classList.add('bg-brand-700', 'border-brand-600');
+    }
+
+    function populateVoiceList() {
+      if (typeof speechSynthesis === 'undefined' || !voiceSelect) return;
+      const voices = speechSynthesis.getVoices();
+      voiceSelect.innerHTML = '';
+
+      if (voices.length === 0) {
+        var opt = document.createElement('option');
+        opt.textContent = 'Loading/No voices...';
+        opt.value = '';
+        voiceSelect.appendChild(opt);
+        return;
+      }
+
+      var sortedVoices = voices.slice().sort(function(a, b) {
+        var aLang = a.lang.toLowerCase(), bLang = b.lang.toLowerCase();
+        var aGB = aLang.startsWith('en-gb'), bGB = bLang.startsWith('en-gb');
+        if (aGB && !bGB) return -1;
+        if (!aGB && bGB) return 1;
+        if (aGB && bGB) {
+          if (a.localService && !b.localService) return -1;
+          if (!a.localService && b.localService) return 1;
+        }
+        var aEN = aLang.startsWith('en'), bEN = bLang.startsWith('en');
+        if (aEN && !bEN) return -1;
+        if (!aEN && bEN) return 1;
+        if (aEN && bEN) {
+          if (a.localService && !b.localService) return -1;
+          if (!a.localService && b.localService) return 1;
+        }
+        if (a.localService && !b.localService) return -1;
+        if (!a.localService && b.localService) return 1;
+        return a.name.localeCompare(b.name);
+      });
+
+      var selectedIndex = 0;
+      sortedVoices.forEach(function(voice, index) {
+        var option = document.createElement('option');
+        var typeLabel = voice.localService ? 'Offline' : 'Network';
+        option.textContent = voice.name + ' (' + voice.lang + ') [' + typeLabel + ']';
+        option.value = voice.name;
+        voiceSelect.appendChild(option);
+        if (voice.lang.toLowerCase().startsWith('en-gb') && selectedIndex === 0) {
+          selectedIndex = index;
+        }
+      });
+
+      if (selectedIndex === 0) {
+        var engIndex = sortedVoices.findIndex(function(v) { return v.lang.toLowerCase().startsWith('en'); });
+        if (engIndex !== -1) selectedIndex = engIndex;
+      }
+      voiceSelect.selectedIndex = selectedIndex;
+    }
+
+    if (typeof speechSynthesis !== 'undefined') {
+      speechSynthesis.onvoiceschanged = populateVoiceList;
+      populateVoiceList();
+    }
+
+    function cleanTextForSpeech(text) {
+      return text
+        .replace(/#+\s+/g, '')
+        .replace(/\*\*+/g, '')
+        .replace(/^\s*[-•*]\s+/gm, '')
+        .replace(/Mr\./gi, 'Mr').replace(/Ms\./gi, 'Ms').replace(/Dr\./gi, 'Dr')
+        .replace(/Inc\./gi, 'Inc').replace(/Ltd\./gi, 'Ltd')
+        .replace(/vs\./gi, 'versus').replace(/ca\./gi, 'circa')
+        .replace(/e\.g\./gi, 'for example').replace(/i\.e\./gi, 'that is')
+        .replace(/s\.\s*(\d+)/gi, 'section $1').replace(/ss\.\s*(\d+)/gi, 'sections $1')
+        .replace(/[\u201C\u201D\u201E\u201F\u2033\u2036]/g, '"')
+        .replace(/[\u2018\u2019\u201A\u201B\u2032\u2035]/g, "'")
+        .replace(/\s+/g, ' ')
+        .trim();
+    }
+
+    function splitTextIntoChunks(text, maxLength) {
+      maxLength = maxLength || 200;
+      var cleanedText = cleanTextForSpeech(text);
+      var regex = /[^.!?]+[.!?]*/g;
+      var sentences = cleanedText.match(regex) || [cleanedText];
+      var chunks = [];
+      var currentChunk = '';
+
+      for (var i = 0; i < sentences.length; i++) {
+        var sentence = sentences[i];
+        if ((currentChunk + sentence).length < maxLength) {
+          currentChunk += sentence;
+        } else {
+          if (currentChunk.trim()) chunks.push(currentChunk.trim());
+          if (sentence.length > maxLength) {
+            var words = sentence.split(' ');
+            var tempChunk = '';
+            for (var j = 0; j < words.length; j++) {
+              if ((tempChunk + ' ' + words[j]).length < maxLength) {
+                tempChunk += (tempChunk ? ' ' : '') + words[j];
+              } else {
+                if (tempChunk.trim()) chunks.push(tempChunk.trim());
+                tempChunk = words[j];
+              }
+            }
+            currentChunk = tempChunk;
+          } else {
+            currentChunk = sentence;
+          }
+        }
+      }
+      if (currentChunk.trim()) chunks.push(currentChunk.trim());
+      return chunks;
+    }
+
+    function speakNextChunk() {
+      if (currentChunkIndex >= speechChunks.length) { resetReadAloudBtn(); return; }
+      var chunkText = speechChunks[currentChunkIndex].trim();
+      if (!chunkText) { currentChunkIndex++; speakNextChunk(); return; }
+
+      currentUtterance = new SpeechSynthesisUtterance(chunkText);
+      currentUtterance.rate = 0.9;
+      currentUtterance.pitch = 0.95;
+      currentUtterance.volume = 1;
+
+      if (voiceSelect && voiceSelect.value) {
+        var voices = window.speechSynthesis.getVoices();
+        var selectedVoice = voices.find(function(v) { return v.name === voiceSelect.value; });
+        if (selectedVoice) {
+          currentUtterance.voice = selectedVoice;
+          currentUtterance.lang = selectedVoice.lang;
+        }
+      }
+
+      currentUtterance.onend = function() {
+        if (isSpeaking) { currentChunkIndex++; speakNextChunk(); }
+      };
+
+      currentUtterance.onerror = function(e) {
+        if (!isSpeaking) return;
+        if (e.error === 'interrupted') {
+          setTimeout(function() { if (isSpeaking) speakNextChunk(); }, 150);
+          return;
+        }
+        if (e.error === 'canceled') { resetReadAloudBtn(); return; }
+        currentChunkIndex++;
+        speakNextChunk();
+      };
+
+      window.speechSynthesis.speak(currentUtterance);
+    }
+
+    readAloudBtn.addEventListener('click', function() {
+      if (isSpeaking) {
+        isSpeaking = false;
+        window.speechSynthesis.cancel();
+        resetReadAloudBtn();
+        return;
+      }
+
+      var tempDiv = document.createElement('div');
+      tempDiv.innerHTML = contentRenderer.innerHTML;
+      var plainText = tempDiv.innerText;
+      if (!plainText.trim()) return;
+
+      speechChunks = splitTextIntoChunks(plainText, 200);
+      currentChunkIndex = 0;
+      if (speechChunks.length === 0) return;
+
+      isSpeaking = true;
+      readAloudLabel.textContent = 'Stop Reading';
+      readAloudBtn.classList.remove('bg-brand-700', 'border-brand-600');
+      readAloudBtn.classList.add('bg-red-700', 'border-red-600');
+
+      if (window.speechSynthesis.speaking) {
+        window.speechSynthesis.cancel();
+        setTimeout(function() { if (isSpeaking) speakNextChunk(); }, 250);
+      } else {
+        speakNextChunk();
+      }
+    });
+
+    // ═══════════════════════════════════════════
+    // COPY TO CLIPBOARD
+    // ═══════════════════════════════════════════
+    copyBtn.addEventListener('click', async function() {
+      try {
+        var tempDiv = document.createElement('div');
+        tempDiv.innerHTML = contentRenderer.innerHTML;
+        var plainText = tempDiv.innerText;
+        await navigator.clipboard.writeText(plainText);
+
+        var originalText = copyBtn.innerHTML;
+        copyBtn.innerHTML =
+          '<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-emerald-400" viewBox="0 0 20 20" fill="currentColor">' +
+          '<path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />' +
+          '</svg> <span class="text-emerald-400">Copied!</span>';
+        setTimeout(function() { copyBtn.innerHTML = originalText; }, 2000);
+      } catch (err) {
+        console.error('Failed to copy text: ', err);
+      }
+    });
+  </script>
+</body>
+</html>

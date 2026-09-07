@@ -1,0 +1,107 @@
+[
+    {
+        "coin": "ETH",
+        "price": 2025.4,
+        "volume_24h": 800611216.1703402,
+        "metrics": {
+            "EMA_21": 2055.6271,
+            "EMA_50": 2073.5455,
+            "EMA_Gap_Pct": 0.86,
+            "BBW_Pct": 4.1,
+            "BB_Position": 0.08,
+            "scan_mode": "chop_opportunity"
+        },
+        "fa_score": 1,
+        "fa_report": "[YES] Explanation:\n\nEthereum (ETH) appears to be free of immediate existential threats based on the specified criteria.\n\n1.  **Active SEC Lawsuits:** As of early 2026, the U.S. Securities and Exchange Commission (SEC) has indicated a shift in its regulatory stance towards Ethereum. SEC Chairman Paul Atkins informally classified Ethereum as a commodity in July 2025, stating that securities laws do not currently apply to it, a position reiterated in February 2026. Furthermore, a joint release from the SEC and CFTC in March 2026 also classified ETH as a digital commodity. While the SEC had previously pursued legal action against Consensys, an Ethereum software firm, for alleged securities law violations related to MetaMask staking services, this lawsuit was agreed to be dropped in February 2025. This decision was attributed to changes in leadership and a broader shift in the SEC's regulatory approach. Although regulatory uncertainty persists for the broader decentralized finance (DeFi) ecosystem built on Ethereum, there is no active, comprehensive SEC lawsuit directly targeting ETH itself or the Ethereum Foundation that classifies ETH as a security.\n\n2.  **Imminent Massive VC Token Unlocks:** According to recent data from May 2026, Ethereum is considered \"fully unlocked.\" Its tokenomics involve a vesting schedule with allocations to ICO Participants, Block Rewards (PoW Era), Staking Rewards, and Early Contributor & Foundation, with tokens generally released through a linear vesting mechanism, particularly for ICO participants. This approach aims to reduce sudden supply shocks by releasing tokens in equal amounts over time. There are no indications of imminent massive venture capital (VC) token unlocks that would pose an immediate existential threat to ETH's supply dynamics.\n\n3.  **Major Exchange Delisting Notices:** There have been no notices from major cryptocurrency exchanges regarding the delisting of ETH itself. While some exchanges, such as BitMEX in September 2025, delisted specific perpetual contracts due to insufficient trading interest, ETH trading pairs were also mentioned in the context of new quarterly futures listings, indicating continued support for ETH. Similarly, EXMO announced the delisting of certain less-traded ETH trading pairs (e.g., QTUM/ETH, XRP/ETH) in January 2026 as part of a routine optimization process, not a delisting of the ETH token itself. Kraken's delisting announcements in April and May 2026 did not include Ethereum."
+    },
+    {
+        "coin": "INJ",
+        "price": 5.5075,
+        "volume_24h": 6970690.388189998,
+        "metrics": {
+            "EMA_21": 5.6155,
+            "EMA_50": 5.61,
+            "EMA_Gap_Pct": 0.1,
+            "BBW_Pct": 8.73,
+            "BB_Position": 0.2,
+            "scan_mode": "chop_opportunity"
+        },
+        "fa_score": 1,
+        "fa_report": "[YES] Injective Protocol (INJ) appears to be free of immediate existential threats based on the specified criteria.\n\n1.  **Active SEC lawsuits:** There are no identified active SEC lawsuits directly against Injective Protocol or its founders. While Injective Labs has engaged with the SEC to provide comments on DeFi regulation, this indicates proactive communication rather than an adversarial legal battle.\n2.  **Imminent massive VC token unlocks:** The INJ token is fully unlocked. The vesting schedule for all allocations, including Ecosystem Development, Team, Private Sale, Community Growth, Binance Launchpad, Seed Sale, and Advisors, concluded in 2023, with the entire initial supply fully unlocked as of January 2024.\n3.  **Major exchange delisting notices:** While some smaller exchanges like Bitfinex (February 2025), Cointree (June 2025), and Kriptomat (May 2026) have delisted INJ or specific INJ trading pairs, there are no recent or imminent delisting notices from major, top-tier exchanges that would pose an immediate existential threat to the project. In fact, Binance.US recently launched spot trading for INJ/USDT. Temporary suspensions of deposits and withdrawals by exchanges like Binance (December 2025) and Upbit (February 2026) were for network upgrades and not delistings."
+    },
+    {
+        "coin": "LINK",
+        "price": 9.1445,
+        "volume_24h": 12420840.889030004,
+        "metrics": {
+            "EMA_21": 9.304,
+            "EMA_50": 9.3808,
+            "EMA_Gap_Pct": 0.82,
+            "BBW_Pct": 4.16,
+            "BB_Position": 0.03,
+            "scan_mode": "chop_opportunity"
+        },
+        "fa_score": 1,
+        "fa_report": "[YES] Chainlink (LINK) appears to be free of immediate existential threats based on the criteria provided.\n\n1.  **Active SEC lawsuits:** While there was news in September 2025 suggesting Chainlink might face regulatory scrutiny from the US government, this indicates potential oversight rather than an active lawsuit. More recent information from February 2026 indicates that the SEC hired a former Chainlink legal leader to help guide crypto policy, suggesting a move towards clearer guidelines and dialogue with the industry rather than immediate enforcement actions against projects like Chainlink. There is no explicit mention of an active SEC lawsuit against Chainlink.\n2.  **Imminent massive VC token unlocks:** The unlock schedule for Chainlink tokens concluded in 2024, and the token is now fully unlocked. Approximately 72.71% of Chainlink's total supply has been unlocked, with the remaining tokens also unlocked. This means there are no imminent massive VC token unlocks that could flood the market.\n3.  **Major exchange delisting notices:** Binance delisted specific FDUSD margin trading pairs for LINK and other cryptocurrencies on January 6, 2026. Additionally, Binance delisted certain cross and isolated margin trading pairs, including LINK/ETH, as of May 1, 2026. These are delistings of specific trading pairs on the margin platform, not a complete delisting of the LINK token from major exchanges. Recent reports in May 2026 discuss LINK outflows from exchanges like Binance, indicating continued trading activity and suggesting long-term holding rather than a delisting threat."
+    },
+    {
+        "coin": "AAVE",
+        "price": 83.374,
+        "volume_24h": 9670909.942299997,
+        "metrics": {
+            "EMA_21": 84.7803,
+            "EMA_50": 85.4369,
+            "EMA_Gap_Pct": 0.77,
+            "BBW_Pct": 3.83,
+            "BB_Position": 0.04,
+            "scan_mode": "chop_opportunity"
+        },
+        "fa_score": 1,
+        "fa_report": "[YES] Aave is currently free of the explicitly stated immediate existential threats. The U.S. Securities and Exchange Commission (SEC) formally concluded its four-year investigation into Aave on December 16, 2025, without recommending any enforcement action, effectively removing the threat of U.S. government litigation. Regarding token unlocks, the AAVE token is largely unlocked, with approximately 94.87% of its total supply already in circulation as of May 27, 2026, and no imminent massive VC token unlocks have been reported. Lastly, while Binance delisted the AAVE/FDUSD spot trading pair effective January 16, 2025, this does not constitute a major exchange delisting notice for the AAVE token itself, as it remains tradable against other major pairs on Binance and other exchanges.\n\nIt is important to note that Aave has recently faced other significant challenges, including a major exploit on April 18, 2026, involving counterfeit rsETH tokens, which led to approximately $190 million in ETH withdrawals and a substantial decline in Total Value Locked (TVL) from over $26 billion to around $14 billion by May 25, 2026. The protocol also experienced a \"trust crisis\" in March and April 2026, with key service providers like Chaos Labs, BGD Labs, and Aave Chan Initiative (ACI) departing due to disagreements over protocol direction and governance. Additionally, a co-founder of OpenZeppelin issued a general warning in May 2026 about the security of all DeFi protocols, including Aave, against AI-driven attacks. However, these issues, while serious, do not fall under the specific criteria of active SEC lawsuits, imminent massive VC token unlocks, or major exchange delisting notices as defined for this evaluation."
+    },
+    {
+        "coin": "NEAR",
+        "price": 2.4914,
+        "volume_24h": 176187303.71247,
+        "metrics": {
+            "EMA_21": 2.5605,
+            "EMA_50": 2.5752,
+            "EMA_Gap_Pct": 0.57,
+            "BBW_Pct": 7.44,
+            "BB_Position": 0.21,
+            "scan_mode": "chop_opportunity"
+        },
+        "fa_score": 1,
+        "fa_report": "[YES]\n1.  **Safety:** The NEAR Protocol project appears to be free of immediate existential threats based on the strict criteria.\n    *   **Active SEC lawsuits:** While the NEAR token was mentioned in the SEC's June 2023 complaint against Coinbase, alleging it to be a crypto asset offered and sold as an investment contract, this action was not directly against the NEAR Foundation or its ecosystem participants. The NEAR Foundation has publicly disagreed with this classification. Additionally, NEAR was listed among other tokens in a lawsuit filed by eighteen states and the DeFi Education Fund against the SEC in November 2024, challenging the SEC's regulatory overreach. However, there is no active SEC lawsuit directly targeting NEAR Protocol or the NEAR Foundation itself.\n    *   **Imminent massive VC token unlocks:** There are no indications of imminent massive VC token unlocks for NEAR in the immediate future (next few months) based on the available information. The initial genesis tokens, totaling 1 billion, were fully unlocked by April 2025 (60 months from April 2020 genesis). Current token unlock schedules provided in search results for May-July 2026 pertain to other projects, not specifically to large, immediate NEAR VC unlocks.\n    *   **Major exchange delisting notices:** There are no public notices or reports indicating any major exchange delisting notices for NEAR."
+    },
+    {
+        "coin": "TAO",
+        "price": 265.56,
+        "volume_24h": 12326689.038499994,
+        "metrics": {
+            "EMA_21": 273.2142,
+            "EMA_50": 276.4164,
+            "EMA_Gap_Pct": 1.16,
+            "BBW_Pct": 5.68,
+            "BB_Position": -0.02,
+            "scan_mode": "chop_opportunity"
+        },
+        "fa_score": 1,
+        "fa_report": "[YES]\nBittensor (TAO) appears to be free of immediate existential threats based on the provided criteria.\n\n1.  **Active SEC lawsuits:** There is no evidence of an active SEC lawsuit specifically targeting Bittensor (TAO). While the SEC has been active in the crypto space, pursuing cases against other platforms and tokens, and an S-1 filing for Grayscale Bittensor Trust mentions regulatory risks, no direct lawsuit against Bittensor itself was found in recent months.\n2.  **Imminent massive VC token unlocks:** Bittensor's tokenomics indicate that the project had a fair launch with no pre-mined tokens or ICOs, meaning no traditional VC allocations that would lead to massive imminent unlocks. Several sources state that Bittensor is \"fully unlocked\" or that significant unlocks are scheduled far in the future, with one major unlock event noted for October 2029. Daily emissions are part of the network's ongoing operation, not massive VC unlocks.\n3.  **Major exchange delisting notices:** There are no recent delisting notices for Bittensor (TAO) from major exchanges, including Hyperliquid, where it trades as a perpetual contract. While BitMart delisted a token also named TAO (Fusotao Protocol) in August 2023, this is a different project. Hyperliquid's recent delisting announcements and recommendations do not include Bittensor's TAO."
+    },
+    {
+        "coin": "HYPE",
+        "price": 57.93,
+        "volume_24h": 773337625.9084709,
+        "metrics": {
+            "EMA_21": 59.9575,
+            "EMA_50": 60.6194,
+            "EMA_Gap_Pct": 1.09,
+            "BBW_Pct": 10.38,
+            "BB_Position": 0.07,
+            "scan_mode": "chop_opportunity"
+        },
+        "fa_score": 1,
+        "fa_report": "[YES] The HYPE token project appears to be free of immediate existential threats based on the available information from the last few months.\n\n1.  **Active SEC lawsuits:** There is no evidence of an active SEC lawsuit directly against the HYPE token or the Hyperliquid protocol. Recent reports indicate Hyperliquid Labs is proactively engaging with regulators, such as submitting comment letters to the U.S. Commodity Futures Trading Commission (CFTC) to advocate for decentralized finance (DeFi) frameworks, which is seen as reducing existential risk. While an SEC filing for a Bitwise Hyperliquid ETF mentions general regulatory uncertainties, it does not indicate an active lawsuit against HYPE.\n2.  **Imminent massive VC token unlocks:** While there is a scheduled unlock for Hyperliquid on June 6, 2026, for Core Contributors, multiple sources indicate that the \"massive\" or largest tranches of vesting for team and investor allocations are \"back-loaded\" and not expected until 2027 and beyond. The tokenomics are described as a \"multi-year, gradual unlock model\" designed to maintain market stability and discourage short-term speculation, with new supply entering the market in a predictable and transparent manner. The protocol also employs an Assistance Fund that actively buys back HYPE, which helps to offset potential selling pressure from unlocks.\n3.  **Major exchange delisting notices:** There are no recent reports (within the last few months) of HYPE facing delisting notices from major exchanges. On the contrary, HYPE is actively traded on several major exchanges, including LBank, Bitget, Gate, KuCoin, and OKX. Furthermore, spot HYPE ETFs have recently launched on the NYSE and Nasdaq in May 2026, indicating increasing institutional adoption and integration into regulated financial markets. Past incidents in March 2025 involved Hyperliquid *itself* delisting perpetual futures contracts for the JELLYJELLY token due to suspicious trading activity, not HYPE being delisted from other platforms."
+    }
+]

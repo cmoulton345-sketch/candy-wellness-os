@@ -1,0 +1,64 @@
+{
+  "name": "Burke Law — Live Demo Email Blast",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 11,
+              "triggerAtMinute": 15
+            }
+          ]
+        },
+        "timezone": "America/Halifax"
+      },
+      "id": "schedule-trigger",
+      "name": "11:30 AM Atlantic",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [240, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Burke Law attendee list\nconst attendees = [\n  { email: 'Shane@burkelaw.ca', firstName: 'Shane' },\n  { email: 'Taylor@burkelaw.ca', firstName: 'Taylor' },\n  { email: 'Admin@burkelaw.ca', firstName: 'Team' },\n  { email: 'Assistant@burkelaw.ca', firstName: 'Team' },\n  { email: 'Emily@burkelaw.ca', firstName: 'Emily' },\n  { email: 'TJ@burkelaw.ca', firstName: 'TJ' }\n];\n\nreturn attendees.map(a => ({ json: a }));"
+      },
+      "id": "attendee-list",
+      "name": "Attendee List",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $json.email }}",
+        "subject": "Something just happened in that room...",
+        "emailType": "html",
+        "message": "=<!DOCTYPE html>\n<html>\n<head>\n  <meta charset='UTF-8'>\n  <meta name='viewport' content='width=device-width, initial-scale=1.0'>\n  <style>\n    body { margin: 0; padding: 0; background: #050505; font-family: Arial, sans-serif; }\n    .wrapper { max-width: 600px; margin: 0 auto; background: #0a0a0a; }\n    .header { background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%); padding: 48px 40px 32px; text-align: center; border-bottom: 1px solid #1a1a1a; }\n    .logo { font-size: 13px; letter-spacing: 0.3em; color: #D4A843; text-transform: uppercase; margin-bottom: 24px; }\n    .headline { font-size: 28px; font-weight: 700; color: #ffffff; line-height: 1.3; margin: 0; }\n    .gold { color: #D4A843; }\n    .body { padding: 40px; }\n    .greeting { font-size: 16px; color: #a1a1aa; margin-bottom: 24px; line-height: 1.6; }\n    .callout { background: rgba(212,168,67,0.06); border: 1px solid rgba(212,168,67,0.2); border-radius: 12px; padding: 24px; margin: 32px 0; }\n    .callout p { font-size: 15px; color: #d4d4d8; line-height: 1.7; margin: 0; }\n    .footer { padding: 32px 40px; border-top: 1px solid #1a1a1a; text-align: center; }\n    .footer p { font-size: 12px; color: #52525b; margin: 0; line-height: 1.6; }\n  </style>\n</head>\n<body>\n  <div class='wrapper'>\n    <div class='header'>\n      <div class='logo'>Flowstate AI</div>\n      <h1 class='headline'>If you're reading this, you just<br>watched it <span class='gold'>happen live.</span></h1>\n    </div>\n    <div class='body'>\n      <p class='greeting'>Hi {{ $json.firstName }},</p>\n      <p class='greeting'>This email wasn't scheduled manually. Nobody typed it. No one pressed send.</p>\n      <p class='greeting'>At exactly 11:15 AM this morning, a workflow we built together fired automatically — and this landed in your inbox. That's the system we're proposing to build for Burke Law Group.</p>\n      <div class='callout'>\n        <p>Imagine this running for client intake confirmations, case status updates, document delivery, deadline reminders, and internal team alerts — all triggered automatically, all branded, all instant.</p>\n      </div>\n      <p class='greeting'>This is Tier 1. And we're just getting started.</p>\n    </div>\n    <div class='footer'>\n      <p>Flowstate AI · Fredericton, New Brunswick<br>Built for Burke Law Group · Private Demo</p>\n    </div>\n  </div>\n</body>\n</html>",
+        "options": {}
+      },
+      "id": "send-gmail",
+      "name": "Send via Gmail",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [680, 300],
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "1",
+          "name": "Gmail account"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "11:30 AM Atlantic": {
+      "main": [[{ "node": "Attendee List", "type": "main", "index": 0 }]]
+    },
+    "Attendee List": {
+      "main": [[{ "node": "Send via Gmail", "type": "main", "index": 0 }]]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  }
+}

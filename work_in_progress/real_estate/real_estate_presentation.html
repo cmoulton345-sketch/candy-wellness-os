@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Automation for Real Estate | FlowstateAI</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; background: #0a0a1a; color: #fff; overflow: hidden; }
+
+  .slide { display: none; width: 100vw; height: 100vh; padding: 60px 80px; position: relative; overflow: hidden; flex-direction: column; justify-content: center; }
+  .slide.active { display: flex; }
+
+  .slide-hero { background: linear-gradient(135deg, #0a0f0a 0%, #0a1f12 50%, #0a0f0a 100%); }
+  .slide-dark { background: linear-gradient(135deg, #0d0d1f 0%, #111827 100%); }
+  .slide-green { background: linear-gradient(135deg, #052e16 0%, #14532d 100%); }
+  .slide-blue { background: linear-gradient(135deg, #0f2460 0%, #1a3a7a 100%); }
+  .slide-teal { background: linear-gradient(135deg, #042f2e 0%, #134e4a 100%); }
+
+  .slide::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: linear-gradient(rgba(34,197,94,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(34,197,94,0.04) 1px, transparent 1px); background-size: 50px 50px; pointer-events: none; }
+
+  .badge { display: inline-block; background: rgba(34,197,94,0.15); border: 1px solid rgba(34,197,94,0.35); color: #86efac; padding: 6px 16px; border-radius: 20px; font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 24px; }
+  .badge-blue { background: rgba(59,130,246,0.15); border-color: rgba(59,130,246,0.35); color: #93c5fd; }
+  .badge-orange { background: rgba(251,146,60,0.15); border-color: rgba(251,146,60,0.35); color: #fdba74; }
+  .badge-red { background: rgba(239,68,68,0.15); border-color: rgba(239,68,68,0.35); color: #fca5a5; }
+  .badge-purple { background: rgba(139,92,246,0.15); border-color: rgba(139,92,246,0.35); color: #c4b5fd; }
+
+  h1 { font-size: 64px; font-weight: 900; line-height: 1.1; letter-spacing: -2px; }
+  h2 { font-size: 44px; font-weight: 800; line-height: 1.2; letter-spacing: -1px; margin-bottom: 16px; }
+  p { font-size: 18px; line-height: 1.7; color: #94a3b8; }
+  .lead { font-size: 22px; color: #cbd5e1; line-height: 1.6; max-width: 800px; }
+
+  .gradient-text { background: linear-gradient(135deg, #4ade80, #3b82f6); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+  .gradient-text-warm { background: linear-gradient(135deg, #f97316, #ef4444); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+  .text-green { color: #4ade80; }
+  .text-blue { color: #60a5fa; }
+  .text-orange { color: #fb923c; }
+  .text-red { color: #f87171; }
+
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 40px; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; margin-top: 40px; }
+  .grid-4 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 20px; margin-top: 40px; }
+
+  .card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 28px; }
+  .card-green { border-color: rgba(34,197,94,0.3); background: rgba(34,197,94,0.05); }
+  .card-blue { border-color: rgba(59,130,246,0.3); background: rgba(59,130,246,0.05); }
+  .card-orange { border-color: rgba(251,146,60,0.3); background: rgba(251,146,60,0.05); }
+  .card-red { border-color: rgba(239,68,68,0.3); background: rgba(239,68,68,0.05); }
+  .card-purple { border-color: rgba(139,92,246,0.3); background: rgba(139,92,246,0.05); }
+  .card .icon { font-size: 36px; margin-bottom: 16px; display: block; }
+  .card h3 { font-size: 18px; font-weight: 700; color: #f1f5f9; margin-bottom: 8px; }
+  .card p { font-size: 14px; color: #94a3b8; }
+
+  .divider { width: 60px; height: 4px; background: linear-gradient(90deg, #4ade80, #3b82f6); border-radius: 2px; margin: 20px 0; }
+  .divider-warm { background: linear-gradient(90deg, #f97316, #ef4444); }
+
+  .logo-bar { position: absolute; bottom: 40px; left: 80px; display: flex; align-items: center; gap: 12px; }
+  .logo-mark { width: 32px; height: 32px; background: linear-gradient(135deg, #3b82f6, #8b5cf6); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 14px; }
+  .logo-text { font-size: 14px; font-weight: 700; color: #64748b; }
+  .slide-num { position: absolute; bottom: 40px; right: 80px; font-size: 12px; color: #334155; font-weight: 600; }
+
+  .highlight-box { background: rgba(34,197,94,0.08); border: 1px solid rgba(34,197,94,0.2); border-left: 4px solid #4ade80; border-radius: 0 12px 12px 0; padding: 24px 28px; margin: 24px 0; }
+  .highlight-box-blue { background: rgba(59,130,246,0.08); border-color: rgba(59,130,246,0.2); border-left-color: #3b82f6; }
+
+  ul.check-list { list-style: none; margin-top: 20px; }
+  ul.check-list li { padding: 10px 0; color: #cbd5e1; font-size: 17px; display: flex; align-items: flex-start; gap: 12px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+  ul.check-list li:last-child { border-bottom: none; }
+  ul.check-list li::before { content: '✓'; color: #4ade80; font-weight: 900; flex-shrink: 0; margin-top: 2px; }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+
+  .numbered-list { list-style: none; margin-top: 20px; }
+  .numbered-list li { display: flex; gap: 20px; align-items: flex-start; padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+  .numbered-list li .num { background: linear-gradient(135deg, #4ade80, #3b82f6); width: 36px; height: 36px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 14px; color: #0f172a; flex-shrink: 0; }
+  .numbered-list li .content h4 { font-size: 16px; color: #f1f5f9; margin-bottom: 4px; }
+  .numbered-list li .content p { font-size: 14px; color: #64748b; }
+
+  .stat-big { font-size: 72px; font-weight: 900; line-height: 1; }
+  .stat-label { font-size: 14px; color: #64748b; margin-top: 8px; text-transform: uppercase; letter-spacing: 1px; }
+
+  .nav-btn { position: fixed; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #fff; width: 48px; height: 48px; border-radius: 50%; font-size: 20px; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 100; transition: all 0.2s; }
+  .nav-btn:hover { background: rgba(34,197,94,0.2); border-color: rgba(34,197,94,0.5); }
+  #prev { left: 20px; }
+  #next { right: 20px; }
+  .progress-bar { position: fixed; bottom: 0; left: 0; height: 3px; background: linear-gradient(90deg, #4ade80, #3b82f6); transition: width 0.3s ease; z-index: 100; }
+</style>
+</head>
+<body>
+
+<!-- SLIDE 1: TITLE -->
+<div class="slide slide-hero active" id="slide-1">
+  <div>
+    <div class="badge">FlowstateAI Automation</div>
+    <h1>The AI Advantage<br><span class="gradient-text">in Real Estate</span></h1>
+    <div class="divider"></div>
+    <p class="lead" style="margin-top:20px;">What the leading real estate offices are doing right now — and what it means for yours.</p>
+  </div>
+  <div class="logo-bar"><div class="logo-mark">F</div><span class="logo-text">flowstateaiautomation.ai</span></div>
+  <div class="slide-num">1 / 9</div>
+</div>
+
+<!-- SLIDE 2: THE SHIFT -->
+<div class="slide slide-dark" id="slide-2">
+  <div>
+    <div class="badge badge-orange">The Market is Shifting</div>
+    <h2>AI isn't replacing agents.<br><span class="gradient-text-warm">It's separating the top producers from everyone else.</span></h2>
+    <div class="divider divider-warm"></div>
+    <p class="lead">Real estate has always been a relationship business. What AI automation changes is the volume, consistency, and speed of those relationships — at a scale no individual agent or small team can match manually.</p>
+
+    <div class="grid-3" style="margin-top:40px;">
+      <div class="card card-blue">
+        <h3 class="text-blue">88%</h3>
+        <p>of buyers use an agent — but only 12% use the same agent twice. The reason: lack of follow-up after closing.</p>
+      </div>
+      <div class="card card-green">
+        <h3 class="text-green">100×</h3>
+        <p>more likely to qualify a lead if you respond within 5 minutes vs. 30 minutes</p>
+      </div>
+      <div class="card card-orange">
+        <h3 class="text-orange">8 wks</h3>
+        <p>average buyer search time — making consistent long-term nurture sequences essential, not optional</p>
+      </div>
+    </div>
+  </div>
+  <div class="logo-bar"><div class="logo-mark">F</div><span class="logo-text">flowstateaiautomation.ai</span></div>
+  <div class="slide-num">2 / 9</div>
+</div>
+
+<!-- SLIDE 3: THE FOLLOW-UP GAP -->
+<div class="slide slide-green" id="slide-3">
+  <div class="two-col">
+    <div>
+      <div class="badge badge-red">The Biggest Problem in Real Estate</div>
+      <h2>The follow-up gap<br><span class="text-green">is costing you deals.</span></h2>
+      <div class="divider"></div>
+      <p class="lead">Most leads require 8–12 touchpoints before converting. Most agents stop at 2. The difference between top producers and everyone else isn't talent or market — it's consistency of follow-up.</p>
+
+      <div class="highlight-box" style="margin-top:32px;">
+        <p style="color:#86efac; font-size:17px; font-weight:600;">AI automation handles the follow-up so you can focus on the conversations that actually close deals — showings, negotiations, and client relationships.</p>
+      </div>
+    </div>
+    <div>
+      <div class="card card-green" style="margin-bottom:20px;">
+        <span class="icon">🏆</span>
+        <h3 style="color:#4ade80;">Top Producing Offices Today</h3>
+        <ul class="check-list" style="margin-top:12px;">
+          <li style="font-size:15px;">Responding to every lead in under 60 seconds</li>
+          <li style="font-size:15px;">Running 90-day nurture sequences automatically</li>
+          <li style="font-size:15px;">Generating 5x more Google reviews on autopilot</li>
+          <li style="font-size:15px;">Re-engaging cold leads without manual effort</li>
+        </ul>
+      </div>
+      <div class="card card-red">
+        <span class="icon">⚠️</span>
+        <h3 style="color:#f87171;">Offices Without These Systems</h3>
+        <ul class="check-list" style="margin-top:12px;">
+          <li style="font-size:15px;">Missing midnight and weekend inquiries entirely</li>
+          <li style="font-size:15px;">Leads going cold after 1–2 follow-ups</li>
+          <li style="font-size:15px;">Past clients choosing a competitor 3 years later</li>
+          <li style="font-size:15px;">Hours per week spent on tasks AI does in seconds</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="logo-bar"><div class="logo-mark">F</div><span class="logo-text">flowstateaiautomation.ai</span></div>
+  <div class="slide-num">3 / 9</div>
+</div>
+
+<!-- SLIDE 4: WHAT TOP OFFICES ARE DOING -->
+<div class="slide slide-blue" id="slide-4">
+  <div>
+    <div class="badge">What Top Real Estate Offices Are Already Doing</div>
+    <h2>The offices pulling ahead are<br>running these <span class="gradient-text">AI systems right now.</span></h2>
+    <div class="divider"></div>
+    <div class="grid-3" style="margin-top:36px;">
+      <div class="card">
+        <span class="icon">⚡</span>
+        <h3>Instant Lead Response</h3>
+        <p>AI replies to every inquiry in under 60 seconds — Realtor.ca, Facebook, website, sign calls — 24/7 including evenings and weekends.</p>
+      </div>
+      <div class="card">
+        <span class="icon">📧</span>
+        <h3>Buyer Nurture Sequences</h3>
+        <p>Multi-touch email and SMS sequences keep buyers engaged over weeks and months until they're ready to act — no manual effort required.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🏡</span>
+        <h3>AI Listing Descriptions</h3>
+        <p>Compelling, MLS-ready listing copy written by AI in seconds. Agents review and publish — hours of writing time reduced to minutes.</p>
+      </div>
+      <div class="card">
+        <span class="icon">📣</span>
+        <h3>Automated Listing Marketing</h3>
+        <p>New listing → auto-post to Facebook and Instagram → alert buyer database → schedule follow-ups. All automatic from the moment a listing goes live.</p>
+      </div>
+      <div class="card">
+        <span class="icon">⭐</span>
+        <h3>Review Generation</h3>
+        <p>Perfectly timed review requests after every closing — generating 3–5x more Google reviews and driving qualified inbound referrals.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🔄</span>
+        <h3>Post-Close Referral Sequence</h3>
+        <p>A structured post-closing check-in sequence that naturally surfaces referral conversations — turning satisfied clients into your most powerful lead source.</p>
+      </div>
+    </div>
+  </div>
+  <div class="logo-bar"><div class="logo-mark">F</div><span class="logo-text">flowstateaiautomation.ai</span></div>
+  <div class="slide-num">4 / 9</div>
+</div>
+
+<!-- SLIDE 5: YOUR OFFICE SPECIFICALLY -->
+<div class="slide slide-dark" id="slide-5">
+  <div>
+    <div class="badge badge-purple">What This Looks Like for You</div>
+    <h2>AI automation built for<br><span class="gradient-text">real estate offices in Atlantic Canada.</span></h2>
+    <div class="divider"></div>
+    <div class="two-col" style="margin-top:36px; gap:40px;">
+      <div>
+        <p style="color:#94a3b8; font-size:16px; margin-bottom:20px;">Your market has its own rhythms — seasonal buying patterns, tight-knit communities, and referral-driven growth. Here's where automation makes the biggest impact specifically for your office:</p>
+        <ul class="check-list">
+          <li><strong>Spring market surge</strong> — AI re-activates your entire cold lead database before the listing season hits</li>
+          <li><strong>Referral-driven markets</strong> — post-close sequences and anniversary touchpoints keep you front of mind for life</li>
+          <li><strong>Smaller team, bigger output</strong> — automation gives a 2–5 agent office the follow-up capacity of a 20-agent team</li>
+          <li><strong>Nights and weekends</strong> — AI handles inquiries at 10pm on a Sunday so agents don't have to</li>
+          <li><strong>Transaction management</strong> — automated milestone updates keep buyers and sellers informed without your coordinator managing every message</li>
+        </ul>
+      </div>
+      <div>
+        <div class="card card-green" style="margin-bottom:20px;">
+          <span class="icon">🏡</span>
+          <h3>Buyers</h3>
+          <p>From first inquiry to closing day, AI maintains personalized touchpoints at every stage — property alerts, showing reminders, financing follow-ups, and transaction updates — all automatic.</p>
+        </div>
+        <div class="card card-blue" style="margin-bottom:20px;">
+          <span class="icon">🔑</span>
+          <h3>Sellers</h3>
+          <p>Automated showing feedback summaries, weekly market updates, and listing performance reports keep sellers informed and confident — without hours of manual communication.</p>
+        </div>
+        <div class="card card-purple">
+          <span class="icon">💼</span>
+          <h3>Past Clients</h3>
+          <p>Annual home anniversary messages, market updates, and referral touchpoints ensure past clients remember your name — and recommend you — for years after closing.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="logo-bar"><div class="logo-mark">F</div><span class="logo-text">flowstateaiautomation.ai</span></div>
+  <div class="slide-num">5 / 9</div>
+</div>
+
+<!-- SLIDE 6: TOP 5 AUTOMATIONS -->
+<div class="slide slide-teal" id="slide-6">
+  <div>
+    <div class="badge">Our Recommendations</div>
+    <h2>The 5 automations we'd<br>build first for <span class="gradient-text">your office.</span></h2>
+    <div class="divider"></div>
+    <ol class="numbered-list" style="margin-top:30px;">
+      <li>
+        <div class="num">1</div>
+        <div class="content">
+          <h4>60-Second Lead Response System</h4>
+          <p>Every inquiry gets a personalized AI response in 60 seconds — 24/7. This single automation typically pays for the entire system within the first 30 days through recovered leads.</p>
+        </div>
+      </li>
+      <li>
+        <div class="num">2</div>
+        <div class="content">
+          <h4>90-Day Buyer Nurture Sequence</h4>
+          <p>Multi-touch email and SMS that keeps every lead warm over the full buying timeline. Most buyers take 8+ weeks — this ensures you're still the conversation when they decide.</p>
+        </div>
+      </li>
+      <li>
+        <div class="num">3</div>
+        <div class="content">
+          <h4>Review Request Automation</h4>
+          <p>Perfectly timed post-closing review requests. More Google reviews = more inbound calls. The highest-ROI reputation tool for a local real estate brand.</p>
+        </div>
+      </li>
+      <li>
+        <div class="num">4</div>
+        <div class="content">
+          <h4>Post-Close Referral Sequence</h4>
+          <p>A 90-day check-in and referral sequence after every closing. Captures your warmest possible referral source — every single time — without relying on agents to remember.</p>
+        </div>
+      </li>
+      <li>
+        <div class="num">5</div>
+        <div class="content">
+          <h4>Listing Marketing Automation</h4>
+          <p>New listing → AI writes the copy → auto-posts to social → alerts your buyer database → schedules viewings. Full listing marketing on complete autopilot.</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+  <div class="logo-bar"><div class="logo-mark">F</div><span class="logo-text">flowstateaiautomation.ai</span></div>
+  <div class="slide-num">6 / 9</div>
+</div>
+
+<!-- SLIDE 7: ROI -->
+<div class="slide slide-dark" id="slide-7">
+  <div>
+    <div class="badge badge-blue">The Numbers</div>
+    <h2>What real estate offices typically see<br>in the first <span class="gradient-text">90 days.</span></h2>
+    <div class="divider"></div>
+    <div class="grid-4" style="margin-top:40px;">
+      <div class="card card-green" style="text-align:center; padding:40px 20px;">
+        <div class="stat-big text-green">3×</div>
+        <div class="stat-label">more leads contacted within 5 minutes</div>
+      </div>
+      <div class="card card-blue" style="text-align:center; padding:40px 20px;">
+        <div class="stat-big text-blue">5×</div>
+        <div class="stat-label">increase in Google reviews generated monthly</div>
+      </div>
+      <div class="card card-orange" style="text-align:center; padding:40px 20px;">
+        <div class="stat-big text-orange">10+</div>
+        <div class="stat-label">hours per week reclaimed per agent</div>
+      </div>
+      <div class="card card-purple" style="text-align:center; padding:40px 20px;">
+        <div class="stat-big" style="color:#c4b5fd;">12→88%</div>
+        <div class="stat-label">improve past-client repeat rate with consistent follow-up</div>
+      </div>
+    </div>
+    <div class="highlight-box-blue" style="margin-top:40px; background: rgba(59,130,246,0.08); border: 1px solid rgba(59,130,246,0.2); border-left: 4px solid #3b82f6; border-radius: 0 12px 12px 0; padding: 24px 28px;">
+      <p style="color:#93c5fd; font-size:17px;"><strong>Most offices recover the full cost of implementation in the first 30–60 days</strong> simply by converting leads that previously went unanswered — before referral, review, and retention systems compound the return.</p>
+    </div>
+  </div>
+  <div class="logo-bar"><div class="logo-mark">F</div><span class="logo-text">flowstateaiautomation.ai</span></div>
+  <div class="slide-num">7 / 9</div>
+</div>
+
+<!-- SLIDE 8: ABOUT -->
+<div class="slide slide-dark" id="slide-8">
+  <div class="two-col">
+    <div>
+      <div class="badge">About FlowstateAI</div>
+      <h2>Atlantic Canadian.<br><span class="gradient-text">Built for Atlantic Canadian businesses.</span></h2>
+      <div class="divider"></div>
+      <p class="lead">We're not a national software company flying in for a demo. We're right here — building AI automation systems for businesses in New Brunswick, Nova Scotia, and PEI.</p>
+      <ul class="check-list" style="margin-top:28px;">
+        <li>Complete systems implemented in 30 days or less</li>
+        <li>No technical knowledge required on your end</li>
+        <li>Built specifically for your market and team size</li>
+        <li>Ongoing support — we grow with you</li>
+        <li>We understand how Atlantic Canadians do business</li>
+      </ul>
+    </div>
+    <div>
+      <div class="card card-green" style="margin-bottom:20px; padding:36px;">
+        <span class="icon">🚀</span>
+        <h3>How We Work</h3>
+        <p>Start with a Free Systems Audit — 30 minutes to map your biggest automation opportunities. Then we build, test, and launch. You see results before the end of the first month.</p>
+      </div>
+      <div class="card" style="padding:36px;">
+        <span class="icon">📍</span>
+        <h3>Local. Accountable. Invested.</h3>
+        <p>We live and work in the same communities you serve. Your success is our reputation — and that's something no national vendor can offer.</p>
+      </div>
+    </div>
+  </div>
+  <div class="logo-bar"><div class="logo-mark">F</div><span class="logo-text">flowstateaiautomation.ai</span></div>
+  <div class="slide-num">8 / 9</div>
+</div>
+
+<!-- SLIDE 9: CTA -->
+<div class="slide slide-hero" id="slide-9">
+  <div style="text-align:center; max-width:800px; margin:0 auto;">
+    <div class="badge">Next Step</div>
+    <h2 style="font-size:52px;">Let's build your<br><span class="gradient-text">competitive advantage.</span></h2>
+    <div class="divider" style="margin:24px auto;"></div>
+    <p class="lead" style="text-align:center; margin:0 auto;">Start with a Free 30-Minute Systems Audit. We'll map exactly where AI automation can make the biggest impact for your office — no pitch, no pressure.</p>
+    <div style="margin-top:48px; display:flex; gap:20px; justify-content:center; flex-wrap:wrap;">
+      <div style="background:rgba(34,197,94,0.1); border:1px solid rgba(34,197,94,0.3); border-radius:12px; padding:24px 36px; text-align:center;">
+        <div style="font-size:13px; color:#64748b; margin-bottom:4px; text-transform:uppercase; letter-spacing:1px;">Email</div>
+        <div style="color:#4ade80; font-weight:700; font-size:18px;">joe@flowstateaiautomation.ai</div>
+      </div>
+      <div style="background:rgba(59,130,246,0.1); border:1px solid rgba(59,130,246,0.3); border-radius:12px; padding:24px 36px; text-align:center;">
+        <div style="font-size:13px; color:#64748b; margin-bottom:4px; text-transform:uppercase; letter-spacing:1px;">Website</div>
+        <div style="color:#60a5fa; font-weight:700; font-size:18px;">flowstateaiautomation.ai</div>
+      </div>
+    </div>
+    <p style="margin-top:48px; font-size:15px; color:#475569;">The offices that will own their market in 3 years are making decisions like this today.</p>
+  </div>
+  <div class="logo-bar"><div class="logo-mark">F</div><span class="logo-text">flowstateaiautomation.ai</span></div>
+  <div class="slide-num">9 / 9</div>
+</div>
+
+<button class="nav-btn" id="prev">←</button>
+<button class="nav-btn" id="next">→</button>
+<div class="progress-bar" id="progress"></div>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  const total = slides.length;
+  let current = 0;
+  function show(n) {
+    slides[current].classList.remove('active');
+    current = (n + total) % total;
+    slides[current].classList.add('active');
+    document.getElementById('progress').style.width = ((current + 1) / total * 100) + '%';
+  }
+  document.getElementById('next').onclick = () => show(current + 1);
+  document.getElementById('prev').onclick = () => show(current - 1);
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight' || e.key === ' ') show(current + 1);
+    if (e.key === 'ArrowLeft') show(current - 1);
+  });
+  document.getElementById('progress').style.width = (1 / total * 100) + '%';
+</script>
+</body>
+</html>

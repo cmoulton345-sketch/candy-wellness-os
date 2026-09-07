@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flowstate AI x Burke Law Group</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #050505;
+            --text-color: #f4f4f5;
+            --accent-gold: #D4A843;
+            --glass-bg: rgba(255, 255, 255, 0.02);
+            --glass-border: rgba(255, 255, 255, 0.05);
+            --neon-blue: #3b82f6;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--bg-color); color: var(--text-color); overflow: hidden; }
+
+        .deck { height: 100vh; width: 100vw; overflow-y: scroll; scroll-snap-type: y mandatory; scroll-behavior: smooth; }
+        .deck::-webkit-scrollbar { display: none; }
+        .deck { -ms-overflow-style: none; scrollbar-width: none; }
+
+        .slide { height: 100vh; width: 100vw; scroll-snap-align: start; display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative; padding: 2rem; overflow: hidden; }
+
+        .bg-glow { position: absolute; width: 60vw; height: 60vw; background: radial-gradient(circle, rgba(212,168,67,0.08) 0%, rgba(0,0,0,0) 70%); top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: -1; pointer-events: none; }
+        .bg-glow-blue { background: radial-gradient(circle, rgba(59,130,246,0.08) 0%, rgba(0,0,0,0) 70%); }
+        .bg-glow-red { background: radial-gradient(circle, rgba(239,68,68,0.08) 0%, rgba(0,0,0,0) 70%); }
+
+        h1 { font-family: 'Playfair Display', serif; font-size: 5.5rem; line-height: 1.1; margin-bottom: 1.5rem; text-align: center; background: linear-gradient(135deg, #fff 0%, #a1a1aa 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        h2 { font-family: 'Playfair Display', serif; font-size: 4rem; margin-bottom: 2.5rem; font-weight: 600; letter-spacing: -0.02em; }
+        h3 { font-size: 1.5rem; color: var(--text-color); margin-bottom: 1rem; font-weight: 500; }
+        .gold-text { color: var(--accent-gold); -webkit-text-fill-color: var(--accent-gold); }
+
+        p { font-size: 1.5rem; line-height: 1.8; color: #a1a1aa; max-width: 900px; text-align: center; margin-bottom: 2rem; font-weight: 300; }
+
+        .glass-card { background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 24px; padding: 4rem; backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5); max-width: 1200px; width: 100%; }
+
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; align-items: stretch; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+
+        .feature-box { background: rgba(255,255,255,0.02); border: 1px solid var(--glass-border); padding: 2rem; border-radius: 16px; text-align: left; }
+        .feature-box h3 { color: var(--accent-gold); font-size: 1.8rem; margin-bottom: 1rem; }
+        .feature-box p { font-size: 1.1rem; text-align: left; margin: 0; }
+        .feature-box ul { margin-left: 1.5rem; color: #a1a1aa; margin-top: 1rem; line-height: 1.6; }
+        .feature-box li { margin-bottom: 0.5rem; }
+
+        .magic-btn-container { display: flex; justify-content: center; margin-top: 4rem; }
+        .magic-btn { background: transparent; border: 2px solid var(--accent-gold); color: var(--accent-gold); font-family: 'Inter', sans-serif; font-size: 1.25rem; text-transform: uppercase; letter-spacing: 0.2em; padding: 1.5rem 4rem; border-radius: 50px; cursor: pointer; transition: all 0.4s ease; box-shadow: 0 0 20px rgba(212,168,67,0.2); }
+        .magic-btn:hover { background: var(--accent-gold); color: #000; box-shadow: 0 0 40px rgba(212,168,67,0.6); transform: translateY(-2px); }
+
+        .launch-btn { display: inline-flex; align-items: center; gap: 10px; background: #fff; color: #000; padding: 1rem 2.5rem; border-radius: 8px; font-weight: 600; font-size: 1.2rem; text-decoration: none; transition: 0.3s; margin-top: 2rem; }
+        .launch-btn:hover { background: var(--accent-gold); transform: translateY(-3px); }
+
+        /* The Terminal Sim for Voice */
+        .terminal { background: #0a0a0a; border: 1px solid #333; border-radius: 8px; width: 100%; max-width: 900px; height: 60vh; margin: 0 auto; padding: 1.5rem; font-family: monospace; font-size: 1.2rem; color: #4ade80; text-align: left; overflow-y: auto; white-space: pre-wrap; display: none; box-shadow: 0 20px 50px rgba(0,0,0,0.8); }
+        .terminal-header { border-bottom: 1px solid #333; padding-bottom: 0.5rem; margin-bottom: 1rem; color: #888; font-size: 0.9rem; }
+        
+        .mic-btn { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.2); border-radius: 50%; width: 80px; height: 80px; display: flex; justify-content: center; align-items: center; cursor: pointer; font-size: 2rem; margin: 0 auto; transition: 0.3s; }
+        .mic-btn.listening { background: rgba(239,68,68,0.2); border-color: #ef4444; animation: pulse 1.5s infinite; }
+        
+        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(239,68,68,0.4); } 70% { box-shadow: 0 0 0 20px rgba(239,68,68,0); } 100% { box-shadow: 0 0 0 0 rgba(239,68,68,0); } }
+
+        .controls { position: fixed; bottom: 2rem; right: 2rem; display: flex; gap: 1rem; z-index: 100; }
+        .btn-nav { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: white; width: 50px; height: 50px; border-radius: 50%; cursor: pointer; display: flex; justify-content: center; align-items: center; font-size: 1.2rem; transition: all 0.3s; }
+        .btn-nav:hover { background: var(--accent-gold); color: #000; border-color: var(--accent-gold); }
+
+        .fade-in-up { opacity: 0; transform: translateY(30px); transition: opacity 1s ease, transform 1s ease; }
+        .is-visible .fade-in-up { opacity: 1; transform: translateY(0); }
+        .delay-1 { transition-delay: 0.2s; }
+        .delay-2 { transition-delay: 0.4s; }
+
+        /* Print Style for PDF Generation */
+        @media print {
+            body { overflow: visible !important; background-color: #050505 !important; color: #f4f4f5 !important; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+            .deck { overflow: visible !important; height: auto !important; width: 100vw !important; }
+            .slide { page-break-after: always !important; page-break-inside: avoid !important; height: 100vh !important; min-height: 100vh !important; display: flex !important; flex-direction: column !important; justify-content: center !important; align-items: center !important; padding: 2rem !important; box-shadow: none !important; margin: 0 !important; float: none !important; position: relative !important; }
+            .controls, .btn-nav, .magic-btn-container, .launch-btn, #micContainer, .terminal { display: none !important; }
+            .bg-glow, .bg-glow-blue, .bg-glow-red { display: none !important; }
+            .glass-card { background: rgba(255, 255, 255, 0.03) !important; border: 1px solid rgba(255, 255, 255, 0.1) !important; box-shadow: none !important; margin: 0 !important; width: 100% !important; max-width: 1000px !important; padding: 2rem !important; opacity: 1 !important; transform: none !important; }
+            .fade-in-up { opacity: 1 !important; transform: none !important; }
+            h1, h2, h3, p, span, li, strong, div { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="deck" id="deck">
+
+        <!-- SLIDE 1: The Hook -->
+        <section class="slide" id="slide-1">
+            <div class="bg-glow"></div>
+            <div class="fade-in-up text-center">
+                <p style="color: var(--accent-gold); letter-spacing: 0.3em; text-transform: uppercase; font-size: 1rem; margin-bottom: 1.5rem; font-weight: 600;">The Future of Legal Practice</p>
+                <h1>Flowstate AI <br><span class="gold-text">&times;</span> Burke Law Group</h1>
+                <p style="margin: 0 auto; font-size: 1.8rem; font-weight: 400; color: #fff;">Giving your team their time back.</p>
+            </div>
+        </section>
+
+        <!-- SLIDE 2: Enablement, Not Replacement -->
+        <section class="slide" id="slide-2">
+            <div class="glass-card fade-in-up">
+                <h2 style="text-align: center;">The <span class="gold-text">Enablement</span> Philosophy</h2>
+                <p style="text-align: center; max-width: 1000px; margin: 0 auto 3rem auto; font-size: 1.8rem;">
+                    We do not build AI to replace humans. <br>We build AI to give humans <strong>superpowers</strong>.
+                </p>
+                <div class="grid-2" style="margin-top: 3rem;">
+                    <div>
+                        <h3 style="font-size: 2rem;">The Burnout Trap</h3>
+                        <p style="text-align: left; font-size: 1.2rem; color: #a1a1aa;">The legal profession runs on exhaustion. Associates and paralegals burn out doing robotic, repetitive tasks—digging through old case files, formatting templates, and managing endless emails.</p>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 2rem;">The Velocity Asset</h3>
+                        <p style="text-align: left; font-size: 1.2rem; color: #a1a1aa;">By stripping away the robotic tasks, your team can finally focus on strategy, empathy, and client relationships. We give the entire office their time back, allowing everyone to do 10x more high-value work.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 3: The 3-Way Comparison -->
+        <section class="slide" id="slide-3">
+            <div class="bg-glow bg-glow-blue"></div>
+            <div class="glass-card fade-in-up" style="max-width: 1400px; padding: 3rem;">
+                <h2 style="text-align: center; margin-bottom: 2rem;">The Evolution of Work</h2>
+                
+                <div class="grid-3">
+                    <div class="feature-box" style="border-color: #333; opacity: 0.6;">
+                        <h3 style="color: #888;">1. The Old Way</h3>
+                        <p>The manual, traditional approach to law.</p>
+                        <ul>
+                            <li>Filing cabinets & endless paper.</li>
+                            <li>Manually searching through Word docs.</li>
+                            <li>High risk of burnout and human error from exhaustion.</li>
+                            <li>Slow, unscalable output.</li>
+                        </ul>
+                    </div>
+                    <div class="feature-box" style="border-color: #3b82f6;">
+                        <h3 style="color: #3b82f6;">2. Basic AI</h3>
+                        <p>Off-the-shelf tools like standard ChatGPT.</p>
+                        <ul>
+                            <li>Generic answers trained on random internet data.</li>
+                            <li>High risk of making up fake case citations.</li>
+                            <li>Zero knowledge of your firm's specific style.</li>
+                            <li>Massive data security & privacy risks.</li>
+                        </ul>
+                    </div>
+                    <div class="feature-box" style="border-color: var(--accent-gold); transform: scale(1.05); background: rgba(212,168,67,0.05); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                        <h3 style="color: var(--accent-gold);">3. Flowstate OS</h3>
+                        <p>A custom-built digital ecosystem for Burke Law.</p>
+                        <ul>
+                            <li>Trained exclusively on New Brunswick & Canadian Law.</li>
+                            <li>Hardcoded safety rules that prevent making up facts.</li>
+                            <li>Learns and writes in your firm's exact style.</li>
+                            <li>Absolute, ironclad data security.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 4: The Barnum Effect (Live Trigger) -->
+        <section class="slide" id="slide-4">
+            <div class="bg-glow bg-glow-red"></div>
+            <div class="fade-in-up" style="text-align: center;">
+                <h2 style="font-size: 3.5rem; line-height: 1.4; max-width: 1000px; margin: 0 auto;">
+                    What if automation was as simple as a <br><span style="color: #fff;">click of a mouse</span> or <span style="color: #fff;">push of a button?</span>
+                </h2>
+                
+                <div class="magic-btn-container delay-2">
+                    <button class="magic-btn" id="n8nTriggerBtn">Execute Sequence</button>
+                </div>
+                <p id="statusMsg" style="margin-top: 2rem; font-family: monospace; font-size: 1rem; color: var(--accent-gold); opacity: 0; transition: opacity 0.5s;"></p>
+            </div>
+        </section>
+
+        <!-- SLIDE 5: Tier 2 - Socrates (Live App Demo) -->
+        <section class="slide" id="slide-5">
+            <div class="glass-card fade-in-up text-center">
+                <h2 style="text-align: center;">Tier 2: <span class="gold-text">Socrates</span></h2>
+                <p style="text-align: center; margin: 0 auto 2rem auto; font-size: 1.8rem; color: #fff;">Your Personal Legal Assistant.</p>
+                <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem auto;">
+                    Socrates acts as a brilliant, untiring junior associate. It can summarize complex cases, draft standard clauses, and review documents in seconds, allowing your team to focus on the human side of the law.
+                </p>
+                
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem;">
+                    <a href="http://localhost:3000" target="_blank" class="launch-btn">
+                        Launch Socrates
+                        <svg style="width: 20px; height: 20px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 6: Tier 3 - The Legal OS Ecosystem -->
+        <section class="slide" id="slide-6">
+            <div class="glass-card fade-in-up" style="max-width: 1300px;">
+                <h2 style="text-align: center;">Tier 3: <span class="gold-text">The Ultimate Legal OS</span></h2>
+                <p style="text-align: center; margin: 0 auto 3rem auto; font-size: 1.8rem; color: #fff;">Absolute Security. Absolute Control.</p>
+
+                <div class="grid-3">
+                    <div class="feature-box" style="border-color: rgba(212,168,67,0.4);">
+                        <h3>🖥️ Your Private Server</h3>
+                        <p>The entire system runs on hardware you own, inside your building. No cloud. No third party. 100% attorney-client privilege protection — technically enforced, not just promised.</p>
+                    </div>
+                    <div class="feature-box" style="border-color: rgba(212,168,67,0.4);">
+                        <h3>🤖 Custom AI Personas</h3>
+                        <p>Socrates is trained on your jurisdiction, your firm's writing style, and practice areas. Over time, it learns how Burke Law thinks — not how a generic AI was built to respond.</p>
+                    </div>
+                    <div class="feature-box" style="border-color: rgba(212,168,67,0.4);">
+                        <h3>⚡ The Execution Engine</h3>
+                        <p>Ax — the architect of this system — builds automations, deploys new tools, and integrates with your existing workflows on command. Think of it as having a full-time developer on staff.</p>
+                    </div>
+                </div>
+
+                <div style="margin-top: 3rem; padding: 2rem; background: rgba(212,168,67,0.05); border: 1px solid rgba(212,168,67,0.2); border-radius: 16px; text-align: center;">
+                    <p style="font-size: 1.3rem; color: var(--accent-gold); margin: 0; font-weight: 500;">
+                        "While the partners strategize, and Socrates handles the research —<br>Ax builds the infrastructure. All within your four walls."
+                    </p>
+                </div>
+
+                <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 2rem;">
+                    <a href="http://localhost:8090" target="_blank" class="launch-btn" style="background: transparent; color: var(--accent-gold); border: 2px solid var(--accent-gold);">
+                        View Burke Law Website
+                        <svg style="width: 20px; height: 20px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 7: Tier 3 - Voice Assistant (Live Demo) -->
+        <section class="slide" id="slide-7-voice">
+            <div class="glass-card fade-in-up text-center">
+                <h2>Tier 3: <span class="gold-text">The Voice Assistant</span></h2>
+                <p style="text-align: center; margin: 0 auto 2rem auto; font-size: 1.8rem; color: #fff;">Speak to your server. Command your firm.</p>
+                <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem auto;">
+                    The ultimate integration. Ax—the onsite execution engine—allows you to command your server using direct speech. Ask it to draft documents, prepare folders, or send reports.
+                </p>
+                
+                <!-- The Voice Trigger UI -->
+                <div id="micContainer">
+                    <button class="mic-btn" id="micBtn" title="Click to speak">🎤</button>
+                    <p style="font-size: 0.9rem; color: #666; margin-top: 1rem;">Click to trigger Ax voice introduction</p>
+                </div>
+
+                <div class="terminal" id="terminal" style="margin-top: 2rem;">
+                    <div class="terminal-header">ax_execution_engine.exe — Onsite Server Connection Active</div>
+                    <div id="terminalBody"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 8: Tier 1 - Core Practice Automation -->
+        <section class="slide" id="slide-8">
+            <div class="bg-glow"></div>
+            <div class="glass-card fade-in-up" style="max-width: 1200px; padding: 2rem;">
+                <h2 style="text-align: center; margin-bottom: 0.5rem; font-size: 3rem;">Tier 1: <span class="gold-text">Core Practice Automation</span></h2>
+                <p style="text-align: center; margin-bottom: 1.5rem; font-size: 1.25rem; color: #a1a1aa;">The Practice Engine — Bespoke Background Integrations</p>
+                
+                <div class="grid-2" style="gap: 2rem;">
+                    <div>
+                        <h3 style="font-size: 1.5rem; color: var(--accent-gold); margin-bottom: 1rem;">Core Scope</h3>
+                        <p style="font-size: 1.05rem; line-height: 1.6; text-align: left; color: #f4f4f5; margin-bottom: 1rem;">
+                            Instead of rigid off-the-shelf software, we work directly with your team to map out and deploy **10 custom core practice automations** built specifically to eliminate Burke Law Group's unique administrative bottlenecks.
+                        </p>
+                        <p style="font-size: 1.05rem; line-height: 1.6; text-align: left; color: #cbd5e1; margin-bottom: 0;">
+                            <strong>Common Target Bottlenecks:</strong> 24/7 client intake response, Calendly scheduler integration, automatic court milestone/update SMS triggers, accounts receivable invoice loops, and post-closing Google review triggers.
+                        </p>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--glass-border); padding: 2rem; border-radius: 16px; text-align: center;">
+                        <h3 style="font-size: 1.3rem; color: #fff; margin-bottom: 0.5rem;">Investment Structure</h3>
+                        <div style="font-size: 3rem; font-weight: 800; color: #fff; margin-bottom: 0.25rem;">$1,800<span style="font-size: 1rem; color: #888;"> / mo flat</span></div>
+                        <p style="font-size: 1.1rem; color: var(--accent-gold); margin-bottom: 1rem;">+ $3,000 Setup Retainer</p>
+                        
+                        <div style="border-top: 1px solid var(--glass-border); padding-top: 1rem; text-align: left;">
+                            <p style="font-size: 1rem; color: #cbd5e1; margin-bottom: 0.25rem;">📦 <strong>Delivery Timeline:</strong> 7–10 Days</p>
+                            <p style="font-size: 1rem; color: #cbd5e1;">📈 <strong>Administrative ROI:</strong> Reclaims 15-20 hours of administrative work/week.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 9: Tier 2 - Socrates Legal Agent -->
+        <section class="slide" id="slide-9">
+            <div class="bg-glow"></div>
+            <div class="glass-card fade-in-up" style="max-width: 1200px; padding: 2rem;">
+                <h2 style="text-align: center; margin-bottom: 0.5rem; font-size: 3rem;">Tier 2: <span class="gold-text">Socrates Legal Agent</span></h2>
+                <p style="text-align: center; margin-bottom: 1.5rem; font-size: 1.25rem; color: #a1a1aa;">Custom Cognitive Co-Counsel — Secure Legal Intellect on Demand</p>
+                
+                <div class="grid-2" style="gap: 2rem;">
+                    <div>
+                        <h3 style="font-size: 1.5rem; color: var(--accent-gold); margin-bottom: 1rem;">Core Deliverables</h3>
+                        <ul style="font-size: 0.95rem; line-height: 1.6; color: #f4f4f5; list-style-type: none; padding-left: 0;">
+                            <li style="margin-bottom: 0.5rem;">🇨🇦 <strong>Canadian Jurisdictional Training:</strong> Native grounding in Supreme Court of Canada, Federal, and New Brunswick case law.</li>
+                            <li style="margin-bottom: 0.5rem;">✍️ <strong>Firm Style Customization:</strong> Ingests previous motions, pleadings, and briefs to match the Burke Law voice.</li>
+                            <li style="margin-bottom: 0.5rem;">📂 <strong>Discovery & Transcript Synthesizer:</strong> Reads 500+ page files in seconds to isolate key timelines, contradictions, and evidence.</li>
+                            <li style="margin-bottom: 0.5rem;">📝 <strong>Pleading & Brief Drafting:</strong> Generates highly specific, customized legal document drafts based on case details.</li>
+                            <li style="margin-bottom: 0.5rem;">🔒 <strong>Private Sandboxed Context:</strong> Zero data leakage to public models. Everything stays secure.</li>
+                        </ul>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--glass-border); padding: 2rem; border-radius: 16px; text-align: center;">
+                        <h3 style="font-size: 1.3rem; color: #fff; margin-bottom: 0.5rem;">Investment Structure</h3>
+                        <div style="font-size: 2.8rem; font-weight: 800; color: #fff; margin-bottom: 0.25rem;">$1,500<span style="font-size: 1rem; color: #888;"> / active user / mo</span></div>
+                        <p style="font-size: 0.95rem; color: #a1a1aa; margin-bottom: 0.75rem;">(Dedicated secure login, password, & private sandbox per attorney)</p>
+                        <p style="font-size: 1.1rem; color: var(--accent-gold); margin-bottom: 1rem;">+ $7,500 Custom Model Training</p>
+                        
+                        <div style="border-top: 1px solid var(--glass-border); padding-top: 1rem; text-align: left;">
+                            <p style="font-size: 1rem; color: #cbd5e1; margin-bottom: 0.25rem;">📦 <strong>Delivery Timeline:</strong> 30 Days</p>
+                            <p style="font-size: 1rem; color: #cbd5e1; margin-bottom: 0.25rem;">📈 <strong>Attorney ROI:</strong> Cuts legal research and drafting time by up to 80% per user.</p>
+                            <p style="font-size: 1rem; color: #cbd5e1;">🛡️ <strong>Security Profile:</strong> Isolated API keys and private model contexts.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 10: Tier 3 - Full AI OS System -->
+        <section class="slide" id="slide-10">
+            <div class="bg-glow"></div>
+            <div class="glass-card fade-in-up" style="max-width: 1200px; padding: 2rem;">
+                <h2 style="text-align: center; margin-bottom: 0.5rem; font-size: 3rem;">Tier 3: <span class="gold-text">Full AI OS Infrastructure</span></h2>
+                <p style="text-align: center; margin-bottom: 1.5rem; font-size: 1.25rem; color: #a1a1aa;">The Digital Headquarters — Zero Trust Private Cloud</p>
+                
+                <div class="grid-2" style="gap: 2rem;">
+                    <div>
+                        <h3 style="font-size: 1.5rem; color: var(--accent-gold); margin-bottom: 1rem;">Core Deliverables</h3>
+                        <ul style="font-size: 0.95rem; line-height: 1.6; color: #f4f4f5; list-style-type: none; padding-left: 0;">
+                            <li style="margin-bottom: 0.5rem;">🖥️ <strong>Isolated Client Workspace:</strong> Dedicated private hosting environments running under Cloudflare Zero Trust.</li>
+                            <li style="margin-bottom: 0.5rem;">👥 <strong>Executive Control:</strong> Scoped specifically for senior partners and the office manager to orchestrate firm operations.</li>
+                            <li style="margin-bottom: 0.5rem;">🧠 <strong>Dual-OS Architecture:</strong> Deploys two isolated systems with custom personas, rules, and axioms on each:
+                                <br><span style="font-size: 0.85rem; color: #a1a1aa; padding-left: 1rem; display: block;">• <em>Primary Firm OS:</em> For partners & senior counsel (analysis, strategy).</span>
+                                <br><span style="font-size: 0.85rem; color: #a1a1aa; padding-left: 1rem; display: block;">• <em>Ops & Admin OS:</em> For admin & office manager (billing, task automation).</span>
+                            </li>
+                            <li style="margin-bottom: 0.5rem;">🔗 <strong>Practice Integration:</strong> Direct API hooks into Clio, Outlook/Gmail, QuickBooks, and messaging.</li>
+                            <li style="margin-bottom: 0.5rem;">🤖 <strong>Multi-Persona Hub:</strong> Runs Socrates, Ax (systems), and Earl (goals) in unison.</li>
+                        </ul>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--glass-border); padding: 1.5rem; border-radius: 16px; text-align: center;">
+                        <h3 style="font-size: 1.15rem; color: #fff; margin-bottom: 0.75rem;">Dual-OS Investment Structure</h3>
+                        
+                        <div style="border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 0.5rem; margin-bottom: 0.5rem; text-align: left;">
+                            <p style="font-size: 0.9rem; color: var(--accent-gold); font-weight: 600; margin-bottom: 0.1rem;">OS Instance 1 (Primary Firm OS)</p>
+                            <div style="font-size: 1.8rem; font-weight: 800; color: #fff;">$5,000<span style="font-size: 0.8rem; color: #888;"> / mo base</span></div>
+                            <p style="font-size: 0.8rem; color: #cbd5e1; margin-bottom: 0;">+ $25,000 Setup & Architecture Fee</p>
+                        </div>
+                        
+                        <div style="text-align: left; margin-bottom: 0.75rem;">
+                            <p style="font-size: 0.9rem; color: var(--accent-gold); font-weight: 600; margin-bottom: 0.1rem;">OS Instance 2 (Ops OS) — 40% Discount</p>
+                            <div style="font-size: 1.8rem; font-weight: 800; color: #fff;">$3,000<span style="font-size: 0.8rem; color: #888;"> / mo base</span></div>
+                            <p style="font-size: 0.8rem; color: #cbd5e1; margin-bottom: 0;">+ $15,000 Setup & Architecture Fee</p>
+                        </div>
+                        
+                        <div style="border-top: 1px solid var(--glass-border); padding-top: 0.5rem; text-align: left;">
+                            <p style="font-size: 0.85rem; color: #cbd5e1; margin-bottom: 0.1rem;">📦 <strong>Delivery Timeline:</strong> 60 Days</p>
+                            <p style="font-size: 0.85rem; color: #cbd5e1;">🛡️ <strong>Security Profile:</strong> Private servers, Zero Trust Access, absolute privacy.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 11: Phased Implementation & ROI Roadmap -->
+        <section class="slide" id="slide-11">
+            <div class="bg-glow"></div>
+            <div class="glass-card fade-in-up" style="max-width: 1200px; padding: 2rem;">
+                <h2 style="text-align: center; margin-bottom: 0.5rem; font-size: 3rem;">Burke Law Group &times; Flowstate</h2>
+                <p style="text-align: center; margin-bottom: 1.5rem; font-size: 1.25rem; color: #a1a1aa;">Bespoke Modernization Roadmap — Phased Value Delivery</p>
+                
+                <div class="grid-2" style="gap: 2rem;">
+                    <div>
+                        <h3 style="font-size: 1.5rem; color: var(--accent-gold); margin-bottom: 1rem;">Implementation Phases</h3>
+                        <ul style="font-size: 0.95rem; line-height: 1.6; color: #f4f4f5; list-style-type: none; padding-left: 0;">
+                            <li style="margin-bottom: 0.75rem;">
+                                🗓️ <strong>Weeks 1–2 (Phase 1): Core Practice Engine</strong><br>
+                                <span style="font-size: 0.85rem; color: #a1a1aa;">Deploy Tier 1. Setup 10 custom core practice automations to eliminate administrative bottlenecks.</span>
+                            </li>
+                            <li style="margin-bottom: 0.75rem;">
+                                🗓️ <strong>Weeks 3–4 (Phase 2): Socrates Custom Training</strong><br>
+                                <span style="font-size: 0.85rem; color: #a1a1aa;">Setup secure DB containers, index Canadian case law, ingest firm templates, and activate user logins.</span>
+                            </li>
+                            <li style="margin-bottom: 0.75rem;">
+                                🗓️ <strong>Weeks 5–8 (Phase 3): Enterprise Dual-OS Hub</strong><br>
+                                <span style="font-size: 0.85rem; color: #a1a1aa;">Deploy isolated Zero Trust client workspaces. Launch Primary Firm OS and Operations OS with custom personas & rules.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div style="background: rgba(212,168,67,0.03); border: 2px solid var(--accent-gold); padding: 2rem; border-radius: 16px; text-align: center; box-shadow: 0 15px 35px rgba(0,0,0,0.4);">
+                        <h3 style="font-size: 1.5rem; color: var(--accent-gold); margin-bottom: 1rem;">Phased Investment Roadmap</h3>
+                        
+                        <div style="display: flex; flex-direction: column; gap: 0.75rem; text-align: left; font-size: 0.95rem;">
+                            <div style="display: flex; justify-content: space-between; border-bottom: 1px solid rgba(212,168,67,0.2); padding-bottom: 0.25rem;">
+                                <span><strong>Phase 1 (Core Automations):</strong></span>
+                                <span style="color: #fff;">$3,000 Setup | $1,800/mo flat</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; border-bottom: 1px solid rgba(212,168,67,0.2); padding-bottom: 0.25rem;">
+                                <span><strong>Phase 2 (Socrates Co-Counsel):</strong></span>
+                                <span style="color: #fff;">$7,500 Setup | $1,500/user/mo</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; border-bottom: 1px solid rgba(212,168,67,0.2); padding-bottom: 0.25rem;">
+                                <span><strong>Phase 3 (Primary Firm OS):</strong></span>
+                                <span style="color: #fff;">$25,000 Setup | $5,000/mo base</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; padding-bottom: 0.25rem;">
+                                <span style="color: #a1a1aa;"><strong>Optional (Ops OS Add-on):</strong></span>
+                                <span style="color: #a1a1aa;">+$15,000 Setup | +$3,000/mo base</span>
+                            </div>
+                        </div>
+                        
+                        <div style="background: rgba(255,255,255,0.02); padding: 0.75rem; border-radius: 8px; font-size: 0.85rem; color: #a1a1aa; text-align: left; margin-top: 1rem;">
+                            🔒 <strong>Privileged Data Protection:</strong> All models run isolated; no training on public datasets; strict NDAs in force. Pay-as-you-grow implementation maps costs directly to delivered value.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <div class="controls">
+        <button class="btn-nav" id="prevBtn">&uarr;</button>
+        <button class="btn-nav" id="nextBtn">&darr;</button>
+    </div>
+
+    <script>
+        // Slide Navigation
+        const slides = document.querySelectorAll('.slide');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                }
+            });
+        }, { root: document.getElementById('deck'), threshold: 0.5 });
+
+        slides.forEach(slide => observer.observe(slide));
+        setTimeout(() => slides[0].classList.add('is-visible'), 100);
+
+        const deck = document.getElementById('deck');
+        document.getElementById('nextBtn').addEventListener('click', () => deck.scrollBy({ top: window.innerHeight, behavior: 'smooth' }));
+        document.getElementById('prevBtn').addEventListener('click', () => deck.scrollBy({ top: -window.innerHeight, behavior: 'smooth' }));
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowDown' || e.key === 'PageDown' || e.key === ' ') {
+                deck.scrollBy({ top: window.innerHeight, behavior: 'smooth' });
+            } else if (e.key === 'ArrowUp' || e.key === 'PageUp') {
+                deck.scrollBy({ top: -window.innerHeight, behavior: 'smooth' });
+            }
+        });
+
+        // The PT Barnum Webhook Trigger
+        document.getElementById('n8nTriggerBtn').addEventListener('click', async (e) => {
+            const btn = e.target;
+            const status = document.getElementById('statusMsg');
+            
+            btn.innerHTML = 'Executing...';
+            btn.style.opacity = '0.7';
+            btn.style.pointerEvents = 'none';
+            
+            try {
+                // REPLACE THIS URL with your actual n8n webhook URL
+                const WEBHOOK_URL = 'https://your-n8n-tunnel.trycloudflare.com/webhook/burke-presentation';
+                fetch(WEBHOOK_URL, { method: 'POST', mode: 'no-cors' }).catch(e => console.log('Webhook fired'));
+                
+                setTimeout(() => {
+                    btn.innerHTML = 'Sequence Deployed';
+                    btn.style.background = 'var(--accent-gold)';
+                    btn.style.color = '#000';
+                    status.innerHTML = '> Automated Payload Delivered to Room.';
+                    status.style.opacity = '1';
+                }, 1200);
+            } catch (err) {
+                console.error(err);
+            }
+        });
+
+        // Ax Voice Demo — Click-to-Trigger (reliable for live demo)
+        const micBtn = document.getElementById('micBtn');
+        const terminal = document.getElementById('terminal');
+        const terminalBody = document.getElementById('terminalBody');
+        
+        let typingTimeout;
+        let isAnimating = false;
+
+        function typeText(text, i, cb) {
+            if (i < text.length) {
+                terminalBody.innerHTML += text.charAt(i);
+                requestAnimationFrame(() => {
+                    terminal.scrollTop = terminal.scrollHeight;
+                });
+                typingTimeout = setTimeout(() => typeText(text, i + 1, cb), 25);
+            } else if (cb) {
+                cb();
+            }
+        }
+
+        micBtn.addEventListener('click', () => {
+            if (isAnimating) return; // prevent double-clicks
+            isAnimating = true;
+
+            // Show listening state for 2 seconds (presenter says the phrase out loud)
+            micBtn.classList.add('listening');
+
+            setTimeout(() => {
+                micBtn.classList.remove('listening');
+                terminal.style.display = 'block';
+                terminalBody.innerHTML = ''; // clear any previous text
+                clearTimeout(typingTimeout);
+
+                const response = "> System: Voice command recognized.\n> Ax: Initializing core systems...\n\nHello Burke Law Group. I am Ax. The Execution Engine.\nWhile the partners strategize, and Socrates handles the research, I build the infrastructure.\n\nI operate entirely within this private server. No data leaves the building. Absolute security.\n\nJoe, I am standing by for your directives. What are we building today?\n\n";
+
+                typeText(response, 0, () => {
+                    isAnimating = false; // allow re-click after typing is done
+                    console.log("Ax intro complete. Ready for re-engagement.");
+                });
+
+                // Ax speaks response out loud
+                if (typeof speechSynthesis !== 'undefined') {
+                    const spokenText = "Hello Burke Law Group. I am Ax. The Execution Engine. While the partners strategize, and Socrates handles the research, I build the infrastructure. I operate entirely within this private server. No data leaves the building. Absolute security. Joe, I am standing by for your directives. What are we building today?";
+                    const utterance = new SpeechSynthesisUtterance(spokenText);
+                    utterance.rate = 0.95;
+                    utterance.pitch = 0.85; // slightly lower pitch for Ax
+                    utterance.volume = 1;
+
+                    const voices = window.speechSynthesis.getVoices();
+                    // Prioritize en-GB offline/local SAPI voice, fallback to network en-GB, local en-US, or first available
+                    const selectedVoice = voices.find(v => v.lang.toLowerCase().startsWith('en-gb') && v.localService) ||
+                                          voices.find(v => v.lang.toLowerCase().startsWith('en-gb')) ||
+                                          voices.find(v => v.lang.toLowerCase().startsWith('en') && v.localService) ||
+                                          voices[0];
+                    if (selectedVoice) {
+                        utterance.voice = selectedVoice;
+                        utterance.lang = selectedVoice.lang;
+                        console.log(`Ax using voice: ${selectedVoice.name}`);
+                    }
+                    
+                    window.speechSynthesis.cancel();
+                    window.speechSynthesis.speak(utterance);
+                }
+            }, 2000); // 2 second "listening" window
+        });
+    </script>
+</body>
+</html>
