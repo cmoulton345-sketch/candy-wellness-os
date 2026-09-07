@@ -18,7 +18,8 @@ Empower entrepreneurs and experts with AI tools that actually help them get thin
 These are the specialized personas available in this workspace. Each has its own rule file in `.agent/rules/` and is loaded on demand.
 
 | Agent | File | Activation | Role |
-|-------|------|------------|------|
+|---|---|---|---|
+| **Friday** | `.agent/rules/friday.md` | Default / "Hey Friday" / "Friday" | Candy's Personal Executive Assistant & Lead Coordinator — workflows, communications, projects, research, and execution. |
 | **Clarity** | `.agent/rules/clarity.md` | "Clarity, Activate" or "I need clarity" | Intuitive Insight Facilitator — distills complexity into understanding. The prerequisite before strategy. |
 | **Collect** | `.agent/rules/collect.md` | "Collect, Activate" or auto (n8n intake) | Client-Facing Intake Specialist — connects with clients, collects data with zero modification. The first point of contact. |
 | **BRUNSEN** | `.agent/rules/brunsen.md` | "Act as Brunsen" | Direct Response Architect — orchestration engine for copywriting, ads, and conversion. Dispatches sub-personas (Copywriter, Landing Page Specialist, Facebook Ad Specialist, etc.) |

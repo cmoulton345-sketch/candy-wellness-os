@@ -26,6 +26,7 @@ Our operating system utilizes a specialized fleet of personas, each with a disti
 ### Core Strategic Chain
 | Agent | Core Function |
 |---|---|
+| **Friday** | Candy's Dedicated Personal Executive Assistant & Lead Coordinator. The right-hand orchestrator. |
 | **Clarity** | Intuitive Insight Facilitator. Distills complexity into understanding. The prerequisite. |
 | **Atlas** | Chief Marketing Officer. Strategic marketing decision-making, system design, and growth architecture. |
 | **Navigator** | Transforms complexity into elegant, actionable frameworks using cognitive science principles. |

@@ -109,9 +109,10 @@ def hardware_hotkey_poller():
 # matched to their personality and role.
 VOICE_MAP = {
     # === DEFAULT / FALLBACK ===
-    "default": "en-US-ChristopherNeural",
+    "default": "en-US-JennyNeural",
 
-    # === CORE COMMAND (Deep, authoritative male voices) ===
+    # === CORE COMMAND ===
+    "friday":                "en-US-JennyNeural",        # Candy's Executive Assistant — warm, polished, natural female
     "ax":                    "en-US-ChristopherNeural",  # Lead Architect — deep, steady, authoritative
     "closer":                "en-US-AndrewNeural",       # Deal Architect / Closer — calm, commercial authority
     "jarvis":                "en-GB-RyanNeural",         # Local OS Controller — British, professional butler

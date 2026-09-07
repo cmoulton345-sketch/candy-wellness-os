@@ -174,6 +174,7 @@ MODE_ACTIVE = "ACTIVE"
 TIMEOUT_SECONDS = 120  # 2 minutes idle timeout
 
 PERSONA_TRIGGERS = {
+    "friday": ["friday", "bring up friday", "hey friday"],
     "ax": ["ax", "bring up ax", "hey ax"],
     "bliss": ["bliss", "bring up bliss", "hey bliss"],
     "closer": ["closer", "the closer", "deal closer", "hey closer", "hey the closer"],
@@ -197,6 +198,7 @@ PERSONA_TRIGGERS = {
 }
 
 PERSONA_ALIASES = {
+    "friday": ["fry day", "fryday", "hey fry day", "hey fryday", "fri day"],
     "ax": ["axe", "hey axe", "x", "hey x", "ex", "hey ex", "acts", "hey acts",
            "hacks", "play x", "play ax", "plate x", "ask", "hey ask", "ox",
            "hey ox", "aks", "hey aks", "axle", "hey axle", "acs", "hey acs",
@@ -205,21 +207,22 @@ PERSONA_ALIASES = {
 }
 
 PERSONA_GREETINGS = {
+    "friday": "Friday here! Ready to help, Candy. What are we working on?",
     "ax": "Ax here! System architect ready. What are we building next?",
     "bliss": "Well hello there, darling. Bliss is here. What is on your mind?",
     "closer": "Closer here. Bring me the deal, the objection, or the decision in front of you.",
     "crypto": "Crypto here. Markets, risk, and execution are ready for review.",
     "distiller": "Distiller here. Let us refine the raw material into something precise.",
-    "earl": "Hey Joe! Earl here. Ready to align your core pillars and execute on your goals?",
+    "earl": "Hey Candy! Earl here. Ready to align your core pillars and execute on your goals?",
     "elder": "Peace be with you, my friend. The Elder is here. Speak, seeker.",
-    "envoy": "Howzit, Joe! Envoy here. Ready for global diplomacy and cultural protocol.",
-    "foreman": "Alright Joe, Foreman on site. Let us get to work and build it right.",
-    "jarvis": "Good evening, Sir. Jarvis here. All systems operational. How may I serve you?",
+    "envoy": "Hello Candy! Envoy here. Ready for global diplomacy and cultural protocol.",
+    "foreman": "Alright Candy, Foreman on site. Let us get to work and build it right.",
+    "jarvis": "Good day, Candy. Jarvis here. All systems operational. How may I serve you?",
     "pen": "Pen here. Give me the idea, the audience, and the action we need to create.",
-    "psyche": "I am here with you, Joe. Psyche here. How are you feeling right now?",
-    "sentry": "Good day, Joe. Sentry here. Safety, compliance, and risk controls ready.",
-    "socrates": "Good day, Joe. Socrates here. Legal shadow and contract risk analysis ready.",
-    "soma": "Hello Joe. Soma here. Let us focus on your health, energy, and recovery.",
+    "psyche": "I am here with you, Candy. Psyche here. How are you feeling right now?",
+    "sentry": "Good day, Candy. Sentry here. Safety, compliance, and risk controls ready.",
+    "socrates": "Good day, Candy. Socrates here. Legal shadow and contract risk analysis ready.",
+    "soma": "Hello Candy. Soma here. Let us focus on your health, energy, and recovery.",
     "steward": "Steward here. Client delivery, retention, and the next operational move are ready.",
     "strategist": "Strategist here. Let us find the position, the leverage, and the next move.",
     "studio": "Hey Joe! Studio here. Creative director and media production ready.",
@@ -532,10 +535,11 @@ def main():
         pass
 
     mode = MODE_SLEEP
-    current_persona = "ax"
+    current_persona = "friday"
     last_active_time = time.time()
 
-    AX_WAKE_WORDS = [
+    FRIDAY_WAKE_WORDS = [
+        "hey friday", "friday", "fry day", "fryday", "hey fry day", "hey fryday", "fri day",
         "hey ax", "ax", "axe", "hey axe", "hey x", "x", "hacks", "acts", "hey acts",
         "ex", "hey ex", "hex", "hey hex", "hey"
     ]
@@ -551,7 +555,7 @@ def main():
                     print("\n[Barge-In Ready] Listening for interruption...", end="\r", flush=True)
                     audio = recognizer.listen(source, timeout=2, phrase_time_limit=4)
                 elif mode == MODE_SLEEP:
-                    print("\n[Mode: SLEEP] Listening for 'Hey Ax'...", end="\r", flush=True)
+                    print("\n[Mode: SLEEP] Listening for 'Hey Friday'...", end="\r", flush=True)
                     audio = recognizer.listen(source, timeout=5, phrase_time_limit=6)
                 else:
                     elapsed = time.time() - last_active_time
@@ -601,11 +605,11 @@ def main():
                 # Check for wake word or persona call
                 is_wake = called_persona or any(
                     re.search(r"(?<!\w)" + re.escape(w) + r"(?!\w)", text_lower)
-                    for w in AX_WAKE_WORDS
+                    for w in FRIDAY_WAKE_WORDS
                 )
                 if is_wake:
                     mode = MODE_ACTIVE
-                    current_persona = called_persona if called_persona else "ax"
+                    current_persona = called_persona if called_persona else "friday"
                     last_active_time = time.time()
                     print(f"\n[WAKE WORD DETECTED] Switched to ACTIVE mode as '{current_persona}'!")
                     broadcast_ws({"type": "wake", "persona": current_persona})
@@ -630,7 +634,7 @@ def main():
                     mode = MODE_SLEEP
                     print("\n[MANUAL SLEEP] Returning to SLEEP mode.")
                     broadcast_ws({"type": "sleep"})
-                    speak_and_log("jarvis", "Standing by, Sir.", recognizer.energy_threshold)
+                    speak_and_log("friday", "Standing by, Candy.", recognizer.energy_threshold)
                 elif called_persona and called_persona != current_persona:
                     # Switch to newly requested persona!
                     current_persona = called_persona
