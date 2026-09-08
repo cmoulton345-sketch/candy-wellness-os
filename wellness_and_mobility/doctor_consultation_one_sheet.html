@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clinical Consultation One-Sheet - ADHD & OCD Integrated Care Plan</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --accent: #2980b9;
+            --text: #333333;
+            --bg: #ffffff;
+            --card-bg: #f8f9fa;
+            --border: #e2e8f0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: var(--text);
+            background-color: var(--bg);
+            line-height: 1.5;
+            margin: 0;
+            padding: 40px;
+            max-width: 850px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        header {
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            color: var(--primary);
+            font-size: 24px;
+            margin: 0 0 10px 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .meta-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            font-size: 14px;
+            background: var(--card-bg);
+            padding: 12px 16px;
+            border-radius: 6px;
+            border: 1fr solid var(--border);
+        }
+
+        .meta-item {
+            margin: 0;
+        }
+
+        .meta-label {
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        section {
+            margin-bottom: 20px;
+            page-break-inside: avoid;
+        }
+
+        h2 {
+            font-size: 16px;
+            color: var(--primary);
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 5px;
+            margin-top: 18px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 6px;
+            font-size: 14px;
+        }
+
+        .highlight-box {
+            background-color: #f0f7ff;
+            border-left: 4px solid var(--accent);
+            padding: 10px 14px;
+            margin: 10px 0;
+            font-size: 13.5px;
+            border-radius: 0 6px 6px 0;
+        }
+
+        .checkbox-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .checkbox-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .checkbox-list li::before {
+            content: "☐";
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 16px;
+            color: var(--primary);
+        }
+
+        @media print {
+            body {
+                padding: 0;
+                max-width: 100%;
+                font-size: 12pt;
+            }
+            .no-print {
+                display: none;
+            }
+            section {
+                page-break-inside: avoid;
+            }
+        }
+
+        .print-btn {
+            background-color: var(--accent);
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            font-size: 14px;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-bottom: 20px;
+            transition: background 0.2s;
+        }
+
+        .print-btn:hover {
+            background-color: #1c5980;
+        }
+    </style>
+</head>
+<body>
+
+    <button class="print-btn no-print" onclick="window.print()">🖨️ Print Clinical Consultation Sheet</button>
+
+    <header>
+        <h1>Clinical Consultation One-Sheet</h1>
+        <div class="meta-grid">
+            <p class="meta-item"><span class="meta-label">Patient:</span> 18-Year-Old Female</p>
+            <p class="meta-item"><span class="meta-label">Date:</span> September 2026</p>
+            <p class="meta-item"><span class="meta-label">Primary Diagnoses:</span> ADHD & OCD (High Percentiles)</p>
+            <p class="meta-item"><span class="meta-label">Purpose:</span> Physician / Psychiatrist Consultation Guide</p>
+        </div>
+    </header>
+
+    <section>
+        <h2>1. Current Medication & Titration Plan (OCD)</h2>
+        <ul>
+            <li><strong>Prozac (Fluoxetine):</strong> Currently at <strong>40 mg/day</strong>.</li>
+            <li><strong>Titration Schedule:</strong> Escalating to <strong>50 mg/day</strong> (Friday), targeting <strong>60 mg/day</strong> (standard therapeutic target for high OCD index).</li>
+            <li><strong>Prescriber Question:</strong> Confirm expected timeline to reach steady-state evaluation (typically 6–8 weeks at target 60 mg dose) before assessing residual ADHD symptoms or initiating secondary ADHD agents.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>2. ADHD Pharmacotherapy Strategy (Post-Prozac Stabilization)</h2>
+        <ul>
+            <li><strong>Context:</strong> Once OCD symptoms are stabilized on 60 mg Prozac, address remaining focus and executive dysfunction.</li>
+            <li><strong>Specific Options for Discussion:</strong>
+                <ul>
+                    <li><strong>Guanfacine ER (Intuniv):</strong> Selective alpha-2A adrenergic agonist. Excellent choice for combined ADHD + anxiety/OCD profiles; supports executive control and emotional regulation without inducing stimulant-related anxiety.</li>
+                    <li><strong>Atomoxetine (Strattera):</strong> Non-stimulant SNRI for attentional symptoms.</li>
+                    <li><strong>Low-Dose Stimulants:</strong> Methylphenidate / Amphetamine class (trialed cautiously once Prozac provides protective cover against anxiety).</li>
+                </ul>
+            </li>
+            <li><strong>Questions for Doctor:</strong>
+                <ol style="margin-top: 5px; padding-left: 20px;">
+                    <li>What is your preferred sequencing for ADHD medications post-Prozac stabilization?</li>
+                    <li>Is <strong>Intuniv (Guanfacine ER)</strong> a primary candidate given her combined ADHD and OCD profile?</li>
+                </ol>
+            </li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>3. Saffron Supplement Inquiry & Serotonergic Safety</h2>
+        <div class="highlight-box">
+            <strong>Safety Note:</strong> Saffron extract (30 mg/day) has weak serotonin reuptake inhibition properties. In combination with high-dose Prozac (50–60 mg), Saffron carries potential serotonergic overlap.
+        </div>
+        <ul>
+            <li><strong>Proposed Action:</strong> <strong>Holding on Saffron</strong> during active Prozac escalation. Will only evaluate with explicit psychiatric sign-off post-stabilization.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>4. Biomarker Optimization: Ferritin & Dopamine Synthesis</h2>
+        <ul>
+            <li><strong>Current Serum Ferritin:</strong> <strong>32 ng/mL</strong></li>
+            <li><strong>Clinical Rationale:</strong> Iron is a essential cofactor for <em>tyrosine hydroxylase</em> (the rate-limiting enzyme in dopamine synthesis). Optimizing ferritin to <strong>50–70+ ng/mL</strong> improves focus, leg restlessness, and sleep quality in ADHD populations.</li>
+            <li><strong>Proposed Protocol:</strong> Alternate-day Iron Bisglycinate + 500 mg Vitamin C (taken morning/noon, separated by &gt;2 hrs from evening minerals). Alternate-day dosing keeps hepcidin low and maximizes GI tolerability.</li>
+            <li><strong>Action Requested:</strong> Confirm protocol approval and order a 90-day follow-up lab panel (Ferritin, Serum Iron, TIBC).</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>5. Current Integrative Support Stack</h2>
+        <ul>
+            <li><strong>Magnesium Bisglycinate:</strong> Administered at dinner for nervous system relaxation, sleep quality, and muscle tension relief.</li>
+            <li><strong>Omega-3 Fatty Acids (High-EPA):</strong> Supports neuroinflammation and attentional control.</li>
+            <li><strong>Methylated B12 &amp; D3:</strong> Supporting cellular energy, methylation pathways, and mood stability.</li>
+            <li><strong>L-Theanine (100–200 mg):</strong> Non-serotonergic amino acid for calm focus and GABA support during Prozac titration (pending physician confirmation).</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>6. Summary of Action Items &amp; Physician Sign-Off</h2>
+        <ul class="checkbox-list">
+            <li>Confirm Prozac escalation timeline (40 mg &rarr; 50 mg &rarr; 60 mg).</li>
+            <li>Approve alternate-day Iron protocol &amp; schedule 90-day Ferritin re-check.</li>
+            <li>Evaluate <strong>Intuniv (Guanfacine ER)</strong> as first-line post-stabilization ADHD strategy.</li>
+            <li>Review and sign off on adjunctive support stack (L-Theanine, High-EPA Omegas, B12/D3).</li>
+        </ul>
+    </section>
+
+</body>
+</html>
