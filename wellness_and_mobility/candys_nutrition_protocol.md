@@ -59,11 +59,12 @@ You take Vyvanse at this time. Your appetite is about to disappear for hours. Th
 
 | Option | Details | Protein |
 |--------|---------|---------|
-| **A** | Fairlife Core Power Shake + 2 hard-boiled eggs | ~42g |
-| **B** | 3 scrambled eggs + 1 cup spinach + ½ cup berries + 1 slice Ezekiel toast | ~28g |
-| **C** | Greek yogurt parfait: 1 cup plain Greek yogurt + ¼ cup granola + 1 tbsp almond butter + berries | ~30g |
+| **A** | Fairlife Core Power Shake + 3 egg whites scramble with spinach | ~42g |
+| **B** | 3 egg whites scramble + 1 cup spinach + ½ cup berries + 1 slice Ezekiel toast | ~25g |
+| **C** | Lactose-free cottage cheese parfait: ½ cup cottage cheese + ¼ cup gluten-free oats + 1 tbsp chia/pumpkin seeds + berries | ~30g |
 
 > ⚠️ **Avoid acidic drinks within 1 hour of Vyvanse** (no orange juice, lemon water, or coffee with lemon).
+> 🧬 **DNA & Food Test Note:** Egg Yolk tested RED Sensitive (egg whites are 100% fine!). Sweet potato, maple syrup, and flaxseed are also RED Sensitive. Swap maple syrup to raw honey or stevia. Swap flaxseed to chia or hemp seeds.
 
 #### 10:30–11:00 AM — Mid-Morning Fuel (SCHEDULED — set a phone alarm)
 **Target: 200-250 kcal, 15-20g protein**
@@ -72,9 +73,9 @@ This is the meal you're probably skipping because Vyvanse has killed your appeti
 
 | Option | Details | Protein |
 |--------|---------|---------|
-| **A** | ½ cup cottage cheese + 1 oz pumpkin seeds + cinnamon | ~22g |
-| **B** | 1 hard-boiled egg + ½ avocado on rice cake | ~10g |
-| **C** | Protein smoothie: ½ scoop whey + ½ banana + 1 tbsp peanut butter + almond milk | ~18g |
+| **A** | ½ cup lactose-free cottage cheese + 1 oz pumpkin seeds + cinnamon | ~22g |
+| **B** | 2 egg whites + ½ avocado on rice cake | ~12g |
+| **C** | Protein smoothie: ½ scoop plant/egg protein + ½ banana + 1 tbsp almond butter + almond milk | ~18g |
 
 #### 1:00 PM — Lunch (LARGEST MEAL OF THE DAY)
 **Target: 450-500 kcal, 40-45g protein**
@@ -83,9 +84,11 @@ This is where you load up. Your body needs this fuel before the afternoon.
 
 | Option | Details | Protein |
 |--------|---------|---------|
-| **A** | 6 oz grilled chicken over 2 cups mixed greens, cucumber, celery, ½ avocado, 1 tbsp EVOO + balsamic | ~45g |
-| **B** | 2 cans skipjack tuna + greens + ½ avocado + lemon dressing | ~40g |
-| **C** | 5 oz salmon + roasted veggies + ½ cup quinoa (Push Phase carb boost) | ~38g |
+| **A** | 6 oz grilled chicken over 2 cups spinach & arugula, sliced cucumber, cress, ½ avocado, 1 tbsp EVOO + balsamic | ~45g |
+| **B** | 2 cans skipjack tuna + spinach/kale + ½ avocado + lemon dressing | ~40g |
+| **C** | 5 oz salmon + roasted butternut squash & asparagus + ½ cup quinoa | ~38g |
+
+> 🌿 **Food Test Leafy Swap:** Butter Lettuce, Romaine Lettuce, and Celery tested RED Sensitive. **Spinach, Arugula (Rocket), Kale, Cress, and Cucumber are GREEN Light Safe!**
 
 #### 4:00 PM — Afternoon Snack (Pre-Workout Fuel)
 **Target: 200-250 kcal, 15-20g protein**
@@ -94,9 +97,9 @@ Fuels your 6:30 PM workout. Without this, you train depleted and crash harder at
 
 | Option | Details | Protein |
 |--------|---------|---------|
-| **A** | ½ cup Greek yogurt + 1 oz pumpkin seeds | ~20g |
-| **B** | 2 hard-boiled eggs + celery with 1 tbsp almond butter | ~16g |
-| **C** | Turkey roll-ups: 3 oz deli turkey + cucumber + mustard | ~18g |
+| **A** | ½ cup lactose-free cottage cheese + 1 oz pumpkin seeds | ~20g |
+| **B** | 3 scrambled egg whites + sliced cucumber with 1 tbsp almond butter | ~16g |
+| **C** | Turkey roll-ups: 3 oz deli turkey + cucumber slices + mustard | ~18g |
 
 #### 6:15–6:30 PM — Dinner (Pre-Kitchen-Close)
 **Target: 350-400 kcal, 30-35g protein**
@@ -106,8 +109,8 @@ Eat BEFORE your workout if training at 6:30, or immediately after if you prefer.
 | Option | Details | Protein |
 |--------|---------|---------|
 | **A** | 5-6 oz baked salmon + roasted asparagus + 1 cup broccoli | ~38g |
-| **B** | 5 oz steak + green beans + side salad | ~35g |
-| **C** | Ground turkey bowl: 5 oz turkey + sautéed veggies + ½ cup cauliflower rice | ~32g |
+| **B** | 5 oz lean steak or grilled chicken + green veggies + side spinach salad | ~35g |
+| **C** | Ground turkey bowl: 5 oz turkey + sautéed zucchini & kale + ½ cup cauliflower rice | ~32g |
 
 #### 6:45 PM — Closing Snack (THE CRAVING KILLER)
 **Target: 100-150 kcal, 10-15g protein**
@@ -116,8 +119,8 @@ This is NEW and critical. A crunchy, satisfying closing snack that tells your bo
 
 | Option | Details | Why It Works |
 |--------|---------|-------------|
-| **A** | ½ cup cottage cheese + 2 tbsp pumpkin seeds + cinnamon | Casein protein digests slowly all night + crunchy seeds |
-| **B** | 10-12 raw almonds + celery sticks + 1 tbsp hummus | Crunchy + fat + fiber = sustained satiety |
+| **A** | ½ cup lactose-free cottage cheese + 2 tbsp pumpkin seeds + cinnamon | Casein protein digests slowly all night + crunchy seeds |
+| **B** | 10-12 raw almonds + cucumber slices + 1 tbsp hummus | Crunchy + fat + fiber = sustained satiety |
 | **C** | 2 rice cakes + 1 tbsp almond butter | Crunchy satisfaction + healthy fat |
 | **D** | Air-popped popcorn (2 cups) + nutritional yeast | Low calorie, maximum crunch, savory |
 
@@ -134,7 +137,7 @@ This is NEW and critical. A crunchy, satisfying closing snack that tells your bo
 | **8:00 AM** | Vyvanse + large glass of water | No food yet — yoga first |
 | **8:15–9:15 AM** | Yoga Haus class | — |
 | **9:15 AM** | Post-yoga break-fast | Fairlife Core Power Shake (30g protein) |
-| **10:30 AM** | Mid-morning fuel | ½ cup Greek yogurt + ½ cup berries + 1 tbsp chia seeds |
+| **10:30 AM** | Mid-morning fuel | ½ cup lactose-free cottage cheese + ½ cup berries + 1 tbsp chia seeds |
 | **1:00 PM onward** | Same as non-yoga days | Lunch, snack, dinner, closing snack |
 
 ---
@@ -244,5 +247,24 @@ To make clock-based eating possible when your brain doesn't want to think about 
 5. Pre-make 2-3 tuna salads in containers
 6. Stock Fairlife shakes (check supply)
 7. Pop 2 cups popcorn, store in airtight container for crunchy snacking
+
+---
+
+## 🧬 DNA & Food Test Daily Supplement Protocol
+
+Targeted supplementation based on PureGenomics DNA report and Canada Food Intolerance lab results:
+
+| Supplement | Dose / Form | Timing | Biological Target (Why) |
+|------------|-------------|--------|-------------------------|
+| **Methyl-B12** | 1,000–1,122 mcg (Methylcobalamin) | Morning | MTR & TCN2 transport gene mutation + High Homocysteine |
+| **L-Methylfolate** | 400 mcg (5-MTHF) | Morning | MTHFR C677T mutation (cannot utilize synthetic folic acid) |
+| **Vitamin B6 (P-5-P)** | 25 mg (Pyridoxal-5-Phosphate) | Morning | Co-factor for MTHFR methylation & dopamine synthesis |
+| **Vitamin D3 + K2** | 2,000–5,000 IU D3 + 100mcg K2 | Morning (with fat) | Triple-risk D3 gene defect (CYP2R1, DHCR7, GC) + Low D test |
+| **Fish Oil (EPA/DHA)** | 1,000–2,000 mg active EPA/DHA | Dinner | FADS1 gene mutation (cannot convert flax) + Joint/heart protection |
+| **Iodine + Thyroid Support** | As directed / Seaweed kelp | Morning | Out of balance Iodine test + Elevated TSH thyroid support |
+| **Myo-Inositol** | 2,000 mg | Evening / Bedtime | Low Inositol test + ADHD executive function & insulin sensitivity |
+| **Alpha Lipoic Acid (ALA)** | 200–300 mg | Morning | Low ALA test + Master nerve & metabolic antioxidant |
+| **Magnesium Glycinate** | 300–400 mg | Bedtime | Sleep quality, muscle recovery, anxiety circuit breaker |
+
 
 > **Prep is not optional.** When your appetite is suppressed and your ADHD brain says "I'll figure it out later," having food ready and visible is the difference between eating and not eating.
