@@ -907,12 +907,96 @@
 // DATE
 document.getElementById('today-date').textContent = new Date().toLocaleDateString('en-CA',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
 
-// PAGE NAV
-function showPage(id, btn) {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
-  document.getElementById('page-'+id).classList.add('active');
-  btn.classList.add('active');
+// --- LOCALSTORAGE AUTO-SAVE SYSTEM ---
+function saveAppState() {
+  try {
+    const chkStates = [];
+    document.querySelectorAll('.chk-item').forEach((el, idx) => {
+      chkStates.push(el.classList.contains('checked'));
+    });
+    const state = {
+      date: new Date().toISOString().split('T')[0],
+      phase: globalPhase,
+      water: document.querySelectorAll('.water-cup.filled').length,
+      checked: chkStates,
+      sliders: {
+        energy: document.getElementById('energy-val')?.textContent || '7',
+        focus: document.getElementById('focus-val')?.textContent || '6',
+        pain: document.getElementById('pain-val')?.textContent || '2',
+        anxiety: document.getElementById('anxiety-val')?.textContent || '3',
+        mood: document.getElementById('mood-val')?.textContent || '8'
+      }
+    };
+    localStorage.setItem('candy_wellness_state', JSON.stringify(state));
+  } catch(e) { console.error('Auto-save error:', e); }
+}
+
+function loadAppState() {
+  try {
+    const raw = localStorage.getItem('candy_wellness_state');
+    if (!raw) return;
+    const state = JSON.parse(raw);
+    
+    // Restore phase
+    if (state.phase) {
+      setPhase(state.phase);
+      setWorkoutPhase(state.phase);
+    }
+    
+    // Restore water cups
+    if (state.water !== undefined) {
+      const cups = document.querySelectorAll('.water-cup');
+      cups.forEach((cup, idx) => {
+        if (idx < state.water) cup.classList.add('filled');
+        else cup.classList.remove('filled');
+      });
+      document.getElementById('water-bar').style.width = (state.water/12*100)+'%';
+      document.getElementById('water-label').textContent = state.water+' of 12 glasses = '+(state.water*8)+' oz';
+    }
+    
+    // Restore checkboxes
+    if (state.checked && Array.isArray(state.checked)) {
+      const chks = document.querySelectorAll('.chk-item');
+      state.checked.forEach((isChecked, idx) => {
+        if (chks[idx]) {
+          if (isChecked) chks[idx].classList.add('checked');
+          else chks[idx].classList.remove('checked');
+        }
+      });
+    }
+
+    // Restore sliders
+    if (state.sliders) {
+      Object.keys(state.sliders).forEach(id => {
+        const valEl = document.getElementById(id+'-val');
+        if (valEl) {
+          valEl.textContent = state.sliders[id];
+          const input = valEl.closest('.slider-group')?.querySelector('input[type="range"]');
+          if (input) {
+            input.value = state.sliders[id];
+            const pct = ((state.sliders[id]-1)/9)*100;
+            const colors = {energy:'var(--accent)', focus:'var(--purple)', pain:'var(--amber)', anxiety:'var(--rose)', mood:'var(--emerald)'};
+            input.style.background = `linear-gradient(to right, ${colors[id]||'var(--accent)'} ${pct}%, var(--card2) ${pct}%)`;
+          }
+        }
+      });
+    }
+  } catch(e) { console.error('Load state error:', e); }
+}
+
+// CHECKBOXES
+function toggle(el) { 
+  el.classList.toggle('checked'); 
+  saveAppState();
+  showToast('✓ Saved');
+}
+
+// SLIDERS
+function updateSlider(type, val, color) {
+  document.getElementById(type+'-val').textContent = val;
+  const pct = ((val-1)/9)*100;
+  event.target.style.background = `linear-gradient(to right, ${color} ${pct}%, var(--card2) ${pct}%)`;
+  saveAppState();
 }
 
 // PHASE (Today)
@@ -928,6 +1012,7 @@ function setPhase(p) {
   const ws = document.getElementById('today-workout-sub');
   if (p === 'push') { name.textContent='🟢 Push Phase'; desc.textContent='Oura temp at baseline — full energy, train hard'; ws.textContent='Push: Full strength session — go for it'; }
   else { name.textContent='🟡 Protect Phase'; desc.textContent='Oura temp elevated — lighter load, more recovery'; ws.textContent='Protect: Lighter weight or gentle mobility flow'; }
+  saveAppState();
 }
 
 // PHASE (Workout)
@@ -942,29 +1027,8 @@ function setWorkoutPhase(p) {
   const desc = document.getElementById('phase-desc-workout');
   if (p==='push') { name.textContent='🟢 Push Phase'; desc.textContent='Full intensity, progressive overload'; }
   else { name.textContent='🟡 Protect Phase'; desc.textContent='Lighter load, more recovery — this is intelligence'; }
+  saveAppState();
 }
-
-// DAY SELECTOR
-function showDay(phase, day, btn) {
-  const prefix = phase + '-day-';
-  const altId = phase === 'push' ? 'push-cardio' : 'protect-flare';
-  document.querySelectorAll('[id^="' + phase + '-day-"], #' + altId).forEach(el => el.classList.remove('active'));
-  const targetId = (day === 'cardio' || day === 'flare') ? phase + '-' + day : prefix + day;
-  const el = document.getElementById(targetId);
-  if (el) el.classList.add('active');
-  btn.closest('.day-selector').querySelectorAll('.day-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-}
-
-// SLIDERS
-function updateSlider(type, val, color) {
-  document.getElementById(type+'-val').textContent = val;
-  const pct = ((val-1)/9)*100;
-  event.target.style.background = `linear-gradient(to right, ${color} ${pct}%, var(--card2) ${pct}%)`;
-}
-
-// CHECKBOXES
-function toggle(el) { el.classList.toggle('checked'); }
 
 // WATER
 const totalCups = 12;
@@ -980,8 +1044,30 @@ for (let i = 0; i < totalCups; i++) {
     const filled = document.querySelectorAll('.water-cup.filled').length;
     document.getElementById('water-bar').style.width = (filled/totalCups*100)+'%';
     document.getElementById('water-label').textContent = filled+' of '+totalCups+' glasses = '+filled*8+' oz';
+    saveAppState();
+    showToast('💧 Water saved');
   });
   cupsEl.appendChild(cup);
+}
+
+// PAGE NAV
+function showPage(id, btn) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('page-'+id).classList.add('active');
+  btn.classList.add('active');
+}
+
+// DAY SELECTOR
+function showDay(phase, day, btn) {
+  const prefix = phase + '-day-';
+  const altId = phase === 'push' ? 'push-cardio' : 'protect-flare';
+  document.querySelectorAll('[id^="' + phase + '-day-"], #' + altId).forEach(el => el.classList.remove('active'));
+  const targetId = (day === 'cardio' || day === 'flare') ? phase + '-' + day : prefix + day;
+  const el = document.getElementById(targetId);
+  if (el) el.classList.add('active');
+  btn.closest('.day-selector').querySelectorAll('.day-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
 }
 
 // TAPPING
@@ -1056,18 +1142,21 @@ pillars.forEach(p => {
 function rateLight(btn) {
   btn.closest('.traffic-btns').querySelectorAll('.traffic-btn').forEach(b=>b.classList.remove('selected'));
   btn.classList.add('selected');
+  saveAppState();
 }
 
 // PILLS
 function togglePill(el) {
   el.parentElement.querySelectorAll('.pill').forEach(p=>p.classList.remove('selected'));
   el.classList.add('selected');
+  saveAppState();
 }
 
 // MEAL SELECTION
 function selectMeal(el) {
   el.closest('.meal-options').querySelectorAll('.meal-option').forEach(o=>o.classList.remove('selected'));
   el.classList.toggle('selected');
+  saveAppState();
 }
 
 // MACROS
@@ -1095,6 +1184,9 @@ const mantras = [
   '"I am a loving, capable woman. That is not up for debate today."',
 ];
 document.getElementById('daily-mantra').textContent = mantras[new Date().getDay()];
+
+// Initialize auto-restore on load
+loadAppState();
 </script>
 </body>
 </html>
