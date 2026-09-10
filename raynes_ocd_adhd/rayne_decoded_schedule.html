@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rayne's NBCC Practical Nursing Schedule (Decoded)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
+      --card-bg: rgba(30, 41, 59, 0.7);
+      --card-border: rgba(255, 255, 255, 0.1);
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent-pink: #ec4899;
+      --accent-purple: #8b5cf6;
+      --accent-teal: #14b8a6;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-gradient);
+      color: var(--text-main);
+      min-height: 100vh;
+      padding: 2rem 1rem;
+    }
+    
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    
+    h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      background: linear-gradient(to right, #f472b6, #c084fc, #38bdf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 0.5rem;
+    }
+    
+    .subtitle {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+    }
+    
+    .actions-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--card-bg);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 1rem 1.5rem;
+      margin-bottom: 2rem;
+    }
+    
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: none;
+      text-decoration: none;
+    }
+    
+    .btn-primary {
+      background: linear-gradient(135deg, #ec4899, #8b5cf6);
+      color: white;
+      box-shadow: 0 4px 14px rgba(236, 72, 153, 0.3);
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(236, 72, 153, 0.4);
+    }
+    
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+    
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .week-select-container {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    select {
+      background: #0f172a;
+      color: white;
+      border: 1px solid var(--card-border);
+      padding: 0.75rem 1rem;
+      border-radius: 10px;
+      font-size: 1rem;
+      outline: none;
+      cursor: pointer;
+    }
+
+    /* Legend Section */
+    .legend-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    
+    .legend-card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 1rem;
+      border: 1px solid var(--card-border);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    .color-badge {
+      width: 20px;
+      height: 40px;
+      border-radius: 6px;
+      flex-shrink: 0;
+    }
+    
+    .legend-info h4 {
+      font-size: 0.95rem;
+      margin-bottom: 0.25rem;
+      color: var(--text-main);
+    }
+
+    .legend-info p {
+      font-size: 0.825rem;
+      color: var(--text-muted);
+    }
+    
+    /* Schedule Table */
+    .table-container {
+      background: var(--card-bg);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      overflow-x: auto;
+      margin-bottom: 2rem;
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+    
+    th, td {
+      padding: 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    
+    th {
+      background: rgba(15, 23, 42, 0.8);
+      color: var(--text-muted);
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    
+    .cell-course {
+      border-radius: 8px;
+      padding: 0.75rem;
+      font-size: 0.875rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .course-title {
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .course-meta {
+      font-size: 0.775rem;
+      opacity: 0.9;
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .badge-mode {
+      background: rgba(0, 0, 0, 0.2);
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+    }
+
+    .lunch-row {
+      background: rgba(255, 255, 255, 0.03);
+      text-align: center;
+      font-weight: 600;
+      color: var(--text-muted);
+      letter-spacing: 0.1em;
+      font-size: 0.85rem;
+    }
+
+    .week-notes {
+      background: rgba(236, 72, 153, 0.1);
+      border-left: 4px solid var(--accent-pink);
+      padding: 1rem;
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+      color: #fbcfe8;
+    }
+
+    @media print {
+      body { background: white; color: black; }
+      .actions-bar, .btn { display: none; }
+      .table-container { border: 1px solid #ccc; }
+      th { background: #eee; color: #333; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Rayne's NBCC Practical Nursing Schedule</h1>
+      <div class="subtitle">Fall 2026 Term • Fully Decoded Course Names, Times & Instructors</div>
+    </header>
+
+    <div class="actions-bar">
+      <div class="week-select-container">
+        <label for="weekSelect" style="font-weight:600;">Select Week:</label>
+        <select id="weekSelect" onchange="renderWeek(this.value)">
+        </select>
+      </div>
+
+      <div style="display:flex; gap:0.75rem;">
+        <a href="Rayne_NBCC_Nursing_Schedule.ics" download class="btn btn-primary">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 002-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+          Export to Apple / Google Calendar (.ics)
+        </a>
+        <button onclick="window.print()" class="btn btn-secondary">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4H7v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+          Print / Save PDF
+        </button>
+      </div>
+    </div>
+
+    <!-- Course Legend -->
+    <h3 style="margin-bottom: 1rem; font-family:'Outfit';">Course Legend & Color Codes</h3>
+    <div class="legend-grid" id="legendGrid"></div>
+
+    <!-- Dynamic Schedule Section -->
+    <div id="scheduleSection"></div>
+  </div>
+
+  <script>
+    const COURSES = {"HCSS1086AA": {"code": "HCSS1086AA", "title": "Introduction to Medical Terminology", "instructor": "Keri", "color": "#c5e1a5", "dark_color": "#2e7d32"}, "HCSS1087A": {"code": "HCSS1087A", "title": "Anatomy and Physiology", "instructor": "Jessica", "color": "#f48fb1", "dark_color": "#880e4f"}, "NCSI1180A": {"code": "NCSI1180A", "title": "Nursing in Canada Healthcare System", "instructor": "Rhonda", "color": "#a5d6a7", "dark_color": "#1b5e20"}, "NCSI1181B": {"code": "NCSI1181B", "title": "Geriatric Concepts", "instructor": "Keri", "color": "#ce93d8", "dark_color": "#4a148c"}, "NCSI1182B": {"code": "NCSI1182B", "title": "Communications 1", "instructor": "Shannon", "color": "#ffe082", "dark_color": "#e65100"}, "NCSI1183D": {"code": "NCSI1183D", "title": "Nursing Skills Theory 1", "instructor": "Lisa", "color": "#ffab91", "dark_color": "#bf360c"}, "NCSI1184D": {"code": "NCSI1184D", "title": "Nursing Skills Lab 1", "instructor": "Brett", "color": "#80deea", "dark_color": "#006064"}, "NCSI1185D": {"code": "NCSI1185D", "title": "Nursing Skills & Assessment Clinical 1", "instructor": "Brett", "color": "#ffd54f", "dark_color": "#ff6f00"}, "SECU1322C": {"code": "SECU1322C", "title": "Work Safely", "instructor": "Lisa", "color": "#b388ff", "dark_color": "#311b92"}, "Orientation": {"code": "Orientation", "title": "Orientation", "instructor": "NBCC Staff", "color": "#4dd0e1", "dark_color": "#006064"}, "Focused Lrng": {"code": "Focused Lrng", "title": "Focused Learning", "instructor": "Self-Directed", "color": "#81c784", "dark_color": "#1b5e20"}, "Student Union Activities": {"code": "Student Union Activities", "title": "Student Union Activities", "instructor": "Student Union", "color": "#fff176", "dark_color": "#f57f17"}, "STAT": {"code": "STAT", "title": "Statutory Holiday (No Classes)", "instructor": "N/A", "color": "#ef9a9a", "dark_color": "#b71c1c"}, "STUDENT SUCCESS WEEK": {"code": "STUDENT SUCCESS WEEK", "title": "Student Success Week (No Classes)", "instructor": "N/A", "color": "#f8bbd0", "dark_color": "#880e4f"}, "Virtual Dementia": {"code": "Virtual Dementia", "title": "Virtual Dementia Workshop", "instructor": "Brett, Lindsey, Lisa, Kim, Betty, Rhonda, Jessica, Keri", "color": "#d1c4e9", "dark_color": "#4a148c"}};
+    const WEEKS = [{"week": 1, "start": "07-Sep-26", "end": "11-Sep-26", "notes": "VT-Virtual...ON-Online independent work...OC-On Campus", "days": {"Mon": [["STAT", "", "Stat Holiday"], ["STAT", "", "Stat Holiday"], ["STAT", "", "Stat Holiday"], ["STAT", "", "Stat Holiday"], ["STAT", "", "Stat Holiday"], ["STAT", "", "Stat Holiday"], ["STAT", "", "Stat Holiday"]], "Tue": [["Orientation", "OC", ""], ["Orientation", "OC", ""], ["Orientation", "OC", ""], ["Orientation", "OC", ""], ["Orientation", "OC", ""], ["Orientation", "OC", ""], ["Orientation", "OC", ""]], "Wed": [["Orientation", "OC", ""], ["Orientation", "OC", ""], ["Orientation", "OC", ""], ["Orientation", "OC", ""], ["Orientation", "OC", ""], ["Orientation", "OC", ""], ["Student Union Activities", "", "Uniforms at 1:30pm"]], "Thu": [["NCSI1182B", "VT", ""], ["NCSI1182B", "VT", ""], ["NCSI1183D", "VT", ""], ["NCSI1183D", "VT", ""], ["HCSS1087A", "VT", ""], ["HCSS1087A", "VT", ""], ["HCSS1087A", "VT", ""]], "Fri": [["NCSI1180A", "OC", ""], ["NCSI1180A", "OC", ""], ["NCSI1180A", "OC", ""], ["HCSS1086AA", "OC", ""], ["SECU1322C", "OC", ""], ["Focused Lrng", "ON", ""], ["Focused Lrng", "ON", ""]]}}, {"week": 2, "start": "14-Sep-26", "end": "18-Sep-26", "notes": "", "days": {"Mon": [["NCSI1183D", "VT", ""], ["NCSI1183D", "VT", ""], ["NCSI1182B", "VT", ""], ["NCSI1182B", "VT", ""], ["HCSS1087A", "VT", ""], ["HCSS1087A", "VT", ""], ["HCSS1087A", "VT", ""]], "Tue": [["HCSS1087A", "OC", ""], ["HCSS1087A", "OC", ""], ["HCSS1087A", "OC", ""], ["Focused Lrng", "ON", ""], ["NCSI1180A", "OC", ""], ["NCSI1180A", "OC", ""], ["NCSI1180A", "OC", ""]], "Wed": [["NCSI1183D", "VT", ""], ["NCSI1183D", "VT", ""], ["NCSI1183D", "VT", ""], ["SECU1322C", "ON", ""], ["NCSI1182B", "VT", ""], ["NCSI1182B", "VT", ""], ["Student Union Activities", "", ""]], "Thu": [["NCSI1182B", "VT", ""], ["NCSI1182B", "VT", ""], ["NCSI1182B", "VT", ""], ["Focused Lrng", "ON", ""], ["HCSS1087A", "VT", ""], ["HCSS1087A", "VT", ""], ["HCSS1087A", "VT", ""]], "Fri": [["NCSI1180A", "OC", ""], ["NCSI1180A", "OC", ""], ["NCSI1180A", "OC", ""], ["SECU1322C", "ON", ""], ["Focused Lrng", "ON", ""], ["Focused Lrng", "ON", ""], ["Focused Lrng", "ON", ""]]}}, {"week": 3, "start": "21-Sep-26", "end": "25-Sep-26", "notes": "SPN online for Thursdays", "days": {"Mon": [["NCSI1183D", "VT", ""], ["NCSI1183D", "VT", ""], ["NCSI1182B", "VT", ""], ["NCSI1182B", "VT", ""], ["HCSS1087A", "VT", ""], ["HCSS1087A", "VT", ""], ["HCSS1087A", "VT", ""]], "Tue": [["HCSS1087A", "OC", ""], ["HCSS1087A", "OC", ""], ["HCSS1087A", "OC", ""], ["Focused Lrng", "OC", ""], ["NCSI1180A", "OC", ""], ["NCSI1180A", "OC", ""], ["NCSI1180A", "OC", ""]], "Wed": [["NCSI1183D", "VT", ""], ["NCSI1183D", "VT", ""], ["NCSI1183D", "VT", ""], ["SECU1322C", "ON", ""], ["NCSI1182B", "VT", ""], ["NCSI1182B", "VT", ""], ["Student Union Activities", "", ""]], "Thu": [["NCSI1182B", "ON", ""], ["NCSI1182B", "ON", ""], ["SECU1322C", "ON", ""], ["Focused Lrng", "ON", ""], ["HCSS1087A", "ON", ""], ["HCSS1087A", "ON", ""], ["HCSS1087A", "ON", ""]], "Fri": [["NCSI1180A", "OC", ""], ["NCSI1180A", "OC", ""], ["NCSI1180A", "OC", ""], ["SECU1322C", "ON", ""], ["Focused Lrng", "ON", ""], ["Focused Lrng", "ON", ""], ["Focused Lrng", "ON", ""]]}}, {"week": 4, "start": "28-Sep-26", "end": "02-Oct-26", "notes": "Class schedules change going forward now that labs have started. Fri Lab instructors: Brett, Lisa, Rhonda, Shannon, Maria (casual dress)", "days": {"Mon": [["NCSI1183D", "VT", ""], ["NCSI1183D", "VT", ""], ["NCSI1182B", "VT", ""], ["NCSI1182B", "VT", ""], ["NCSI1180A", "VT", ""], ["NCSI1180A", "VT", ""], ["NCSI1180A", "VT", ""]], "Tue": [["HCSS1087A", "OC", ""], ["HCSS1087A", "OC", ""], ["HCSS1087A", "OC", ""], ["SECU1322C", "ON", ""], ["NCSI1180A", "OC", ""], ["NCSI1180A", "OC", ""], ["NCSI1180A", "OC", ""]], "Wed": [["STAT", "", "Truth and Reconciliation Day"], ["STAT", "", "Truth and Reconciliation Day"], ["STAT", "", "Truth and Reconciliation Day"], ["STAT", "", "Truth and Reconciliation Day"], ["STAT", "", "Truth and Reconciliation Day"], ["STAT", "", "Truth and Reconciliation Day"], ["STAT", "", "Truth and Reconciliation Day"]], "Thu": [["HCSS1086AA", "ON", ""], ["HCSS1086AA", "ON", ""], ["NCSI1182B", "ON", ""], ["NCSI1182B", "ON", ""], ["HCSS1087A", "ON", ""], ["HCSS1087A", "ON", ""], ["HCSS1087A", "ON", ""]], "Fri": [["NCSI1184D", "Lab", "Instructors: Brett, Lisa, Rhonda, Shannon, Maria (casual)"], ["NCSI1184D", "Lab", "Instructors: Brett, Lisa, Rhonda, Shannon, Maria (casual)"], ["NCSI1184D", "Lab", "Instructors: Brett, Lisa, Rhonda, Shannon, Maria (casual)"], ["NCSI1184D", "Lab", "Instructors: Brett, Lisa, Rhonda, Shannon, Maria (casual)"], ["NCSI1184D", "Lab", "Instructors: Brett, Lisa, Rhonda, Shannon, Maria (casual)"], ["NCSI1184D", "Lab", "Instructors: Brett, Lisa, Rhonda, Shannon, Maria (casual)"], ["NCSI1184D", "Lab", "Instructors: Brett, Lisa, Rhonda, Shannon, Maria (casual)"]]}}, {"week": 5, "start": "05-Oct-26", "end": "09-Oct-26", "notes": "Tuckerpalooza @ 4:30 on Tue (Gwen, Lindsey, Brett, Becca, Katie, Keri, Jessica, Jenn). SPN online for Thursdays", "days": {"Mon": [["NCSI1183D", "VT", ""], ["NCSI1183D", "VT", ""], ["NCSI1182B", "VT", ""], ["NCSI1182B", "VT", ""], ["HCSS1087A", "VT", ""], ["HCSS1087A", "VT", ""], ["HCSS1087A", "VT", ""]], "Tue": [["HCSS1087A", "OC", ""], ["HCSS1087A", "OC", ""], ["HCSS1087A", "OC", ""], ["Focused Lrng", "ON", ""], ["NCSI1180A", "OC", ""], ["NCSI1180A", "OC", ""], ["NCSI1180A", "OC", ""]], "Wed": [["NCSI1183D", "VT", ""], ["NCSI1183D", "VT", ""], ["NCSI1183D", "VT", ""], ["SECU1322C", "ON", ""], ["NCSI1182B", "VT", ""], ["NCSI1182B", "VT", ""], ["Student Union Activities", "", ""]], "Thu": [["HCSS1086AA", "ON", ""], ["HCSS1086AA", "ON", ""], ["NCSI1182B", "ON", ""], ["NCSI1182B", "ON", ""], ["HCSS1087A", "ON", ""], ["HCSS1087A", "ON", ""], ["HCSS1087A", "ON", ""]], "Fri": [["NCSI1184D", "Lab", "Instructors: Brett, Lisa, Rhonda, Shannon, Maria (casual)"], ["NCSI1184D", "Lab", "Instructors: Brett, Lisa, Rhonda, Shannon, Maria (casual)"], ["NCSI1184D", "Lab", "Instructors: Brett, Lisa, Rhonda, Shannon, Maria (casual)"], ["NCSI1184D", "Lab", "Instructors: Brett, Lisa, Rhonda, Shannon, Maria (casual)"], ["NCSI1184D", "Lab", "Instructors: Brett, Lisa, Rhonda, Shannon, Maria (casual)"], ["NCSI1184D", "Lab", "Instructors: Brett, Lisa, Rhonda, Shannon, Maria (casual)"], ["NCSI1184D", "Lab", "Instructors: Brett, Lisa, Rhonda, Shannon, Maria (casual)"]]}}, {"week": 6, "start": "12-Oct-26", "end": "16-Oct-26", "notes": "Mon STAT (Thanksgiving). Tue Anatomy & Phys Exam 9:30-12:30. SPN online for Thursdays", "days": {"Mon": [["STAT", "", "Thanksgiving Day"], ["STAT", "", "Thanksgiving Day"], ["STAT", "", "Thanksgiving Day"], ["STAT", "", "Thanksgiving Day"], ["STAT", "", "Thanksgiving Day"], ["STAT", "", "Thanksgiving Day"], ["STAT", "", "Thanksgiving Day"]], "Tue": [["Focused Lrng", "ON", ""], ["HCSS1087A", "EXAM", "A&P Exam 9:30-12:30"], ["HCSS1087A", "EXAM", "A&P Exam 9:30-12:30"], ["HCSS1087A", "EXAM", "A&P Exam 9:30-12:30"], ["NCSI1180A", "OC", ""], ["NCSI1180A", "OC", ""], ["NCSI1180A", "OC", ""]], "Wed": [["NCSI1183D", "VT", ""], ["NCSI1183D", "VT", ""], ["NCSI1183D", "VT", ""], ["SECU1322C", "ON", ""], ["NCSI1182B", "VT", ""], ["NCSI1182B", "VT", ""], ["Student Union Activities", "", ""]], "Thu": [["HCSS1086AA", "ON", ""], ["HCSS1086AA", "ON", ""], ["NCSI1182B", "ON", ""], ["NCSI1182B", "ON", ""], ["HCSS1087A", "ON", ""], ["HCSS1087A", "ON", ""], ["HCSS1087A", "ON", ""]], "Fri": [["NCSI1184D", "Lab", "Instructors: Brett, Lisa, Rhonda, Shannon, Maria (casual)"], ["NCSI1184D", "Lab", "Instructors: Brett, Lisa, Rhonda, Shannon, Maria (casual)"], ["NCSI1184D", "Lab", "Instructors: Brett, Lisa, Rhonda, Shannon, Maria (casual)"], ["NCSI1184D", "Lab", "Instructors: Brett, Lisa, Rhonda, Shannon, Maria (casual)"], ["NCSI1184D", "Lab", "Instructors: Brett, Lisa, Rhonda, Shannon, Maria (casual)"], ["NCSI1184D", "Lab", "Instructors: Brett, Lisa, Rhonda, Shannon, Maria (casual)"], ["NCSI1184D", "Lab", "Instructors: Brett, Lisa, Rhonda, Shannon, Maria (casual)"]]}}, {"week": 7, "start": "19-Oct-26", "end": "23-Oct-26", "notes": "Tue Communications 1 Exam 1:30-4:30. SPN online for Thursdays", "days": {"Mon": [["NCSI1183D", "VT", ""], ["NCSI1183D", "VT", ""], ["NCSI1181B", "VT", ""], ["NCSI1181B", "VT", ""], ["HCSS1087A", "VT", ""], ["HCSS1087A", "VT", ""], ["HCSS1087A", "VT", ""]], "Tue": [["HCSS1087A", "OC", ""], ["HCSS1087A", "OC", ""], ["HCSS1087A", "OC", ""], ["Focused Lrng", "ON", ""], ["NCSI1182B", "EXAM", "Exam 1:30-4:30"], ["NCSI1182B", "EXAM", "Exam 1:30-4:30"], ["NCSI1182B", "EXAM", "Exam 1:30-4:30"]], "Wed": [["NCSI1183D", "VT", ""], ["NCSI1183D", "VT", ""], ["NCSI1183D", "VT", ""], ["SECU1322C", "ON", ""], ["NCSI1181B", "VT", ""], ["NCSI1181B", "VT", ""], ["Student Union Activities", "", ""]], "Thu": [["HCSS1086AA", "ON", ""], ["HCSS1086AA", "ON", ""], ["NCSI1181B", "ON", ""], ["NCSI1181B", "ON", ""], ["HCSS1087A", "ON", ""], ["HCSS1087A", "ON", ""], ["HCSS1087A", "ON", ""]], "Fri": [["NCSI1184D", "Lab", "Instructors: Brett, Lisa, Rhonda, Shannon, Maria (casual)"], ["NCSI1184D", "Lab", "Instructors: Brett, Lisa, Rhonda, Shannon, Maria (casual)"], ["NCSI1184D", "Lab", "Instructors: Brett, Lisa, Rhonda, Shannon, Maria (casual)"], ["NCSI1184D", "Lab", "Instructors: Brett, Lisa, Rhonda, Shannon, Maria (casual)"], ["NCSI1184D", "Lab", "Instructors: Brett, Lisa, Rhonda, Shannon, Maria (casual)"], ["NCSI1184D", "Lab", "Instructors: Brett, Lisa, Rhonda, Shannon, Maria (casual)"], ["NCSI1184D", "Lab", "Instructors: Brett, Lisa, Rhonda, Shannon, Maria (casual)"]]}}, {"week": 8, "start": "26-Oct-26", "end": "30-Oct-26", "notes": "STUDENT SUCCESS WEEK - No regular classes", "days": {"Mon": [["STUDENT SUCCESS WEEK", "", "Reading Week"], ["STUDENT SUCCESS WEEK", "", "Reading Week"], ["STUDENT SUCCESS WEEK", "", "Reading Week"], ["STUDENT SUCCESS WEEK", "", "Reading Week"], ["STUDENT SUCCESS WEEK", "", "Reading Week"], ["STUDENT SUCCESS WEEK", "", "Reading Week"], ["STUDENT SUCCESS WEEK", "", "Reading Week"]], "Tue": [["STUDENT SUCCESS WEEK", "", "Reading Week"], ["STUDENT SUCCESS WEEK", "", "Reading Week"], ["STUDENT SUCCESS WEEK", "", "Reading Week"], ["STUDENT SUCCESS WEEK", "", "Reading Week"], ["STUDENT SUCCESS WEEK", "", "Reading Week"], ["STUDENT SUCCESS WEEK", "", "Reading Week"], ["STUDENT SUCCESS WEEK", "", "Reading Week"]], "Wed": [["STUDENT SUCCESS WEEK", "", "Reading Week"], ["STUDENT SUCCESS WEEK", "", "Reading Week"], ["STUDENT SUCCESS WEEK", "", "Reading Week"], ["STUDENT SUCCESS WEEK", "", "Reading Week"], ["STUDENT SUCCESS WEEK", "", "Reading Week"], ["STUDENT SUCCESS WEEK", "", "Reading Week"], ["STUDENT SUCCESS WEEK", "", "Reading Week"]], "Thu": [["STUDENT SUCCESS WEEK", "", "Reading Week"], ["STUDENT SUCCESS WEEK", "", "Reading Week"], ["STUDENT SUCCESS WEEK", "", "Reading Week"], ["STUDENT SUCCESS WEEK", "", "Reading Week"], ["STUDENT SUCCESS WEEK", "", "Reading Week"], ["STUDENT SUCCESS WEEK", "", "Reading Week"], ["STUDENT SUCCESS WEEK", "", "Reading Week"]], "Fri": [["STUDENT SUCCESS WEEK", "", "Reading Week"], ["STUDENT SUCCESS WEEK", "", "Reading Week"], ["STUDENT SUCCESS WEEK", "", "Reading Week"], ["STUDENT SUCCESS WEEK", "", "Reading Week"], ["STUDENT SUCCESS WEEK", "", "Reading Week"], ["STUDENT SUCCESS WEEK", "", "Reading Week"], ["STUDENT SUCCESS WEEK", "", "Reading Week"]]}}, {"week": 9, "start": "02-Nov-26", "end": "06-Nov-26", "notes": "SPN online for Thursdays", "days": {"Mon": [["NCSI1183D", "VT", ""], ["NCSI1183D", "VT", ""], ["NCSI1181B", "VT", ""], ["NCSI1181B", "VT", ""], ["HCSS1087A", "VT", ""], ["HCSS1087A", "VT", ""], ["HCSS1087A", "VT", ""]], "Tue": [["HCSS1087A", "OC", ""], ["HCSS1087A", "OC", ""], ["HCSS1087A", "OC", ""], ["Focused Lrng", "ON", ""], ["NCSI1180A", "OC", ""], ["NCSI1180A", "OC", ""], ["NCSI1180A", "OC", ""]], "Wed": [["NCSI1183D", "VT", ""], ["NCSI1183D", "VT", ""], ["NCSI1183D", "VT", ""], ["SECU1322C", "ON", ""], ["NCSI1181B", "VT", ""], ["NCSI1181B", "VT", ""], ["Student Union Activities", "", ""]], "Thu": [["HCSS1086AA", "ON", ""], ["HCSS1086AA", "ON", ""], ["NCSI1181B", "ON", ""], ["NCSI1181B", "ON", ""], ["HCSS1087A", "ON", ""], ["HCSS1087A", "ON", ""], ["HCSS1087A", "ON", ""]], "Fri": [["NCSI1184D", "Lab", "Instructors: Brett, Lisa, Rhonda, Shannon, Maria (casual)"], ["NCSI1184D", "Lab", "Instructors: Brett, Lisa, Rhonda, Shannon, Maria (casual)"], ["NCSI1184D", "Lab", "Instructors: Brett, Lisa, Rhonda, Shannon, Maria (casual)"], ["NCSI1184D", "Lab", "Instructors: Brett, Lisa, Rhonda, Shannon, Maria (casual)"], ["NCSI1184D", "Lab", "Instructors: Brett, Lisa, Rhonda, Shannon, Maria (casual)"], ["NCSI1184D", "Lab", "Instructors: Brett, Lisa, Rhonda, Shannon, Maria (casual)"], ["NCSI1184D", "Lab", "Instructors: Brett, Lisa, Rhonda, Shannon, Maria (casual)"]]}}, {"week": 10, "start": "09-Nov-26", "end": "13-Nov-26", "notes": "Wed STAT (Remembrance Day Holiday). SPN online for Thursdays", "days": {"Mon": [["NCSI1183D", "VT", ""], ["NCSI1183D", "VT", ""], ["NCSI1181B", "VT", ""], ["NCSI1181B", "VT", ""], ["HCSS1087A", "VT", ""], ["HCSS1087A", "VT", ""], ["HCSS1087A", "VT", ""]], "Tue": [["HCSS1087A", "OC", ""], ["HCSS1087A", "OC", ""], ["HCSS1087A", "OC", ""], ["SECU1322C", "ON", ""], ["NCSI1180A", "OC", ""], ["NCSI1180A", "OC", ""], ["NCSI1180A", "OC", ""]], "Wed": [["STAT", "", "Remembrance Day"], ["STAT", "", "Remembrance Day"], ["STAT", "", "Remembrance Day"], ["STAT", "", "Remembrance Day"], ["STAT", "", "Remembrance Day"], ["STAT", "", "Remembrance Day"], ["STAT", "", "Remembrance Day"]], "Thu": [["HCSS1086AA", "ON", ""], ["HCSS1086AA", "ON", ""], ["NCSI1181B", "ON", ""], ["NCSI1181B", "ON", ""], ["HCSS1087A", "ON", ""], ["HCSS1087A", "ON", ""], ["HCSS1087A", "ON", ""]], "Fri": [["NCSI1184D", "Lab", "Instructors: Brett, Lisa, Rhonda, Shannon, Maria (casual)"], ["NCSI1184D", "Lab", "Instructors: Brett, Lisa, Rhonda, Shannon, Maria (casual)"], ["NCSI1184D", "Lab", "Instructors: Brett, Lisa, Rhonda, Shannon, Maria (casual)"], ["NCSI1184D", "Lab", "Instructors: Brett, Lisa, Rhonda, Shannon, Maria (casual)"], ["NCSI1184D", "Lab", "Instructors: Brett, Lisa, Rhonda, Shannon, Maria (casual)"], ["NCSI1184D", "Lab", "Instructors: Brett, Lisa, Rhonda, Shannon, Maria (casual)"], ["NCSI1184D", "Lab", "Instructors: Brett, Lisa, Rhonda, Shannon, Maria (casual)"]]}}, {"week": 11, "start": "16-Nov-26", "end": "20-Nov-26", "notes": "SPN online for Thursdays", "days": {"Mon": [["NCSI1183D", "VT", ""], ["NCSI1183D", "VT", ""], ["NCSI1181B", "VT", ""], ["NCSI1181B", "VT", ""], ["HCSS1087A", "VT", ""], ["HCSS1087A", "VT", ""], ["HCSS1087A", "VT", ""]], "Tue": [["HCSS1087A", "OC", ""], ["HCSS1087A", "OC", ""], ["HCSS1087A", "OC", ""], ["Focused Lrng", "ON", ""], ["NCSI1180A", "OC", ""], ["NCSI1180A", "OC", ""], ["NCSI1180A", "OC", ""]], "Wed": [["NCSI1183D", "VT", ""], ["NCSI1183D", "VT", ""], ["NCSI1183D", "VT", ""], ["SECU1322C", "ON", ""], ["NCSI1181B", "VT", ""], ["NCSI1181B", "VT", ""], ["Student Union Activities", "", ""]], "Thu": [["HCSS1086AA", "ON", ""], ["HCSS1086AA", "ON", ""], ["NCSI1181B", "ON", ""], ["NCSI1181B", "ON", ""], ["HCSS1087A", "ON", ""], ["HCSS1087A", "ON", ""], ["HCSS1087A", "ON", ""]], "Fri": [["NCSI1184D", "Lab", "Instructors: Brett, Lisa, Rhonda, Shannon, Maria (casual)"], ["NCSI1184D", "Lab", "Instructors: Brett, Lisa, Rhonda, Shannon, Maria (casual)"], ["NCSI1184D", "Lab", "Instructors: Brett, Lisa, Rhonda, Shannon, Maria (casual)"], ["NCSI1184D", "Lab", "Instructors: Brett, Lisa, Rhonda, Shannon, Maria (casual)"], ["NCSI1184D", "Lab", "Instructors: Brett, Lisa, Rhonda, Shannon, Maria (casual)"], ["NCSI1184D", "Lab", "Instructors: Brett, Lisa, Rhonda, Shannon, Maria (casual)"], ["NCSI1184D", "Lab", "Instructors: Brett, Lisa, Rhonda, Shannon, Maria (casual)"]]}}, {"week": 12, "start": "23-Nov-26", "end": "27-Nov-26", "notes": "SPN online for Thursdays", "days": {"Mon": [["NCSI1183D", "VT", ""], ["NCSI1183D", "VT", ""], ["NCSI1181B", "VT", ""], ["NCSI1181B", "VT", ""], ["HCSS1087A", "VT", ""], ["HCSS1087A", "VT", ""], ["HCSS1087A", "VT", ""]], "Tue": [["HCSS1087A", "OC", ""], ["HCSS1087A", "OC", ""], ["HCSS1087A", "OC", ""], ["Focused Lrng", "ON", ""], ["NCSI1180A", "OC", ""], ["NCSI1180A", "OC", ""], ["NCSI1180A", "OC", ""]], "Wed": [["NCSI1183D", "VT", ""], ["NCSI1183D", "VT", ""], ["NCSI1183D", "VT", ""], ["SECU1322C", "ON", ""], ["NCSI1181B", "VT", ""], ["NCSI1181B", "VT", ""], ["Student Union Activities", "", ""]], "Thu": [["NCSI1180A", "ON", ""], ["NCSI1180A", "ON", ""], ["NCSI1181B", "ON", ""], ["NCSI1181B", "ON", ""], ["HCSS1087A", "ON", ""], ["HCSS1087A", "ON", ""], ["HCSS1087A", "ON", ""]], "Fri": [["NCSI1184D", "Lab", "Instructors: Brett, Lisa, Rhonda, Shannon, Maria (casual)"], ["NCSI1184D", "Lab", "Instructors: Brett, Lisa, Rhonda, Shannon, Maria (casual)"], ["NCSI1184D", "Lab", "Instructors: Brett, Lisa, Rhonda, Shannon, Maria (casual)"], ["NCSI1184D", "Lab", "Instructors: Brett, Lisa, Rhonda, Shannon, Maria (casual)"], ["NCSI1184D", "Lab", "Instructors: Brett, Lisa, Rhonda, Shannon, Maria (casual)"], ["NCSI1184D", "Lab", "Instructors: Brett, Lisa, Rhonda, Shannon, Maria (casual)"], ["NCSI1184D", "Lab", "Instructors: Brett, Lisa, Rhonda, Shannon, Maria (casual)"]]}}, {"week": 13, "start": "30-Nov-26", "end": "04-Dec-26", "notes": "EXAM WEEK & VIRTUAL DEMENTIA WORKSHOP. Exams 9-12 and 1-4. Virtual Dementia Wed 1-4, Thu all day, Fri all day", "days": {"Mon": [["Focused Lrng", "ON", ""], ["HCSS1086AA", "EXAM", "EXAM 9:30-12:20"], ["HCSS1086AA", "EXAM", "EXAM 9:30-12:20"], ["HCSS1086AA", "EXAM", "EXAM 9:30-12:20"], ["NCSI1183D", "EXAM", "EXAM 1:30-4:20"], ["NCSI1183D", "EXAM", "EXAM 1:30-4:20"], ["NCSI1183D", "EXAM", "EXAM 1:30-4:20"]], "Tue": [["Focused Lrng", "ON", ""], ["NCSI1180A", "EXAM", "EXAM 9:30-12:20"], ["NCSI1180A", "EXAM", "EXAM 9:30-12:20"], ["NCSI1180A", "EXAM", "EXAM 9:30-12:20"], ["NCSI1181B", "EXAM", "EXAM 1:30-4:20"], ["NCSI1181B", "EXAM", "EXAM 1:30-4:20"], ["NCSI1181B", "EXAM", "EXAM 1:30-4:20"]], "Wed": [["Focused Lrng", "ON", ""], ["HCSS1087A", "EXAM", "EXAM 9:30-12:20"], ["HCSS1087A", "EXAM", "EXAM 9:30-12:20"], ["HCSS1087A", "EXAM", "EXAM 9:30-12:20"], ["Virtual Dementia", "OC", "Virtual Dementia 1-4 (Brett, Lindsey, Lisa, Kim, Betty, Rhonda, Jessica, Keri)"], ["Virtual Dementia", "OC", "Virtual Dementia 1-4"], ["Virtual Dementia", "OC", "Virtual Dementia 1-4"]], "Thu": [["Virtual Dementia", "OC", "Virtual Dementia Workshop (Brett, Lindsey, Lisa, Kim, Betty, Rhonda, Jessica, Keri)"], ["Virtual Dementia", "OC", "Virtual Dementia Workshop (Brett, Lindsey, Lisa, Kim, Betty, Rhonda, Jessica, Keri)"], ["Virtual Dementia", "OC", "Virtual Dementia Workshop (Brett, Lindsey, Lisa, Kim, Betty, Rhonda, Jessica, Keri)"], ["Virtual Dementia", "OC", "Virtual Dementia Workshop (Brett, Lindsey, Lisa, Kim, Betty, Rhonda, Jessica, Keri)"], ["Virtual Dementia", "OC", "Virtual Dementia Workshop (Brett, Lindsey, Lisa, Kim, Betty, Rhonda, Jessica, Keri)"], ["Virtual Dementia", "OC", "Virtual Dementia Workshop (Brett, Lindsey, Lisa, Kim, Betty, Rhonda, Jessica, Keri)"], ["Virtual Dementia", "OC", "Virtual Dementia Workshop (Brett, Lindsey, Lisa, Kim, Betty, Rhonda, Jessica, Keri)"]], "Fri": [["Virtual Dementia", "OC", "Virtual Dementia Workshop (Brett, Lindsey, Lisa, Kim, Betty, Rhonda, Jessica, Keri)"], ["Virtual Dementia", "OC", "Virtual Dementia Workshop (Brett, Lindsey, Lisa, Kim, Betty, Rhonda, Jessica, Keri)"], ["Virtual Dementia", "OC", "Virtual Dementia Workshop (Brett, Lindsey, Lisa, Kim, Betty, Rhonda, Jessica, Keri)"], ["Virtual Dementia", "OC", "Virtual Dementia Workshop (Brett, Lindsey, Lisa, Kim, Betty, Rhonda, Jessica, Keri)"], ["Virtual Dementia", "OC", "Virtual Dementia Workshop (Brett, Lindsey, Lisa, Kim, Betty, Rhonda, Jessica, Keri)"], ["Virtual Dementia", "OC", "Virtual Dementia Workshop (Brett, Lindsey, Lisa, Kim, Betty, Rhonda, Jessica, Keri)"], ["Virtual Dementia", "OC", "Virtual Dementia Workshop (Brett, Lindsey, Lisa, Kim, Betty, Rhonda, Jessica, Keri)"]]}}, {"week": 14, "start": "07-Dec-26", "end": "11-Dec-26", "notes": "CLINICAL BLOCK (40 Hours). Instructors: Brett, Keri, Jessica, Rhonda, Jenn, Katie, Maria, casual (combo students PN/PSW)", "days": {"Mon": [["NCSI1185D", "OFC", "Off Campus Clinical (40 hrs total/week)"], ["NCSI1185D", "OFC", "Off Campus Clinical (40 hrs total/week)"], ["NCSI1185D", "OFC", "Off Campus Clinical (40 hrs total/week)"], ["NCSI1185D", "OFC", "Off Campus Clinical (40 hrs total/week)"], ["NCSI1185D", "OFC", "Off Campus Clinical (40 hrs total/week)"], ["NCSI1185D", "OFC", "Off Campus Clinical (40 hrs total/week)"], ["NCSI1185D", "OFC", "Off Campus Clinical (40 hrs total/week)"]], "Tue": [["NCSI1185D", "OFC", "Off Campus Clinical"], ["NCSI1185D", "OFC", "Off Campus Clinical"], ["NCSI1185D", "OFC", "Off Campus Clinical"], ["NCSI1185D", "OFC", "Off Campus Clinical"], ["NCSI1185D", "OFC", "Off Campus Clinical"], ["NCSI1185D", "OFC", "Off Campus Clinical"], ["NCSI1185D", "OFC", "Off Campus Clinical"]], "Wed": [["NCSI1185D", "OFC", "Off Campus Clinical"], ["NCSI1185D", "OFC", "Off Campus Clinical"], ["NCSI1185D", "OFC", "Off Campus Clinical"], ["NCSI1185D", "OFC", "Off Campus Clinical"], ["NCSI1185D", "OFC", "Off Campus Clinical"], ["NCSI1185D", "OFC", "Off Campus Clinical"], ["NCSI1185D", "OFC", "Off Campus Clinical"]], "Thu": [["NCSI1185D", "OFC", "Off Campus Clinical"], ["NCSI1185D", "OFC", "Off Campus Clinical"], ["NCSI1185D", "OFC", "Off Campus Clinical"], ["NCSI1185D", "OFC", "Off Campus Clinical"], ["NCSI1185D", "OFC", "Off Campus Clinical"], ["NCSI1185D", "OFC", "Off Campus Clinical"], ["NCSI1185D", "OFC", "Off Campus Clinical"]], "Fri": [["NCSI1185D", "OFC", "Off Campus Clinical"], ["NCSI1185D", "OFC", "Off Campus Clinical"], ["NCSI1185D", "OFC", "Off Campus Clinical"], ["NCSI1185D", "OFC", "Off Campus Clinical"], ["NCSI1185D", "OFC", "Off Campus Clinical"], ["NCSI1185D", "OFC", "Off Campus Clinical"], ["NCSI1185D", "OFC", "Off Campus Clinical"]]}}, {"week": 15, "start": "14-Dec-26", "end": "18-Dec-26", "notes": "CLINICAL BLOCK (40 Hours). Instructors: Brett, Keri, Jessica, Rhonda, Jenn, Katie, Maria, casual (combo students PN/PSW)", "days": {"Mon": [["NCSI1185D", "OFC", "Off Campus Clinical (40 hrs total/week)"], ["NCSI1185D", "OFC", "Off Campus Clinical (40 hrs total/week)"], ["NCSI1185D", "OFC", "Off Campus Clinical (40 hrs total/week)"], ["NCSI1185D", "OFC", "Off Campus Clinical (40 hrs total/week)"], ["NCSI1185D", "OFC", "Off Campus Clinical (40 hrs total/week)"], ["NCSI1185D", "OFC", "Off Campus Clinical (40 hrs total/week)"], ["NCSI1185D", "OFC", "Off Campus Clinical (40 hrs total/week)"]], "Tue": [["NCSI1185D", "OFC", "Off Campus Clinical"], ["NCSI1185D", "OFC", "Off Campus Clinical"], ["NCSI1185D", "OFC", "Off Campus Clinical"], ["NCSI1185D", "OFC", "Off Campus Clinical"], ["NCSI1185D", "OFC", "Off Campus Clinical"], ["NCSI1185D", "OFC", "Off Campus Clinical"], ["NCSI1185D", "OFC", "Off Campus Clinical"]], "Wed": [["NCSI1185D", "OFC", "Off Campus Clinical"], ["NCSI1185D", "OFC", "Off Campus Clinical"], ["NCSI1185D", "OFC", "Off Campus Clinical"], ["NCSI1185D", "OFC", "Off Campus Clinical"], ["NCSI1185D", "OFC", "Off Campus Clinical"], ["NCSI1185D", "OFC", "Off Campus Clinical"], ["NCSI1185D", "OFC", "Off Campus Clinical"]], "Thu": [["NCSI1185D", "OFC", "Off Campus Clinical"], ["NCSI1185D", "OFC", "Off Campus Clinical"], ["NCSI1185D", "OFC", "Off Campus Clinical"], ["NCSI1185D", "OFC", "Off Campus Clinical"], ["NCSI1185D", "OFC", "Off Campus Clinical"], ["NCSI1185D", "OFC", "Off Campus Clinical"], ["NCSI1185D", "OFC", "Off Campus Clinical"]], "Fri": [["NCSI1185D", "OFC", "Off Campus Clinical"], ["NCSI1185D", "OFC", "Off Campus Clinical"], ["NCSI1185D", "OFC", "Off Campus Clinical"], ["NCSI1185D", "OFC", "Off Campus Clinical"], ["NCSI1185D", "OFC", "Off Campus Clinical"], ["NCSI1185D", "OFC", "Off Campus Clinical"], ["NCSI1185D", "OFC", "Off Campus Clinical"]]}}];
+
+    // Render Legend
+    const legendGrid = document.getElementById('legendGrid');
+    Object.keys(COURSES).forEach(key => {
+      const c = COURSES[key];
+      if (['STAT', 'STUDENT SUCCESS WEEK', 'Orientation', 'Focused Lrng', 'Student Union Activities'].includes(key)) return;
+      const card = document.createElement('div');
+      card.className = 'legend-card';
+      card.innerHTML = `
+        <div class="color-badge" style="background-color: ${c.color}"></div>
+        <div class="legend-info">
+          <h4>${c.title}</h4>
+          <p><strong>Code:</strong> ${c.code} &bull; <strong>Instructor:</strong> ${c.instructor}</p>
+        </div>
+      `;
+      legendGrid.appendChild(card);
+    });
+
+    // Populate Week Select
+    const weekSelect = document.getElementById('weekSelect');
+    WEEKS.forEach(w => {
+      const opt = document.createElement('option');
+      opt.value = w.week;
+      opt.textContent = `Week ${w.week} (${w.start} to ${w.end})`;
+      weekSelect.appendChild(opt);
+    });
+
+    const SLOT_TIMES = [
+      "8:30 AM - 9:20 AM",
+      "9:30 AM - 10:20 AM",
+      "10:30 AM - 11:20 AM",
+      "11:30 AM - 12:20 PM",
+      "1:30 PM - 2:20 PM",
+      "2:30 PM - 3:20 PM",
+      "3:30 PM - 4:20 PM"
+    ];
+
+    function renderWeek(weekNum) {
+      const weekData = WEEKS.find(w => w.week == weekNum);
+      const section = document.getElementById('scheduleSection');
+
+      let notesHtml = weekData.notes ? `<div class="week-notes"><strong>Note:</strong> ${weekData.notes}</div>` : '';
+
+      let tableHtml = `
+        ${notesHtml}
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th style="width: 140px;">Time Slot</th>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
+              </tr>
+            </thead>
+            <tbody>
+      `;
+
+      const days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
+
+      for (let slotIdx = 0; slotIdx < 7; slotIdx++) {
+        if (slotIdx === 4) {
+          tableHtml += `
+            <tr class="lunch-row">
+              <td style="background: rgba(15, 23, 42, 0.9);">12:20 PM - 1:30 PM</td>
+              <td colspan="5">LUNCH BREAK</td>
+            </tr>
+          `;
+        }
+
+        tableHtml += `<tr><td style="font-weight:600; font-size:0.85rem; color:var(--text-muted); background: rgba(15, 23, 42, 0.5);">${SLOT_TIMES[slotIdx]}</td>`;
+
+        days.forEach(day => {
+          const [code, mode, note] = weekData.days[day][slotIdx];
+          const course = COURSES[code] || { title: code, code: code, instructor: '', color: '#334155', dark_color: '#ffffff' };
+
+          tableHtml += `
+            <td>
+              <div class="cell-course" style="background-color: ${course.color}; color: ${course.dark_color};">
+                <div class="course-title">${course.title}</div>
+                <div class="course-meta">
+                  <span>${course.code !== course.title ? course.code : ''}</span>
+                  ${mode ? `<span class="badge-mode">${mode}</span>` : ''}
+                  ${course.instructor ? `<span>&bull; ${course.instructor}</span>` : ''}
+                </div>
+                ${note ? `<div style="font-size:0.75rem; font-style:italic; margin-top:2px;">${note}</div>` : ''}
+              </div>
+            </td>
+          `;
+        });
+
+        tableHtml += `</tr>`;
+      }
+
+      tableHtml += `
+            </tbody>
+          </table>
+        </div>
+      `;
+
+      section.innerHTML = tableHtml;
+    }
+
+    // Initial Render
+    renderWeek(1);
+  </script>
+</body>
+</html>
