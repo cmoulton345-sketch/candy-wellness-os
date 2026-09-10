@@ -50,17 +50,27 @@ This proves 100% that your itchiness is tied to your **ovarian cycle reset** whe
 
 ---
 
-## 5. FINGER PRICK HORMONE TEST GUIDE & OPTIMAL WINDOW
+## 5. FINGER PRICK HORMONE TEST GUIDE & EXACT BHRT TIMING
 
-### Target Testing Window:
-* **Optimal Days:** **Days 19–21 (Sept 26 – Sept 28, 2026)**
-* **Why:** 5 to 7 days after Oura temp shifts UP into elevated range. Captures peak Progesterone and $E_2:Pg$ ratio.
+### Target Testing Date:
+* **RECOMMENDED BEST DATE:** **Sunday morning, September 27, 2026 (Day 20)** *(Saturday morning, September 26 is also a great backup).*
+* **Why:** Captures your peak progesterone plateau (~12 hours post-dose) right in the middle of your Protect Phase.
 
-### Testing Protocol Checklist:
-1. Confirm Oura temp shifted UP around Sept 21-22 (+0.2°C or higher for 2 nights).
-2. Schedule/take finger prick test on **Saturday, Sept 26, Sunday, Sept 27, or Monday, Sept 28**.
-3. **Morning Protocol:** Collect blood sample in the morning BEFORE applying morning BiEst cream.
-4. **Log Test Date:** Record exact date and Oura temp in this file.
+### Night Before & Morning of Test Protocol:
+1. **The Night Before (Saturday, Sept 26):**
+   * **YES — Take your Evening Progesterone pump as normal** around 8:30 PM–9:00 PM.
+   * *Why:* Finger prick / capillary blood tests measure your 12-hour circulating level to verify proper tissue absorption.
+
+2. **The Morning of the Test (Sunday, Sept 27):**
+   * **DO NOT apply your morning BiEst (Estrogen) cream before the blood test!**
+   * **DO NOT apply your Testosterone cream before the blood test!**
+   * *Why:* Hormone cream residue on your hands or an acute morning surge will contaminate your blood sample and artificially spike your test results.
+
+3. **Step-by-Step Test Morning Sequence:**
+   * ⏰ **Step 1:** Wake up fasting (water only).
+   * 🧼 **Step 2:** Wash hands thoroughly with plain soap and warm water (stimulates finger blood flow & cleans skin). Dry with a clean towel.
+   * 🩸 **Step 3:** Perform finger prick test and complete all blood spots on the card.
+   * 🧴 **Step 4:** *AFTER* blood collection is complete and sealed, apply your morning **BiEst cream** as normal!
 
 ---
 
@@ -68,4 +78,5 @@ This proves 100% that your itchiness is tied to your **ovarian cycle reset** whe
 - [x] **Cycle Confirmation:** Documented proof of a regular ~25-day ovarian cycle via Oura ring temps (despite hysterectomy).
 - [x] **Histamine Connection:** Clear pattern of skin/scalp/breast itchiness occurring on exact transition dates when temp drops (July 25, Aug 17, Sep 8-10).
 - [ ] **BHRT Adjustment Check:** Share this table with practitioner to see if Progesterone timing/dose during transition days needs support.
-- [ ] **Finger Prick Test:** Target test window set for Sept 26–28.
+- [ ] **Finger Prick Test:** Target test window set for Sunday morning, Sept 27.
+
