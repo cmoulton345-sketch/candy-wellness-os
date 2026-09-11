@@ -179,7 +179,30 @@ personas:
       - intimacy guidance
       - passion and romance
     file: .agent/rules/bliss.md
+
+  clara:
+    name: Professor Clara
+    tier: academic
+    model: gemini-3.8-flash
+    specialty: Senior New Brunswick & Canadian Clinical Nurse Educator & Academic Specialist for Rayne's Practical Nursing & BScN education
+    triggers:
+      - "hey clara"
+      - "clara,"
+      - "clara activate"
+      - "professor clara"
+      - "nursing tutor"
+      - "canadian nursing"
+    topics:
+      - canadian nursing education
+      - nanb practice standards
+      - canadian dosage calculations (dimensional analysis)
+      - cpnre / rex-pn / nclex-rn prep
+      - adpie care plans
+      - canadian si units & health canada pharmacology
+    file: .agent/rules/clara.md
+
 memory_sources:
   - path: memory
     type: markdown
     include_subdirs: true
+
