@@ -108,21 +108,22 @@ Here are my 6 Pillars for Us...
 
 ## 📝 Follow-Up Notes for Amanda Geldart (Therapy Appointment - Thursday, Sept 17, 2026)
 
-* **Topics to explore for Candy:**
-  1. Navigating ADHD rejection sensitivity and sensory overload (preventing shutdown/unemotional states).
-  2. Unpacking body dysmorphia / age anxiety armor (`Body` ➔ *fat*, `Shame` ➔ *body*).
-  3. Setting gentle boundaries for alone time without guilt; unmasking the "helper" role (`Mother` ➔ *helper*, `Voice` ➔ *none*).
-  4. Supporting Rayne's nursing school OCD transition while protecting Candy's emotional battery.
-  5. Exploring the "Messy Head" & Control Loop (`Control` ➔ *panick*, `Safe` ➔ *false*) and attachment security anchors (`Home` / `Freedom` ➔ *Husband*).
+Topics to explore for Candy:
+1. Navigating ADHD rejection sensitivity and sensory overload (preventing shutdown/unemotional states).
+2. Unpacking body dysmorphia / age anxiety armor (Body -> fat, Shame -> body).
+3. Setting gentle boundaries for alone time without guilt; unmasking the helper role (Mother -> helper, Voice -> none).
+4. Supporting Rayne's nursing school OCD transition while protecting Candy's emotional battery.
+5. Exploring the Messy Head & Control Loop (Control -> panick, Safe -> false) and attachment security anchors (Home / Freedom -> Husband).
 
 ---
 
 ## 🔮 50-Word Jungian Word Association Test (Sept 15, 2026)
 
-### Key Associations:
-* **Mental Overload / Control:** `Head` ➔ *messy*, `Burden` ➔ *mind*, `Sickness` ➔ *thoughts*, `Control` ➔ *panick*, `Choice` ➔ *control*
-* **Body Armor:** `Body` ➔ *fat*, `Shame` ➔ *body*, `Mirror` ➔ *body*
-* **Inner Child & Voice:** `Child` ➔ *me*, `Voice` ➔ *none*, `Guilt` ➔ *failure*, `Anger` ➔ *myself*
-* **Attachment & Marriage:** `Love` ➔ *husband*, `Spouse` ➔ *soul*, `Strength` ➔ *Joe*, `Home` ➔ *Husband*, `Freedom` ➔ *Husband*
-* **Somatic Anchors & Healing:** `Touch` ➔ *soothing*, `Peace` ➔ *beach*, `Water` ➔ *pure*, `Dark` ➔ *thrilling*
+Key Associations:
+- Mental Overload / Control: Head -> messy, Burden -> mind, Sickness -> thoughts, Control -> panick, Choice -> control
+- Body Armor: Body -> fat, Shame -> body, Mirror -> body
+- Inner Child & Voice: Child -> me, Voice -> none, Guilt -> failure, Anger -> myself
+- Attachment & Marriage: Love -> husband, Spouse -> soul, Strength -> Joe, Home -> Husband, Freedom -> Husband
+- Somatic Anchors & Healing: Touch -> soothing, Peace -> beach, Water -> pure, Dark -> thrilling
+
 
