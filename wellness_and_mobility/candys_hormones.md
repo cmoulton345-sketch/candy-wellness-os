@@ -47,6 +47,21 @@
 | **Sept 10** | Day 3 | +0.22°C | +0.01°C | 100 | Itchiness resolving | Reset Window |
 | **Sept 11** | Day 4 | +0.12°C | +0.04°C | 100 | **Itchiness fully GONE** | Reset Window |
 | **Sept 12** | Day 5 | +0.08°C | **0.00°C** | **100** | **100% Clear** | 🟢 **Peak Push Phase Active** |
+| **Sept 13** | Day 6 | +0.02°C | -0.10°C | **100** | Clear | 🟢 **Peak Push Phase** |
+| **Sept 14** | Day 7 | -0.03°C | **-0.26°C** | **96** | Clear | 🟢 **Peak Push Phase (Low Temp Peak)** |
+| **Sept 15** | Day 8 | — | — | — | Clear | 🟢 **Peak Push Phase** |
+| **Sept 16** | Day 9 | -0.14°C | **-0.25°C** | **96** | Clear | 🟢 **Peak Push Phase (Estrogen Peak)** |
+
+### September 16 Body Measurements & Physical Check-In
+* **Oura Temp / Readiness:** -0.25°C (Day 9 Peak Estrogen Dip) | Readiness: 96 | Sleep Scores: 77 (Sept 14 night) & 81 (Sept 15 night).
+* **Scale Weight:** 149.7 lbs *(Intracellular water retention & glute muscle glycogen surge during Peak Push Phase)*.
+* **Body Measurements:**
+  - **Waist (above belly button):** 28" *(Tightly held baseline)*
+  - **Hips / Glutes:** 40" *(Up 1 inch from 39" due to workout recovery hydration & glute muscle building)*
+  - **Thighs:** 23" each
+  - **Abdomen:** 36"
+  - **Bust:** 35.5"
+* **Movement & Fueling Plan:** Morning Yoga + Pilates (fueled with 2x Fairlife protein + Eggs, Toast, & Spinach post-workout) + Evening Strength Session + 10 min Legs Up the Wall.
 
 ---
 

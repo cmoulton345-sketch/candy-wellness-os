@@ -1,3 +1,4 @@
+
 # Candy's Sunday Weekly Check-In — "The Harvest"
 
 > *"The only way to know which direction to grow is to stop and honestly look at where you are."* — Rohn
