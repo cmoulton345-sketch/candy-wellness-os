@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rayne's Interactive Communications 1 Study Suite (Modules 1-3)</title>
+  <style>
+    :root {
+      --primary: #0f4c81;
+      --primary-dark: #092c4c;
+      --secondary: #20b2aa;
+      --accent: #ff6b6b;
+      --bg: #f4f7f9;
+      --card-bg: #ffffff;
+      --text: #2d3748;
+      --text-muted: #718096;
+      --border: #e2e8f0;
+      --success: #38a169;
+      --warning: #dd6b20;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 20px; }
+    
+    header { background: linear-gradient(135deg, var(--primary-dark), var(--primary)); color: white; padding: 30px 20px; border-radius: 12px; margin-bottom: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); text-align: center; }
+    header h1 { font-size: 2.2rem; margin-bottom: 8px; }
+    header p { opacity: 0.9; font-size: 1.1rem; }
+
+    .nav-tabs { display: flex; justify-content: center; gap: 10px; margin-bottom: 25px; flex-wrap: wrap; }
+    .tab-btn { background: white; border: 2px solid var(--primary); color: var(--primary); padding: 12px 24px; border-radius: 30px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; }
+    .tab-btn.active, .tab-btn:hover { background: var(--primary); color: white; transform: translateY(-2px); box-shadow: 0 4px 10px rgba(15,76,129,0.2); }
+
+    .section { display: none; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+    .section.active { display: block; animation: fadeIn 0.4s ease; }
+
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* Flashcard Styles */
+    .flashcard-container { display: flex; flex-direction: column; align-items: center; max-width: 650px; margin: 0 auto; }
+    .flashcard { width: 100%; height: 320px; perspective: 1000px; cursor: pointer; margin-bottom: 20px; }
+    .flashcard-inner { position: relative; width: 100%; height: 100%; text-align: center; transition: transform 0.6s; transform-style: preserve-3d; border-radius: 16px; box-shadow: 0 8px 20px rgba(0,0,0,0.08); }
+    .flashcard.flipped .flashcard-inner { transform: rotateY(180deg); }
+    .flashcard-front, .flashcard-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 16px; padding: 30px; display: flex; flex-direction: column; justify-content: center; align-items: center; border: 2px solid var(--border); }
+    .flashcard-front { background: white; color: var(--primary-dark); }
+    .flashcard-back { background: var(--primary); color: white; transform: rotateY(180deg); }
+    .card-num { position: absolute; top: 15px; left: 20px; font-size: 0.9rem; opacity: 0.7; font-weight: bold; }
+    .card-tag { position: absolute; top: 15px; right: 20px; background: var(--bg); color: var(--primary); padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; }
+    .flashcard-back .card-tag { background: rgba(255,255,255,0.2); color: white; }
+
+    .fc-controls { display: flex; gap: 15px; }
+    .fc-btn { background: var(--secondary); color: white; border: none; padding: 10px 20px; border-radius: 8px; font-weight: bold; cursor: pointer; }
+    .fc-btn:hover { opacity: 0.9; }
+
+    /* Quiz Styles */
+    .quiz-q { margin-bottom: 25px; padding-bottom: 20px; border-bottom: 1px solid var(--border); }
+    .quiz-q h3 { color: var(--primary-dark); margin-bottom: 12px; }
+    .options { display: flex; flex-direction: column; gap: 10px; }
+    .opt-lbl { display: flex; align-items: center; padding: 12px 16px; background: var(--bg); border: 1px solid var(--border); border-radius: 8px; cursor: pointer; transition: background 0.2s; }
+    .opt-lbl:hover { background: #eef4f8; }
+    .opt-lbl input { margin-right: 12px; }
+    .explanation { display: none; margin-top: 12px; padding: 12px; border-radius: 8px; font-size: 0.95rem; }
+    .explanation.correct { display: block; background: #e6fffa; color: #234e52; border-left: 4px solid var(--success); }
+    .explanation.incorrect { display: block; background: #fff5f5; color: #742a2a; border-left: 4px solid var(--accent); }
+
+    .submit-quiz-btn { background: var(--primary); color: white; border: none; padding: 14px 30px; border-radius: 8px; font-size: 1.1rem; font-weight: bold; cursor: pointer; margin-top: 20px; }
+
+    /* Matching Table */
+    .matching-table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+    .matching-table th, .matching-table td { padding: 12px; border: 1px solid var(--border); text-align: left; }
+    .matching-table th { background: var(--primary); color: white; }
+    select.match-sel { padding: 8px; border-radius: 6px; border: 1px solid var(--border); font-size: 1rem; width: 100%; }
+
+    .score-banner { display: none; background: var(--primary-dark); color: white; text-align: center; padding: 20px; border-radius: 12px; margin-bottom: 20px; font-size: 1.3rem; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Rayne's Communications 1 Study Suite</h1>
+    <p>NBCC Practical Nursing (NCSI1182B) — Modules 1, 2, & 3 Interactive Review</p>
+  </header>
+
+  <div class="nav-tabs">
+    <button class="tab-btn active" onclick="showSection('flashcards')">🃏 Flashcards Deck</button>
+    <button class="tab-btn" onclick="showSection('matching')">🧩 Matching Exercise</button>
+    <button class="tab-btn" onclick="showSection('quiz')">📝 Practice Quiz (MC & T/F)</button>
+    <button class="tab-btn" onclick="showSection('notebook')">🤖 NotebookLM Guide</button>
+  </div>
+
+  <div id="score-banner" class="score-banner"></div>
+
+  <!-- FLASHCARDS SECTION -->
+  <div id="flashcards" class="section active">
+    <h2 style="text-align: center; margin-bottom: 20px; color: var(--primary);">Interactive Flashcards</h2>
+    <div class="flashcard-container">
+      <div class="flashcard" onclick="flipCard()">
+        <div class="flashcard-inner">
+          <div class="flashcard-front">
+            <span class="card-num" id="fc-num">Card 1 / 18</span>
+            <span class="card-tag" id="fc-tag">Module 1</span>
+            <h3 id="fc-question" style="font-size: 1.4rem;">Click card to reveal answer</h3>
+          </div>
+          <div class="flashcard-back">
+            <span class="card-num">Answer</span>
+            <span class="card-tag" id="fc-tag-back">Module 1</span>
+            <p id="fc-answer" style="font-size: 1.1rem; line-height: 1.5;"></p>
+          </div>
+        </div>
+      </div>
+      <div class="fc-controls">
+        <button class="fc-btn" onclick="prevCard()">← Previous</button>
+        <button class="fc-btn" onclick="nextCard()">Next →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MATCHING EXERCISE SECTION -->
+  <div id="matching" class="section">
+    <h2 style="margin-bottom: 15px; color: var(--primary);">Matching Concepts Exercise</h2>
+    <p style="margin-bottom: 20px;">Match each communication concept on the left with its correct definition or distance on the right.</p>
+    
+    <table class="matching-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Term / Concept</th>
+          <th>Select Correct Definition</th>
+        </tr>
+      </thead>
+      <tbody id="matching-body">
+        <!-- Dynamically populated -->
+      </tbody>
+    </table>
+    <button class="submit-quiz-btn" onclick="checkMatching()">Check Matching Answers</button>
+  </div>
+
+  <!-- PRACTICE QUIZ SECTION -->
+  <div id="quiz" class="section">
+    <h2 style="margin-bottom: 20px; color: var(--primary);">Practice Exam (Multiple Choice & True/False)</h2>
+    <form id="quiz-form">
+      <!-- Dynamically populated -->
+    </form>
+    <button class="submit-quiz-btn" onclick="gradeQuiz(event)">Submit Exam & View Grade</button>
+  </div>
+
+  <!-- NOTEBOOKLM GUIDE SECTION -->
+  <div id="notebook" class="section">
+    <h2 style="margin-bottom: 15px; color: var(--primary);">Google NotebookLM Guide for Rayne</h2>
+    <p style="margin-bottom: 15px;">Your NotebookLM is set up under <strong>rayne.moulton1234@gmail.com</strong>. Here is how to get 100% out of it:</p>
+    
+    <div style="background: var(--bg); padding: 20px; border-radius: 8px; border-left: 5px solid var(--primary); margin-bottom: 20px;">
+      <h3 style="color: var(--primary-dark); margin-bottom: 10px;">Step 1: Upload Your Cleaned Files</h3>
+      <p>Go to <a href="https://notebooklm.google.com" target="_blank" style="color: var(--primary); font-weight: bold;">notebooklm.google.com</a>, create a notebook called <strong>"Communications 1 (NCSI1182B)"</strong>, and upload:</p>
+      <ul style="margin-left: 25px; margin-top: 8px;">
+        <li><code>Module 1 Basic Communication REVISED.docx</code></li>
+        <li><code>Module 2 Effective communication REVISED.docx</code></li>
+        <li><code>Module 3 Barriers That Hinder Effective Communication REVISED.docx</code></li>
+      </ul>
+    </div>
+
+    <div style="background: var(--bg); padding: 20px; border-radius: 8px; border-left: 5px solid var(--secondary); margin-bottom: 20px;">
+      <h3 style="color: var(--primary-dark); margin-bottom: 10px;">Step 2: Generate Audio Overview (Podcast Recaps)</h3>
+      <p>Click <strong>"Generate Audio Overview"</strong> in NotebookLM. It creates a 10-15 minute conversational podcast hosts explaining Modules 1–3, ideal for Rayne to listen to while commuting or doing chores!</p>
+    </div>
+
+    <div style="background: var(--bg); padding: 20px; border-radius: 8px; border-left: 5px solid var(--warning);">
+      <h3 style="color: var(--primary-dark); margin-bottom: 10px;">Step 3: Best Prompts to Ask NotebookLM</h3>
+      <ul style="margin-left: 25px; line-height: 1.8;">
+        <li><em>"Summarize the key differences between Social and Therapeutic Communication according to Arnold & Boggs."</em></li>
+        <li><em>"Give me 5 scenarios of incongruent verbal and nonverbal communication in nursing."</em></li>
+        <li><em>"What are the 6 C's of caring by Sister Simone Roach and Swanson's 3 caring behaviors?"</em></li>
+        <li><em>"How should a nurse respond to an anxious patient according to Module 3?"</em></li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    const flashcardsData = [
+      { mod: "Module 1", q: "What is Communication?", a: "A complex, ongoing two-way process of sharing ideas, thoughts, and feelings. Includes sender encoding, channel transmission, receiver decoding, and a feedback loop." },
+      { mod: "Module 1", q: "What is Nonverbal Communication & why is it crucial?", a: "Physical gestures, facial expressions, body posture, tone, and distance. Accounts for 80-93% of communication impact. Receivers trust nonverbal body language over spoken words!" },
+      { mod: "Module 1", q: "What are the 4 Zones of Proxemics?", a: "1. Intimate (0-45 cm / 18 in)\n2. Personal (45 cm-1.2 m / 18 in-3.5 ft)\n3. Social (1.2-3.6 m / 3.5-12 ft)\n4. Public (3.6 m+ / 12 ft+)" },
+      { mod: "Module 1", q: "What is Metacommunication?", a: "Broad term for all nonverbal cues and factors that provide instructions on how to interpret the message being delivered." },
+      { mod: "Module 1", q: "What is Congruent vs Incongruent Communication?", a: "Congruent: Words and nonverbal cues match.\nIncongruent: Words and body language conflict (e.g., saying 'No pain' while clutching incision). Nurse must explore incongruence!" },
+      { mod: "Module 1", q: "Social vs Professional Therapeutic Communication", a: "Social: Casual, unwritten rules, mutual pleasure.\nTherapeutic: Goal-directed, purposeful, evidence-based, bound by legal/ethical standards to promote health." },
+      { mod: "Module 2", q: "What is Respect in Nursing?", a: "Valuing patient knowledge and dignity. Always use preferred names. Avoid terms like 'Honey', 'Dear', 'Sweetie', or asking 'How are WE feeling today?'" },
+      { mod: "Module 2", q: "What are Roach's 6 C's of Caring?", a: "Compassion, Competence, Confidence, Conscience, Commitment, Comportment." },
+      { mod: "Module 2", q: "What is Swanson's Caring Theory?", a: "Knowing (understanding patient's perspective), Being (emotionally present), and Doing (nursing interventions supporting integrity)." },
+      { mod: "Module 2", q: "What is Mutuality?", a: "Collaborative relationship where nurse and patient share decision-making and work as equal partners on health goals." },
+      { mod: "Module 2", q: "What is Empowerment vs Disempowerment?", a: "Empowerment: Assisting patients to take charge of their health.\nDisempowerment: Paternalistic 'I know best' attitude stripping patient control." },
+      { mod: "Module 2", q: "What is Empathy vs Sympathy?", a: "Empathy: Understanding another's feelings nonjudgmentally while keeping objectivity.\nSympathy: Feeling pity/sorrow, which can impair clinical judgment." },
+      { mod: "Module 3", q: "Why is False Reassurance harmful?", a: "Saying 'Everything will be fine' offers false hope, invalidates genuine fears, destroys trust, and blocks expression of emotion." },
+      { mod: "Module 3", q: "Bias vs Stereotype", a: "Bias: Personal preference or dislike.\nStereotype: Preconceived idea attributing traits to ALL members of a group." },
+      { mod: "Module 3", q: "Why is Giving Advice non-therapeutic?", a: "Stating 'If I were you...' takes away patient decision-making. Therapeutic alternative: Reflecting (e.g., 'What options are you considering?')." },
+      { mod: "Module 3", q: "Why is Arguing with a patient harmful?", a: "Arguing denies patient perceptions, implies they are lying, breaks rapport, and escalates conflict." },
+      { mod: "Module 3", q: "How does Anxiety affect communication?", a: "Causes distracted thinking, overthinking words, and impaired listening. Nurses should respond slowly, calmly, and clearly." },
+      { mod: "Module 3", q: "4 Strategies to Reduce Patient Anxiety", a: "1. Active listening & validation.\n2. Honest, simple explanations.\n3. Calm, slow, firm speech.\n4. Deep breathing / relaxation exercises." }
+    ];
+
+    let currentFc = 0;
+    function updateCard() {
+      const fc = flashcardsData[currentFc];
+      document.getElementById('fc-num').innerText = `Card ${currentFc + 1} / ${flashcardsData.length}`;
+      document.getElementById('fc-tag').innerText = fc.mod;
+      document.getElementById('fc-tag-back').innerText = fc.mod;
+      document.getElementById('fc-question').innerText = fc.q;
+      document.getElementById('fc-answer').innerText = fc.a;
+      document.querySelector('.flashcard').classList.remove('flipped');
+    }
+    function flipCard() { document.querySelector('.flashcard').classList.toggle('flipped'); }
+    function nextCard() { if(currentFc < flashcardsData.length - 1) { currentFc++; updateCard(); } }
+    function prevCard() { if(currentFc > 0) { currentFc--; updateCard(); } }
+
+    const matchingData = [
+      { term: "Intimate Space", ans: "0 to 45 cm (0-18 inches); emotionally close" },
+      { term: "Personal Distance", ans: "45 cm to 1.2 m (18 in-3.5 ft); arm's reach" },
+      { term: "Social Distance", ans: "1.2 m to 3.6 m (3.5-12 ft); business/formal" },
+      { term: "Roach's 6 C's", ans: "Compassion, Competence, Confidence, Conscience, Commitment, Comportment" },
+      { term: "Swanson's Caring Theory", ans: "Knowing, Being, Doing" },
+      { term: "False Reassurance", ans: "'Everything will be fine'; blocks expression of feelings" },
+      { term: "Stereotype", ans: "Preconceived idea attributing traits to an entire group" },
+      { term: "Bias", ans: "Personal preference or dislike interfering with impartiality" }
+    ];
+
+    function initMatching() {
+      const tbody = document.getElementById('matching-body');
+      const optionsHtml = matchingData.map(d => `<option value="${d.ans}">${d.ans}</option>`).sort(() => Math.random() - 0.5).join('');
+      
+      tbody.innerHTML = matchingData.map((m, idx) => `
+        <tr>
+          <td><strong>${idx + 1}</strong></td>
+          <td><strong>${m.term}</strong></td>
+          <td>
+            <select class="match-sel" data-correct="${m.ans}">
+              <option value="">-- Select Matching Definition --</option>
+              ${optionsHtml}
+            </select>
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    function checkMatching() {
+      const selects = document.querySelectorAll('.match-sel');
+      let score = 0;
+      selects.forEach(sel => {
+        if(sel.value === sel.dataset.correct) {
+          sel.style.borderColor = 'var(--success)';
+          sel.style.background = '#e6fffa';
+          score++;
+        } else {
+          sel.style.borderColor = 'var(--accent)';
+          sel.style.background = '#fff5f5';
+        }
+      });
+      const banner = document.getElementById('score-banner');
+      banner.style.display = 'block';
+      banner.innerHTML = `Matching Result: ${score} / ${matchingData.length} Correct!`;
+    }
+
+    const quizQuestions = [
+      { q: "1. A patient states 'I have no pain,' but is grimacing and clutching their surgical site. How should the nurse proceed?", opts: ["Document 0/10 pain", "Trust verbal statement", "Address the nonverbal cues and explore pain", "Give narcotic pain med immediately"], correct: 2, exp: "Nonverbal cues take precedence when verbal and nonverbal messages conflict (incongruence)." },
+      { q: "2. Which distance is ideal for taking a patient's nursing history at bedside within arm's reach?", opts: ["Intimate Space", "Personal Distance", "Social Distance", "Public Distance"], correct: 1, exp: "Personal distance (45 cm to 1.2 m) allows comfortable arm's reach interview without invading intimate space." },
+      { q: "3. What is the primary difference between social and professional therapeutic communication?", opts: ["Social has health goals", "Therapeutic communication is goal-directed and bound by legal/ethical standards", "Social is only written", "Therapeutic communication has no structure"], correct: 1, exp: "Therapeutic communication is purposeful, evidence-based, and legally/ethically bounded." },
+      { q: "4. According to O'Daniel & Rosenstein, what is the leading root cause of medical errors and sentinel events in hospitals?", opts: ["Lack of technology", "Failure of proper team communication", "Shortage of beds", "Equipment failure"], correct: 1, exp: "Communication failure is the #1 root cause of medication errors, wrong-site surgeries, and treatment delays." },
+      { q: "5. Sister Simone Roach's 6 C's of caring include Compassion, Competence, Confidence, Conscience, Commitment, and:", opts: ["Comportment", "Courtesy", "Calmness", "Capability"], correct: 0, exp: "The 6th C is Comportment (professional presentation and demeanor)." },
+      { q: "6. A patient asks 'Should I place my mom in a home?' What is the most therapeutic response?", opts: ["'Yes, definitely.'", "'If I were you, I would keep her home.'", "'Let's discuss what options and preferences exist for your family.'", "'You need to decide yourself.'"], correct: 2, exp: "Avoid giving personal advice. Use reflection and explore options to empower the patient." }
+    ];
+
+    function initQuiz() {
+      const qForm = document.getElementById('quiz-form');
+      qForm.innerHTML = quizQuestions.map((q, qIdx) => `
+        <div class="quiz-q">
+          <h3>${q.q}</h3>
+          <div class="options">
+            ${q.opts.map((opt, oIdx) => `
+              <label class="opt-lbl">
+                <input type="radio" name="q${qIdx}" value="${oIdx}"> ${opt}
+              </label>
+            `).join('')}
+          </div>
+          <div class="explanation" id="exp-${qIdx}">${q.exp}</div>
+        </div>
+      `).join('');
+    }
+
+    function gradeQuiz(e) {
+      e.preventDefault();
+      let score = 0;
+      quizQuestions.forEach((q, idx) => {
+        const sel = document.querySelector(`input[name="q${idx}"]:checked`);
+        const expEl = document.getElementById(`exp-${idx}`);
+        if(sel && parseInt(sel.value) === q.correct) {
+          score++;
+          expEl.className = 'explanation correct';
+          expEl.innerText = '✓ Correct! ' + q.exp;
+        } else {
+          expEl.className = 'explanation incorrect';
+          expEl.innerText = '✗ Incorrect. ' + q.exp;
+        }
+      });
+      const banner = document.getElementById('score-banner');
+      banner.style.display = 'block';
+      banner.innerHTML = `Quiz Score: ${score} / ${quizQuestions.length} (${Math.round(score/quizQuestions.length*100)}%)`;
+    }
+
+    function showSection(id) {
+      document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      event.target.classList.add('active');
+    }
+
+    updateCard();
+    initMatching();
+    initQuiz();
+  </script>
+</body>
+</html>
