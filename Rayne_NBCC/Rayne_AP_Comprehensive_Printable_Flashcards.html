@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Rayne's Printable Master A&P Flashcards (Modules 1, 3, 4 & Cell Biology)</title>
+  <style>
+    @page {
+      size: letter portrait;
+      margin: 0.5in;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Helvetica Neue', Arial, sans-serif; background: #f4f4f9; color: #111; padding: 20px; }
+
+    .no-print {
+      background: #880e4f;
+      color: white;
+      padding: 15px 20px;
+      border-radius: 8px;
+      margin-bottom: 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .print-btn {
+      background: #e91e63;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    .print-btn:hover { background: #c2185b; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+
+    .card-box {
+      border: 2px dashed #666;
+      border-radius: 8px;
+      padding: 18px;
+      background: white;
+      min-height: 230px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      page-break-inside: avoid;
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      font-weight: bold;
+      color: #880e4f;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 6px;
+      margin-bottom: 10px;
+    }
+
+    .card-title { font-size: 1.05rem; font-weight: bold; color: #111; margin-bottom: 10px; }
+    .card-body { font-size: 0.95rem; line-height: 1.4; color: #333; flex-grow: 1; }
+    .card-footer { font-size: 0.75rem; color: #888; text-align: right; margin-top: 10px; border-top: 1px dashed #eee; padding-top: 4px; }
+
+    @media print {
+      body { background: white; padding: 0; }
+      .no-print { display: none !important; }
+      .grid { gap: 12px; }
+      .card-box { border: 1px dashed #444; box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="no-print">
+    <div>
+      <h2 style="margin-bottom: 4px;">🖨️ Rayne's Master A&P Printable Flashcards (Modules 1, 3, 4 & Cell)</h2>
+      <p style="opacity: 0.9;">Click the button on the right to open your printer menu and print index cards!</p>
+    </div>
+    <button class="print-btn" onclick="window.print()">🖨️ Print Flashcards Now</button>
+  </div>
+
+  <div class="grid">
+
+    <!-- Card 1 -->
+    <div class="card-box">
+      <div>
+        <div class="card-header"><span>MODULE 1</span><span>CARD #1</span></div>
+        <div class="card-title">Q: 6 Levels of Body Organization</div>
+        <div class="card-body">
+          1. <strong>Chemical</strong> (atoms/molecules)<br>
+          2. <strong>Cellular</strong> (cells)<br>
+          3. <strong>Tissue</strong> (groups of cells)<br>
+          4. <strong>Organ</strong> (working tissues)<br>
+          5. <strong>Organ System</strong> (functional organs)<br>
+          6. <strong>Organism</strong> (complete human)
+        </div>
+      </div>
+      <div class="card-footer">Anatomy & Physiology (HCSS1087A)</div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="card-box">
+      <div>
+        <div class="card-header"><span>MODULE 1</span><span>CARD #2</span></div>
+        <div class="card-title">Q: What is Homeostasis?</div>
+        <div class="card-body">
+          <strong>A:</strong> The state of relative internal body balance and stability maintained by self-regulating feedback mechanisms despite external changes.
+        </div>
+      </div>
+      <div class="card-footer">Anatomy & Physiology (HCSS1087A)</div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="card-box">
+      <div>
+        <div class="card-header"><span>MODULE 1</span><span>CARD #3</span></div>
+        <div class="card-title">Q: Negative vs Positive Feedback Loops</div>
+        <div class="card-body">
+          <strong>Negative Feedback:</strong> Opposes/negates change to restore normal levels (body temp, blood glucose).<br>
+          <strong>Positive Feedback:</strong> Amplifies change (uterine contractions, blood clotting).
+        </div>
+      </div>
+      <div class="card-footer">Anatomy & Physiology (HCSS1087A)</div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="card-box">
+      <div>
+        <div class="card-header"><span>MODULE 1</span><span>CARD #4</span></div>
+        <div class="card-title">Q: 2 Major Body Cavities & Subdivisions</div>
+        <div class="card-body">
+          • <strong>Ventral (Front):</strong> Thoracic (Mediastinum & Pleural) and Abdominopelvic (Abdominal & Pelvic).<br>
+          • <strong>Dorsal (Back):</strong> Cranial (brain) and Spinal (spinal cord).
+        </div>
+      </div>
+      <div class="card-footer">Anatomy & Physiology (HCSS1087A)</div>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="card-box">
+      <div>
+        <div class="card-header"><span>CELL BIOLOGY</span><span>CARD #5</span></div>
+        <div class="card-title">Q: Cell Organelles (Membrane, Nucleus, Ribosome, Mitochondria)</div>
+        <div class="card-body">
+          • <strong>Plasma Membrane:</strong> Semipermeable lipid bilayer.<br>
+          • <strong>Nucleus:</strong> Control center managing DNA.<br>
+          • <strong>Ribosomes:</strong> Protein factories.<br>
+          • <strong>Mitochondria:</strong> Powerhouse converting food to ATP.
+        </div>
+      </div>
+      <div class="card-footer">Anatomy & Physiology (HCSS1087A)</div>
+    </div>
+
+    <!-- Card 6 -->
+    <div class="card-box">
+      <div>
+        <div class="card-header"><span>MODULE 3</span><span>CARD #6</span></div>
+        <div class="card-title">Q: Epidermis & Dermis Layers</div>
+        <div class="card-body">
+          • <strong>Epidermis:</strong> Nonvascular. 95% Keratinocytes (waterproof keratin), 5% Melanocytes (melanin pigment).<br>
+          • <strong>Dermis:</strong> 20x thicker. Papillary (fingerprints) & Reticular (collagen/elastin/glands).
+        </div>
+      </div>
+      <div class="card-footer">Anatomy & Physiology (HCSS1087A)</div>
+    </div>
+
+    <!-- Card 7 -->
+    <div class="card-box">
+      <div>
+        <div class="card-header"><span>MODULE 3</span><span>CARD #7</span></div>
+        <div class="card-title">Q: Hypodermis & Glands</div>
+        <div class="card-body">
+          • <strong>Hypodermis:</strong> Adipose fat tissue for insulation.<br>
+          • <strong>Eccrine Sweat Glands:</strong> Thin watery sweat for cooling.<br>
+          • <strong>Apocrine Sweat Glands:</strong> Axilla/groin; bacterial odor.<br>
+          • <strong>Sebaceous Glands:</strong> Sebum oil prevents drying.
+        </div>
+      </div>
+      <div class="card-footer">Anatomy & Physiology (HCSS1087A)</div>
+    </div>
+
+    <!-- Card 8 -->
+    <div class="card-box">
+      <div>
+        <div class="card-header"><span>MODULE 4</span><span>CARD #8</span></div>
+        <div class="card-title">Q: 5 Functions of Skeletal System</div>
+        <div class="card-body">
+          1. Support & shape<br>
+          2. Protection of internal organs<br>
+          3. Movement via tendon attachments<br>
+          4. Calcium mineral storage<br>
+          5. <strong>Hematopoiesis</strong> (blood cell creation in red marrow)
+        </div>
+      </div>
+      <div class="card-footer">Anatomy & Physiology (HCSS1087A)</div>
+    </div>
+
+    <!-- Card 9 -->
+    <div class="card-box">
+      <div>
+        <div class="card-header"><span>MODULE 4</span><span>CARD #9</span></div>
+        <div class="card-title">Q: 5 Types of Bones with Examples</div>
+        <div class="card-body">
+          1. <strong>Long:</strong> Femur, humerus, tibia.<br>
+          2. <strong>Short:</strong> Carpals, tarsals.<br>
+          3. <strong>Flat:</strong> Scapula, sternum, ribs, cranium.<br>
+          4. <strong>Irregular:</strong> Vertebrae, sacrum, mandible.<br>
+          5. <strong>Sesamoid:</strong> Patella (kneecap in tendon).
+        </div>
+      </div>
+      <div class="card-footer">Anatomy & Physiology (HCSS1087A)</div>
+    </div>
+
+    <!-- Card 10 -->
+    <div class="card-box">
+      <div>
+        <div class="card-header"><span>MODULE 4</span><span>CARD #10</span></div>
+        <div class="card-title">Q: Structure of a Long Bone</div>
+        <div class="card-body">
+          • <strong>Diaphysis:</strong> Shaft with medullary cavity (yellow marrow).<br>
+          • <strong>Epiphysis:</strong> Ends (growth site at epiphyseal plate).<br>
+          • <strong>Periosteum:</strong> Outer fibrous membrane.<br>
+          • <strong>Articular Cartilage:</strong> Hyaline cushion on ends.
+        </div>
+      </div>
+      <div class="card-footer">Anatomy & Physiology (HCSS1087A)</div>
+    </div>
+
+    <!-- Card 11 -->
+    <div class="card-box">
+      <div>
+        <div class="card-header"><span>MODULE 4</span><span>CARD #11</span></div>
+        <div class="card-title">Q: Axial vs Appendicular Skeleton</div>
+        <div class="card-body">
+          • <strong>Axial (80 bones):</strong> Skull, hyoid, spine, ribs, sternum.<br>
+          • <strong>Appendicular (126 bones):</strong> Pectoral girdle, arms, pelvic girdle, legs.
+        </div>
+      </div>
+      <div class="card-footer">Anatomy & Physiology (HCSS1087A)</div>
+    </div>
+
+    <!-- Card 12 -->
+    <div class="card-box">
+      <div>
+        <div class="card-header"><span>MODULE 4</span><span>CARD #12</span></div>
+        <div class="card-title">Q: 3 Types of Cartilage & 3 Joint Classes</div>
+        <div class="card-body">
+          <strong>Cartilage:</strong> Hyaline (articular cushion), Elastic (ear), Fibrocartilage (discs/pubis).<br>
+          <strong>Joints:</strong> Synarthroses (immovable), Amphiarthroses (slightly movable), Diarthroses (freely movable synovial).
+        </div>
+      </div>
+      <div class="card-footer">Anatomy & Physiology (HCSS1087A)</div>
+    </div>
+
+  </div>
+
+</body>
+</html>
