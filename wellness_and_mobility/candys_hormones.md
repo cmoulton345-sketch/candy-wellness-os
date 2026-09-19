@@ -105,6 +105,8 @@ This proves 100% that your itchiness is tied to your **ovarian cycle reset** whe
 ## 6. DOCTOR CONSULTATION CHECKLIST
 - [x] **Cycle Confirmation:** Documented proof of a regular ~25-day ovarian cycle via Oura ring temps (despite hysterectomy).
 - [x] **Histamine Connection:** Clear pattern of skin/scalp/breast itchiness occurring on exact transition dates when temp drops (July 25, Aug 17, Sep 8-10).
-- [ ] **BHRT Adjustment Check:** Share this table with practitioner to see if Progesterone timing/dose during transition days needs support.
+- [ ] **Mid-Cycle Dip & Joint Pain Inquiry:** Ask practitioner: *"On Days 10–12 (Mid-Cycle Ovulation Shift), my temp hits a low trough (-0.26°C) and climbs, triggering joint pain, fatigue, and itchiness. Based on my Sept 27 blood spot results, is this caused by an acute estrogen drop or relative progesterone deficit during transition? Should we adjust BHRT on dip days, or maintain my daily baseline?"*
 - [ ] **Finger Prick Test:** Target test window set for Sunday morning, Sept 27.
+- [ ] **Follow-Up Appointment:** Late October consultation to review test results + Oura cycle logs.
+
 
