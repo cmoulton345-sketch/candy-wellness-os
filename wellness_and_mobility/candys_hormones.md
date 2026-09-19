@@ -47,10 +47,12 @@
 | **Sept 10** | Day 3 | +0.22°C | +0.01°C | 100 | Itchiness resolving | Reset Window |
 | **Sept 11** | Day 4 | +0.12°C | +0.04°C | 100 | **Itchiness fully GONE** | Reset Window |
 | **Sept 12** | Day 5 | +0.08°C | **0.00°C** | **100** | **100% Clear** | 🟢 **Peak Push Phase Active** |
-| **Sept 13** | Day 6 | +0.02°C | -0.10°C | **100** | Clear | 🟢 **Peak Push Phase** |
-| **Sept 14** | Day 7 | -0.03°C | **-0.26°C** | **96** | Clear | 🟢 **Peak Push Phase (Low Temp Peak)** |
+| **Sept 13** | Day 6 | +0.02°C | **-0.10°C** | **100** | Clear | 🟢 **Peak Push Phase** |
+| **Sept 14** | Day 7 | -0.03°C | **-0.26°C** | **96** | Clear | 🟢 **Peak Push Phase (Low Temp Dip)** |
 | **Sept 15** | Day 8 | — | — | — | Clear | 🟢 **Peak Push Phase** |
 | **Sept 16** | Day 9 | -0.14°C | **-0.25°C** | **96** | Clear | 🟢 **Peak Push Phase (Estrogen Peak)** |
+| **Sept 17** | Day 10 | — | — | — | Clear | 🟢 **Peak Push Phase** |
+| **Sept 18** | Day 11 | (Low Temp) | — | — | **Itchy today** *(Estrogen Surge)* | 🟢 **Peak Push Phase (Mid-Cycle Peak)** |
 
 ### September 16 Body Measurements & Physical Check-In
 * **Oura Temp / Readiness:** -0.25°C (Day 9 Peak Estrogen Dip) | Readiness: 96 | Sleep Scores: 77 (Sept 14 night) & 81 (Sept 15 night).

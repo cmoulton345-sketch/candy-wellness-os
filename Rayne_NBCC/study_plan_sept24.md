@@ -140,3 +140,47 @@ $$\text{Medical Term} = \text{Prefix} + \text{Word Root} + \text{Combining Vowel
    * *D)* `oste/o` (WR), `-penia` (S)
 
 *(Answers: 1: B, 2: C, 3: B, 4: C, 5: A)*
+
+---
+
+## 💬 COURSE 2 FULLY DECODED & SYNCED: Communications 1 (NCSI1182B) — Modules 1 to 3
+
+* **Course:** NCSI1182B — Communications for Healthcare Professionals 1
+* **Instructors:** Krystal Pitre / Betty Lydon / Shannon
+* **Target Student:** Rayne Moulton (Practical Nursing / NBCC)
+* **Status:** **FULLY LOADED, EXTRACTED & SYNCED IN WORKSPACE**
+
+### 📁 Generated & Synced Asset Registry (Sept 18, 2026)
+
+| Asset Description | File Link | Purpose & Format |
+|:---|:---|:---|
+| **Practice Exam & Study Quiz** | [`Rayne_Communications_1_Quiz_Modules_1_3.md`](file:///Users/valuedcustomer/Downloads/flowstate_ai_os_candy/Rayne_NBCC/Rayne_Communications_1_Quiz_Modules_1_3.md) | Full 18-question exam (Matching, True/False, Multiple Choice) + Answer Key & NCLEX Clinical Rationales. |
+| **Study Flashcards Set** | [`Rayne_Communications_1_Flashcards_Modules_1_3.md`](file:///Users/valuedcustomer/Downloads/flowstate_ai_os_candy/Rayne_NBCC/Rayne_Communications_1_Flashcards_Modules_1_3.md) | High-yield term & concept flashcards for active recall across Modules 1–3. |
+| **Interactive Flashcard Web App** | [`Rayne_Communications_1_Printable_Flashcards.html`](file:///Users/valuedcustomer/Downloads/flowstate_ai_os_candy/Rayne_NBCC/Rayne_Communications_1_Printable_Flashcards.html) | Interactive digital flashcard tool with flip cards, score tracking, and printable view. |
+| **Visual PowerPoint Deck** | [`Rayne_Communications_1_Modules_1_3.pptx`](file:///Users/valuedcustomer/Downloads/flowstate_ai_os_candy/Rayne_NBCC/Rayne_Communications_1_Modules_1_3.pptx) | Structured 15-slide PowerPoint deck ready for presentations or Google Slides. |
+| **Interactive Study Hub** | [`Rayne_Communications_1_Study_Hub.html`](file:///Users/valuedcustomer/Downloads/flowstate_ai_os_candy/Rayne_NBCC/Rayne_Communications_1_Study_Hub.html) | All-in-one web dashboard integrating practice quiz, flashcards, and module outlines. |
+| **Extracted Module 1 Text** | [`Module 1 Basic Communication REVISED_extracted.md`](file:///Users/valuedcustomer/Downloads/flowstate_ai_os_candy/Rayne_NBCC/Module%201%20Basic%20Communication%20REVISED_extracted.md) | Extracted text from `Module 1 Basic Communication REVISED.docx`. |
+| **Extracted Module 2 Text** | [`Module 2 Effective communication REVISED_extracted.md`](file:///Users/valuedcustomer/Downloads/flowstate_ai_os_candy/Rayne_NBCC/Module%202%20Effective%20communication%20REVISED_extracted.md) | Extracted text from `Module 2 Effective communication REVISED.docx`. |
+| **Extracted Module 3 Text** | [`Module 3 Barriers That Hinder Effective Communication REVISED_extracted.md`](file:///Users/valuedcustomer/Downloads/flowstate_ai_os_candy/Rayne_NBCC/Module%203%20Barriers%20That%20Hinder%20Effective%20Communication%20REVISED_extracted.md) | Extracted text from `Module 3 Barriers That Hinder Effective Communication REVISED.docx`. |
+
+---
+
+### 🔑 Key Modules 1–3 High-Yield Core Summary
+
+1. **Module 1: Basic Communication & Proxemics**
+   * **Incongruence:** Nonverbal communication (80–93%) overrides spoken words. When nonverbal cues conflict with verbal words, always explore nonverbal signs.
+   * **Proxemics:**
+     * *Intimate Space:* 0 to 45 cm (18 in) — physical contact / close procedures.
+     * *Personal Distance:* 45 cm to 1.2 m (18 in to 3.5 ft) — ideal for health history interviews.
+     * *Social Distance:* 1.2 m to 3.6 m (3.5 ft to 12 ft) — formal/group interaction.
+   * **Root Cause of Adverse Events:** Communication failure is the #1 leading cause of preventable medical errors and sentinel events (O'Daniel & Rosenstein, 2008).
+
+2. **Module 2: Bridges to Effective Communication**
+   * **Roach's 6 C's of Caring:** Compassion, Competence, Confidence, Conscience, Commitment, Comportment.
+   * **Swanson's Theory of Caring:** Knowing, Being, Doing.
+   * **Bridges:** Respect, Caring, Mutuality (equal partnership), Empowerment, Trust, Empathy (feeling with the patient nonjudgmentally).
+
+3. **Module 3: Barriers to Effective Communication**
+   * **Barriers:** False reassurance ("Everything will be fine"), Stereotyping (generalizing entire groups), Bias (personal preferences), Giving Advice/Opinions, Judgmental statements, Arguing, High Anxiety.
+   * **Anxiety Management:** Speak slowly, calmly, and simply; break instructions down step-by-step.
+*
