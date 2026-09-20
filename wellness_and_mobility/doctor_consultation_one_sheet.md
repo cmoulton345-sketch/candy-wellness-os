@@ -1,58 +1,49 @@
-# CLINICAL CONSULTATION ONE-SHEET: ADHD & OCD INTEGRATED CARE PLAN
+# CLINICAL CONSULTATION ONE-SHEET: CANDY MOULTON
+## BHRT & ADHD (VYVANSE) INTEGRATED CARE PLAN
 
-**Patient:** 18-Year-Old Female  
-**Primary Diagnoses:** ADHD & OCD (High Percentiles)  
+**Patient:** Candy Moulton  
+**Primary Focus:** Bioidentical Hormone Replacement Therapy (BHRT), Oura Cycle Tracking, ADHD & Metabolic Support  
+**Current Meds & Regimen:** Vyvanse (40mg), Ozempic (18 clicks), BHRT (BiEst, Progesterone, Testosterone)  
+**Surgical Status:** Hysterectomy (uterus removed), **ovaries intact**  
 **Date:** September 2026  
-**Purpose:** Physician & Psychiatrist Consultation Guide  
+**Purpose:** BHRT Specialist & Primary Physician Consultation Guide  
 
 ---
 
-### 1. Current Medication & Titration Plan (OCD)
-* **Prozac (Fluoxetine):** Currently at **40 mg/day**.
-* **Titration Schedule:** Stepping to **50 mg/day** (Friday), targeting **60 mg/day** (standard high-dose OCD protocol).
-* **Question for Prescriber:** Confirm expected timeline to reach steady-state evaluation (typically 6–8 weeks at target 60 mg dose) before evaluating residual ADHD symptoms or adding secondary medications.
+### 1. BHRT Regimen Baseline & Surgical Context
+* **BiEst (Estrogen):** 1 pump morning (applied to inner arms/thighs/lower abdomen; never breast tissue).
+* **Testosterone:** 1 pump Monday to Friday (Saturday & Sunday off).
+* **Progesterone:** 1 pump every evening (Sunday off).
+* **Medication Context:** Vyvanse (40mg) for ADHD focus + Ozempic (18 clicks).
+* **Ovarian Status:** Ovaries remain intact, maintaining natural endogenous hormonal shifts despite hysterectomy.
 
 ---
 
-### 2. ADHD Medication Strategy (Post-Prozac Stabilization)
-* **Context:** Once OCD symptoms are controlled on 60 mg Prozac, we want to address persistent ADHD focus and executive function needs.
-* **Specific Options to Discuss:**
-  * **Guanfacine ER (Intuniv):** Alpha-2 adrenergic agonist (non-stimulant). Excellent for emotional dysregulation, executive dysfunction, and rejection sensitivity without exacerbating anxiety or OCD loops.
-  * **Atomoxetine (Strattera):** Selective norepinephrine reuptake inhibitor for ADHD attention.
-  * **Low-Dose Stimulant:** Methylphenidate or Amphetamine class (trialed under Prozac protective cover once anxiety is stable).
-* **Questions for Doctor:**
-  1. What is your preferred sequencing for ADHD pharmacotherapy once OCD titration finishes?
-  2. Is **Intuniv (Guanfacine ER)** a strong initial candidate given her combined ADHD and OCD/anxiety profile?
+### 2. Oura Ring Biomarker & Ovarian Cycle Confirmation
+* **Cycle Discovery:** Multi-month Oura temperature data confirms a highly regular **~25-day ovarian cycle**.
+* **Histamine Flare Pattern:** Skin, scalp, and breast itchiness occur consistently during the **Days 1–3 transition** when progesterone plunges and temperature drops off the high plateau.
+* **Mid-Cycle Temperature Dip & Joint Pain:** On Days 10–12 (Ovulation Shift), temperature drops to a low trough (-0.26°C) before rising, triggering joint pain, fatigue, and mild skin symptoms.
 
 ---
 
-### 3. Saffron Supplement Inquiry & Serotonergic Safety
-* **Parent Inquiry:** Considered Saffron extract (30 mg/day) for ADHD focus support.
-* **Safety & Clinical Note:** Saffron possesses mild serotonin reuptake inhibition properties. Combining Saffron with high-dose Prozac (50–60 mg) presents potential serotonergic overlap (Serotonin Syndrome risk / confounding titration data).
-* **Proposed Action:** **Holding on Saffron** during active Prozac escalation. Will only re-evaluate with psychiatric sign-off after Prozac stabilization.
+### 3. Key Questions for BHRT Specialist
+1. **Mid-Cycle Dip & Joint Pain Management:**  
+   *"On Days 10–12 of my cycle, my Oura temperature hits a low trough (-0.26°C) before climbing into the Protect phase. This transition triggers joint pain, fatigue, and mild histamine symptoms. Is this caused by an acute estrogen drop or relative progesterone deficit during transition? Should we adjust BHRT on dip days, or maintain my daily baseline?"*
+2. **Finger Prick Blood Spot Lab Review:**  
+   Confirming target lab test window for **Sunday morning, September 27, 2026 (Day 20)** to capture peak progesterone plateau (~12 hours post evening dose).
+3. **Blood Collection Protocol:**  
+   Confirming fasting morning protocol: Take evening Progesterone as normal; **withhold morning BiEst and Testosterone creams** until after capillary blood collection to prevent skin/sample contamination.
 
 ---
 
-### 4. Biomarker Optimization: Ferritin & Dopamine Synthesis
-* **Current Serum Ferritin:** **32 ng/mL**
-* **Clinical Rationale:** Iron is a critical cofactor for *tyrosine hydroxylase* (the rate-limiting enzyme in dopamine synthesis). Literature recommends optimizing ferritin to **50–70+ ng/mL** in ADHD populations to support focus and sleep.
-* **Proposed Iron Protocol:**
-  * Alternate-day Iron Bisglycinate + 500 mg Vitamin C (morning/noon, >2 hours away from dinner Magnesium/calcium).
-  * *Reasoning:* Alternate-day dosing keeps hepcidin levels low, maximizing absorption and reducing GI distress.
-* **Action Requested:** Confirm protocol approval and order a 90-day follow-up iron panel (Ferritin, Serum Iron, TIBC).
+### 4. ADHD (Vyvanse 40mg) & Metabolic Optimization
+* **Vyvanse Dosing & Focus:** Stable on 40mg Vyvanse for executive function and daily focus.
+* **Appetite & Protein Defense:** Coordinating Vyvanse and Ozempic with a 5-meal compact, high-protein eating structure (135g+ protein/day target) to prevent muscle loss, fatigue, or late-day energy crashes.
 
 ---
 
-### 5. Current & Planned Integrative Support Stack
-* **Magnesium Bisglycinate:** Administered at dinner for nervous system regulation, sleep quality, and muscle relaxation.
-* **Omega-3 Fatty Acids (EPA/DHA):** Optimizing for high EPA ratio (supports neuroinflammation and attention).
-* **Methylated B12 & Vitamin D3:** Starting for cellular energy, methylation support, and mood cofactor status.
-* **L-Theanine (100–200 mg):** Non-serotonergic amino acid for calm focus and GABA support during Prozac titration (pending physician approval).
-
----
-
-### 6. Summary of Action Items & Doctor Sign-Off
-- [ ] Confirm Prozac escalation timeline (40 mg → 50 mg → 60 mg).
-- [ ] Approve alternate-day Iron protocol & schedule 90-day Ferritin lab re-check.
-- [ ] Discuss **Intuniv (Guanfacine ER)** vs. other ADHD options for post-stabilization phase.
-- [ ] Review and sign off on adjunctive stack (L-Theanine, High-EPA Omegas, B12/D3).
+### 5. Summary of Action Items & Doctor Sign-Off
+- [ ] Review multi-month Oura cycle temperature logs & histamine transition data.
+- [ ] Discuss mid-cycle temperature dip (-0.26°C) and joint flare management strategy.
+- [ ] Approve finger prick blood spot test protocol for Sunday, Sept 27.
+- [ ] Review Vyvanse (40mg) + Ozempic (18 clicks) interaction with daily BHRT regimen.
