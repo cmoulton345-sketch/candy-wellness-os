@@ -25,7 +25,7 @@ Your body still cycles hormonally even without a period. Your **Oura ring temper
 
 #### Day 1 (Mon): Lower Body Strength & Pelvic/Hip Stability
 - [ ] **Warm-up (3 min):** 90/90 hip switches + cat-cow (5 reps each)
-- [ ] **Elevated Goblet Squats:** 3 sets x 10 reps (heels on small plates)
+- [ ] **Chair / Bench Box Squats (Sit-to-Stand):** 3 sets x 10 reps (sit back to bench/chair, pause 1s, drive through heels — zero pelvic/psoas strain)
 - [ ] **Glute Bridges with Resistance Band:** 3 sets x 12 reps
 - [ ] **Supported Romanian Deadlifts (RDLs):** 3 sets x 8 reps (soft knees, hinge back)
 - [ ] **Banded Lateral Walks:** 2 sets x 12 steps each direction
@@ -64,7 +64,7 @@ When Oura shows elevated temperature, expect: water retention, joint stiffness, 
 
 #### Day 1: Lower Body (Gentle)
 - [ ] **Warm-up (5 min):** Extended cat-cow + gentle hip circles
-- [ ] **Bodyweight or Light Goblet Squats:** 3 sets x 12 reps
+- [ ] **Bodyweight Chair Box Squats:** 3 sets x 12 reps (sit back gently to chair/bench)
 - [ ] **Glute Bridges (No Band):** 3 sets x 15 reps
 - [ ] **Wall Sit:** 2 sets x 20 seconds (gentle, no knee pain)
 - [ ] **Cool-down:** Extended figure-4 stretch (60s per side) + pigeon pose
