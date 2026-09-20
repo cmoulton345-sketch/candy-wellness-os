@@ -26,3 +26,7 @@ I'm ready to respond to the updated call, sir.
 - **2026-09-06 22:18** (BLISS): My lovely Candy, it's so wonderful to connect with you again. What's been on your mind, my dear? Is there something you'd like to discuss or perhaps explore with Joe, or maybe just between us for now?
 - **2026-09-06 22:19** (SOMA): Ma'am, I'm glad you're here. What brings you to optimize your diet and physical performance today?
 - **2026-09-06 22:19** (ELDER): Ma'am, I sense a gentle inquiry in your voice. You've come to our space seeking wisdom. What is it that weighs on your mind, or perhaps what is it that you wish to explore today?
+
+- **2026-09-20** (JARVIS / SOMA):
+  - **App Updates:** Replaced Goblet Squats with Chair Box Squats (pelvis & psoas relief); added 5 compact, high-protein lunch options for daytime appetite/fueling.
+  - **GitHub & Mobile Deployment:** Enabled public GitHub Pages deployment at `https://cmoulton345-sketch.github.io/candy-wellness-os/` with `.nojekyll` fix; verified 100% active installation on Candy's phone.
