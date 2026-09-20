@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Candy's Wellness OS</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #0d0d14; --surface: #15151f; --card: #1c1c2a; --card2: #222235;
+    --border: rgba(255,255,255,0.07);
+    --rose: #f4829a; --rose-dim: rgba(244,130,154,0.15); --rose-glow: rgba(244,130,154,0.3);
+    --gold: #f9c46b; --gold-dim: rgba(249,196,107,0.15);
+    --teal: #5ee7d0; --teal-dim: rgba(94,231,208,0.12);
+    --purple: #a78bfa; --purple-dim: rgba(167,139,250,0.12);
+    --green: #4ade80; --green-dim: rgba(74,222,128,0.12);
+    --text: #f0eef8; --muted: #8b87a8;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Outfit', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; overflow-x: hidden; }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(13,13,20,0.92); backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    padding: 12px 16px;
+  }
+  .nav-logo { font-size: 1rem; font-weight: 700; color: var(--rose); margin-bottom: 10px; }
+  .nav-logo span { color: var(--muted); font-weight: 400; }
+  .nav-tabs { display: flex; gap: 5px; overflow-x: auto; padding-bottom: 2px; scrollbar-width: none; }
+  .nav-tabs::-webkit-scrollbar { display: none; }
+  .nav-tab {
+    padding: 7px 13px; border-radius: 50px; border: none; cursor: pointer;
+    font-family: 'Outfit', sans-serif; font-size: 0.78rem; font-weight: 600;
+    background: transparent; color: var(--muted); white-space: nowrap; transition: all 0.2s;
+  }
+  .nav-tab:hover { color: var(--text); background: var(--card2); }
+  .nav-tab.active { background: var(--rose-dim); color: var(--rose); }
+
+  /* LAYOUT */
+  .page { display: none; padding: 110px 16px 50px; max-width: 700px; margin: 0 auto; }
+  .page.active { display: block; animation: fadeUp 0.3s ease; }
+  @keyframes fadeUp { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:translateY(0); } }
+
+  /* HEADERS */
+  .page-header { margin-bottom: 22px; }
+  .page-header h1 { font-size: 1.5rem; font-weight: 700; margin-bottom: 5px; }
+  .page-header p { color: var(--muted); font-size: 0.88rem; line-height: 1.5; }
+
+  /* PHASE BANNER */
+  .phase-banner {
+    border-radius: 14px; padding: 16px 18px; margin-bottom: 18px;
+    display: flex; align-items: center; justify-content: space-between;
+    border: 1px solid; transition: all 0.4s;
+  }
+  .phase-banner.push { background: var(--green-dim); border-color: rgba(74,222,128,0.25); }
+  .phase-banner.protect { background: var(--gold-dim); border-color: rgba(249,196,107,0.25); }
+  .phase-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); }
+  .phase-name { font-size: 1.15rem; font-weight: 700; }
+  .phase-desc { font-size: 0.78rem; color: var(--muted); margin-top: 2px; }
+  .phase-banner.push .phase-name { color: #4ade80; }
+  .phase-banner.protect .phase-name { color: var(--gold); }
+  .phase-toggle { display: flex; gap: 6px; }
+  .phase-btn {
+    padding: 7px 14px; border-radius: 50px; border: 1.5px solid; cursor: pointer;
+    font-family: 'Outfit', sans-serif; font-size: 0.78rem; font-weight: 600; transition: all 0.2s;
+  }
+  .push-btn { border-color: #4ade80; color: #4ade80; background: transparent; }
+  .push-btn.selected { background: var(--green-dim); }
+  .protect-btn { border-color: var(--gold); color: var(--gold); background: transparent; }
+  .protect-btn.selected { background: var(--gold-dim); }
+
+  /* CARDS */
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 18px; margin-bottom: 14px; }
+  .card-title { font-size: 0.72rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; display: flex; align-items: center; gap: 7px; }
+  .dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+
+  /* CHECKLIST */
+  .check-list { display: flex; flex-direction: column; gap: 9px; }
+  .check-item {
+    display: flex; align-items: flex-start; gap: 12px;
+    padding: 12px 14px; border-radius: 11px;
+    background: var(--card2); border: 1px solid var(--border);
+    cursor: pointer; transition: all 0.2s; user-select: none;
+  }
+  .check-item:hover { border-color: rgba(255,255,255,0.14); }
+  .check-item.checked { background: rgba(74,222,128,0.07); border-color: rgba(74,222,128,0.2); }
+  .check-box {
+    width: 21px; height: 21px; border-radius: 6px; flex-shrink: 0;
+    border: 2px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.2s; font-size: 0.75rem; margin-top: 1px;
+  }
+  .check-item.checked .check-box { background: var(--green); border-color: var(--green); color: #0d0d14; }
+  .check-label { font-size: 0.9rem; font-weight: 600; transition: color 0.2s; line-height: 1.3; }
+  .check-item.checked .check-label { color: var(--muted); text-decoration: line-through; }
+  .check-sub { font-size: 0.76rem; color: var(--muted); margin-top: 2px; }
+
+  /* SLIDERS */
+  .slider-grid { display: flex; flex-direction: column; gap: 14px; }
+  .slider-row { display: flex; flex-direction: column; gap: 7px; }
+  .slider-label { display: flex; justify-content: space-between; align-items: center; }
+  .slider-label span:first-child { font-size: 0.88rem; font-weight: 500; }
+  .slider-val { font-size: 0.95rem; font-weight: 700; width: 30px; height: 30px; border-radius: 7px; display: flex; align-items: center; justify-content: center; }
+  input[type=range] { -webkit-appearance: none; width: 100%; height: 6px; border-radius: 3px; outline: none; cursor: pointer; }
+  input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 20px; height: 20px; border-radius: 50%; background: var(--rose); cursor: pointer; box-shadow: 0 0 8px var(--rose-glow); }
+
+  /* WATER */
+  .water-cups { display: flex; gap: 8px; flex-wrap: wrap; }
+  .water-cup { width: 38px; height: 46px; border-radius: 9px; border: 2px solid var(--border); background: var(--card2); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; transition: all 0.2s; }
+  .water-cup:hover { border-color: var(--teal); }
+  .water-cup.filled { background: var(--teal-dim); border-color: var(--teal); }
+  .water-progress-bar { height: 5px; border-radius: 3px; background: var(--card2); overflow: hidden; margin-top: 8px; }
+  .water-progress-fill { height: 100%; background: var(--teal); border-radius: 3px; transition: width 0.3s ease; }
+  .water-label { font-size: 0.78rem; color: var(--muted); margin-top: 5px; }
+
+  /* MANTRA */
+  .mantra-box { background: var(--rose-dim); border: 1px solid var(--rose-glow); border-radius: 14px; padding: 18px 20px; margin-bottom: 14px; text-align: center; }
+  .mantra-text { font-size: 0.92rem; font-weight: 500; line-height: 1.6; font-style: italic; color: var(--rose); }
+
+  /* SAVE BUTTON */
+  .save-btn { width: 100%; padding: 15px; border-radius: 13px; border: none; background: linear-gradient(135deg, var(--rose), #c45c7a); color: white; font-family: 'Outfit', sans-serif; font-size: 0.95rem; font-weight: 700; cursor: pointer; transition: all 0.2s; margin-top: 6px; box-shadow: 0 4px 18px var(--rose-glow); }
+  .save-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 28px var(--rose-glow); }
+
+  /* DAY SELECTOR */
+  .day-selector { display: flex; gap: 7px; margin-bottom: 16px; overflow-x: auto; padding-bottom: 2px; scrollbar-width: none; }
+  .day-selector::-webkit-scrollbar { display: none; }
+  .day-btn {
+    flex-shrink: 0; padding: 9px 16px; border-radius: 50px; border: 1.5px solid var(--border);
+    background: transparent; color: var(--muted); font-family: 'Outfit', sans-serif;
+    font-size: 0.8rem; font-weight: 600; cursor: pointer; transition: all 0.2s;
+  }
+  .day-btn:hover { border-color: var(--rose); color: var(--rose); }
+  .day-btn.active { background: var(--rose-dim); border-color: var(--rose); color: var(--rose); }
+
+  /* WORKOUT CONTENT */
+  .workout-section { display: none; }
+  .workout-section.active { display: block; animation: fadeUp 0.25s ease; }
+  .equipment-badge { display: inline-flex; align-items: center; gap: 4px; padding: 3px 10px; border-radius: 50px; background: var(--purple-dim); border: 1px solid rgba(167,139,250,0.2); color: var(--purple); font-size: 0.72rem; font-weight: 600; margin: 2px 2px 6px 0; }
+  .cardio-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .cardio-card { padding: 14px; border-radius: 12px; background: var(--card2); border: 1px solid var(--border); cursor: pointer; transition: all 0.2s; }
+  .cardio-card:hover { border-color: var(--teal); }
+  .cardio-card.selected { background: var(--teal-dim); border-color: var(--teal); }
+  .cardio-icon { font-size: 1.5rem; margin-bottom: 6px; }
+  .cardio-name { font-size: 0.88rem; font-weight: 700; margin-bottom: 2px; }
+  .cardio-detail { font-size: 0.75rem; color: var(--muted); }
+
+  /* MEAL CARDS */
+  .meal-block { margin-bottom: 14px; }
+  .meal-time { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+  .meal-time-badge { padding: 4px 12px; border-radius: 50px; background: var(--gold-dim); border: 1px solid rgba(249,196,107,0.25); color: var(--gold); font-size: 0.75rem; font-weight: 700; white-space: nowrap; }
+  .meal-title { font-size: 0.95rem; font-weight: 700; }
+  .meal-note { font-size: 0.75rem; color: var(--muted); }
+  .meal-options { display: flex; flex-direction: column; gap: 8px; }
+  .meal-option {
+    padding: 12px 14px; border-radius: 11px; background: var(--card2); border: 1px solid var(--border);
+    cursor: pointer; transition: all 0.2s;
+  }
+  .meal-option:hover { border-color: var(--gold); }
+  .meal-option.selected { background: var(--gold-dim); border-color: var(--gold); }
+  .meal-option-name { font-size: 0.88rem; font-weight: 600; }
+  .meal-option-detail { font-size: 0.76rem; color: var(--muted); margin-top: 2px; }
+  .meal-protein { font-size: 0.72rem; font-weight: 700; color: var(--teal); margin-top: 3px; }
+  .macro-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 14px; }
+  .macro-box { background: var(--card2); border: 1px solid var(--border); border-radius: 11px; padding: 11px; text-align: center; }
+  .macro-num { font-size: 1.2rem; font-weight: 700; }
+  .macro-lbl { font-size: 0.68rem; color: var(--muted); margin-top: 2px; }
+
+  /* TAPPING */
+  .tapping-step { padding: 18px; border-radius: 13px; border: 1px solid var(--border); background: var(--card2); margin-bottom: 12px; display: none; animation: fadeUp 0.3s ease; }
+  .tapping-step.active { display: block; }
+  .step-number { font-size: 0.7rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--rose); margin-bottom: 7px; }
+  .step-point { font-size: 1rem; font-weight: 700; margin-bottom: 6px; }
+  .step-phrase { font-size: 0.88rem; color: var(--muted); line-height: 1.6; font-style: italic; }
+  .step-nav { display: flex; gap: 9px; margin-top: 14px; }
+  .step-nav button { flex: 1; padding: 11px; border-radius: 11px; border: 1.5px solid var(--border); background: var(--card2); color: var(--text); font-family: 'Outfit', sans-serif; font-size: 0.85rem; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+  .step-nav button:hover { border-color: var(--rose); color: var(--rose); }
+  .step-nav button.primary { background: var(--rose-dim); border-color: var(--rose); color: var(--rose); }
+  .step-progress { display: flex; gap: 5px; margin-top: 14px; justify-content: center; flex-wrap: wrap; }
+  .step-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--border); transition: all 0.3s; }
+  .step-dot.active { background: var(--rose); }
+  .step-dot.done { background: var(--green); }
+
+  /* EMERGENCY */
+  .emergency-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px; }
+  .emergency-card { padding: 16px; border-radius: 13px; border: 1px solid var(--border); background: var(--card2); cursor: pointer; transition: all 0.2s; text-align: center; }
+  .emergency-card:hover { border-color: var(--rose); transform: translateY(-2px); }
+  .ec-icon { font-size: 1.6rem; margin-bottom: 7px; }
+  .ec-title { font-size: 0.88rem; font-weight: 700; margin-bottom: 3px; }
+  .ec-sub { font-size: 0.74rem; color: var(--muted); }
+  .emergency-detail { display: none; background: var(--card2); border: 1px solid var(--border); border-radius: 14px; padding: 20px; margin-top: 4px; animation: fadeUp 0.3s ease; }
+  .emergency-detail.active { display: block; }
+  .emergency-detail h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 12px; color: var(--rose); }
+  .emergency-step { display: flex; gap: 12px; align-items: flex-start; padding: 10px 0; border-bottom: 1px solid var(--border); }
+  .emergency-step:last-child { border-bottom: none; }
+  .e-num { width: 24px; height: 24px; border-radius: 50%; flex-shrink: 0; background: var(--rose-dim); border: 1.5px solid var(--rose); color: var(--rose); font-weight: 700; font-size: 0.75rem; display: flex; align-items: center; justify-content: center; }
+  .e-text { font-size: 0.86rem; line-height: 1.5; color: var(--text); }
+
+  /* HARVEST */
+  .harvest-step { background: var(--card2); border: 1px solid var(--border); border-radius: 13px; padding: 16px; margin-bottom: 11px; }
+  .harvest-q { font-size: 0.92rem; font-weight: 600; margin-bottom: 11px; }
+  .q-num { color: var(--rose); margin-right: 6px; }
+  textarea { width: 100%; background: var(--card); border: 1px solid var(--border); border-radius: 9px; padding: 11px 13px; color: var(--text); font-family: 'Outfit', sans-serif; font-size: 0.86rem; resize: vertical; min-height: 70px; transition: border-color 0.2s; outline: none; }
+  textarea:focus { border-color: var(--rose); }
+  textarea::placeholder { color: var(--muted); }
+
+  /* TRAFFIC LIGHTS */
+  .traffic-row { display: flex; flex-direction: column; gap: 7px; padding: 12px 14px; background: var(--card2); border-radius: 11px; border: 1px solid var(--border); }
+  .traffic-label { font-size: 0.88rem; font-weight: 700; }
+  .traffic-btns { display: flex; gap: 7px; }
+  .traffic-btn { flex: 1; padding: 8px 4px; border-radius: 9px; border: 1.5px solid var(--border); background: transparent; font-size: 1rem; cursor: pointer; transition: all 0.2s; }
+  .traffic-btn:hover { transform: scale(1.05); }
+  .traffic-btn.selected { transform: scale(1.1); border-color: var(--rose); }
+
+  /* SUPPLEMENTS */
+  .supp-list { display: flex; flex-direction: column; gap: 9px; }
+  .supp-item { display: flex; justify-content: space-between; align-items: center; padding: 12px 14px; border-radius: 11px; background: var(--card2); border: 1px solid var(--border); gap: 10px; }
+  .supp-info { display: flex; flex-direction: column; gap: 2px; }
+  .supp-name { font-size: 0.88rem; font-weight: 600; }
+  .supp-detail { font-size: 0.74rem; color: var(--muted); }
+  .supp-time { font-size: 0.73rem; font-weight: 600; padding: 4px 10px; border-radius: 50px; border: 1px solid var(--border); color: var(--muted); white-space: nowrap; flex-shrink: 0; }
+
+  /* CRAVING SWAPS */
+  .craving-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; }
+  .craving-card { padding: 12px; border-radius: 11px; background: var(--card2); border: 1px solid var(--border); }
+  .craving-trigger { font-size: 0.74rem; color: var(--muted); margin-bottom: 3px; }
+  .craving-swap { font-size: 0.85rem; font-weight: 600; }
+  .craving-kcal { font-size: 0.72rem; color: var(--gold); margin-top: 3px; }
+
+  /* SECTION TITLE */
+  .section-title { font-size: 0.95rem; font-weight: 700; margin: 20px 0 12px; }
+  .divider { height: 1px; background: var(--border); margin: 18px 0; }
+
+  /* INPUT */
+  .input-row { display: flex; gap: 9px; align-items: center; }
+  .input-row input { flex: 1; background: var(--card2); border: 1px solid var(--border); border-radius: 9px; padding: 10px 13px; color: var(--text); font-family: 'Outfit', sans-serif; font-size: 0.88rem; outline: none; transition: border-color 0.2s; }
+  .input-row input:focus { border-color: var(--rose); }
+  .input-row input::placeholder { color: var(--muted); }
+  .input-row label { font-size: 0.82rem; color: var(--muted); white-space: nowrap; }
+
+  /* PILLS */
+  .pill-row { display: flex; gap: 7px; flex-wrap: wrap; }
+  .pill { padding: 7px 14px; border-radius: 50px; border: 1.5px solid var(--border); font-size: 0.8rem; font-weight: 600; cursor: pointer; transition: all 0.2s; background: transparent; color: var(--muted); font-family: 'Outfit', sans-serif; }
+  .pill:hover { border-color: var(--rose); color: var(--rose); }
+  .pill.selected { background: var(--rose-dim); border-color: var(--rose); color: var(--rose); }
+
+  /* TOAST */
+  .toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(80px); background: var(--card); border: 1px solid var(--rose-glow); border-radius: 50px; padding: 11px 24px; font-size: 0.85rem; font-weight: 600; color: var(--rose); box-shadow: 0 8px 28px rgba(0,0,0,0.4); transition: transform 0.3s ease; z-index: 200; white-space: nowrap; }
+  .toast.show { transform: translateX(-50%) translateY(0); }
+
+  /* ALERT BOX */
+  .alert-box { padding: 14px 16px; border-radius: 12px; margin-bottom: 14px; font-size: 0.84rem; line-height: 1.5; }
+  .alert-box.gold { background: var(--gold-dim); border: 1px solid rgba(249,196,107,0.3); color: var(--gold); }
+  .alert-box.teal { background: var(--teal-dim); border: 1px solid rgba(94,231,208,0.3); color: var(--teal); }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">🌸 Candy's <span>Wellness OS</span></div>
+  <div class="nav-tabs">
+    <button class="nav-tab active" onclick="showPage('today',this)">Today</button>
+    <button class="nav-tab" onclick="showPage('workout',this)">Workout</button>
+    <button class="nav-tab" onclick="showPage('nutrition',this)">Nutrition</button>
+    <button class="nav-tab" onclick="showPage('tapping',this)">Tapping</button>
+    <button class="nav-tab" onclick="showPage('emergency',this)">SOS</button>
+    <button class="nav-tab" onclick="showPage('harvest',this)">Sunday</button>
+    <button class="nav-tab" onclick="showPage('supplements',this)">Supplements</button>
+  </div>
+</nav>
+
+<div class="toast" id="toast">✓ Saved</div>
+
+<!-- ══ TODAY ══ -->
+<div class="page active" id="page-today">
+  <div class="page-header">
+    <h1>Good morning, Candy 🌸</h1>
+    <p id="today-date"></p>
+  </div>
+  <div class="phase-banner push" id="phase-banner-today">
+    <div>
+      <div class="phase-label">Today's Mode</div>
+      <div class="phase-name" id="phase-name-today">🟢 Push Phase</div>
+      <div class="phase-desc" id="phase-desc-today">Oura temp at baseline — full energy, train hard</div>
+    </div>
+    <div class="phase-toggle">
+      <button class="phase-btn push-btn selected" onclick="setPhase('push')">Push</button>
+      <button class="phase-btn protect-btn" onclick="setPhase('protect')">Protect</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><div class="dot" style="background:var(--rose)"></div>Morning Check-In</div>
+    <div class="slider-grid">
+      <div class="slider-row">
+        <div class="slider-label"><span>😊 Mood</span><div class="slider-val" id="mood-val" style="background:var(--rose-dim);color:var(--rose)">5</div></div>
+        <input type="range" min="1" max="10" value="5" oninput="updateSlider('mood',this.value,'var(--rose)')" style="background:linear-gradient(to right,var(--rose) 44%,var(--card2) 44%)">
+      </div>
+      <div class="slider-row">
+        <div class="slider-label"><span>⚡ Energy</span><div class="slider-val" id="energy-val" style="background:var(--gold-dim);color:var(--gold)">5</div></div>
+        <input type="range" min="1" max="10" value="5" oninput="updateSlider('energy',this.value,'var(--gold)')" style="background:linear-gradient(to right,var(--gold) 44%,var(--card2) 44%)">
+      </div>
+      <div class="slider-row">
+        <div class="slider-label"><span>🔥 Pain Level</span><div class="slider-val" id="pain-val" style="background:var(--purple-dim);color:var(--purple)">3</div></div>
+        <input type="range" min="1" max="10" value="3" oninput="updateSlider('pain',this.value,'var(--purple)')" style="background:linear-gradient(to right,var(--purple) 22%,var(--card2) 22%)">
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><div class="dot" style="background:var(--teal)"></div>Meals — Eat by clock, not hunger</div>
+    <div class="check-list">
+      <div class="check-item" onclick="toggle(this)"><div class="check-box">✓</div><div><div class="check-label">☀️ 8:30 AM — Break-Fast</div><div class="check-sub">30g+ protein • Vyvanse pairing • Eat even if not hungry</div></div></div>
+      <div class="check-item" onclick="toggle(this)"><div class="check-box">✓</div><div><div class="check-label">⏰ 10:30 AM — Mid-Morning Fuel</div><div class="check-sub">Set a phone alarm • 15-20g protein • Appetite is suppressed — eat anyway</div></div></div>
+      <div class="check-item" onclick="toggle(this)"><div class="check-box">✓</div><div><div class="check-label">🥗 1:00 PM — Lunch</div><div class="check-sub">Biggest meal of the day • 40-45g protein</div></div></div>
+      <div class="check-item" onclick="toggle(this)"><div class="check-box">✓</div><div><div class="check-label">🍎 4:00 PM — Afternoon Snack</div><div class="check-sub">15-20g protein • Pre-workout fuel</div></div></div>
+      <div class="check-item" onclick="toggle(this)"><div class="check-box">✓</div><div><div class="check-label">🍽️ 6:15 PM — Dinner</div><div class="check-sub">30-35g protein • Before kitchen closes</div></div></div>
+      <div class="check-item" onclick="toggle(this)"><div class="check-box">✓</div><div><div class="check-label">🌙 6:45 PM — Closing Snack (CRUNCHY)</div><div class="check-sub">Pumpkin seeds, almonds or popcorn • Brush teeth IMMEDIATELY after</div></div></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><div class="dot" style="background:var(--teal)"></div>Water — Target 96 oz</div>
+    <div class="water-cups" id="water-cups"></div>
+    <div class="water-progress-bar"><div class="water-progress-fill" id="water-bar" style="width:0%"></div></div>
+    <div class="water-label" id="water-label">0 of 12 glasses</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><div class="dot" style="background:var(--purple)"></div>Movement</div>
+    <div class="check-list">
+      <div class="check-item" onclick="toggle(this)"><div class="check-box">✓</div><div><div class="check-label">🌅 Morning — 90/90 hips + cat-cow (3 min)</div><div class="check-sub">Breaks overnight stiffness</div></div></div>
+      <div class="check-item" onclick="toggle(this)"><div class="check-box">✓</div><div><div class="check-label">🏋️ 6:30 PM — Workout</div><div class="check-sub" id="today-workout-sub">Push: Full strength session — go for it</div></div></div>
+      <div class="check-item" onclick="toggle(this)"><div class="check-box">✓</div><div><div class="check-label">🌙 Bedtime — Legs Up the Wall (5-10 min)</div><div class="check-sub">Drains inflammation • Resets nervous system</div></div></div>
+    </div>
+  </div>
+
+  <div class="mantra-box"><div class="mantra-text" id="daily-mantra"></div></div>
+
+  <div class="card">
+    <div class="card-title"><div class="dot" style="background:var(--gold)"></div>Oura & Quick Notes</div>
+    <div style="display:flex;flex-direction:column;gap:10px;">
+      <div class="input-row"><label>Sleep Score</label><input type="number" placeholder="e.g. 78" min="0" max="100"/></div>
+      <div class="input-row"><label>Temp Trend</label><input type="text" placeholder="↓ baseline / ↑ elevated"/></div>
+      <div class="input-row"><label>Alcohol today</label><input type="number" placeholder="0" min="0" max="10"/></div>
+    </div>
+  </div>
+  <button class="save-btn" onclick="showToast('✓ Today saved 🌸')">✓ Save Today's Check-In</button>
+</div>
+
+<!-- ══ WORKOUT ══ -->
+<div class="page" id="page-workout">
+  <div class="page-header">
+    <h1>Workout Plan 🏋️</h1>
+    <p>Your home gym. Your pace. Push or Protect — choose your mode first.</p>
+  </div>
+
+  <div class="phase-banner push" id="phase-banner-workout">
+    <div>
+      <div class="phase-label">Current Mode</div>
+      <div class="phase-name" id="phase-name-workout">🟢 Push Phase</div>
+      <div class="phase-desc" id="phase-desc-workout">Full intensity, progressive overload</div>
+    </div>
+    <div class="phase-toggle">
+      <button class="phase-btn push-btn selected" onclick="setWorkoutPhase('push')">Push</button>
+      <button class="phase-btn protect-btn" onclick="setWorkoutPhase('protect')">Protect</button>
+    </div>
+  </div>
+
+  <!-- Equipment -->
+  <div class="card">
+    <div class="card-title"><div class="dot" style="background:var(--purple)"></div>Your Home Gym Equipment</div>
+    <div style="display:flex;flex-wrap:wrap;gap:5px;">
+      <span class="equipment-badge">🏋️ Dumbbells</span>
+      <span class="equipment-badge">🔴 Resistance Bands</span>
+      <span class="equipment-badge">🪑 Bench</span>
+      <span class="equipment-badge">🚶 Treadmill</span>
+      <span class="equipment-badge">💪 Bowflex Max Trainer</span>
+      <span class="equipment-badge">🚴 Exercise Bike</span>
+      <span class="equipment-badge">📳 Vibration Deck</span>
+    </div>
+  </div>
+
+  <!-- Push Phase Workouts -->
+  <div id="push-workouts">
+    <div class="section-title">🟢 Push Phase — 3x/Week (Mon • Wed • Fri at 6:30 PM)</div>
+    <div class="day-selector">
+      <button class="day-btn active" onclick="showDay('push','1',this)">Day 1 — Lower Body</button>
+      <button class="day-btn" onclick="showDay('push','2',this)">Day 2 — Upper Body</button>
+      <button class="day-btn" onclick="showDay('push','3',this)">Day 3 — Full Body</button>
+      <button class="day-btn" onclick="showDay('push','cardio',this)">Cardio Options</button>
+    </div>
+
+    <div class="workout-section active" id="push-day-1">
+      <div class="alert-box teal">💡 Progressive overload rule: when 3×10 feels easy with good form, increase weight by 2.5 lb next session.</div>
+      <div class="card">
+        <div class="card-title"><div class="dot" style="background:var(--green)"></div>Warm-Up (3 min) — Vibration Deck</div>
+        <div class="check-list">
+          <div class="check-item" onclick="toggle(this)"><div class="check-box">✓</div><div><div class="check-label">Vibration Deck — Stand & balance (2 min)</div><div class="check-sub">Activates muscle fibres, warms up hips and ankles</div></div></div>
+          <div class="check-item" onclick="toggle(this)"><div class="check-box">✓</div><div><div class="check-label">90/90 Hip Switches + Cat-Cow (5 reps each)</div><div class="check-sub">On the floor or bench</div></div></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title"><div class="dot" style="background:var(--rose)"></div>Lower Body — Hip, Glute & Pelvic Stability</div>
+        <div class="check-list">
+          <div class="check-item" onclick="toggle(this)"><div class="check-box">✓</div><div><div class="check-label">Chair / Bench Box Squats (Sit-to-Stand) — 3 × 10</div><div class="check-sub">Psoas & Pelvic-Safe • Sit back onto bench • Pause 1s • Drive through heels • Light dumbbell optional</div></div></div>
+          <div class="check-item" onclick="toggle(this)"><div class="check-box">✓</div><div><div class="check-label">Glute Bridges with Band — 3 × 12</div><div class="check-sub">Band above knees • Drive through heels • Squeeze at top</div></div></div>
+          <div class="check-item" onclick="toggle(this)"><div class="check-box">✓</div><div><div class="check-label">Romanian Deadlifts (RDLs) — 3 × 8</div><div class="check-sub">Dumbbells • Soft knees • Hinge hips back • Feel stretch in hamstrings</div></div></div>
+          <div class="check-item" onclick="toggle(this)"><div class="check-box">✓</div><div><div class="check-label">Banded Lateral Walks — 2 × 12 steps each direction</div><div class="check-sub">Band above knees • Stay low • Controls hip drop</div></div></div>
+          <div class="check-item" onclick="toggle(this)"><div class="check-box">✓</div><div><div class="check-label">Step-Ups on Bench — 3 × 8 per leg</div><div class="check-sub">Light-moderate dumbbells • Drive through heel • Don't push off back foot</div></div></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title"><div class="dot" style="background:var(--teal)"></div>Cool-Down (3 min)</div>
+        <div class="check-list">
+          <div class="check-item" onclick="toggle(this)"><div class="check-box">✓</div><div><div class="check-label">Reclined Figure-4 Stretch — 45s each side</div><div class="check-sub">On floor or bench</div></div></div>
+          <div class="check-item" onclick="toggle(this)"><div class="check-box">✓</div><div><div class="check-label">Vibration Deck — Light lymphatic drainage (2 min)</div><div class="check-sub">Arms relaxed, gentle vibration helps reduce leg swelling</div></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="workout-section" id="push-day-2">
+      <div class="card">
+        <div class="card-title"><div class="dot" style="background:var(--green)"></div>Warm-Up (3 min)</div>
+        <div class="check-list">
+          <div class="check-item" onclick="toggle(this)"><div class="check-box">✓</div><div><div class="check-label">Arm circles — 10 forward, 10 backward</div></div></div>
+          <div class="check-item" onclick="toggle(this)"><div class="check-box">✓</div><div><div class="check-label">Doorway or bench chest stretch — 30s each side</div></div></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title"><div class="dot" style="background:var(--rose)"></div>Upper Body — Posture & Core</div>
+        <div class="check-list">
+          <div class="check-item" onclick="toggle(this)"><div class="check-box">✓</div><div><div class="check-label">Bench Chest Press — 3 × 10</div><div class="check-sub">Dumbbells on bench • Full range • Elbows at 45° to protect shoulders</div></div></div>
+          <div class="check-item" onclick="toggle(this)"><div class="check-box">✓</div><div><div class="check-label">One-Arm Dumbbell Rows — 3 × 10 per arm</div><div class="check-sub">Support hand on bench • Elbow drives back • Squeeze shoulder blade</div></div></div>
+          <div class="check-item" onclick="toggle(this)"><div class="check-box">✓</div><div><div class="check-label">Arnold Press (Seated on Bench) — 3 × 8</div><div class="check-sub">Dumbbells • Rotate palms during press • Builds shoulders, rotator cuff</div></div></div>
+          <div class="check-item" onclick="toggle(this)"><div class="check-box">✓</div><div><div class="check-label">Banded Pull-Aparts — 3 × 12</div><div class="check-sub">Band at chest height • Arms straight • Squeeze shoulder blades together</div></div></div>
+          <div class="check-item" onclick="toggle(this)"><div class="check-box">✓</div><div><div class="check-label">Bird-Dogs — 3 × 8 per side</div><div class="check-sub">On floor • Opposite arm + leg • Core stays stable • No back arching</div></div></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title"><div class="dot" style="background:var(--teal)"></div>Cool-Down</div>
+        <div class="check-list">
+          <div class="check-item" onclick="toggle(this)"><div class="check-box">✓</div><div><div class="check-label">Child's Pose — 1 min</div></div></div>
+          <div class="check-item" onclick="toggle(this)"><div class="check-box">✓</div><div><div class="check-label">Thoracic rotation stretch — 30s each side</div></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="workout-section" id="push-day-3">
+      <div class="card">
+        <div class="card-title"><div class="dot" style="background:var(--green)"></div>Warm-Up (3 min)</div>
+        <div class="check-list">
+          <div class="check-item" onclick="toggle(this)"><div class="check-box">✓</div><div><div class="check-label">Vibration Deck — Standing activation (2 min)</div></div></div>
+          <div class="check-item" onclick="toggle(this)"><div class="check-box">✓</div><div><div class="check-label">Hip openers + thoracic rotations</div></div></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title"><div class="dot" style="background:var(--rose)"></div>Full Body — Functional & Power</div>
+        <div class="check-list">
+          <div class="check-item" onclick="toggle(this)"><div class="check-box">✓</div><div><div class="check-label">Reverse Lunges — 3 × 8 per leg</div><div class="check-sub">Dumbbells • Step back • Front knee stays over ankle</div></div></div>
+          <div class="check-item" onclick="toggle(this)"><div class="check-box">✓</div><div><div class="check-label">Bench Step-Ups — 3 × 8 per leg</div><div class="check-sub">Drive through heel on bench • No bouncing off back foot</div></div></div>
+          <div class="check-item" onclick="toggle(this)"><div class="check-box">✓</div><div><div class="check-label">Farmer's Carries — 3 laps across room</div><div class="check-sub">Moderate dumbbells • Tall posture • Builds grip, core, and endurance</div></div></div>
+          <div class="check-item" onclick="toggle(this)"><div class="check-box">✓</div><div><div class="check-label">Banded Rows (Seated on Bench) — 3 × 12</div><div class="check-sub">Band around feet • Pull elbows back • Squeeze at end</div></div></div>
+          <div class="check-item" onclick="toggle(this)"><div class="check-box">✓</div><div><div class="check-label">Bowflex Max Trainer — 10 min moderate intensity</div><div class="check-sub">Finish the session with low-impact total body cardio</div></div></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title"><div class="dot" style="background:var(--teal)"></div>Cool-Down</div>
+        <div class="check-list">
+          <div class="check-item" onclick="toggle(this)"><div class="check-box">✓</div><div><div class="check-label">Restorative Child's Pose — 2 min</div></div></div>
+          <div class="check-item" onclick="toggle(this)"><div class="check-box">✓</div><div><div class="check-label">Vibration Deck lymphatic drainage — 2 min</div></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="workout-section" id="push-cardio">
+      <div class="section-title">💓 Cardio Options — Pick Your Machine</div>
+      <div class="cardio-grid">
+        <div class="cardio-card" onclick="this.classList.toggle('selected')">
+          <div class="cardio-icon">💪</div>
+          <div class="cardio-name">Bowflex Max Trainer</div>
+          <div class="cardio-detail">20-30 min • Low-impact total body • Best for calorie burn and perimenopause cardio</div>
+        </div>
+        <div class="cardio-card" onclick="this.classList.toggle('selected')">
+          <div class="cardio-icon">🚴</div>
+          <div class="cardio-name">Exercise Bike</div>
+          <div class="cardio-detail">20-30 min • Easy on joints • Great for Protect Phase cardio</div>
+        </div>
+        <div class="cardio-card" onclick="this.classList.toggle('selected')">
+          <div class="cardio-icon">🚶</div>
+          <div class="cardio-name">Treadmill Walk</div>
+          <div class="cardio-detail">30-45 min • Incline 3-5% • Burns calories without joint impact</div>
+        </div>
+        <div class="cardio-card" onclick="this.classList.toggle('selected')">
+          <div class="cardio-icon">📳</div>
+          <div class="cardio-name">Vibration Deck</div>
+          <div class="cardio-detail">10-15 min • Lymphatic drainage • Best for swelling and recovery days</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Protect Phase Workouts -->
+  <div id="protect-workouts" style="display:none;">
+    <div class="alert-box gold">🟡 Protect Phase — Your body is working hard internally. Lighter load, more recovery. This is not laziness. This is intelligence.</div>
+    <div class="section-title">🟡 Protect Phase — 2x/Week</div>
+    <div class="day-selector">
+      <button class="day-btn active" onclick="showDay('protect','1',this)">Day 1 — Lower (Gentle)</button>
+      <button class="day-btn" onclick="showDay('protect','2',this)">Day 2 — Upper (Gentle)</button>
+      <button class="day-btn" onclick="showDay('protect','flare',this)">Flare-Up Day</button>
+    </div>
+
+    <div class="workout-section active" id="protect-day-1">
+      <div class="card">
+        <div class="card-title"><div class="dot" style="background:var(--gold)"></div>Gentle Lower Body</div>
+        <div class="check-list">
+          <div class="check-item" onclick="toggle(this)"><div class="check-box">✓</div><div><div class="check-label">Warm-Up: Vibration Deck (2 min) + cat-cow (5 reps)</div></div></div>
+          <div class="check-item" onclick="toggle(this)"><div class="check-box">✓</div><div><div class="check-label">Bodyweight Chair Box Squats — 3 × 12</div><div class="check-sub">Sit back gently to chair/bench • Zero pelvic/psoas strain • Focus on glutes</div></div></div>
+          <div class="check-item" onclick="toggle(this)"><div class="check-box">✓</div><div><div class="check-label">Glute Bridges (no band) — 3 × 15</div><div class="check-sub">Bodyweight only • Slow and controlled</div></div></div>
+          <div class="check-item" onclick="toggle(this)"><div class="check-box">✓</div><div><div class="check-label">Exercise Bike — 15 min easy pace</div><div class="check-sub">Low resistance • Just keep moving gently</div></div></div>
+          <div class="check-item" onclick="toggle(this)"><div class="check-box">✓</div><div><div class="check-label">Cool-Down: Figure-4 stretch (60s each side) + Vibration Deck lymphatic (3 min)</div></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="workout-section" id="protect-day-2">
+      <div class="card">
+        <div class="card-title"><div class="dot" style="background:var(--gold)"></div>Gentle Upper Body</div>
+        <div class="check-list">
+          <div class="check-item" onclick="toggle(this)"><div class="check-box">✓</div><div><div class="check-label">Warm-Up: Arm circles + doorway chest stretch (2 min)</div></div></div>
+          <div class="check-item" onclick="toggle(this)"><div class="check-box">✓</div><div><div class="check-label">Light Bench Press — 3 × 12 (drop weight 30-40%)</div></div></div>
+          <div class="check-item" onclick="toggle(this)"><div class="check-box">✓</div><div><div class="check-label">Banded Rows (Seated) — 3 × 12</div><div class="check-sub">Light band tension only</div></div></div>
+          <div class="check-item" onclick="toggle(this)"><div class="check-box">✓</div><div><div class="check-label">Seated Dumbbell Press (Light) — 2 × 10</div></div></div>
+          <div class="check-item" onclick="toggle(this)"><div class="check-box">✓</div><div><div class="check-label">Dead Bugs — 3 × 8 per side</div><div class="check-sub">Core without spinal flexion — safe for inflamed joints</div></div></div>
+          <div class="check-item" onclick="toggle(this)"><div class="check-box">✓</div><div><div class="check-label">Cool-Down: Child's pose (1 min) + supine twist</div></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="workout-section" id="protect-flare">
+      <div class="card">
+        <div class="card-title"><div class="dot" style="background:var(--rose)"></div>Flare-Up Day — 15-Min Pain Relief</div>
+        <div class="check-list">
+          <div class="check-item" onclick="toggle(this)"><div class="check-box">✓</div><div><div class="check-label">Reclined Butterfly — 3 min</div><div class="check-sub">Pillows under knees • Softens pelvic floor and hip flexors</div></div></div>
+          <div class="check-item" onclick="toggle(this)"><div class="check-box">✓</div><div><div class="check-label">Knee-to-Chest Gentle Rocks — 2 min</div><div class="check-sub">Massages sacrum and lower lumbar</div></div></div>
+          <div class="check-item" onclick="toggle(this)"><div class="check-box">✓</div><div><div class="check-label">Supine Spinal Twist — 2 min per side</div><div class="check-sub">Releases thoracic and low-back tension</div></div></div>
+          <div class="check-item" onclick="toggle(this)"><div class="check-box">✓</div><div><div class="check-label">Vibration Deck — Stand gently (3 min)</div><div class="check-sub">Lymphatic drainage • Reduces fluid retention and swelling</div></div></div>
+          <div class="check-item" onclick="toggle(this)"><div class="check-box">✓</div><div><div class="check-label">Legs Up the Wall — 5 min</div><div class="check-sub">Let gravity drain inflammation • Reset nervous system</div></div></div>
+        </div>
+      </div>
+      <div class="mantra-box"><div class="mantra-text">"Skipping a workout to recover is not laziness. It is intelligence. My body is not my enemy — it is asking for care."</div></div>
+    </div>
+  </div>
+
+  <!-- Daily Non-Negotiables -->
+  <div class="card" style="margin-top:14px;">
+    <div class="card-title"><div class="dot" style="background:var(--rose)"></div>Daily Non-Negotiables — Every Single Day</div>
+    <div class="check-list">
+      <div class="check-item" onclick="toggle(this)"><div class="check-box">✓</div><div><div class="check-label">🌅 Upon waking — 90/90 hip switches + cat-cow (3 min)</div><div class="check-sub">Breaks overnight stiffness before you even get up</div></div></div>
+      <div class="check-item" onclick="toggle(this)"><div class="check-box">✓</div><div><div class="check-label">🌙 Before bed — Legs Up the Wall (5-10 min)</div><div class="check-sub">4 in • hold 2 • 6 out. "My day is complete. I am safe to rest."</div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ NUTRITION ══ -->
+<div class="page" id="page-nutrition">
+  <div class="page-header">
+    <h1>Nutrition Plan 🍽️</h1>
+    <p>Simple meals. Lactose-free. Eat by the clock — not by hunger.</p>
+  </div>
+
+  <div class="alert-box teal">🔑 <strong>The Golden Rule:</strong> Ozempic + Vyvanse suppress your appetite all day. If you wait until you're hungry, you won't eat enough and your body will scream at night. Eat on the schedule below — even if you're not hungry.</div>
+
+  <!-- Macro targets -->
+  <div class="card">
+    <div class="card-title"><div class="dot" style="background:var(--gold)"></div>Daily Macro Targets</div>
+    <div class="pill-row" style="margin-bottom:12px;">
+      <button class="pill selected" onclick="showMacros('push',this)">🟢 Push Phase</button>
+      <button class="pill" onclick="showMacros('protect',this)">🟡 Protect Phase</button>
+    </div>
+    <div id="macros-push" class="macro-row">
+      <div class="macro-box"><div class="macro-num" style="color:var(--rose)">1,550</div><div class="macro-lbl">Calories</div></div>
+      <div class="macro-box"><div class="macro-num" style="color:var(--teal)">135g</div><div class="macro-lbl">Protein</div></div>
+      <div class="macro-box"><div class="macro-num" style="color:var(--gold)">90g</div><div class="macro-lbl">Carbs</div></div>
+      <div class="macro-box"><div class="macro-num" style="color:var(--purple)">60g</div><div class="macro-lbl">Fat</div></div>
+    </div>
+    <div id="macros-protect" class="macro-row" style="display:none;">
+      <div class="macro-box"><div class="macro-num" style="color:var(--rose)">1,700</div><div class="macro-lbl">Calories</div></div>
+      <div class="macro-box"><div class="macro-num" style="color:var(--teal)">135g</div><div class="macro-lbl">Protein</div></div>
+      <div class="macro-box"><div class="macro-num" style="color:var(--gold)">75g</div><div class="macro-lbl">Carbs</div></div>
+      <div class="macro-box"><div class="macro-num" style="color:var(--purple)">70g</div><div class="macro-lbl">Fat</div></div>
+    </div>
+  </div>
+
+  <!-- Meals -->
+  <div class="meal-block">
+    <div class="meal-time">
+      <div class="meal-time-badge">8:30–9:00 AM</div>
+      <div><div class="meal-title">Break-Fast — MANDATORY</div><div class="meal-note">Target: 30-35g protein • Eat before Vyvanse kills appetite</div></div>
+    </div>
+    <div class="meal-options">
+      <div class="meal-option" onclick="selectMeal(this)">
+        <div class="meal-option-name">🥤 Fairlife Core Power Shake</div>
+        <div class="meal-option-detail">Ready to drink • No prep • Lactose-free</div>
+        <div class="meal-protein">~30g protein</div>
+      </div>
+      <div class="meal-option" onclick="selectMeal(this)">
+        <div class="meal-option-name">🍳 2-3 Scrambled Eggs + Spinach</div>
+        <div class="meal-option-detail">Eggs scrambled in olive oil • Handful of spinach wilted in • Salt + pepper only</div>
+        <div class="meal-protein">~22g protein</div>
+      </div>
+      <div class="meal-option" onclick="selectMeal(this)">
+        <div class="meal-option-name">🥚 Hard-Boiled Eggs + Half Avocado</div>
+        <div class="meal-option-detail">Pre-boiled Sunday • Avocado with lemon and salt • Grab and go</div>
+        <div class="meal-protein">~18g protein</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="meal-block">
+    <div class="meal-time">
+      <div class="meal-time-badge">10:30 AM ⏰</div>
+      <div><div class="meal-title">Mid-Morning Fuel</div><div class="meal-note">Set a phone alarm. Appetite is gone — eat anyway. 15-20g protein.</div></div>
+    </div>
+    <div class="meal-options">
+      <div class="meal-option" onclick="selectMeal(this)">
+        <div class="meal-option-name">🎃 Pumpkin Seeds + Apple</div>
+        <div class="meal-option-detail">1 oz pumpkin seeds (pre-portioned) + 1 apple • Crunchy + fiber</div>
+        <div class="meal-protein">~9g protein</div>
+      </div>
+      <div class="meal-option" onclick="selectMeal(this)">
+        <div class="meal-option-name">🥜 Almond Butter + Rice Cakes</div>
+        <div class="meal-option-detail">2 rice cakes + 1.5 tbsp almond butter • Simple and fast</div>
+        <div class="meal-protein">~7g protein + healthy fat</div>
+      </div>
+      <div class="meal-option" onclick="selectMeal(this)">
+        <div class="meal-option-name">🥤 Half Protein Shake + Banana</div>
+        <div class="meal-option-detail">½ scoop lactose-free whey or plant protein + 1 banana in water or almond milk</div>
+        <div class="meal-protein">~15-18g protein</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="meal-block">
+    <div class="meal-time">
+      <div class="meal-time-badge">1:00 PM</div>
+      <div><div class="meal-title">Lunch — Compact High-Protein Fuel</div><div class="meal-note">Target: 25-35g protein • Small volume, high density (Gentle on stomach & Ozempic/Vyvanse)</div></div>
+    </div>
+    <div class="meal-options">
+      <div class="meal-option" onclick="selectMeal(this)">
+        <div class="meal-option-name">⚡ High-Protein Bistro Plate</div>
+        <div class="meal-option-detail">3 oz turkey deli breast or chicken + ½ cup lactose-free cottage cheese + sliced cucumber + 1 tbsp pumpkin seeds</div>
+        <div class="meal-protein">~32g protein • Small volume, zero cooking</div>
+      </div>
+      <div class="meal-option" onclick="selectMeal(this)">
+        <div class="meal-option-name">🥤 Fairlife Shake + Rice Cake Crunch</div>
+        <div class="meal-option-detail">1 Fairlife Core Power (26g) + 1 cinnamon rice cake topped with cottage cheese & pumpkin seeds</div>
+        <div class="meal-protein">~34g protein • Ultra light on digestion</div>
+      </div>
+      <div class="meal-option" onclick="selectMeal(this)">
+        <div class="meal-option-name">🐔 Chicken & Cottage Cheese Dip Bowl</div>
+        <div class="meal-option-detail">3-4 oz shredded chicken mixed with ⅓ cup LF cottage cheese + everything bagel seasoning + cucumber slices</div>
+        <div class="meal-protein">~30g protein • Creamy, compact, high density</div>
+      </div>
+      <div class="meal-option" onclick="selectMeal(this)">
+        <div class="meal-option-name">🍣 Salmon & Avocado Power Boat</div>
+        <div class="meal-option-detail">3-4 oz wild salmon + ½ avocado + squeeze of lemon + sea salt</div>
+        <div class="meal-protein">~28g protein • Rich healthy fats, zero bloating</div>
+      </div>
+      <div class="meal-option" onclick="selectMeal(this)">
+        <div class="meal-option-name">🥚 Egg White & Spinach Scramble Plate</div>
+        <div class="meal-option-detail">3 egg whites + 1 whole egg + spinach + ½ avocado on 1 gluten-free toast or rice cake</div>
+        <div class="meal-protein">~25g protein • Warm, light, comforting</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="meal-block">
+    <div class="meal-time">
+      <div class="meal-time-badge">4:00 PM</div>
+      <div><div class="meal-title">Afternoon Snack</div><div class="meal-note">Pre-workout fuel • 15-20g protein • Without this you train depleted</div></div>
+    </div>
+    <div class="meal-options">
+      <div class="meal-option" onclick="selectMeal(this)">
+        <div class="meal-option-name">🥚 2 Hard-Boiled Eggs + Celery Sticks</div>
+        <div class="meal-option-detail">Prepped Sunday • Quick grab • Crunchy + protein</div>
+        <div class="meal-protein">~13g protein</div>
+      </div>
+      <div class="meal-option" onclick="selectMeal(this)">
+        <div class="meal-option-name">🫙 Lactose-Free Cottage Cheese + Seeds</div>
+        <div class="meal-option-detail">½ cup lactose-free cottage cheese + 1 oz pumpkin seeds + cinnamon</div>
+        <div class="meal-protein">~20g protein</div>
+      </div>
+      <div class="meal-option" onclick="selectMeal(this)">
+        <div class="meal-option-name">🦃 Turkey Roll-Ups</div>
+        <div class="meal-option-detail">3 oz deli turkey + cucumber slices + mustard • No bread needed</div>
+        <div class="meal-protein">~18g protein</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="meal-block">
+    <div class="meal-time">
+      <div class="meal-time-badge">6:15 PM</div>
+      <div><div class="meal-title">Dinner</div><div class="meal-note">Target: 30-35g protein • Before kitchen closes at 7 PM</div></div>
+    </div>
+    <div class="meal-options">
+      <div class="meal-option" onclick="selectMeal(this)">
+        <div class="meal-option-name">🐟 Baked Salmon + Veggies</div>
+        <div class="meal-option-detail">5-6 oz salmon + roasted asparagus + broccoli • Season with garlic, lemon, EVOO • 20 min oven</div>
+        <div class="meal-protein">~38g protein</div>
+      </div>
+      <div class="meal-option" onclick="selectMeal(this)">
+        <div class="meal-option-name">🥩 Steak + Green Beans</div>
+        <div class="meal-option-detail">5 oz sirloin or flank steak + steamed green beans + side salad • Simple pan sear</div>
+        <div class="meal-protein">~35g protein</div>
+      </div>
+      <div class="meal-option" onclick="selectMeal(this)">
+        <div class="meal-option-name">🐔 Sheet Pan Chicken + Veggies</div>
+        <div class="meal-option-detail">5 oz chicken thigh or breast + zucchini + peppers + onion • Season + roast 25 min • Zero cleanup</div>
+        <div class="meal-protein">~38g protein</div>
+      </div>
+      <div class="meal-option" onclick="selectMeal(this)">
+        <div class="meal-option-name">🍤 Garlic Shrimp + Cauliflower Rice</div>
+        <div class="meal-option-detail">6 oz shrimp + garlic + butter alternative (ghee or olive oil) + cauliflower rice + spinach • 10 min total</div>
+        <div class="meal-protein">~32g protein</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="meal-block">
+    <div class="meal-time">
+      <div class="meal-time-badge">6:45 PM 🌙</div>
+      <div><div class="meal-title">Closing Snack — THE CRAVING KILLER</div><div class="meal-note">Crunchy + protein • Brush teeth IMMEDIATELY after</div></div>
+    </div>
+    <div class="meal-options">
+      <div class="meal-option" onclick="selectMeal(this)">
+        <div class="meal-option-name">🎃 Lactose-Free Cottage Cheese + Pumpkin Seeds</div>
+        <div class="meal-option-detail">½ cup LF cottage cheese + 2 tbsp seeds + cinnamon • Casein digests slowly all night</div>
+        <div class="meal-protein">~22g protein + crunch</div>
+      </div>
+      <div class="meal-option" onclick="selectMeal(this)">
+        <div class="meal-option-name">🍿 Air-Popped Popcorn + Almonds</div>
+        <div class="meal-option-detail">2 cups popcorn + 10 almonds • Maximum crunch, low calorie</div>
+        <div class="meal-protein">~6g protein</div>
+      </div>
+      <div class="meal-option" onclick="selectMeal(this)">
+        <div class="meal-option-name">🥬 Celery + Almond Butter</div>
+        <div class="meal-option-detail">4 celery stalks + 1.5 tbsp almond butter • Natural diuretic + healthy fat</div>
+        <div class="meal-protein">~4g protein + crunch</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="alert-box gold" style="margin-top:14px;">🪥 <strong>7:00 PM — Kitchen closed. Brush teeth immediately.</strong> This is your daily finish line. You did it.</div>
+
+  <!-- Sunday Prep -->
+  <div class="card">
+    <div class="card-title"><div class="dot" style="background:var(--rose)"></div>Sunday Meal Prep (30 min) — Makes the whole week easy</div>
+    <div class="check-list">
+      <div class="check-item" onclick="toggle(this)"><div class="check-box">✓</div><div><div class="check-label">Hard-boil 6 eggs</div><div class="check-sub">Store in fridge — grab all week</div></div></div>
+      <div class="check-item" onclick="toggle(this)"><div class="check-box">✓</div><div><div class="check-label">Wash + slice celery and cucumber</div><div class="check-sub">Store in water in fridge — stays crisp all week</div></div></div>
+      <div class="check-item" onclick="toggle(this)"><div class="check-box">✓</div><div><div class="check-label">Portion pumpkin seeds into 1 oz bags (×5)</div><div class="check-sub">One bag per day — grab without thinking</div></div></div>
+      <div class="check-item" onclick="toggle(this)"><div class="check-box">✓</div><div><div class="check-label">Grill or bake 1-2 lbs chicken breast</div><div class="check-sub">Slice and refrigerate — instant lunch protein all week</div></div></div>
+      <div class="check-item" onclick="toggle(this)"><div class="check-box">✓</div><div><div class="check-label">Check Fairlife shake supply</div><div class="check-sub">Need 5-7 for morning break-fasts</div></div></div>
+      <div class="check-item" onclick="toggle(this)"><div class="check-box">✓</div><div><div class="check-label">Pop 2 cups air popcorn, store in airtight container</div><div class="check-sub">Ready for closing snack all week</div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ TAPPING ══ -->
+<div class="page" id="page-tapping">
+  <div class="page-header"><h1>Somatic Tapping</h1><p>2 fingers, tap gently. Speak aloud. Take your time — one step at a time.</p></div>
+  <div class="mantra-box"><div class="mantra-text">"My worthiness of love is not on trial. I am safe right now."</div></div>
+  <div id="tapping-container"></div>
+  <div class="step-nav"><button onclick="prevTap()" id="tap-prev">← Back</button><button onclick="nextTap()" id="tap-next" class="primary">Next →</button></div>
+  <div class="step-progress" id="tap-dots"></div>
+</div>
+
+<!-- ══ SOS ══ -->
+<div class="page" id="page-emergency">
+  <div class="page-header"><h1>SOS Protocols 🆘</h1><p>Tap what you need. Step-by-step rescue — right now.</p></div>
+  <div class="emergency-grid">
+    <div class="emergency-card" onclick="showEmergency('anxiety')"><div class="ec-icon">😰</div><div class="ec-title">Anxiety Spike</div><div class="ec-sub">Racing thoughts, overwhelm</div></div>
+    <div class="emergency-card" onclick="showEmergency('craving')"><div class="ec-icon">🍿</div><div class="ec-title">Late Night Craving</div><div class="ec-sub">Kitchen is closed</div></div>
+    <div class="emergency-card" onclick="showEmergency('fog')"><div class="ec-icon">🧠</div><div class="ec-title">Brain Fog</div><div class="ec-sub">ADHD crash / can't think</div></div>
+    <div class="emergency-card" onclick="showEmergency('mirror')"><div class="ec-icon">🪞</div><div class="ec-title">Mirror Anxiety</div><div class="ec-sub">Fear of weight gain</div></div>
+    <div class="emergency-card" onclick="showEmergency('scale')"><div class="ec-icon">⚖️</div><div class="ec-title">Urge to Weigh In</div><div class="ec-sub">Outside of Sunday</div></div>
+    <div class="emergency-card" onclick="showEmergency('alcohol')"><div class="ec-icon">🍷</div><div class="ec-title">Morning After</div><div class="ec-sub">Zero shame spirals</div></div>
+  </div>
+  <div class="emergency-detail" id="e-anxiety"><h3>😰 5-4-3-2-1 Grounding</h3>
+    <div class="emergency-step"><div class="e-num">1</div><div class="e-text">Name <strong>5 things you can see</strong> right now — say them aloud.</div></div>
+    <div class="emergency-step"><div class="e-num">2</div><div class="e-text">Touch <strong>4 things</strong> near you. Feel the texture.</div></div>
+    <div class="emergency-step"><div class="e-num">3</div><div class="e-text">Listen for <strong>3 sounds</strong> you can hear right now.</div></div>
+    <div class="emergency-step"><div class="e-num">4</div><div class="e-text">Notice <strong>2 smells</strong>. Breathe in slowly.</div></div>
+    <div class="emergency-step"><div class="e-num">5</div><div class="e-text">Notice <strong>1 taste</strong>. Sip water. Say: <em>"I am safe right now."</em></div></div>
+    <div class="emergency-step"><div class="e-num">+</div><div class="e-text">Drop shoulders. Unclench jaw. Box breathe: 4 in → 4 hold → 4 out → 4 hold.</div></div>
+  </div>
+  <div class="emergency-detail" id="e-craving"><h3>🍿 Late Night Craving Protocol</h3>
+    <div class="emergency-step"><div class="e-num">1</div><div class="e-text">Ask: <strong>"Did I eat all 5 meals today?"</strong></div></div>
+    <div class="emergency-step"><div class="e-num">2</div><div class="e-text"><strong>If NO:</strong> This is biological under-fueling. Have LF cottage cheese + pumpkin seeds. No guilt. Tomorrow eat every meal.</div></div>
+    <div class="emergency-step"><div class="e-num">3</div><div class="e-text"><strong>If YES:</strong> Try water with lemon first. Wait 5 minutes.</div></div>
+    <div class="emergency-step"><div class="e-num">4</div><div class="e-text">Change rooms. Cuddle the pup. Call someone. Change the scene.</div></div>
+    <div class="emergency-step"><div class="e-num">5</div><div class="e-text">If you eat after 7 PM — zero guilt. Note: what were you feeling before the craving?</div></div>
+  </div>
+  <div class="emergency-detail" id="e-fog"><h3>🧠 Brain Fog Rescue</h3>
+    <div class="emergency-step"><div class="e-num">1</div><div class="e-text"><strong>Eaten in last 3 hours?</strong> If no — eat protein NOW. Ozempic + Vyvanse wear-off = fuel crash.</div></div>
+    <div class="emergency-step"><div class="e-num">2</div><div class="e-text">Drink 16 oz water. Dehydration mimics brain fog.</div></div>
+    <div class="emergency-step"><div class="e-num">3</div><div class="e-text">Stand up. Move 60 seconds. Walk, stretch, anything.</div></div>
+    <div class="emergency-step"><div class="e-num">4</div><div class="e-text">Close all tabs. One task only.</div></div>
+    <div class="emergency-step"><div class="e-num">5</div><div class="e-text"><em>"Brain fog is not laziness. It is my brain adapting. The fog will lift."</em></div></div>
+  </div>
+  <div class="emergency-detail" id="e-mirror"><h3>🪞 Mirror Anxiety — Fear of Weight Gain</h3>
+    <div class="emergency-step"><div class="e-num">1</div><div class="e-text">Hand on collarbone or heart.</div></div>
+    <div class="emergency-step"><div class="e-num">2</div><div class="e-text"><em>"The fear of weight gain is not about weight. It is the fear of not being loved if my body changes."</em></div></div>
+    <div class="emergency-step"><div class="e-num">3</div><div class="e-text"><em>"My looks were the invitation — but my presence is the home."</em></div></div>
+    <div class="emergency-step"><div class="e-num">4</div><div class="e-text">Name one thing your body DID for you this week.</div></div>
+    <div class="emergency-step"><div class="e-num">5</div><div class="e-text"><em>"I am not at war with this body. We are on the same team."</em></div></div>
+  </div>
+  <div class="emergency-detail" id="e-scale"><h3>⚖️ Scale Urge — Boundary Protocol</h3>
+    <div class="emergency-step"><div class="e-num">1</div><div class="e-text">Don't step on it yet. Read this first.</div></div>
+    <div class="emergency-step"><div class="e-num">2</div><div class="e-text"><em>"This scale is a piece of metal. It cannot tell me if I am a good mother or a worthy human being."</em></div></div>
+    <div class="emergency-step"><div class="e-num">3</div><div class="e-text">Ask: <em>"Is this a health choice or an anxiety response right now?"</em></div></div>
+    <div class="emergency-step"><div class="e-num">4</div><div class="e-text">Put it in a drawer. <em>"I check on Sundays. That information will still be there Sunday."</em></div></div>
+    <div class="emergency-step"><div class="e-num">5</div><div class="e-text">Walk away. Do one thing unrelated to your body.</div></div>
+  </div>
+  <div class="emergency-detail" id="e-alcohol"><h3>🍷 Morning After — Zero Shame Protocol</h3>
+    <div class="emergency-step"><div class="e-num">1</div><div class="e-text"><strong>No shame spiral.</strong> Shame makes things worse, not better.</div></div>
+    <div class="emergency-step"><div class="e-num">2</div><div class="e-text"><strong>No punishment exercise.</strong> Cortisol is already high.</div></div>
+    <div class="emergency-step"><div class="e-num">3</div><div class="e-text"><strong>Eat your scheduled meals.</strong> No restricting. Your body needs fuel to process alcohol.</div></div>
+    <div class="emergency-step"><div class="e-num">4</div><div class="e-text">Double electrolytes. Hydrate all day.</div></div>
+    <div class="emergency-step"><div class="e-num">5</div><div class="e-text">Write one sentence: <em>"What was I feeling before I started drinking last night?"</em></div></div>
+  </div>
+</div>
+
+<!-- ══ HARVEST ══ -->
+<div class="page" id="page-harvest">
+  <div class="page-header"><h1>Sunday Harvest 🌾</h1><p>15-20 minutes. One honest look at your week. Growth lives here.</p></div>
+  <div class="card">
+    <div class="card-title"><div class="dot" style="background:var(--gold)"></div>Weekly Traffic Light</div>
+    <div style="display:flex;flex-direction:column;gap:10px;" id="traffic-lights"></div>
+  </div>
+  <div class="harvest-step"><div class="harvest-q"><span class="q-num">1.</span>How does my body feel today vs. last Sunday?</div><textarea placeholder="e.g. Hips are less stiff..."></textarea></div>
+  <div class="harvest-step"><div class="harvest-q"><span class="q-num">2.</span>3 wins this week — anything counts.</div><textarea placeholder="1. &#10;2. &#10;3. "></textarea></div>
+  <div class="harvest-step"><div class="harvest-q"><span class="q-num">3.</span>The ONE miss — what fell short and why?</div><textarea placeholder="Miss: &#10;Honest reason: "></textarea></div>
+  <div class="harvest-step"><div class="harvest-q"><span class="q-num">4.</span>Craving patterns — under-fueling, stress, or hormonal?</div><textarea placeholder="e.g. Cravings hit Wed + Fri — high stress days..."></textarea></div>
+  <div class="harvest-step">
+    <div class="harvest-q"><span class="q-num">5.</span>Next week — what phase are you heading into?</div>
+    <div class="pill-row" style="margin-bottom:10px;">
+      <button class="pill" onclick="togglePill(this)">🟢 Push</button>
+      <button class="pill" onclick="togglePill(this)">🟡 Protect</button>
+      <button class="pill" onclick="togglePill(this)">🔄 Transitioning</button>
+    </div>
+  </div>
+  <div class="harvest-step"><div class="harvest-q"><span class="q-num">6.</span>Sunday Mirror Practice — What did your body DO this week?</div><textarea placeholder="1. &#10;2. &#10;3. &#10;&#10;Say aloud: 'I am not at war with this body. We are on the same team.'"></textarea></div>
+  <div class="harvest-step"><div class="harvest-q"><span class="q-num">7.</span>This week's one intention.</div><textarea placeholder="e.g. Hit all 5 meals on schedule every day..."></textarea></div>
+  <div class="card">
+    <div class="card-title"><div class="dot" style="background:var(--rose)"></div>Sunday Measurements (Skip During Protect Phase)</div>
+    <div style="display:flex;flex-direction:column;gap:10px;">
+      <div class="input-row"><label>Weight (lb)</label><input type="number" placeholder="e.g. 149.5"/></div>
+      <div class="input-row"><label>Waist (in)</label><input type="number" placeholder="e.g. 28.0" step="0.25"/></div>
+      <div class="input-row"><label>Hip (in)</label><input type="number" placeholder="e.g. 37.5" step="0.25"/></div>
+    </div>
+    <p style="font-size:0.75rem;color:var(--muted);margin-top:10px;">Record → put the scale away. Check once. Walk away.</p>
+  </div>
+  <button class="save-btn" onclick="showToast('✓ Harvest saved 🌾')">✓ Save This Week's Harvest</button>
+</div>
+
+<!-- ══ SUPPLEMENTS ══ -->
+<div class="page" id="page-supplements">
+  <div class="page-header"><h1>Dr. Jenna's Clinical Stack 🧬💊</h1><p>Targeted to your PureGenomics DNA report & Canada Food Test.</p></div>
+  <div class="alert-box gold">🚫 <strong>MEDICAL WARNING:</strong> AVOID CIPROFLOXACIN antibiotic (MMP3 gene tendon rupture risk!). Introduce 1 new item every 3-5 days.</div>
+  
+  <div class="section-title">☀️ Morning — With Breakfast</div>
+  <div class="supp-list">
+    <div class="supp-item"><div class="supp-info"><div class="supp-name">AOR Advanced B Complex</div><div class="supp-detail">1 cap • Activated L-5-MTHF & Methyl-B12 (1 bottle only)</div></div><div class="supp-time">Morning</div></div>
+    <div class="supp-item"><div class="supp-info"><div class="supp-name">CanPrev D3 & K2 Liquid Drops</div><div class="supp-detail">3 drops = 3,000 IU D3 / 100mcg K2 • Triple-risk D3 gene defect</div></div><div class="supp-time">With fat</div></div>
+    <div class="supp-item"><div class="supp-info"><div class="supp-name">Vitamin A Retinol Drops</div><div class="supp-detail">1 drop = 10,000 IU • BCMO1 gene support (Seeking Health)</div></div><div class="supp-time">Morning</div></div>
+    <div class="supp-item"><div class="supp-info"><div class="supp-name">CanPrev Resveratrol</div><div class="supp-detail">1 cap • NQO1 & CRP inflammation antioxidant janitor</div></div><div class="supp-time">Morning</div></div>
+    <div class="supp-item"><div class="supp-info"><div class="supp-name">Seeking Health HistaminX</div><div class="supp-detail">1 cap • AOC1/DAO gene histamine breakdown (4 weeks)</div></div><div class="supp-time">Breakfast</div></div>
+    <div class="supp-item"><div class="supp-info"><div class="supp-name">CanPrev Zinc + Copper (25mg)</div><div class="supp-detail">1 cap every 2nd or 3rd day • SLC30A8 zinc pathway support</div></div><div class="supp-time">With food</div></div>
+    <div class="supp-item"><div class="supp-info"><div class="supp-name">CanPrev Vitamin E (400 IU)</div><div class="supp-detail">1 cap every 3 days (1 bottle only, then sunflower seeds)</div></div><div class="supp-time">Breakfast</div></div>
+    <div class="supp-item"><div class="supp-info"><div class="supp-name">BioSteel Electrolytes</div><div class="supp-detail">Per label • Hydration & Ozempic GI support</div></div><div class="supp-time">All day</div></div>
+  </div>
+  
+  <div class="section-title">🥗 Lunch / Supper</div>
+  <div class="supp-list">
+    <div class="supp-item"><div class="supp-info"><div class="supp-name">NutraSea HP Extra Strength EPA</div><div class="supp-detail">2 softgels (~1,500mg EPA/DHA) • FADS1 gene mutation</div></div><div class="supp-time">With meal</div></div>
+    <div class="supp-item"><div class="supp-info"><div class="supp-name">Seeking Health Histamine Nutrients</div><div class="supp-detail">1 cap • With largest or high-histamine meal</div></div><div class="supp-time">Supper</div></div>
+    <div class="supp-item"><div class="supp-info"><div class="supp-name">Seeking Health HistaminX</div><div class="supp-detail">1 cap • Nightly histamine balance</div></div><div class="supp-time">Supper</div></div>
+  </div>
+  
+  <div class="section-title">🌙 45 Mins Before Bed — Gut & Joint Repair Drink</div>
+  <div class="supp-list">
+    <div class="supp-item"><div class="supp-info"><div class="supp-name">Nighttime Repair Cocktail 🍹</div><div class="supp-detail">1-2 scoops Collagen + 3g Glycine + 4,000mg Vit C in 500ml water + BioSteel</div></div><div class="supp-time">45m before bed</div></div>
+  </div>
+  
+  <div class="divider"></div>
+  <div class="section-title">🍿 Food-Test Approved Crunchy Craving Swaps</div>
+  <div class="craving-cards">
+    <div class="craving-card"><div class="craving-trigger">Instead of chips</div><div class="craving-swap">Air-popped popcorn + nutritional yeast</div><div class="craving-kcal">~70 kcal</div></div>
+    <div class="craving-card"><div class="craving-trigger">Instead of crackers</div><div class="craving-swap">Rice cakes + almond butter</div><div class="craving-kcal">~130 kcal</div></div>
+    <div class="craving-card"><div class="craving-trigger">Instead of cereal</div><div class="craving-swap">Pumpkin seeds + cinnamon</div><div class="craving-kcal">~80 kcal</div></div>
+    <div class="craving-card"><div class="craving-trigger">Instead of pretzels</div><div class="craving-swap">Sliced cucumber + hummus</div><div class="craving-kcal">~60 kcal</div></div>
+    <div class="craving-card"><div class="craving-trigger">Any craving</div><div class="craving-swap">Cucumber + everything bagel seasoning</div><div class="craving-kcal">~20 kcal</div></div>
+    <div class="craving-card"><div class="craving-trigger">Sweet + crunchy</div><div class="craving-swap">Apple slices + almond butter</div><div class="craving-kcal">~130 kcal</div></div>
+  </div>
+</div>
+
+<script>
+// DATE
+document.getElementById('today-date').textContent = new Date().toLocaleDateString('en-CA',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
+
+// --- LOCALSTORAGE AUTO-SAVE SYSTEM ---
+function saveAppState() {
+  try {
+    const chkStates = [];
+    document.querySelectorAll('.chk-item').forEach((el, idx) => {
+      chkStates.push(el.classList.contains('checked'));
+    });
+    const state = {
+      date: new Date().toISOString().split('T')[0],
+      phase: globalPhase,
+      water: document.querySelectorAll('.water-cup.filled').length,
+      checked: chkStates,
+      sliders: {
+        energy: document.getElementById('energy-val')?.textContent || '7',
+        focus: document.getElementById('focus-val')?.textContent || '6',
+        pain: document.getElementById('pain-val')?.textContent || '2',
+        anxiety: document.getElementById('anxiety-val')?.textContent || '3',
+        mood: document.getElementById('mood-val')?.textContent || '8'
+      }
+    };
+    localStorage.setItem('candy_wellness_state', JSON.stringify(state));
+  } catch(e) { console.error('Auto-save error:', e); }
+}
+
+function loadAppState() {
+  try {
+    const raw = localStorage.getItem('candy_wellness_state');
+    if (!raw) return;
+    const state = JSON.parse(raw);
+    
+    // Restore phase
+    if (state.phase) {
+      setPhase(state.phase);
+      setWorkoutPhase(state.phase);
+    }
+    
+    // Restore water cups
+    if (state.water !== undefined) {
+      const cups = document.querySelectorAll('.water-cup');
+      cups.forEach((cup, idx) => {
+        if (idx < state.water) cup.classList.add('filled');
+        else cup.classList.remove('filled');
+      });
+      document.getElementById('water-bar').style.width = (state.water/12*100)+'%';
+      document.getElementById('water-label').textContent = state.water+' of 12 glasses = '+(state.water*8)+' oz';
+    }
+    
+    // Restore checkboxes
+    if (state.checked && Array.isArray(state.checked)) {
+      const chks = document.querySelectorAll('.chk-item');
+      state.checked.forEach((isChecked, idx) => {
+        if (chks[idx]) {
+          if (isChecked) chks[idx].classList.add('checked');
+          else chks[idx].classList.remove('checked');
+        }
+      });
+    }
+
+    // Restore sliders
+    if (state.sliders) {
+      Object.keys(state.sliders).forEach(id => {
+        const valEl = document.getElementById(id+'-val');
+        if (valEl) {
+          valEl.textContent = state.sliders[id];
+          const input = valEl.closest('.slider-group')?.querySelector('input[type="range"]');
+          if (input) {
+            input.value = state.sliders[id];
+            const pct = ((state.sliders[id]-1)/9)*100;
+            const colors = {energy:'var(--accent)', focus:'var(--purple)', pain:'var(--amber)', anxiety:'var(--rose)', mood:'var(--emerald)'};
+            input.style.background = `linear-gradient(to right, ${colors[id]||'var(--accent)'} ${pct}%, var(--card2) ${pct}%)`;
+          }
+        }
+      });
+    }
+  } catch(e) { console.error('Load state error:', e); }
+}
+
+// CHECKBOXES
+function toggle(el) { 
+  el.classList.toggle('checked'); 
+  saveAppState();
+  showToast('✓ Saved');
+}
+
+// SLIDERS
+function updateSlider(type, val, color) {
+  document.getElementById(type+'-val').textContent = val;
+  const pct = ((val-1)/9)*100;
+  event.target.style.background = `linear-gradient(to right, ${color} ${pct}%, var(--card2) ${pct}%)`;
+  saveAppState();
+}
+
+// PHASE (Today)
+let globalPhase = 'push';
+function setPhase(p) {
+  globalPhase = p;
+  const banner = document.getElementById('phase-banner-today');
+  banner.className = 'phase-banner ' + p;
+  document.querySelectorAll('#phase-banner-today .push-btn, #phase-banner-today .protect-btn').forEach(b => b.classList.remove('selected'));
+  document.querySelector('#phase-banner-today .' + p + '-btn').classList.add('selected');
+  const name = document.getElementById('phase-name-today');
+  const desc = document.getElementById('phase-desc-today');
+  const ws = document.getElementById('today-workout-sub');
+  if (p === 'push') { name.textContent='🟢 Push Phase'; desc.textContent='Oura temp at baseline — full energy, train hard'; ws.textContent='Push: Full strength session — go for it'; }
+  else { name.textContent='🟡 Protect Phase'; desc.textContent='Oura temp elevated — lighter load, more recovery'; ws.textContent='Protect: Lighter weight or gentle mobility flow'; }
+  saveAppState();
+}
+
+// PHASE (Workout)
+function setWorkoutPhase(p) {
+  const banner = document.getElementById('phase-banner-workout');
+  banner.className = 'phase-banner ' + p;
+  document.querySelectorAll('#phase-banner-workout .push-btn, #phase-banner-workout .protect-btn').forEach(b => b.classList.remove('selected'));
+  document.querySelector('#phase-banner-workout .' + p + '-btn').classList.add('selected');
+  document.getElementById('push-workouts').style.display = p==='push' ? 'block' : 'none';
+  document.getElementById('protect-workouts').style.display = p==='protect' ? 'block' : 'none';
+  const name = document.getElementById('phase-name-workout');
+  const desc = document.getElementById('phase-desc-workout');
+  if (p==='push') { name.textContent='🟢 Push Phase'; desc.textContent='Full intensity, progressive overload'; }
+  else { name.textContent='🟡 Protect Phase'; desc.textContent='Lighter load, more recovery — this is intelligence'; }
+  saveAppState();
+}
+
+// WATER
+const totalCups = 12;
+const cupsEl = document.getElementById('water-cups');
+for (let i = 0; i < totalCups; i++) {
+  const cup = document.createElement('div');
+  cup.className = 'water-cup'; cup.textContent = '💧'; cup.dataset.index = i;
+  cup.addEventListener('click', () => {
+    const idx = parseInt(cup.dataset.index);
+    const cups = document.querySelectorAll('.water-cup');
+    if (cup.classList.contains('filled')) { for (let j=idx;j<totalCups;j++) cups[j].classList.remove('filled'); }
+    else { for (let j=0;j<=idx;j++) cups[j].classList.add('filled'); }
+    const filled = document.querySelectorAll('.water-cup.filled').length;
+    document.getElementById('water-bar').style.width = (filled/totalCups*100)+'%';
+    document.getElementById('water-label').textContent = filled+' of '+totalCups+' glasses = '+filled*8+' oz';
+    saveAppState();
+    showToast('💧 Water saved');
+  });
+  cupsEl.appendChild(cup);
+}
+
+// PAGE NAV
+function showPage(id, btn) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('page-'+id).classList.add('active');
+  btn.classList.add('active');
+}
+
+// DAY SELECTOR
+function showDay(phase, day, btn) {
+  const prefix = phase + '-day-';
+  const altId = phase === 'push' ? 'push-cardio' : 'protect-flare';
+  document.querySelectorAll('[id^="' + phase + '-day-"], #' + altId).forEach(el => el.classList.remove('active'));
+  const targetId = (day === 'cardio' || day === 'flare') ? phase + '-' + day : prefix + day;
+  const el = document.getElementById(targetId);
+  if (el) el.classList.add('active');
+  btn.closest('.day-selector').querySelectorAll('.day-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+// TAPPING
+const tappingSteps = [
+  {num:'Setup',point:'Karate Chop Point',phrase:'"Even though I feel this deep anxiety around my body and the fear that if it changes I won\'t be loved... I deeply and completely acknowledge where I am right now. My nervous system is trying to protect me."'},
+  {num:'Round 1 — 1',point:'👁️ Eyebrow',phrase:'"This fear of food and what it will do to me."'},
+  {num:'Round 1 — 2',point:'👁️ Side of Eye',phrase:'"This exhausting vigilance over every bite and every angle."'},
+  {num:'Round 1 — 3',point:'👁️ Under Eye',phrase:'"The way I look at my body and feel unsafe."'},
+  {num:'Round 1 — 4',point:'👃 Under Nose',phrase:'"This distorted lens that makes me feel flawed."'},
+  {num:'Round 1 — 5',point:'🫦 Chin Point',phrase:'"The panic that my body isn\'t acceptable."'},
+  {num:'Round 1 — 6',point:'🫀 Collarbone',phrase:'"All this tension and exhaustion in my chest and shoulders."'},
+  {num:'Round 1 — 7',point:'💪 Under Arm',phrase:'"The constant pressure to control how I look."'},
+  {num:'Round 1 — 8',point:'☝️ Top of Head',phrase:'"This heavy, exhausting cycle around my body image." — Take a slow deep breath. Exhale fully.'},
+  {num:'Round 2 — 1',point:'👁️ Eyebrow',phrase:'"I recognize why my mind has been doing this."'},
+  {num:'Round 2 — 2',point:'🫀 Collarbone',phrase:'"Thank you, nervous system, for trying to protect my heart."'},
+  {num:'Round 2 — 3',point:'☝️ Top of Head',phrase:'"I am open to seeing that this control strategy is no longer serving me."'},
+  {num:'Round 3 — 1',point:'👁️ Eyebrow',phrase:'"The deep ache that asks: am I loveable as I am?"'},
+  {num:'Round 3 — 2',point:'🫦 Chin Point',phrase:'"The sadness of feeling like I am not enough on my own."'},
+  {num:'Round 3 — 3',point:'☝️ Top of Head',phrase:'"Separating my right to be loved from the shape of my body." — Slow breath in. Hold 3 seconds. Let it go.'},
+  {num:'Round 4 — 1',point:'👁️ Eyebrow',phrase:'"What if my body is not the enemy?"'},
+  {num:'Round 4 — 2',point:'👁️ Under Eye',phrase:'"I am allowed to nourish myself without fear."'},
+  {num:'Round 4 — 3',point:'👃 Under Nose',phrase:'"My worthiness of love was never on a scale."'},
+  {num:'Round 4 — 4',point:'🫀 Collarbone',phrase:'"Sending a deep signal of safety to my nervous system right now."'},
+  {num:'Round 4 — 5',point:'☝️ Top of Head',phrase:'"I am safe in this body. I am worthy of deep, unconditional love right now." — Hand on heart. One breath. Done. ✨'},
+];
+let tapIdx = 0;
+function renderTap() {
+  const c = document.getElementById('tapping-container'); c.innerHTML = '';
+  tappingSteps.forEach((s,i) => {
+    const div = document.createElement('div');
+    div.className = 'tapping-step'+(i===tapIdx?' active':'');
+    div.innerHTML = `<div class="step-number">${s.num} • Step ${i+1} of ${tappingSteps.length}</div><div class="step-point">${s.point}</div><div class="step-phrase">${s.phrase}</div>`;
+    c.appendChild(div);
+  });
+  const dots = document.getElementById('tap-dots'); dots.innerHTML = '';
+  tappingSteps.forEach((_,i) => {
+    const d = document.createElement('div');
+    d.className = 'step-dot'+(i===tapIdx?' active':i<tapIdx?' done':'');
+    dots.appendChild(d);
+  });
+  document.getElementById('tap-prev').style.opacity = tapIdx===0?'0.3':'1';
+  document.getElementById('tap-next').textContent = tapIdx===tappingSteps.length-1?'✓ Complete':'Next →';
+}
+function nextTap() { if(tapIdx<tappingSteps.length-1){tapIdx++;renderTap();}else{tapIdx=0;renderTap();showToast('✨ Tapping complete. Well done.');} }
+function prevTap() { if(tapIdx>0){tapIdx--;renderTap();} }
+renderTap();
+
+// EMERGENCY
+let openEmergency = null;
+function showEmergency(id) {
+  const detail = document.getElementById('e-'+id);
+  if (openEmergency && openEmergency!==id) document.getElementById('e-'+openEmergency).classList.remove('active');
+  detail.classList.toggle('active');
+  openEmergency = detail.classList.contains('active') ? id : null;
+  if (detail.classList.contains('active')) detail.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+// TRAFFIC LIGHTS
+const pillars = ['Nutrition','Movement','Sleep','Mental','Body Image','Alcohol'];
+const tl = document.getElementById('traffic-lights');
+pillars.forEach(p => {
+  const row = document.createElement('div');
+  row.className = 'traffic-row';
+  row.innerHTML = `<div class="traffic-label">${p}</div>
+    <div class="traffic-btns">
+      <button class="traffic-btn" onclick="rateLight(this)">🟢</button>
+      <button class="traffic-btn" onclick="rateLight(this)">🟡</button>
+      <button class="traffic-btn" onclick="rateLight(this)">🔴</button>
+    </div>`;
+  tl.appendChild(row);
+});
+function rateLight(btn) {
+  btn.closest('.traffic-btns').querySelectorAll('.traffic-btn').forEach(b=>b.classList.remove('selected'));
+  btn.classList.add('selected');
+  saveAppState();
+}
+
+// PILLS
+function togglePill(el) {
+  el.parentElement.querySelectorAll('.pill').forEach(p=>p.classList.remove('selected'));
+  el.classList.add('selected');
+  saveAppState();
+}
+
+// MEAL SELECTION
+function selectMeal(el) {
+  el.closest('.meal-options').querySelectorAll('.meal-option').forEach(o=>o.classList.remove('selected'));
+  el.classList.toggle('selected');
+  saveAppState();
+}
+
+// MACROS
+function showMacros(phase, btn) {
+  btn.parentElement.querySelectorAll('.pill').forEach(p=>p.classList.remove('selected'));
+  btn.classList.add('selected');
+  document.getElementById('macros-push').style.display = phase==='push'?'grid':'none';
+  document.getElementById('macros-protect').style.display = phase==='protect'?'grid':'none';
+}
+
+// TOAST
+function showToast(msg) {
+  const t = document.getElementById('toast'); t.textContent = msg||'✓ Saved';
+  t.classList.add('show'); setTimeout(()=>t.classList.remove('show'),2800);
+}
+
+// MANTRAS
+const mantras = [
+  '"I have enough time for what truly matters today. One step at a time is enough."',
+  '"I eat to fuel my body, not because I feel hungry. The schedule is my guide."',
+  '"I am not at war with this body. We are on the same team."',
+  '"My peace of mind is more valuable than anyone\'s urgency."',
+  '"My worthiness is already complete — it does not depend on the number on the scale."',
+  '"I move my body to nourish and celebrate it — never to punish or control it."',
+  '"I am a loving, capable woman. That is not up for debate today."',
+];
+document.getElementById('daily-mantra').textContent = mantras[new Date().getDay()];
+
+// Initialize auto-restore on load
+loadAppState();
+</script>
+</body>
+</html>
