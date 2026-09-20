@@ -77,16 +77,18 @@ This is the meal you're probably skipping because Vyvanse has killed your appeti
 | **B** | 2 egg whites + ½ avocado on rice cake | ~12g |
 | **C** | Protein smoothie: ½ scoop plant/egg protein + ½ banana + 1 tbsp almond butter + almond milk | ~18g |
 
-#### 1:00 PM — Lunch (LARGEST MEAL OF THE DAY)
-**Target: 450-500 kcal, 40-45g protein**
+#### 1:00 PM — Lunch (COMPACT HIGH-PROTEIN FUEL)
+**Target: 350-400 kcal, 25-35g protein**
 
-This is where you load up. Your body needs this fuel before the afternoon.
+*Ozempic & Vyvanse Note: Large volumetric meals trigger early fullness, bloating, or heavy digestion. Eat small-volume, high-density protein meals instead.*
 
 | Option | Details | Protein |
 |--------|---------|---------|
-| **A** | 6 oz grilled chicken over 2 cups spinach & arugula, sliced cucumber, cress, ½ avocado, 1 tbsp EVOO + balsamic | ~45g |
-| **B** | 2 cans skipjack tuna + spinach/kale + ½ avocado + lemon dressing | ~40g |
-| **C** | 5 oz salmon + roasted butternut squash & asparagus + ½ cup quinoa | ~38g |
+| **A** | **High-Protein Bistro Plate:** 3 oz turkey deli breast or chicken + ½ cup LF cottage cheese + sliced cucumber + 1 tbsp pumpkin seeds | ~32g |
+| **B** | **Fairlife Shake + Rice Cake:** 1 Fairlife Core Power Shake (26g) + 1 cinnamon rice cake topped with cottage cheese & pumpkin seeds | ~34g |
+| **C** | **Chicken & Cottage Cheese Dip Bowl:** 3-4 oz shredded chicken mixed with ⅓ cup LF cottage cheese + bagel seasoning + cucumber | ~30g |
+| **D** | **Salmon & Avocado Boat:** 3-4 oz wild salmon + ½ avocado + squeeze of lemon + sea salt | ~28g |
+| **E** | **Egg White & Spinach Scramble:** 3 egg whites + 1 whole egg + spinach + ½ avocado on 1 gluten-free toast or rice cake | ~25g |
 
 > 🌿 **Food Test Leafy Swap:** Butter Lettuce, Romaine Lettuce, and Celery tested RED Sensitive. **Spinach, Arugula (Rocket), Kale, Cress, and Cucumber are GREEN Light Safe!**
 
