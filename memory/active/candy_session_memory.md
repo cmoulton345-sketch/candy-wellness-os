@@ -30,3 +30,7 @@ I'm ready to respond to the updated call, sir.
 - **2026-09-20** (JARVIS / SOMA):
   - **App Updates:** Replaced Goblet Squats with Chair Box Squats (pelvis & psoas relief); added 5 compact, high-protein lunch options for daytime appetite/fueling.
   - **GitHub & Mobile Deployment:** Enabled public GitHub Pages deployment at `https://cmoulton345-sketch.github.io/candy-wellness-os/` with `.nojekyll` fix; verified 100% active installation on Candy's phone.
+
+- **2026-09-21** (SOMA):
+  - **Oura Temp Log:** Added Sept 19 (-0.14°C / -0.10°C, Readiness 100) and Sept 20 (+0.08°C / +0.02°C, Readiness 99).
+  - **Hormone & Symptom Check-In:** Confirmed Day 14 Ovulation Shift into Protect Phase. Skin & breast itchiness identified as expected histamine transition window; fatigue/low energy & regular stiffness noted (zero acute joint pain). Guided gentle Protect mode recovery & hydration.
