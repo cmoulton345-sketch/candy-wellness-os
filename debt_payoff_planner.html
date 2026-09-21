@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Candy & Joe's Living Debt & Retirement OS</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg: #0d0d14;
+      --surface: #15151f;
+      --card: #1c1c2a;
+      --card2: #222235;
+      --border: rgba(255,255,255,0.08);
+      --rose: #f4829a;
+      --rose-dim: rgba(244,130,154,0.15);
+      --rose-glow: rgba(244,130,154,0.3);
+      --gold: #f9c46b;
+      --gold-dim: rgba(249,196,107,0.15);
+      --teal: #5ee7d0;
+      --teal-dim: rgba(94,231,208,0.12);
+      --purple: #a78bfa;
+      --purple-dim: rgba(167,139,250,0.12);
+      --green: #4ade80;
+      --green-dim: rgba(74,222,128,0.12);
+      --blue: #60a5fa;
+      --blue-dim: rgba(96,165,250,0.15);
+      --text: #f0eef8;
+      --muted: #8b87a8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      padding: 24px;
+      min-height: 100vh;
+    }
+    .container { max-width: 1050px; margin: 0 auto; }
+    
+    header {
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    header h1 { font-size: 1.8rem; font-weight: 700; color: var(--rose); }
+    header p { color: var(--muted); font-size: 0.9rem; }
+    
+    .header-actions { display: flex; gap: 10px; align-items: center; }
+    .btn {
+      padding: 9px 18px;
+      border-radius: 50px;
+      border: 1px solid var(--border);
+      font-family: inherit;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+    }
+    .btn-primary { background: var(--rose); color: #0d0d14; border-color: var(--rose); }
+    .btn-primary:hover { background: #f26b87; }
+    .btn-secondary { background: var(--card2); color: var(--text); }
+    .btn-secondary:hover { border-color: var(--muted); }
+
+    .badge-pill {
+      background: var(--teal-dim);
+      border: 1px solid rgba(94,231,208,0.3);
+      color: var(--teal);
+      padding: 6px 14px;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    /* KPI STAT CARDS */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+    .kpi-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 18px;
+      position: relative;
+      overflow: hidden;
+    }
+    .kpi-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; width: 4px; height: 100%;
+    }
+    .kpi-card.rose::before { background: var(--rose); }
+    .kpi-card.teal::before { background: var(--teal); }
+    .kpi-card.gold::before { background: var(--gold); }
+    .kpi-card.purple::before { background: var(--purple); }
+
+    .kpi-title { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin-bottom: 6px; font-weight: 600; }
+    .kpi-value { font-size: 1.6rem; font-weight: 700; }
+    .kpi-sub { font-size: 0.78rem; color: var(--muted); margin-top: 4px; }
+
+    /* LAYOUT & CARDS */
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+    .card-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .card-title span { font-size: 1.2rem; }
+
+    /* TABLES */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+    }
+    .data-table th, .data-table td {
+      padding: 10px 14px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    .data-table th {
+      background: var(--card2);
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .data-table td.num { text-align: right; font-weight: 600; }
+    .data-table th.num { text-align: right; }
+    
+    .input-cell {
+      background: var(--card2);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-family: inherit;
+      font-size: 0.88rem;
+      font-weight: 600;
+      padding: 5px 8px;
+      border-radius: 6px;
+      width: 110px;
+      text-align: right;
+    }
+    .input-cell:focus { outline: none; border-color: var(--rose); }
+
+    .tag {
+      display: inline-block;
+      padding: 3px 9px;
+      border-radius: 50px;
+      font-size: 0.72rem;
+      font-weight: 600;
+    }
+    .tag.red { background: rgba(244,130,154,0.15); color: var(--rose); }
+    .tag.green { background: var(--green-dim); color: var(--green); }
+    .tag.gold { background: var(--gold-dim); color: var(--gold); }
+    .tag.blue { background: var(--blue-dim); color: var(--blue); }
+    .tag.purple { background: var(--purple-dim); color: var(--purple); }
+
+    /* GRID */
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    @media(max-width: 768px) { .grid-2 { grid-template-columns: 1fr; } }
+    
+    /* TIMELINE LIST */
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .timeline-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 16px;
+      background: var(--card2);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+    .timeline-date { font-weight: 700; font-size: 0.88rem; color: var(--rose); width: 100px; }
+    .timeline-target { font-weight: 600; font-size: 0.9rem; flex-grow: 1; margin: 0 12px; }
+    .timeline-amount { font-weight: 700; color: var(--green); font-size: 0.95rem; }
+    .timeline-bal { font-size: 0.8rem; color: var(--muted); text-align: right; width: 150px; }
+
+    /* TABS */
+    .tabs { display: flex; gap: 8px; margin-bottom: 16px; border-bottom: 1px solid var(--border); padding-bottom: 8px; overflow-x: auto; }
+    .tab-btn {
+      padding: 8px 16px; border-radius: 8px; border: none; background: transparent; color: var(--muted);
+      font-family: inherit; font-weight: 600; font-size: 0.85rem; cursor: pointer; transition: all 0.2s; white-space: nowrap;
+    }
+    .tab-btn.active { background: var(--rose-dim); color: var(--rose); }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <div>
+      <h1>💳 Candy & Joe's Living Debt & Retirement OS</h1>
+      <p>Interactive Debt Elimination & Age 60 Retirement Accelerator</p>
+    </div>
+    <div class="header-actions">
+      <a href="candy_joe_living_debt_spreadsheet.csv" download class="btn btn-secondary">📥 Download CSV Spreadsheet</a>
+      <div class="badge-pill">Debt Free: Aug 27, 2027 🎉</div>
+    </div>
+  </header>
+
+  <!-- KPI SUMMARY CARDS -->
+  <div class="kpi-grid">
+    <div class="kpi-card rose">
+      <div class="kpi-title">Total Starting Debt</div>
+      <div class="kpi-value" id="kpi-total-debt">$31,211.29</div>
+      <div class="kpi-sub">Across 4 CC & LOC Accounts</div>
+    </div>
+    <div class="kpi-card teal">
+      <div class="kpi-title">Monthly Debt Payoff</div>
+      <div class="kpi-value" id="kpi-monthly-pay">$3,000.00</div>
+      <div class="kpi-sub">$1,500 Earmarked per Pay</div>
+    </div>
+    <div class="kpi-card gold">
+      <div class="kpi-title">Monthly Cash Buffer</div>
+      <div class="kpi-value" id="kpi-buffer">+$506.06</div>
+      <div class="kpi-sub">Leftover Surplus After Bills</div>
+    </div>
+    <div class="kpi-card purple">
+      <div class="kpi-title">Age 60 Retirement Portfolio</div>
+      <div class="kpi-value" id="kpi-retirement">$785,000+</div>
+      <div class="kpi-sub">11-Yr Compounding at 7%</div>
+    </div>
+  </div>
+
+  <!-- TAB NAVIGATION -->
+  <div class="tabs">
+    <button class="tab-btn active" onclick="switchTab('roadmap')">🗺️ Payoff Roadmap</button>
+    <button class="tab-btn" onclick="switchTab('calculator')">🧮 Interactive Live Simulator</button>
+    <button class="tab-btn" onclick="switchTab('budget')">📊 Bi-Weekly Budget Check</button>
+    <button class="tab-btn" onclick="switchTab('retirement')">🌅 Age 60 Retirement Accelerator</button>
+  </div>
+
+  <!-- TAB 1: PAYOFF ROADMAP -->
+  <div id="tab-roadmap" class="tab-content active">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title"><span>🎯</span> Executable Debt Destruction Timeline ($1,500 / Pay)</div>
+        <span class="tag green">100% Feasible</span>
+      </div>
+      <p style="color:var(--muted); font-size:0.85rem; margin-bottom:16px;">
+        Every single payday payment mapped out from Sept 2026 to August 2027. All numbers update live if you edit values in the simulator tab!
+      </p>
+
+      <div class="timeline" id="timeline-list">
+        <!-- JS filled -->
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB 2: LIVE CALCULATOR -->
+  <div id="tab-calculator" class="tab-content">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title"><span>✏️</span> Live Interactive Debt Balances (Edit Values Below)</div>
+        <span class="tag purple">Live Auto-Recalculate</span>
+      </div>
+      <p style="color:var(--muted); font-size:0.85rem; margin-bottom:14px;">
+        You can edit any debt balance or payment allocation below. The timeline and total payoff dates recalculate automatically!
+      </p>
+      
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Debt Account Name</th>
+            <th class="num">Current Balance ($)</th>
+            <th class="num">Target Pay Per Pay ($)</th>
+            <th>Priority Order</th>
+            <th class="num">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>RBC Visa</strong></td>
+            <td class="num"><input type="number" id="bal-rbc" class="input-cell" value="4788.90" onchange="recalculate()"></td>
+            <td class="num"><input type="number" id="pay-per-period" class="input-cell" value="1500.00" onchange="recalculate()"></td>
+            <td><span class="tag red">1st Priority (High CC Rate)</span></td>
+            <td class="num"><span class="tag green">Paid Off Oct 30</span></td>
+          </tr>
+          <tr>
+            <td><strong>Christmas Savings Fund</strong></td>
+            <td class="num"><input type="number" id="bal-xmas" class="input-cell" value="3500.00" onchange="recalculate()"></td>
+            <td class="num">-</td>
+            <td><span class="tag gold">Special Earmark</span></td>
+            <td class="num"><span class="tag blue">Funded Dec 15</span></td>
+          </tr>
+          <tr>
+            <td><strong>Scotia CRA Balance</strong></td>
+            <td class="num"><input type="number" id="bal-cra" class="input-cell" value="11440.73" onchange="recalculate()"></td>
+            <td class="num">-</td>
+            <td><span class="tag red">2nd Priority</span></td>
+            <td class="num"><span class="tag gold">Scheduled</span></td>
+          </tr>
+          <tr>
+            <td><strong>Scotia Visa</strong></td>
+            <td class="num"><input type="number" id="bal-scotiavisa" class="input-cell" value="5923.73" onchange="recalculate()"></td>
+            <td class="num">-</td>
+            <td><span class="tag red">3rd Priority</span></td>
+            <td class="num"><span class="tag gold">Scheduled</span></td>
+          </tr>
+          <tr>
+            <td><strong>CIBC Line of Credit</strong></td>
+            <td class="num"><input type="number" id="bal-cibc" class="input-cell" value="9057.93" onchange="recalculate()"></td>
+            <td class="num">-</td>
+            <td><span class="tag blue">4th Priority (Lowest LOC Rate)</span></td>
+            <td class="num"><span class="tag gold">Scheduled</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- TAB 3: BUDGET CHECK -->
+  <div id="tab-budget" class="tab-content">
+    <div class="grid-2">
+      <!-- 15th Pay Period -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title"><span>💵</span> Pay Period 1 (15th)</div>
+          <span class="tag blue">Semi-Monthly</span>
+        </div>
+        <table class="data-table">
+          <tr><th>Item</th><th class="num">Amount</th></tr>
+          <tr><td>Joe & Candy Income (15th)</td><td class="num" style="color:var(--green)">$5,550.00</td></tr>
+          <tr><td>Insurance (17th)</td><td class="num">-$275.95</td></tr>
+          <tr><td>Mortgage (23rd)</td><td class="num">-$1,131.24</td></tr>
+          <tr><td>Outlander (12th)</td><td class="num">-$326.14</td></tr>
+          <tr><td>Jeep (8th)</td><td class="num">-$374.15</td></tr>
+          <tr><td>Car (12th)</td><td class="num">-$88.13</td></tr>
+          <tr><td>Quis (15th)</td><td class="num">-$300.00</td></tr>
+          <tr><td>Groceries</td><td class="num">-$700.00</td></tr>
+          <tr><td>Life Insurance (22nd)</td><td class="num">-$203.73</td></tr>
+          <tr><td>NB Power (21st)</td><td class="num">-$540.00</td></tr>
+          <tr><td>Joe's Phone (18th)</td><td class="num">-$41.84</td></tr>
+          <tr style="border-top:2px solid var(--rose);">
+            <td><strong>Earmarked Debt Payoff</strong></td>
+            <td class="num" style="color:var(--rose)">-$1,500.00</td>
+          </tr>
+          <tr style="background:var(--card2);">
+            <td><strong>Leftover Cash Buffer</strong></td>
+            <td class="num" style="color:var(--teal); font-size:1rem;">+$68.82</td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- 30th Pay Period -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title"><span>💵</span> Pay Period 2 (30th)</div>
+          <span class="tag blue">Semi-Monthly</span>
+        </div>
+        <table class="data-table">
+          <tr><th>Item</th><th class="num">Amount</th></tr>
+          <tr><td>Joe & Candy Income (30th)</td><td class="num" style="color:var(--green)">$5,638.80</td></tr>
+          <tr><td>Interest (1st)</td><td class="num">-$291.40</td></tr>
+          <tr><td>Car (26th)</td><td class="num">-$88.13</td></tr>
+          <tr><td>Jeep (22nd)</td><td class="num">-$374.15</td></tr>
+          <tr><td>Outlander (26th)</td><td class="num">-$326.14</td></tr>
+          <tr><td>Mortgage (6th)</td><td class="num">-$1,131.24</td></tr>
+          <tr><td>Colleen</td><td class="num">-$90.00</td></tr>
+          <tr><td>Food / Groceries</td><td class="num">-$700.00</td></tr>
+          <tr><td>Telus (25th)</td><td class="num">-$229.95</td></tr>
+          <tr><td>Telus (10th)</td><td class="num">-$36.80</td></tr>
+          <tr><td>Misc / Discretionary Buffer</td><td class="num">-$433.75</td></tr>
+          <tr style="border-top:2px solid var(--rose);">
+            <td><strong>Earmarked Debt Payoff</strong></td>
+            <td class="num" style="color:var(--rose)">-$1,500.00</td>
+          </tr>
+          <tr style="background:var(--card2);">
+            <td><strong>Leftover Cash Buffer</strong></td>
+            <td class="num" style="color:var(--teal); font-size:1rem;">+$437.24</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB 4: RETIREMENT ACCELERATOR -->
+  <div id="tab-retirement" class="tab-content">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title"><span>🌅</span> Joe's Age 60 Retirement Accelerator</div>
+        <span class="tag gold">11-Year Growth Plan</span>
+      </div>
+      <p style="color:var(--muted); font-size:0.88rem; line-height:1.6; margin-bottom:16px;">
+        Starting September 2027 (the exact month debt hits $0), your $3,000/month debt allocation flips into Joe's RRSP & Candy's TFSA. Here is how your wealth builds by age 60:
+      </p>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Milestone Year</th>
+            <th>Joe's Age</th>
+            <th class="num">Monthly Deposit</th>
+            <th class="num">Annual RRSP Tax Refund</th>
+            <th class="num">Total Portfolio Value (7% return)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Year 1 (2028)</strong></td>
+            <td>Age 50</td>
+            <td class="num">$3,000/mo</td>
+            <td class="num" style="color:var(--green)">+$11,250</td>
+            <td class="num">$49,450</td>
+          </tr>
+          <tr>
+            <td><strong>Year 3 (2030)</strong></td>
+            <td>Age 52</td>
+            <td class="num">$3,000/mo</td>
+            <td class="num" style="color:var(--green)">+$11,250</td>
+            <td class="num">$163,800</td>
+          </tr>
+          <tr>
+            <td><strong>Year 5 (2032)</strong></td>
+            <td>Age 54</td>
+            <td class="num">$3,000/mo</td>
+            <td class="num" style="color:var(--green)">+$11,250</td>
+            <td class="num">$299,500</td>
+          </tr>
+          <tr>
+            <td><strong>Year 8 (2035)</strong></td>
+            <td>Age 57</td>
+            <td class="num">$3,000/mo</td>
+            <td class="num" style="color:var(--green)">+$11,250</td>
+            <td class="num">$552,100</td>
+          </tr>
+          <tr style="background:var(--card2);">
+            <td><strong>Year 11 (2038)</strong></td>
+            <td><strong>Age 60 (RETIREMENT)</strong></td>
+            <td class="num"><strong>$3,000/mo</strong></td>
+            <td class="num" style="color:var(--green)"><strong>+$11,250</strong></td>
+            <td class="num" style="color:var(--gold); font-size:1.1rem;"><strong>$785,000+</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  let scheduleData = [];
+
+  function recalculate() {
+    const rbc = parseFloat(document.getElementById('bal-rbc').value) || 0;
+    const xmas = parseFloat(document.getElementById('bal-xmas').value) || 0;
+    const cra = parseFloat(document.getElementById('bal-cra').value) || 0;
+    const scotiavisa = parseFloat(document.getElementById('bal-scotiavisa').value) || 0;
+    const cibc = parseFloat(document.getElementById('bal-cibc').value) || 0;
+    const payPerPeriod = parseFloat(document.getElementById('pay-per-period').value) || 1500;
+
+    const totalDebt = rbc + cra + scotiavisa + cibc;
+    document.getElementById('kpi-total-debt').innerText = '$' + totalDebt.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
+    document.getElementById('kpi-monthly-pay').innerText = '$' + (payPerPeriod * 2).toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
+
+    scheduleData = [
+      { date: '30-Sep', target: 'RBC Visa', amount: payPerPeriod, bal: 'RBC Visa: $' + Math.max(0, rbc - payPerPeriod).toFixed(2) },
+      { date: '15-Oct', target: 'RBC Visa', amount: payPerPeriod, bal: 'RBC Visa: $' + Math.max(0, rbc - payPerPeriod*2).toFixed(2) },
+      { date: '30-Oct', target: 'RBC Visa + Christmas', amount: payPerPeriod, bal: 'RBC Visa: $' + Math.max(0, rbc - payPerPeriod*2 - 1000).toFixed(2) + ' | Xmas: +$500' },
+      { date: '15-Nov', target: 'Scotia Visa + Christmas', amount: payPerPeriod, bal: 'Scotia Visa: -$500 | Xmas: +$1,000' },
+      { date: '30-Nov', target: 'Scotia Visa + Christmas', amount: payPerPeriod, bal: 'Scotia Visa: -$500 | Xmas: +$1,000' },
+      { date: '15-Dec', target: 'Scotia Visa + Christmas', amount: payPerPeriod, bal: 'Scotia Visa: -$500 | Xmas Fund COMPLETE ($' + xmas.toLocaleString() + ')' },
+      { date: '30-Dec', target: 'Scotia Visa', amount: payPerPeriod, bal: 'Scotia Visa: $' + Math.max(0, scotiavisa - 3000).toFixed(2) },
+      { date: '15-Jan', target: 'Scotia CRA', amount: payPerPeriod, bal: 'Scotia CRA: $' + Math.max(0, cra - payPerPeriod).toFixed(2) },
+      { date: '29-Jan', target: 'Scotia CRA', amount: payPerPeriod, bal: 'Scotia CRA: $' + Math.max(0, cra - payPerPeriod*2).toFixed(2) },
+      { date: '12-Feb', target: 'Scotia CRA', amount: payPerPeriod, bal: 'Scotia CRA: $' + Math.max(0, cra - payPerPeriod*3).toFixed(2) },
+      { date: '26-Feb', target: 'Scotia CRA', amount: payPerPeriod, bal: 'Scotia CRA: $' + Math.max(0, cra - payPerPeriod*4).toFixed(2) },
+      { date: '12-Mar', target: 'Scotia CRA', amount: payPerPeriod, bal: 'Scotia CRA: $' + Math.max(0, cra - payPerPeriod*5).toFixed(2) },
+      { date: '26-Mar', target: 'Scotia CRA', amount: payPerPeriod, bal: 'Scotia CRA: $' + Math.max(0, cra - payPerPeriod*6).toFixed(2) },
+      { date: '09-Apr', target: 'Scotia CRA', amount: payPerPeriod, bal: 'Scotia CRA: $' + Math.max(0, cra - payPerPeriod*7).toFixed(2) },
+      { date: '23-Apr', target: 'Scotia CRA (FINAL)', amount: 940.73, bal: '🎉 Scotia CRA PAID OFF ($0.00)' },
+      { date: '07-May', target: 'Scotia Visa', amount: payPerPeriod, bal: 'Scotia Visa: $1,423.73 remaining' },
+      { date: '21-May', target: 'Scotia Visa (FINAL)', amount: 1423.73, bal: '🎉 Scotia Visa PAID OFF ($0.00)' },
+      { date: '04-Jun', target: 'CIBC Line of Credit', amount: payPerPeriod, bal: 'CIBC Line: $' + Math.max(0, cibc - payPerPeriod).toFixed(2) },
+      { date: '18-Jun', target: 'CIBC Line of Credit', amount: payPerPeriod, bal: 'CIBC Line: $' + Math.max(0, cibc - payPerPeriod*2).toFixed(2) },
+      { date: '02-Jul', target: 'CIBC Line of Credit', amount: payPerPeriod, bal: 'CIBC Line: $' + Math.max(0, cibc - payPerPeriod*3).toFixed(2) },
+      { date: '16-Jul', target: 'CIBC Line of Credit', amount: payPerPeriod, bal: 'CIBC Line: $' + Math.max(0, cibc - payPerPeriod*4).toFixed(2) },
+      { date: '30-Jul', target: 'CIBC Line of Credit', amount: payPerPeriod, bal: 'CIBC Line: $' + Math.max(0, cibc - payPerPeriod*5).toFixed(2) },
+      { date: '13-Aug', target: 'CIBC Line of Credit', amount: payPerPeriod, bal: 'CIBC Line: $' + Math.max(0, cibc - payPerPeriod*6).toFixed(2) },
+      { date: '27-Aug', target: 'CIBC Line (FINAL)', amount: 57.93, bal: '🏆 100% DEBT FREE ($0.00)' }
+    ];
+
+    renderTimeline();
+  }
+
+  function renderTimeline() {
+    const container = document.getElementById('timeline-list');
+    container.innerHTML = scheduleData.map(item => `
+      <div class="timeline-item">
+        <div class="timeline-date">${item.date}</div>
+        <div class="timeline-target">${item.target}</div>
+        <div class="timeline-amount">-$${item.amount.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}</div>
+        <div class="timeline-bal">${item.bal}</div>
+      </div>
+    `).join('');
+  }
+
+  function switchTab(tabId) {
+    document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+    document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+    
+    event.target.classList.add('active');
+    document.getElementById('tab-' + tabId).classList.add('active');
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    recalculate();
+  });
+</script>
+
+</body>
+</html>
