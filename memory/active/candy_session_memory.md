@@ -38,3 +38,8 @@ I'm ready to respond to the updated call, sir.
   - **Friday - Debt Elimination & Wealth Building OS:** Filed and synced `debt_payoff_planner.html`, `candy_joe_living_debt_spreadsheet.csv`, and `finance_procedures/debt_payoff_roadmap.md` to GitHub repository (`main` branch, commit `fa9a026`). Fully accessible locally and remotely.
   - **Friday - Gmail Recovery & Evening Sanctuary:** Successfully guided Candy through Google Message Recovery Tool (100% scan completion, restored missing emails to All Mail). Evening shutdown complete; dinner prep with Rayne.
   - **JARVIS - Repository Security Hardening:** Guided Candy through making GitHub repository `cmoulton345-sketch/candy-wellness-os` 100% Private to protect family data and halt automated secret leak alerts.
+
+- **2026-09-22** (SOMA):
+  - **Left Hip Flexor / Psoas Flare Check-In:** Analyzed left hip flexor, QL, and entire left-side kinetic chain soreness triggered by sitting at work + repetitive step-up flexion during luteal/protect phase shift.
+  - **App Workout Architecture Update:** Permanently replaced Step-Ups in `index.html` with **Bench Glute Hip Thrusts** (Day 1) and **Banded Glute Kickbacks** (Day 3) to eliminate repetitive loaded hip flexion while maintaining glute & pelvic stability.
+  - **Restorative Protocol:** Guided gentle psoas passive decompression (Psoas Lounge / Supported Bridge), heat therapy, hydration, and Thursday massage prep.
