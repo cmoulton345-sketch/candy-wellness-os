@@ -39,7 +39,8 @@ I'm ready to respond to the updated call, sir.
   - **Friday - Gmail Recovery & Evening Sanctuary:** Successfully guided Candy through Google Message Recovery Tool (100% scan completion, restored missing emails to All Mail). Evening shutdown complete; dinner prep with Rayne.
   - **JARVIS - Repository Security Hardening:** Guided Candy through making GitHub repository `cmoulton345-sketch/candy-wellness-os` 100% Private to protect family data and halt automated secret leak alerts.
 
-- **2026-09-22** (SOMA):
+- **2026-09-22** (SOMA / JARVIS):
   - **Left Hip Flexor / Psoas Flare Check-In:** Analyzed left hip flexor, QL, and entire left-side kinetic chain soreness triggered by sitting at work + repetitive step-up flexion during luteal/protect phase shift.
   - **App Workout Architecture Update:** Permanently replaced Step-Ups in `index.html` with **Bench Glute Hip Thrusts** (Day 1) and **Banded Glute Kickbacks** (Day 3) to eliminate repetitive loaded hip flexion while maintaining glute & pelvic stability.
   - **Restorative Protocol:** Guided gentle psoas passive decompression (Psoas Lounge / Supported Bridge), heat therapy, hydration, and Thursday massage prep.
+  - **JARVIS - App Access & GitHub Pages Reactivation:** Guided Candy through restoring GitHub repository visibility to Public. Triggered automated rebuild commit; verified 100% live status at `https://cmoulton345-sketch.github.io/candy-wellness-os/` with Soma's updated exercises.
