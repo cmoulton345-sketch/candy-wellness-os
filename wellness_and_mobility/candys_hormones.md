@@ -54,7 +54,9 @@
 | **Sept 18** | Day 11 | -0.32°C | **-0.22°C** | **94** | Itchy *(Estrogen Peak Dip)* | 🟢 **Peak Push Phase (Low Temp Peak)** |
 | **Sept 19** | Day 12 | -0.14°C | **-0.10°C** | **100** | Regular stiffness (no joint pain), skin/breast itchiness, low energy | 🔄 **Ovulation Shift (Temp Climbing)** |
 | **Sept 20** | Day 13 | +0.08°C | **+0.02°C** | **99** | Itchy breasts & skin, low energy | 🟡 **Protect Phase Transition** |
-| **Sept 21** | Day 14 | +0.08°C+ | **+0.02°C+** | **High** | **No joint pain (regular stiffness)**, itchy breasts & skin (3-day histamine window), tired & low energy | 🟡 **Protect Phase / Mid-Cycle Shift** |
+| **Sept 21** | Day 14 | -0.03°C | **-0.12°C** | **100** | No acute joint pain (regular stiffness), itchiness resolving | 🟡 **Protect Phase Shift** |
+| **Sept 22** | Day 15 | 0.00°C | **0.00°C** | **100** | Sleep baseline disruption (11:30 PM - 5:50 AM) | 🟡 **Protect Phase** |
+| **Sept 23** | Day 16 | +0.08°C | **+0.10°C** | **100** | **Breasts very tender (NOT itchy)**, bloated, energy better, short sleep (11:30 PM - 5:50 AM) | 🟡 **Protect Phase Active (Progesterone Rise)** |
 
 ### September 16 Body Measurements & Physical Check-In
 * **Oura Temp / Readiness:** -0.25°C (Day 9 Peak Estrogen Dip) | Readiness: 96 | Sleep Scores: 77 (Sept 14 night) & 81 (Sept 15 night).

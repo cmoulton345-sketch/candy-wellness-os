@@ -44,3 +44,9 @@ I'm ready to respond to the updated call, sir.
   - **App Workout Architecture Update:** Permanently replaced Step-Ups in `index.html` with **Bench Glute Hip Thrusts** (Day 1) and **Banded Glute Kickbacks** (Day 3) to eliminate repetitive loaded hip flexion while maintaining glute & pelvic stability.
   - **Restorative Protocol:** Guided gentle psoas passive decompression (Psoas Lounge / Supported Bridge), heat therapy, hydration, and Thursday massage prep.
   - **JARVIS - App Access & GitHub Pages Reactivation:** Guided Candy through restoring GitHub repository visibility to Public. Triggered automated rebuild commit; verified 100% live status at `https://cmoulton345-sketch.github.io/candy-wellness-os/` with Soma's updated exercises.
+
+- **2026-09-23** (SOMA):
+  - **Oura Temp & Symptom Log Updated:** Recorded Sept 21 (-0.03°C / -0.12°C, Readiness 100), Sept 22 (0.00°C / 0.00°C, Readiness 100), and Sept 23 (+0.08°C / +0.10°C, Readiness 100).
+  - **Hormone & Cycle Shift Validation:** Confirmed Day 16 Protect Phase Progesterone Surge. Histamine/skin itchiness 100% resolved; breast tenderness and bloating active (classic progesterone signals). Energy improved ("not as tired").
+  - **Sleep Baseline Disruption:** Addressed 11:30 PM - 5:50 AM sleep compression caused by elevated evening thermal setpoint during Protect phase shift.
+  - **Oura ZIP & Data Export:** Explained Oura ZIP export (`data-2.zip` / `oura_trends.csv`) and confirmed OS agents process data directly.
