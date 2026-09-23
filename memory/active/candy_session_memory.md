@@ -45,8 +45,10 @@ I'm ready to respond to the updated call, sir.
   - **Restorative Protocol:** Guided gentle psoas passive decompression (Psoas Lounge / Supported Bridge), heat therapy, hydration, and Thursday massage prep.
   - **JARVIS - App Access & GitHub Pages Reactivation:** Guided Candy through restoring GitHub repository visibility to Public. Triggered automated rebuild commit; verified 100% live status at `https://cmoulton345-sketch.github.io/candy-wellness-os/` with Soma's updated exercises.
 
-- **2026-09-23** (SOMA):
+- **2026-09-23** (SOMA / JARVIS):
   - **Oura Temp & Symptom Log Updated:** Recorded Sept 21 (-0.03°C / -0.12°C, Readiness 100), Sept 22 (0.00°C / 0.00°C, Readiness 100), and Sept 23 (+0.08°C / +0.10°C, Readiness 100).
   - **Hormone & Cycle Shift Validation:** Confirmed Day 16 Protect Phase Progesterone Surge. Histamine/skin itchiness 100% resolved; breast tenderness and bloating active (classic progesterone signals). Energy improved ("not as tired").
   - **Sleep Baseline Disruption:** Addressed 11:30 PM - 5:50 AM sleep compression caused by elevated evening thermal setpoint during Protect phase shift.
   - **Oura ZIP & Data Export:** Explained Oura ZIP export (`data-2.zip` / `oura_trends.csv`) and confirmed OS agents process data directly.
+  - **MyFitnessPal Barcode & Macro Tracker App Deployment:** Built and deployed live `🔍 Barcode & Macros` scanner tab in `index.html` with real-time camera scanning (`html5-qrcode`), Open Food Facts API integration, custom entry modal, and local storage daily meal logs. Pushed to `origin main` (`cd21586`). Verified live on Candy's mobile app.
+  - **Finger Prick Blood Spot Test Protocol (Sunday Sept 27):** Clarified timing rules: Progesterone night before (7:00 PM = 13.5h window at 8:30 AM test); morning BiEst & Testosterone taken AFTER blood collection; wear gloves for Tretinoin night cream; take Vyvanse + Fairlife shake AFTER test (prevents vasoconstriction & maintains clean fasting baseline).
