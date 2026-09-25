@@ -185,7 +185,7 @@
     <button class="nav-tab active" onclick="switchTab('home')">✨ Sanctuary</button>
     <button class="nav-tab" onclick="switchTab('workouts')">🏋️ Band & 5lb Workouts</button>
     <button class="nav-tab" onclick="switchTab('meals')">🥗 High-Protein Meals</button>
-    <button class="nav-tab" onclick="switchTab('macros')">🔍 Barcode & Macros</button>
+    <button class="nav-tab" onclick="switchTab('anti-inflammatory')" style="color:var(--rose);">🔥 Anti-Inflammatory</button>
     <button class="nav-tab" onclick="switchTab('tracker')">📊 Symptom Tracker</button>
   </div>
 </nav>
@@ -435,7 +435,7 @@
 <!-- PAGE 3: SIMPLE MEALS -->
 <div id="page-meals" class="page">
   <div class="page-title">Simple High-Protein Meals & Recipes 🥗</div>
-  <div class="page-sub">Delicious, satisfying high-protein meal ideas for Colleen. Designed to keep blood sugar steady, balance HRT hormones, and support belly fat loss while giving her fun cooking variety!</div>
+  <div class="page-sub">Delicious, satisfying high-protein meal ideas. Designed to keep blood sugar steady, balance perimenopause hormones, and support fat loss!</div>
 
   <!-- BREAKFAST -->
   <div class="meal-category">
@@ -606,55 +606,117 @@
   </div>
 </div>
 
-<!-- PAGE 4: BARCODE & MACROS -->
-<div id="page-macros" class="page">
-  <div class="page-title">Barcode & Macro Scanner 🔍</div>
-  <div class="page-sub">Scan packaged foods instantly using your phone camera or enter meals manually to track daily protein & calories.</div>
+<!-- PAGE 4: ANTI-INFLAMMATORY RESET -->
+<div id="page-anti-inflammatory" class="page">
+  <div class="page-title">Anti-Inflammatory Reset 🔥</div>
+  <div class="page-sub">7-Day Low-FODMAP & Red-Light Free Protocol. Calms gut pain, cramps, and joint inflammation while supporting your 10 lb fat loss target!</div>
+    <div class="cortisol-banner" style="background:rgba(251,113,133,0.12); border:1px solid rgba(251,113,133,0.3);">
+      <div class="cortisol-info">
+        <h3 style="color:var(--rose);">🔥 FLARE-UP & GUT RESET ACTIVE</h3>
+        <p style="color:var(--text); font-size:0.82rem; margin-top:4px;">7-Day Low-FODMAP & Red-Light Free Plan. Calms stomach cramps, gut bloating, and systemic joint pain. Strictly targets <strong>1,550 kcal / 135g Protein</strong> to maintain your 10 lb fat-loss deficit!</p>
+      </div>
+    </div>
 
-  <!-- MACRO DAILY SUMMARY -->
-  <div class="macro-summary">
-    <div class="macro-card">
-      <div class="macro-val" id="sum-cal" style="color:var(--rose);">0</div>
-      <div class="macro-lbl">Calories</div>
+    <!-- PAUSED TRIGGERS CARD -->
+    <div class="card" style="border:1px solid rgba(251,113,133,0.3);">
+      <div class="card-header" style="color:var(--rose);"><span class="card-title-text"><span class="dot" style="background:var(--rose);"></span> 🚨 PAUSED TRIGGERS FOR 7 DAYS</span></div>
+      <div style="font-size:0.83rem; color:var(--text); line-height:1.5;">
+        <p><strong>STOP:</strong> Garlic (fresh/powder), Onions (fresh/powder), Egg Yolks, Sweet Potatoes, Maple Syrup, Flaxseed, Butter & Romaine Lettuce, Celery, Cauliflower, Apples, Pears, Wheat/Gluten, Regular Lactose, & Sugar Alcohols.</p>
+        <p style="color:var(--muted); font-size:0.78rem; margin-top:6px;">Garlic and onions are the #1 hidden cause of gut spasms and cramping. Eliminating them for 7 days gives your gut mucosal lining a complete reset.</p>
+      </div>
     </div>
-    <div class="macro-card">
-      <div class="macro-val" id="sum-prot" style="color:var(--emerald);">0g</div>
-      <div class="macro-lbl">Protein</div>
-    </div>
-    <div class="macro-card">
-      <div class="macro-val" id="sum-carb" style="color:var(--gold);">0g</div>
-      <div class="macro-lbl">Carbs</div>
-    </div>
-    <div class="macro-card">
-      <div class="macro-val" id="sum-fat" style="color:var(--purple);">0g</div>
-      <div class="macro-lbl">Fat</div>
-    </div>
-  </div>
 
-  <!-- SCAN BUTTONS -->
-  <div class="scan-btn-group">
-    <button class="btn btn-primary" onclick="toggleCameraScanner()">
-      📷 Start Barcode Scanner
-    </button>
-    <button class="btn btn-secondary" onclick="openManualModal()">
-      ✏️ Manual Entry
-    </button>
-  </div>
-
-  <!-- CAMERA CONTAINER -->
-  <div id="reader"></div>
-
-  <!-- DAILY LOGGED ITEMS -->
-  <div class="card">
-    <div class="card-header">
-      <div class="card-title-text"><span class="dot" style="background:var(--rose);"></span> Today's Logged Foods</div>
-      <button onclick="clearDailyLog()" style="background:transparent; border:none; color:var(--muted); font-size:0.75rem; cursor:pointer;">Reset Log</button>
+    <!-- 5 MEAL CLOCK SCHEDULE -->
+    <div class="meal-category">
+      <div class="cat-title">🌅 1. BREAK-FAST (8:30–9:00 AM — With Vyvanse)</div>
+      <div class="meal-grid">
+        <div class="meal-card">
+          <div class="meal-name">3 Egg Whites Scramble + Baby Spinach + GF Toast <span class="meal-prot">~25g Protein</span></div>
+          <div class="meal-desc">3 egg whites scrambled in olive oil with baby spinach + 1 slice GF toast + sea salt. (NO egg yolks or garlic!)</div>
+        </div>
+        <div class="meal-card">
+          <div class="meal-name">Fairlife Core Power Shake <span class="meal-prot">~26g Protein</span></div>
+          <div class="meal-desc">Ready to drink ultra-filtered lactose-free shake. Zero gut stress.</div>
+        </div>
+      </div>
     </div>
-    <div class="log-list" id="log-list-container">
-      <div style="text-align:center; color:var(--muted); font-size:0.85rem; padding:14px;">No food items logged today yet.</div>
+
+    <div class="meal-category">
+      <div class="cat-title">⏰ 2. MID-MORNING FUEL (10:30 AM)</div>
+      <div class="meal-grid">
+        <div class="meal-card">
+          <div class="meal-name">Lactose-Free Cottage Cheese + Pumpkin Seeds <span class="meal-prot">~22g Protein</span></div>
+          <div class="meal-desc">½ cup LF cottage cheese + 1 tbsp pumpkin seeds + cinnamon. Soothing and crunchy (NO apples during flare-up).</div>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
+
+    <div class="meal-category">
+      <div class="cat-title">☀️ 3. LUNCH (1:00 PM — Compact High-Protein)</div>
+      <div class="meal-grid">
+        <div class="meal-card">
+          <div class="meal-name">Shredded Chicken Breast + Cucumber & Rice Cake <span class="meal-prot">~30g Protein</span></div>
+          <div class="meal-desc">3-4 oz shredded chicken (seasoned with salt, pepper, olive oil — NO garlic/onion powder!) + sliced cucumber + 1 rice cake.</div>
+        </div>
+        <div class="meal-card">
+          <div class="meal-name">Wild Salmon or Tuna Spinach Bowl <span class="meal-prot">~28g Protein</span></div>
+          <div class="meal-desc">1 can tuna in water or 3 oz wild salmon + olive oil + sea salt + cucumber slices over baby spinach.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="meal-category">
+      <div class="cat-title">🫐 4. AFTERNOON SNACK (4:00 PM — Pre-Workout)</div>
+      <div class="meal-grid">
+        <div class="meal-card">
+          <div class="meal-name">Fresh Blueberries + Pumpkin Seeds <span class="meal-prot">~7g Protein</span></div>
+          <div class="meal-desc">½ cup fresh blueberries or strawberries + 1 tbsp pumpkin seeds (pepitas).</div>
+        </div>
+        <div class="meal-card">
+          <div class="meal-name">Fairlife Core Power Shake <span class="meal-prot">~26g Protein</span></div>
+          <div class="meal-desc">1 bottle lactose-free shake for quick pre-workout fuel.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="meal-category">
+      <div class="cat-title">🌙 5. DINNER (6:15 PM — Anti-Inflammatory Recovery)</div>
+      <div class="meal-grid">
+        <div class="meal-card">
+          <div class="meal-name">Baked Salmon + Sautéed Zucchini & Carrots + Potato <span class="meal-prot">~38g Protein</span></div>
+          <div class="meal-desc">5-6 oz salmon + zucchini & carrots sautéed in garlic-infused olive oil + 1 small baked white potato (swap for sweet potato).</div>
+        </div>
+        <div class="meal-card">
+          <div class="meal-name">Lean Beef + Sautéed Zucchini + Rice <span class="meal-prot">~35g Protein</span></div>
+          <div class="meal-desc">5 oz sirloin or flank steak + zucchini sautéed in olive oil & herbs + ½ cup white rice.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="meal-category">
+      <div class="cat-title">🌙 6. CLOSING SNACK (6:45 PM)</div>
+      <div class="meal-grid">
+        <div class="meal-card">
+          <div class="meal-name">Air-Popped Popcorn + Warm Peppermint Tea <span class="meal-prot">~4g Protein</span></div>
+          <div class="meal-desc">2 cups popcorn with sea salt + 1 cup warm Peppermint Tea (relaxes intestinal smooth muscle spasms). Kitchen closes at 7:00 PM!</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NIGHTTIME REPAIR DRINK -->
+    <div class="card" style="background:linear-gradient(135deg, rgba(192,132,252,0.15) 0%, rgba(56,189,248,0.1) 100%); border:1px solid rgba(192,132,252,0.3);">
+      <div class="card-header" style="color:var(--purple);"><span class="card-title-text"><span class="dot" style="background:var(--purple);"></span> 🍹 NIGHTTIME GUT & JOINT REPAIR DRINK (45m Before Bed)</span></div>
+      <div style="font-size:0.83rem; color:var(--text); line-height:1.55;">
+        <p>Mix into 500 ml water + 1 scoop BioSteel Electrolytes:</p>
+        <ul style="padding-left:18px; margin: 6px 0;">
+          <li><strong>1-2 scoops</strong> CanPrev Collagen Powder</li>
+          <li><strong>1 tsp (3g)</strong> CanPrev Glycine Powder</li>
+          <li><strong>¾ tsp (4,000 mg)</strong> Vitamin C Powder</li>
+        </ul>
+        <p style="color:var(--muted); font-size:0.78rem;">Repairs gut mucosal barrier, calms joint pain, and promotes deep parasympathetic sleep.</p>
+      </div>
+    </div>
+
 
 <!-- PAGE 5: SYMPTOM TRACKER -->
 <div id="page-tracker" class="page">
@@ -770,6 +832,47 @@
     // Stop camera if leaving macros tab
     if (tabId !== 'macros' && html5QrcodeScanner) {
       stopCameraScanner();
+    }
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    }, 50);
+  }
+
+  // NUTRITION MODE SWITCH
+  function switchColleenMealsMode(mode) {
+    const btnBaseline = document.getElementById('btn-colleen-baseline');
+    const btnFlareup = document.getElementById('btn-colleen-flareup');
+    const viewBaseline = document.getElementById('colleen-meals-baseline');
+    const viewFlareup = document.getElementById('colleen-meals-flareup');
+    const badge = document.getElementById('colleen-mode-badge');
+
+    if (mode === 'flareup') {
+      if (btnBaseline) { btnBaseline.style.background = 'rgba(255,255,255,0.05)'; btnBaseline.style.color = 'var(--muted)'; }
+      if (btnFlareup) { btnFlareup.style.background = 'var(--rose-dim)'; btnFlareup.style.color = 'var(--rose)'; }
+      if (viewBaseline) viewBaseline.style.display = 'none';
+      if (viewFlareup) viewFlareup.style.display = 'block';
+      if (badge) {
+        badge.textContent = '🔥 Flare-Up Reset Active';
+        badge.style.background = 'rgba(251,113,133,0.2)';
+        badge.style.color = 'var(--rose)';
+        badge.style.border = '1px solid rgba(251,113,133,0.3)';
+      }
+    } else {
+      if (btnFlareup) { btnFlareup.style.background = 'rgba(255,255,255,0.05)'; btnFlareup.style.color = 'var(--muted)'; }
+      if (btnBaseline) { btnBaseline.style.background = 'var(--rose-dim)'; btnBaseline.style.color = 'var(--rose)'; }
+      if (viewFlareup) viewFlareup.style.display = 'none';
+      if (viewBaseline) viewBaseline.style.display = 'block';
+      if (badge) {
+        badge.textContent = '🟢 Baseline Active';
+        badge.style.background = 'var(--emerald-dim)';
+        badge.style.color = 'var(--emerald)';
+        badge.style.border = '1px solid rgba(16,185,129,0.3)';
+      }
     }
   }
 

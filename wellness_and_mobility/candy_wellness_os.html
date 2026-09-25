@@ -3,8 +3,12 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
 <title>Candy's Wellness OS</title>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
 <style>
   :root {
     --bg: #0d0d14; --surface: #15151f; --card: #1c1c2a; --card2: #222235;
@@ -17,18 +21,32 @@
     --text: #f0eef8; --muted: #8b87a8;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'Outfit', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; overflow-x: hidden; }
+  html {
+    scroll-behavior: auto;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    font-family: 'Outfit', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+  }
 
   /* NAV */
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    background: rgba(13,13,20,0.92); backdrop-filter: blur(20px);
+    background: rgba(13,13,20,0.95); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--border);
     padding: 12px 16px;
   }
   .nav-logo { font-size: 1rem; font-weight: 700; color: var(--rose); margin-bottom: 10px; }
   .nav-logo span { color: var(--muted); font-weight: 400; }
-  .nav-tabs { display: flex; gap: 5px; overflow-x: auto; padding-bottom: 2px; scrollbar-width: none; }
+  .nav-tabs { display: flex; gap: 5px; overflow-x: auto; padding-bottom: 2px; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
   .nav-tabs::-webkit-scrollbar { display: none; }
   .nav-tab {
     padding: 7px 13px; border-radius: 50px; border: none; cursor: pointer;
@@ -39,9 +57,9 @@
   .nav-tab.active { background: var(--rose-dim); color: var(--rose); }
 
   /* LAYOUT */
-  .page { display: none; padding: 110px 16px 50px; max-width: 700px; margin: 0 auto; }
-  .page.active { display: block; animation: fadeUp 0.3s ease; }
-  @keyframes fadeUp { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:translateY(0); } }
+  .page { display: none; padding: 135px 16px 60px; max-width: 700px; margin: 0 auto; width: 100%; }
+  .page.active { display: block; animation: fadeIn 0.2s ease; }
+  @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 
   /* HEADERS */
   .page-header { margin-bottom: 22px; }
@@ -253,16 +271,65 @@
   .alert-box { padding: 14px 16px; border-radius: 12px; margin-bottom: 14px; font-size: 0.84rem; line-height: 1.5; }
   .alert-box.gold { background: var(--gold-dim); border: 1px solid rgba(249,196,107,0.3); color: var(--gold); }
   .alert-box.teal { background: var(--teal-dim); border: 1px solid rgba(94,231,208,0.3); color: var(--teal); }
+
+  /* BARCODE & MACROS */
+  .macro-ring-card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 20px; margin-bottom: 14px; text-align: center;
+  }
+  .macro-summary-title { font-size: 0.8rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
+  .cal-large { font-size: 2.2rem; font-weight: 800; color: var(--rose); margin-bottom: 2px; }
+  .cal-sub { font-size: 0.82rem; color: var(--muted); margin-bottom: 12px; }
+  .macro-progress-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 10px; }
+  .macro-prog-box { background: var(--card2); border: 1px solid var(--border); border-radius: 12px; padding: 10px; text-align: center; }
+  .macro-prog-val { font-size: 1.05rem; font-weight: 700; }
+  .macro-prog-lbl { font-size: 0.68rem; color: var(--muted); margin-top: 2px; margin-bottom: 6px; }
+  .macro-prog-track { height: 4px; background: rgba(255,255,255,0.08); border-radius: 2px; overflow: hidden; }
+  .macro-prog-fill { height: 100%; border-radius: 2px; transition: width 0.4s ease; }
+
+  .scanner-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 18px; margin-bottom: 14px; }
+  .scanner-btn-main { width: 100%; padding: 13px; border-radius: 12px; border: 1px solid var(--rose-glow); background: var(--rose-dim); color: var(--rose); font-weight: 700; font-size: 0.9rem; cursor: pointer; transition: all 0.2s; display: flex; align-items: center; justify-content: center; gap: 8px; }
+  .scanner-btn-main:hover { background: rgba(244,130,154,0.25); transform: translateY(-1px); }
+  #scanner-viewport-box { display: none; margin-top: 14px; border-radius: 14px; overflow: hidden; border: 2px solid var(--rose); background: #000; position: relative; }
+  #barcode-reader video { width: 100% !important; border-radius: 12px; }
+  .manual-input-box { display: flex; gap: 8px; margin-top: 12px; }
+  .manual-input-box input { flex: 1; background: var(--card2); border: 1px solid var(--border); border-radius: 10px; padding: 10px 14px; color: var(--text); font-family: 'Outfit', sans-serif; font-size: 0.88rem; outline: none; }
+  .manual-input-box input:focus { border-color: var(--rose); }
+  .manual-input-box button { padding: 10px 16px; border-radius: 10px; border: none; background: var(--rose); color: white; font-weight: 700; font-size: 0.85rem; cursor: pointer; }
+
+  .food-result-card { display: none; background: var(--card2); border: 1.5px solid var(--rose-glow); border-radius: 14px; padding: 16px; margin-top: 14px; animation: fadeUp 0.3s ease; }
+  .food-result-header { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+  .food-result-img { width: 52px; height: 52px; border-radius: 10px; object-fit: cover; background: var(--card); border: 1px solid var(--border); }
+  .food-result-title { font-size: 0.95rem; font-weight: 700; }
+  .food-result-brand { font-size: 0.76rem; color: var(--muted); }
+  .food-result-macros { display: flex; gap: 12px; font-size: 0.78rem; font-weight: 600; background: var(--card); padding: 8px 12px; border-radius: 8px; margin-bottom: 12px; }
+  .food-result-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+  .food-result-actions select, .food-result-actions input { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 8px 10px; color: var(--text); font-family: 'Outfit', sans-serif; font-size: 0.82rem; outline: none; }
+  .log-add-btn { flex: 1; background: var(--rose); color: white; border: none; border-radius: 8px; padding: 9px 14px; font-weight: 700; font-size: 0.85rem; cursor: pointer; transition: all 0.2s; }
+  .log-add-btn:hover { background: #e06d85; }
+
+  .meal-log-section { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 16px; margin-bottom: 14px; }
+  .meal-log-title { font-size: 0.88rem; font-weight: 700; display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+  .meal-log-items { display: flex; flex-direction: column; gap: 6px; }
+  .logged-item { display: flex; justify-content: space-between; align-items: center; background: var(--card2); border: 1px solid var(--border); border-radius: 10px; padding: 9px 12px; }
+  .logged-item-name { font-size: 0.84rem; font-weight: 600; }
+  .logged-item-meta { font-size: 0.74rem; color: var(--muted); }
+  .logged-item-del { background: transparent; border: none; color: var(--muted); cursor: pointer; font-size: 0.9rem; padding: 2px 6px; }
+  .logged-item-del:hover { color: #f87171; }
+  .empty-log-msg { font-size: 0.78rem; color: var(--muted); font-style: italic; padding: 4px 0; }
 </style>
 </head>
 <body>
 
 <nav>
-  <div class="nav-logo">🌸 Candy's <span>Wellness OS</span></div>
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+    <div class="nav-logo" style="margin-bottom:0;">🌸 Candy's <span>Wellness OS</span></div>
+    <button onclick="alert('📱 Phone Link:\nhttp://192.168.2.22:8080\n\nOpen Safari or Chrome on your phone Wi-Fi and type this address!')" style="background:var(--rose-dim); border:1px solid var(--rose-glow); color:var(--rose); padding:5px 12px; border-radius:50px; font-size:0.75rem; font-weight:700; cursor:pointer;">📱 Phone App Link</button>
+  </div>
   <div class="nav-tabs">
     <button class="nav-tab active" onclick="showPage('today',this)">Today</button>
     <button class="nav-tab" onclick="showPage('workout',this)">Workout</button>
     <button class="nav-tab" onclick="showPage('nutrition',this)">Nutrition</button>
+    <button class="nav-tab" onclick="showPage('anti-inflammatory',this)" style="color:var(--rose);">🔥 Anti-Inflammatory</button>
     <button class="nav-tab" onclick="showPage('tapping',this)">Tapping</button>
     <button class="nav-tab" onclick="showPage('emergency',this)">SOS</button>
     <button class="nav-tab" onclick="showPage('harvest',this)">Sunday</button>
@@ -349,6 +416,8 @@
   <button class="save-btn" onclick="showToast('✓ Today saved 🌸')">✓ Save Today's Check-In</button>
 </div>
 
+
+
 <!-- ══ WORKOUT ══ -->
 <div class="page" id="page-workout">
   <div class="page-header">
@@ -408,7 +477,7 @@
           <div class="check-item" onclick="toggle(this)"><div class="check-box">✓</div><div><div class="check-label">Glute Bridges with Band — 3 × 12</div><div class="check-sub">Band above knees • Drive through heels • Squeeze at top</div></div></div>
           <div class="check-item" onclick="toggle(this)"><div class="check-box">✓</div><div><div class="check-label">Romanian Deadlifts (RDLs) — 3 × 8</div><div class="check-sub">Dumbbells • Soft knees • Hinge hips back • Feel stretch in hamstrings</div></div></div>
           <div class="check-item" onclick="toggle(this)"><div class="check-box">✓</div><div><div class="check-label">Banded Lateral Walks — 2 × 12 steps each direction</div><div class="check-sub">Band above knees • Stay low • Controls hip drop</div></div></div>
-          <div class="check-item" onclick="toggle(this)"><div class="check-box">✓</div><div><div class="check-label">Step-Ups on Bench — 3 × 8 per leg</div><div class="check-sub">Light-moderate dumbbells • Drive through heel • Don't push off back foot</div></div></div>
+          <div class="check-item" onclick="toggle(this)"><div class="check-box">✓</div><div><div class="check-label">Bench Glute Hip Thrusts — 3 × 10</div><div class="check-sub">Shoulders supported on bench • Drive through heels • Zero deep hip flexion • Protects psoas & hips</div></div></div>
         </div>
       </div>
       <div class="card">
@@ -459,7 +528,7 @@
         <div class="card-title"><div class="dot" style="background:var(--rose)"></div>Full Body — Functional & Power</div>
         <div class="check-list">
           <div class="check-item" onclick="toggle(this)"><div class="check-box">✓</div><div><div class="check-label">Reverse Lunges — 3 × 8 per leg</div><div class="check-sub">Dumbbells • Step back • Front knee stays over ankle</div></div></div>
-          <div class="check-item" onclick="toggle(this)"><div class="check-box">✓</div><div><div class="check-label">Bench Step-Ups — 3 × 8 per leg</div><div class="check-sub">Drive through heel on bench • No bouncing off back foot</div></div></div>
+          <div class="check-item" onclick="toggle(this)"><div class="check-box">✓</div><div><div class="check-label">Banded Glute Kickbacks — 3 × 10 per leg</div><div class="check-sub">Stand tall, hold bench • Extend leg straight back • Zero repetitive hip flexion</div></div></div>
           <div class="check-item" onclick="toggle(this)"><div class="check-box">✓</div><div><div class="check-label">Farmer's Carries — 3 laps across room</div><div class="check-sub">Moderate dumbbells • Tall posture • Builds grip, core, and endurance</div></div></div>
           <div class="check-item" onclick="toggle(this)"><div class="check-box">✓</div><div><div class="check-label">Banded Rows (Seated on Bench) — 3 × 12</div><div class="check-sub">Band around feet • Pull elbows back • Squeeze at end</div></div></div>
           <div class="check-item" onclick="toggle(this)"><div class="check-box">✓</div><div><div class="check-label">Bowflex Max Trainer — 10 min moderate intensity</div><div class="check-sub">Finish the session with low-impact total body cardio</div></div></div>
@@ -572,26 +641,26 @@
 
   <div class="alert-box teal">🔑 <strong>The Golden Rule:</strong> Ozempic + Vyvanse suppress your appetite all day. If you wait until you're hungry, you won't eat enough and your body will scream at night. Eat on the schedule below — even if you're not hungry.</div>
 
-  <!-- Macro targets -->
-  <div class="card">
-    <div class="card-title"><div class="dot" style="background:var(--gold)"></div>Daily Macro Targets</div>
-    <div class="pill-row" style="margin-bottom:12px;">
-      <button class="pill selected" onclick="showMacros('push',this)">🟢 Push Phase</button>
-      <button class="pill" onclick="showMacros('protect',this)">🟡 Protect Phase</button>
+    <!-- Macro targets -->
+    <div class="card">
+      <div class="card-title"><div class="dot" style="background:var(--gold)"></div>Daily Macro Targets</div>
+      <div class="pill-row" style="margin-bottom:12px;">
+        <button class="pill selected" onclick="showMacros('push',this)">🟢 Push Phase</button>
+        <button class="pill" onclick="showMacros('protect',this)">🟡 Protect Phase</button>
+      </div>
+      <div id="macros-push" class="macro-row">
+        <div class="macro-box"><div class="macro-num" style="color:var(--rose)">1,550</div><div class="macro-lbl">Calories</div></div>
+        <div class="macro-box"><div class="macro-num" style="color:var(--teal)">135g</div><div class="macro-lbl">Protein</div></div>
+        <div class="macro-box"><div class="macro-num" style="color:var(--gold)">90g</div><div class="macro-lbl">Carbs</div></div>
+        <div class="macro-box"><div class="macro-num" style="color:var(--purple)">60g</div><div class="macro-lbl">Fat</div></div>
+      </div>
+      <div id="macros-protect" class="macro-row" style="display:none;">
+        <div class="macro-box"><div class="macro-num" style="color:var(--rose)">1,700</div><div class="macro-lbl">Calories</div></div>
+        <div class="macro-box"><div class="macro-num" style="color:var(--teal)">135g</div><div class="macro-lbl">Protein</div></div>
+        <div class="macro-box"><div class="macro-num" style="color:var(--gold)">75g</div><div class="macro-lbl">Carbs</div></div>
+        <div class="macro-box"><div class="macro-num" style="color:var(--purple)">70g</div><div class="macro-lbl">Fat</div></div>
+      </div>
     </div>
-    <div id="macros-push" class="macro-row">
-      <div class="macro-box"><div class="macro-num" style="color:var(--rose)">1,550</div><div class="macro-lbl">Calories</div></div>
-      <div class="macro-box"><div class="macro-num" style="color:var(--teal)">135g</div><div class="macro-lbl">Protein</div></div>
-      <div class="macro-box"><div class="macro-num" style="color:var(--gold)">90g</div><div class="macro-lbl">Carbs</div></div>
-      <div class="macro-box"><div class="macro-num" style="color:var(--purple)">60g</div><div class="macro-lbl">Fat</div></div>
-    </div>
-    <div id="macros-protect" class="macro-row" style="display:none;">
-      <div class="macro-box"><div class="macro-num" style="color:var(--rose)">1,700</div><div class="macro-lbl">Calories</div></div>
-      <div class="macro-box"><div class="macro-num" style="color:var(--teal)">135g</div><div class="macro-lbl">Protein</div></div>
-      <div class="macro-box"><div class="macro-num" style="color:var(--gold)">75g</div><div class="macro-lbl">Carbs</div></div>
-      <div class="macro-box"><div class="macro-num" style="color:var(--purple)">70g</div><div class="macro-lbl">Fat</div></div>
-    </div>
-  </div>
 
   <!-- Meals -->
   <div class="meal-block">
@@ -774,9 +843,165 @@
       <div class="check-item" onclick="toggle(this)"><div class="check-box">✓</div><div><div class="check-label">Portion pumpkin seeds into 1 oz bags (×5)</div><div class="check-sub">One bag per day — grab without thinking</div></div></div>
       <div class="check-item" onclick="toggle(this)"><div class="check-box">✓</div><div><div class="check-label">Grill or bake 1-2 lbs chicken breast</div><div class="check-sub">Slice and refrigerate — instant lunch protein all week</div></div></div>
       <div class="check-item" onclick="toggle(this)"><div class="check-box">✓</div><div><div class="check-label">Check Fairlife shake supply</div><div class="check-sub">Need 5-7 for morning break-fasts</div></div></div>
-      <div class="check-item" onclick="toggle(this)"><div class="check-box">✓</div><div><div class="check-label">Pop 2 cups air popcorn, store in airtight container</div><div class="check-sub">Ready for closing snack all week</div></div></div>
+  </div>
+</div>
+</div>
+
+<!-- ══ ANTI-INFLAMMATORY PAGE ══ -->
+<div class="page" id="page-anti-inflammatory">
+  <div class="page-header">
+    <h1>Anti-Inflammatory Reset 🔥</h1>
+    <p>7-Day Low-FODMAP & Red-Light Free Protocol. Calms gut pain, cramps, and joint inflammation while supporting your 10 lb fat loss target!</p>
+  </div>
+
+  <div class="alert-box gold" style="border:1px solid rgba(251,113,133,0.4); background:rgba(251,113,133,0.12); margin-bottom:14px;">
+    🔥 <strong>FLARE-UP & GUT RESET ACTIVE:</strong> 7-Day Low-FODMAP & Red-Light Free Protocol. Calms gut lining, eliminates gas/cramping, and lowers systemic pain. Strictly targets <strong>1,550 kcal / 135g Protein</strong> to maintain your 10 lb fat-loss deficit!
+  </div>
+
+  <!-- Red Light & High FODMAP Pause List -->
+  <div class="card" style="border:1px solid rgba(251,113,133,0.3); margin-bottom:16px;">
+    <div class="card-title" style="color:var(--rose)"><div class="dot" style="background:var(--rose)"></div>🚨 Paused Triggers During Flare-Up</div>
+    <div style="font-size:0.83rem; color:var(--text); line-height:1.5;">
+      <p style="margin-bottom:6px;"><strong>STOP:</strong> Garlic (powder/fresh), Onions (powder/fresh), Egg Yolks, Sweet Potatoes, Maple Syrup, Flaxseed, Butter & Romaine Lettuce, Celery, Cauliflower, Apples, Pears, Wheat/Gluten, Regular Lactose, & Artificial Sweeteners.</p>
+      <p style="color:var(--muted); font-size:0.78rem;">Garlic and onions are the #1 hidden cause of gut spasms and cramping. Eliminating them for 7 days gives your gut mucosal lining a complete reset.</p>
     </div>
   </div>
+
+    <!-- Flare-Up Meals Block -->
+    <div class="meal-block">
+      <div class="meal-time">
+        <div class="meal-time-badge" style="background:rgba(251,113,133,0.2); color:var(--rose)">8:30–9:00 AM</div>
+        <div><div class="meal-title">Break-Fast — GENTLE PROTEIN</div><div class="meal-note">Target: 25-30g protein • Low FODMAP • Vyvanse pairing</div></div>
+      </div>
+      <div class="meal-options">
+        <div class="meal-option" onclick="selectMeal(this)">
+          <div class="meal-option-name">🍳 3 Egg Whites Scramble + Baby Spinach + GF Toast</div>
+          <div class="meal-option-detail">3 egg whites scrambled in olive oil with fresh baby spinach + 1 slice GF toast + sea salt (NO egg yolks or garlic!)</div>
+          <div class="meal-protein">~25g protein • Zero gut stress</div>
+        </div>
+        <div class="meal-option" onclick="selectMeal(this)">
+          <div class="meal-option-name">🥤 Fairlife Core Power Shake</div>
+          <div class="meal-option-detail">1 bottle ultra-filtered lactose-free shake • Ready to drink</div>
+          <div class="meal-protein">~26g-30g protein</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="meal-block">
+      <div class="meal-time">
+        <div class="meal-time-badge" style="background:rgba(251,113,133,0.2); color:var(--rose)">10:30 AM ⏰</div>
+        <div><div class="meal-title">Mid-Morning Fuel</div><div class="meal-note">Set alarm • 15-20g protein • Low FODMAP crunch</div></div>
+      </div>
+      <div class="meal-options">
+        <div class="meal-option" onclick="selectMeal(this)">
+          <div class="meal-option-name">🎃 Lactose-Free Cottage Cheese + Pumpkin Seeds</div>
+          <div class="meal-option-detail">½ cup LF cottage cheese + 1 tbsp pumpkin seeds + cinnamon (NO apples during flare-up)</div>
+          <div class="meal-protein">~22g protein • Soothing & crunchy</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="meal-block">
+      <div class="meal-time">
+        <div class="meal-time-badge" style="background:rgba(251,113,133,0.2); color:var(--rose)">1:00 PM</div>
+        <div><div class="meal-title">Lunch — GUT SOOTHING BISTRO</div><div class="meal-note">Target: 30g protein • Small volume, easy digestion</div></div>
+      </div>
+      <div class="meal-options">
+        <div class="meal-option" onclick="selectMeal(this)">
+          <div class="meal-option-name">🐔 Shredded Chicken Breast + Cucumber & Rice Cake</div>
+          <div class="meal-option-detail">3-4 oz shredded chicken (seasoned with salt, pepper, olive oil — NO garlic/onion powder!) + sliced cucumber + 1 rice cake</div>
+          <div class="meal-protein">~30g protein • Zero gas or bloating</div>
+        </div>
+        <div class="meal-option" onclick="selectMeal(this)">
+          <div class="meal-option-name">🐟 Wild Salmon or Tuna Spinach Bowl</div>
+          <div class="meal-option-detail">1 can tuna (in water) or 3 oz wild salmon + olive oil + sea salt + cucumber over baby spinach</div>
+          <div class="meal-protein">~28g protein • Anti-inflammatory Omega-3s</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="meal-block">
+      <div class="meal-time">
+        <div class="meal-time-badge" style="background:rgba(251,113,133,0.2); color:var(--rose)">4:00 PM</div>
+        <div><div class="meal-title">Afternoon Snack</div><div class="meal-note">Pre-workout fuel • Low-FODMAP berries or shake</div></div>
+      </div>
+      <div class="meal-options">
+        <div class="meal-option" onclick="selectMeal(this)">
+          <div class="meal-option-name">🫐 Fresh Blueberries + Pumpkin Seeds</div>
+          <div class="meal-option-detail">½ cup fresh blueberries or strawberries + 1 tbsp pumpkin seeds</div>
+          <div class="meal-protein">~7g protein + antioxidants</div>
+        </div>
+        <div class="meal-option" onclick="selectMeal(this)">
+          <div class="meal-option-name">🥤 Fairlife Core Power Shake</div>
+          <div class="meal-option-detail">1 bottle lactose-free shake • Quick fuel</div>
+          <div class="meal-protein">~26g protein</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="meal-block">
+      <div class="meal-time">
+        <div class="meal-time-badge" style="background:rgba(251,113,133,0.2); color:var(--rose)">6:15 PM</div>
+        <div><div class="meal-title">Dinner — ANTI-INFLAMMATORY RECOVERY</div><div class="meal-note">Target: 35g protein • Sautéed in Garlic-Infused Olive Oil</div></div>
+      </div>
+      <div class="meal-options">
+        <div class="meal-option" onclick="selectMeal(this)">
+          <div class="meal-option-name">🐟 Baked Salmon + Sautéed Zucchini & Carrots + Potato</div>
+          <div class="meal-option-detail">5-6 oz salmon + zucchini & carrots sautéed in garlic-infused olive oil + 1 small baked white/yellow potato (swap for sweet potato)</div>
+          <div class="meal-protein">~38g protein • Deep healing</div>
+        </div>
+        <div class="meal-option" onclick="selectMeal(this)">
+          <div class="meal-option-name">🥩 Lean Beef + Sautéed Zucchini + Rice</div>
+          <div class="meal-option-detail">5 oz sirloin or flank steak + zucchini sautéed in olive oil & herbs + ½ cup white rice</div>
+          <div class="meal-protein">~35g protein • High iron & zinc</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="meal-block">
+      <div class="meal-time">
+        <div class="meal-time-badge" style="background:rgba(251,113,133,0.2); color:var(--rose)">6:45 PM 🌙</div>
+        <div><div class="meal-title">Closing Snack + Peppermint Tea</div><div class="meal-note">Gut muscle relaxant • Teeth brushed at 7:00 PM</div></div>
+      </div>
+      <div class="meal-options">
+        <div class="meal-option" onclick="selectMeal(this)">
+          <div class="meal-option-name">🍿 Air-Popped Popcorn + Peppermint Tea</div>
+          <div class="meal-option-detail">2 cups popcorn with sea salt + 1 cup warm Peppermint Tea (relaxes intestinal smooth muscles)</div>
+          <div class="meal-protein">~4g protein • Savory crunch</div>
+        </div>
+        <div class="meal-option" onclick="selectMeal(this)">
+          <div class="meal-option-name">🍘 Rice Cakes + Olive Oil & Sea Salt</div>
+          <div class="meal-option-detail">2 plain rice cakes drizzled with olive oil & sea salt + Peppermint Tea</div>
+          <div class="meal-protein">~3g protein</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Nighttime Repair Drink Cocktail -->
+    <div class="card" style="background:linear-gradient(135deg, rgba(167,139,250,0.15) 0%, rgba(94,231,208,0.1) 100%); border:1px solid rgba(167,139,250,0.3); margin-top:16px;">
+      <div class="card-title" style="color:var(--purple)"><div class="dot" style="background:var(--purple)"></div>🍹 Nighttime Gut & Joint Repair Drink (45m Before Bed)</div>
+      <div style="font-size:0.83rem; color:var(--text); line-height:1.55;">
+        <p>Mix into 500 ml water + 1 scoop BioSteel Electrolytes:</p>
+        <ul style="padding-left:18px; margin: 6px 0;">
+          <li><strong>1-2 scoops</strong> CanPrev Collagen Powder</li>
+          <li><strong>1 tsp (3g)</strong> CanPrev Glycine Powder</li>
+          <li><strong>¾ tsp (4,000 mg)</strong> Vitamin C Powder</li>
+        </ul>
+        <p style="color:var(--muted); font-size:0.78rem;">Repairs gut mucosal barrier, calms joint pain, and promotes deep parasympathetic sleep.</p>
+      </div>
+    </div>
+
+    <div class="alert-box gold" style="margin-top:14px;">🪥 <strong>7:00 PM — Kitchen closed. Brush teeth immediately.</strong> Rest and let your body heal tonight.</div>
 </div>
 
 <!-- ══ TAPPING ══ -->
@@ -1069,8 +1294,16 @@ for (let i = 0; i < totalCups; i++) {
 function showPage(id, btn) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
-  document.getElementById('page-'+id).classList.add('active');
-  btn.classList.add('active');
+  const page = document.getElementById('page-'+id);
+  if (page) page.classList.add('active');
+  if (btn) btn.classList.add('active');
+  try {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+  } catch(e) {
+    window.scrollTo(0, 0);
+  }
+  document.documentElement.scrollTop = 0;
+  document.body.scrollTop = 0;
 }
 
 // DAY SELECTOR
@@ -1182,6 +1415,38 @@ function showMacros(phase, btn) {
   document.getElementById('macros-protect').style.display = phase==='protect'?'grid':'none';
 }
 
+// NUTRITION MODE SWITCH
+function switchNutritionMode(mode) {
+  const btnBaseline = document.getElementById('btn-mode-baseline');
+  const btnFlareup = document.getElementById('btn-mode-flareup');
+  const viewBaseline = document.getElementById('nutrition-mode-baseline');
+  const viewFlareup = document.getElementById('nutrition-mode-flareup');
+  const badge = document.getElementById('current-mode-badge');
+
+  if (mode === 'flareup') {
+    if (btnBaseline) btnBaseline.classList.remove('selected');
+    if (btnFlareup) btnFlareup.classList.add('selected');
+    if (viewBaseline) viewBaseline.style.display = 'none';
+    if (viewFlareup) viewFlareup.style.display = 'block';
+    if (badge) {
+      badge.textContent = '🔥 Flare-Up Reset Active';
+      badge.style.background = 'rgba(251,113,133,0.2)';
+      badge.style.color = 'var(--rose)';
+    }
+  } else {
+    if (btnFlareup) btnFlareup.classList.remove('selected');
+    if (btnBaseline) btnBaseline.classList.add('selected');
+    if (viewFlareup) viewFlareup.style.display = 'none';
+    if (viewBaseline) viewBaseline.style.display = 'block';
+    if (badge) {
+      badge.textContent = '🟢 Baseline Active';
+      badge.style.background = 'var(--teal-dim)';
+      badge.style.color = 'var(--teal)';
+    }
+  }
+  showToast(mode === 'flareup' ? '🔥 Switched to Anti-Inflammatory Flare-Up Mode' : '🟢 Switched to Baseline Nutrition');
+}
+
 // TOAST
 function showToast(msg) {
   const t = document.getElementById('toast'); t.textContent = msg||'✓ Saved';
@@ -1200,8 +1465,324 @@ const mantras = [
 ];
 document.getElementById('daily-mantra').textContent = mantras[new Date().getDay()];
 
+// ══ BARCODE & MACRO TRACKER ENGINE ══
+let html5QrcodeScanner = null;
+let currentScannedItem = null;
+
+const defaultMacroGoals = {
+  push: { calories: 1550, protein: 135, carbs: 90, fat: 60, fiber: 25 },
+  protect: { calories: 1700, protein: 135, carbs: 75, fat: 70, fiber: 25 }
+};
+
+let foodLogState = {
+  date: new Date().toISOString().split('T')[0],
+  items: []
+};
+
+function loadMacroLog() {
+  const saved = localStorage.getItem('candy_food_log_' + foodLogState.date);
+  if (saved) {
+    try {
+      foodLogState = JSON.parse(saved);
+    } catch(e) { console.error('Failed parsing food log', e); }
+  }
+  renderFoodLog();
+}
+
+function saveMacroLog() {
+  localStorage.setItem('candy_food_log_' + foodLogState.date, JSON.stringify(foodLogState));
+  renderFoodLog();
+}
+
+function renderFoodLog() {
+  const phase = (typeof state !== 'undefined' && state.phase) ? state.phase : 'push';
+  const goals = defaultMacroGoals[phase] || defaultMacroGoals.push;
+
+  let totalCal = 0, totalP = 0, totalC = 0, totalF = 0, totalFib = 0;
+  const meals = { breakfast: [], lunch: [], dinner: [], snack: [] };
+
+  (foodLogState.items || []).forEach(item => {
+    totalCal += item.calories || 0;
+    totalP += item.protein || 0;
+    totalC += item.carbs || 0;
+    totalF += item.fat || 0;
+    totalFib += item.fiber || 0;
+    if (meals[item.mealType]) meals[item.mealType].push(item);
+    else meals.snack.push(item);
+  });
+
+  const calNumEl = document.getElementById('cal-consumed-num');
+  if (calNumEl) calNumEl.innerHTML = `${Math.round(totalCal)} <span style="font-size:1.1rem;font-weight:500;color:var(--muted)">/ <span id="cal-target-num">${goals.calories}</span> kcal</span>`;
+  
+  const remaining = Math.max(0, goals.calories - totalCal);
+  const remLbl = document.getElementById('cal-remaining-lbl');
+  if (remLbl) remLbl.textContent = remaining > 0 ? `${Math.round(remaining)} kcal remaining` : 'Goal reached! 🔥';
+  
+  const calBar = document.getElementById('cal-bar-fill');
+  if (calBar) calBar.style.width = Math.min(100, Math.round((totalCal / goals.calories) * 100)) + '%';
+
+  const pVal = document.getElementById('macro-p-val');
+  if (pVal) pVal.innerHTML = `${Math.round(totalP)}<span style="font-size:0.72rem;color:var(--muted)">/${goals.protein}g</span>`;
+  const pFill = document.getElementById('macro-p-fill');
+  if (pFill) pFill.style.width = Math.min(100, Math.round((totalP / goals.protein) * 100)) + '%';
+
+  const cVal = document.getElementById('macro-c-val');
+  if (cVal) cVal.innerHTML = `${Math.round(totalC)}<span style="font-size:0.72rem;color:var(--muted)">/${goals.carbs}g</span>`;
+  const cFill = document.getElementById('macro-c-fill');
+  if (cFill) cFill.style.width = Math.min(100, Math.round((totalC / goals.carbs) * 100)) + '%';
+
+  const fVal = document.getElementById('macro-f-val');
+  if (fVal) fVal.innerHTML = `${Math.round(totalF)}<span style="font-size:0.72rem;color:var(--muted)">/${goals.fat}g</span>`;
+  const fFill = document.getElementById('macro-f-fill');
+  if (fFill) fFill.style.width = Math.min(100, Math.round((totalF / goals.fat) * 100)) + '%';
+
+  const fibVal = document.getElementById('macro-fib-val');
+  if (fibVal) fibVal.innerHTML = `${Math.round(totalFib)}<span style="font-size:0.72rem;color:var(--muted)">/${goals.fiber}g</span>`;
+  const fibFill = document.getElementById('macro-fib-fill');
+  if (fibFill) fibFill.style.width = Math.min(100, Math.round((totalFib / goals.fiber) * 100)) + '%';
+
+  renderMealCategoryList('breakfast', meals.breakfast, 'bf-total-meta');
+  renderMealCategoryList('lunch', meals.lunch, 'lunch-total-meta');
+  renderMealCategoryList('dinner', meals.dinner, 'dinner-total-meta');
+  renderMealCategoryList('snack', meals.snack, 'snack-total-meta');
+}
+
+function renderMealCategoryList(mealType, items, metaId) {
+  const container = document.getElementById(mealType + '-log-list');
+  const meta = document.getElementById(metaId);
+  if (!container) return;
+  container.innerHTML = '';
+
+  let mealCal = 0;
+  if (!items || items.length === 0) {
+    container.innerHTML = `<div class="empty-log-msg">No items logged yet</div>`;
+  } else {
+    items.forEach(item => {
+      mealCal += item.calories || 0;
+      const div = document.createElement('div');
+      div.className = 'logged-item';
+      div.innerHTML = `
+        <div>
+          <div class="logged-item-name">${escapeHtml(item.name)}</div>
+          <div class="logged-item-meta">${item.servings > 1 ? item.servings + 'x • ' : ''}${Math.round(item.calories)} kcal | ${Math.round(item.protein)}g P | ${Math.round(item.carbs)}g C | ${Math.round(item.fat)}g F</div>
+        </div>
+        <button class="logged-item-del" onclick="deleteLoggedItem('${item.id}')" title="Delete">✕</button>
+      `;
+      container.appendChild(div);
+    });
+  }
+  if (meta) meta.textContent = Math.round(mealCal) + ' kcal';
+}
+
+function escapeHtml(str) {
+  return String(str || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+function deleteLoggedItem(id) {
+  foodLogState.items = (foodLogState.items || []).filter(i => i.id !== id);
+  saveMacroLog();
+  showToast('Item deleted');
+}
+
+function clearTodayLog() {
+  if (confirm("Reset today's food log?")) {
+    foodLogState.items = [];
+    saveMacroLog();
+    showToast('Log cleared');
+  }
+}
+
+function toggleCameraScanner() {
+  const viewport = document.getElementById('scanner-viewport-box');
+  const btn = document.getElementById('start-scan-btn');
+
+  if (html5QrcodeScanner) {
+    stopCameraScanner();
+    return;
+  }
+
+  viewport.style.display = 'block';
+  btn.innerHTML = '🛑 <span>Stop Scanner</span>';
+
+  html5QrcodeScanner = new Html5Qrcode("barcode-reader");
+  const config = { fps: 10, qrbox: { width: 250, height: 150 } };
+
+  html5QrcodeScanner.start(
+    { facingMode: "environment" },
+    config,
+    (decodedText) => {
+      stopCameraScanner();
+      lookupBarcode(decodedText);
+    },
+    (errorMessage) => {}
+  ).catch(err => {
+    console.error("Camera error:", err);
+    alert("Camera access unavailable. You can use the manual barcode lookup below!");
+    stopCameraScanner();
+  });
+}
+
+function stopCameraScanner() {
+  const viewport = document.getElementById('scanner-viewport-box');
+  const btn = document.getElementById('start-scan-btn');
+  if (html5QrcodeScanner) {
+    html5QrcodeScanner.stop().then(() => {
+      html5QrcodeScanner.clear();
+      html5QrcodeScanner = null;
+    }).catch(e => console.error(e));
+  }
+  viewport.style.display = 'none';
+  btn.innerHTML = '📷 <span>Open Camera Scanner</span>';
+}
+
+function handleManualLookup() {
+  const input = document.getElementById('manual-barcode-input');
+  const code = input.value.trim();
+  if (!code) {
+    alert("Please enter a barcode number!");
+    return;
+  }
+  lookupBarcode(code);
+}
+
+function lookupBarcode(barcode) {
+  showToast('🔍 Looking up food barcode...');
+  fetch(`https://world.openfoodfacts.org/api/v2/product/${barcode}.json`)
+    .then(res => res.json())
+    .then(data => {
+      if (data.status === 1 && data.product) {
+        const p = data.product;
+        const n = p.nutriments || {};
+        
+        let cal = n['energy-kcal_serving'] || n['energy-kcal_100g'] || n['energy-kcal'] || 0;
+        let prot = n['proteins_serving'] || n['proteins_100g'] || 0;
+        let carb = n['carbohydrates_serving'] || n['carbohydrates_100g'] || 0;
+        let fat = n['fat_serving'] || n['fat_100g'] || 0;
+        let fib = n['fiber_serving'] || n['fiber_100g'] || 0;
+
+        currentScannedItem = {
+          baseCal: parseFloat(cal) || 0,
+          baseP: parseFloat(prot) || 0,
+          baseC: parseFloat(carb) || 0,
+          baseF: parseFloat(fat) || 0,
+          baseFib: parseFloat(fib) || 0,
+          name: p.product_name || p.product_name_en || "Scanned Item",
+          brand: p.brands || p.brand_owner || "Brand",
+          img: p.image_front_small_url || p.image_url || ""
+        };
+
+        displayScannedResultCard();
+        showToast('✓ Food item found!');
+      } else {
+        alert("Barcode not found in database. You can add it using Quick Custom Entry below!");
+      }
+    })
+    .catch(err => {
+      console.error(err);
+      alert("Error reaching nutrition service. Please check connection.");
+    });
+}
+
+function displayScannedResultCard() {
+  if (!currentScannedItem) return;
+  const card = document.getElementById('food-result-card');
+  const img = document.getElementById('scanned-img');
+  
+  if (currentScannedItem.img) {
+    img.src = currentScannedItem.img;
+    img.style.display = 'block';
+  } else {
+    img.style.display = 'none';
+  }
+
+  document.getElementById('scanned-name').textContent = currentScannedItem.name;
+  document.getElementById('scanned-brand').textContent = currentScannedItem.brand;
+  document.getElementById('scanned-servings').value = 1;
+
+  updateScannedTotals();
+  card.style.display = 'block';
+  card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+function updateScannedTotals() {
+  if (!currentScannedItem) return;
+  const servings = parseFloat(document.getElementById('scanned-servings').value) || 1;
+  document.getElementById('scanned-cal').textContent = Math.round(currentScannedItem.baseCal * servings);
+  document.getElementById('scanned-p').textContent = Math.round(currentScannedItem.baseP * servings);
+  document.getElementById('scanned-c').textContent = Math.round(currentScannedItem.baseC * servings);
+  document.getElementById('scanned-f').textContent = Math.round(currentScannedItem.baseF * servings);
+}
+
+function logScannedFood() {
+  if (!currentScannedItem) return;
+  const servings = parseFloat(document.getElementById('scanned-servings').value) || 1;
+  const mealType = document.getElementById('scanned-meal-type').value;
+
+  const item = {
+    id: 'food_' + Date.now(),
+    name: currentScannedItem.name,
+    brand: currentScannedItem.brand,
+    servings: servings,
+    mealType: mealType,
+    calories: Math.round(currentScannedItem.baseCal * servings),
+    protein: Math.round(currentScannedItem.baseP * servings),
+    carbs: Math.round(currentScannedItem.baseC * servings),
+    fat: Math.round(currentScannedItem.baseF * servings),
+    fiber: Math.round(currentScannedItem.baseFib * servings)
+  };
+
+  foodLogState.items.push(item);
+  saveMacroLog();
+
+  document.getElementById('food-result-card').style.display = 'none';
+  currentScannedItem = null;
+  showToast(`✓ Logged ${item.name} (+${item.protein}g Protein)`);
+}
+
+function addCustomFood() {
+  const nameInput = document.getElementById('custom-name');
+  const calInput = document.getElementById('custom-cal');
+  const pInput = document.getElementById('custom-p');
+  const cInput = document.getElementById('custom-c');
+  const fInput = document.getElementById('custom-f');
+  const mealType = document.getElementById('custom-meal-type').value;
+
+  const name = nameInput.value.trim();
+  if (!name) {
+    alert("Please enter a food name!");
+    return;
+  }
+
+  const item = {
+    id: 'food_' + Date.now(),
+    name: name,
+    brand: 'Custom',
+    servings: 1,
+    mealType: mealType,
+    calories: parseFloat(calInput.value) || 0,
+    protein: parseFloat(pInput.value) || 0,
+    carbs: parseFloat(cInput.value) || 0,
+    fat: parseFloat(fInput.value) || 0,
+    fiber: 0
+  };
+
+  foodLogState.items.push(item);
+  saveMacroLog();
+
+  nameInput.value = '';
+  calInput.value = '';
+  pInput.value = '';
+  cInput.value = '';
+  fInput.value = '';
+
+  showToast(`✓ Added ${item.name} (+${item.calories} kcal)`);
+}
+
 // Initialize auto-restore on load
 loadAppState();
+loadMacroLog();
+
 </script>
 </body>
 </html>
+<!-- deploy trigger -->

@@ -3,6 +3,9 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
 <title>Candy's Wellness OS</title>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
@@ -18,18 +21,32 @@
     --text: #f0eef8; --muted: #8b87a8;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'Outfit', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; overflow-x: hidden; }
+  html {
+    scroll-behavior: auto;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    font-family: 'Outfit', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+  }
 
   /* NAV */
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    background: rgba(13,13,20,0.92); backdrop-filter: blur(20px);
+    background: rgba(13,13,20,0.95); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--border);
     padding: 12px 16px;
   }
   .nav-logo { font-size: 1rem; font-weight: 700; color: var(--rose); margin-bottom: 10px; }
   .nav-logo span { color: var(--muted); font-weight: 400; }
-  .nav-tabs { display: flex; gap: 5px; overflow-x: auto; padding-bottom: 2px; scrollbar-width: none; }
+  .nav-tabs { display: flex; gap: 5px; overflow-x: auto; padding-bottom: 2px; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
   .nav-tabs::-webkit-scrollbar { display: none; }
   .nav-tab {
     padding: 7px 13px; border-radius: 50px; border: none; cursor: pointer;
@@ -40,9 +57,9 @@
   .nav-tab.active { background: var(--rose-dim); color: var(--rose); }
 
   /* LAYOUT */
-  .page { display: none; padding: 110px 16px 50px; max-width: 700px; margin: 0 auto; }
-  .page.active { display: block; animation: fadeUp 0.3s ease; }
-  @keyframes fadeUp { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:translateY(0); } }
+  .page { display: none; padding: 135px 16px 60px; max-width: 700px; margin: 0 auto; width: 100%; }
+  .page.active { display: block; animation: fadeIn 0.2s ease; }
+  @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 
   /* HEADERS */
   .page-header { margin-bottom: 22px; }
@@ -304,12 +321,15 @@
 <body>
 
 <nav>
-  <div class="nav-logo">🌸 Candy's <span>Wellness OS</span></div>
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+    <div class="nav-logo" style="margin-bottom:0;">🌸 Candy's <span>Wellness OS</span></div>
+    <button onclick="alert('📱 Phone Link:\nhttp://192.168.2.22:8080\n\nOpen Safari or Chrome on your phone Wi-Fi and type this address!')" style="background:var(--rose-dim); border:1px solid var(--rose-glow); color:var(--rose); padding:5px 12px; border-radius:50px; font-size:0.75rem; font-weight:700; cursor:pointer;">📱 Phone App Link</button>
+  </div>
   <div class="nav-tabs">
     <button class="nav-tab active" onclick="showPage('today',this)">Today</button>
-    <button class="nav-tab" onclick="showPage('barcode',this)">🔍 Barcode & Macros</button>
     <button class="nav-tab" onclick="showPage('workout',this)">Workout</button>
     <button class="nav-tab" onclick="showPage('nutrition',this)">Nutrition</button>
+    <button class="nav-tab" onclick="showPage('anti-inflammatory',this)" style="color:var(--rose);">🔥 Anti-Inflammatory</button>
     <button class="nav-tab" onclick="showPage('tapping',this)">Tapping</button>
     <button class="nav-tab" onclick="showPage('emergency',this)">SOS</button>
     <button class="nav-tab" onclick="showPage('harvest',this)">Sunday</button>
@@ -396,133 +416,7 @@
   <button class="save-btn" onclick="showToast('✓ Today saved 🌸')">✓ Save Today's Check-In</button>
 </div>
 
-<!-- ══ BARCODE & MACROS ══ -->
-<div class="page" id="page-barcode">
-  <div class="page-header">
-    <h1>Barcode & Macro Tracker 🥑</h1>
-    <p>Scan food barcodes or log quick entries. Tailored for your Push & Protect targets.</p>
-  </div>
 
-  <!-- CALORIES & MACRO PROGRESS CARD -->
-  <div class="macro-ring-card">
-    <div class="macro-summary-title">Today's Fuel Progress</div>
-    <div class="cal-large" id="cal-consumed-num">0 <span style="font-size:1.1rem;font-weight:500;color:var(--muted)">/ <span id="cal-target-num">1,550</span> kcal</span></div>
-    <div class="cal-sub" id="cal-remaining-lbl">1,550 kcal remaining</div>
-    <div class="water-progress-bar" style="height:8px;margin-bottom:14px;"><div class="water-progress-fill" id="cal-bar-fill" style="width:0%;background:var(--rose)"></div></div>
-
-    <div class="macro-progress-grid">
-      <div class="macro-prog-box">
-        <div class="macro-prog-val" id="macro-p-val" style="color:var(--teal)">0<span style="font-size:0.72rem;color:var(--muted)">/135g</span></div>
-        <div class="macro-prog-lbl">Protein</div>
-        <div class="macro-prog-track"><div class="macro-prog-fill" id="macro-p-fill" style="width:0%;background:var(--teal)"></div></div>
-      </div>
-      <div class="macro-prog-box">
-        <div class="macro-prog-val" id="macro-c-val" style="color:var(--gold)">0<span style="font-size:0.72rem;color:var(--muted)">/90g</span></div>
-        <div class="macro-prog-lbl">Carbs</div>
-        <div class="macro-prog-track"><div class="macro-prog-fill" id="macro-c-fill" style="width:0%;background:var(--gold)"></div></div>
-      </div>
-      <div class="macro-prog-box">
-        <div class="macro-prog-val" id="macro-f-val" style="color:var(--purple)">0<span style="font-size:0.72rem;color:var(--muted)">/60g</span></div>
-        <div class="macro-prog-lbl">Fat</div>
-        <div class="macro-prog-track"><div class="macro-prog-fill" id="macro-f-fill" style="width:0%;background:var(--purple)"></div></div>
-      </div>
-      <div class="macro-prog-box">
-        <div class="macro-prog-val" id="macro-fib-val" style="color:var(--green)">0<span style="font-size:0.72rem;color:var(--muted)">/25g</span></div>
-        <div class="macro-prog-lbl">Fiber</div>
-        <div class="macro-prog-track"><div class="macro-prog-fill" id="macro-fib-fill" style="width:0%;background:var(--green)"></div></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- BARCODE SCANNER CARD -->
-  <div class="scanner-card">
-    <div class="card-title"><div class="dot" style="background:var(--rose)"></div>Food Barcode Scanner</div>
-    <button class="scanner-btn-main" id="start-scan-btn" onclick="toggleCameraScanner()">
-      📷 <span>Open Camera Scanner</span>
-    </button>
-    <div id="scanner-viewport-box">
-      <div id="barcode-reader"></div>
-    </div>
-
-    <div class="manual-input-box">
-      <input type="text" id="manual-barcode-input" placeholder="Or enter barcode numbers (e.g. 3017620422003)" />
-      <button onclick="handleManualLookup()">Lookup</button>
-    </div>
-
-    <!-- SCANNED RESULT CARD -->
-    <div class="food-result-card" id="food-result-card">
-      <div class="food-result-header">
-        <img id="scanned-img" class="food-result-img" src="" alt="Food preview" onerror="this.style.display='none'" />
-        <div>
-          <div class="food-result-title" id="scanned-name">Product Name</div>
-          <div class="food-result-brand" id="scanned-brand">Brand</div>
-        </div>
-      </div>
-      <div class="food-result-macros">
-        <span>🔥 <span id="scanned-cal">0</span> kcal</span>
-        <span style="color:var(--teal)">💪 <span id="scanned-p">0</span>g P</span>
-        <span style="color:var(--gold)">🌾 <span id="scanned-c">0</span>g C</span>
-        <span style="color:var(--purple)">🥑 <span id="scanned-f">0</span>g F</span>
-      </div>
-      <div class="food-result-actions">
-        <input type="number" id="scanned-servings" value="1" step="0.25" min="0.25" style="width:70px" oninput="updateScannedTotals()" />
-        <select id="scanned-meal-type">
-          <option value="breakfast">☀️ Breakfast</option>
-          <option value="lunch">🥗 Lunch</option>
-          <option value="dinner">🍽️ Dinner</option>
-          <option value="snack" selected>🍎 Snack</option>
-        </select>
-        <button class="log-add-btn" onclick="logScannedFood()">+ Add to Food Log</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- QUICK CUSTOM FOOD ADD CARD -->
-  <div class="card">
-    <div class="card-title"><div class="dot" style="background:var(--teal)"></div>Quick Custom Entry (No Barcode)</div>
-    <div style="display:flex;flex-direction:column;gap:8px;">
-      <input type="text" id="custom-name" placeholder="Food Name (e.g. Fairlife Shake, Eggs & Spinach)" style="background:var(--card2);border:1px solid var(--border);border-radius:8px;padding:9px 12px;color:var(--text);font-family:'Outfit',sans-serif;font-size:0.85rem;outline:none;" />
-      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;">
-        <input type="number" id="custom-cal" placeholder="Calories" style="background:var(--card2);border:1px solid var(--border);border-radius:8px;padding:8px;color:var(--text);font-size:0.8rem;" />
-        <input type="number" id="custom-p" placeholder="Prot (g)" style="background:var(--card2);border:1px solid var(--border);border-radius:8px;padding:8px;color:var(--text);font-size:0.8rem;" />
-        <input type="number" id="custom-c" placeholder="Carb (g)" style="background:var(--card2);border:1px solid var(--border);border-radius:8px;padding:8px;color:var(--text);font-size:0.8rem;" />
-        <input type="number" id="custom-f" placeholder="Fat (g)" style="background:var(--card2);border:1px solid var(--border);border-radius:8px;padding:8px;color:var(--text);font-size:0.8rem;" />
-      </div>
-      <div style="display:flex;gap:8px;">
-        <select id="custom-meal-type" style="background:var(--card2);border:1px solid var(--border);border-radius:8px;padding:8px;color:var(--text);font-family:'Outfit',sans-serif;font-size:0.82rem;">
-          <option value="breakfast">☀️ Breakfast</option>
-          <option value="lunch">🥗 Lunch</option>
-          <option value="dinner">🍽️ Dinner</option>
-          <option value="snack">🍎 Snack</option>
-        </select>
-        <button onclick="addCustomFood()" style="flex:1;background:var(--teal-dim);border:1px solid var(--teal);color:var(--teal);border-radius:8px;font-weight:700;font-size:0.85rem;cursor:pointer;">+ Add Custom Food</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- DAILY MEAL LOG -->
-  <div class="meal-log-section">
-    <div class="meal-log-title"><span>☀️ Breakfast Log</span><span id="bf-total-meta" style="font-size:0.75rem;color:var(--muted)">0 kcal</span></div>
-    <div class="meal-log-items" id="breakfast-log-list"></div>
-  </div>
-
-  <div class="meal-log-section">
-    <div class="meal-log-title"><span>🥗 Lunch Log</span><span id="lunch-total-meta" style="font-size:0.75rem;color:var(--muted)">0 kcal</span></div>
-    <div class="meal-log-items" id="lunch-log-list"></div>
-  </div>
-
-  <div class="meal-log-section">
-    <div class="meal-log-title"><span>🍽️ Dinner Log</span><span id="dinner-total-meta" style="font-size:0.75rem;color:var(--muted)">0 kcal</span></div>
-    <div class="meal-log-items" id="dinner-log-list"></div>
-  </div>
-
-  <div class="meal-log-section">
-    <div class="meal-log-title"><span>🍎 Snacks Log</span><span id="snack-total-meta" style="font-size:0.75rem;color:var(--muted)">0 kcal</span></div>
-    <div class="meal-log-items" id="snack-log-list"></div>
-  </div>
-
-  <button onclick="clearTodayLog()" style="width:100%;padding:11px;border-radius:11px;background:transparent;border:1px solid var(--border);color:var(--muted);font-family:'Outfit',sans-serif;font-size:0.8rem;cursor:pointer;margin-top:8px;">🗑️ Reset Today's Food Log</button>
-</div>
 
 <!-- ══ WORKOUT ══ -->
 <div class="page" id="page-workout">
@@ -747,26 +641,26 @@
 
   <div class="alert-box teal">🔑 <strong>The Golden Rule:</strong> Ozempic + Vyvanse suppress your appetite all day. If you wait until you're hungry, you won't eat enough and your body will scream at night. Eat on the schedule below — even if you're not hungry.</div>
 
-  <!-- Macro targets -->
-  <div class="card">
-    <div class="card-title"><div class="dot" style="background:var(--gold)"></div>Daily Macro Targets</div>
-    <div class="pill-row" style="margin-bottom:12px;">
-      <button class="pill selected" onclick="showMacros('push',this)">🟢 Push Phase</button>
-      <button class="pill" onclick="showMacros('protect',this)">🟡 Protect Phase</button>
+    <!-- Macro targets -->
+    <div class="card">
+      <div class="card-title"><div class="dot" style="background:var(--gold)"></div>Daily Macro Targets</div>
+      <div class="pill-row" style="margin-bottom:12px;">
+        <button class="pill selected" onclick="showMacros('push',this)">🟢 Push Phase</button>
+        <button class="pill" onclick="showMacros('protect',this)">🟡 Protect Phase</button>
+      </div>
+      <div id="macros-push" class="macro-row">
+        <div class="macro-box"><div class="macro-num" style="color:var(--rose)">1,550</div><div class="macro-lbl">Calories</div></div>
+        <div class="macro-box"><div class="macro-num" style="color:var(--teal)">135g</div><div class="macro-lbl">Protein</div></div>
+        <div class="macro-box"><div class="macro-num" style="color:var(--gold)">90g</div><div class="macro-lbl">Carbs</div></div>
+        <div class="macro-box"><div class="macro-num" style="color:var(--purple)">60g</div><div class="macro-lbl">Fat</div></div>
+      </div>
+      <div id="macros-protect" class="macro-row" style="display:none;">
+        <div class="macro-box"><div class="macro-num" style="color:var(--rose)">1,700</div><div class="macro-lbl">Calories</div></div>
+        <div class="macro-box"><div class="macro-num" style="color:var(--teal)">135g</div><div class="macro-lbl">Protein</div></div>
+        <div class="macro-box"><div class="macro-num" style="color:var(--gold)">75g</div><div class="macro-lbl">Carbs</div></div>
+        <div class="macro-box"><div class="macro-num" style="color:var(--purple)">70g</div><div class="macro-lbl">Fat</div></div>
+      </div>
     </div>
-    <div id="macros-push" class="macro-row">
-      <div class="macro-box"><div class="macro-num" style="color:var(--rose)">1,550</div><div class="macro-lbl">Calories</div></div>
-      <div class="macro-box"><div class="macro-num" style="color:var(--teal)">135g</div><div class="macro-lbl">Protein</div></div>
-      <div class="macro-box"><div class="macro-num" style="color:var(--gold)">90g</div><div class="macro-lbl">Carbs</div></div>
-      <div class="macro-box"><div class="macro-num" style="color:var(--purple)">60g</div><div class="macro-lbl">Fat</div></div>
-    </div>
-    <div id="macros-protect" class="macro-row" style="display:none;">
-      <div class="macro-box"><div class="macro-num" style="color:var(--rose)">1,700</div><div class="macro-lbl">Calories</div></div>
-      <div class="macro-box"><div class="macro-num" style="color:var(--teal)">135g</div><div class="macro-lbl">Protein</div></div>
-      <div class="macro-box"><div class="macro-num" style="color:var(--gold)">75g</div><div class="macro-lbl">Carbs</div></div>
-      <div class="macro-box"><div class="macro-num" style="color:var(--purple)">70g</div><div class="macro-lbl">Fat</div></div>
-    </div>
-  </div>
 
   <!-- Meals -->
   <div class="meal-block">
@@ -949,9 +843,165 @@
       <div class="check-item" onclick="toggle(this)"><div class="check-box">✓</div><div><div class="check-label">Portion pumpkin seeds into 1 oz bags (×5)</div><div class="check-sub">One bag per day — grab without thinking</div></div></div>
       <div class="check-item" onclick="toggle(this)"><div class="check-box">✓</div><div><div class="check-label">Grill or bake 1-2 lbs chicken breast</div><div class="check-sub">Slice and refrigerate — instant lunch protein all week</div></div></div>
       <div class="check-item" onclick="toggle(this)"><div class="check-box">✓</div><div><div class="check-label">Check Fairlife shake supply</div><div class="check-sub">Need 5-7 for morning break-fasts</div></div></div>
-      <div class="check-item" onclick="toggle(this)"><div class="check-box">✓</div><div><div class="check-label">Pop 2 cups air popcorn, store in airtight container</div><div class="check-sub">Ready for closing snack all week</div></div></div>
+  </div>
+</div>
+</div>
+
+<!-- ══ ANTI-INFLAMMATORY PAGE ══ -->
+<div class="page" id="page-anti-inflammatory">
+  <div class="page-header">
+    <h1>Anti-Inflammatory Reset 🔥</h1>
+    <p>7-Day Low-FODMAP & Red-Light Free Protocol. Calms gut pain, cramps, and joint inflammation while supporting your 10 lb fat loss target!</p>
+  </div>
+
+  <div class="alert-box gold" style="border:1px solid rgba(251,113,133,0.4); background:rgba(251,113,133,0.12); margin-bottom:14px;">
+    🔥 <strong>FLARE-UP & GUT RESET ACTIVE:</strong> 7-Day Low-FODMAP & Red-Light Free Protocol. Calms gut lining, eliminates gas/cramping, and lowers systemic pain. Strictly targets <strong>1,550 kcal / 135g Protein</strong> to maintain your 10 lb fat-loss deficit!
+  </div>
+
+  <!-- Red Light & High FODMAP Pause List -->
+  <div class="card" style="border:1px solid rgba(251,113,133,0.3); margin-bottom:16px;">
+    <div class="card-title" style="color:var(--rose)"><div class="dot" style="background:var(--rose)"></div>🚨 Paused Triggers During Flare-Up</div>
+    <div style="font-size:0.83rem; color:var(--text); line-height:1.5;">
+      <p style="margin-bottom:6px;"><strong>STOP:</strong> Garlic (powder/fresh), Onions (powder/fresh), Egg Yolks, Sweet Potatoes, Maple Syrup, Flaxseed, Butter & Romaine Lettuce, Celery, Cauliflower, Apples, Pears, Wheat/Gluten, Regular Lactose, & Artificial Sweeteners.</p>
+      <p style="color:var(--muted); font-size:0.78rem;">Garlic and onions are the #1 hidden cause of gut spasms and cramping. Eliminating them for 7 days gives your gut mucosal lining a complete reset.</p>
     </div>
   </div>
+
+    <!-- Flare-Up Meals Block -->
+    <div class="meal-block">
+      <div class="meal-time">
+        <div class="meal-time-badge" style="background:rgba(251,113,133,0.2); color:var(--rose)">8:30–9:00 AM</div>
+        <div><div class="meal-title">Break-Fast — GENTLE PROTEIN</div><div class="meal-note">Target: 25-30g protein • Low FODMAP • Vyvanse pairing</div></div>
+      </div>
+      <div class="meal-options">
+        <div class="meal-option" onclick="selectMeal(this)">
+          <div class="meal-option-name">🍳 3 Egg Whites Scramble + Baby Spinach + GF Toast</div>
+          <div class="meal-option-detail">3 egg whites scrambled in olive oil with fresh baby spinach + 1 slice GF toast + sea salt (NO egg yolks or garlic!)</div>
+          <div class="meal-protein">~25g protein • Zero gut stress</div>
+        </div>
+        <div class="meal-option" onclick="selectMeal(this)">
+          <div class="meal-option-name">🥤 Fairlife Core Power Shake</div>
+          <div class="meal-option-detail">1 bottle ultra-filtered lactose-free shake • Ready to drink</div>
+          <div class="meal-protein">~26g-30g protein</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="meal-block">
+      <div class="meal-time">
+        <div class="meal-time-badge" style="background:rgba(251,113,133,0.2); color:var(--rose)">10:30 AM ⏰</div>
+        <div><div class="meal-title">Mid-Morning Fuel</div><div class="meal-note">Set alarm • 15-20g protein • Low FODMAP crunch</div></div>
+      </div>
+      <div class="meal-options">
+        <div class="meal-option" onclick="selectMeal(this)">
+          <div class="meal-option-name">🎃 Lactose-Free Cottage Cheese + Pumpkin Seeds</div>
+          <div class="meal-option-detail">½ cup LF cottage cheese + 1 tbsp pumpkin seeds + cinnamon (NO apples during flare-up)</div>
+          <div class="meal-protein">~22g protein • Soothing & crunchy</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="meal-block">
+      <div class="meal-time">
+        <div class="meal-time-badge" style="background:rgba(251,113,133,0.2); color:var(--rose)">1:00 PM</div>
+        <div><div class="meal-title">Lunch — GUT SOOTHING BISTRO</div><div class="meal-note">Target: 30g protein • Small volume, easy digestion</div></div>
+      </div>
+      <div class="meal-options">
+        <div class="meal-option" onclick="selectMeal(this)">
+          <div class="meal-option-name">🐔 Shredded Chicken Breast + Cucumber & Rice Cake</div>
+          <div class="meal-option-detail">3-4 oz shredded chicken (seasoned with salt, pepper, olive oil — NO garlic/onion powder!) + sliced cucumber + 1 rice cake</div>
+          <div class="meal-protein">~30g protein • Zero gas or bloating</div>
+        </div>
+        <div class="meal-option" onclick="selectMeal(this)">
+          <div class="meal-option-name">🐟 Wild Salmon or Tuna Spinach Bowl</div>
+          <div class="meal-option-detail">1 can tuna (in water) or 3 oz wild salmon + olive oil + sea salt + cucumber over baby spinach</div>
+          <div class="meal-protein">~28g protein • Anti-inflammatory Omega-3s</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="meal-block">
+      <div class="meal-time">
+        <div class="meal-time-badge" style="background:rgba(251,113,133,0.2); color:var(--rose)">4:00 PM</div>
+        <div><div class="meal-title">Afternoon Snack</div><div class="meal-note">Pre-workout fuel • Low-FODMAP berries or shake</div></div>
+      </div>
+      <div class="meal-options">
+        <div class="meal-option" onclick="selectMeal(this)">
+          <div class="meal-option-name">🫐 Fresh Blueberries + Pumpkin Seeds</div>
+          <div class="meal-option-detail">½ cup fresh blueberries or strawberries + 1 tbsp pumpkin seeds</div>
+          <div class="meal-protein">~7g protein + antioxidants</div>
+        </div>
+        <div class="meal-option" onclick="selectMeal(this)">
+          <div class="meal-option-name">🥤 Fairlife Core Power Shake</div>
+          <div class="meal-option-detail">1 bottle lactose-free shake • Quick fuel</div>
+          <div class="meal-protein">~26g protein</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="meal-block">
+      <div class="meal-time">
+        <div class="meal-time-badge" style="background:rgba(251,113,133,0.2); color:var(--rose)">6:15 PM</div>
+        <div><div class="meal-title">Dinner — ANTI-INFLAMMATORY RECOVERY</div><div class="meal-note">Target: 35g protein • Sautéed in Garlic-Infused Olive Oil</div></div>
+      </div>
+      <div class="meal-options">
+        <div class="meal-option" onclick="selectMeal(this)">
+          <div class="meal-option-name">🐟 Baked Salmon + Sautéed Zucchini & Carrots + Potato</div>
+          <div class="meal-option-detail">5-6 oz salmon + zucchini & carrots sautéed in garlic-infused olive oil + 1 small baked white/yellow potato (swap for sweet potato)</div>
+          <div class="meal-protein">~38g protein • Deep healing</div>
+        </div>
+        <div class="meal-option" onclick="selectMeal(this)">
+          <div class="meal-option-name">🥩 Lean Beef + Sautéed Zucchini + Rice</div>
+          <div class="meal-option-detail">5 oz sirloin or flank steak + zucchini sautéed in olive oil & herbs + ½ cup white rice</div>
+          <div class="meal-protein">~35g protein • High iron & zinc</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="meal-block">
+      <div class="meal-time">
+        <div class="meal-time-badge" style="background:rgba(251,113,133,0.2); color:var(--rose)">6:45 PM 🌙</div>
+        <div><div class="meal-title">Closing Snack + Peppermint Tea</div><div class="meal-note">Gut muscle relaxant • Teeth brushed at 7:00 PM</div></div>
+      </div>
+      <div class="meal-options">
+        <div class="meal-option" onclick="selectMeal(this)">
+          <div class="meal-option-name">🍿 Air-Popped Popcorn + Peppermint Tea</div>
+          <div class="meal-option-detail">2 cups popcorn with sea salt + 1 cup warm Peppermint Tea (relaxes intestinal smooth muscles)</div>
+          <div class="meal-protein">~4g protein • Savory crunch</div>
+        </div>
+        <div class="meal-option" onclick="selectMeal(this)">
+          <div class="meal-option-name">🍘 Rice Cakes + Olive Oil & Sea Salt</div>
+          <div class="meal-option-detail">2 plain rice cakes drizzled with olive oil & sea salt + Peppermint Tea</div>
+          <div class="meal-protein">~3g protein</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Nighttime Repair Drink Cocktail -->
+    <div class="card" style="background:linear-gradient(135deg, rgba(167,139,250,0.15) 0%, rgba(94,231,208,0.1) 100%); border:1px solid rgba(167,139,250,0.3); margin-top:16px;">
+      <div class="card-title" style="color:var(--purple)"><div class="dot" style="background:var(--purple)"></div>🍹 Nighttime Gut & Joint Repair Drink (45m Before Bed)</div>
+      <div style="font-size:0.83rem; color:var(--text); line-height:1.55;">
+        <p>Mix into 500 ml water + 1 scoop BioSteel Electrolytes:</p>
+        <ul style="padding-left:18px; margin: 6px 0;">
+          <li><strong>1-2 scoops</strong> CanPrev Collagen Powder</li>
+          <li><strong>1 tsp (3g)</strong> CanPrev Glycine Powder</li>
+          <li><strong>¾ tsp (4,000 mg)</strong> Vitamin C Powder</li>
+        </ul>
+        <p style="color:var(--muted); font-size:0.78rem;">Repairs gut mucosal barrier, calms joint pain, and promotes deep parasympathetic sleep.</p>
+      </div>
+    </div>
+
+    <div class="alert-box gold" style="margin-top:14px;">🪥 <strong>7:00 PM — Kitchen closed. Brush teeth immediately.</strong> Rest and let your body heal tonight.</div>
 </div>
 
 <!-- ══ TAPPING ══ -->
@@ -1244,8 +1294,16 @@ for (let i = 0; i < totalCups; i++) {
 function showPage(id, btn) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
-  document.getElementById('page-'+id).classList.add('active');
-  btn.classList.add('active');
+  const page = document.getElementById('page-'+id);
+  if (page) page.classList.add('active');
+  if (btn) btn.classList.add('active');
+  try {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+  } catch(e) {
+    window.scrollTo(0, 0);
+  }
+  document.documentElement.scrollTop = 0;
+  document.body.scrollTop = 0;
 }
 
 // DAY SELECTOR
@@ -1355,6 +1413,38 @@ function showMacros(phase, btn) {
   btn.classList.add('selected');
   document.getElementById('macros-push').style.display = phase==='push'?'grid':'none';
   document.getElementById('macros-protect').style.display = phase==='protect'?'grid':'none';
+}
+
+// NUTRITION MODE SWITCH
+function switchNutritionMode(mode) {
+  const btnBaseline = document.getElementById('btn-mode-baseline');
+  const btnFlareup = document.getElementById('btn-mode-flareup');
+  const viewBaseline = document.getElementById('nutrition-mode-baseline');
+  const viewFlareup = document.getElementById('nutrition-mode-flareup');
+  const badge = document.getElementById('current-mode-badge');
+
+  if (mode === 'flareup') {
+    if (btnBaseline) btnBaseline.classList.remove('selected');
+    if (btnFlareup) btnFlareup.classList.add('selected');
+    if (viewBaseline) viewBaseline.style.display = 'none';
+    if (viewFlareup) viewFlareup.style.display = 'block';
+    if (badge) {
+      badge.textContent = '🔥 Flare-Up Reset Active';
+      badge.style.background = 'rgba(251,113,133,0.2)';
+      badge.style.color = 'var(--rose)';
+    }
+  } else {
+    if (btnFlareup) btnFlareup.classList.remove('selected');
+    if (btnBaseline) btnBaseline.classList.add('selected');
+    if (viewFlareup) viewFlareup.style.display = 'none';
+    if (viewBaseline) viewBaseline.style.display = 'block';
+    if (badge) {
+      badge.textContent = '🟢 Baseline Active';
+      badge.style.background = 'var(--teal-dim)';
+      badge.style.color = 'var(--teal)';
+    }
+  }
+  showToast(mode === 'flareup' ? '🔥 Switched to Anti-Inflammatory Flare-Up Mode' : '🟢 Switched to Baseline Nutrition');
 }
 
 // TOAST
