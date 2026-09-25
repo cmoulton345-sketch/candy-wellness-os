@@ -789,14 +789,63 @@
 </div>
 
 <script>
-  // STATE MANAGEMENT
-  let loggedFoods = JSON.parse(localStorage.getItem('colleen_logged_foods') || '[]');
-  let checkIns = JSON.parse(localStorage.getItem('colleen_checkins') || '[]');
+  // TAB SWITCHING (DEFINED FIRST FOR GUARANTEED AVAILABILITY)
+  window.switchTab = function(id) {
+    try {
+      const pages = document.querySelectorAll('.page');
+      for (let i = 0; i < pages.length; i++) {
+        pages[i].style.display = 'none';
+        pages[i].classList.remove('active');
+      }
+
+      const tabs = document.querySelectorAll('.nav-tab');
+      for (let i = 0; i < tabs.length; i++) {
+        tabs[i].classList.remove('active');
+      }
+
+      const targetPage = document.getElementById('page-' + id);
+      if (targetPage) {
+        targetPage.style.display = 'block';
+        targetPage.classList.add('active');
+      }
+
+      const targetTab = document.getElementById('tab-' + id);
+      if (targetTab) {
+        targetTab.classList.add('active');
+      }
+
+      if (id !== 'scanner' && typeof stopCameraScanner === 'function') {
+        stopCameraScanner();
+      }
+
+      try {
+        window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+      } catch(e) {
+        window.scrollTo(0, 0);
+      }
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    } catch(err) {
+      console.error('switchTab error:', err);
+    }
+  };
+
+  // STATE MANAGEMENT WITH TRY/CATCH SAFETY
+  let loggedFoods = [];
+  try {
+    loggedFoods = JSON.parse(localStorage.getItem('colleen_logged_foods') || '[]');
+  } catch(e) { console.warn('LocalStorage unavailable:', e); }
+
+  let checkIns = [];
+  try {
+    checkIns = JSON.parse(localStorage.getItem('colleen_checkins') || '[]');
+  } catch(e) { console.warn('LocalStorage unavailable:', e); }
+
   let html5QrcodeScanner = null;
 
   document.addEventListener('DOMContentLoaded', () => {
-    updateLoggedDisplay();
-    updateCheckInHistory();
+    try { updateLoggedDisplay(); } catch(e) {}
+    try { updateCheckInHistory(); } catch(e) {}
     switchTab('home');
 
     const handleTabClick = function(e) {
@@ -811,43 +860,6 @@
 
     document.addEventListener('click', handleTabClick);
   });
-
-  // TAB SWITCHING
-  function switchTab(id) {
-    const pages = document.querySelectorAll('.page');
-    for (let i = 0; i < pages.length; i++) {
-      pages[i].style.display = 'none';
-      pages[i].classList.remove('active');
-    }
-
-    const tabs = document.querySelectorAll('.nav-tab');
-    for (let i = 0; i < tabs.length; i++) {
-      tabs[i].classList.remove('active');
-    }
-
-    const targetPage = document.getElementById('page-' + id);
-    if (targetPage) {
-      targetPage.style.display = 'block';
-      targetPage.classList.add('active');
-    }
-
-    const targetTab = document.getElementById('tab-' + id);
-    if (targetTab) {
-      targetTab.classList.add('active');
-    }
-
-    if (id !== 'scanner' && typeof stopCameraScanner === 'function') {
-      stopCameraScanner();
-    }
-
-    try {
-      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
-    } catch(e) {
-      window.scrollTo(0, 0);
-    }
-    document.documentElement.scrollTop = 0;
-    document.body.scrollTop = 0;
-  }
 
   // NUTRITION MODE SWITCH
   function switchColleenMealsMode(mode) {
