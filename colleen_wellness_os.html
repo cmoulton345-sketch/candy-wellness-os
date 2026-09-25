@@ -186,6 +186,7 @@
     <button class="nav-tab" onclick="switchTab('workouts')">🏋️ Band & 5lb Workouts</button>
     <button class="nav-tab" onclick="switchTab('meals')">🥗 High-Protein Meals</button>
     <button class="nav-tab" onclick="switchTab('anti-inflammatory')" style="color:var(--rose);">🔥 Anti-Inflammatory</button>
+    <button class="nav-tab" onclick="switchTab('scanner')" style="color:var(--cyan);">🔍 Barcode & Scanner</button>
     <button class="nav-tab" onclick="switchTab('tracker')">📊 Symptom Tracker</button>
   </div>
 </nav>
@@ -718,6 +719,95 @@
     </div>
 
 
+<!-- PAGE: BARCODE & MACRO SCANNER -->
+<div id="page-scanner" class="page">
+  <div class="page-title">Barcode & Food Scanner 🔍</div>
+  <div class="page-sub">Scan barcodes or add custom foods. Adjust portions (1 whole, ½ half, ¼ quarter, 1.5, 2x) & edit calories anytime!</div>
+
+  <!-- DAILY MACRO SUMMARY HEADER -->
+  <div class="card" style="background:linear-gradient(135deg, rgba(56,189,248,0.1) 0%, rgba(16,185,129,0.08) 100%); border:1px solid rgba(56,189,248,0.25);">
+    <div class="card-header"><span class="card-title-text"><span class="dot" style="background:var(--cyan);"></span> TODAY'S LOGGED NUTRITION TOTALS</span></div>
+    <div class="goal-metrics" style="margin:10px 0 0;">
+      <div class="metric-box"><div class="metric-val" id="sum-cal" style="color:var(--rose);">0</div><div class="metric-label">Calories</div></div>
+      <div class="metric-box"><div class="metric-val" id="sum-prot" style="color:var(--emerald);">0g</div><div class="metric-label">Protein</div></div>
+      <div class="metric-box"><div class="metric-val" id="sum-carb" style="color:var(--gold);">0g</div><div class="metric-label">Carbs</div></div>
+      <div class="metric-box"><div class="metric-val" id="sum-fat" style="color:var(--purple);">0g</div><div class="metric-label">Fat</div></div>
+    </div>
+  </div>
+
+  <!-- SCANNER & QUICK ADD ACTION BUTTONS -->
+  <div class="card">
+    <div class="card-header"><span class="card-title-text"><span class="dot" style="background:var(--rose);"></span> Log Food Item</span></div>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+      <button class="btn btn-primary" onclick="toggleCameraScanner()" style="font-size:0.86rem; padding:12px;">📸 Scan Barcode</button>
+      <button class="btn btn-secondary" onclick="openManualModal()" style="font-size:0.86rem; padding:12px; background:rgba(255,255,255,0.08);">✏️ Custom / Quick Add</button>
+    </div>
+    <div id="reader"></div>
+  </div>
+
+  <!-- SCANNED / SELECTED ITEM ADJUSTMENT CARD (MYFITNESSPAL STYLE) -->
+  <div class="card" id="adjust-card" style="display:none; border:1.5px solid var(--rose); background:var(--surface);">
+    <div class="card-header" style="color:var(--rose);"><span class="card-title-text"><span class="dot" style="background:var(--rose);"></span> ⚙️ ADJUST PORTION & MACROS (MyFitnessPal Style)</span></div>
+    
+    <div class="form-group">
+      <label class="form-label">Food Item Name</label>
+      <input type="text" id="adj-name" class="form-input" style="font-weight:700; font-size:1rem;" />
+    </div>
+
+    <!-- PORTION / SERVING PRESET BUTTONS -->
+    <div class="form-group">
+      <label class="form-label">Portion Size Presets (Tap to Choose):</label>
+      <div style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom:8px;">
+        <button type="button" class="portion-btn" onclick="setPortion(1.0, this)" style="padding:6px 12px; border-radius:50px; border:1px solid var(--border); background:rgba(255,255,255,0.08); color:var(--text); cursor:pointer; font-size:0.78rem; font-weight:600;">1 Whole (1.0)</button>
+        <button type="button" class="portion-btn" onclick="setPortion(0.5, this)" style="padding:6px 12px; border-radius:50px; border:1px solid var(--border); background:rgba(255,255,255,0.08); color:var(--text); cursor:pointer; font-size:0.78rem; font-weight:600;">½ Half (0.5)</button>
+        <button type="button" class="portion-btn" onclick="setPortion(0.25, this)" style="padding:6px 12px; border-radius:50px; border:1px solid var(--border); background:rgba(255,255,255,0.08); color:var(--text); cursor:pointer; font-size:0.78rem; font-weight:600;">¼ Quarter (0.25)</button>
+        <button type="button" class="portion-btn" onclick="setPortion(0.75, this)" style="padding:6px 12px; border-radius:50px; border:1px solid var(--border); background:rgba(255,255,255,0.08); color:var(--text); cursor:pointer; font-size:0.78rem; font-weight:600;">¾ Three Quarters (0.75)</button>
+        <button type="button" class="portion-btn" onclick="setPortion(1.5, this)" style="padding:6px 12px; border-radius:50px; border:1px solid var(--border); background:rgba(255,255,255,0.08); color:var(--text); cursor:pointer; font-size:0.78rem; font-weight:600;">1.5 Servings</button>
+        <button type="button" class="portion-btn" onclick="setPortion(2.0, this)" style="padding:6px 12px; border-radius:50px; border:1px solid var(--border); background:rgba(255,255,255,0.08); color:var(--text); cursor:pointer; font-size:0.78rem; font-weight:600;">2 Whole (2.0)</button>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Serving Multiplier (e.g. 0.5 for ½ banana or ½ tuna can)</label>
+      <input type="number" step="0.05" id="adj-servings" class="form-input" value="1" oninput="recalcMacrosFromServings()" />
+    </div>
+
+    <!-- NUTRITION VALUES (AUTOCALCULATED OR MANUALLY EDITABLE) -->
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:12px;">
+      <div class="form-group">
+        <label class="form-label">Calories (kcal)</label>
+        <input type="number" id="adj-cal" class="form-input" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">Protein (g)</label>
+        <input type="number" id="adj-prot" class="form-input" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">Carbs (g)</label>
+        <input type="number" id="adj-carb" class="form-input" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">Fat (g)</label>
+        <input type="number" id="adj-fat" class="form-input" />
+      </div>
+    </div>
+
+    <div style="display:grid; grid-template-columns: 2fr 1fr; gap:10px;">
+      <button type="button" class="btn btn-primary" onclick="confirmAddOrUpdateLoggedItem()" style="padding:12px; font-weight:700;">✓ Save to Food Log</button>
+      <button type="button" class="btn" onclick="cancelAdjustCard()" style="background:rgba(255,255,255,0.08); color:var(--muted); padding:12px;">Cancel</button>
+    </div>
+  </div>
+
+  <!-- TODAY'S LOGGED FOOD ITEMS -->
+  <div class="card">
+    <div class="card-header" style="display:flex; justify-content:space-between; align-items:center;">
+      <span class="card-title-text"><span class="dot" style="background:var(--emerald);"></span> TODAY'S LOGGED FOODS</span>
+      <button onclick="clearDailyLog()" style="background:transparent; border:none; color:var(--rose); font-size:0.75rem; cursor:pointer; font-weight:600;">🗑️ Clear All</button>
+    </div>
+    <div id="log-list-container" class="checklist" style="gap:8px;"></div>
+  </div>
+</div>
+
 <!-- PAGE 5: SYMPTOM TRACKER -->
 <div id="page-tracker" class="page">
   <div class="page-title">Symptom & Cortisol Log 📊</div>
@@ -883,17 +973,15 @@
 
   // COPY APP LINK
   function copyAppUrl() {
-    navigator.clipboard.writeText(window.location.href).then(() => {
-      alert('App URL copied to clipboard! You can now text or share this link with Colleen.');
-    }).catch(() => {
-      alert('App URL: ' + window.location.href);
-    });
-  }
+    navigator.clipboard.writeText(window.location.  // MACRO SCANNER LOGIC & ADJUSTMENT STATE
+  let baseItemToAdjust = null;
+  let editingLogIndex = -1;
 
-  // MACRO SCANNER LOGIC
   function updateLoggedDisplay() {
     const listEl = document.getElementById('log-list-container');
     let totalCal = 0, totalProt = 0, totalCarb = 0, totalFat = 0;
+
+    if (!listEl) return;
 
     if (loggedFoods.length === 0) {
       listEl.innerHTML = `<div style="text-align:center; color:var(--muted); font-size:0.85rem; padding:14px;">No food items logged today yet.</div>`;
@@ -904,38 +992,117 @@
         totalCarb += Number(item.carbs || 0);
         totalFat += Number(item.fat || 0);
 
+        const portionLabel = item.servings ? (item.servings === 1 ? '1 serving' : item.servings + ' servings') : '';
+
         return `
-          <div class="log-item">
+          <div class="log-item" style="display:flex; justify-content:space-between; align-items:center; background:var(--surface); padding:10px 14px; border-radius:12px; border:1px solid var(--border);">
             <div>
-              <div class="log-item-title">${item.name}</div>
-              <div class="log-item-sub">${item.calories} kcal • P: ${item.protein}g | C: ${item.carbs}g | F: ${item.fat}g</div>
+              <div class="log-item-title" style="font-weight:700; font-size:0.9rem;">${item.name} ${portionLabel ? '<span style="font-size:0.75rem; color:var(--rose); font-weight:500;">(' + portionLabel + ')</span>' : ''}</div>
+              <div class="log-item-sub" style="font-size:0.78rem; color:var(--muted); margin-top:2px;">${item.calories} kcal • P: ${item.protein}g | C: ${item.carbs}g | F: ${item.fat}g</div>
             </div>
-            <button onclick="removeFood(${idx})" style="background:transparent; border:none; color:var(--rose); cursor:pointer;">✕</button>
+            <div style="display:flex; gap:8px;">
+              <button onclick="editLoggedFood(${idx})" style="background:rgba(56,189,248,0.15); border:1px solid rgba(56,189,248,0.3); color:var(--cyan); padding:5px 10px; border-radius:8px; font-size:0.75rem; font-weight:600; cursor:pointer;">✏️ Edit</button>
+              <button onclick="removeFood(${idx})" style="background:rgba(251,113,133,0.15); border:1px solid rgba(251,113,133,0.3); color:var(--rose); padding:5px 10px; border-radius:8px; font-size:0.75rem; font-weight:600; cursor:pointer;">🗑️ Delete</button>
+            </div>
           </div>
         `;
       }).join('');
     }
 
-    document.getElementById('sum-cal').innerText = totalCal;
-    document.getElementById('sum-prot').innerText = totalProt + 'g';
-    document.getElementById('sum-carb').innerText = totalCarb + 'g';
-    document.getElementById('sum-fat').innerText = totalFat + 'g';
+    const sCal = document.getElementById('sum-cal');
+    const sProt = document.getElementById('sum-prot');
+    const sCarb = document.getElementById('sum-carb');
+    const sFat = document.getElementById('sum-fat');
+
+    if (sCal) sCal.innerText = totalCal;
+    if (sProt) sProt.innerText = totalProt + 'g';
+    if (sCarb) sCarb.innerText = totalCarb + 'g';
+    if (sFat) sFat.innerText = totalFat + 'g';
 
     localStorage.setItem('colleen_logged_foods', JSON.stringify(loggedFoods));
   }
 
   function handleManualAdd(e) {
     e.preventDefault();
-    const name = document.getElementById('m-name').value;
-    const calories = document.getElementById('m-cal').value;
-    const protein = document.getElementById('m-prot').value;
-    const carbs = document.getElementById('m-carb').value;
-    const fat = document.getElementById('m-fat').value;
+    const name = document.getElementById('m-name').value.trim() || 'Custom Food';
+    const calories = parseFloat(document.getElementById('m-cal').value) || 0;
+    const protein = parseFloat(document.getElementById('m-prot').value) || 0;
+    const carbs = parseFloat(document.getElementById('m-carb').value) || 0;
+    const fat = parseFloat(document.getElementById('m-fat').value) || 0;
 
-    loggedFoods.push({ name, calories, protein, carbs, fat });
-    updateLoggedDisplay();
     closeManualModal();
     e.target.reset();
+
+    openAdjustmentCard({ name, calories, protein, carbs, fat, servings: 1 });
+  }
+
+  function openAdjustmentCard(item, logIndex = -1) {
+    editingLogIndex = logIndex;
+    const servings = item.servings || 1;
+    baseItemToAdjust = {
+      name: item.name,
+      baseCal: item.calories / servings,
+      baseProt: item.protein / servings,
+      baseCarb: item.carbs / servings,
+      baseFat: item.fat / servings
+    };
+
+    document.getElementById('adj-name').value = item.name;
+    document.getElementById('adj-servings').value = servings;
+    document.getElementById('adj-cal').value = Math.round(item.calories);
+    document.getElementById('adj-prot').value = Math.round(item.protein);
+    document.getElementById('adj-carb').value = Math.round(item.carbs);
+    document.getElementById('adj-fat').value = Math.round(item.fat);
+
+    const card = document.getElementById('adjust-card');
+    card.style.display = 'block';
+    card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  function setPortion(multiplier, btnEl) {
+    document.getElementById('adj-servings').value = multiplier;
+    recalcMacrosFromServings();
+  }
+
+  function recalcMacrosFromServings() {
+    if (!baseItemToAdjust) return;
+    const servings = parseFloat(document.getElementById('adj-servings').value) || 1;
+    document.getElementById('adj-cal').value = Math.round(baseItemToAdjust.baseCal * servings);
+    document.getElementById('adj-prot').value = Math.round(baseItemToAdjust.baseProt * servings);
+    document.getElementById('adj-carb').value = Math.round(baseItemToAdjust.baseCarb * servings);
+    document.getElementById('adj-fat').value = Math.round(baseItemToAdjust.baseFat * servings);
+  }
+
+  function confirmAddOrUpdateLoggedItem() {
+    const name = document.getElementById('adj-name').value.trim() || 'Food Item';
+    const servings = parseFloat(document.getElementById('adj-servings').value) || 1;
+    const calories = Math.round(parseFloat(document.getElementById('adj-cal').value) || 0);
+    const protein = Math.round(parseFloat(document.getElementById('adj-prot').value) || 0);
+    const carbs = Math.round(parseFloat(document.getElementById('adj-carb').value) || 0);
+    const fat = Math.round(parseFloat(document.getElementById('adj-fat').value) || 0);
+
+    const newItem = { name, servings, calories, protein, carbs, fat };
+
+    if (editingLogIndex >= 0 && editingLogIndex < loggedFoods.length) {
+      loggedFoods[editingLogIndex] = newItem;
+    } else {
+      loggedFoods.push(newItem);
+    }
+
+    updateLoggedDisplay();
+    cancelAdjustCard();
+  }
+
+  function cancelAdjustCard() {
+    document.getElementById('adjust-card').style.display = 'none';
+    baseItemToAdjust = null;
+    editingLogIndex = -1;
+  }
+
+  function editLoggedFood(idx) {
+    if (idx >= 0 && idx < loggedFoods.length) {
+      openAdjustmentCard(loggedFoods[idx], idx);
+    }
   }
 
   function removeFood(idx) {
@@ -985,22 +1152,22 @@
       .then(data => {
         if (data.status === 1 && data.product) {
           const p = data.product;
-          const name = p.product_name || "Scanned Item";
+          const name = p.product_name || p.product_name_en || "Scanned Item";
           const nut = p.nutriments || {};
-          const calories = Math.round(nut['energy-kcal_serving'] || nut['energy-kcal_100g'] || 0);
-          const protein = Math.round(nut.proteins_serving || nut.proteins_100g || 0);
-          const carbs = Math.round(nut.carbohydrates_serving || nut.carbohydrates_100g || 0);
-          const fat = Math.round(nut.fat_serving || nut.fat_100g || 0);
+          const calories = parseFloat(nut['energy-kcal_serving'] || nut['energy-kcal_100g'] || nut['energy-kcal'] || 0);
+          const protein = parseFloat(nut.proteins_serving || nut.proteins_100g || 0);
+          const carbs = parseFloat(nut.carbohydrates_serving || nut.carbohydrates_100g || 0);
+          const fat = parseFloat(nut.fat_serving || nut.fat_100g || 0);
 
-          loggedFoods.push({ name, calories, protein, carbs, fat });
-          updateLoggedDisplay();
-          alert(`Logged: ${name} (${calories} kcal, ${protein}g protein)`);
+          openAdjustmentCard({ name, calories, protein, carbs, fat, servings: 1 });
         } else {
-          alert('Barcode scanned, but product details were not found in Open Food Facts. Try manual entry.');
+          alert('Barcode scanned, but product details were not found. Opening manual adjustment...');
+          openAdjustmentCard({ name: "Scanned Item", calories: 150, protein: 10, carbs: 15, fat: 3, servings: 1 });
         }
       })
       .catch(err => {
-        alert('Error fetching barcode data. Please use manual entry.');
+        alert('Error reaching nutrition database. Opening manual adjustment...');
+        openAdjustmentCard({ name: "Custom Item", calories: 100, protein: 10, carbs: 10, fat: 2, servings: 1 });
       });
   }
 
