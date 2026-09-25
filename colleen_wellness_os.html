@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Colleen's Cortisol-Smart Wellness OS</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+<style>
+  :root {
+    --bg: #0f172a;
+    --surface: #1e293b;
+    --card: #334155;
+    --card2: #1e293b;
+    --border: rgba(255, 255, 255, 0.1);
+    
+    --rose: #fb7185;
+    --rose-dim: rgba(251, 113, 133, 0.15);
+    --rose-glow: rgba(251, 113, 133, 0.3);
+    
+    --gold: #f59e0b;
+    --gold-dim: rgba(245, 158, 11, 0.15);
+    
+    --emerald: #10b981;
+    --emerald-dim: rgba(16, 185, 129, 0.15);
+    
+    --purple: #c084fc;
+    --purple-dim: rgba(192, 132, 252, 0.15);
+    
+    --cyan: #38bdf8;
+    --cyan-dim: rgba(56, 189, 248, 0.15);
+    
+    --text: #f8fafc;
+    --muted: #94a3b8;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Outfit', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; overflow-x: hidden; padding-bottom: 70px; }
+
+  /* HEADER & NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(15, 23, 42, 0.94); backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+    padding: 12px 16px 8px;
+  }
+  .nav-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
+  .nav-logo { font-size: 1.05rem; font-weight: 700; color: var(--rose); display: flex; align-items: center; gap: 8px; }
+  .nav-logo span { color: var(--muted); font-weight: 400; font-size: 0.85rem; }
+  .badge-hrt { background: var(--purple-dim); color: var(--purple); font-size: 0.7rem; padding: 3px 8px; border-radius: 50px; font-weight: 600; border: 1px solid rgba(192,132,252,0.3); }
+
+  .nav-tabs { display: flex; gap: 6px; overflow-x: auto; padding-bottom: 4px; scrollbar-width: none; }
+  .nav-tabs::-webkit-scrollbar { display: none; }
+  .nav-tab {
+    padding: 8px 14px; border-radius: 50px; border: none; cursor: pointer;
+    font-family: 'Outfit', sans-serif; font-size: 0.8rem; font-weight: 600;
+    background: transparent; color: var(--muted); white-space: nowrap; transition: all 0.2s;
+  }
+  .nav-tab:hover { color: var(--text); background: rgba(255,255,255,0.05); }
+  .nav-tab.active { background: var(--rose-dim); color: var(--rose); border: 1px solid rgba(251,113,133,0.3); }
+
+  /* CONTAINER PAGES */
+  .page { display: none; padding: 115px 16px 40px; max-width: 680px; margin: 0 auto; }
+  .page.active { display: block; animation: fadeIn 0.3s ease-out; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+  .page-title { font-size: 1.4rem; font-weight: 700; margin-bottom: 4px; }
+  .page-sub { font-size: 0.86rem; color: var(--muted); margin-bottom: 18px; line-height: 1.4; }
+
+  /* CARDS & UI COMPONENTS */
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 18px; margin-bottom: 16px; }
+  .card-header { font-size: 0.75rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between; }
+  .card-title-text { display: flex; align-items: center; gap: 8px; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+
+  /* PROGRESS BAR */
+  .goal-card { background: linear-gradient(135deg, rgba(251,113,133,0.12) 0%, rgba(192,132,252,0.08) 100%); border: 1px solid rgba(251,113,133,0.25); }
+  .goal-metrics { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin: 14px 0; text-align: center; }
+  .metric-box { background: rgba(15, 23, 42, 0.6); padding: 10px 6px; border-radius: 12px; border: 1px solid var(--border); }
+  .metric-val { font-size: 1.25rem; font-weight: 700; color: var(--rose); }
+  .metric-label { font-size: 0.7rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 2px; }
+  
+  .progress-bg { background: rgba(255,255,255,0.1); border-radius: 50px; height: 10px; overflow: hidden; margin-top: 8px; }
+  .progress-fill { background: linear-gradient(90deg, var(--rose), var(--purple)); height: 100%; width: 5%; border-radius: 50px; transition: width 0.5s ease; }
+
+  /* CORTISOL MODE BANNER */
+  .cortisol-banner { border-radius: 14px; padding: 14px 16px; margin-bottom: 16px; background: rgba(56,189,248,0.1); border: 1px solid rgba(56,189,248,0.25); display: flex; align-items: center; justify-content: space-between; }
+  .cortisol-info h3 { font-size: 0.95rem; font-weight: 700; color: var(--cyan); }
+  .cortisol-info p { font-size: 0.78rem; color: var(--muted); margin-top: 2px; }
+
+  /* CHECKLIST */
+  .checklist { display: flex; flex-direction: column; gap: 10px; }
+  .check-item {
+    display: flex; align-items: center; gap: 12px; padding: 12px 14px; border-radius: 12px;
+    background: rgba(255,255,255,0.03); border: 1px solid var(--border); cursor: pointer; transition: all 0.2s;
+  }
+  .check-item:hover { border-color: rgba(255,255,255,0.2); }
+  .check-item.done { background: rgba(16,185,129,0.08); border-color: rgba(16,185,129,0.3); }
+  .checkbox {
+    width: 20px; height: 20px; border-radius: 6px; border: 2px solid var(--muted);
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 0.75rem; font-weight: 700;
+  }
+  .check-item.done .checkbox { background: var(--emerald); border-color: var(--emerald); color: #0f172a; }
+  .check-text { font-size: 0.88rem; font-weight: 600; flex-grow: 1; }
+  .check-item.done .check-text { color: var(--muted); text-decoration: line-through; }
+  .check-tag { font-size: 0.7rem; color: var(--rose); background: var(--rose-dim); padding: 3px 8px; border-radius: 50px; font-weight: 600; }
+
+  /* WORKOUT CARDS */
+  .workout-block { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 16px; margin-bottom: 14px; }
+  .workout-title { font-size: 1.05rem; font-weight: 700; color: var(--rose); margin-bottom: 4px; display: flex; justify-content: space-between; align-items: center; }
+  .workout-meta { font-size: 0.78rem; color: var(--muted); margin-bottom: 14px; }
+  .ex-list { display: flex; flex-direction: column; gap: 10px; }
+  .ex-item { background: rgba(15, 23, 42, 0.5); border: 1px solid var(--border); border-radius: 12px; padding: 12px; }
+  .ex-name { font-weight: 600; font-size: 0.92rem; color: var(--text); display: flex; justify-content: space-between; align-items: center; }
+  .ex-equip { font-size: 0.7rem; color: var(--purple); background: var(--purple-dim); padding: 2px 7px; border-radius: 4px; font-weight: 600; }
+  .ex-cue { font-size: 0.8rem; color: var(--muted); margin-top: 5px; line-height: 1.35; }
+  .ex-reps { font-size: 0.78rem; color: var(--gold); font-weight: 600; margin-top: 6px; }
+
+  /* MEAL CARDS */
+  .meal-category { margin-bottom: 20px; }
+  .cat-title { font-size: 0.9rem; font-weight: 700; color: var(--gold); text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 10px; display: flex; align-items: center; gap: 6px; }
+  .meal-grid { display: grid; grid-template-columns: 1fr; gap: 10px; }
+  .meal-card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 14px; transition: transform 0.2s; }
+  .meal-name { font-size: 0.95rem; font-weight: 700; color: var(--text); margin-bottom: 4px; display: flex; justify-content: space-between; }
+  .meal-prot { color: var(--emerald); font-weight: 700; font-size: 0.85rem; }
+  .meal-desc { font-size: 0.8rem; color: var(--muted); line-height: 1.4; }
+
+  /* MACRO SCANNER & LOG */
+  .macro-summary { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 16px; text-align: center; }
+  .macro-card { background: var(--surface); border: 1px solid var(--border); padding: 10px 4px; border-radius: 12px; }
+  .macro-val { font-size: 1.1rem; font-weight: 700; }
+  .macro-lbl { font-size: 0.65rem; color: var(--muted); text-transform: uppercase; margin-top: 2px; }
+  
+  .scan-btn-group { display: flex; gap: 10px; margin-bottom: 16px; }
+  .btn { flex: 1; padding: 12px; border-radius: 12px; border: none; font-weight: 600; font-size: 0.88rem; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; font-family: 'Outfit', sans-serif; transition: all 0.2s; }
+  .btn-primary { background: var(--rose); color: #0f172a; }
+  .btn-primary:hover { opacity: 0.9; }
+  .btn-secondary { background: var(--card); color: var(--text); border: 1px solid var(--border); }
+  .btn-secondary:hover { background: rgba(255,255,255,0.1); }
+
+  #reader { width: 100%; border-radius: 14px; overflow: hidden; margin-bottom: 16px; display: none; border: 2px solid var(--rose); }
+
+  .log-list { display: flex; flex-direction: column; gap: 8px; }
+  .log-item { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 10px 14px; display: flex; justify-content: space-between; align-items: center; }
+  .log-item-title { font-weight: 600; font-size: 0.88rem; }
+  .log-item-sub { font-size: 0.75rem; color: var(--muted); }
+
+  /* FORM STYLES */
+  .form-group { margin-bottom: 14px; }
+  .form-label { display: block; font-size: 0.8rem; font-weight: 600; color: var(--muted); margin-bottom: 6px; }
+  .form-input, .form-select { width: 100%; padding: 10px 14px; border-radius: 10px; background: rgba(15, 23, 42, 0.7); border: 1px solid var(--border); color: var(--text); font-family: 'Outfit', sans-serif; font-size: 0.9rem; }
+  .form-input:focus { outline: none; border-color: var(--rose); }
+
+  /* MODAL */
+  .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.75); backdrop-filter: blur(6px); z-index: 200; display: none; align-items: center; justify-content: center; padding: 16px; }
+  .modal-overlay.active { display: flex; }
+  .modal { background: var(--surface); border: 1px solid var(--border); border-radius: 18px; padding: 20px; width: 100%; max-width: 440px; animation: modalPop 0.25s ease-out; }
+  @keyframes modalPop { from { transform: scale(0.95); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+  .modal-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 14px; display: flex; justify-content: space-between; align-items: center; }
+  .close-btn { background: transparent; border: none; color: var(--muted); font-size: 1.2rem; cursor: pointer; }
+
+  /* TIPS & BANNER */
+  .tip-box { background: rgba(192, 132, 252, 0.1); border: 1px solid rgba(192, 132, 252, 0.25); border-radius: 12px; padding: 12px 14px; margin-bottom: 14px; }
+  .tip-box h4 { font-size: 0.85rem; color: var(--purple); font-weight: 700; margin-bottom: 4px; }
+  .tip-box p { font-size: 0.78rem; color: var(--muted); line-height: 1.4; }
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <div class="nav-header">
+    <div class="nav-logo">
+      🌸 Colleen's OS <span>• Cortisol-Smart</span>
+    </div>
+    <div class="badge-hrt">47 y/o • HRT Support</div>
+  </div>
+  <div class="nav-tabs">
+    <button class="nav-tab active" onclick="switchTab('home')">✨ Sanctuary</button>
+    <button class="nav-tab" onclick="switchTab('workouts')">🏋️ Band & 5lb Workouts</button>
+    <button class="nav-tab" onclick="switchTab('meals')">🥗 High-Protein Meals</button>
+    <button class="nav-tab" onclick="switchTab('macros')">🔍 Barcode & Macros</button>
+    <button class="nav-tab" onclick="switchTab('tracker')">📊 Symptom Tracker</button>
+  </div>
+</nav>
+
+<!-- PAGE 1: HOME SANCTUARY -->
+<div id="page-home" class="page active">
+  <div class="page-title">Welcome, Colleen 🌸</div>
+  <div class="page-sub">Your low-cortisol, hormone-supportive wellness sanctuary. Designed to gently burn belly fat, protect your metabolism, and reach 160 lbs without stress.</div>
+
+  <!-- GOAL & PROGRESS SNAPSHOT -->
+  <div class="card goal-card">
+    <div class="card-header">
+      <div class="card-title-text"><span class="dot" style="background:var(--rose);"></span> Weight Loss & Body Recomp Journey</div>
+      <span style="font-size:0.75rem; color:var(--rose); font-weight:700;">Goal: 160 lbs</span>
+    </div>
+    <div class="goal-metrics">
+      <div class="metric-box">
+        <div class="metric-val" id="curr-wt-display">185</div>
+        <div class="metric-label">Current Weight</div>
+      </div>
+      <div class="metric-box">
+        <div class="metric-val">25 lbs</div>
+        <div class="metric-label">Target Loss</div>
+      </div>
+      <div class="metric-box">
+        <div class="metric-val" style="color:var(--emerald);">160</div>
+        <div class="metric-label">Goal Weight</div>
+      </div>
+    </div>
+    <div style="display:flex; justify-content:space-between; font-size:0.75rem; color:var(--muted); margin-top:6px;">
+      <span>Progress: 185 lbs</span>
+      <span>Target: 160 lbs</span>
+    </div>
+    <div class="progress-bg">
+      <div class="progress-fill" id="goal-progress-fill" style="width: 5%;"></div>
+    </div>
+  </div>
+
+  <!-- CORTISOL PRINCIPLE BANNER -->
+  <div class="cortisol-banner">
+    <div class="cortisol-info">
+      <h3>🌿 Cortisol-Smart Protocol</h3>
+      <p>High cortisol forces perimenopausal bodies to store visceral belly fat. No high-intensity burning out—only gentle resistance & incline walking!</p>
+    </div>
+  </div>
+
+  <!-- DAILY ESSENTIAL CHECKLIST -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title-text"><span class="dot" style="background:var(--emerald);"></span> Today's Gentle Sanctuary Routine</div>
+      <span style="font-size:0.72rem; color:var(--muted);" id="today-date">Sept 25</span>
+    </div>
+    <div class="checklist">
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="checkbox">✓</div>
+        <div class="check-text">Morning Hydration + HRT Routine</div>
+        <div class="check-tag">Hormones</div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="checkbox">✓</div>
+        <div class="check-text">15-20 Min Treadmill Walk (Low-Cortisol Pace)</div>
+        <div class="check-tag">Fat Oxidation</div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="checkbox">✓</div>
+        <div class="check-text">Light Band or 5 lb Dumbbell Circuit</div>
+        <div class="check-tag">Tone & Toning</div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="checkbox">✓</div>
+        <div class="check-text">Hit 100g+ Protein (Simple meals/shake)</div>
+        <div class="check-tag">Muscle Saver</div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="checkbox">✓</div>
+        <div class="check-text">Evening 10-Min Stress Decompression</div>
+        <div class="check-tag">Cortisol Reset</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CORTISOL WISDOM BOX -->
+  <div class="tip-box">
+    <h4>💡 Why Heavy Lifting Isn't Required Right Now</h4>
+    <p>At age 47 during perimenopause, elevated cortisol from high stress triggers muscle breakdown and abdominal fluid/fat storage. By using resistance bands and 5 lb hand weights with slow controlled reps, we tone your glutes, back, and arms while keeping cortisol flat line low!</p>
+  </div>
+</div>
+
+<!-- PAGE 2: WORKOUTS -->
+<div id="page-workouts" class="page">
+  <div class="page-title">Band & 5 lb Dumbbell Routines 🏋️</div>
+  <div class="page-sub">Designed specifically for Colleen using only loop bands, 5 lb weights, and her treadmill. No joint strain, zero high-intensity cortisol spikes.</div>
+
+  <!-- DAY 1 -->
+  <div class="workout-block">
+    <div class="workout-title">
+      <span>Day 1: Glute & Lower Body Toning</span>
+      <span style="font-size:0.75rem; color:var(--emerald); background:var(--emerald-dim); padding:3px 8px; border-radius:50px;">Bands + Treadmill</span>
+    </div>
+    <div class="workout-meta">Focus: Pelvic stability, glute activation, low-stress cardio</div>
+    
+    <div class="ex-list">
+      <div class="ex-item">
+        <div class="ex-name">
+          1. Treadmill Warm-Up Walk
+          <span class="ex-equip">Treadmill</span>
+        </div>
+        <div class="ex-cue">Speed: 2.0 - 2.5 mph • Incline: 1-2%. Focus on deep diaphragmatic breathing to lower cortisol.</div>
+        <div class="ex-reps">⏱️ 10 - 15 Minutes</div>
+      </div>
+
+      <div class="ex-item">
+        <div class="ex-name">
+          2. Banded Standing Glute Kickbacks
+          <span class="ex-equip">Loop Band</span>
+        </div>
+        <div class="ex-cue">Place band above knees or ankles. Hold chair for support. Squeeze glute at top without arching lower back.</div>
+        <div class="ex-reps">3 Sets × 12-15 Reps / leg</div>
+      </div>
+
+      <div class="ex-item">
+        <div class="ex-name">
+          3. 5 lb Weight Goblet Chair Squats
+          <span class="ex-equip">5 lb Weight</span>
+        </div>
+        <div class="ex-cue">Hold one 5 lb weight at chest. Sit softly onto a dining chair, then press through heels to stand. Keeps knees 100% safe.</div>
+        <div class="ex-reps">3 Sets × 10-12 Reps</div>
+      </div>
+
+      <div class="ex-item">
+        <div class="ex-name">
+          4. Banded Glute Bridges
+          <span class="ex-equip">Loop Band</span>
+        </div>
+        <div class="ex-cue">Lie on back, band above knees. Drive knees outward against band while lifting hips up. Pause 2 seconds at top.</div>
+        <div class="ex-reps">3 Sets × 15 Reps</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 2 -->
+  <div class="workout-block">
+    <div class="workout-title">
+      <span>Day 2: Upper Body Posture & Sculpt</span>
+      <span style="font-size:0.75rem; color:var(--rose); background:var(--rose-dim); padding:3px 8px; border-radius:50px;">5 lb Weights + Bands</span>
+    </div>
+    <div class="workout-meta">Focus: Mid-back posture, arm sculpting, core anti-extension</div>
+    
+    <div class="ex-list">
+      <div class="ex-item">
+        <div class="ex-name">
+          1. Banded Standing Rows
+          <span class="ex-equip">Resistance Band</span>
+        </div>
+        <div class="ex-cue">Anchor band to door or foot. Pull elbows back squeezing shoulder blades together. Great for office/desk posture.</div>
+        <div class="ex-reps">3 Sets × 12-15 Reps</div>
+      </div>
+
+      <div class="ex-item">
+        <div class="ex-name">
+          2. 5 lb Shoulder Press & Lateral Raises
+          <span class="ex-equip">5 lb Weights</span>
+        </div>
+        <div class="ex-cue">Stand tall, soft knees. Lift 5 lb dumbbells to shoulder height smoothly. Controlled descent.</div>
+        <div class="ex-reps">3 Sets × 10-12 Reps</div>
+      </div>
+
+      <div class="ex-item">
+        <div class="ex-name">
+          3. Bicep Curl to Tricep Kickback Super-set
+          <span class="ex-equip">5 lb Weights</span>
+        </div>
+        <div class="ex-cue">Perform 10 curls, then hinge forward slightly and extend weights back for tricep tone.</div>
+        <div class="ex-reps">3 Sets × 10 Reps each</div>
+      </div>
+
+      <div class="ex-item">
+        <div class="ex-name">
+          4. Banded Standing Pallof Core Press
+          <span class="ex-equip">Loop Band</span>
+        </div>
+        <div class="ex-cue">Hold band at chest anchored to side. Press hands straight forward without letting band rotate your torso. Flattens deep core.</div>
+        <div class="ex-reps">3 Sets × 10 Reps / side</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 3 -->
+  <div class="workout-block">
+    <div class="workout-title">
+      <span>Day 3: Treadmill Incline & Metabolic Flow</span>
+      <span style="font-size:0.75rem; color:var(--purple); background:var(--purple-dim); padding:3px 8px; border-radius:50px;">Treadmill & Recovery</span>
+    </div>
+    <div class="workout-meta">Focus: Fat burning zone without adrenal exhaustion</div>
+    
+    <div class="ex-list">
+      <div class="ex-item">
+        <div class="ex-name">
+          1. Cortisol-Zone Treadmill Walk
+          <span class="ex-equip">Treadmill</span>
+        </div>
+        <div class="ex-cue">Set speed to 2.2 - 2.8 mph. Incline: 2.0% - 4.0%. You should be able to speak comfortably in full sentences.</div>
+        <div class="ex-reps">⏱️ 20 - 30 Minutes</div>
+      </div>
+
+      <div class="ex-item">
+        <div class="ex-name">
+          2. 5 lb Weight Romanian Deadlifts
+          <span class="ex-equip">5 lb Weights</span>
+        </div>
+        <div class="ex-cue">Hinge at hips, pushing glutes back while keeping spine neutral. Hold weights close to shins. Tone hamstrings & lower back.</div>
+        <div class="ex-reps">3 Sets × 12 Reps</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 3: SIMPLE MEALS -->
+<div id="page-meals" class="page">
+  <div class="page-title">Simple High-Protein Meals 🥗</div>
+  <div class="page-sub">Quick, zero-stress meal ideas for Colleen. Keeps blood sugar steady, balances HRT hormones, and promotes belly fat reduction.</div>
+
+  <!-- BREAKFAST -->
+  <div class="meal-category">
+    <div class="cat-title">🌅 Quick Fueling Breakfasts (25-35g Protein)</div>
+    <div class="meal-grid">
+      <div class="meal-card">
+        <div class="meal-name">
+          1. Greek Yogurt & Berry Power Bowl
+          <span class="meal-prot">32g Protein</span>
+        </div>
+        <div class="meal-desc">3/4 cup 0% or 2% Plain Greek Yogurt, 1 scoop vanilla protein powder stirred in, topped with 1/2 cup blueberries & chia seeds.</div>
+      </div>
+      <div class="meal-card">
+        <div class="meal-name">
+          2. Spinach & Feta Egg White Omelet
+          <span class="meal-prot">28g Protein</span>
+        </div>
+        <div class="meal-desc">1 whole egg + 1/2 cup egg whites scrambled with spinach and 2 tbsp crumbled feta. Serve with 1 slice whole grain toast.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LUNCH -->
+  <div class="meal-category">
+    <div class="cat-title">☀️ Compact Zero-Prep Lunches (30-38g Protein)</div>
+    <div class="meal-grid">
+      <div class="meal-card">
+        <div class="meal-name">
+          1. Rotisserie Chicken & Avocado Bowl
+          <span class="meal-prot">36g Protein</span>
+        </div>
+        <div class="meal-desc">4 oz shredded store-bought rotisserie chicken breast over mixed greens, 1/4 avocado, cherry tomatoes, and light vinaigrette.</div>
+      </div>
+      <div class="meal-card">
+        <div class="meal-name">
+          2. High-Protein Everything Toast
+          <span class="meal-prot">26g Protein</span>
+        </div>
+        <div class="meal-desc">1/2 cup low-fat cottage cheese blended or spread on 2 slices Ezekiel toast, topped with cucumber slices & Everything Bagel seasoning.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DINNER -->
+  <div class="meal-category">
+    <div class="cat-title">🌙 Easy Satisfying Dinners (32-40g Protein)</div>
+    <div class="meal-grid">
+      <div class="meal-card">
+        <div class="meal-name">
+          1. Sheet-Pan Lemon Herb Salmon or Chicken
+          <span class="meal-prot">38g Protein</span>
+        </div>
+        <div class="meal-desc">5 oz baked salmon filet or chicken tenderloin with roasted asparagus and 1/2 small sweet potato baked in olive oil.</div>
+      </div>
+      <div class="meal-card">
+        <div class="meal-name">
+          2. Lean Turkey & Black Bean Skillet
+          <span class="meal-prot">35g Protein</span>
+        </div>
+        <div class="meal-desc">4 oz 93% lean ground turkey cooked with taco seasoning, 1/4 cup black beans, salsa, over 1 cup cauliflower rice.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 4: BARCODE & MACROS -->
+<div id="page-macros" class="page">
+  <div class="page-title">Barcode & Macro Scanner 🔍</div>
+  <div class="page-sub">Scan packaged foods instantly using your phone camera or enter meals manually to track daily protein & calories.</div>
+
+  <!-- MACRO DAILY SUMMARY -->
+  <div class="macro-summary">
+    <div class="macro-card">
+      <div class="macro-val" id="sum-cal" style="color:var(--rose);">0</div>
+      <div class="macro-lbl">Calories</div>
+    </div>
+    <div class="macro-card">
+      <div class="macro-val" id="sum-prot" style="color:var(--emerald);">0g</div>
+      <div class="macro-lbl">Protein</div>
+    </div>
+    <div class="macro-card">
+      <div class="macro-val" id="sum-carb" style="color:var(--gold);">0g</div>
+      <div class="macro-lbl">Carbs</div>
+    </div>
+    <div class="macro-card">
+      <div class="macro-val" id="sum-fat" style="color:var(--purple);">0g</div>
+      <div class="macro-lbl">Fat</div>
+    </div>
+  </div>
+
+  <!-- SCAN BUTTONS -->
+  <div class="scan-btn-group">
+    <button class="btn btn-primary" onclick="toggleCameraScanner()">
+      📷 Start Barcode Scanner
+    </button>
+    <button class="btn btn-secondary" onclick="openManualModal()">
+      ✏️ Manual Entry
+    </button>
+  </div>
+
+  <!-- CAMERA CONTAINER -->
+  <div id="reader"></div>
+
+  <!-- DAILY LOGGED ITEMS -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title-text"><span class="dot" style="background:var(--rose);"></span> Today's Logged Foods</div>
+      <button onclick="clearDailyLog()" style="background:transparent; border:none; color:var(--muted); font-size:0.75rem; cursor:pointer;">Reset Log</button>
+    </div>
+    <div class="log-list" id="log-list-container">
+      <div style="text-align:center; color:var(--muted); font-size:0.85rem; padding:14px;">No food items logged today yet.</div>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 5: SYMPTOM TRACKER -->
+<div id="page-tracker" class="page">
+  <div class="page-title">Symptom & Cortisol Log 📊</div>
+  <div class="page-sub">Track your weight loss, stress level, sleep, and HRT hormone harmony over time.</div>
+
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title-text"><span class="dot" style="background:var(--purple);"></span> Log Today's Check-In</div>
+    </div>
+    <form onsubmit="saveCheckIn(event)">
+      <div class="form-group">
+        <label class="form-label">Current Weight (lbs)</label>
+        <input type="number" step="0.1" id="input-weight" class="form-input" placeholder="e.g. 184.2" required />
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Cortisol / Stress Level (1 = Calm, 10 = High Stress)</label>
+        <select id="input-stress" class="form-select">
+          <option value="1">1-2: Rested & Calm</option>
+          <option value="3" selected>3-4: Mild / Manageable</option>
+          <option value="6">5-7: Moderate Stress</option>
+          <option value="8">8-10: High Stress / Cortisol Spike</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Sleep Quality</label>
+        <select id="input-sleep" class="form-select">
+          <option value="Great">Deep & Restorative (7-8+ hrs)</option>
+          <option value="Fair" selected>Fair / Minor Night Wakes</option>
+          <option value="Poor">Restless / Hot Flashes / Insomnia</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Notes or HRT Symptoms</label>
+        <input type="text" id="input-notes" class="form-input" placeholder="e.g. Energy great, low stress walk done!" />
+      </div>
+
+      <button type="submit" class="btn btn-primary" style="width:100%;">💾 Save Check-In</button>
+    </form>
+  </div>
+
+  <!-- LOG HISTORY -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title-text"><span class="dot" style="background:var(--cyan);"></span> Recent Check-In History</div>
+    </div>
+    <div id="history-container" class="log-list">
+      <div style="text-align:center; color:var(--muted); font-size:0.85rem; padding:10px;">No entries saved yet.</div>
+    </div>
+  </div>
+</div>
+
+<!-- MANUAL MODAL -->
+<div class="modal-overlay" id="manual-modal">
+  <div class="modal">
+    <div class="modal-title">
+      <span>Add Food Item</span>
+      <button class="close-btn" onclick="closeManualModal()">✕</button>
+    </div>
+    <form onsubmit="handleManualAdd(event)">
+      <div class="form-group">
+        <label class="form-label">Food Name</label>
+        <input type="text" id="m-name" class="form-input" placeholder="e.g. Fairlife Protein Shake" required />
+      </div>
+      <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px;">
+        <div class="form-group">
+          <label class="form-label">Calories (kcal)</label>
+          <input type="number" id="m-cal" class="form-input" placeholder="150" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Protein (g)</label>
+          <input type="number" id="m-prot" class="form-input" placeholder="30" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Carbs (g)</label>
+          <input type="number" id="m-carb" class="form-input" placeholder="5" value="0" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Fat (g)</label>
+          <input type="number" id="m-fat" class="form-input" placeholder="2" value="0" />
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary" style="width:100%; margin-top:10px;">Add To Daily Log</button>
+    </form>
+  </div>
+</div>
+
+<script>
+  // STATE MANAGEMENT
+  let loggedFoods = JSON.parse(localStorage.getItem('colleen_logged_foods') || '[]');
+  let checkIns = JSON.parse(localStorage.getItem('colleen_checkins') || '[]');
+  let html5QrcodeScanner = null;
+
+  document.addEventListener('DOMContentLoaded', () => {
+    updateLoggedDisplay();
+    updateCheckInHistory();
+  });
+
+  // TAB SWITCHING
+  function switchTab(tabId) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+
+    const page = document.getElementById('page-' + tabId);
+    if (page) page.classList.add('active');
+
+    const activeBtn = Array.from(document.querySelectorAll('.nav-tab')).find(b => b.getAttribute('onclick').includes(tabId));
+    if (activeBtn) activeBtn.classList.add('active');
+
+    // Stop camera if leaving macros tab
+    if (tabId !== 'macros' && html5QrcodeScanner) {
+      stopCameraScanner();
+    }
+  }
+
+  // CHECKLIST TOGGLE
+  function toggleCheck(el) {
+    el.classList.toggle('done');
+  }
+
+  // MACRO SCANNER LOGIC
+  function updateLoggedDisplay() {
+    const listEl = document.getElementById('log-list-container');
+    let totalCal = 0, totalProt = 0, totalCarb = 0, totalFat = 0;
+
+    if (loggedFoods.length === 0) {
+      listEl.innerHTML = `<div style="text-align:center; color:var(--muted); font-size:0.85rem; padding:14px;">No food items logged today yet.</div>`;
+    } else {
+      listEl.innerHTML = loggedFoods.map((item, idx) => {
+        totalCal += Number(item.calories || 0);
+        totalProt += Number(item.protein || 0);
+        totalCarb += Number(item.carbs || 0);
+        totalFat += Number(item.fat || 0);
+
+        return `
+          <div class="log-item">
+            <div>
+              <div class="log-item-title">${item.name}</div>
+              <div class="log-item-sub">${item.calories} kcal • P: ${item.protein}g | C: ${item.carbs}g | F: ${item.fat}g</div>
+            </div>
+            <button onclick="removeFood(${idx})" style="background:transparent; border:none; color:var(--rose); cursor:pointer;">✕</button>
+          </div>
+        `;
+      }).join('');
+    }
+
+    document.getElementById('sum-cal').innerText = totalCal;
+    document.getElementById('sum-prot').innerText = totalProt + 'g';
+    document.getElementById('sum-carb').innerText = totalCarb + 'g';
+    document.getElementById('sum-fat').innerText = totalFat + 'g';
+
+    localStorage.setItem('colleen_logged_foods', JSON.stringify(loggedFoods));
+  }
+
+  function handleManualAdd(e) {
+    e.preventDefault();
+    const name = document.getElementById('m-name').value;
+    const calories = document.getElementById('m-cal').value;
+    const protein = document.getElementById('m-prot').value;
+    const carbs = document.getElementById('m-carb').value;
+    const fat = document.getElementById('m-fat').value;
+
+    loggedFoods.push({ name, calories, protein, carbs, fat });
+    updateLoggedDisplay();
+    closeManualModal();
+    e.target.reset();
+  }
+
+  function removeFood(idx) {
+    loggedFoods.splice(idx, 1);
+    updateLoggedDisplay();
+  }
+
+  function clearDailyLog() {
+    if (confirm('Clear today logged foods?')) {
+      loggedFoods = [];
+      updateLoggedDisplay();
+    }
+  }
+
+  // MODAL LOGIC
+  function openManualModal() {
+    document.getElementById('manual-modal').classList.add('active');
+  }
+  function closeManualModal() {
+    document.getElementById('manual-modal').classList.remove('active');
+  }
+
+  // BARCODE SCANNER
+  function toggleCameraScanner() {
+    const readerEl = document.getElementById('reader');
+    if (readerEl.style.display === 'block') {
+      stopCameraScanner();
+    } else {
+      readerEl.style.display = 'block';
+      html5QrcodeScanner = new Html5QrcodeScanner("reader", { fps: 10, qrbox: { width: 250, height: 150 } }, false);
+      html5QrcodeScanner.render(onScanSuccess, onScanFailure);
+    }
+  }
+
+  function stopCameraScanner() {
+    if (html5QrcodeScanner) {
+      html5QrcodeScanner.clear().catch(e => console.error(e));
+      html5QrcodeScanner = null;
+    }
+    document.getElementById('reader').style.display = 'none';
+  }
+
+  function onScanSuccess(decodedText, decodedResult) {
+    stopCameraScanner();
+    fetch(`https://world.openfoodfacts.org/api/v0/product/${decodedText}.json`)
+      .then(res => res.json())
+      .then(data => {
+        if (data.status === 1 && data.product) {
+          const p = data.product;
+          const name = p.product_name || "Scanned Item";
+          const nut = p.nutriments || {};
+          const calories = Math.round(nut['energy-kcal_serving'] || nut['energy-kcal_100g'] || 0);
+          const protein = Math.round(nut.proteins_serving || nut.proteins_100g || 0);
+          const carbs = Math.round(nut.carbohydrates_serving || nut.carbohydrates_100g || 0);
+          const fat = Math.round(nut.fat_serving || nut.fat_100g || 0);
+
+          loggedFoods.push({ name, calories, protein, carbs, fat });
+          updateLoggedDisplay();
+          alert(`Logged: ${name} (${calories} kcal, ${protein}g protein)`);
+        } else {
+          alert('Barcode scanned, but product details were not found in Open Food Facts. Try manual entry.');
+        }
+      })
+      .catch(err => {
+        alert('Error fetching barcode data. Please use manual entry.');
+      });
+  }
+
+  function onScanFailure(error) {
+    // Silent fail while scanning frame by frame
+  }
+
+  // SYMPTOM LOG & WEIGHT TRACKER
+  function saveCheckIn(e) {
+    e.preventDefault();
+    const wt = parseFloat(document.getElementById('input-weight').value);
+    const stress = document.getElementById('input-stress').value;
+    const sleep = document.getElementById('input-sleep').value;
+    const notes = document.getElementById('input-notes').value;
+    const dateStr = new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+
+    checkIns.unshift({ date: dateStr, weight: wt, stress, sleep, notes });
+    localStorage.setItem('colleen_checkins', JSON.stringify(checkIns));
+
+    document.getElementById('curr-wt-display').innerText = wt;
+    
+    // Calculate progress fill (from 185 down to 160)
+    let percent = Math.min(100, Math.max(5, ((185 - wt) / 25) * 100));
+    document.getElementById('goal-progress-fill').style.width = percent + '%';
+
+    updateCheckInHistory();
+    e.target.reset();
+    alert('Check-in saved successfully!');
+  }
+
+  function updateCheckInHistory() {
+    const histEl = document.getElementById('history-container');
+    if (checkIns.length === 0) {
+      histEl.innerHTML = `<div style="text-align:center; color:var(--muted); font-size:0.85rem; padding:10px;">No entries saved yet.</div>`;
+      return;
+    }
+
+    histEl.innerHTML = checkIns.map(c => `
+      <div class="log-item">
+        <div>
+          <div class="log-item-title">${c.date} • <span style="color:var(--rose);">${c.weight} lbs</span></div>
+          <div class="log-item-sub">Stress Level: ${c.stress}/10 • Sleep: ${c.sleep} ${c.notes ? '• ' + c.notes : ''}</div>
+        </div>
+      </div>
+    `).join('');
+  }
+</script>
+</body>
+</html>
