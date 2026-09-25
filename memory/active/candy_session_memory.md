@@ -61,3 +61,10 @@ I'm ready to respond to the updated call, sir.
     - **100% Fish-Free Nutrition:** Simple high-protein meal ideas (turkey sausage egg scramble, lemon herb chicken, parmesan pork tenderloin, salsa beef bowls, protein waffles, mousse, roll-ups).
     - **Barcode & Macro Scanner:** Integrated camera barcode scanning (`html5-qrcode` + Open Food Facts API) and local storage macro logging.
     - **Mobile Phone Install & Live URL:** Published to `https://cmoulton345-sketch.github.io/candy-wellness-os/colleen_wellness_os.html` with 1-click share button and step-by-step mobile home screen install guide.
+  - **September Oura Temp & Symptom Log Updated:** Recorded full Sept 1–25 temp & readiness table. Spike on Sept 25 (+0.28 / +0.58°C, Readiness 57) analyzed: alcohol night prior compounded Protect phase progesterone elevation, elevating core temp and lowering HRV.
+  - **Symptom Check-In:** Severe breast tenderness active (progesterone peak + alcohol histamine/estrogen spike). Zero alcohol tonight.
+  - **Blood Spot Test Schedule Confirmed (Saturday Sept 26 @ 8:30 AM):**
+    - Sept 25 @ 8:00 AM: Took Estrogen & Testosterone.
+    - Sept 25 @ 7:00 PM: Take Progesterone (exact 13.5h window to 8:30 AM test).
+    - Sept 25 Evening: Wear gloves for Tretinoin/topical creams. Hydrate well.
+    - Sept 26 @ 8:30 AM: Collect blood spots BEFORE morning E & T doses, BEFORE Vyvanse, BEFORE coffee/Fairlife. Warm hands, collect, then resume morning meds/breakfast.
