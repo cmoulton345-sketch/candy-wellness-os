@@ -796,28 +796,36 @@
   });
 
   // TAB SWITCHING
-  function switchTab(tabId) {
+  function switchTab(tabId, btn) {
     document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
     document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
 
     const page = document.getElementById('page-' + tabId);
     if (page) page.classList.add('active');
 
-    const activeBtn = Array.from(document.querySelectorAll('.nav-tab')).find(b => b.getAttribute('onclick').includes(tabId));
-    if (activeBtn) activeBtn.classList.add('active');
+    if (btn) {
+      btn.classList.add('active');
+    } else {
+      document.querySelectorAll('.nav-tab').forEach(b => {
+        const onclickAttr = (b.getAttribute('onclick') || '').toString();
+        if (onclickAttr.includes("'" + tabId + "'")) {
+          b.classList.add('active');
+        }
+      });
+    }
 
-    // Stop camera if leaving macros tab
-    if (tabId !== 'macros' && html5QrcodeScanner) {
+    // Stop camera if leaving scanner tab
+    if (tabId !== 'scanner' && html5QrcodeScanner) {
       stopCameraScanner();
     }
-    window.scrollTo(0, 0);
+
+    try {
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    } catch(e) {
+      window.scrollTo(0, 0);
+    }
     document.documentElement.scrollTop = 0;
     document.body.scrollTop = 0;
-    setTimeout(() => {
-      window.scrollTo(0, 0);
-      document.documentElement.scrollTop = 0;
-      document.body.scrollTop = 0;
-    }, 50);
   }
 
   // NUTRITION MODE SWITCH
