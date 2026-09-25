@@ -6,6 +6,43 @@
 <title>Colleen's Cortisol-Smart Wellness OS</title>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+<script>
+  window.switchTab = function(id) {
+    try {
+      var pages = document.getElementsByClassName('page');
+      for (var i = 0; i < pages.length; i++) {
+        pages[i].style.setProperty('display', 'none', 'important');
+        pages[i].classList.remove('active');
+      }
+
+      var tabs = document.getElementsByClassName('nav-tab');
+      for (var i = 0; i < tabs.length; i++) {
+        tabs[i].classList.remove('active');
+      }
+
+      var targetPage = document.getElementById('page-' + id);
+      if (targetPage) {
+        targetPage.style.setProperty('display', 'block', 'important');
+        targetPage.classList.add('active');
+      }
+
+      var targetTab = document.getElementById('tab-' + id);
+      if (targetTab) {
+        targetTab.classList.add('active');
+      }
+
+      if (id !== 'scanner' && typeof stopCameraScanner === 'function') {
+        stopCameraScanner();
+      }
+
+      window.scrollTo(0, 0);
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    } catch(err) {
+      console.error('switchTab error:', err);
+    }
+  };
+</script>
 <style>
   :root {
     --bg: #0f172a;
@@ -901,7 +938,14 @@
 
   // COPY APP LINK
   function copyAppUrl() {
-    navigator.clipboard.writeText(window.location.  // MACRO SCANNER LOGIC & ADJUSTMENT STATE
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(window.location.href).then(() => alert('App link copied!')).catch(() => {});
+    } else {
+      prompt('Copy this app link:', window.location.href);
+    }
+  }
+
+  // MACRO SCANNER LOGIC & ADJUSTMENT STATE
   let baseItemToAdjust = null;
   let editingLogIndex = -1;
 
