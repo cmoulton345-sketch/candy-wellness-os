@@ -55,6 +55,10 @@
     padding: 8px 14px; border-radius: 50px; border: none; cursor: pointer;
     font-family: 'Outfit', sans-serif; font-size: 0.8rem; font-weight: 600;
     background: transparent; color: var(--muted); white-space: nowrap; transition: all 0.2s;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    -webkit-user-select: none;
   }
   .nav-tab:hover { color: var(--text); background: rgba(255,255,255,0.05); }
   .nav-tab.active { background: var(--rose-dim); color: var(--rose); border: 1px solid rgba(251,113,133,0.3); }
@@ -794,6 +798,18 @@
     updateLoggedDisplay();
     updateCheckInHistory();
     switchTab('home');
+
+    const handleTabClick = function(e) {
+      const btn = e.target.closest('.nav-tab');
+      if (btn && btn.id) {
+        const id = btn.id.replace('tab-', '');
+        if (id) {
+          switchTab(id);
+        }
+      }
+    };
+
+    document.addEventListener('click', handleTabClick);
   });
 
   // TAB SWITCHING
