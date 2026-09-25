@@ -52,3 +52,12 @@ I'm ready to respond to the updated call, sir.
   - **Oura ZIP & Data Export:** Explained Oura ZIP export (`data-2.zip` / `oura_trends.csv`) and confirmed OS agents process data directly.
   - **MyFitnessPal Barcode & Macro Tracker App Deployment:** Built and deployed live `🔍 Barcode & Macros` scanner tab in `index.html` with real-time camera scanning (`html5-qrcode`), Open Food Facts API integration, custom entry modal, and local storage daily meal logs. Pushed to `origin main` (`cd21586`). Verified live on Candy's mobile app.
   - **Finger Prick Blood Spot Test Protocol (Sunday Sept 27):** Clarified timing rules: Progesterone night before (7:00 PM = 13.5h window at 8:30 AM test); morning BiEst & Testosterone taken AFTER blood collection; wear gloves for Tretinoin night cream; take Vyvanse + Fairlife shake AFTER test (prevents vasoconstriction & maintains clean fasting baseline).
+
+- **2026-09-25** (JARVIS / SOMA):
+  - **Colleen Ward Cortisol-Smart Wellness OS Deployment:** Built, deployed, and published custom mobile web app `colleen_wellness_os.html` for Candy's sister Colleen (47 y/o, 5'4", 185 lbs baseline → 160 lbs target, premenopausal on HRT, high stress/cortisol & belly fat focus).
+  - **App Architecture & Customizations:**
+    - **Cortisol-Conscious Training:** Low-impact loop band & 5 lb dumbbell circuits (glutes, upper body posture, standing core anti-rotation) + Zone 2 treadmill walks. Zero heavy lifting, zero high-intensity/tapping.
+    - **Evening HRT & Bedtime Sanctuary:** Evening HRT cream application routine + 5-10 mins pre-bed *Legs Up the Wall* (Viparita Karani) to activate parasympathetic nervous system & lower evening cortisol.
+    - **100% Fish-Free Nutrition:** Simple high-protein meal ideas (turkey sausage egg scramble, lemon herb chicken, parmesan pork tenderloin, salsa beef bowls, protein waffles, mousse, roll-ups).
+    - **Barcode & Macro Scanner:** Integrated camera barcode scanning (`html5-qrcode` + Open Food Facts API) and local storage macro logging.
+    - **Mobile Phone Install & Live URL:** Published to `https://cmoulton345-sketch.github.io/candy-wellness-os/colleen_wellness_os.html` with 1-click share button and step-by-step mobile home screen install guide.
