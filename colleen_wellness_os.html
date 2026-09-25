@@ -182,12 +182,11 @@
     <div class="badge-hrt">47 y/o • HRT Support</div>
   </div>
   <div class="nav-tabs">
-    <button class="nav-tab active" onclick="switchTab('home')">✨ Sanctuary</button>
-    <button class="nav-tab" onclick="switchTab('workouts')">🏋️ Band & 5lb Workouts</button>
-    <button class="nav-tab" onclick="switchTab('meals')">🥗 High-Protein Meals</button>
-    <button class="nav-tab" onclick="switchTab('anti-inflammatory')" style="color:var(--rose);">🔥 Anti-Inflammatory</button>
-    <button class="nav-tab" onclick="switchTab('scanner')" style="color:var(--cyan);">🔍 Barcode & Scanner</button>
-    <button class="nav-tab" onclick="switchTab('tracker')">📊 Symptom Tracker</button>
+    <button class="nav-tab active" onclick="switchTab('home', this)">✨ Sanctuary</button>
+    <button class="nav-tab" onclick="switchTab('workouts', this)">🏋️ Band & 5lb Workouts</button>
+    <button class="nav-tab" onclick="switchTab('meals', this)">🥗 High-Protein Meals</button>
+    <button class="nav-tab" onclick="switchTab('scanner', this)" style="color:var(--cyan);">🔍 Barcode & Scanner</button>
+    <button class="nav-tab" onclick="switchTab('tracker', this)">📊 Symptom Tracker</button>
   </div>
 </nav>
 
@@ -606,118 +605,6 @@
     </div>
   </div>
 </div>
-
-<!-- PAGE 4: ANTI-INFLAMMATORY RESET -->
-<div id="page-anti-inflammatory" class="page">
-  <div class="page-title">Anti-Inflammatory Reset 🔥</div>
-  <div class="page-sub">7-Day Low-FODMAP & Red-Light Free Protocol. Calms gut pain, cramps, and joint inflammation while supporting your 10 lb fat loss target!</div>
-    <div class="cortisol-banner" style="background:rgba(251,113,133,0.12); border:1px solid rgba(251,113,133,0.3);">
-      <div class="cortisol-info">
-        <h3 style="color:var(--rose);">🔥 FLARE-UP & GUT RESET ACTIVE</h3>
-        <p style="color:var(--text); font-size:0.82rem; margin-top:4px;">7-Day Low-FODMAP & Red-Light Free Plan. Calms stomach cramps, gut bloating, and systemic joint pain. Strictly targets <strong>1,550 kcal / 135g Protein</strong> to maintain your 10 lb fat-loss deficit!</p>
-      </div>
-    </div>
-
-    <!-- PAUSED TRIGGERS CARD -->
-    <div class="card" style="border:1px solid rgba(251,113,133,0.3);">
-      <div class="card-header" style="color:var(--rose);"><span class="card-title-text"><span class="dot" style="background:var(--rose);"></span> 🚨 PAUSED TRIGGERS FOR 7 DAYS</span></div>
-      <div style="font-size:0.83rem; color:var(--text); line-height:1.5;">
-        <p><strong>STOP:</strong> Garlic (fresh/powder), Onions (fresh/powder), Egg Yolks, Sweet Potatoes, Maple Syrup, Flaxseed, Butter & Romaine Lettuce, Celery, Cauliflower, Apples, Pears, Wheat/Gluten, Regular Lactose, & Sugar Alcohols.</p>
-        <p style="color:var(--muted); font-size:0.78rem; margin-top:6px;">Garlic and onions are the #1 hidden cause of gut spasms and cramping. Eliminating them for 7 days gives your gut mucosal lining a complete reset.</p>
-      </div>
-    </div>
-
-    <!-- 5 MEAL CLOCK SCHEDULE -->
-    <div class="meal-category">
-      <div class="cat-title">🌅 1. BREAK-FAST (8:30–9:00 AM — With Vyvanse)</div>
-      <div class="meal-grid">
-        <div class="meal-card">
-          <div class="meal-name">3 Egg Whites Scramble + Baby Spinach + GF Toast <span class="meal-prot">~25g Protein</span></div>
-          <div class="meal-desc">3 egg whites scrambled in olive oil with baby spinach + 1 slice GF toast + sea salt. (NO egg yolks or garlic!)</div>
-        </div>
-        <div class="meal-card">
-          <div class="meal-name">Fairlife Core Power Shake <span class="meal-prot">~26g Protein</span></div>
-          <div class="meal-desc">Ready to drink ultra-filtered lactose-free shake. Zero gut stress.</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="meal-category">
-      <div class="cat-title">⏰ 2. MID-MORNING FUEL (10:30 AM)</div>
-      <div class="meal-grid">
-        <div class="meal-card">
-          <div class="meal-name">Lactose-Free Cottage Cheese + Pumpkin Seeds <span class="meal-prot">~22g Protein</span></div>
-          <div class="meal-desc">½ cup LF cottage cheese + 1 tbsp pumpkin seeds + cinnamon. Soothing and crunchy (NO apples during flare-up).</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="meal-category">
-      <div class="cat-title">☀️ 3. LUNCH (1:00 PM — Compact High-Protein)</div>
-      <div class="meal-grid">
-        <div class="meal-card">
-          <div class="meal-name">Shredded Chicken Breast + Cucumber & Rice Cake <span class="meal-prot">~30g Protein</span></div>
-          <div class="meal-desc">3-4 oz shredded chicken (seasoned with salt, pepper, olive oil — NO garlic/onion powder!) + sliced cucumber + 1 rice cake.</div>
-        </div>
-        <div class="meal-card">
-          <div class="meal-name">Wild Salmon or Tuna Spinach Bowl <span class="meal-prot">~28g Protein</span></div>
-          <div class="meal-desc">1 can tuna in water or 3 oz wild salmon + olive oil + sea salt + cucumber slices over baby spinach.</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="meal-category">
-      <div class="cat-title">🫐 4. AFTERNOON SNACK (4:00 PM — Pre-Workout)</div>
-      <div class="meal-grid">
-        <div class="meal-card">
-          <div class="meal-name">Fresh Blueberries + Pumpkin Seeds <span class="meal-prot">~7g Protein</span></div>
-          <div class="meal-desc">½ cup fresh blueberries or strawberries + 1 tbsp pumpkin seeds (pepitas).</div>
-        </div>
-        <div class="meal-card">
-          <div class="meal-name">Fairlife Core Power Shake <span class="meal-prot">~26g Protein</span></div>
-          <div class="meal-desc">1 bottle lactose-free shake for quick pre-workout fuel.</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="meal-category">
-      <div class="cat-title">🌙 5. DINNER (6:15 PM — Anti-Inflammatory Recovery)</div>
-      <div class="meal-grid">
-        <div class="meal-card">
-          <div class="meal-name">Baked Salmon + Sautéed Zucchini & Carrots + Potato <span class="meal-prot">~38g Protein</span></div>
-          <div class="meal-desc">5-6 oz salmon + zucchini & carrots sautéed in garlic-infused olive oil + 1 small baked white potato (swap for sweet potato).</div>
-        </div>
-        <div class="meal-card">
-          <div class="meal-name">Lean Beef + Sautéed Zucchini + Rice <span class="meal-prot">~35g Protein</span></div>
-          <div class="meal-desc">5 oz sirloin or flank steak + zucchini sautéed in olive oil & herbs + ½ cup white rice.</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="meal-category">
-      <div class="cat-title">🌙 6. CLOSING SNACK (6:45 PM)</div>
-      <div class="meal-grid">
-        <div class="meal-card">
-          <div class="meal-name">Air-Popped Popcorn + Warm Peppermint Tea <span class="meal-prot">~4g Protein</span></div>
-          <div class="meal-desc">2 cups popcorn with sea salt + 1 cup warm Peppermint Tea (relaxes intestinal smooth muscle spasms). Kitchen closes at 7:00 PM!</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- NIGHTTIME REPAIR DRINK -->
-    <div class="card" style="background:linear-gradient(135deg, rgba(192,132,252,0.15) 0%, rgba(56,189,248,0.1) 100%); border:1px solid rgba(192,132,252,0.3);">
-      <div class="card-header" style="color:var(--purple);"><span class="card-title-text"><span class="dot" style="background:var(--purple);"></span> 🍹 NIGHTTIME GUT & JOINT REPAIR DRINK (45m Before Bed)</span></div>
-      <div style="font-size:0.83rem; color:var(--text); line-height:1.55;">
-        <p>Mix into 500 ml water + 1 scoop BioSteel Electrolytes:</p>
-        <ul style="padding-left:18px; margin: 6px 0;">
-          <li><strong>1-2 scoops</strong> CanPrev Collagen Powder</li>
-          <li><strong>1 tsp (3g)</strong> CanPrev Glycine Powder</li>
-          <li><strong>¾ tsp (4,000 mg)</strong> Vitamin C Powder</li>
-        </ul>
-        <p style="color:var(--muted); font-size:0.78rem;">Repairs gut mucosal barrier, calms joint pain, and promotes deep parasympathetic sleep.</p>
-      </div>
-    </div>
-
 
 <!-- PAGE: BARCODE & MACRO SCANNER -->
 <div id="page-scanner" class="page">
