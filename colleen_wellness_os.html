@@ -793,6 +793,16 @@
   document.addEventListener('DOMContentLoaded', () => {
     updateLoggedDisplay();
     updateCheckInHistory();
+
+    document.querySelectorAll('.nav-tab').forEach(tab => {
+      tab.addEventListener('click', function(e) {
+        const onclickStr = this.getAttribute('onclick') || '';
+        const match = onclickStr.match(/switchTab\('([^']+)'/);
+        if (match && match[1]) {
+          switchTab(match[1], this);
+        }
+      });
+    });
   });
 
   // TAB SWITCHING
