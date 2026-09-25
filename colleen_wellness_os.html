@@ -182,11 +182,11 @@
     <div class="badge-hrt">47 y/o • HRT Support</div>
   </div>
   <div class="nav-tabs">
-    <button class="nav-tab active" onclick="switchTab('home', this)">✨ Sanctuary</button>
-    <button class="nav-tab" onclick="switchTab('workouts', this)">🏋️ Band & 5lb Workouts</button>
-    <button class="nav-tab" onclick="switchTab('meals', this)">🥗 High-Protein Meals</button>
-    <button class="nav-tab" onclick="switchTab('scanner', this)" style="color:var(--cyan);">🔍 Barcode & Scanner</button>
-    <button class="nav-tab" onclick="switchTab('tracker', this)">📊 Symptom Tracker</button>
+    <button id="tab-home" class="nav-tab active" onclick="switchTab('home')">✨ Sanctuary</button>
+    <button id="tab-workouts" class="nav-tab" onclick="switchTab('workouts')">🏋️ Band & 5lb Workouts</button>
+    <button id="tab-meals" class="nav-tab" onclick="switchTab('meals')">🥗 High-Protein Meals</button>
+    <button id="tab-scanner" class="nav-tab" onclick="switchTab('scanner')" style="color:var(--cyan);">🔍 Barcode & Scanner</button>
+    <button id="tab-tracker" class="nav-tab" onclick="switchTab('tracker')">📊 Symptom Tracker</button>
   </div>
 </nav>
 
@@ -793,39 +793,34 @@
   document.addEventListener('DOMContentLoaded', () => {
     updateLoggedDisplay();
     updateCheckInHistory();
-
-    document.querySelectorAll('.nav-tab').forEach(tab => {
-      tab.addEventListener('click', function(e) {
-        const onclickStr = this.getAttribute('onclick') || '';
-        const match = onclickStr.match(/switchTab\('([^']+)'/);
-        if (match && match[1]) {
-          switchTab(match[1], this);
-        }
-      });
-    });
+    switchTab('home');
   });
 
   // TAB SWITCHING
-  function switchTab(tabId, btn) {
-    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-    document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
-
-    const page = document.getElementById('page-' + tabId);
-    if (page) page.classList.add('active');
-
-    if (btn) {
-      btn.classList.add('active');
-    } else {
-      document.querySelectorAll('.nav-tab').forEach(b => {
-        const onclickAttr = (b.getAttribute('onclick') || '').toString();
-        if (onclickAttr.includes("'" + tabId + "'")) {
-          b.classList.add('active');
-        }
-      });
+  function switchTab(id) {
+    const pages = document.querySelectorAll('.page');
+    for (let i = 0; i < pages.length; i++) {
+      pages[i].style.display = 'none';
+      pages[i].classList.remove('active');
     }
 
-    // Stop camera if leaving scanner tab
-    if (tabId !== 'scanner' && html5QrcodeScanner) {
+    const tabs = document.querySelectorAll('.nav-tab');
+    for (let i = 0; i < tabs.length; i++) {
+      tabs[i].classList.remove('active');
+    }
+
+    const targetPage = document.getElementById('page-' + id);
+    if (targetPage) {
+      targetPage.style.display = 'block';
+      targetPage.classList.add('active');
+    }
+
+    const targetTab = document.getElementById('tab-' + id);
+    if (targetTab) {
+      targetTab.classList.add('active');
+    }
+
+    if (id !== 'scanner' && typeof stopCameraScanner === 'function') {
       stopCameraScanner();
     }
 
