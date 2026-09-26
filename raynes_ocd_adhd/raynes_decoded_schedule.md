@@ -31,12 +31,11 @@
 
 ## 📍 Delivery Mode Legend
 
-* **VT:** Virtual (Online Virtual Class / Independent Work)
-* **OC:** On Campus (In-Person Class at NBCC)
-* **ON:** Online (Independent Work / SPN Online)
-* **Lab:** On Campus Nursing Lab
-* **EXAM:** Formal Examination
-* **OFC:** Off Campus Clinical Placement
+### 📍 Class Location & Delivery Key
+* 🏫 **[AT SCHOOL] (OC / Lab):** On Campus in-person lectures & nursing skills labs at NBCC Saint John Campus
+* 💻 **[ONLINE] (VT / ON):** Live virtual Teams classes & online independent study
+* 🏥 **[CLINICAL] (OFC):** Off-campus hospital / healthcare facility clinical rotation
+* 📝 **[EXAM] (EXAM):** Formal midterm or final examination
 
 ---
 
@@ -64,14 +63,14 @@
 
 | Time | Mon (Sep 7) | Tue (Sep 8) | Wed (Sep 9) | Thu (Sep 10) | Fri (Sep 11) |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **8:30** | 🔴 STAT Holiday | 🌐 Orientation [OC] | 🌐 Orientation [OC] | 💛 Communications 1 [VT] | 🌿 Nursing in Canada [OC] |
-| **9:30** | 🔴 STAT Holiday | 🌐 Orientation [OC] | 🌐 Orientation [OC] | 💛 Communications 1 [VT] | 🌿 Nursing in Canada [OC] |
-| **10:30** | 🔴 STAT Holiday | 🌐 Orientation [OC] | 🌐 Orientation [OC] | 🍑 Nursing Skills Theory 1 [VT] | 🌿 Nursing in Canada [OC] |
-| **11:30** | 🔴 STAT Holiday | 🌐 Orientation [OC] | 🌐 Orientation [OC] | 🍑 Nursing Skills Theory 1 [VT] | 🟢 Intro Med Terminology [OC] |
+| **8:30** | 🔴 STAT Holiday | 🌐 Orientation 🏫 [AT SCHOOL] | 🌐 Orientation 🏫 [AT SCHOOL] | 💛 Communications 1 💻 [ONLINE VIRTUAL] | 🌿 Nursing in Canada 🏫 [AT SCHOOL] |
+| **9:30** | 🔴 STAT Holiday | 🌐 Orientation 🏫 [AT SCHOOL] | 🌐 Orientation 🏫 [AT SCHOOL] | 💛 Communications 1 💻 [ONLINE VIRTUAL] | 🌿 Nursing in Canada 🏫 [AT SCHOOL] |
+| **10:30** | 🔴 STAT Holiday | 🌐 Orientation 🏫 [AT SCHOOL] | 🌐 Orientation 🏫 [AT SCHOOL] | 🍑 Nursing Skills Theory 1 💻 [ONLINE VIRTUAL] | 🌿 Nursing in Canada 🏫 [AT SCHOOL] |
+| **11:30** | 🔴 STAT Holiday | 🌐 Orientation 🏫 [AT SCHOOL] | 🌐 Orientation 🏫 [AT SCHOOL] | 🍑 Nursing Skills Theory 1 💻 [ONLINE VIRTUAL] | 🟢 Intro Med Terminology 🏫 [AT SCHOOL] |
 | **12:20** | **LUNCH** | **LUNCH** | **LUNCH** | **LUNCH** | **LUNCH** |
-| **1:30** | 🔴 STAT Holiday | 🌐 Orientation [OC] | 🌐 Orientation [OC] | 🌸 Anatomy & Physiology [VT] | 🟣 Work Safely [OC] |
-| **2:30** | 🔴 STAT Holiday | 🌐 Orientation [OC] | 🌐 Orientation [OC] | 🌸 Anatomy & Physiology [VT] | 🍃 Focused Learning [ON] |
-| **3:30** | 🔴 STAT Holiday | 🌐 Orientation [OC] | 🟡 Student Union [OC] | 🌸 Anatomy & Physiology [VT] | 🍃 Focused Learning [ON] |
+| **1:30** | 🔴 STAT Holiday | 🌐 Orientation 🏫 [AT SCHOOL] | 🌐 Orientation 🏫 [AT SCHOOL] | 🌸 Anatomy & Physiology 💻 [ONLINE VIRTUAL] | 🟣 Work Safely 🏫 [AT SCHOOL] |
+| **2:30** | 🔴 STAT Holiday | 🌐 Orientation 🏫 [AT SCHOOL] | 🌐 Orientation 🏫 [AT SCHOOL] | 🌸 Anatomy & Physiology 💻 [ONLINE VIRTUAL] | 🍃 Focused Learning 💻 [ONLINE INDEPENDENT] |
+| **3:30** | 🔴 STAT Holiday | 🌐 Orientation 🏫 [AT SCHOOL] | 🟡 Student Union 🏫 [AT SCHOOL] | 🌸 Anatomy & Physiology 💻 [ONLINE VIRTUAL] | 🍃 Focused Learning 💻 [ONLINE INDEPENDENT] |
 
 ---
 
@@ -79,14 +78,14 @@
 
 | Time | Mon (Sep 14) | Tue (Sep 15) | Wed (Sep 16) | Thu (Sep 17) | Fri (Sep 18) |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **8:30** | 🍑 Skills Theory 1 [VT] | 🌸 Anatomy & Phys [OC] | 🍑 Skills Theory 1 [VT] | 💛 Communications 1 [VT] | 🌿 Nursing in Canada [OC] |
-| **9:30** | 🍑 Skills Theory 1 [VT] | 🌸 Anatomy & Phys [OC] | 🍑 Skills Theory 1 [VT] | 💛 Communications 1 [VT] | 🌿 Nursing in Canada [OC] |
-| **10:30** | 💛 Communications 1 [VT] | 🌸 Anatomy & Phys [OC] | 🍑 Skills Theory 1 [VT] | 💛 Communications 1 [VT] | 🌿 Nursing in Canada [OC] |
-| **11:30** | 💛 Communications 1 [VT] | 🍃 Focused Learning [ON] | 🟣 Work Safely [ON] | 🍃 Focused Learning [ON] | 🟣 Work Safely [ON] |
+| **8:30** | 🍑 Skills Theory 1 💻 [ONLINE VIRTUAL] | 🌸 Anatomy & Phys 🏫 [AT SCHOOL] | 🍑 Skills Theory 1 💻 [ONLINE VIRTUAL] | 💛 Communications 1 💻 [ONLINE VIRTUAL] | 🌿 Nursing in Canada 🏫 [AT SCHOOL] |
+| **9:30** | 🍑 Skills Theory 1 💻 [ONLINE VIRTUAL] | 🌸 Anatomy & Phys 🏫 [AT SCHOOL] | 🍑 Skills Theory 1 💻 [ONLINE VIRTUAL] | 💛 Communications 1 💻 [ONLINE VIRTUAL] | 🌿 Nursing in Canada 🏫 [AT SCHOOL] |
+| **10:30** | 💛 Communications 1 💻 [ONLINE VIRTUAL] | 🌸 Anatomy & Phys 🏫 [AT SCHOOL] | 🍑 Skills Theory 1 💻 [ONLINE VIRTUAL] | 💛 Communications 1 💻 [ONLINE VIRTUAL] | 🌿 Nursing in Canada 🏫 [AT SCHOOL] |
+| **11:30** | 💛 Communications 1 💻 [ONLINE VIRTUAL] | 🍃 Focused Learning 💻 [ONLINE INDEPENDENT] | 🟣 Work Safely 💻 [ONLINE INDEPENDENT] | 🍃 Focused Learning 💻 [ONLINE INDEPENDENT] | 🟣 Work Safely 💻 [ONLINE INDEPENDENT] |
 | **12:20** | **LUNCH** | **LUNCH** | **LUNCH** | **LUNCH** | **LUNCH** |
-| **1:30** | 🌸 Anatomy & Phys [VT] | 🌿 Nursing in Canada [OC] | 💛 Communications 1 [VT] | 🌸 Anatomy & Phys [VT] | 🍃 Focused Learning [ON] |
-| **2:30** | 🌸 Anatomy & Phys [VT] | 🌿 Nursing in Canada [OC] | 💛 Communications 1 [VT] | 🌸 Anatomy & Phys [VT] | 🍃 Focused Learning [ON] |
-| **3:30** | 🌸 Anatomy & Phys [VT] | 🌿 Nursing in Canada [OC] | 🟡 Student Union | 🌸 Anatomy & Phys [VT] | 🍃 Focused Learning [ON] |
+| **1:30** | 🌸 Anatomy & Phys 💻 [ONLINE VIRTUAL] | 🌿 Nursing in Canada 🏫 [AT SCHOOL] | 💛 Communications 1 💻 [ONLINE VIRTUAL] | 🌸 Anatomy & Phys 💻 [ONLINE VIRTUAL] | 🍃 Focused Learning 💻 [ONLINE INDEPENDENT] |
+| **2:30** | 🌸 Anatomy & Phys 💻 [ONLINE VIRTUAL] | 🌿 Nursing in Canada 🏫 [AT SCHOOL] | 💛 Communications 1 💻 [ONLINE VIRTUAL] | 🌸 Anatomy & Phys 💻 [ONLINE VIRTUAL] | 🍃 Focused Learning 💻 [ONLINE INDEPENDENT] |
+| **3:30** | 🌸 Anatomy & Phys 💻 [ONLINE VIRTUAL] | 🌿 Nursing in Canada 🏫 [AT SCHOOL] | 🟡 Student Union | 🌸 Anatomy & Phys 💻 [ONLINE VIRTUAL] | 🍃 Focused Learning 💻 [ONLINE INDEPENDENT] |
 
 ---
 
@@ -95,14 +94,14 @@
 
 | Time | Mon (Sep 21) | Tue (Sep 22) | Wed (Sep 23) | Thu (Sep 24) | Fri (Sep 25) |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **8:30** | 🍑 Skills Theory 1 [VT] | 🌸 Anatomy & Phys [OC] | 🍑 Skills Theory 1 [VT] | 💛 Communications 1 [ON] | 🌿 Nursing in Canada [OC] |
-| **9:30** | 🍑 Skills Theory 1 [VT] | 🌸 Anatomy & Phys [OC] | 🍑 Skills Theory 1 [VT] | 💛 Communications 1 [ON] | 🌿 Nursing in Canada [OC] |
-| **10:30** | 💛 Communications 1 [VT] | 🌸 Anatomy & Phys [OC] | 🍑 Skills Theory 1 [VT] | 🟣 Work Safely [ON] | 🌿 Nursing in Canada [OC] |
-| **11:30** | 💛 Communications 1 [VT] | 🍃 Focused Learning [OC] | 🟣 Work Safely [ON] | 🍃 Focused Learning [ON] | 🟣 Work Safely [ON] |
+| **8:30** | 🍑 Skills Theory 1 💻 [ONLINE VIRTUAL] | 🌸 Anatomy & Phys 🏫 [AT SCHOOL] | 🍑 Skills Theory 1 💻 [ONLINE VIRTUAL] | 💛 Communications 1 💻 [ONLINE INDEPENDENT] | 🌿 Nursing in Canada 🏫 [AT SCHOOL] |
+| **9:30** | 🍑 Skills Theory 1 💻 [ONLINE VIRTUAL] | 🌸 Anatomy & Phys 🏫 [AT SCHOOL] | 🍑 Skills Theory 1 💻 [ONLINE VIRTUAL] | 💛 Communications 1 💻 [ONLINE INDEPENDENT] | 🌿 Nursing in Canada 🏫 [AT SCHOOL] |
+| **10:30** | 💛 Communications 1 💻 [ONLINE VIRTUAL] | 🌸 Anatomy & Phys 🏫 [AT SCHOOL] | 🍑 Skills Theory 1 💻 [ONLINE VIRTUAL] | 🟣 Work Safely 💻 [ONLINE INDEPENDENT] | 🌿 Nursing in Canada 🏫 [AT SCHOOL] |
+| **11:30** | 💛 Communications 1 💻 [ONLINE VIRTUAL] | 🍃 Focused Learning 🏫 [AT SCHOOL] | 🟣 Work Safely 💻 [ONLINE INDEPENDENT] | 🍃 Focused Learning 💻 [ONLINE INDEPENDENT] | 🟣 Work Safely 💻 [ONLINE INDEPENDENT] |
 | **12:20** | **LUNCH** | **LUNCH** | **LUNCH** | **LUNCH** | **LUNCH** |
-| **1:30** | 🌸 Anatomy & Phys [VT] | 🌿 Nursing in Canada [OC] | 💛 Communications 1 [VT] | 🌸 Anatomy & Phys [ON] | 🍃 Focused Learning [ON] |
-| **2:30** | 🌸 Anatomy & Phys [VT] | 🌿 Nursing in Canada [OC] | 💛 Communications 1 [VT] | 🌸 Anatomy & Phys [ON] | 🍃 Focused Learning [ON] |
-| **3:30** | 🌸 Anatomy & Phys [VT] | 🌿 Nursing in Canada [OC] | 🟡 Student Union | 🌸 Anatomy & Phys [ON] | 🍃 Focused Learning [ON] |
+| **1:30** | 🌸 Anatomy & Phys 💻 [ONLINE VIRTUAL] | 🌿 Nursing in Canada 🏫 [AT SCHOOL] | 💛 Communications 1 💻 [ONLINE VIRTUAL] | 🌸 Anatomy & Phys 💻 [ONLINE INDEPENDENT] | 🍃 Focused Learning 💻 [ONLINE INDEPENDENT] |
+| **2:30** | 🌸 Anatomy & Phys 💻 [ONLINE VIRTUAL] | 🌿 Nursing in Canada 🏫 [AT SCHOOL] | 💛 Communications 1 💻 [ONLINE VIRTUAL] | 🌸 Anatomy & Phys 💻 [ONLINE INDEPENDENT] | 🍃 Focused Learning 💻 [ONLINE INDEPENDENT] |
+| **3:30** | 🌸 Anatomy & Phys 💻 [ONLINE VIRTUAL] | 🌿 Nursing in Canada 🏫 [AT SCHOOL] | 🟡 Student Union | 🌸 Anatomy & Phys 💻 [ONLINE INDEPENDENT] | 🍃 Focused Learning 💻 [ONLINE INDEPENDENT] |
 
 ---
 
@@ -111,14 +110,14 @@
 
 | Time | Mon (Sep 28) | Tue (Sep 29) | Wed (Sep 30) | Thu (Oct 01) | Fri (Oct 02) |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **8:30** | 🍑 Skills Theory 1 [VT] | 🌸 Anatomy & Phys [OC] | 🔴 STAT Holiday | 🟢 Intro Med Term [ON] | 🩵 Nursing Skills Lab 1 [Lab] |
-| **9:30** | 🍑 Skills Theory 1 [VT] | 🌸 Anatomy & Phys [OC] | 🔴 STAT Holiday | 🟢 Intro Med Term [ON] | 🩵 Nursing Skills Lab 1 [Lab] |
-| **10:30** | 💛 Communications 1 [VT] | 🌸 Anatomy & Phys [OC] | 🔴 STAT Holiday | 💛 Communications 1 [ON] | 🩵 Nursing Skills Lab 1 [Lab] |
-| **11:30** | 💛 Communications 1 [VT] | 🟣 Work Safely [ON] | 🔴 STAT Holiday | 💛 Communications 1 [ON] | 🩵 Nursing Skills Lab 1 [Lab] |
+| **8:30** | 🍑 Skills Theory 1 💻 [ONLINE VIRTUAL] | 🌸 Anatomy & Phys 🏫 [AT SCHOOL] | 🔴 STAT Holiday | 🟢 Intro Med Term 💻 [ONLINE INDEPENDENT] | 🩵 Nursing Skills Lab 1 🏫 [AT SCHOOL LAB] |
+| **9:30** | 🍑 Skills Theory 1 💻 [ONLINE VIRTUAL] | 🌸 Anatomy & Phys 🏫 [AT SCHOOL] | 🔴 STAT Holiday | 🟢 Intro Med Term 💻 [ONLINE INDEPENDENT] | 🩵 Nursing Skills Lab 1 🏫 [AT SCHOOL LAB] |
+| **10:30** | 💛 Communications 1 💻 [ONLINE VIRTUAL] | 🌸 Anatomy & Phys 🏫 [AT SCHOOL] | 🔴 STAT Holiday | 💛 Communications 1 💻 [ONLINE INDEPENDENT] | 🩵 Nursing Skills Lab 1 🏫 [AT SCHOOL LAB] |
+| **11:30** | 💛 Communications 1 💻 [ONLINE VIRTUAL] | 🟣 Work Safely 💻 [ONLINE INDEPENDENT] | 🔴 STAT Holiday | 💛 Communications 1 💻 [ONLINE INDEPENDENT] | 🩵 Nursing Skills Lab 1 🏫 [AT SCHOOL LAB] |
 | **12:20** | **LUNCH** | **LUNCH** | **LUNCH** | **LUNCH** | **LUNCH** |
-| **1:30** | 🌿 Nursing in Canada [VT] | 🌿 Nursing in Canada [OC] | 🔴 STAT Holiday | 🌸 Anatomy & Phys [ON] | 🩵 Nursing Skills Lab 1 [Lab] |
-| **2:30** | 🌿 Nursing in Canada [VT] | 🌿 Nursing in Canada [OC] | 🔴 STAT Holiday | 🌸 Anatomy & Phys [ON] | 🩵 Nursing Skills Lab 1 [Lab] |
-| **3:30** | 🌿 Nursing in Canada [VT] | 🌿 Nursing in Canada [OC] | 🔴 STAT Holiday | 🌸 Anatomy & Phys [ON] | 🩵 Nursing Skills Lab 1 [Lab] |
+| **1:30** | 🌿 Nursing in Canada 💻 [ONLINE VIRTUAL] | 🌿 Nursing in Canada 🏫 [AT SCHOOL] | 🔴 STAT Holiday | 🌸 Anatomy & Phys 💻 [ONLINE INDEPENDENT] | 🩵 Nursing Skills Lab 1 🏫 [AT SCHOOL LAB] |
+| **2:30** | 🌿 Nursing in Canada 💻 [ONLINE VIRTUAL] | 🌿 Nursing in Canada 🏫 [AT SCHOOL] | 🔴 STAT Holiday | 🌸 Anatomy & Phys 💻 [ONLINE INDEPENDENT] | 🩵 Nursing Skills Lab 1 🏫 [AT SCHOOL LAB] |
+| **3:30** | 🌿 Nursing in Canada 💻 [ONLINE VIRTUAL] | 🌿 Nursing in Canada 🏫 [AT SCHOOL] | 🔴 STAT Holiday | 🌸 Anatomy & Phys 💻 [ONLINE INDEPENDENT] | 🩵 Nursing Skills Lab 1 🏫 [AT SCHOOL LAB] |
 
 ---
 
@@ -127,14 +126,14 @@
 
 | Time | Mon (Oct 05) | Tue (Oct 06) | Wed (Oct 07) | Thu (Oct 08) | Fri (Oct 09) |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **8:30** | 🍑 Skills Theory 1 [VT] | 🌸 Anatomy & Phys [OC] | 🍑 Skills Theory 1 [VT] | 🟢 Intro Med Term [ON] | 🩵 Nursing Skills Lab 1 [Lab] |
-| **9:30** | 🍑 Skills Theory 1 [VT] | 🌸 Anatomy & Phys [OC] | 🍑 Skills Theory 1 [VT] | 🟢 Intro Med Term [ON] | 🩵 Nursing Skills Lab 1 [Lab] |
-| **10:30** | 💛 Communications 1 [VT] | 🌸 Anatomy & Phys [OC] | 🍑 Skills Theory 1 [VT] | 💛 Communications 1 [ON] | 🩵 Nursing Skills Lab 1 [Lab] |
-| **11:30** | 💛 Communications 1 [VT] | 🍃 Focused Learning [ON] | 🟣 Work Safely [ON] | 💛 Communications 1 [ON] | 🩵 Nursing Skills Lab 1 [Lab] |
+| **8:30** | 🍑 Skills Theory 1 💻 [ONLINE VIRTUAL] | 🌸 Anatomy & Phys 🏫 [AT SCHOOL] | 🍑 Skills Theory 1 💻 [ONLINE VIRTUAL] | 🟢 Intro Med Term 💻 [ONLINE INDEPENDENT] | 🩵 Nursing Skills Lab 1 🏫 [AT SCHOOL LAB] |
+| **9:30** | 🍑 Skills Theory 1 💻 [ONLINE VIRTUAL] | 🌸 Anatomy & Phys 🏫 [AT SCHOOL] | 🍑 Skills Theory 1 💻 [ONLINE VIRTUAL] | 🟢 Intro Med Term 💻 [ONLINE INDEPENDENT] | 🩵 Nursing Skills Lab 1 🏫 [AT SCHOOL LAB] |
+| **10:30** | 💛 Communications 1 💻 [ONLINE VIRTUAL] | 🌸 Anatomy & Phys 🏫 [AT SCHOOL] | 🍑 Skills Theory 1 💻 [ONLINE VIRTUAL] | 💛 Communications 1 💻 [ONLINE INDEPENDENT] | 🩵 Nursing Skills Lab 1 🏫 [AT SCHOOL LAB] |
+| **11:30** | 💛 Communications 1 💻 [ONLINE VIRTUAL] | 🍃 Focused Learning 💻 [ONLINE INDEPENDENT] | 🟣 Work Safely 💻 [ONLINE INDEPENDENT] | 💛 Communications 1 💻 [ONLINE INDEPENDENT] | 🩵 Nursing Skills Lab 1 🏫 [AT SCHOOL LAB] |
 | **12:20** | **LUNCH** | **LUNCH** | **LUNCH** | **LUNCH** | **LUNCH** |
-| **1:30** | 🌸 Anatomy & Phys [VT] | 🌿 Nursing in Canada [OC] | 💛 Communications 1 [VT] | 🌸 Anatomy & Phys [ON] | 🩵 Nursing Skills Lab 1 [Lab] |
-| **2:30** | 🌸 Anatomy & Phys [VT] | 🌿 Nursing in Canada [OC] | 💛 Communications 1 [VT] | 🌸 Anatomy & Phys [ON] | 🩵 Nursing Skills Lab 1 [Lab] |
-| **3:30** | 🌸 Anatomy & Phys [VT] | 🌿 Nursing in Canada [OC] | 🟡 Student Union | 🌸 Anatomy & Phys [ON] | 🩵 Nursing Skills Lab 1 [Lab] |
+| **1:30** | 🌸 Anatomy & Phys 💻 [ONLINE VIRTUAL] | 🌿 Nursing in Canada 🏫 [AT SCHOOL] | 💛 Communications 1 💻 [ONLINE VIRTUAL] | 🌸 Anatomy & Phys 💻 [ONLINE INDEPENDENT] | 🩵 Nursing Skills Lab 1 🏫 [AT SCHOOL LAB] |
+| **2:30** | 🌸 Anatomy & Phys 💻 [ONLINE VIRTUAL] | 🌿 Nursing in Canada 🏫 [AT SCHOOL] | 💛 Communications 1 💻 [ONLINE VIRTUAL] | 🌸 Anatomy & Phys 💻 [ONLINE INDEPENDENT] | 🩵 Nursing Skills Lab 1 🏫 [AT SCHOOL LAB] |
+| **3:30** | 🌸 Anatomy & Phys 💻 [ONLINE VIRTUAL] | 🌿 Nursing in Canada 🏫 [AT SCHOOL] | 🟡 Student Union | 🌸 Anatomy & Phys 💻 [ONLINE INDEPENDENT] | 🩵 Nursing Skills Lab 1 🏫 [AT SCHOOL LAB] |
 
 ---
 
@@ -143,14 +142,14 @@
 
 | Time | Mon (Oct 12) | Tue (Oct 13) | Wed (Oct 14) | Thu (Oct 15) | Fri (Oct 16) |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **8:30** | 🔴 STAT Holiday | 🍃 Focused Learning [ON] | 🍑 Skills Theory 1 [VT] | 🟢 Intro Med Term [ON] | 🩵 Nursing Skills Lab 1 [Lab] |
-| **9:30** | 🔴 STAT Holiday | 📝 **A&P EXAM (9:30-12:30)** | 🍑 Skills Theory 1 [VT] | 🟢 Intro Med Term [ON] | 🩵 Nursing Skills Lab 1 [Lab] |
-| **10:30** | 🔴 STAT Holiday | 📝 **A&P EXAM (9:30-12:30)** | 🍑 Skills Theory 1 [VT] | 💛 Communications 1 [ON] | 🩵 Nursing Skills Lab 1 [Lab] |
-| **11:30** | 🔴 STAT Holiday | 📝 **A&P EXAM (9:30-12:30)** | 🟣 Work Safely [ON] | 💛 Communications 1 [ON] | 🩵 Nursing Skills Lab 1 [Lab] |
+| **8:30** | 🔴 STAT Holiday | 🍃 Focused Learning 💻 [ONLINE INDEPENDENT] | 🍑 Skills Theory 1 💻 [ONLINE VIRTUAL] | 🟢 Intro Med Term 💻 [ONLINE INDEPENDENT] | 🩵 Nursing Skills Lab 1 🏫 [AT SCHOOL LAB] |
+| **9:30** | 🔴 STAT Holiday | 📝 **A&P EXAM (9:30-12:30)** | 🍑 Skills Theory 1 💻 [ONLINE VIRTUAL] | 🟢 Intro Med Term 💻 [ONLINE INDEPENDENT] | 🩵 Nursing Skills Lab 1 🏫 [AT SCHOOL LAB] |
+| **10:30** | 🔴 STAT Holiday | 📝 **A&P EXAM (9:30-12:30)** | 🍑 Skills Theory 1 💻 [ONLINE VIRTUAL] | 💛 Communications 1 💻 [ONLINE INDEPENDENT] | 🩵 Nursing Skills Lab 1 🏫 [AT SCHOOL LAB] |
+| **11:30** | 🔴 STAT Holiday | 📝 **A&P EXAM (9:30-12:30)** | 🟣 Work Safely 💻 [ONLINE INDEPENDENT] | 💛 Communications 1 💻 [ONLINE INDEPENDENT] | 🩵 Nursing Skills Lab 1 🏫 [AT SCHOOL LAB] |
 | **12:20** | **LUNCH** | **LUNCH** | **LUNCH** | **LUNCH** | **LUNCH** |
-| **1:30** | 🔴 STAT Holiday | 🌿 Nursing in Canada [OC] | 💛 Communications 1 [VT] | 🌸 Anatomy & Phys [ON] | 🩵 Nursing Skills Lab 1 [Lab] |
-| **2:30** | 🔴 STAT Holiday | 🌿 Nursing in Canada [OC] | 💛 Communications 1 [VT] | 🌸 Anatomy & Phys [ON] | 🩵 Nursing Skills Lab 1 [Lab] |
-| **3:30** | 🔴 STAT Holiday | 🌿 Nursing in Canada [OC] | 🟡 Student Union | 🌸 Anatomy & Phys [ON] | 🩵 Nursing Skills Lab 1 [Lab] |
+| **1:30** | 🔴 STAT Holiday | 🌿 Nursing in Canada 🏫 [AT SCHOOL] | 💛 Communications 1 💻 [ONLINE VIRTUAL] | 🌸 Anatomy & Phys 💻 [ONLINE INDEPENDENT] | 🩵 Nursing Skills Lab 1 🏫 [AT SCHOOL LAB] |
+| **2:30** | 🔴 STAT Holiday | 🌿 Nursing in Canada 🏫 [AT SCHOOL] | 💛 Communications 1 💻 [ONLINE VIRTUAL] | 🌸 Anatomy & Phys 💻 [ONLINE INDEPENDENT] | 🩵 Nursing Skills Lab 1 🏫 [AT SCHOOL LAB] |
+| **3:30** | 🔴 STAT Holiday | 🌿 Nursing in Canada 🏫 [AT SCHOOL] | 🟡 Student Union | 🌸 Anatomy & Phys 💻 [ONLINE INDEPENDENT] | 🩵 Nursing Skills Lab 1 🏫 [AT SCHOOL LAB] |
 
 ---
 
@@ -159,14 +158,14 @@
 
 | Time | Mon (Oct 19) | Tue (Oct 20) | Wed (Oct 21) | Thu (Oct 22) | Fri (Oct 23) |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **8:30** | 🍑 Skills Theory 1 [VT] | 🌸 Anatomy & Phys [OC] | 🍑 Skills Theory 1 [VT] | 🟢 Intro Med Term [ON] | 🩵 Nursing Skills Lab 1 [Lab] |
-| **9:30** | 🍑 Skills Theory 1 [VT] | 🌸 Anatomy & Phys [OC] | 🍑 Skills Theory 1 [VT] | 🟢 Intro Med Term [ON] | 🩵 Nursing Skills Lab 1 [Lab] |
-| **10:30** | 💜 Geriatric Concepts [VT] | 🌸 Anatomy & Phys [OC] | 🍑 Skills Theory 1 [VT] | 💜 Geriatric Concepts [ON] | 🩵 Nursing Skills Lab 1 [Lab] |
-| **11:30** | 💜 Geriatric Concepts [VT] | 🍃 Focused Learning [ON] | 🟣 Work Safely [ON] | 💜 Geriatric Concepts [ON] | 🩵 Nursing Skills Lab 1 [Lab] |
+| **8:30** | 🍑 Skills Theory 1 💻 [ONLINE VIRTUAL] | 🌸 Anatomy & Phys 🏫 [AT SCHOOL] | 🍑 Skills Theory 1 💻 [ONLINE VIRTUAL] | 🟢 Intro Med Term 💻 [ONLINE INDEPENDENT] | 🩵 Nursing Skills Lab 1 🏫 [AT SCHOOL LAB] |
+| **9:30** | 🍑 Skills Theory 1 💻 [ONLINE VIRTUAL] | 🌸 Anatomy & Phys 🏫 [AT SCHOOL] | 🍑 Skills Theory 1 💻 [ONLINE VIRTUAL] | 🟢 Intro Med Term 💻 [ONLINE INDEPENDENT] | 🩵 Nursing Skills Lab 1 🏫 [AT SCHOOL LAB] |
+| **10:30** | 💜 Geriatric Concepts 💻 [ONLINE VIRTUAL] | 🌸 Anatomy & Phys 🏫 [AT SCHOOL] | 🍑 Skills Theory 1 💻 [ONLINE VIRTUAL] | 💜 Geriatric Concepts 💻 [ONLINE INDEPENDENT] | 🩵 Nursing Skills Lab 1 🏫 [AT SCHOOL LAB] |
+| **11:30** | 💜 Geriatric Concepts 💻 [ONLINE VIRTUAL] | 🍃 Focused Learning 💻 [ONLINE INDEPENDENT] | 🟣 Work Safely 💻 [ONLINE INDEPENDENT] | 💜 Geriatric Concepts 💻 [ONLINE INDEPENDENT] | 🩵 Nursing Skills Lab 1 🏫 [AT SCHOOL LAB] |
 | **12:20** | **LUNCH** | **LUNCH** | **LUNCH** | **LUNCH** | **LUNCH** |
-| **1:30** | 🌸 Anatomy & Phys [VT] | 📝 **COMM 1 EXAM (1:30-4:30)** | 💜 Geriatric Concepts [VT] | 🌸 Anatomy & Phys [ON] | 🩵 Nursing Skills Lab 1 [Lab] |
-| **2:30** | 🌸 Anatomy & Phys [VT] | 📝 **COMM 1 EXAM (1:30-4:30)** | 💜 Geriatric Concepts [VT] | 🌸 Anatomy & Phys [ON] | 🩵 Nursing Skills Lab 1 [Lab] |
-| **3:30** | 🌸 Anatomy & Phys [VT] | 📝 **COMM 1 EXAM (1:30-4:30)** | 🟡 Student Union | 🌸 Anatomy & Phys [ON] | 🩵 Nursing Skills Lab 1 [Lab] |
+| **1:30** | 🌸 Anatomy & Phys 💻 [ONLINE VIRTUAL] | 📝 **COMM 1 EXAM (1:30-4:30)** | 💜 Geriatric Concepts 💻 [ONLINE VIRTUAL] | 🌸 Anatomy & Phys 💻 [ONLINE INDEPENDENT] | 🩵 Nursing Skills Lab 1 🏫 [AT SCHOOL LAB] |
+| **2:30** | 🌸 Anatomy & Phys 💻 [ONLINE VIRTUAL] | 📝 **COMM 1 EXAM (1:30-4:30)** | 💜 Geriatric Concepts 💻 [ONLINE VIRTUAL] | 🌸 Anatomy & Phys 💻 [ONLINE INDEPENDENT] | 🩵 Nursing Skills Lab 1 🏫 [AT SCHOOL LAB] |
+| **3:30** | 🌸 Anatomy & Phys 💻 [ONLINE VIRTUAL] | 📝 **COMM 1 EXAM (1:30-4:30)** | 🟡 Student Union | 🌸 Anatomy & Phys 💻 [ONLINE INDEPENDENT] | 🩵 Nursing Skills Lab 1 🏫 [AT SCHOOL LAB] |
 
 ---
 
@@ -179,14 +178,14 @@
 
 | Time | Mon (Nov 02) | Tue (Nov 03) | Wed (Nov 04) | Thu (Nov 05) | Fri (Nov 06) |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **8:30** | 🍑 Skills Theory 1 [VT] | 🌸 Anatomy & Phys [OC] | 🍑 Skills Theory 1 [VT] | 🟢 Intro Med Term [ON] | 🩵 Nursing Skills Lab 1 [Lab] |
-| **9:30** | 🍑 Skills Theory 1 [VT] | 🌸 Anatomy & Phys [OC] | 🍑 Skills Theory 1 [VT] | 🟢 Intro Med Term [ON] | 🩵 Nursing Skills Lab 1 [Lab] |
-| **10:30** | 💜 Geriatric Concepts [VT] | 🌸 Anatomy & Phys [OC] | 🍑 Skills Theory 1 [VT] | 💜 Geriatric Concepts [ON] | 🩵 Nursing Skills Lab 1 [Lab] |
-| **11:30** | 💜 Geriatric Concepts [VT] | 🍃 Focused Learning [ON] | 🟣 Work Safely [ON] | 💜 Geriatric Concepts [ON] | 🩵 Nursing Skills Lab 1 [Lab] |
+| **8:30** | 🍑 Skills Theory 1 💻 [ONLINE VIRTUAL] | 🌸 Anatomy & Phys 🏫 [AT SCHOOL] | 🍑 Skills Theory 1 💻 [ONLINE VIRTUAL] | 🟢 Intro Med Term 💻 [ONLINE INDEPENDENT] | 🩵 Nursing Skills Lab 1 🏫 [AT SCHOOL LAB] |
+| **9:30** | 🍑 Skills Theory 1 💻 [ONLINE VIRTUAL] | 🌸 Anatomy & Phys 🏫 [AT SCHOOL] | 🍑 Skills Theory 1 💻 [ONLINE VIRTUAL] | 🟢 Intro Med Term 💻 [ONLINE INDEPENDENT] | 🩵 Nursing Skills Lab 1 🏫 [AT SCHOOL LAB] |
+| **10:30** | 💜 Geriatric Concepts 💻 [ONLINE VIRTUAL] | 🌸 Anatomy & Phys 🏫 [AT SCHOOL] | 🍑 Skills Theory 1 💻 [ONLINE VIRTUAL] | 💜 Geriatric Concepts 💻 [ONLINE INDEPENDENT] | 🩵 Nursing Skills Lab 1 🏫 [AT SCHOOL LAB] |
+| **11:30** | 💜 Geriatric Concepts 💻 [ONLINE VIRTUAL] | 🍃 Focused Learning 💻 [ONLINE INDEPENDENT] | 🟣 Work Safely 💻 [ONLINE INDEPENDENT] | 💜 Geriatric Concepts 💻 [ONLINE INDEPENDENT] | 🩵 Nursing Skills Lab 1 🏫 [AT SCHOOL LAB] |
 | **12:20** | **LUNCH** | **LUNCH** | **LUNCH** | **LUNCH** | **LUNCH** |
-| **1:30** | 🌸 Anatomy & Phys [VT] | 🌿 Nursing in Canada [OC] | 💜 Geriatric Concepts [VT] | 🌸 Anatomy & Phys [ON] | 🩵 Nursing Skills Lab 1 [Lab] |
-| **2:30** | 🌸 Anatomy & Phys [VT] | 🌿 Nursing in Canada [OC] | 💜 Geriatric Concepts [VT] | 🌸 Anatomy & Phys [ON] | 🩵 Nursing Skills Lab 1 [Lab] |
-| **3:30** | 🌸 Anatomy & Phys [VT] | 🌿 Nursing in Canada [OC] | 🟡 Student Union | 🌸 Anatomy & Phys [ON] | 🩵 Nursing Skills Lab 1 [Lab] |
+| **1:30** | 🌸 Anatomy & Phys 💻 [ONLINE VIRTUAL] | 🌿 Nursing in Canada 🏫 [AT SCHOOL] | 💜 Geriatric Concepts 💻 [ONLINE VIRTUAL] | 🌸 Anatomy & Phys 💻 [ONLINE INDEPENDENT] | 🩵 Nursing Skills Lab 1 🏫 [AT SCHOOL LAB] |
+| **2:30** | 🌸 Anatomy & Phys 💻 [ONLINE VIRTUAL] | 🌿 Nursing in Canada 🏫 [AT SCHOOL] | 💜 Geriatric Concepts 💻 [ONLINE VIRTUAL] | 🌸 Anatomy & Phys 💻 [ONLINE INDEPENDENT] | 🩵 Nursing Skills Lab 1 🏫 [AT SCHOOL LAB] |
+| **3:30** | 🌸 Anatomy & Phys 💻 [ONLINE VIRTUAL] | 🌿 Nursing in Canada 🏫 [AT SCHOOL] | 🟡 Student Union | 🌸 Anatomy & Phys 💻 [ONLINE INDEPENDENT] | 🩵 Nursing Skills Lab 1 🏫 [AT SCHOOL LAB] |
 
 ---
 
@@ -195,14 +194,14 @@
 
 | Time | Mon (Nov 09) | Tue (Nov 10) | Wed (Nov 11) | Thu (Nov 12) | Fri (Nov 13) |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **8:30** | 🍑 Skills Theory 1 [VT] | 🌸 Anatomy & Phys [OC] | 🔴 STAT Holiday | 🟢 Intro Med Term [ON] | 🩵 Nursing Skills Lab 1 [Lab] |
-| **9:30** | 🍑 Skills Theory 1 [VT] | 🌸 Anatomy & Phys [OC] | 🔴 STAT Holiday | 🟢 Intro Med Term [ON] | 🩵 Nursing Skills Lab 1 [Lab] |
-| **10:30** | 💜 Geriatric Concepts [VT] | 🌸 Anatomy & Phys [OC] | 🔴 STAT Holiday | 💜 Geriatric Concepts [ON] | 🩵 Nursing Skills Lab 1 [Lab] |
-| **11:30** | 💜 Geriatric Concepts [VT] | 🟣 Work Safely [ON] | 🔴 STAT Holiday | 💜 Geriatric Concepts [ON] | 🩵 Nursing Skills Lab 1 [Lab] |
+| **8:30** | 🍑 Skills Theory 1 💻 [ONLINE VIRTUAL] | 🌸 Anatomy & Phys 🏫 [AT SCHOOL] | 🔴 STAT Holiday | 🟢 Intro Med Term 💻 [ONLINE INDEPENDENT] | 🩵 Nursing Skills Lab 1 🏫 [AT SCHOOL LAB] |
+| **9:30** | 🍑 Skills Theory 1 💻 [ONLINE VIRTUAL] | 🌸 Anatomy & Phys 🏫 [AT SCHOOL] | 🔴 STAT Holiday | 🟢 Intro Med Term 💻 [ONLINE INDEPENDENT] | 🩵 Nursing Skills Lab 1 🏫 [AT SCHOOL LAB] |
+| **10:30** | 💜 Geriatric Concepts 💻 [ONLINE VIRTUAL] | 🌸 Anatomy & Phys 🏫 [AT SCHOOL] | 🔴 STAT Holiday | 💜 Geriatric Concepts 💻 [ONLINE INDEPENDENT] | 🩵 Nursing Skills Lab 1 🏫 [AT SCHOOL LAB] |
+| **11:30** | 💜 Geriatric Concepts 💻 [ONLINE VIRTUAL] | 🟣 Work Safely 💻 [ONLINE INDEPENDENT] | 🔴 STAT Holiday | 💜 Geriatric Concepts 💻 [ONLINE INDEPENDENT] | 🩵 Nursing Skills Lab 1 🏫 [AT SCHOOL LAB] |
 | **12:20** | **LUNCH** | **LUNCH** | **LUNCH** | **LUNCH** | **LUNCH** |
-| **1:30** | 🌸 Anatomy & Phys [VT] | 🌿 Nursing in Canada [OC] | 🔴 STAT Holiday | 🌸 Anatomy & Phys [ON] | 🩵 Nursing Skills Lab 1 [Lab] |
-| **2:30** | 🌸 Anatomy & Phys [VT] | 🌿 Nursing in Canada [OC] | 🔴 STAT Holiday | 🌸 Anatomy & Phys [ON] | 🩵 Nursing Skills Lab 1 [Lab] |
-| **3:30** | 🌸 Anatomy & Phys [VT] | 🌿 Nursing in Canada [OC] | 🔴 STAT Holiday | 🌸 Anatomy & Phys [ON] | 🩵 Nursing Skills Lab 1 [Lab] |
+| **1:30** | 🌸 Anatomy & Phys 💻 [ONLINE VIRTUAL] | 🌿 Nursing in Canada 🏫 [AT SCHOOL] | 🔴 STAT Holiday | 🌸 Anatomy & Phys 💻 [ONLINE INDEPENDENT] | 🩵 Nursing Skills Lab 1 🏫 [AT SCHOOL LAB] |
+| **2:30** | 🌸 Anatomy & Phys 💻 [ONLINE VIRTUAL] | 🌿 Nursing in Canada 🏫 [AT SCHOOL] | 🔴 STAT Holiday | 🌸 Anatomy & Phys 💻 [ONLINE INDEPENDENT] | 🩵 Nursing Skills Lab 1 🏫 [AT SCHOOL LAB] |
+| **3:30** | 🌸 Anatomy & Phys 💻 [ONLINE VIRTUAL] | 🌿 Nursing in Canada 🏫 [AT SCHOOL] | 🔴 STAT Holiday | 🌸 Anatomy & Phys 💻 [ONLINE INDEPENDENT] | 🩵 Nursing Skills Lab 1 🏫 [AT SCHOOL LAB] |
 
 ---
 
@@ -210,14 +209,14 @@
 
 | Time | Mon (Nov 16) | Tue (Nov 17) | Wed (Nov 18) | Thu (Nov 19) | Fri (Nov 20) |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **8:30** | 🍑 Skills Theory 1 [VT] | 🌸 Anatomy & Phys [OC] | 🍑 Skills Theory 1 [VT] | 🟢 Intro Med Term [ON] | 🩵 Nursing Skills Lab 1 [Lab] |
-| **9:30** | 🍑 Skills Theory 1 [VT] | 🌸 Anatomy & Phys [OC] | 🍑 Skills Theory 1 [VT] | 🟢 Intro Med Term [ON] | 🩵 Nursing Skills Lab 1 [Lab] |
-| **10:30** | 💜 Geriatric Concepts [VT] | 🌸 Anatomy & Phys [OC] | 🍑 Skills Theory 1 [VT] | 💜 Geriatric Concepts [ON] | 🩵 Nursing Skills Lab 1 [Lab] |
-| **11:30** | 💜 Geriatric Concepts [VT] | 🍃 Focused Learning [ON] | 🟣 Work Safely [ON] | 💜 Geriatric Concepts [ON] | 🩵 Nursing Skills Lab 1 [Lab] |
+| **8:30** | 🍑 Skills Theory 1 💻 [ONLINE VIRTUAL] | 🌸 Anatomy & Phys 🏫 [AT SCHOOL] | 🍑 Skills Theory 1 💻 [ONLINE VIRTUAL] | 🟢 Intro Med Term 💻 [ONLINE INDEPENDENT] | 🩵 Nursing Skills Lab 1 🏫 [AT SCHOOL LAB] |
+| **9:30** | 🍑 Skills Theory 1 💻 [ONLINE VIRTUAL] | 🌸 Anatomy & Phys 🏫 [AT SCHOOL] | 🍑 Skills Theory 1 💻 [ONLINE VIRTUAL] | 🟢 Intro Med Term 💻 [ONLINE INDEPENDENT] | 🩵 Nursing Skills Lab 1 🏫 [AT SCHOOL LAB] |
+| **10:30** | 💜 Geriatric Concepts 💻 [ONLINE VIRTUAL] | 🌸 Anatomy & Phys 🏫 [AT SCHOOL] | 🍑 Skills Theory 1 💻 [ONLINE VIRTUAL] | 💜 Geriatric Concepts 💻 [ONLINE INDEPENDENT] | 🩵 Nursing Skills Lab 1 🏫 [AT SCHOOL LAB] |
+| **11:30** | 💜 Geriatric Concepts 💻 [ONLINE VIRTUAL] | 🍃 Focused Learning 💻 [ONLINE INDEPENDENT] | 🟣 Work Safely 💻 [ONLINE INDEPENDENT] | 💜 Geriatric Concepts 💻 [ONLINE INDEPENDENT] | 🩵 Nursing Skills Lab 1 🏫 [AT SCHOOL LAB] |
 | **12:20** | **LUNCH** | **LUNCH** | **LUNCH** | **LUNCH** | **LUNCH** |
-| **1:30** | 🌸 Anatomy & Phys [VT] | 🌿 Nursing in Canada [OC] | 💜 Geriatric Concepts [VT] | 🌸 Anatomy & Phys [ON] | 🩵 Nursing Skills Lab 1 [Lab] |
-| **2:30** | 🌸 Anatomy & Phys [VT] | 🌿 Nursing in Canada [OC] | 💜 Geriatric Concepts [VT] | 🌸 Anatomy & Phys [ON] | 🩵 Nursing Skills Lab 1 [Lab] |
-| **3:30** | 🌸 Anatomy & Phys [VT] | 🌿 Nursing in Canada [OC] | 🟡 Student Union | 🌸 Anatomy & Phys [ON] | 🩵 Nursing Skills Lab 1 [Lab] |
+| **1:30** | 🌸 Anatomy & Phys 💻 [ONLINE VIRTUAL] | 🌿 Nursing in Canada 🏫 [AT SCHOOL] | 💜 Geriatric Concepts 💻 [ONLINE VIRTUAL] | 🌸 Anatomy & Phys 💻 [ONLINE INDEPENDENT] | 🩵 Nursing Skills Lab 1 🏫 [AT SCHOOL LAB] |
+| **2:30** | 🌸 Anatomy & Phys 💻 [ONLINE VIRTUAL] | 🌿 Nursing in Canada 🏫 [AT SCHOOL] | 💜 Geriatric Concepts 💻 [ONLINE VIRTUAL] | 🌸 Anatomy & Phys 💻 [ONLINE INDEPENDENT] | 🩵 Nursing Skills Lab 1 🏫 [AT SCHOOL LAB] |
+| **3:30** | 🌸 Anatomy & Phys 💻 [ONLINE VIRTUAL] | 🌿 Nursing in Canada 🏫 [AT SCHOOL] | 🟡 Student Union | 🌸 Anatomy & Phys 💻 [ONLINE INDEPENDENT] | 🩵 Nursing Skills Lab 1 🏫 [AT SCHOOL LAB] |
 
 ---
 
@@ -225,14 +224,14 @@
 
 | Time | Mon (Nov 23) | Tue (Nov 24) | Wed (Nov 25) | Thu (Nov 26) | Fri (Nov 27) |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **8:30** | 🍑 Skills Theory 1 [VT] | 🌸 Anatomy & Phys [OC] | 🍑 Skills Theory 1 [VT] | 🌿 Nursing in Canada [ON] | 🩵 Nursing Skills Lab 1 [Lab] |
-| **9:30** | 🍑 Skills Theory 1 [VT] | 🌸 Anatomy & Phys [OC] | 🍑 Skills Theory 1 [VT] | 🌿 Nursing in Canada [ON] | 🩵 Nursing Skills Lab 1 [Lab] |
-| **10:30** | 💜 Geriatric Concepts [VT] | 🌸 Anatomy & Phys [OC] | 🍑 Skills Theory 1 [VT] | 💜 Geriatric Concepts [ON] | 🩵 Nursing Skills Lab 1 [Lab] |
-| **11:30** | 💜 Geriatric Concepts [VT] | 🍃 Focused Learning [ON] | 🟣 Work Safely [ON] | 💜 Geriatric Concepts [ON] | 🩵 Nursing Skills Lab 1 [Lab] |
+| **8:30** | 🍑 Skills Theory 1 💻 [ONLINE VIRTUAL] | 🌸 Anatomy & Phys 🏫 [AT SCHOOL] | 🍑 Skills Theory 1 💻 [ONLINE VIRTUAL] | 🌿 Nursing in Canada 💻 [ONLINE INDEPENDENT] | 🩵 Nursing Skills Lab 1 🏫 [AT SCHOOL LAB] |
+| **9:30** | 🍑 Skills Theory 1 💻 [ONLINE VIRTUAL] | 🌸 Anatomy & Phys 🏫 [AT SCHOOL] | 🍑 Skills Theory 1 💻 [ONLINE VIRTUAL] | 🌿 Nursing in Canada 💻 [ONLINE INDEPENDENT] | 🩵 Nursing Skills Lab 1 🏫 [AT SCHOOL LAB] |
+| **10:30** | 💜 Geriatric Concepts 💻 [ONLINE VIRTUAL] | 🌸 Anatomy & Phys 🏫 [AT SCHOOL] | 🍑 Skills Theory 1 💻 [ONLINE VIRTUAL] | 💜 Geriatric Concepts 💻 [ONLINE INDEPENDENT] | 🩵 Nursing Skills Lab 1 🏫 [AT SCHOOL LAB] |
+| **11:30** | 💜 Geriatric Concepts 💻 [ONLINE VIRTUAL] | 🍃 Focused Learning 💻 [ONLINE INDEPENDENT] | 🟣 Work Safely 💻 [ONLINE INDEPENDENT] | 💜 Geriatric Concepts 💻 [ONLINE INDEPENDENT] | 🩵 Nursing Skills Lab 1 🏫 [AT SCHOOL LAB] |
 | **12:20** | **LUNCH** | **LUNCH** | **LUNCH** | **LUNCH** | **LUNCH** |
-| **1:30** | 🌸 Anatomy & Phys [VT] | 🌿 Nursing in Canada [OC] | 💜 Geriatric Concepts [VT] | 🌸 Anatomy & Phys [ON] | 🩵 Nursing Skills Lab 1 [Lab] |
-| **2:30** | 🌸 Anatomy & Phys [VT] | 🌿 Nursing in Canada [OC] | 💜 Geriatric Concepts [VT] | 🌸 Anatomy & Phys [ON] | 🩵 Nursing Skills Lab 1 [Lab] |
-| **3:30** | 🌸 Anatomy & Phys [VT] | 🌿 Nursing in Canada [OC] | 🟡 Student Union | 🌸 Anatomy & Phys [ON] | 🩵 Nursing Skills Lab 1 [Lab] |
+| **1:30** | 🌸 Anatomy & Phys 💻 [ONLINE VIRTUAL] | 🌿 Nursing in Canada 🏫 [AT SCHOOL] | 💜 Geriatric Concepts 💻 [ONLINE VIRTUAL] | 🌸 Anatomy & Phys 💻 [ONLINE INDEPENDENT] | 🩵 Nursing Skills Lab 1 🏫 [AT SCHOOL LAB] |
+| **2:30** | 🌸 Anatomy & Phys 💻 [ONLINE VIRTUAL] | 🌿 Nursing in Canada 🏫 [AT SCHOOL] | 💜 Geriatric Concepts 💻 [ONLINE VIRTUAL] | 🌸 Anatomy & Phys 💻 [ONLINE INDEPENDENT] | 🩵 Nursing Skills Lab 1 🏫 [AT SCHOOL LAB] |
+| **3:30** | 🌸 Anatomy & Phys 💻 [ONLINE VIRTUAL] | 🌿 Nursing in Canada 🏫 [AT SCHOOL] | 🟡 Student Union | 🌸 Anatomy & Phys 💻 [ONLINE INDEPENDENT] | 🩵 Nursing Skills Lab 1 🏫 [AT SCHOOL LAB] |
 
 ---
 

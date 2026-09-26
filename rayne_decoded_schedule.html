@@ -213,12 +213,115 @@
     }
 
     .badge-mode {
-      background: rgba(0, 0, 0, 0.2);
-      padding: 0.15rem 0.4rem;
-      border-radius: 4px;
+      padding: 0.2rem 0.5rem;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.725rem;
+      letter-spacing: 0.02em;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.3);
+      transition: all 0.2s ease;
+    }
+
+    .badge-school {
+      background: #0284c7;
+      color: #ffffff !important;
+      border: 1px solid #38bdf8;
+    }
+
+    .badge-online {
+      background: #6d28d9;
+      color: #ffffff !important;
+      border: 1px solid #c084fc;
+    }
+
+    .badge-clinical {
+      background: #b45309;
+      color: #ffffff !important;
+      border: 1px solid #fbbf24;
+    }
+
+    .badge-exam {
+      background: #b91c1c;
+      color: #ffffff !important;
+      border: 1px solid #f87171;
+    }
+
+    .location-summary-card {
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      border-radius: 14px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+      align-items: center;
+      justify-content: space-between;
+      backdrop-filter: blur(10px);
+    }
+
+    .summary-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.925rem;
       font-weight: 600;
-      font-size: 0.7rem;
-      text-transform: uppercase;
+    }
+
+    .summary-badge-count {
+      padding: 0.2rem 0.6rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    .filter-bar {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .filter-btn {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #e2e8f0;
+      padding: 0.45rem 0.9rem;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .filter-btn:hover {
+      background: rgba(255, 255, 255, 0.2);
+      color: #fff;
+    }
+
+    .filter-btn.active {
+      background: linear-gradient(135deg, #0284c7, #6d28d9);
+      border-color: #38bdf8;
+      color: #ffffff;
+      box-shadow: 0 0 10px rgba(56, 189, 248, 0.4);
+    }
+
+    .cell-course {
+      transition: all 0.25s ease;
+    }
+
+    .cell-course.dimmed {
+      opacity: 0.2;
+      filter: grayscale(80%);
+    }
+
+    .cell-course.highlighted {
+      transform: scale(1.03);
+      box-shadow: 0 0 14px rgba(56, 189, 248, 0.6);
+      border: 2px solid #38bdf8 !important;
     }
 
     .lunch-row {
@@ -274,6 +377,31 @@
       </div>
     </div>
 
+    <!-- Location & Delivery Legend -->
+    <div style="background: rgba(15, 23, 42, 0.7); border: 1px solid var(--card-border); border-radius: 14px; padding: 1.25rem; margin-bottom: 2rem;">
+      <h3 style="margin-bottom: 0.75rem; font-family:'Outfit'; display:flex; align-items:center; gap:0.5rem;">
+        📍 Class Location & Delivery Key
+      </h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.85rem;">
+        <div style="display:flex; align-items:center; gap:0.6rem; background:rgba(2, 132, 199, 0.15); border:1px solid rgba(56, 189, 248, 0.4); padding:0.65rem 0.85rem; border-radius:10px;">
+          <span class="badge-mode badge-school">🏫 AT SCHOOL</span>
+          <span style="font-size:0.85rem; color:#e2e8f0;"><strong>On Campus</strong> (In-person / Nursing Lab)</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:0.6rem; background:rgba(109, 40, 217, 0.15); border:1px solid rgba(192, 132, 252, 0.4); padding:0.65rem 0.85rem; border-radius:10px;">
+          <span class="badge-mode badge-online">💻 ONLINE</span>
+          <span style="font-size:0.85rem; color:#e2e8f0;"><strong>Online / Virtual</strong> (Live Teams / Independent)</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:0.6rem; background:rgba(180, 83, 9, 0.15); border:1px solid rgba(251, 191, 36, 0.4); padding:0.65rem 0.85rem; border-radius:10px;">
+          <span class="badge-mode badge-clinical">🏥 CLINICAL</span>
+          <span style="font-size:0.85rem; color:#e2e8f0;"><strong>Off-Campus</strong> (Hospital Placement)</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:0.6rem; background:rgba(185, 28, 28, 0.15); border:1px solid rgba(248, 113, 113, 0.4); padding:0.65rem 0.85rem; border-radius:10px;">
+          <span class="badge-mode badge-exam">📝 EXAM</span>
+          <span style="font-size:0.85rem; color:#e2e8f0;"><strong>Examination</strong> (In-Person / Online)</span>
+        </div>
+      </div>
+    </div>
+
     <!-- Course Legend -->
     <h3 style="margin-bottom: 1rem; font-family:'Outfit';">Course Legend & Color Codes</h3>
     <div class="legend-grid" id="legendGrid"></div>
@@ -322,14 +450,93 @@
       "3:30 PM - 4:20 PM"
     ];
 
+    let currentFilter = 'all';
+
+    function getModeBadgeHtml(mode) {
+      if (!mode) return '';
+      if (mode === 'OC' || mode === 'Lab') {
+        return `<span class="badge-mode badge-school" data-loc="school">🏫 AT SCHOOL (${mode})</span>`;
+      } else if (mode === 'VT' || mode === 'ON') {
+        return `<span class="badge-mode badge-online" data-loc="online">💻 ONLINE (${mode === 'VT' ? 'VIRTUAL' : 'INDEPENDENT'})</span>`;
+      } else if (mode === 'OFC') {
+        return `<span class="badge-mode badge-clinical" data-loc="clinical">🏥 CLINICAL</span>`;
+      } else if (mode === 'EXAM') {
+        return `<span class="badge-mode badge-exam" data-loc="exam">📝 EXAM</span>`;
+      }
+      return `<span class="badge-mode">${mode}</span>`;
+    }
+
     function renderWeek(weekNum) {
       const weekData = WEEKS.find(w => w.week == weekNum);
       const section = document.getElementById('scheduleSection');
 
+      // Calculate location statistics for the week
+      let schoolSlots = 0;
+      let onlineSlots = 0;
+      let clinicalSlots = 0;
+      let examSlots = 0;
+      let schoolDays = new Set();
+      let onlineDays = new Set();
+
+      const days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
+      const dayFullNames = {"Mon": "Monday", "Tue": "Tuesday", "Wed": "Wednesday", "Thu": "Thursday", "Fri": "Friday"};
+
+      days.forEach(day => {
+        weekData.days[day].forEach(([code, mode, note]) => {
+          if (mode === 'OC' || mode === 'Lab') {
+            schoolSlots++;
+            schoolDays.add(dayFullNames[day]);
+          } else if (mode === 'VT' || mode === 'ON') {
+            onlineSlots++;
+            onlineDays.add(dayFullNames[day]);
+          } else if (mode === 'OFC') {
+            clinicalSlots++;
+          } else if (mode === 'EXAM') {
+            examSlots++;
+          }
+        });
+      });
+
       let notesHtml = weekData.notes ? `<div class="week-notes"><strong>Note:</strong> ${weekData.notes}</div>` : '';
+
+      let locationSummaryHtml = `
+        <div class="location-summary-card">
+          <div style="display:flex; flex-wrap:wrap; gap:1.25rem; align-items:center;">
+            <div class="summary-item">
+              <span class="summary-badge-count" style="background:#0284c7; color:#fff;">🏫 AT SCHOOL</span>
+              <span>${schoolSlots} slots</span>
+              ${schoolDays.size > 0 ? `<span style="font-size:0.8rem; color:var(--text-muted);">(${Array.from(schoolDays).join(', ')})</span>` : ''}
+            </div>
+            <div class="summary-item">
+              <span class="summary-badge-count" style="background:#6d28d9; color:#fff;">💻 ONLINE</span>
+              <span>${onlineSlots} slots</span>
+              ${onlineDays.size > 0 ? `<span style="font-size:0.8rem; color:var(--text-muted);">(${Array.from(onlineDays).join(', ')})</span>` : ''}
+            </div>
+            ${clinicalSlots > 0 ? `
+              <div class="summary-item">
+                <span class="summary-badge-count" style="background:#b45309; color:#fff;">🏥 CLINICAL</span>
+                <span>${clinicalSlots} slots</span>
+              </div>` : ''}
+            ${examSlots > 0 ? `
+              <div class="summary-item">
+                <span class="summary-badge-count" style="background:#b91c1c; color:#fff;">📝 EXAMS</span>
+                <span>${examSlots} exam slots</span>
+              </div>` : ''}
+          </div>
+
+          <div class="filter-bar">
+            <span style="font-size:0.85rem; font-weight:600; color:var(--text-muted);">Filter View:</span>
+            <button class="filter-btn ${currentFilter === 'all' ? 'active' : ''}" onclick="setFilter('all')">All</button>
+            <button class="filter-btn ${currentFilter === 'school' ? 'active' : ''}" onclick="setFilter('school')">🏫 At School Only</button>
+            <button class="filter-btn ${currentFilter === 'online' ? 'active' : ''}" onclick="setFilter('online')">💻 Online Only</button>
+            <button class="filter-btn ${currentFilter === 'clinical' ? 'active' : ''}" onclick="setFilter('clinical')">🏥 Clinical / Exam</button>
+          </div>
+        </div>
+      `;
 
       let tableHtml = `
         ${notesHtml}
+        ${locationSummaryHtml}
         <div class="table-container">
           <table>
             <thead>
@@ -345,14 +552,12 @@
             <tbody>
       `;
 
-      const days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
-
       for (let slotIdx = 0; slotIdx < 7; slotIdx++) {
         if (slotIdx === 4) {
           tableHtml += `
             <tr class="lunch-row">
               <td style="background: rgba(15, 23, 42, 0.9);">12:20 PM - 1:30 PM</td>
-              <td colspan="5">LUNCH BREAK</td>
+              <td colspan="5">☕ LUNCH BREAK</td>
             </tr>
           `;
         }
@@ -362,14 +567,22 @@
         days.forEach(day => {
           const [code, mode, note] = weekData.days[day][slotIdx];
           const course = COURSES[code] || { title: code, code: code, instructor: '', color: '#334155', dark_color: '#ffffff' };
+          
+          let locType = '';
+          if (mode === 'OC' || mode === 'Lab') locType = 'school';
+          else if (mode === 'VT' || mode === 'ON') locType = 'online';
+          else if (mode === 'OFC') locType = 'clinical';
+          else if (mode === 'EXAM') locType = 'exam';
+
+          const badgeHtml = getModeBadgeHtml(mode);
 
           tableHtml += `
             <td>
-              <div class="cell-course" style="background-color: ${course.color}; color: ${course.dark_color};">
+              <div class="cell-course" data-location-type="${locType}" style="background-color: ${course.color}; color: ${course.dark_color};">
                 <div class="course-title">${course.title}</div>
                 <div class="course-meta">
                   <span>${course.code !== course.title ? course.code : ''}</span>
-                  ${mode ? `<span class="badge-mode">${mode}</span>` : ''}
+                  ${badgeHtml}
                   ${course.instructor ? `<span>&bull; ${course.instructor}</span>` : ''}
                 </div>
                 ${note ? `<div style="font-size:0.75rem; font-style:italic; margin-top:2px;">${note}</div>` : ''}
@@ -388,6 +601,41 @@
       `;
 
       section.innerHTML = tableHtml;
+      applyFilter();
+    }
+
+    function setFilter(filterType) {
+      currentFilter = filterType;
+      document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+      const btns = document.querySelectorAll('.filter-btn');
+      btns.forEach(b => {
+        if ((filterType === 'all' && b.textContent === 'All') ||
+            (filterType === 'school' && b.textContent.includes('School')) ||
+            (filterType === 'online' && b.textContent.includes('Online')) ||
+            (filterType === 'clinical' && b.textContent.includes('Clinical'))) {
+          b.classList.add('active');
+        }
+      });
+      applyFilter();
+    }
+
+    function applyFilter() {
+      const cards = document.querySelectorAll('.cell-course');
+      cards.forEach(card => {
+        const type = card.getAttribute('data-location-type');
+        if (currentFilter === 'all') {
+          card.classList.remove('dimmed', 'highlighted');
+        } else if (currentFilter === 'school') {
+          if (type === 'school') card.classList.add('highlighted'), card.classList.remove('dimmed');
+          else card.classList.add('dimmed'), card.classList.remove('highlighted');
+        } else if (currentFilter === 'online') {
+          if (type === 'online') card.classList.add('highlighted'), card.classList.remove('dimmed');
+          else card.classList.add('dimmed'), card.classList.remove('highlighted');
+        } else if (currentFilter === 'clinical') {
+          if (type === 'clinical' || type === 'exam') card.classList.add('highlighted'), card.classList.remove('dimmed');
+          else card.classList.add('dimmed'), card.classList.remove('highlighted');
+        }
+      });
     }
 
     // Initial Render
