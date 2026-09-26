@@ -57,6 +57,9 @@
 | **Sept 21** | Day 14 | -0.03°C | **-0.12°C** | **100** | No acute joint pain (regular stiffness), itchiness resolving | 🟡 **Protect Phase Shift** |
 | **Sept 22** | Day 15 | 0.00°C | **0.00°C** | **100** | Sleep baseline disruption (11:30 PM - 5:50 AM) | 🟡 **Protect Phase** |
 | **Sept 23** | Day 16 | +0.08°C | **+0.10°C** | **100** | **Breasts very tender (NOT itchy)**, bloated, energy better, short sleep (11:30 PM - 5:50 AM) | 🟡 **Protect Phase Active (Progesterone Rise)** |
+| **Sept 24** | Day 17 | +0.34°C | **+0.16°C** | **94** | Progesterone temp rise climbing | 🟡 **Protect Phase** |
+| **Sept 25** | Day 18 | +0.58°C | **+0.28°C** | **57** | Acute temp spike (+0.58°C), low readiness (57), sleep/systemic strain, right breast itchy overnight | 🟡 **Peak Luteal Heat Surge & Histamine Shift** |
+| **Sept 26** | Day 19 | +0.36°C | **+0.28°C** | **93** | 🩸 **BLOOD SPOT TEST COMPLETED AM**. Scale 152 lbs (water shift), super puffy, hands/rings tight, right breast itchy last night, extreme breast tenderness. | 🩸 **Protect Phase / Blood Spot Test Window (Peak Progesterone)** |
 
 ### September 16 Body Measurements & Physical Check-In
 * **Oura Temp / Readiness:** -0.25°C (Day 9 Peak Estrogen Dip) | Readiness: 96 | Sleep Scores: 77 (Sept 14 night) & 81 (Sept 15 night).

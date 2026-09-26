@@ -21,18 +21,19 @@
 
 ### 2. Oura Ring Biomarker & Ovarian Cycle Confirmation
 * **Cycle Discovery:** Multi-month Oura temperature data confirms a highly regular **~25-day ovarian cycle**.
-* **Histamine Flare Pattern:** Skin, scalp, and breast itchiness occur consistently during the **Days 1–3 transition** when progesterone plunges and temperature drops off the high plateau.
+* **Histamine Flare Pattern:** Skin, scalp, and breast itchiness occur consistently during temperature drops off high plateaus (e.g., Sept 25 temp spike of **+0.58°C** dropping to **+0.36°C** on Sept 26 triggered acute right breast itching).
 * **Mid-Cycle Temperature Dip & Joint Pain:** On Days 10–12 (Ovulation Shift), temperature drops to a low trough (-0.26°C) before rising, triggering joint pain, fatigue, and mild skin symptoms.
+* **Peak Protect Phase Symptoms (Sept 24–26):** Sustained +0.28°C baseline deviation with acute fluid retention (scale +2.3 lbs / 152 lbs, hand edema/tight rings) and severe glandular breast tenderness/hypersensitivity.
 
 ---
 
-### 3. Key Questions for BHRT Specialist
-1. **Mid-Cycle Dip & Joint Pain Management:**  
-   *"On Days 10–12 of my cycle, my Oura temperature hits a low trough (-0.26°C) before climbing into the Protect phase. This transition triggers joint pain, fatigue, and mild histamine symptoms. Is this caused by an acute estrogen drop or relative progesterone deficit during transition? Should we adjust BHRT on dip days, or maintain my daily baseline?"*
-2. **Finger Prick Blood Spot Lab Review:**  
-   Confirming target lab test window for **Sunday morning, September 27, 2026 (Day 20)** to capture peak progesterone plateau (~12 hours post evening dose).
-3. **Blood Collection Protocol:**  
-   Confirming fasting morning protocol: Take evening Progesterone as normal; **withhold morning BiEst and Testosterone creams** until after capillary blood collection to prevent skin/sample contamination.
+### 3. Key Questions & Lab Status for BHRT Specialist
+1. **Finger Prick Blood Spot Lab Status:**  
+   **COMPLETED Saturday Morning, September 26, 2026 (Day 19)** per protocol (fasting AM collection, evening Progesterone taken, morning BiEst & Testosterone creams withheld until after blood collection).
+2. **Mid-Luteal Fluid Retention & Histamine Flare Inquiry:**  
+   *"During my peak Protect Phase (Days 18–19), my Oura temp spiked to +0.58°C with acute water retention (scale 152 lbs, tight rings) and right breast histamine itching/tenderness. Do my capillary blood spot results indicate optimal tissue progesterone absorption, or should BHRT cream dosing be modulated during peak luteal surge?"*
+3. **Mid-Cycle Dip & Joint Pain Management:**  
+   *"On Days 10–12 of my cycle, my Oura temperature hits a low trough (-0.26°C) before climbing into the Protect phase. Should we adjust BHRT on dip days, or maintain my daily baseline?"*
 
 ---
 
@@ -43,7 +44,8 @@
 ---
 
 ### 5. Summary of Action Items & Doctor Sign-Off
-- [ ] Review multi-month Oura cycle temperature logs & histamine transition data.
+- [x] Finger prick blood spot lab test completed on Sept 26 (Day 19 AM).
+- [ ] Review blood spot lab results alongside multi-month Oura cycle temperature logs.
+- [ ] Discuss peak luteal fluid retention (scale 152 lbs, hand edema) and localized breast histamine symptoms.
 - [ ] Discuss mid-cycle temperature dip (-0.26°C) and joint flare management strategy.
-- [ ] Approve finger prick blood spot test protocol for Sunday, Sept 27.
 - [ ] Review Vyvanse (40mg) + Ozempic (18 clicks) interaction with daily BHRT regimen.
