@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Rayne Moulton - Resume</title>
+  <style>
+    @page {
+      size: letter;
+      margin: 0.5in 0.6in;
+    }
+    body {
+      font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+      color: #2c3e50;
+      line-height: 1.45;
+      background-color: #f8f9fa;
+      margin: 0;
+      padding: 20px;
+    }
+    .resume-container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 35px 45px;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    }
+    header {
+      text-align: center;
+      border-bottom: 2px solid #1b4d3e;
+      padding-bottom: 12px;
+      margin-bottom: 18px;
+    }
+    h1 {
+      font-size: 26px;
+      letter-spacing: 1px;
+      color: #1b4d3e;
+      margin: 0 0 6px 0;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+    .contact-info {
+      font-size: 13px;
+      color: #555555;
+      font-weight: 500;
+    }
+    .contact-info span {
+      margin: 0 8px;
+      color: #1b4d3e;
+    }
+    section {
+      margin-bottom: 18px;
+    }
+    h2 {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: #1b4d3e;
+      border-bottom: 1px solid #1b4d3e;
+      padding-bottom: 4px;
+      margin: 0 0 10px 0;
+      font-weight: 700;
+    }
+    p.summary {
+      font-size: 13.5px;
+      color: #333333;
+      margin: 0;
+      line-height: 1.5;
+    }
+    .competencies-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px 20px;
+      font-size: 13px;
+      color: #333333;
+    }
+    .competencies-grid div::before {
+      content: "• ";
+      color: #1b4d3e;
+      font-weight: bold;
+    }
+    .job {
+      margin-bottom: 14px;
+    }
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 3px;
+    }
+    .job-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #222222;
+    }
+    .company {
+      font-weight: 400;
+      color: #555555;
+      font-style: italic;
+    }
+    .dates {
+      font-size: 12.5px;
+      font-weight: 600;
+      color: #1b4d3e;
+    }
+    ul {
+      margin: 4px 0 0 18px;
+      padding: 0;
+      font-size: 13px;
+      color: #444444;
+    }
+    li {
+      margin-bottom: 3px;
+      line-height: 1.4;
+    }
+    .edu-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 6px;
+      font-size: 13px;
+    }
+    .degree {
+      font-weight: 700;
+      color: #222222;
+    }
+    .school {
+      color: #555555;
+      font-style: italic;
+    }
+    .no-print-bar {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .print-btn {
+      background-color: #1b4d3e;
+      color: white;
+      border: none;
+      padding: 10px 24px;
+      font-size: 14px;
+      font-weight: 600;
+      border-radius: 6px;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      transition: background 0.2s;
+    }
+    .print-btn:hover {
+      background-color: #13392d;
+    }
+    @media print {
+      body {
+        background-color: #ffffff;
+        padding: 0;
+      }
+      .no-print-bar {
+        display: none;
+      }
+      .resume-container {
+        box-shadow: none;
+        padding: 0;
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="no-print-bar">
+    <button class="print-btn" onclick="window.print()">🖨️ Print Resume / Save as PDF</button>
+  </div>
+
+  <div class="resume-container">
+    <header>
+      <h1>Rayne Moulton</h1>
+      <div class="contact-info">
+        Quispamsis, NB <span>•</span> (403) 618-3006 <span>•</span> rayne.moulton1234@gmail.com
+      </div>
+    </header>
+
+    <section>
+      <h2>Professional Summary</h2>
+      <p class="summary">
+        Motivated and dependable NBCC Practical Nursing student with strong communication skills and a proven ability to thrive in fast-paced customer service and retail environments. Seeking part-time or casual employment.
+      </p>
+    </section>
+
+    <section>
+      <h2>Core Competencies</h2>
+      <div class="competencies-grid">
+        <div>Customer Service & Client Relations</div>
+        <div>POS Systems & Cash Handling</div>
+        <div>Time Management & Organization</div>
+        <div>Operational Support & Efficiency</div>
+        <div>Team Collaboration</div>
+        <div>Attention to Detail & Accuracy</div>
+        <div>Adaptability & Flexibility</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Professional Experience</h2>
+
+      <div class="job">
+        <div class="job-header">
+          <span class="job-title">Retail Sales Associate <span class="company">| La Vie En Rose — Quispamsis / Saint John, NB</span></span>
+          <span class="dates">June 2026 – September 2026</span>
+        </div>
+        <ul>
+          <li>Provided personalized customer service, assisting clients with specialized product selection and fit to ensure comfort and satisfaction.</li>
+          <li>Maintained store presentation standards by organizing displays, replenishing inventory, and ensuring a welcoming shopping environment.</li>
+          <li>Processed transactions accurately and efficiently using the point-of-sale (POS) system while promoting store loyalty programs.</li>
+          <li>Contributed to daily operations through team collaboration, stockroom organization, and maintaining an efficient sales floor.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <span class="job-title">Retail Sales Associate <span class="company">| Sport Chek — Saint John, NB</span></span>
+          <span class="dates">November 2025 – August 2026</span>
+        </div>
+        <ul>
+          <li>Engaged with customers to understand their athletic and footwear needs, providing knowledgeable product recommendations.</li>
+          <li>Achieved a fast-paced and efficient sales environment by keeping high-traffic merchandise zones organized and fully stocked.</li>
+          <li>Handled cash, debit, and credit transactions reliably, ensuring accurate till balances at the end of shifts.</li>
+          <li>Supported team goals and daily operations by assisting with inventory shipments and maintaining floor visual standards.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <span class="job-title">Team Member <span class="company">| Tim Hortons — Hampton, NB</span></span>
+          <span class="dates">June 2023 – June 2025</span>
+        </div>
+        <ul>
+          <li>Delivered fast, friendly, and accurate service to customers in a high-volume, fast-paced environment.</li>
+          <li>Prepared and assembled food and beverage orders efficiently while strictly adhering to health, safety, and quality standards.</li>
+          <li>Managed point-of-sale (POS) transactions, securely handling cash and digital payments while maintaining accurate till balances.</li>
+          <li>Upheld strict cleanliness and sanitation standards across the drive-thru, counter, and food preparation areas.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Education</h2>
+      <div class="edu-item">
+        <div>
+          <span class="degree">Practical Nursing Diploma (In Progress)</span>
+          <span class="school">| New Brunswick Community College (NBCC) — Nursing Student 2026 – 2028</span>
+        </div>
+      </div>
+      <div class="edu-item">
+        <div>
+          <span class="degree">High School Diploma</span>
+          <span class="school">| Kennebecasis Valley High School (KVHS), Quispamsis, NB</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>References</h2>
+      <p class="summary" style="font-style: italic; color: #666666;">Available upon request</p>
+    </section>
+  </div>
+
+</body>
+</html>
