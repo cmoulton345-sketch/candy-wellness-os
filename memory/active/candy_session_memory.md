@@ -68,3 +68,7 @@ I'm ready to respond to the updated call, sir.
     - Sept 25 @ 7:00 PM: Take Progesterone (exact 13.5h window to 8:30 AM test).
     - Sept 25 Evening: Wear gloves for Tretinoin/topical creams. Hydrate well.
     - Sept 26 @ 8:30 AM: Collect blood spots BEFORE morning E & T doses, BEFORE Vyvanse, BEFORE coffee/Fairlife. Warm hands, collect, then resume morning meds/breakfast.
+- **2026-09-27** (SOMA / CLARA):
+  - **Sunday Harvest Check-In Logged:** Recorded scale weight (151.7 lbs, down from 152.0), Oura readiness (88), temp trend (+0.41°C / +0.45°C baseline deviation).
+  - **Symptom & Measurement Update:** Zero/low joint pain celebrated! Breast tenderness improving from peak. Midsection puffiness & heavy fingers logged in `candys_weekly_checkin.md` and `candys_hormones.md`.
+  - **Rayne Prozac (50 mg) & Cannabis (Pot) Protocol Saved:** Provided full science breakdown on liver enzyme backlog (`CYP2D6`/`CYP2C9`), rebound "hangxiety" glutamate spikes, and Prozac interference. Saved printable science guide [`prozac_and_pot_science_guide.md`](file:///Users/valuedcustomer/Downloads/flowstate_ai_os_candy/raynes_ocd_adhd/prozac_and_pot_science_guide.md) for Rayne and [`moms_playbook_rayne_pot_safety.md`](file:///Users/valuedcustomer/Downloads/flowstate_ai_os_candy/parenting_and_grounding/moms_playbook_rayne_pot_safety.md) for Candy.
