@@ -61,6 +61,7 @@
 | **Sept 25** | Day 18 | +0.58°C | **+0.28°C** | **57** | Acute temp spike (+0.58°C), low readiness (57), sleep/systemic strain, right breast itchy overnight | 🟡 **Peak Luteal Heat Surge & Histamine Shift** |
 | **Sept 26** | Day 19 | +0.36°C | **+0.28°C** | **93** | 🩸 **BLOOD SPOT TEST COMPLETED AM**. Scale 152 lbs (water shift), super puffy, hands/rings tight, right breast itchy last night, extreme breast tenderness. | 🩸 **Protect Phase / Blood Spot Test Window (Peak Progesterone)** |
 | **Sept 27** | Day 20 | +0.41°C | **+0.45°C** | **88** | Weight 151.7 lbs (down from 152). Breast tenderness improving, low/no joint pain! Bloated/puffy, heavy fingers, midsection up. Hips 39.5", Bust 35", Waist 28", Midsection 33", Abdomen 36", L Arm 12", R Arm 11.5", Thighs 23". | 🟡 **Protect Phase (Peak Progesterone Plateau)** |
+| **Sept 28** | Day 21 | +0.27°C | **+0.45°C** | **99** | **Readiness 99!** Vinyasa yoga completed (minimal joint pain, completed whole class). Push workout win (swapped bench hip thrusts for banded glute pull-throughs). Breasts tender to touch (not aching during activity), bloated, heartburn active. **Itchiness 100% GONE.** | 🟡 **Protect Phase Peak** |
 
 ### September 16 Body Measurements & Physical Check-In
 * **Oura Temp / Readiness:** -0.25°C (Day 9 Peak Estrogen Dip) | Readiness: 96 | Sleep Scores: 77 (Sept 14 night) & 81 (Sept 15 night).
