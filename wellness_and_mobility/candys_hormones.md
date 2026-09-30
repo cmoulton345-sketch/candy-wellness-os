@@ -61,7 +61,9 @@
 | **Sept 25** | Day 18 | +0.58°C | **+0.28°C** | **57** | Acute temp spike (+0.58°C), low readiness (57), sleep/systemic strain, right breast itchy overnight | 🟡 **Peak Luteal Heat Surge & Histamine Shift** |
 | **Sept 26** | Day 19 | +0.36°C | **+0.28°C** | **93** | 🩸 **BLOOD SPOT TEST COMPLETED AM**. Scale 152 lbs (water shift), super puffy, hands/rings tight, right breast itchy last night, extreme breast tenderness. | 🩸 **Protect Phase / Blood Spot Test Window (Peak Progesterone)** |
 | **Sept 27** | Day 20 | +0.41°C | **+0.45°C** | **88** | Weight 151.7 lbs (down from 152). Breast tenderness improving, low/no joint pain! Bloated/puffy, heavy fingers, midsection up. Hips 39.5", Bust 35", Waist 28", Midsection 33", Abdomen 36", L Arm 12", R Arm 11.5", Thighs 23". | 🟡 **Protect Phase (Peak Progesterone Plateau)** |
-| **Sept 28** | Day 21 | +0.27°C | **+0.45°C** | **99** | **Readiness 99!** Vinyasa yoga completed (minimal joint pain, completed whole class). Push workout win (swapped bench hip thrusts for banded glute pull-throughs). Breasts tender to touch (not aching during activity), bloated, heartburn active. **Itchiness 100% GONE.** | 🟡 **Protect Phase Peak** |
+| **Sept 28** | Day 21 | +0.27°C | **+0.45°C** | **99** | **Readiness 99!** Vinyasa yoga completed (minimal joint pain). Banded glute pull-throughs win. Tender breasts, bloated, heartburn active. Itchiness 100% GONE. | 🟡 **Protect Phase Peak** |
+| **Sept 29** | Day 22 | +0.50°C | **+0.47°C** | **80** | Luteal temp surge peak (+0.50°C), readiness 80. | 🟡 **Protect Phase High Plateau** |
+| **Sept 30** | Day 23 | +0.06°C | **+0.29°C** | **100** | Scale 151 lbs. Broken sleep (3:30 AM airport run for Joe, back to sleep 4:30–6:50 AM). Body aching, active ovary pain, gut pain, bloated & puffy. Temp trend dip (+0.06°C) post-surge + sleep shift. | 🟡 **Protect Phase Late Shift (Circadian & Luteal Strain)** |
 
 ### September 16 Body Measurements & Physical Check-In
 * **Oura Temp / Readiness:** -0.25°C (Day 9 Peak Estrogen Dip) | Readiness: 96 | Sleep Scores: 77 (Sept 14 night) & 81 (Sept 15 night).
@@ -111,11 +113,16 @@ This proves 100% that your itchiness is tied to your **ovarian cycle reset** whe
 
 ---
 
-## 6. DOCTOR CONSULTATION CHECKLIST
+## 6. DOCTOR CONSULTATION CHECKLIST & BHRT ADJUSTMENT OPTIONS
 - [x] **Cycle Confirmation:** Documented proof of a regular ~25-day ovarian cycle via Oura ring temps (despite hysterectomy).
 - [x] **Histamine Connection:** Clear pattern of skin/scalp/breast itchiness occurring on exact transition dates when temp drops (July 25, Aug 17, Sep 8-10).
-- [ ] **Mid-Cycle Dip & Joint Pain Inquiry:** Ask practitioner: *"On Days 10–12 (Mid-Cycle Ovulation Shift), my temp hits a low trough (-0.26°C) and climbs, triggering joint pain, fatigue, and itchiness. Based on my Sept 27 blood spot results, is this caused by an acute estrogen drop or relative progesterone deficit during transition? Should we adjust BHRT on dip days, or maintain my daily baseline?"*
-- [ ] **Finger Prick Test:** Target test window set for Sunday morning, Sept 27.
-- [ ] **Follow-Up Appointment:** Late October consultation to review test results + Oura cycle logs.
+- [x] **Finger Prick Test Completed:** Lab sample collected Saturday morning, Sept 26 (Day 19 Peak Progesterone Window).
+- [ ] **Late-Luteal BHRT Dosing Discussion (Days 21–26 Flare Window):**
+  * **Progesterone Stacking Inquiry:** *"Because my intact ovaries produce their own progesterone surge, taking a continuous evening progesterone pump (6 days/wk) creates a 'double high' by Days 21–25, causing severe fluid retention (151–152 lbs), gut smooth muscle relaxation (heartburn/bloating/ovary pressure), and body aches."*
+  * **Option A (5–7 Day Progesterone Break):** Discuss taking a 5 to 7 day break from Progesterone cream during late luteal/reset window (Days 22–27) to mirror natural luteal clearance.
+  * **Option B (Late-Luteal Dose Reduction):** Discuss dropping to a half-pump of Progesterone from Day 20 until cycle resets.
+  * **Option C (Estrogen Cushioning):** Review Sept 26 Estradiol-to-Progesterone ratio to see if morning BiEst should be micro-adjusted during late luteal temp drops to prevent body aches.
+- [ ] **Follow-Up Appointment:** Late October consultation to review Sept 26 blood spot test results + Oura cycle logs.
+
 
 
