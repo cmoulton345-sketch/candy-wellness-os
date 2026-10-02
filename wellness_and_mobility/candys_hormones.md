@@ -65,6 +65,7 @@
 | **Sept 29** | Day 22 | +0.50°C | **+0.47°C** | **80** | Luteal temp surge peak (+0.50°C), readiness 80. | 🟡 **Protect Phase High Plateau** |
 | **Sept 30** | Day 23 | +0.06°C | **+0.29°C** | **100** | Scale 151 lbs. Broken sleep (3:30 AM airport run for Joe, back to sleep 4:30–6:50 AM). Body aching, active ovary pain, gut pain, bloated & puffy. Temp trend dip (+0.06°C) post-surge + sleep shift. | 🟡 **Protect Phase Late Shift (Circadian & Luteal Strain)** |
 | **Oct 01** | Day 24 | +0.07°C | **+0.29°C** | **100** | **Scale 148.9 lbs** (huge hormonal fluid dump!). Rings spinning & sliding freely off fingers. Breasts tender & itchy tonight. Woke up slightly puffy. **Readiness 100!** | 🟡 **Late Protect Phase (Luteal Temp Drop, Aldosterone Shift & Histamine Surge)** |
+| **Oct 02** | Day 25 | -0.1°F | **-0.06°C** | **80** | Sleep 76. Neck, back & shoulder achy (restless sleep / luteal muscular tension). Breasts still tender to touch but improving. Still slightly puffy. Temp officially crossed below baseline (-0.1°F). | 🔄 **Cycle Reset / Transition Window (Progesterone Drop)** |
 
 ### September 16 Body Measurements & Physical Check-In
 * **Oura Temp / Readiness:** -0.25°C (Day 9 Peak Estrogen Dip) | Readiness: 96 | Sleep Scores: 77 (Sept 14 night) & 81 (Sept 15 night).
