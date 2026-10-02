@@ -47,24 +47,50 @@ Here are the two pathways available for Joe, with real-world pros and cons:
 
 ---
 
-## 3. Immediate Action Checklist for Joe
+---
 
-- [ ] **1. Call Patient Support Program (e.g., BioAdvance / AbbVie Care):**
-  - Inform your case coordinator that your work will be based in Vancouver.
-  - Ask them how to arrange infusion appointments or biologic delivery in Vancouver without disrupting your treatment.
-- [ ] **2. Check In With Your Crohn's Specialist (GI):**
-  - Tell the clinic: *"I have a 5-year work contract in Vancouver, but my family and permanent home remain in NB, and I will be back regularly. I want to schedule my annual colonoscopies and checkups during my trips home."*
-- [ ] **3. Protect Your Family Doctor Roster Spot:**
-  - **Do NOT** call the office and say you have moved to BC.
-  - Keep your NB address on file and schedule your routine checkups when you are home.
-- [ ] **4. Consult a Cross-Provincial Tax Accountant (CPA):**
-  - Confirm whether your employer should deduct BC or NB provincial tax at source on your T4, preventing an unexpected balance owing in April.
-- [ ] **5. Review Employer Benefits Package:**
-  - Check the drug formulary of your new Director-level extended health plan to verify 100% coverage for your biologic.
+## 3. Virtual Healthcare & Specialist Toolkit: What Joe Already Has
+
+Under Joe's **Woodfibre Management Ltd. Plan (Sun Life Contract #190916)**, he and his dependents have immediate, fully active virtual care and specialist matchmaking services:
+
+### A. Virtual Doctor Access: Lumino Health Virtual Care (Dialogue)
+* **Coverage:** **100% Included** for Joe, Candy, and dependents.
+* **Direct Access Portal:** **[https://luminovc.dialogue.co/](https://luminovc.dialogue.co/)** (or via the mobile app *Lumino Health Virtual Care*).
+* **Services:** 24/7 video and chat access to Canadian licensed physicians and nurse practitioners for urgent issues, lab requisitions, routine care, and local prescriptions.
+
+### B. Finding Specialists: Sun Life Medical Second Opinion by Dialogue
+* **Coverage:** **100% Included** (covers Joe, spouse, children, parents, and parents-in-law).
+* **Direct Contact:** **1-833-286-5614** | **[https://luminovc.dialogue.co/](https://luminovc.dialogue.co/)**
+* **Specialist Navigation:** Explicitly designed to **help find medical specialists** (e.g., Vancouver gastroenterologists) and obtain second opinions from leading medical experts for chronic or serious conditions like Crohn's disease.
+
+### C. Provincial Virtual Care in BC: TELUS Health MyCare
+* **Coverage:** Fully integrated with BC public health and covered via interprovincial reciprocal billing (or BC MSP).
+* **App:** Download **TELUS Health MyCare** on iOS/Android.
+* **Vancouver Utility:** Connects directly with BC-licensed family physicians who can order routine local bloodwork/stool monitoring at Vancouver **LifeLabs** and place direct electronic referrals to BC specialists.
+
+### D. Prescription & Biologic Drug Coverage
+* **Reimbursement:** **100% Coverage** ($0 Deductible).
+* **Coordination:** Managed seamlessly via his Sun Life Pay-Direct Drug Card and drug Patient Support Programs (e.g., BioAdvance / AbbVie Care).
 
 ---
 
-## 4. The 5-Year Master Roadmap
+## 4. Immediate Action Checklist for Joe
+
+- [ ] **1. Activate Lumino Health Virtual Care Account:**
+  - Visit [https://luminovc.dialogue.co/](https://luminovc.dialogue.co/) and set up login using work email or Sun Life Contract #190916.
+- [ ] **2. Call Patient Support Program (e.g., BioAdvance / AbbVie Care):**
+  - Inform your case coordinator that your work will be based in Vancouver.
+  - Ask them how to arrange infusion appointments or biologic delivery in Vancouver without disrupting your treatment.
+- [ ] **3. Check In With Your Crohn's Specialist (GI) in NB:**
+  - Tell the clinic: *"I have a work contract in Vancouver, but my family and permanent home remain in NB, and I will be back regularly. I want to schedule my annual colonoscopies and checkups during my trips home."*
+- [ ] **4. Protect Your NB Family Doctor Roster Spot:**
+  - **Do NOT** call the NB office and say you have moved to BC. Keep your NB address on file and schedule routine checkups when home.
+- [ ] **5. Download TELUS Health MyCare App (for local BC doctor visits & LifeLabs requisitions):**
+  - Install app on mobile phone for on-demand local medical consults while in Vancouver.
+- [ ] **6. Consult a Cross-Provincial Tax Accountant (CPA):**
+  - Confirm whether your employer should deduct BC or NB provincial tax at source on your T4, preventing an unexpected balance owing in April.
+
+## 5. The 5-Year Master Roadmap
 
 | Phase | Timeframe | Core Mission | Financial Action |
 | :--- | :--- | :--- | :--- |
