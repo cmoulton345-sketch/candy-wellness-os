@@ -12,7 +12,7 @@
 - **Location:** Quispamsis, New Brunswick, Canada
 - **Family:**
   - 2 biological daughters, stepmom to Joe's son
-  - Rayne (18, in nursing school, navigating severe OCD)
+  - Rayne (18, in nursing school at NBCC, navigating severe OCD; **CRITICAL MEDICAL ALERT:** Deathly / anaphylactic allergy to tree nuts — cashews, pistachios, and walnuts)
   - Parents living in basement suite of home
 - **Career:** Admin Assistant in Canadian Wealth Management (high compliance, transfers, RESPs, LIFs, RIFs, corporate accounts)
 - **Personal Nuances:** High ADHD, perimenopause, working memory fatigue, pain-adaptive movement needs, deep love for music and calm sanctuaries
