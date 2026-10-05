@@ -109,3 +109,4 @@ I'm ready to respond to the updated call, sir.
     - Itchy right breast on Oct 3 confirmed the 48-hour histamine release window during progesterone-estrogen crossover.
     - Super dry skin matches the hormonal nadir (lowest point of estrogen/progesterone right at cycle start).
     - Lingering bloating and tight rings reflect final aldosterone clearing. Advised steady hydration and gentle restorative pacing as Peak Push Phase initiates over the next 24–48 hours.
+    - **Movement Strategy Shift:** Smartly shifted weekly weight training from Mon/Wed/Fri to **Tuesday, Thursday, Saturday** (Oct 6, 8, 10). Gives Day 1 full restorative recovery/gentle mobility while aligning heavy lifts with climbing estrogen and peak power output later in the week.
