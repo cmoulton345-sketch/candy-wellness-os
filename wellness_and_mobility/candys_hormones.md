@@ -68,6 +68,7 @@
 | **Oct 02** | Day 25 | -0.1°F | **-0.06°C** | **80** | Sleep 76. Neck, back & shoulder achy (restless sleep / luteal muscular tension). Breasts still tender to touch but improving. Still slightly puffy. Temp officially crossed below baseline (-0.1°F). | 🔄 **Cycle Reset / Transition Window (Progesterone Drop)** |
 | **Oct 03** | Day 26 | +0.13°C | **+0.11°C** | **96** | Post-Friday alcohol recovery, strong readiness rebound (96). | 🔄 **Late Luteal Transition** |
 | **Oct 04** | Day 27 | +0.15°C | **+0.19°C** | **89** | **Sleep Score 90!** Scale 152 lbs (cellular water holding from Friday drinks + Saturday pizza/garlic fingers). Body achy / stiff. Day 27 pre-menstrual / cycle reset threshold. | 🔄 **Cycle Reset Doorstep (Estrogen Shift Pending)** |
+| **Oct 05** | Day 28 / Day 1 | 35.6°C (Head Thermometer) | **Deep Drop / Reset** | — | Breasts way less tender (progesterone crash confirmed). Super dry skin (estrogen nadir). Rings tight/hands puffy (late aldosterone clearing). Oct 3 itchiness confirmed histamine transition. | 🟢 **Cycle 4 Reset / Day 1 Push Phase Initiating!** |
 
 ### September 16 Body Measurements & Physical Check-In
 * **Oura Temp / Readiness:** -0.25°C (Day 9 Peak Estrogen Dip) | Readiness: 96 | Sleep Scores: 77 (Sept 14 night) & 81 (Sept 15 night).
