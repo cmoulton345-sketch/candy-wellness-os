@@ -899,13 +899,14 @@
             <span class="atlas-title">${item.title}</span>
             <span class="atlas-badge">${item.system}</span>
           </div>
-          <div class="atlas-img-box">
+          <div class="atlas-img-box" onclick="openImageModal('${item.img}?t=3', '${item.title}')">
             <img src="${item.img}?t=3" alt="${item.title}">
+            <div style="font-size:0.82rem; color:#0284c7; margin-top:6px; font-weight:700;">🔍 Click picture to zoom in full-screen</div>
             ${secondaryImgHtml}
           </div>
           <div class="atlas-body">
             <p><strong>Description:</strong> ${item.description}</p>
-            <h4 style="color:#38bdf8; margin-top:14px; margin-bottom:6px; font-size:1rem;">📌 Key Labeled Structures & Functions to Memorize:</h4>
+            <h4 style="color:#38bdf8; margin-top:14px; margin-bottom:6px; font-size:1rem;">📌 Key Labeled Structures & Functions to Memorize (Click row to enlarge):</h4>
             <table class="parts-table">
               <thead>
                 <tr>
@@ -949,5 +950,303 @@
       });
     }
   </script>
+
+  <!-- Modal 1: Image Zoom Lightbox -->
+  <div class="modal-overlay" id="imageModal" onclick="closeImageModalOnBackdrop(event)">
+    <div class="modal-header-bar">
+      <span class="modal-title-text" id="modalImageTitle">Anatomical Diagram Zoom</span>
+      <div class="modal-zoom-controls">
+        <button class="modal-ctrl-btn" onclick="zoomImage(-0.25)">➖ Zoom Out</button>
+        <button class="modal-ctrl-btn" onclick="resetImageZoom()">↺ 100%</button>
+        <button class="modal-ctrl-btn" onclick="zoomImage(0.25)">➕ Zoom In</button>
+        <button class="modal-ctrl-btn" onclick="toggleFitScreen()">↔ Fit Screen</button>
+        <button class="modal-close-btn" onclick="closeImageModal()">✕ Close</button>
+      </div>
+    </div>
+    <div class="modal-img-viewport" id="modalViewport">
+      <img src="" id="modalImg" alt="Enlarged Diagram">
+    </div>
+  </div>
+
+  <!-- Modal 2: Giant Word / Flashcard Modal -->
+  <div class="word-modal-overlay" id="wordModal" onclick="closeWordModalOnBackdrop(event)">
+    <div class="word-card-popup" onclick="event.stopPropagation()">
+      <div class="word-modal-badge" id="wmBadge">System Badge</div>
+      <div class="word-modal-title" id="wmTitle">Anatomical Structure</div>
+      <div class="word-modal-body" id="wmBody">Physiological role and nursing exam rationale...</div>
+      <div class="word-modal-nav">
+        <button class="word-nav-btn" onclick="prevWord()">◀ Previous</button>
+        <span class="word-counter" id="wmCounter">Part 1 of 12</span>
+        <button class="word-nav-btn" onclick="nextWord()">Next ▶</button>
+        <button class="modal-close-btn" style="padding:10px 20px;" onclick="closeWordModal()">✕ Close</button>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    /* Modal 1: Image Zoom Lightbox */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(11, 17, 32, 0.94);
+      backdrop-filter: blur(8px);
+      z-index: 99999;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-header-bar {
+      width: 100%;
+      max-width: 1200px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #1e293b;
+      padding: 12px 24px;
+      border-radius: 12px;
+      border: 1px solid #334155;
+      color: white;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .modal-title-text {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #38bdf8;
+    }
+    .modal-zoom-controls { display: flex; gap: 8px; align-items: center; }
+    .modal-ctrl-btn {
+      background: #0f172a;
+      border: 1px solid #38bdf8;
+      color: #38bdf8;
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .modal-ctrl-btn:hover { background: #38bdf8; color: #0f172a; }
+    .modal-close-btn {
+      background: #ef4444;
+      border: none;
+      color: white;
+      padding: 6px 16px;
+      border-radius: 6px;
+      font-size: 1.1rem;
+      font-weight: 800;
+      cursor: pointer;
+    }
+    .modal-close-btn:hover { background: #dc2626; }
+    .modal-img-viewport {
+      flex: 1;
+      width: 100%;
+      max-width: 1200px;
+      overflow: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 16px;
+      cursor: grab;
+    }
+    .modal-img-viewport:active { cursor: grabbing; }
+    .modal-img-viewport img {
+      transition: transform 0.2s ease-out;
+      transform-origin: center center;
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+      background: white;
+    }
+
+    /* Modal 2: Giant Word / Study Card Lightbox */
+    .word-modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(11, 17, 32, 0.88);
+      backdrop-filter: blur(8px);
+      z-index: 99999;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+    .word-modal-overlay.active { display: flex; }
+    .word-card-popup {
+      background: #1e293b;
+      border: 3px solid #38bdf8;
+      border-radius: 18px;
+      padding: 36px 40px;
+      max-width: 820px;
+      width: 100%;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+      position: relative;
+    }
+    .word-modal-badge {
+      display: inline-block;
+      background: rgba(56, 189, 248, 0.15);
+      border: 1px solid #38bdf8;
+      color: #38bdf8;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    .word-modal-title {
+      font-size: 2.3rem;
+      font-weight: 800;
+      color: #67e8f9;
+      line-height: 1.2;
+      margin-bottom: 18px;
+      border-bottom: 2px solid #334155;
+      padding-bottom: 12px;
+    }
+    .word-modal-body {
+      font-size: 1.45rem;
+      line-height: 1.7;
+      color: #f1f5f9;
+      margin-bottom: 28px;
+    }
+    .word-modal-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+    }
+    .word-nav-btn {
+      background: #0f172a;
+      border: 2px solid #38bdf8;
+      color: #38bdf8;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .word-nav-btn:hover { background: #38bdf8; color: #0f172a; }
+    .word-counter { color: #94a3b8; font-size: 1rem; font-weight: 600; }
+
+    /* Atlas Image Hover */
+    .atlas-img-box, .bp-img-box {
+      position: relative;
+      cursor: zoom-in;
+    }
+    .parts-table tr {
+      cursor: pointer;
+      transition: background 0.15s ease;
+    }
+    .parts-table tr:hover {
+      background: #253349 !important;
+    }
+  </style>
+
+  <script>
+    // Lightbox and Word Zoom Scripts
+    let currentImgZoom = 1;
+    function openImageModal(imgSrc, title) {
+      const modal = document.getElementById('imageModal');
+      const modalImg = document.getElementById('modalImg');
+      const titleEl = document.getElementById('modalImageTitle');
+      modalImg.src = imgSrc;
+      titleEl.innerText = title;
+      currentImgZoom = 1;
+      modalImg.style.transform = `scale(${currentImgZoom})`;
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeImageModal() {
+      const modal = document.getElementById('imageModal');
+      modal.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+
+    function closeImageModalOnBackdrop(e) {
+      if (e.target.id === 'imageModal' || e.target.id === 'modalViewport') {
+        closeImageModal();
+      }
+    }
+
+    function zoomImage(delta) {
+      currentImgZoom = Math.max(0.5, Math.min(3.5, currentImgZoom + delta));
+      document.getElementById('modalImg').style.transform = `scale(${currentImgZoom})`;
+    }
+
+    function resetImageZoom() {
+      currentImgZoom = 1;
+      document.getElementById('modalImg').style.transform = `scale(1)`;
+    }
+
+    function toggleFitScreen() {
+      currentImgZoom = (currentImgZoom !== 1) ? 1 : 1.4;
+      document.getElementById('modalImg').style.transform = `scale(${currentImgZoom})`;
+    }
+
+    // Giant Word Modal
+    let activeAtlasIdx = 0;
+    let activePartIdx = 0;
+    function openWordModal(atlasIdx, partIdx) {
+      activeAtlasIdx = atlasIdx;
+      activePartIdx = partIdx;
+      renderWordModal();
+      document.getElementById('wordModal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function renderWordModal() {
+      const item = atlasData[activeAtlasIdx];
+      const part = item.parts[activePartIdx];
+      document.getElementById('wmBadge').innerText = `${item.system} • Plate ${activeAtlasIdx + 1}`;
+      document.getElementById('wmTitle').innerText = part.name;
+      document.getElementById('wmBody').innerText = part.role;
+      document.getElementById('wmCounter').innerText = `Structure ${activePartIdx + 1} of ${item.parts.length}`;
+    }
+
+    function closeWordModal() {
+      document.getElementById('wordModal').classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+
+    function closeWordModalOnBackdrop(e) {
+      if (e.target.id === 'wordModal') {
+        closeWordModal();
+      }
+    }
+
+    function nextWord() {
+      const item = atlasData[activeAtlasIdx];
+      activePartIdx = (activePartIdx < item.parts.length - 1) ? activePartIdx + 1 : 0;
+      renderWordModal();
+    }
+
+    function prevWord() {
+      const item = atlasData[activeAtlasIdx];
+      activePartIdx = (activePartIdx > 0) ? activePartIdx - 1 : item.parts.length - 1;
+      renderWordModal();
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeImageModal();
+        closeWordModal();
+      } else if (document.getElementById('wordModal').classList.contains('active')) {
+        if (e.key === 'ArrowRight') nextWord();
+        if (e.key === 'ArrowLeft') prevWord();
+      }
+    });
+  </script>
 </body>
+
 </html>

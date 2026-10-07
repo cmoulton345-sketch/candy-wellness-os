@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rayne's Printable Anatomical Atlas & Blueprints Pack (Modules 1–8)</title>
   <style>
     @page {
@@ -11,197 +12,667 @@
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
-    body {
-      font-family: 'Segoe UI', -apple-system, sans-serif;
-      background: #0f172a;
-      color: #e2e8f0;
-      padding: 20px;
-      line-height: 1.5;
+    :root {
+      --bg: #0b1120;
+      --card-bg: #1e293b;
+      --card-border: #334155;
+      --text: #f1f5f9;
+      --text-muted: #94a3b8;
+      --accent-cyan: #38bdf8;
+      --accent-glow: rgba(56, 189, 248, 0.25);
+      --font-scale: 1;
     }
 
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      padding: 20px;
+      line-height: 1.6;
+      transition: font-size 0.2s ease;
+    }
+
+    /* Font Scale Modifier Classes */
+    body.scale-normal { --font-scale: 1; }
+    body.scale-large  { --font-scale: 1.25; }
+    body.scale-xlarge { --font-scale: 1.5; }
+    body.scale-giant  { --font-scale: 1.8; }
+
+    /* Interactive Top Control Bar */
     .no-print-bar {
       background: #1e293b;
-      border: 2px solid #38bdf8;
+      border: 2px solid var(--accent-cyan);
       color: #ffffff;
-      padding: 16px 24px;
-      border-radius: 10px;
-      margin-bottom: 30px;
+      padding: 18px 24px;
+      border-radius: 12px;
+      margin-bottom: 28px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
       display: flex;
+      flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
+      gap: 16px;
+    }
+
+    .bar-title h2 {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: #38bdf8;
+      margin-bottom: 4px;
+    }
+
+    .bar-title p {
+      color: #cbd5e1;
+      font-size: 0.95rem;
+    }
+
+    .bar-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .btn-group {
+      display: flex;
+      background: #0f172a;
+      border-radius: 8px;
+      padding: 4px;
+      border: 1px solid #334155;
+      gap: 4px;
+    }
+
+    .ctrl-btn {
+      background: transparent;
+      border: none;
+      color: #cbd5e1;
+      padding: 8px 14px;
+      border-radius: 6px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .ctrl-btn:hover {
+      background: #334155;
+      color: #38bdf8;
+    }
+
+    .ctrl-btn.active {
+      background: #38bdf8;
+      color: #0f172a;
+      box-shadow: 0 2px 8px rgba(56, 189, 248, 0.35);
     }
 
     .print-btn {
-      background: #38bdf8;
-      color: #0f172a;
+      background: linear-gradient(135deg, #0284c7, #0369a1);
+      color: white;
       border: none;
       padding: 10px 22px;
       border-radius: 8px;
       font-weight: 800;
       font-size: 1rem;
       cursor: pointer;
-      box-shadow: 0 4px 12px rgba(56, 189, 248, 0.3);
+      box-shadow: 0 4px 14px rgba(2, 132, 199, 0.35);
+      transition: transform 0.2s ease;
     }
 
-    .print-btn:hover { background: #7dd3fc; }
+    .print-btn:hover {
+      transform: translateY(-2px);
+      background: linear-gradient(135deg, #38bdf8, #0284c7);
+      color: #0f172a;
+    }
 
+    .help-banner {
+      width: 100%;
+      background: rgba(56, 189, 248, 0.1);
+      border-left: 4px solid var(--accent-cyan);
+      padding: 10px 14px;
+      border-radius: 6px;
+      margin-top: 6px;
+      font-size: 0.92rem;
+      color: #e0f2fe;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    /* Page Blueprint & Atlas Card */
     .bp-page {
       background: #1e293b;
-      border: 2px solid #38bdf8;
-      border-radius: 12px;
-      padding: 20px;
-      margin-bottom: 36px;
+      border: 2px solid #334155;
+      border-radius: 14px;
+      padding: 24px;
+      margin-bottom: 38px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
       page-break-after: always;
+      break-after: page;
     }
 
     .bp-title-row {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 2px solid #38bdf8;
-      padding-bottom: 8px;
-      margin-bottom: 14px;
+      border-bottom: 2px solid var(--accent-cyan);
+      padding-bottom: 12px;
+      margin-bottom: 18px;
     }
 
     .bp-title {
-      font-size: 1.45rem;
+      font-size: calc(1.4rem * var(--font-scale));
       font-weight: 800;
-      color: #38bdf8;
+      color: var(--accent-cyan);
       text-transform: uppercase;
       letter-spacing: 0.5px;
     }
 
     .bp-badge {
       background: rgba(56, 189, 248, 0.15);
-      border: 1px solid #38bdf8;
-      color: #38bdf8;
-      padding: 4px 12px;
+      border: 1px solid var(--accent-cyan);
+      color: var(--accent-cyan);
+      padding: 6px 16px;
       border-radius: 20px;
-      font-size: 0.85rem;
+      font-size: calc(0.9rem * var(--font-scale));
       font-weight: 700;
     }
 
+    /* Diagram Display Container */
     .bp-diagram-box {
-      background: white;
-      padding: 10px;
-      border-radius: 8px;
-      margin-bottom: 14px;
+      background: #ffffff;
+      padding: 16px;
+      border-radius: 10px;
+      margin-bottom: 18px;
       text-align: center;
+      position: relative;
+      cursor: zoom-in;
+      border: 2px solid #e2e8f0;
+      transition: box-shadow 0.25s ease, transform 0.2s ease;
+    }
+
+    .bp-diagram-box:hover {
+      box-shadow: 0 8px 24px rgba(56, 189, 248, 0.3);
+      border-color: #38bdf8;
     }
 
     .bp-diagram-box img {
       max-width: 100%;
-      max-height: 480px;
       height: auto;
-      border-radius: 4px;
+      max-height: 560px;
+      border-radius: 6px;
       display: block;
       margin: 0 auto;
+      transition: all 0.3s ease;
     }
 
+    /* Diagram Sizing Classes */
+    body.diag-giant .bp-diagram-box img {
+      max-height: 850px;
+    }
+
+    .zoom-hint-badge {
+      position: absolute;
+      bottom: 12px;
+      right: 14px;
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(4px);
+      color: #38bdf8;
+      border: 1px solid #38bdf8;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      pointer-events: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    /* Study Cards (Parts Grid) */
     .parts-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      margin-top: 10px;
+      gap: 14px;
+      margin-top: 14px;
+    }
+
+    @media (max-width: 800px) {
+      .parts-grid { grid-template-columns: 1fr; }
     }
 
     .part-pill {
       background: #0f172a;
-      border-left: 3px solid #38bdf8;
-      padding: 8px 12px;
-      border-radius: 4px;
-      font-size: 0.84rem;
+      border: 1.5px solid #334155;
+      border-left: 5px solid var(--accent-cyan);
+      padding: 14px 18px;
+      border-radius: 8px;
+      font-size: calc(1.05rem * var(--font-scale));
+      line-height: 1.6;
+      cursor: pointer;
+      position: relative;
+      transition: all 0.22s ease;
+    }
+
+    .part-pill:hover {
+      background: #1e293b;
+      border-color: var(--accent-cyan);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(56, 189, 248, 0.2);
     }
 
     .part-pill strong {
       color: #67e8f9;
       display: block;
-      margin-bottom: 2px;
+      font-size: calc(1.22rem * var(--font-scale));
+      margin-bottom: 4px;
+      letter-spacing: 0.2px;
     }
 
+    .part-pill .card-click-hint {
+      position: absolute;
+      top: 10px;
+      right: 12px;
+      font-size: 0.75rem;
+      color: #94a3b8;
+      opacity: 0.7;
+    }
+
+    .part-pill:hover .card-click-hint {
+      color: #38bdf8;
+      opacity: 1;
+    }
+
+    /* Modal 1: Image Zoom Lightbox */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(11, 17, 32, 0.94);
+      backdrop-filter: blur(8px);
+      z-index: 99999;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal-header-bar {
+      width: 100%;
+      max-width: 1200px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #1e293b;
+      padding: 12px 24px;
+      border-radius: 12px;
+      border: 1px solid #334155;
+      color: white;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .modal-title-text {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #38bdf8;
+    }
+
+    .modal-zoom-controls {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .modal-ctrl-btn {
+      background: #0f172a;
+      border: 1px solid #38bdf8;
+      color: #38bdf8;
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .modal-ctrl-btn:hover {
+      background: #38bdf8;
+      color: #0f172a;
+    }
+
+    .modal-close-btn {
+      background: #ef4444;
+      border: none;
+      color: white;
+      padding: 6px 16px;
+      border-radius: 6px;
+      font-size: 1.1rem;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .modal-close-btn:hover { background: #dc2626; }
+
+    .modal-img-viewport {
+      flex: 1;
+      width: 100%;
+      max-width: 1200px;
+      overflow: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 16px;
+      cursor: grab;
+    }
+
+    .modal-img-viewport:active { cursor: grabbing; }
+
+    .modal-img-viewport img {
+      transition: transform 0.2s ease-out;
+      transform-origin: center center;
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+      background: white;
+    }
+
+    /* Modal 2: Giant Word / Study Card Lightbox */
+    .word-modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(11, 17, 32, 0.88);
+      backdrop-filter: blur(8px);
+      z-index: 99999;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .word-modal-overlay.active {
+      display: flex;
+    }
+
+    .word-card-popup {
+      background: #1e293b;
+      border: 3px solid #38bdf8;
+      border-radius: 18px;
+      padding: 36px 40px;
+      max-width: 820px;
+      width: 100%;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+      position: relative;
+      animation: popIn 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    @keyframes popIn {
+      from { transform: scale(0.85); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .word-modal-badge {
+      display: inline-block;
+      background: rgba(56, 189, 248, 0.15);
+      border: 1px solid #38bdf8;
+      color: #38bdf8;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .word-modal-title {
+      font-size: 2.3rem;
+      font-weight: 800;
+      color: #67e8f9;
+      line-height: 1.2;
+      margin-bottom: 18px;
+      border-bottom: 2px solid #334155;
+      padding-bottom: 12px;
+    }
+
+    .word-modal-body {
+      font-size: 1.45rem;
+      line-height: 1.7;
+      color: #f1f5f9;
+      margin-bottom: 28px;
+    }
+
+    .word-modal-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .word-nav-btn {
+      background: #0f172a;
+      border: 2px solid #38bdf8;
+      color: #38bdf8;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .word-nav-btn:hover {
+      background: #38bdf8;
+      color: #0f172a;
+    }
+
+    .word-counter {
+      color: #94a3b8;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    /* Print Formatting Rules */
     @media print {
-      body { background: white; color: black; padding: 0; }
-      .no-print-bar { display: none; }
-      .bp-page { background: white; color: black; border: 1.5px solid #000; box-shadow: none; margin-bottom: 0; padding: 12px; }
-      .bp-title { color: #000; border-bottom: 2px solid #000; font-size: 1.25rem; }
-      .bp-badge { color: #000; border: 1px solid #000; background: #eee; }
-      .part-pill { background: #f8fafc; color: #000; border: 1px solid #ccc; border-left: 3px solid #000; }
-      .part-pill strong { color: #000; }
+      body {
+        background: white !important;
+        color: black !important;
+        padding: 0 !important;
+      }
+
+      .no-print-bar, .modal-overlay, .word-modal-overlay, .zoom-hint-badge, .card-click-hint {
+        display: none !important;
+      }
+
+      .bp-page {
+        background: white !important;
+        color: black !important;
+        border: 2px solid #000 !important;
+        box-shadow: none !important;
+        margin-bottom: 0 !important;
+        padding: 16px !important;
+        page-break-after: always !important;
+        break-after: page !important;
+      }
+
+      .bp-title-row {
+        border-bottom: 2px solid #000 !important;
+      }
+
+      .bp-title {
+        color: #000 !important;
+        font-size: 16pt !important;
+      }
+
+      .bp-badge {
+        color: #000 !important;
+        border: 1.5px solid #000 !important;
+        background: #f1f5f9 !important;
+        font-size: 10pt !important;
+      }
+
+      .bp-diagram-box {
+        background: white !important;
+        border: 1.5px solid #000 !important;
+        padding: 8px !important;
+        margin-bottom: 12px !important;
+      }
+
+      .bp-diagram-box img {
+        max-height: 600px !important;
+      }
+
+      .parts-grid {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 8px !important;
+      }
+
+      .part-pill {
+        background: #ffffff !important;
+        color: #000 !important;
+        border: 1.5px solid #000 !important;
+        border-left: 5px solid #000 !important;
+        padding: 10px 12px !important;
+        font-size: 11pt !important;
+        line-height: 1.45 !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+      }
+
+      .part-pill strong {
+        color: #000 !important;
+        font-size: 12.5pt !important;
+        margin-bottom: 2px !important;
+      }
     }
   </style>
 </head>
-<body>
+<body class="scale-normal">
 
+  <!-- Interactive Control Bar -->
   <div class="no-print-bar">
-    <div>
-      <h2 style="font-size:1.3rem; margin-bottom:4px;">Rayne's Printable Anatomical Atlas & Blueprint Pack</h2>
-      <p style="color:#94a3b8; font-size:0.9rem;">Complete Labeled Plates & Blueprints for NBCC Practical Nursing Exam on Oct 13, 2026</p>
+    <div class="bar-title">
+      <h2>Rayne's Anatomical Atlas & Blueprint Study Pack</h2>
+      <p>NBCC Practical Nursing (Modules 1–8) • Master Visual Reference for Oct 13 Exam</p>
     </div>
-    <button class="print-btn" onclick="window.print()">🖨️ Print / Save to PDF</button>
+
+    <div class="bar-actions">
+      <!-- Font Size Toggle -->
+      <div style="display:flex; align-items:center; gap:6px;">
+        <span style="font-size:0.88rem; color:#94a3b8; font-weight:700;">TEXT SIZE:</span>
+        <div class="btn-group">
+          <button class="ctrl-btn active" id="btn-scale-normal" onclick="setFontScale('normal')">Aa 100%</button>
+          <button class="ctrl-btn" id="btn-scale-large" onclick="setFontScale('large')">Aa+ 125%</button>
+          <button class="ctrl-btn" id="btn-scale-xlarge" onclick="setFontScale('xlarge')">Aa++ 150%</button>
+          <button class="ctrl-btn" id="btn-scale-giant" onclick="setFontScale('giant')">Aa+++ Giant</button>
+        </div>
+      </div>
+
+      <!-- Diagram Fit Toggle -->
+      <div style="display:flex; align-items:center; gap:6px;">
+        <span style="font-size:0.88rem; color:#94a3b8; font-weight:700;">PICTURES:</span>
+        <div class="btn-group">
+          <button class="ctrl-btn active" id="btn-diag-standard" onclick="setDiagramSize('standard')">Standard</button>
+          <button class="ctrl-btn" id="btn-diag-giant" onclick="setDiagramSize('giant')">🔍 Full Expand</button>
+        </div>
+      </div>
+
+      <!-- Print Button -->
+      <button class="print-btn" onclick="window.print()">🖨️ Print / Save to PDF</button>
+    </div>
+
+    <div class="help-banner">
+      <span>💡 <strong>Interactive Learning:</strong> Click <strong>ANY picture</strong> to zoom in full-screen (+ / - / pan labels). Click <strong>ANY study box</strong> to open it in Giant Flashcard focus!</span>
+    </div>
   </div>
 
-  <div class="bp-page">
+  <div class="bp-page" id="plate-cell">
     <div class="bp-title-row">
       <div class="bp-title">ATLAS: 1. Human Cell Ultrastructure & Organelles</div>
       <div class="bp-badge">Cell Biology (Module 2 • Chapter 3)</div>
     </div>
-    <div class="bp-diagram-box">
+    
+    <div class="bp-diagram-box" onclick="openImageModal('images/human_cell_labeled.jpg?t=3', '1. Human Cell Ultrastructure & Organelles')">
       <img src="images/human_cell_labeled.jpg?t=3" alt="1. Human Cell Ultrastructure & Organelles">
-      
+      <div class="zoom-hint-badge">🔍 Click to Zoom In Full-Screen</div>
     </div>
+    
+    
+
     <div class="parts-grid">
       
-        <div class="part-pill">
+        <div class="part-pill" onclick="openWordModal(0, 0)">
+          <span class="card-click-hint">🔍 Enlarge</span>
           <strong>Nucleus</strong>
           The control center of the cell; houses DNA chromosomes and directs protein synthesis.
         </div>
         
-        <div class="part-pill">
+        <div class="part-pill" onclick="openWordModal(0, 1)">
+          <span class="card-click-hint">🔍 Enlarge</span>
           <strong>Nucleoli (Nucleolus)</strong>
           Dense dark-staining region within the nucleus that synthesizes ribosomal RNA (rRNA).
         </div>
         
-        <div class="part-pill">
+        <div class="part-pill" onclick="openWordModal(0, 2)">
+          <span class="card-click-hint">🔍 Enlarge</span>
           <strong>Mitochondria</strong>
           The 'powerhouses of the cell'; generates ATP energy via aerobic cellular respiration.
         </div>
         
-        <div class="part-pill">
+        <div class="part-pill" onclick="openWordModal(0, 3)">
+          <span class="card-click-hint">🔍 Enlarge</span>
           <strong>Ribosomes</strong>
           Protein factories composed of rRNA; translate mRNA transcripts into polypeptide chains.
         </div>
         
-        <div class="part-pill">
+        <div class="part-pill" onclick="openWordModal(0, 4)">
+          <span class="card-click-hint">🔍 Enlarge</span>
           <strong>Rough Endoplasmic Reticulum</strong>
           Membranous network studded with ribosomes; folds and modifies nascent proteins.
         </div>
         
-        <div class="part-pill">
+        <div class="part-pill" onclick="openWordModal(0, 5)">
+          <span class="card-click-hint">🔍 Enlarge</span>
           <strong>Smooth Endoplasmic Reticulum</strong>
           Agranular network for lipid and steroid synthesis, calcium storage, and drug detox.
         </div>
         
-        <div class="part-pill">
+        <div class="part-pill" onclick="openWordModal(0, 6)">
+          <span class="card-click-hint">🔍 Enlarge</span>
           <strong>Golgi Complex (Apparatus)</strong>
           Stack of flattened sacs that chemically modifies, sorts, and packages glycoproteins for secretion.
         </div>
         
-        <div class="part-pill">
+        <div class="part-pill" onclick="openWordModal(0, 7)">
+          <span class="card-click-hint">🔍 Enlarge</span>
           <strong>Lysosomes</strong>
           'Digestive bags' packed with hydrolytic acid enzymes to recycle damaged organelles and bacteria.
         </div>
         
-        <div class="part-pill">
+        <div class="part-pill" onclick="openWordModal(0, 8)">
+          <span class="card-click-hint">🔍 Enlarge</span>
           <strong>Centrioles</strong>
           Paired barrel-shaped organelles that organize the mitotic spindle during cell division (mitosis).
         </div>
         
-        <div class="part-pill">
+        <div class="part-pill" onclick="openWordModal(0, 9)">
+          <span class="card-click-hint">🔍 Enlarge</span>
           <strong>Plasma Membrane</strong>
           Selectively permeable phospholipid bilayer regulating what enters and leaves the cytoplasm.
         </div>
         
-        <div class="part-pill">
+        <div class="part-pill" onclick="openWordModal(0, 10)">
+          <span class="card-click-hint">🔍 Enlarge</span>
           <strong>Microvilli</strong>
           Finger-like membrane folds that increase absorptive surface area (prominent in intestine/kidney).
         </div>
@@ -209,82 +680,100 @@
     </div>
   </div>
 
-  <div class="bp-page">
+  <div class="bp-page" id="plate-skin">
     <div class="bp-title-row">
       <div class="bp-title">ATLAS: 2. Integumentary System Architecture & Receptors</div>
       <div class="bp-badge">The Skin & Appendages (Module 3 • Chapter 6)</div>
     </div>
-    <div class="bp-diagram-box">
+    
+    <div class="bp-diagram-box" onclick="openImageModal('images/skin_layers_receptors_labeled.jpg?t=3', '2. Integumentary System Architecture & Receptors')">
       <img src="images/skin_layers_receptors_labeled.jpg?t=3" alt="2. Integumentary System Architecture & Receptors">
-      
-        <div style="margin-top:8px;">
-          <img src="images/skin_3d_cross_section.jpg?t=3" alt="2. Integumentary System Architecture & Receptors View" style="max-width:100%; max-height:240px; height:auto; border-radius:4px; display:block; margin:0 auto;">
+      <div class="zoom-hint-badge">🔍 Click to Zoom In Full-Screen</div>
+    </div>
+    
+    
+        <div class="bp-diagram-box" style="margin-top:14px;" onclick="openImageModal('images/skin_3d_cross_section.jpg?t=3', '2. Integumentary System Architecture & Receptors (Secondary View)')">
+          <img src="images/skin_3d_cross_section.jpg?t=3" alt="2. Integumentary System Architecture & Receptors Secondary View">
+          <div class="zoom-hint-badge">🔍 Click to Zoom In Full-Screen</div>
         </div>
         
-    </div>
+
     <div class="parts-grid">
       
-        <div class="part-pill">
+        <div class="part-pill" onclick="openWordModal(1, 0)">
+          <span class="card-click-hint">🔍 Enlarge</span>
           <strong>Epidermis</strong>
           Avascular superficial protective layer of stratified squamous keratinized epithelium (5 strata).
         </div>
         
-        <div class="part-pill">
+        <div class="part-pill" onclick="openWordModal(1, 1)">
+          <span class="card-click-hint">🔍 Enlarge</span>
           <strong>Stratum Basale</strong>
           Deepest epidermal monolayer of stem cells undergoing active mitosis; houses melanocytes.
         </div>
         
-        <div class="part-pill">
+        <div class="part-pill" onclick="openWordModal(1, 2)">
+          <span class="card-click-hint">🔍 Enlarge</span>
           <strong>Stratum Corneum</strong>
           Outermost layer of dead, fully keratinized, shingle-like cells providing waterproof barrier.
         </div>
         
-        <div class="part-pill">
+        <div class="part-pill" onclick="openWordModal(1, 3)">
+          <span class="card-click-hint">🔍 Enlarge</span>
           <strong>Dermis</strong>
           Vascular, tough connective tissue layer (20x thicker than epidermis) containing nerves, vessels, and fibers.
         </div>
         
-        <div class="part-pill">
+        <div class="part-pill" onclick="openWordModal(1, 4)">
+          <span class="card-click-hint">🔍 Enlarge</span>
           <strong>Papillary Dermis</strong>
           Superficial dermal layer with dermal papillae forming fingerprint ridges and housing Meissner corpuscles.
         </div>
         
-        <div class="part-pill">
+        <div class="part-pill" onclick="openWordModal(1, 5)">
+          <span class="card-click-hint">🔍 Enlarge</span>
           <strong>Reticular Dermis</strong>
           Deep dense irregular connective tissue layer rich in collagen and elastin; houses Pacinian corpuscles.
         </div>
         
-        <div class="part-pill">
+        <div class="part-pill" onclick="openWordModal(1, 6)">
+          <span class="card-click-hint">🔍 Enlarge</span>
           <strong>Hypodermis (Subcutaneous)</strong>
           Adipose tissue foundation providing thermal insulation, energy reserve, and shock cushioning.
         </div>
         
-        <div class="part-pill">
+        <div class="part-pill" onclick="openWordModal(1, 7)">
+          <span class="card-click-hint">🔍 Enlarge</span>
           <strong>Meissner Corpuscle</strong>
           Encapsulated tactile receptor in dermal papillae that detects light touch and low-frequency vibration.
         </div>
         
-        <div class="part-pill">
+        <div class="part-pill" onclick="openWordModal(1, 8)">
+          <span class="card-click-hint">🔍 Enlarge</span>
           <strong>Pacinian Corpuscle</strong>
           Large lamellated onion-shaped receptor deep in reticular dermis/hypodermis detecting deep pressure.
         </div>
         
-        <div class="part-pill">
+        <div class="part-pill" onclick="openWordModal(1, 9)">
+          <span class="card-click-hint">🔍 Enlarge</span>
           <strong>Free Nerve Endings</strong>
           Unencapsulated sensory dendrites extending into epidermis to detect nociceptive pain and temperature.
         </div>
         
-        <div class="part-pill">
+        <div class="part-pill" onclick="openWordModal(1, 10)">
+          <span class="card-click-hint">🔍 Enlarge</span>
           <strong>Sebaceous Glands</strong>
           Oil glands attached to hair follicles secreting sebum to lubricate hair/skin and prevent microbial growth.
         </div>
         
-        <div class="part-pill">
+        <div class="part-pill" onclick="openWordModal(1, 11)">
+          <span class="card-click-hint">🔍 Enlarge</span>
           <strong>Eccrine Sweat Glands</strong>
           Coiled tubular glands distributed across the body that secrete watery sweat for thermoregulation.
         </div>
         
-        <div class="part-pill">
+        <div class="part-pill" onclick="openWordModal(1, 12)">
+          <span class="card-click-hint">🔍 Enlarge</span>
           <strong>Arrector Pili Muscle</strong>
           Smooth muscle bundle contracting under sympathetic stimulation to pull hair upright ('goosebumps').
         </div>
@@ -292,73 +781,89 @@
     </div>
   </div>
 
-  <div class="bp-page">
+  <div class="bp-page" id="plate-skeleton">
     <div class="bp-title-row">
       <div class="bp-title">ATLAS: 3. The Complete Human Skeleton (Axial & Appendicular)</div>
       <div class="bp-badge">Skeletal System (Module 4 • Chapter 7)</div>
     </div>
-    <div class="bp-diagram-box">
+    
+    <div class="bp-diagram-box" onclick="openImageModal('images/skeleton_complete_labeled.jpg?t=3', '3. The Complete Human Skeleton (Axial & Appendicular)')">
       <img src="images/skeleton_complete_labeled.jpg?t=3" alt="3. The Complete Human Skeleton (Axial & Appendicular)">
-      
+      <div class="zoom-hint-badge">🔍 Click to Zoom In Full-Screen</div>
     </div>
+    
+    
+
     <div class="parts-grid">
       
-        <div class="part-pill">
+        <div class="part-pill" onclick="openWordModal(2, 0)">
+          <span class="card-click-hint">🔍 Enlarge</span>
           <strong>Cranium & Facial Bones</strong>
           Axial: Protects brain (Frontal, Parietal, Occipital) and frames face (Maxilla, Zygomatic, Mandible).
         </div>
         
-        <div class="part-pill">
+        <div class="part-pill" onclick="openWordModal(2, 1)">
+          <span class="card-click-hint">🔍 Enlarge</span>
           <strong>Vertebral Column</strong>
           Axial: Flexible supportive column with 7 Cervical, 12 Thoracic, 5 Lumbar, Sacrum, and Coccyx.
         </div>
         
-        <div class="part-pill">
+        <div class="part-pill" onclick="openWordModal(2, 2)">
+          <span class="card-click-hint">🔍 Enlarge</span>
           <strong>Thoracic Cage</strong>
           Axial: Bony protection for heart/lungs composed of Sternum and 12 pairs of ribs (7 True, 3 False, 2 Floating).
         </div>
         
-        <div class="part-pill">
+        <div class="part-pill" onclick="openWordModal(2, 3)">
+          <span class="card-click-hint">🔍 Enlarge</span>
           <strong>Pectoral Girdle</strong>
           Appendicular: Attaches upper limbs to axial trunk; includes Clavicle (collarbone) and Scapula (shoulder blade).
         </div>
         
-        <div class="part-pill">
+        <div class="part-pill" onclick="openWordModal(2, 4)">
+          <span class="card-click-hint">🔍 Enlarge</span>
           <strong>Humerus</strong>
           Appendicular: Long bone of the upper arm articulating with glenoid cavity and elbow.
         </div>
         
-        <div class="part-pill">
+        <div class="part-pill" onclick="openWordModal(2, 5)">
+          <span class="card-click-hint">🔍 Enlarge</span>
           <strong>Radius & Ulna</strong>
           Appendicular: Forearm bones; Radius is lateral (thumb side) and Ulna is medial (pinky side).
         </div>
         
-        <div class="part-pill">
+        <div class="part-pill" onclick="openWordModal(2, 6)">
+          <span class="card-click-hint">🔍 Enlarge</span>
           <strong>Carpals, Metacarpals, Phalanges</strong>
           Appendicular: Wrist (8 carpals), palm (5 metacarpals), and fingers (14 phalanges).
         </div>
         
-        <div class="part-pill">
+        <div class="part-pill" onclick="openWordModal(2, 7)">
+          <span class="card-click-hint">🔍 Enlarge</span>
           <strong>Pelvic Girdle (Coxal Bone)</strong>
           Appendicular: Sturdy weight-bearing ring formed by fused Ilium, Ischium, and Pubis bones.
         </div>
         
-        <div class="part-pill">
+        <div class="part-pill" onclick="openWordModal(2, 8)">
+          <span class="card-click-hint">🔍 Enlarge</span>
           <strong>Femur</strong>
           Appendicular: Heaviest, strongest, and longest bone in the body; articulates with acetabulum at hip.
         </div>
         
-        <div class="part-pill">
+        <div class="part-pill" onclick="openWordModal(2, 9)">
+          <span class="card-click-hint">🔍 Enlarge</span>
           <strong>Patella</strong>
           Appendicular: Sesamoid kneecap protecting the knee joint and improving quadriceps leverage.
         </div>
         
-        <div class="part-pill">
+        <div class="part-pill" onclick="openWordModal(2, 10)">
+          <span class="card-click-hint">🔍 Enlarge</span>
           <strong>Tibia & Fibula</strong>
           Appendicular: Lower leg; Tibia (shinbone) is medial and weight-bearing; Fibula is lateral stabilizer.
         </div>
         
-        <div class="part-pill">
+        <div class="part-pill" onclick="openWordModal(2, 11)">
+          <span class="card-click-hint">🔍 Enlarge</span>
           <strong>Tarsals, Metatarsals, Calcaneus</strong>
           Appendicular: Ankle (7 tarsals), heel (calcaneus), arch (5 metatarsals), and toes (14 phalanges).
         </div>
@@ -366,87 +871,106 @@
     </div>
   </div>
 
-  <div class="bp-page">
+  <div class="bp-page" id="plate-muscles">
     <div class="bp-title-row">
       <div class="bp-title">ATLAS: 4. Major Superficial Skeletal Muscles (Anterior & Posterior)</div>
       <div class="bp-badge">Muscular System (Module 5 • Chapter 8)</div>
     </div>
-    <div class="bp-diagram-box">
+    
+    <div class="bp-diagram-box" onclick="openImageModal('images/muscles_anterior_labeled.jpg?t=3', '4. Major Superficial Skeletal Muscles (Anterior & Posterior)')">
       <img src="images/muscles_anterior_labeled.jpg?t=3" alt="4. Major Superficial Skeletal Muscles (Anterior & Posterior)">
-      
-        <div style="margin-top:8px;">
-          <img src="images/muscles_posterior_labeled.jpg?t=3" alt="4. Major Superficial Skeletal Muscles (Anterior & Posterior) View" style="max-width:100%; max-height:240px; height:auto; border-radius:4px; display:block; margin:0 auto;">
+      <div class="zoom-hint-badge">🔍 Click to Zoom In Full-Screen</div>
+    </div>
+    
+    
+        <div class="bp-diagram-box" style="margin-top:14px;" onclick="openImageModal('images/muscles_posterior_labeled.jpg?t=3', '4. Major Superficial Skeletal Muscles (Anterior & Posterior) (Secondary View)')">
+          <img src="images/muscles_posterior_labeled.jpg?t=3" alt="4. Major Superficial Skeletal Muscles (Anterior & Posterior) Secondary View">
+          <div class="zoom-hint-badge">🔍 Click to Zoom In Full-Screen</div>
         </div>
         
-    </div>
+
     <div class="parts-grid">
       
-        <div class="part-pill">
+        <div class="part-pill" onclick="openWordModal(3, 0)">
+          <span class="card-click-hint">🔍 Enlarge</span>
           <strong>Sternocleidomastoid</strong>
           Neck muscle that flexes neck and rotates head to opposite side.
         </div>
         
-        <div class="part-pill">
+        <div class="part-pill" onclick="openWordModal(3, 1)">
+          <span class="card-click-hint">🔍 Enlarge</span>
           <strong>Trapezius</strong>
           Large triangular upper back/neck muscle that elevates, depresses, and retracts the scapula.
         </div>
         
-        <div class="part-pill">
+        <div class="part-pill" onclick="openWordModal(3, 2)">
+          <span class="card-click-hint">🔍 Enlarge</span>
           <strong>Deltoid</strong>
           Triangular shoulder muscle that serves as the prime mover of arm abduction.
         </div>
         
-        <div class="part-pill">
+        <div class="part-pill" onclick="openWordModal(3, 3)">
+          <span class="card-click-hint">🔍 Enlarge</span>
           <strong>Pectoralis Major</strong>
           Large chest muscle that adducts, flexes, and medially rotates the humerus at the shoulder.
         </div>
         
-        <div class="part-pill">
+        <div class="part-pill" onclick="openWordModal(3, 4)">
+          <span class="card-click-hint">🔍 Enlarge</span>
           <strong>Biceps Brachii</strong>
           Anterior arm muscle that is the prime mover of elbow flexion and powerful forearm supinator.
         </div>
         
-        <div class="part-pill">
+        <div class="part-pill" onclick="openWordModal(3, 5)">
+          <span class="card-click-hint">🔍 Enlarge</span>
           <strong>Triceps Brachii</strong>
           Posterior arm muscle that acts as the primary antagonist to biceps, extending the elbow joint.
         </div>
         
-        <div class="part-pill">
+        <div class="part-pill" onclick="openWordModal(3, 6)">
+          <span class="card-click-hint">🔍 Enlarge</span>
           <strong>Rectus Abdominis</strong>
           'Six-pack' abdominal muscle that flexes the lumbar vertebral column and compresses abdominal cavity.
         </div>
         
-        <div class="part-pill">
+        <div class="part-pill" onclick="openWordModal(3, 7)">
+          <span class="card-click-hint">🔍 Enlarge</span>
           <strong>External Obliques</strong>
           Lateral abdominal muscles that rotate and laterally flex the trunk.
         </div>
         
-        <div class="part-pill">
+        <div class="part-pill" onclick="openWordModal(3, 8)">
+          <span class="card-click-hint">🔍 Enlarge</span>
           <strong>Latissimus Dorsi</strong>
           'Swimmer's muscle'; broad lower back muscle that extends and adducts the arm.
         </div>
         
-        <div class="part-pill">
+        <div class="part-pill" onclick="openWordModal(3, 9)">
+          <span class="card-click-hint">🔍 Enlarge</span>
           <strong>Gluteus Maximus</strong>
           Largest muscle in the body; prime mover of hip extension (rising from sitting, climbing stairs).
         </div>
         
-        <div class="part-pill">
+        <div class="part-pill" onclick="openWordModal(3, 10)">
+          <span class="card-click-hint">🔍 Enlarge</span>
           <strong>Quadriceps Femoris Group</strong>
           Anterior thigh muscles (Rectus femoris, Vastus lateralis, medialis, intermedius) extending the knee.
         </div>
         
-        <div class="part-pill">
+        <div class="part-pill" onclick="openWordModal(3, 11)">
+          <span class="card-click-hint">🔍 Enlarge</span>
           <strong>Hamstrings Group</strong>
           Posterior thigh muscles (Biceps femoris, Semitendinosus, Semimembranosus) flexing knee and extending hip.
         </div>
         
-        <div class="part-pill">
+        <div class="part-pill" onclick="openWordModal(3, 12)">
+          <span class="card-click-hint">🔍 Enlarge</span>
           <strong>Tibialis Anterior</strong>
           Anterior shin muscle that performs ankle dorsiflexion and foot inversion.
         </div>
         
-        <div class="part-pill">
+        <div class="part-pill" onclick="openWordModal(3, 13)">
+          <span class="card-click-hint">🔍 Enlarge</span>
           <strong>Gastrocnemius & Soleus</strong>
           Posterior calf muscles that plantarflex the ankle via the strong Calcaneal (Achilles) tendon.
         </div>
@@ -454,63 +978,77 @@
     </div>
   </div>
 
-  <div class="bp-page">
+  <div class="bp-page" id="plate-endocrine">
     <div class="bp-title-row">
       <div class="bp-title">ATLAS: 5. The Human Endocrine System (Master Glands & Hormones)</div>
       <div class="bp-badge">Endocrine System (Module 8 • Chapter 11)</div>
     </div>
-    <div class="bp-diagram-box">
+    
+    <div class="bp-diagram-box" onclick="openImageModal('images/endocrine_system_labeled.jpg?t=3', '5. The Human Endocrine System (Master Glands & Hormones)')">
       <img src="images/endocrine_system_labeled.jpg?t=3" alt="5. The Human Endocrine System (Master Glands & Hormones)">
-      
+      <div class="zoom-hint-badge">🔍 Click to Zoom In Full-Screen</div>
     </div>
+    
+    
+
     <div class="parts-grid">
       
-        <div class="part-pill">
+        <div class="part-pill" onclick="openWordModal(4, 0)">
+          <span class="card-click-hint">🔍 Enlarge</span>
           <strong>Pineal Gland</strong>
           Located in brain epithalamus; secretes Melatonin in darkness to coordinate circadian sleep-wake cycles.
         </div>
         
-        <div class="part-pill">
+        <div class="part-pill" onclick="openWordModal(4, 1)">
+          <span class="card-click-hint">🔍 Enlarge</span>
           <strong>Hypothalamus</strong>
           Master neuroendocrine coordinator; synthesizes ADH and Oxytocin; controls anterior pituitary via releasing hormones.
         </div>
         
-        <div class="part-pill">
+        <div class="part-pill" onclick="openWordModal(4, 2)">
+          <span class="card-click-hint">🔍 Enlarge</span>
           <strong>Pituitary Gland (Master Gland)</strong>
           Anterior lobe secretes TSH, ACTH, GH, PRL, FSH, LH; Posterior lobe stores and releases ADH & Oxytocin.
         </div>
         
-        <div class="part-pill">
+        <div class="part-pill" onclick="openWordModal(4, 3)">
+          <span class="card-click-hint">🔍 Enlarge</span>
           <strong>Thyroid Gland</strong>
           Butterfly-shaped neck gland; secretes T3 & T4 (metabolic rate) and Calcitonin (lowers blood calcium).
         </div>
         
-        <div class="part-pill">
+        <div class="part-pill" onclick="openWordModal(4, 4)">
+          <span class="card-click-hint">🔍 Enlarge</span>
           <strong>Parathyroid Glands</strong>
           Four tiny glands on posterior thyroid; secrete Parathyroid Hormone (PTH) to elevate blood calcium levels.
         </div>
         
-        <div class="part-pill">
+        <div class="part-pill" onclick="openWordModal(4, 5)">
+          <span class="card-click-hint">🔍 Enlarge</span>
           <strong>Thymus Gland</strong>
           Located behind sternum; secretes Thymosin to program and mature immunocompetent T-lymphocytes.
         </div>
         
-        <div class="part-pill">
+        <div class="part-pill" onclick="openWordModal(4, 6)">
+          <span class="card-click-hint">🔍 Enlarge</span>
           <strong>Adrenal Glands (Suprarenal)</strong>
           Cortex secretes Aldosterone (Na+ retention) and Cortisol (glucose/stress); Medulla secretes Epinephrine.
         </div>
         
-        <div class="part-pill">
+        <div class="part-pill" onclick="openWordModal(4, 7)">
+          <span class="card-click-hint">🔍 Enlarge</span>
           <strong>Pancreas (Islets of Langerhans)</strong>
           Beta cells secrete Insulin (lowers blood glucose); Alpha cells secrete Glucagon (elevates blood glucose).
         </div>
         
-        <div class="part-pill">
+        <div class="part-pill" onclick="openWordModal(4, 8)">
+          <span class="card-click-hint">🔍 Enlarge</span>
           <strong>Ovaries (Female)</strong>
           Secrete Estrogen (secondary sex characteristics) and Progesterone (menstrual cycle & pregnancy support).
         </div>
         
-        <div class="part-pill">
+        <div class="part-pill" onclick="openWordModal(4, 9)">
+          <span class="card-click-hint">🔍 Enlarge</span>
           <strong>Testes (Male)</strong>
           Secrete Testosterone (spermatogenesis, muscle mass, secondary male sex characteristics).
         </div>
@@ -518,109 +1056,296 @@
     </div>
   </div>
 
-  <div class="bp-page">
+  <div class="bp-page" id="blueprint-mod-1">
     <div class="bp-title-row">
       <div class="bp-title">BLUEPRINT: Module 1: Introduction to the Human Body & Homeostasis</div>
       <div class="bp-badge">Chapter 1 (Patton 17th Edition)</div>
     </div>
-    <div class="bp-diagram-box">
+    <div class="bp-diagram-box" onclick="openImageModal('images/mod1_anatomical_planes_cavities.png?t=3', 'Module 1: Introduction to the Human Body & Homeostasis')">
       <img src="images/mod1_anatomical_planes_cavities.png?t=3" alt="Module 1: Introduction to the Human Body & Homeostasis">
+      <div class="zoom-hint-badge">🔍 Click to Zoom In Full-Screen</div>
     </div>
-    <div style="background:#0f172a; padding:12px; border-radius:6px; font-size:0.88rem; border-left:4px solid #38bdf8;">
-      <strong>High-Yield Scope:</strong> Covers levels of structural organization, anatomical position, directional planes and axes, dorsal and ventral body cavities, abdominopelvic quadrants/regions, and homeostatic negative vs. positive feedback systems.
+    <div class="part-pill" style="cursor:default; border-left:5px solid var(--accent-cyan); font-size:calc(1.1rem * var(--font-scale));">
+      <strong>Core Nursing Focus:</strong> Covers levels of structural organization, anatomical position, directional planes and axes, dorsal and ventral body cavities, abdominopelvic quadrants/regions, and homeostatic negative vs. positive feedback systems.
     </div>
   </div>
 
-  <div class="bp-page">
+  <div class="bp-page" id="blueprint-mod-2">
     <div class="bp-title-row">
       <div class="bp-title">BLUEPRINT: Module 2: Cell Biology & Transport Dynamics</div>
       <div class="bp-badge">Chapter 3 (Patton 17th Edition)</div>
     </div>
-    <div class="bp-diagram-box">
+    <div class="bp-diagram-box" onclick="openImageModal('images/mod2_cell_organelles_transport.png?t=3', 'Module 2: Cell Biology & Transport Dynamics')">
       <img src="images/mod2_cell_organelles_transport.png?t=3" alt="Module 2: Cell Biology & Transport Dynamics">
+      <div class="zoom-hint-badge">🔍 Click to Zoom In Full-Screen</div>
     </div>
-    <div style="background:#0f172a; padding:12px; border-radius:6px; font-size:0.88rem; border-left:4px solid #38bdf8;">
-      <strong>High-Yield Scope:</strong> Explores the fluid mosaic plasma membrane, prominent organelles (Nucleus, Mitochondria, Ribosomes, ER, Golgi, Lysosomes), passive transport (diffusion, osmosis, filtration, tonicity), active transport (pumps, endocytosis, exocytosis), and the stages of mitosis.
+    <div class="part-pill" style="cursor:default; border-left:5px solid var(--accent-cyan); font-size:calc(1.1rem * var(--font-scale));">
+      <strong>Core Nursing Focus:</strong> Explores the fluid mosaic plasma membrane, prominent organelles (Nucleus, Mitochondria, Ribosomes, ER, Golgi, Lysosomes), passive transport (diffusion, osmosis, filtration, tonicity), active transport (pumps, endocytosis, exocytosis), and the stages of mitosis.
     </div>
   </div>
 
-  <div class="bp-page">
+  <div class="bp-page" id="blueprint-mod-3">
     <div class="bp-title-row">
       <div class="bp-title">BLUEPRINT: Module 3: The Integumentary System & Burn Assessment</div>
       <div class="bp-badge">Chapter 6 (Patton 17th Edition)</div>
     </div>
-    <div class="bp-diagram-box">
+    <div class="bp-diagram-box" onclick="openImageModal('images/mod3_skin_layers_appendages.png?t=3', 'Module 3: The Integumentary System & Burn Assessment')">
       <img src="images/mod3_skin_layers_appendages.png?t=3" alt="Module 3: The Integumentary System & Burn Assessment">
+      <div class="zoom-hint-badge">🔍 Click to Zoom In Full-Screen</div>
     </div>
-    <div style="background:#0f172a; padding:12px; border-radius:6px; font-size:0.88rem; border-left:4px solid #38bdf8;">
-      <strong>High-Yield Scope:</strong> Deconstructs the epidermis, dermis, and hypodermis, epidermal strata, keratinocytes and melanocytes, sweat (eccrine vs apocrine) and sebaceous glands, cutaneous sensory receptors, thermoregulation, and burn classifications including the Rule of Nines.
+    <div class="part-pill" style="cursor:default; border-left:5px solid var(--accent-cyan); font-size:calc(1.1rem * var(--font-scale));">
+      <strong>Core Nursing Focus:</strong> Deconstructs the epidermis, dermis, and hypodermis, epidermal strata, keratinocytes and melanocytes, sweat (eccrine vs apocrine) and sebaceous glands, cutaneous sensory receptors, thermoregulation, and burn classifications including the Rule of Nines.
     </div>
   </div>
 
-  <div class="bp-page">
+  <div class="bp-page" id="blueprint-mod-4">
     <div class="bp-title-row">
       <div class="bp-title">BLUEPRINT: Module 4: The Skeletal System, Histology & Articulations</div>
       <div class="bp-badge">Chapter 7 (Patton 17th Edition)</div>
     </div>
-    <div class="bp-diagram-box">
+    <div class="bp-diagram-box" onclick="openImageModal('images/mod4_skeletal_osteon_divisions.png?t=3', 'Module 4: The Skeletal System, Histology & Articulations')">
       <img src="images/mod4_skeletal_osteon_divisions.png?t=3" alt="Module 4: The Skeletal System, Histology & Articulations">
+      <div class="zoom-hint-badge">🔍 Click to Zoom In Full-Screen</div>
     </div>
-    <div style="background:#0f172a; padding:12px; border-radius:6px; font-size:0.88rem; border-left:4px solid #38bdf8;">
-      <strong>High-Yield Scope:</strong> Covers skeletal functions, bone classifications, long bone gross anatomy, microscopic osteon (Haversian) histology, bone cells (osteoblasts, osteoclasts, osteocytes), axial (80) vs appendicular (126) divisions, and synarthrotic, amphiarthrotic, and diarthrotic joint types.
+    <div class="part-pill" style="cursor:default; border-left:5px solid var(--accent-cyan); font-size:calc(1.1rem * var(--font-scale));">
+      <strong>Core Nursing Focus:</strong> Covers skeletal functions, bone classifications, long bone gross anatomy, microscopic osteon (Haversian) histology, bone cells (osteoblasts, osteoclasts, osteocytes), axial (80) vs appendicular (126) divisions, and synarthrotic, amphiarthrotic, and diarthrotic joint types.
     </div>
   </div>
 
-  <div class="bp-page">
+  <div class="bp-page" id="blueprint-mod-5">
     <div class="bp-title-row">
       <div class="bp-title">BLUEPRINT: Module 5: The Muscular System & Sarcomere Dynamics</div>
       <div class="bp-badge">Chapter 8 (Patton 17th Edition)</div>
     </div>
-    <div class="bp-diagram-box">
+    <div class="bp-diagram-box" onclick="openImageModal('images/mod5_muscle_sarcomere_contraction.png?t=3', 'Module 5: The Muscular System & Sarcomere Dynamics')">
       <img src="images/mod5_muscle_sarcomere_contraction.png?t=3" alt="Module 5: The Muscular System & Sarcomere Dynamics">
+      <div class="zoom-hint-badge">🔍 Click to Zoom In Full-Screen</div>
     </div>
-    <div style="background:#0f172a; padding:12px; border-radius:6px; font-size:0.88rem; border-left:4px solid #38bdf8;">
-      <strong>High-Yield Scope:</strong> Examines the three muscle tissue types (skeletal, cardiac, smooth), connective tissue wrappings (epimysium, perimysium, endomysium), sarcomere ultrastructure (actin vs myosin), sliding filament mechanism, excitation-contraction coupling, isotonic vs isometric contractions, and muscle actions.
+    <div class="part-pill" style="cursor:default; border-left:5px solid var(--accent-cyan); font-size:calc(1.1rem * var(--font-scale));">
+      <strong>Core Nursing Focus:</strong> Examines the three muscle tissue types (skeletal, cardiac, smooth), connective tissue wrappings (epimysium, perimysium, endomysium), sarcomere ultrastructure (actin vs myosin), sliding filament mechanism, excitation-contraction coupling, isotonic vs isometric contractions, and muscle actions.
     </div>
   </div>
 
-  <div class="bp-page">
+  <div class="bp-page" id="blueprint-mod-6">
     <div class="bp-title-row">
       <div class="bp-title">BLUEPRINT: Module 6: The Nervous System, Synaptic Transmission & Reflex Arcs</div>
       <div class="bp-badge">Chapter 9 (Patton 17th Edition)</div>
     </div>
-    <div class="bp-diagram-box">
+    <div class="bp-diagram-box" onclick="openImageModal('images/mod6_nervous_reflex_arc.png?t=3', 'Module 6: The Nervous System, Synaptic Transmission & Reflex Arcs')">
       <img src="images/mod6_nervous_reflex_arc.png?t=3" alt="Module 6: The Nervous System, Synaptic Transmission & Reflex Arcs">
+      <div class="zoom-hint-badge">🔍 Click to Zoom In Full-Screen</div>
     </div>
-    <div style="background:#0f172a; padding:12px; border-radius:6px; font-size:0.88rem; border-left:4px solid #38bdf8;">
-      <strong>High-Yield Scope:</strong> Deconstructs CNS vs PNS divisions, sensory (afferent) vs motor (efferent) pathways, somatic vs autonomic (sympathetic vs parasympathetic) systems, neuron anatomy, neuroglial cells, action potential generation, synaptic transmission, the 5-step reflex arc, and major brain regions.
+    <div class="part-pill" style="cursor:default; border-left:5px solid var(--accent-cyan); font-size:calc(1.1rem * var(--font-scale));">
+      <strong>Core Nursing Focus:</strong> Deconstructs CNS vs PNS divisions, sensory (afferent) vs motor (efferent) pathways, somatic vs autonomic (sympathetic vs parasympathetic) systems, neuron anatomy, neuroglial cells, action potential generation, synaptic transmission, the 5-step reflex arc, and major brain regions.
     </div>
   </div>
 
-  <div class="bp-page">
+  <div class="bp-page" id="blueprint-mod-7">
     <div class="bp-title-row">
       <div class="bp-title">BLUEPRINT: Module 7: The Senses (Vision, Audition, Equilibrium, Olfaction & Gustation)</div>
       <div class="bp-badge">Chapter 10 (Patton 17th Edition)</div>
     </div>
-    <div class="bp-diagram-box">
+    <div class="bp-diagram-box" onclick="openImageModal('images/mod7_special_senses_eye_ear.png?t=3', 'Module 7: The Senses (Vision, Audition, Equilibrium, Olfaction & Gustation)')">
       <img src="images/mod7_special_senses_eye_ear.png?t=3" alt="Module 7: The Senses (Vision, Audition, Equilibrium, Olfaction & Gustation)">
+      <div class="zoom-hint-badge">🔍 Click to Zoom In Full-Screen</div>
     </div>
-    <div style="background:#0f172a; padding:12px; border-radius:6px; font-size:0.88rem; border-left:4px solid #38bdf8;">
-      <strong>High-Yield Scope:</strong> Covers general vs special senses, photoreceptors, three tunics of the eye, rods vs cones, aqueous vs vitreous humor, auditory ossicles, cochlea and Organ of Corti, static (vestibule) vs dynamic (semicircular canals) equilibrium, and chemoreceptors for taste and smell.
+    <div class="part-pill" style="cursor:default; border-left:5px solid var(--accent-cyan); font-size:calc(1.1rem * var(--font-scale));">
+      <strong>Core Nursing Focus:</strong> Covers general vs special senses, photoreceptors, three tunics of the eye, rods vs cones, aqueous vs vitreous humor, auditory ossicles, cochlea and Organ of Corti, static (vestibule) vs dynamic (semicircular canals) equilibrium, and chemoreceptors for taste and smell.
     </div>
   </div>
 
-  <div class="bp-page">
+  <div class="bp-page" id="blueprint-mod-8">
     <div class="bp-title-row">
       <div class="bp-title">BLUEPRINT: Module 8: The Endocrine System, Glands & Hormone Mechanisms</div>
       <div class="bp-badge">Chapter 11 (Patton 17th Edition)</div>
     </div>
-    <div class="bp-diagram-box">
+    <div class="bp-diagram-box" onclick="openImageModal('images/mod8_endocrine_axis_feedback.png?t=3', 'Module 8: The Endocrine System, Glands & Hormone Mechanisms')">
       <img src="images/mod8_endocrine_axis_feedback.png?t=3" alt="Module 8: The Endocrine System, Glands & Hormone Mechanisms">
+      <div class="zoom-hint-badge">🔍 Click to Zoom In Full-Screen</div>
     </div>
-    <div style="background:#0f172a; padding:12px; border-radius:6px; font-size:0.88rem; border-left:4px solid #38bdf8;">
-      <strong>High-Yield Scope:</strong> Compares endocrine vs exocrine glands, protein (second messenger cAMP) vs steroid (direct gene activation) hormones, negative feedback regulation, the hypothalamic-pituitary axis, thyroid/parathyroid calcium balance (calcitonin vs PTH), pancreatic blood glucose balance (insulin vs glucagon), and adrenal stress hormones.
+    <div class="part-pill" style="cursor:default; border-left:5px solid var(--accent-cyan); font-size:calc(1.1rem * var(--font-scale));">
+      <strong>Core Nursing Focus:</strong> Compares endocrine vs exocrine glands, protein (second messenger cAMP) vs steroid (direct gene activation) hormones, negative feedback regulation, the hypothalamic-pituitary axis, thyroid/parathyroid calcium balance (calcitonin vs PTH), pancreatic blood glucose balance (insulin vs glucagon), and adrenal stress hormones.
     </div>
   </div>
 
+  <!-- Modal 1: Image Zoom Lightbox -->
+  <div class="modal-overlay" id="imageModal" onclick="closeImageModalOnBackdrop(event)">
+    <div class="modal-header-bar">
+      <span class="modal-title-text" id="modalImageTitle">Anatomical Diagram Zoom</span>
+      <div class="modal-zoom-controls">
+        <button class="modal-ctrl-btn" onclick="zoomImage(-0.25)">➖ Zoom Out</button>
+        <button class="modal-ctrl-btn" onclick="resetImageZoom()">↺ 100%</button>
+        <button class="modal-ctrl-btn" onclick="zoomImage(0.25)">➕ Zoom In</button>
+        <button class="modal-ctrl-btn" onclick="toggleFitScreen()">↔ Fit Screen</button>
+        <button class="modal-close-btn" onclick="closeImageModal()">✕ Close</button>
+      </div>
+    </div>
+    <div class="modal-img-viewport" id="modalViewport">
+      <img src="" id="modalImg" alt="Enlarged Diagram">
+    </div>
+  </div>
+
+  <!-- Modal 2: Giant Word / Flashcard Modal -->
+  <div class="word-modal-overlay" id="wordModal" onclick="closeWordModalOnBackdrop(event)">
+    <div class="word-card-popup" onclick="event.stopPropagation()">
+      <div class="word-modal-badge" id="wmBadge">System Badge</div>
+      <div class="word-modal-title" id="wmTitle">Anatomical Structure</div>
+      <div class="word-modal-body" id="wmBody">Physiological role and nursing exam rationale...</div>
+      <div class="word-modal-nav">
+        <button class="word-nav-btn" onclick="prevWord()">◀ Previous</button>
+        <span class="word-counter" id="wmCounter">Part 1 of 12</span>
+        <button class="word-nav-btn" onclick="nextWord()">Next ▶</button>
+        <button class="modal-close-btn" style="padding:10px 20px;" onclick="closeWordModal()">✕ Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Atlas Data Injection for Interactive Flashcards
+    const atlasData = [{"id": "cell", "title": "1. Human Cell Ultrastructure & Organelles", "system": "Cell Biology (Module 2 \u2022 Chapter 3)", "badge": "Module 2", "img": "images/human_cell_labeled.jpg", "img_secondary": null, "description": "High-magnification cross-section illustrating the internal cellular architecture, metabolic organelles, and protective membrane.", "parts": [{"name": "Nucleus", "role": "The control center of the cell; houses DNA chromosomes and directs protein synthesis."}, {"name": "Nucleoli (Nucleolus)", "role": "Dense dark-staining region within the nucleus that synthesizes ribosomal RNA (rRNA)."}, {"name": "Mitochondria", "role": "The 'powerhouses of the cell'; generates ATP energy via aerobic cellular respiration."}, {"name": "Ribosomes", "role": "Protein factories composed of rRNA; translate mRNA transcripts into polypeptide chains."}, {"name": "Rough Endoplasmic Reticulum", "role": "Membranous network studded with ribosomes; folds and modifies nascent proteins."}, {"name": "Smooth Endoplasmic Reticulum", "role": "Agranular network for lipid and steroid synthesis, calcium storage, and drug detox."}, {"name": "Golgi Complex (Apparatus)", "role": "Stack of flattened sacs that chemically modifies, sorts, and packages glycoproteins for secretion."}, {"name": "Lysosomes", "role": "'Digestive bags' packed with hydrolytic acid enzymes to recycle damaged organelles and bacteria."}, {"name": "Centrioles", "role": "Paired barrel-shaped organelles that organize the mitotic spindle during cell division (mitosis)."}, {"name": "Plasma Membrane", "role": "Selectively permeable phospholipid bilayer regulating what enters and leaves the cytoplasm."}, {"name": "Microvilli", "role": "Finger-like membrane folds that increase absorptive surface area (prominent in intestine/kidney)."}]}, {"id": "skin", "title": "2. Integumentary System Architecture & Receptors", "system": "The Skin & Appendages (Module 3 \u2022 Chapter 6)", "badge": "Module 3", "img": "images/skin_layers_receptors_labeled.jpg", "img_secondary": "images/skin_3d_cross_section.jpg", "description": "3D anatomical block diagram displaying the three principal skin layers, epidermal strata, hair follicle, glands, and cutaneous mechanoreceptors.", "parts": [{"name": "Epidermis", "role": "Avascular superficial protective layer of stratified squamous keratinized epithelium (5 strata)."}, {"name": "Stratum Basale", "role": "Deepest epidermal monolayer of stem cells undergoing active mitosis; houses melanocytes."}, {"name": "Stratum Corneum", "role": "Outermost layer of dead, fully keratinized, shingle-like cells providing waterproof barrier."}, {"name": "Dermis", "role": "Vascular, tough connective tissue layer (20x thicker than epidermis) containing nerves, vessels, and fibers."}, {"name": "Papillary Dermis", "role": "Superficial dermal layer with dermal papillae forming fingerprint ridges and housing Meissner corpuscles."}, {"name": "Reticular Dermis", "role": "Deep dense irregular connective tissue layer rich in collagen and elastin; houses Pacinian corpuscles."}, {"name": "Hypodermis (Subcutaneous)", "role": "Adipose tissue foundation providing thermal insulation, energy reserve, and shock cushioning."}, {"name": "Meissner Corpuscle", "role": "Encapsulated tactile receptor in dermal papillae that detects light touch and low-frequency vibration."}, {"name": "Pacinian Corpuscle", "role": "Large lamellated onion-shaped receptor deep in reticular dermis/hypodermis detecting deep pressure."}, {"name": "Free Nerve Endings", "role": "Unencapsulated sensory dendrites extending into epidermis to detect nociceptive pain and temperature."}, {"name": "Sebaceous Glands", "role": "Oil glands attached to hair follicles secreting sebum to lubricate hair/skin and prevent microbial growth."}, {"name": "Eccrine Sweat Glands", "role": "Coiled tubular glands distributed across the body that secrete watery sweat for thermoregulation."}, {"name": "Arrector Pili Muscle", "role": "Smooth muscle bundle contracting under sympathetic stimulation to pull hair upright ('goosebumps')."}]}, {"id": "skeleton", "title": "3. The Complete Human Skeleton (Axial & Appendicular)", "system": "Skeletal System (Module 4 \u2022 Chapter 7)", "badge": "Module 4", "img": "images/skeleton_complete_labeled.jpg", "img_secondary": null, "description": "Anterior and posterior full-body skeletal views illustrating all 206 bones, categorized into the 80 axial bones and 126 appendicular bones.", "parts": [{"name": "Cranium & Facial Bones", "role": "Axial: Protects brain (Frontal, Parietal, Occipital) and frames face (Maxilla, Zygomatic, Mandible)."}, {"name": "Vertebral Column", "role": "Axial: Flexible supportive column with 7 Cervical, 12 Thoracic, 5 Lumbar, Sacrum, and Coccyx."}, {"name": "Thoracic Cage", "role": "Axial: Bony protection for heart/lungs composed of Sternum and 12 pairs of ribs (7 True, 3 False, 2 Floating)."}, {"name": "Pectoral Girdle", "role": "Appendicular: Attaches upper limbs to axial trunk; includes Clavicle (collarbone) and Scapula (shoulder blade)."}, {"name": "Humerus", "role": "Appendicular: Long bone of the upper arm articulating with glenoid cavity and elbow."}, {"name": "Radius & Ulna", "role": "Appendicular: Forearm bones; Radius is lateral (thumb side) and Ulna is medial (pinky side)."}, {"name": "Carpals, Metacarpals, Phalanges", "role": "Appendicular: Wrist (8 carpals), palm (5 metacarpals), and fingers (14 phalanges)."}, {"name": "Pelvic Girdle (Coxal Bone)", "role": "Appendicular: Sturdy weight-bearing ring formed by fused Ilium, Ischium, and Pubis bones."}, {"name": "Femur", "role": "Appendicular: Heaviest, strongest, and longest bone in the body; articulates with acetabulum at hip."}, {"name": "Patella", "role": "Appendicular: Sesamoid kneecap protecting the knee joint and improving quadriceps leverage."}, {"name": "Tibia & Fibula", "role": "Appendicular: Lower leg; Tibia (shinbone) is medial and weight-bearing; Fibula is lateral stabilizer."}, {"name": "Tarsals, Metatarsals, Calcaneus", "role": "Appendicular: Ankle (7 tarsals), heel (calcaneus), arch (5 metatarsals), and toes (14 phalanges)."}]}, {"id": "muscles", "title": "4. Major Superficial Skeletal Muscles (Anterior & Posterior)", "system": "Muscular System (Module 5 \u2022 Chapter 8)", "badge": "Module 5", "img": "images/muscles_anterior_labeled.jpg", "img_secondary": "images/muscles_posterior_labeled.jpg", "description": "Full-length anatomical plates detailing superficial muscle groups, prime movers, antagonists, and joint movements from both anterior and posterior perspectives.", "parts": [{"name": "Sternocleidomastoid", "role": "Neck muscle that flexes neck and rotates head to opposite side."}, {"name": "Trapezius", "role": "Large triangular upper back/neck muscle that elevates, depresses, and retracts the scapula."}, {"name": "Deltoid", "role": "Triangular shoulder muscle that serves as the prime mover of arm abduction."}, {"name": "Pectoralis Major", "role": "Large chest muscle that adducts, flexes, and medially rotates the humerus at the shoulder."}, {"name": "Biceps Brachii", "role": "Anterior arm muscle that is the prime mover of elbow flexion and powerful forearm supinator."}, {"name": "Triceps Brachii", "role": "Posterior arm muscle that acts as the primary antagonist to biceps, extending the elbow joint."}, {"name": "Rectus Abdominis", "role": "'Six-pack' abdominal muscle that flexes the lumbar vertebral column and compresses abdominal cavity."}, {"name": "External Obliques", "role": "Lateral abdominal muscles that rotate and laterally flex the trunk."}, {"name": "Latissimus Dorsi", "role": "'Swimmer's muscle'; broad lower back muscle that extends and adducts the arm."}, {"name": "Gluteus Maximus", "role": "Largest muscle in the body; prime mover of hip extension (rising from sitting, climbing stairs)."}, {"name": "Quadriceps Femoris Group", "role": "Anterior thigh muscles (Rectus femoris, Vastus lateralis, medialis, intermedius) extending the knee."}, {"name": "Hamstrings Group", "role": "Posterior thigh muscles (Biceps femoris, Semitendinosus, Semimembranosus) flexing knee and extending hip."}, {"name": "Tibialis Anterior", "role": "Anterior shin muscle that performs ankle dorsiflexion and foot inversion."}, {"name": "Gastrocnemius & Soleus", "role": "Posterior calf muscles that plantarflex the ankle via the strong Calcaneal (Achilles) tendon."}]}, {"id": "endocrine", "title": "5. The Human Endocrine System (Master Glands & Hormones)", "system": "Endocrine System (Module 8 \u2022 Chapter 11)", "badge": "Module 8", "img": "images/endocrine_system_labeled.jpg", "img_secondary": null, "description": "Full-body anatomical diagram displaying the exact positions of all master ductless endocrine glands and their secreted chemical messengers.", "parts": [{"name": "Pineal Gland", "role": "Located in brain epithalamus; secretes Melatonin in darkness to coordinate circadian sleep-wake cycles."}, {"name": "Hypothalamus", "role": "Master neuroendocrine coordinator; synthesizes ADH and Oxytocin; controls anterior pituitary via releasing hormones."}, {"name": "Pituitary Gland (Master Gland)", "role": "Anterior lobe secretes TSH, ACTH, GH, PRL, FSH, LH; Posterior lobe stores and releases ADH & Oxytocin."}, {"name": "Thyroid Gland", "role": "Butterfly-shaped neck gland; secretes T3 & T4 (metabolic rate) and Calcitonin (lowers blood calcium)."}, {"name": "Parathyroid Glands", "role": "Four tiny glands on posterior thyroid; secrete Parathyroid Hormone (PTH) to elevate blood calcium levels."}, {"name": "Thymus Gland", "role": "Located behind sternum; secretes Thymosin to program and mature immunocompetent T-lymphocytes."}, {"name": "Adrenal Glands (Suprarenal)", "role": "Cortex secretes Aldosterone (Na+ retention) and Cortisol (glucose/stress); Medulla secretes Epinephrine."}, {"name": "Pancreas (Islets of Langerhans)", "role": "Beta cells secrete Insulin (lowers blood glucose); Alpha cells secrete Glucagon (elevates blood glucose)."}, {"name": "Ovaries (Female)", "role": "Secrete Estrogen (secondary sex characteristics) and Progesterone (menstrual cycle & pregnancy support)."}, {"name": "Testes (Male)", "role": "Secrete Testosterone (spermatogenesis, muscle mass, secondary male sex characteristics)."}]}];
+
+    let currentScale = 'normal';
+    function setFontScale(scale) {
+      currentScale = scale;
+      document.body.className = document.body.className.replace(/scale-\w+/g, '') + ' scale-' + scale;
+      
+      document.querySelectorAll('[id^="btn-scale-"]').forEach(btn => btn.classList.remove('active'));
+      const activeBtn = document.getElementById('btn-scale-' + scale);
+      if (activeBtn) activeBtn.classList.add('active');
+    }
+
+    function setDiagramSize(size) {
+      if (size === 'giant') {
+        document.body.classList.add('diag-giant');
+        document.getElementById('btn-diag-giant').classList.add('active');
+        document.getElementById('btn-diag-standard').classList.remove('active');
+      } else {
+        document.body.classList.remove('diag-giant');
+        document.getElementById('btn-diag-giant').classList.remove('active');
+        document.getElementById('btn-diag-standard').classList.add('active');
+      }
+    }
+
+    // 1. IMAGE LIGHTBOX MODAL
+    let currentImgZoom = 1;
+    function openImageModal(imgSrc, title) {
+      const modal = document.getElementById('imageModal');
+      const modalImg = document.getElementById('modalImg');
+      const titleEl = document.getElementById('modalImageTitle');
+
+      modalImg.src = imgSrc;
+      titleEl.innerText = title;
+      currentImgZoom = 1;
+      modalImg.style.transform = `scale(${currentImgZoom})`;
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeImageModal() {
+      const modal = document.getElementById('imageModal');
+      modal.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+
+    function closeImageModalOnBackdrop(e) {
+      if (e.target.id === 'imageModal' || e.target.id === 'modalViewport') {
+        closeImageModal();
+      }
+    }
+
+    function zoomImage(delta) {
+      currentImgZoom = Math.max(0.5, Math.min(3.5, currentImgZoom + delta));
+      document.getElementById('modalImg').style.transform = `scale(${currentImgZoom})`;
+    }
+
+    function resetImageZoom() {
+      currentImgZoom = 1;
+      document.getElementById('modalImg').style.transform = `scale(1)`;
+    }
+
+    function toggleFitScreen() {
+      const img = document.getElementById('modalImg');
+      if (currentImgZoom !== 1) {
+        currentImgZoom = 1;
+      } else {
+        currentImgZoom = 1.4;
+      }
+      img.style.transform = `scale(${currentImgZoom})`;
+    }
+
+    // Mouse wheel zoom inside modal
+    document.getElementById('modalViewport').addEventListener('wheel', function(e) {
+      e.preventDefault();
+      if (e.deltaY < 0) {
+        zoomImage(0.15);
+      } else {
+        zoomImage(-0.15);
+      }
+    }, { passive: false });
+
+    // 2. GIANT WORD / CARD MODAL
+    let activeAtlasIdx = 0;
+    let activePartIdx = 0;
+
+    function openWordModal(atlasIdx, partIdx) {
+      activeAtlasIdx = atlasIdx;
+      activePartIdx = partIdx;
+      renderWordModal();
+      document.getElementById('wordModal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function renderWordModal() {
+      const item = atlasData[activeAtlasIdx];
+      const part = item.parts[activePartIdx];
+      
+      document.getElementById('wmBadge').innerText = `${item.system} • Plate ${activeAtlasIdx + 1}`;
+      document.getElementById('wmTitle').innerText = part.name;
+      document.getElementById('wmBody').innerText = part.role;
+      document.getElementById('wmCounter').innerText = `Structure ${activePartIdx + 1} of ${item.parts.length}`;
+    }
+
+    function closeWordModal() {
+      document.getElementById('wordModal').classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+
+    function closeWordModalOnBackdrop(e) {
+      if (e.target.id === 'wordModal') {
+        closeWordModal();
+      }
+    }
+
+    function nextWord() {
+      const item = atlasData[activeAtlasIdx];
+      if (activePartIdx < item.parts.length - 1) {
+        activePartIdx++;
+      } else {
+        activePartIdx = 0; // loop
+      }
+      renderWordModal();
+    }
+
+    function prevWord() {
+      const item = atlasData[activeAtlasIdx];
+      if (activePartIdx > 0) {
+        activePartIdx--;
+      } else {
+        activePartIdx = item.parts.length - 1; // loop
+      }
+      renderWordModal();
+    }
+
+    // Keyboard support
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeImageModal();
+        closeWordModal();
+      } else if (document.getElementById('wordModal').classList.contains('active')) {
+        if (e.key === 'ArrowRight') nextWord();
+        if (e.key === 'ArrowLeft') prevWord();
+      }
+    });
+  </script>
 </body>
 </html>
