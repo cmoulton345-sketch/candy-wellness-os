@@ -1977,6 +1977,515 @@
       margin-top: 30px;
     }
   
+  
+    /* Sticky Navigation Bar */
+    .mode-nav {
+      position: sticky;
+      top: 10px;
+      z-index: 9999;
+      background: rgba(15, 23, 42, 0.95) !important;
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.25) !important;
+      padding: 10px 16px;
+      border-radius: 30px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+
+    :root {
+      --bg: #0f172a;
+      --card-bg: rgba(30, 41, 59, 0.85);
+      --card-border: rgba(255, 255, 255, 0.12);
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent-pink: #ec4899;
+      --accent-purple: #8b5cf6;
+      --accent-cyan: #38bdf8;
+      --accent-green: #22c55e;
+      --accent-amber: #f59e0b;
+      --font-scale: 1;
+    }
+
+    .light-mode {
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --card-border: #cbd5e1;
+      --text: #0f172a;
+      --text-muted: #475569;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      padding: 20px 12px;
+      font-size: calc(16px * var(--font-scale));
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* HEADER */
+    header {
+      background: linear-gradient(135deg, #831843 0%, #4c0519 50%, #0f172a 100%);
+      border: 1px solid rgba(236, 72, 153, 0.3);
+      border-radius: 20px;
+      padding: 24px;
+      text-align: center;
+      margin-bottom: 24px;
+      box-shadow: 0 10px 30px rgba(236, 72, 153, 0.25);
+    }
+
+    header h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 800;
+      background: linear-gradient(to right, #f472b6, #c084fc, #38bdf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 8px;
+    }
+
+    header p {
+      color: #fbcfe8;
+      font-size: 1.05rem;
+    }
+
+    /* GAMIFICATION BAR */
+    .game-status-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 12px 20px;
+      margin-bottom: 24px;
+      backdrop-filter: blur(12px);
+    }
+
+    .stat-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .xp-bar-container {
+      flex: 1;
+      min-width: 200px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      height: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .xp-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #ec4899, #38bdf8);
+      transition: width 0.4s ease;
+      border-radius: 20px;
+    }
+
+    .controls-group {
+      display: flex;
+      gap: 8px;
+    }
+
+    .ctrl-btn {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid var(--card-border);
+      color: var(--text);
+      padding: 6px 12px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .ctrl-btn:hover {
+      background: rgba(255, 255, 255, 0.25);
+      border-color: var(--accent-cyan);
+    }
+
+    /* MODULE SELECTOR TABS */
+    .module-selector {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 10px;
+      margin-bottom: 24px;
+    }
+
+    .mod-tab {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      color: var(--text-muted);
+      padding: 10px 16px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 0.88rem;
+      white-space: nowrap;
+      cursor: pointer;
+      transition: all 0.25s;
+      flex-shrink: 0;
+    }
+
+    .mod-tab.active {
+      background: linear-gradient(135deg, #ec4899, #8b5cf6);
+      color: white;
+      border-color: #f472b6;
+      box-shadow: 0 4px 14px rgba(236, 72, 153, 0.35);
+    }
+
+    /* GAME MODE SELECTION CARDS */
+    .game-mode-nav {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .game-card-btn {
+      background: var(--card-bg);
+      border: 2px solid var(--card-border);
+      border-radius: 16px;
+      padding: 16px;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .game-card-btn:hover {
+      transform: translateY(-3px);
+      border-color: var(--accent-cyan);
+    }
+
+    .game-card-btn.active {
+      border-color: var(--accent-pink);
+      background: rgba(236, 72, 153, 0.12);
+      box-shadow: 0 0 15px rgba(236, 72, 153, 0.3);
+    }
+
+    .game-card-btn h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.05rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .game-card-btn p {
+      font-size: 0.825rem;
+      color: var(--text-muted);
+    }
+
+    /* GAME PANELS */
+    .game-panel {
+      display: none;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 24px;
+      margin-bottom: 30px;
+      backdrop-filter: blur(12px);
+      animation: fadeIn 0.3s ease;
+    }
+
+    .game-panel.active { display: block; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* GIZMO 1: DIAGRAM LABELING LAB */
+    .gizmo-lab-container {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 20px;
+    }
+
+    @media (max-width: 850px) {
+      .gizmo-lab-container { grid-template-columns: 1fr; }
+    }
+
+    .diagram-display {
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 20px;
+      min-height: 380px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .target-pin-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 12px;
+      width: 100%;
+      margin-top: 16px;
+    }
+
+    .target-pin {
+      background: rgba(255, 255, 255, 0.05);
+      border: 2px dashed rgba(255, 255, 255, 0.25);
+      border-radius: 12px;
+      padding: 12px 16px;
+      min-height: 60px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .target-pin.correct {
+      border-style: solid;
+      border-color: var(--accent-green);
+      background: rgba(34, 197, 94, 0.15);
+    }
+
+    .target-pin.incorrect {
+      border-style: solid;
+      border-color: #ef4444;
+      background: rgba(239, 68, 68, 0.15);
+    }
+
+    .word-bank {
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .word-chip {
+      background: linear-gradient(135deg, #0284c7, #3b82f6);
+      color: white;
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.2s;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    .word-chip:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(56, 189, 248, 0.4);
+    }
+
+    .word-chip.selected {
+      border: 2px solid #f472b6;
+      box-shadow: 0 0 12px #f472b6;
+    }
+
+    /* GIZMO 2: MEMORY FLIP MATCH */
+    .memory-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .memory-card {
+      height: 120px;
+      perspective: 1000px;
+      cursor: pointer;
+    }
+
+    .memory-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      transform-style: preserve-3d;
+      border-radius: 14px;
+    }
+
+    .memory-card.flipped .memory-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .card-front, .card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px;
+      font-weight: 700;
+      font-size: 0.88rem;
+      border: 2px solid var(--card-border);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .card-front {
+      background: linear-gradient(135deg, #1e1b4b, #312e81);
+      color: #c084fc;
+      font-size: 1.5rem;
+    }
+
+    .card-back {
+      background: #1e293b;
+      color: #f8fafc;
+      transform: rotateY(180deg);
+      border-color: var(--accent-cyan);
+    }
+
+    .memory-card.matched .card-back {
+      background: rgba(34, 197, 94, 0.25);
+      border-color: var(--accent-green);
+      color: #86efac;
+    }
+
+    /* GIZMO 3: SPEED ARCADE */
+    .arcade-quiz-card {
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 20px;
+      margin-top: 16px;
+    }
+
+    .quiz-q-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      line-height: 1.4;
+    }
+
+    .quiz-options-grid {
+      display: grid;
+      gap: 10px;
+    }
+
+    .quiz-opt-btn {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--card-border);
+      color: var(--text);
+      padding: 12px 16px;
+      border-radius: 12px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .quiz-opt-btn:hover {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: var(--accent-pink);
+    }
+
+    .quiz-opt-btn.correct-opt {
+      background: rgba(34, 197, 94, 0.25) !important;
+      border-color: var(--accent-green) !important;
+      color: #86efac !important;
+    }
+
+    .quiz-opt-btn.wrong-opt {
+      background: rgba(239, 68, 68, 0.25) !important;
+      border-color: #ef4444 !important;
+      color: #fca5a5 !important;
+    }
+
+    /* GIZMO 4: CLINICAL QUEST */
+    .quest-card {
+      background: linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.95));
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      border-radius: 16px;
+      padding: 24px;
+    }
+
+    .clara-avatar {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .clara-img {
+      width: 44px;
+      height: 44px;
+      background: #ec4899;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      box-shadow: 0 0 10px rgba(236, 72, 153, 0.5);
+    }
+
+    .clara-speech {
+      background: rgba(236, 72, 153, 0.15);
+      border-left: 4px solid var(--accent-pink);
+      padding: 12px 16px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      color: #fbcfe8;
+      margin-bottom: 20px;
+    }
+
+    .btn-action {
+      background: linear-gradient(135deg, #ec4899, #8b5cf6);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      box-shadow: 0 4px 14px rgba(236, 72, 153, 0.3);
+      transition: all 0.2s;
+    }
+
+    .btn-action:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(236, 72, 153, 0.5);
+    }
+
+    .hub-link-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 14px 20px;
+      margin-top: 30px;
+    }
+  
   </style>
 </head>
 <body>
@@ -1995,7 +2504,6 @@
     </header>
 
     <!-- Gizmo Banner -->
-    <!-- Gizmo Games Highlight Banner -->
     <div style="background: linear-gradient(135deg, rgba(236, 72, 153, 0.15), rgba(139, 92, 246, 0.15)); border: 2px solid #ec4899; border-radius: 16px; padding: 16px 20px; margin-bottom: 20px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; box-shadow: 0 4px 14px rgba(236, 72, 153, 0.2);">
       <div>
         <h3 style="color: #ec4899; font-size: 1.15rem; font-weight: 800; font-family: 'Outfit', sans-serif; display:flex; align-items:center; gap:8px;">
@@ -2005,9 +2513,9 @@
           Stress-free learning games: 3D Memory Match, Labeling Labs, Speed Quiz Arcade & Clinical Quests!
         </p>
       </div>
-      <a href="Rayne_AP_Gizmo_Game_Center.html" style="background: linear-gradient(135deg, #ec4899, #8b5cf6); color: white; font-weight: 800; font-size: 0.95rem; padding: 10px 20px; border-radius: 30px; text-decoration: none; box-shadow: 0 4px 12px rgba(236, 72, 153, 0.4); display:inline-flex; align-items:center; gap:6px;">
+      <button onclick="switchView('gizmo')" style="background: linear-gradient(135deg, #ec4899, #8b5cf6); color: white; font-weight: 800; font-size: 0.95rem; padding: 10px 20px; border-radius: 30px; border: none; cursor: pointer; box-shadow: 0 4px 12px rgba(236, 72, 153, 0.4); display:inline-flex; align-items:center; gap:6px;">
         Play Gizmo Games 🕹️
-      </a>
+      </button>
     </div>
 
     <!-- Top Mode Navigation -->
@@ -2501,6 +3009,183 @@
             <button onclick="switchView('atlas')" class="mode-btn" style="background:linear-gradient(135deg, #8b5cf6, #6d28d9); color:white;">🔬 Open Picture Atlas</button>
           </div>
         </div>
+      </div>
+    </section>
+
+    
+    <!-- VIEW 6: GIZMO LEARNING GAMES -->
+    <section id="gizmo-view" class="view-section">
+      <div style="background:var(--card-bg); border:1px solid var(--card-border); border-radius:18px; padding:20px; margin-bottom:20px;">
+        
+        <!-- Top Return Bar -->
+        <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:10px; background:rgba(15, 23, 42, 0.9); border:1px solid #f472b6; border-radius:14px; padding:12px 18px; margin-bottom:20px;">
+          <span style="font-weight:800; color:#f472b6; font-size:1.05rem;">🎮 Rayne's Gizmo Games Mode</span>
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <button onclick="switchView('exam')" class="mode-btn" style="background:linear-gradient(135deg, #9d174d, #be185d); color:white; font-size:0.9rem; padding:8px 16px;">📝 Return to Practice Exam</button>
+            <button onclick="switchView('blueprints')" class="mode-btn" style="background:linear-gradient(135deg, #0284c7, #3b82f6); color:white; font-size:0.9rem; padding:8px 16px;">🖼️ Return to Blueprints</button>
+          </div>
+        </div>
+
+        
+
+    <!-- HEADER -->
+    <header>
+      <h1>Rayne's Anatomy & Physiology Gizmo & Game Center 🎮🧬</h1>
+      <p>Modules 1–8 Textbook Interactive Learning Games & Arcade (Patton 17th Edition)</p>
+    </header>
+
+    <!-- GAMIFICATION STATUS BAR -->
+    <div class="game-status-bar">
+      <div class="stat-badge">
+        <span>⭐ Level <span id="userLevel">1</span> Anatomy Apprentice</span>
+      </div>
+      <div class="stat-badge" style="color: var(--accent-pink);">
+        <span>🔥 Combo Streak: <span id="comboStreak">0</span>x</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:10px; flex:1; max-width:320px;">
+        <span style="font-size:0.8rem; font-weight:700; color:var(--text-muted);">XP: <span id="xpVal">0</span> / 500</span>
+        <div class="xp-bar-container">
+          <div class="xp-fill" id="xpFill"></div>
+        </div>
+      </div>
+      <div class="controls-group">
+        <button class="ctrl-btn" onclick="toggleAudio()" id="audioBtn">🔊 Sound: ON</button>
+        <button class="ctrl-btn" onclick="toggleContrast()">👁️ High Contrast</button>
+        <button class="ctrl-btn" onclick="adjustTextSize(0.1)">A+</button>
+        <button class="ctrl-btn" onclick="adjustTextSize(-0.1)">A-</button>
+      </div>
+    </div>
+
+    <!-- MODULE SELECTOR -->
+    <div class="module-selector" id="modSelector">
+      <button class="mod-tab active" onclick="selectModule(1)">Module 1: Planes & Cavities</button>
+      <button class="mod-tab" onclick="selectModule(2)">Module 2: Cells & Organelles</button>
+      <button class="mod-tab" onclick="selectModule(3)">Module 3: Skin & Tissues</button>
+      <button class="mod-tab" onclick="selectModule(4)">Module 4: Skeleton & Joints</button>
+      <button class="mod-tab" onclick="selectModule(5)">Module 5: Muscles & Movement</button>
+      <button class="mod-tab" onclick="selectModule(6)">Module 6: Nervous System</button>
+      <button class="mod-tab" onclick="selectModule(7)">Module 7: Special Senses</button>
+      <button class="mod-tab" onclick="selectModule(8)">Module 8: Endocrine System</button>
+    </div>
+
+    <!-- GAME MODE SELECTOR -->
+    <div class="game-mode-nav">
+      <div class="game-card-btn active" onclick="switchGameMode('gizmoLab')" id="btn-gizmoLab">
+        <h3>🧬 Gizmo 1: Labeling Lab</h3>
+        <p>Interactive anatomical diagram drag & drop labeling simulator.</p>
+      </div>
+      <div class="game-card-btn" onclick="switchGameMode('memoryMatch')" id="btn-memoryMatch">
+        <h3>🃏 Gizmo 2: Memory Flip</h3>
+        <p>3D Card-flip matching game for textbook anatomy terms & definitions.</p>
+      </div>
+      <div class="game-card-btn" onclick="switchGameMode('speedArcade')" id="btn-speedArcade">
+        <h3>🚀 Gizmo 3: Speed Arcade</h3>
+        <p>Gamified NCLEX quiz arcade with 50/50 power-ups & lives.</p>
+      </div>
+      <div class="game-card-btn" onclick="switchGameMode('clinicalQuest')" id="btn-clinicalQuest">
+        <h3>🩺 Gizmo 4: Clinical Quest</h3>
+        <p>Interactive nursing scenario puzzle with Professor Clara's rationales.</p>
+      </div>
+    </div>
+
+    <!-- GIZMO 1: DIAGRAM LABELING LAB -->
+    <div class="game-panel active" id="panel-gizmoLab">
+      <h2 style="font-family:'Outfit'; font-size:1.4rem; margin-bottom:12px; display:flex; align-items:center; gap:8px;">
+        🧬 Interactive Anatomical Labeling Lab
+      </h2>
+      <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:16px;">
+        Tap a term from the Word Bank on the right, then tap its matching anatomical location on the left!
+      </p>
+
+      <div class="gizmo-lab-container">
+        <div class="diagram-display" id="diagramDisplay">
+          <h3 id="diagramTitle" style="font-family:'Outfit'; color:var(--accent-cyan); margin-bottom:12px;"></h3>
+          <div id="targetPinsGrid" class="target-pin-grid"></div>
+        </div>
+
+        <div class="word-bank">
+          <h4 style="font-family:'Outfit'; color:var(--accent-pink);">Word Bank</h4>
+          <p style="font-size:0.775rem; color:var(--text-muted);">Tap a term below, then tap its location on the left:</p>
+          <div id="wordChipsContainer" style="display:flex; flex-direction:column; gap:8px; margin-top:8px;"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GIZMO 2: MEMORY FLIP MATCH -->
+    <div class="game-panel" id="panel-memoryMatch">
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:16px;">
+        <h2 style="font-family:'Outfit'; font-size:1.4rem;">🃏 Anatomy Vocabulary Memory Match</h2>
+        <div style="display:flex; gap:16px; font-weight:700;">
+          <span>⏱️ Time: <span id="memoryTimer">0</span>s</span>
+          <span>🎯 Matches: <span id="memoryMatches">0</span> / 4</span>
+          <button class="ctrl-btn" onclick="initMemoryGame()">🔄 Reset Board</button>
+        </div>
+      </div>
+      <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:16px;">
+        Tap cards to flip them and match Anatomical Terms with their textbook definitions!
+      </p>
+      <div class="memory-grid" id="memoryGrid"></div>
+    </div>
+
+    <!-- GIZMO 3: SPEED ARCADE -->
+    <div class="game-panel" id="panel-speedArcade">
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:16px;">
+        <h2 style="font-family:'Outfit'; font-size:1.4rem;">🚀 Anatomy NCLEX Speed Quiz Arcade</h2>
+        <div style="display:flex; gap:12px; align-items:center;">
+          <span style="font-size:1.1rem;">❤️ <span id="quizLives">3</span></span>
+          <button class="ctrl-btn" onclick="use5050Hint()" id="btn5050">💡 50/50 Hint (<span id="count5050">2</span>)</button>
+        </div>
+      </div>
+
+      <div class="arcade-quiz-card" id="quizCard">
+        <div class="quiz-q-title" id="quizQuestionText">Loading Question...</div>
+        <div class="quiz-options-grid" id="quizOptionsGrid"></div>
+        <div id="quizFeedbackBox" style="margin-top:16px; display:none; padding:12px; border-radius:10px; font-size:0.9rem;"></div>
+      </div>
+    </div>
+
+    <!-- GIZMO 4: CLINICAL QUEST -->
+    <div class="game-panel" id="panel-clinicalQuest">
+      <div class="quest-card">
+        <div class="clara-avatar">
+          <div class="clara-img">🩺</div>
+          <div>
+            <h3 style="font-family:'Outfit'; color:#f472b6;">Professor Clara's Clinical Case Quest</h3>
+            <p style="font-size:0.825rem; color:var(--text-muted);">Practical Nursing Anatomy Simulation</p>
+          </div>
+        </div>
+
+        <div class="clara-speech" id="questScenarioText">
+          Loading scenario...
+        </div>
+
+        <h4 style="font-family:'Outfit'; margin-bottom:12px;">What is your priority nursing action or anatomical assessment?</h4>
+        <div id="questChoicesGrid" style="display:flex; flex-direction:column; gap:10px; margin-bottom:16px;"></div>
+
+        <div id="questRationaleBox" style="display:none; background:rgba(34, 197, 94, 0.15); border:1px solid var(--accent-green); padding:16px; border-radius:12px; margin-top:16px;">
+          <h4 style="color:#86efac; margin-bottom:6px;">🩺 Professor Clara's Clinical Rationale:</h4>
+          <p id="questRationaleText" style="font-size:0.9rem; color:#e2e8f0;"></p>
+          <button class="btn-action" onclick="loadNextQuest()" style="margin-top:12px;">Next Clinical Case ➡️</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER NAV -->
+    
+
+        <!-- Bottom Return Bar -->
+        <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:12px; background:rgba(15, 23, 42, 0.95); border:1px solid #f472b6; border-radius:14px; padding:16px 20px; margin-top:30px;">
+          <div>
+            <strong style="font-size:1.05rem; color:#ec4899;">Finished Playing? Return to Master Study Hub:</strong>
+            <p style="font-size:0.825rem; color:var(--text-muted);">Switch directly to Practice Exam, Blueprints, or Atlas in 1 click:</p>
+          </div>
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <button onclick="switchView('exam')" class="mode-btn" style="background:linear-gradient(135deg, #9d174d, #be185d); color:white; font-weight:800;">📝 Return to Practice Exam</button>
+            <button onclick="switchView('blueprints')" class="mode-btn" style="background:linear-gradient(135deg, #0284c7, #3b82f6); color:white; font-weight:800;">🖼️ Return to Concept Blueprints</button>
+            <button onclick="switchView('atlas')" class="mode-btn" style="background:linear-gradient(135deg, #8b5cf6, #6d28d9); color:white; font-weight:800;">🔬 Return to Picture Atlas</button>
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -4584,6 +5269,515 @@
       margin-top: 30px;
     }
   
+  
+    /* Sticky Navigation Bar */
+    .mode-nav {
+      position: sticky;
+      top: 10px;
+      z-index: 9999;
+      background: rgba(15, 23, 42, 0.95) !important;
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.25) !important;
+      padding: 10px 16px;
+      border-radius: 30px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+
+    :root {
+      --bg: #0f172a;
+      --card-bg: rgba(30, 41, 59, 0.85);
+      --card-border: rgba(255, 255, 255, 0.12);
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent-pink: #ec4899;
+      --accent-purple: #8b5cf6;
+      --accent-cyan: #38bdf8;
+      --accent-green: #22c55e;
+      --accent-amber: #f59e0b;
+      --font-scale: 1;
+    }
+
+    .light-mode {
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --card-border: #cbd5e1;
+      --text: #0f172a;
+      --text-muted: #475569;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      padding: 20px 12px;
+      font-size: calc(16px * var(--font-scale));
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* HEADER */
+    header {
+      background: linear-gradient(135deg, #831843 0%, #4c0519 50%, #0f172a 100%);
+      border: 1px solid rgba(236, 72, 153, 0.3);
+      border-radius: 20px;
+      padding: 24px;
+      text-align: center;
+      margin-bottom: 24px;
+      box-shadow: 0 10px 30px rgba(236, 72, 153, 0.25);
+    }
+
+    header h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 800;
+      background: linear-gradient(to right, #f472b6, #c084fc, #38bdf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 8px;
+    }
+
+    header p {
+      color: #fbcfe8;
+      font-size: 1.05rem;
+    }
+
+    /* GAMIFICATION BAR */
+    .game-status-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 12px 20px;
+      margin-bottom: 24px;
+      backdrop-filter: blur(12px);
+    }
+
+    .stat-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .xp-bar-container {
+      flex: 1;
+      min-width: 200px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      height: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .xp-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #ec4899, #38bdf8);
+      transition: width 0.4s ease;
+      border-radius: 20px;
+    }
+
+    .controls-group {
+      display: flex;
+      gap: 8px;
+    }
+
+    .ctrl-btn {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid var(--card-border);
+      color: var(--text);
+      padding: 6px 12px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .ctrl-btn:hover {
+      background: rgba(255, 255, 255, 0.25);
+      border-color: var(--accent-cyan);
+    }
+
+    /* MODULE SELECTOR TABS */
+    .module-selector {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 10px;
+      margin-bottom: 24px;
+    }
+
+    .mod-tab {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      color: var(--text-muted);
+      padding: 10px 16px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 0.88rem;
+      white-space: nowrap;
+      cursor: pointer;
+      transition: all 0.25s;
+      flex-shrink: 0;
+    }
+
+    .mod-tab.active {
+      background: linear-gradient(135deg, #ec4899, #8b5cf6);
+      color: white;
+      border-color: #f472b6;
+      box-shadow: 0 4px 14px rgba(236, 72, 153, 0.35);
+    }
+
+    /* GAME MODE SELECTION CARDS */
+    .game-mode-nav {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .game-card-btn {
+      background: var(--card-bg);
+      border: 2px solid var(--card-border);
+      border-radius: 16px;
+      padding: 16px;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .game-card-btn:hover {
+      transform: translateY(-3px);
+      border-color: var(--accent-cyan);
+    }
+
+    .game-card-btn.active {
+      border-color: var(--accent-pink);
+      background: rgba(236, 72, 153, 0.12);
+      box-shadow: 0 0 15px rgba(236, 72, 153, 0.3);
+    }
+
+    .game-card-btn h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.05rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .game-card-btn p {
+      font-size: 0.825rem;
+      color: var(--text-muted);
+    }
+
+    /* GAME PANELS */
+    .game-panel {
+      display: none;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 24px;
+      margin-bottom: 30px;
+      backdrop-filter: blur(12px);
+      animation: fadeIn 0.3s ease;
+    }
+
+    .game-panel.active { display: block; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* GIZMO 1: DIAGRAM LABELING LAB */
+    .gizmo-lab-container {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 20px;
+    }
+
+    @media (max-width: 850px) {
+      .gizmo-lab-container { grid-template-columns: 1fr; }
+    }
+
+    .diagram-display {
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 20px;
+      min-height: 380px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .target-pin-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 12px;
+      width: 100%;
+      margin-top: 16px;
+    }
+
+    .target-pin {
+      background: rgba(255, 255, 255, 0.05);
+      border: 2px dashed rgba(255, 255, 255, 0.25);
+      border-radius: 12px;
+      padding: 12px 16px;
+      min-height: 60px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .target-pin.correct {
+      border-style: solid;
+      border-color: var(--accent-green);
+      background: rgba(34, 197, 94, 0.15);
+    }
+
+    .target-pin.incorrect {
+      border-style: solid;
+      border-color: #ef4444;
+      background: rgba(239, 68, 68, 0.15);
+    }
+
+    .word-bank {
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .word-chip {
+      background: linear-gradient(135deg, #0284c7, #3b82f6);
+      color: white;
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.2s;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    .word-chip:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(56, 189, 248, 0.4);
+    }
+
+    .word-chip.selected {
+      border: 2px solid #f472b6;
+      box-shadow: 0 0 12px #f472b6;
+    }
+
+    /* GIZMO 2: MEMORY FLIP MATCH */
+    .memory-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .memory-card {
+      height: 120px;
+      perspective: 1000px;
+      cursor: pointer;
+    }
+
+    .memory-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      transform-style: preserve-3d;
+      border-radius: 14px;
+    }
+
+    .memory-card.flipped .memory-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .card-front, .card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px;
+      font-weight: 700;
+      font-size: 0.88rem;
+      border: 2px solid var(--card-border);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .card-front {
+      background: linear-gradient(135deg, #1e1b4b, #312e81);
+      color: #c084fc;
+      font-size: 1.5rem;
+    }
+
+    .card-back {
+      background: #1e293b;
+      color: #f8fafc;
+      transform: rotateY(180deg);
+      border-color: var(--accent-cyan);
+    }
+
+    .memory-card.matched .card-back {
+      background: rgba(34, 197, 94, 0.25);
+      border-color: var(--accent-green);
+      color: #86efac;
+    }
+
+    /* GIZMO 3: SPEED ARCADE */
+    .arcade-quiz-card {
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 20px;
+      margin-top: 16px;
+    }
+
+    .quiz-q-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      line-height: 1.4;
+    }
+
+    .quiz-options-grid {
+      display: grid;
+      gap: 10px;
+    }
+
+    .quiz-opt-btn {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--card-border);
+      color: var(--text);
+      padding: 12px 16px;
+      border-radius: 12px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .quiz-opt-btn:hover {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: var(--accent-pink);
+    }
+
+    .quiz-opt-btn.correct-opt {
+      background: rgba(34, 197, 94, 0.25) !important;
+      border-color: var(--accent-green) !important;
+      color: #86efac !important;
+    }
+
+    .quiz-opt-btn.wrong-opt {
+      background: rgba(239, 68, 68, 0.25) !important;
+      border-color: #ef4444 !important;
+      color: #fca5a5 !important;
+    }
+
+    /* GIZMO 4: CLINICAL QUEST */
+    .quest-card {
+      background: linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.95));
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      border-radius: 16px;
+      padding: 24px;
+    }
+
+    .clara-avatar {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .clara-img {
+      width: 44px;
+      height: 44px;
+      background: #ec4899;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      box-shadow: 0 0 10px rgba(236, 72, 153, 0.5);
+    }
+
+    .clara-speech {
+      background: rgba(236, 72, 153, 0.15);
+      border-left: 4px solid var(--accent-pink);
+      padding: 12px 16px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      color: #fbcfe8;
+      margin-bottom: 20px;
+    }
+
+    .btn-action {
+      background: linear-gradient(135deg, #ec4899, #8b5cf6);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      box-shadow: 0 4px 14px rgba(236, 72, 153, 0.3);
+      transition: all 0.2s;
+    }
+
+    .btn-action:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(236, 72, 153, 0.5);
+    }
+
+    .hub-link-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 14px 20px;
+      margin-top: 30px;
+    }
+  
   </style>
 
   <script>
@@ -4681,6 +5875,1842 @@
       }
     });
   </script>
+<script>
+
+    // AUDIO SYNTHESIZER (Web Audio API)
+    let audioEnabled = true;
+    let audioCtx = null;
+
+    function initAudio() {
+      if (!audioCtx) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      }
+    }
+
+    function playSound(type) {
+      if (!audioEnabled) return;
+      initAudio();
+      if (!audioCtx) return;
+
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+
+      const now = audioCtx.currentTime;
+
+      if (type === 'click') {
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(600, now);
+        gain.gain.setValueAtTime(0.1, now);
+        gain.gain.exponentialRampToValueAtTime(0.01, now + 0.05);
+        osc.start(now);
+        osc.stop(now + 0.05);
+      } else if (type === 'correct') {
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(523.25, now);
+        osc.frequency.setValueAtTime(659.25, now + 0.08);
+        osc.frequency.setValueAtTime(783.99, now + 0.16);
+        gain.gain.setValueAtTime(0.15, now);
+        gain.gain.exponentialRampToValueAtTime(0.01, now + 0.3);
+        osc.start(now);
+        osc.stop(now + 0.3);
+      } else if (type === 'wrong') {
+        osc.type = 'sawtooth';
+        osc.frequency.setValueAtTime(220, now);
+        osc.frequency.setValueAtTime(180, now + 0.1);
+        gain.gain.setValueAtTime(0.15, now);
+        gain.gain.exponentialRampToValueAtTime(0.01, now + 0.25);
+        osc.start(now);
+        osc.stop(now + 0.25);
+      } else if (type === 'levelup') {
+        osc.type = 'sine';
+        [440, 554, 659, 880].forEach((freq, i) => {
+          osc.frequency.setValueAtTime(freq, now + i * 0.08);
+        });
+        gain.gain.setValueAtTime(0.2, now);
+        gain.gain.exponentialRampToValueAtTime(0.01, now + 0.4);
+        osc.start(now);
+        osc.stop(now + 0.4);
+      }
+    }
+
+    function toggleAudio() {
+      audioEnabled = !audioEnabled;
+      document.getElementById('audioBtn').textContent = audioEnabled ? '🔊 Sound: ON' : '🔇 Sound: OFF';
+    }
+
+    // STATE & GAMIFICATION
+    let currentModule = 1;
+    let currentGameMode = 'gizmoLab';
+    let userXP = 0;
+    let userLevel = 1;
+    let comboStreak = 0;
+
+    function addXP(amount) {
+      userXP += amount;
+      comboStreak++;
+      document.getElementById('comboStreak').textContent = comboStreak;
+      
+      let nextLevelXP = userLevel * 500;
+      if (userXP >= nextLevelXP) {
+        userLevel++;
+        playSound('levelup');
+        alert(`🎉 LEVEL UP! Rayne is now Level ${userLevel} Anatomy Specialist!`);
+      }
+      document.getElementById('userLevel').textContent = userLevel;
+      document.getElementById('xpVal').textContent = userXP;
+      let pct = Math.min(100, (userXP / nextLevelXP) * 100);
+      document.getElementById('xpFill').style.width = pct + '%';
+    }
+
+    function resetCombo() {
+      comboStreak = 0;
+      document.getElementById('comboStreak').textContent = comboStreak;
+    }
+
+    function toggleContrast() {
+      document.body.classList.toggle('light-mode');
+    }
+
+    let currentFontScale = 1;
+    function adjustTextSize(delta) {
+      currentFontScale = Math.max(0.8, Math.min(1.4, currentFontScale + delta));
+      document.documentElement.style.setProperty('--font-scale', currentFontScale);
+    }
+
+    // MODULE & MODE NAVIGATION
+    function selectModule(modNum) {
+      playSound('click');
+      currentModule = modNum;
+      document.querySelectorAll('.mod-tab').forEach((tab, i) => {
+        tab.classList.toggle('active', i + 1 === modNum);
+      });
+      loadCurrentGizmo();
+    }
+
+    function switchGameMode(mode) {
+      playSound('click');
+      currentGameMode = mode;
+      document.querySelectorAll('.game-card-btn').forEach(btn => btn.classList.remove('active'));
+      document.getElementById('btn-' + mode).classList.add('active');
+
+      document.querySelectorAll('.game-panel').forEach(panel => panel.classList.remove('active'));
+      document.getElementById('panel-' + mode).classList.add('active');
+      loadCurrentGizmo();
+    }
+
+    function loadCurrentGizmo() {
+      if (currentGameMode === 'gizmoLab') loadGizmoLab();
+      else if (currentGameMode === 'memoryMatch') initMemoryGame();
+      else if (currentGameMode === 'speedArcade') loadSpeedArcade();
+      else if (currentGameMode === 'clinicalQuest') loadClinicalQuest();
+    }
+
+    // =========================================================================
+    // ANATOMY MODULES DATA (PULLED DIRECTLY FROM TEXTBOOK & QUESTION BANK)
+    // =========================================================================
+    const MODULE_DATA = {
+  "1": {
+    "title": "Module 1: Introduction to the Human Body & Homeostasis",
+    "labels": [
+      {
+        "id": "p1",
+        "term": "Superior",
+        "def": "Closer to the head / upper body"
+      },
+      {
+        "id": "p2",
+        "term": "Inferior",
+        "def": "Closer to the feet / lower body"
+      },
+      {
+        "id": "p3",
+        "term": "Proximal",
+        "def": "Closer to the point of attachment/trunk"
+      },
+      {
+        "id": "p4",
+        "term": "Distal",
+        "def": "Farther from the point of attachment/trunk"
+      },
+      {
+        "id": "p5",
+        "term": "Frontal (Coronal) Plane",
+        "def": "Divides body into anterior & posterior portions"
+      },
+      {
+        "id": "p6",
+        "term": "Transverse Plane",
+        "def": "Horizontal slice dividing superior & inferior portions"
+      }
+    ],
+    "vocab": [
+      {
+        "term": "Homeostasis",
+        "def": "Dynamic state of relative internal constancy maintained around set points"
+      },
+      {
+        "term": "Negative Feedback",
+        "def": "Homeostatic mechanism counteracting deviations back toward set point"
+      },
+      {
+        "term": "Frontal Plane",
+        "def": "Vertical slice dividing body into anterior and posterior portions"
+      },
+      {
+        "term": "Mediastinum",
+        "def": "Central compartment in thoracic cavity housing heart and esophagus"
+      }
+    ],
+    "quiz": [
+      {
+        "q": "Which of the following correctly orders the structural levels of the human body from simplest to most complex?",
+        "opts": [
+          "A) Cellular, Chemical, Tissue, Organ, Organ System, Organism",
+          "B) Chemical, Cellular, Tissue, Organ, Organ System, Organism",
+          "C) Chemical, Tissue, Cellular, Organ System, Organ, Organism",
+          "D) Cellular, Tissue, Chemical, Organ, Organism, Organ System"
+        ],
+        "ans": 1,
+        "rationale": "The hierarchical organization of the human body begins with atoms and molecules (Chemical), which form the basic living units (Cellular), which group to form functional fabrics (Tissue), which combine to form distinct functional structures (Organ), which coordinate as Systemic groups (Organ System), culminating in the complete living individual (Organism). Option A and D incorrectly place cellular before chemical. Option C places tissue before cellular."
+      },
+      {
+        "q": "A nursing student is reviewing anatomical directional terminology. When describing the relationship between the knee and the ankle, which term is anatomically correct?",
+        "opts": [
+          "A) The knee is distal to the ankle",
+          "B) The knee is proximal to the ankle",
+          "C) The knee is lateral to the ankle",
+          "D) The knee is superficial to the ankle"
+        ],
+        "ans": 1,
+        "rationale": "In anatomical terminology applied to limbs, 'proximal' means closer to the point of attachment or trunk of the body, whereas 'distal' means farther away. Because the knee is closer to the hip joint/trunk than the ankle, the knee is proximal to the ankle. Option A is the inverse. Options C and D do not describe limb axis proximity."
+      },
+      {
+        "q": "A client undergoes a CT scan that divides the body into anterior (front) and posterior (back) sections. Which anatomical plane was used for this imaging?",
+        "opts": [
+          "A) Sagittal plane",
+          "B) Midsagittal plane",
+          "C) Frontal (Coronal) plane",
+          "D) Transverse (Horizontal) plane"
+        ],
+        "ans": 2,
+        "rationale": "The frontal (or coronal) plane runs vertically and divides the body or organ into anterior (ventral/front) and posterior (dorsal/back) portions. A sagittal plane divides into right and left sides; a midsagittal plane divides into equal right and left halves; and a transverse (horizontal) plane divides into superior (upper) and inferior (lower) portions."
+      },
+      {
+        "q": "Which anatomical structure separates the thoracic cavity from the abdominopelvic cavity?",
+        "opts": [
+          "A) The mediastinum",
+          "B) The diaphragm",
+          "C) The peritoneum",
+          "D) The pleural membrane"
+        ],
+        "ans": 1,
+        "rationale": "The diaphragm is the muscular partition that physically separates the superior thoracic cavity from the inferior abdominopelvic cavity. The mediastinum is a central compartment within the thoracic cavity containing the heart and trachea; the peritoneum lines the abdominopelvic cavity; and pleura surrounds the lungs."
+      },
+      {
+        "q": "A patient arrives at the Emergency Department complaining of acute pain localized in the Right Lower Quadrant (RLQ). Which organ is the nurse most concerned about assessing?",
+        "opts": [
+          "A) Gallbladder",
+          "B) Appendix",
+          "C) Stomach",
+          "D) Spleen"
+        ],
+        "ans": 1,
+        "rationale": "The appendix and cecum are located in the Right Lower Quadrant (RLQ). Acute pain in the RLQ is the classic presentation for appendicitis. The gallbladder is located in the Right Upper Quadrant (RUQ); the stomach and spleen are located in the Left Upper Quadrant (LUQ)."
+      },
+      {
+        "q": "During childbirth, the stretching of the cervix triggers the release of oxytocin, which causes stronger uterine contractions, which further stretches the cervix and causes even more oxytocin release until delivery. This is a classic example of which homeostatic mechanism?",
+        "opts": [
+          "A) Negative feedback loop",
+          "B) Positive feedback loop",
+          "C) Dynamic equilibrium reversal",
+          "D) Parasympathetic inhibition"
+        ],
+        "ans": 1,
+        "rationale": "A positive feedback loop amplifies or reinforces a change away from the normal set point to accelerate a physiological event to a definitive completion (e.g., labor contractions, blood clotting). Negative feedback, by contrast, reverses or negates a deviation back toward the set point (e.g., blood glucose or body temperature regulation)."
+      },
+      {
+        "q": "Which of the following organs is located within the dorsal body cavity?",
+        "opts": [
+          "A) Heart",
+          "B) Urinary bladder",
+          "C) Brain",
+          "D) Lungs"
+        ],
+        "ans": 2,
+        "rationale": "The dorsal body cavity is located along the posterior aspect of the body and consists of two contiguous subcavities: the cranial cavity (housing the brain) and the spinal/vertebral cavity (housing the spinal cord). The heart and lungs are located in the thoracic ventral cavity; the urinary bladder is in the pelvic ventral cavity."
+      },
+      {
+        "q": "When a person is standing in the standard anatomical position, their palms are oriented in which direction?",
+        "opts": [
+          "A) Facing backward (posteriorly)",
+          "B) Facing inward toward the thighs (medially)",
+          "C) Facing forward (anteriorly)",
+          "D) Facing upward (superiorly)"
+        ],
+        "ans": 2,
+        "rationale": "In the standard anatomical position, the human body stands erect with feet slightly apart, head and eyes forward, arms hanging at the sides, and palms facing forward (anteriorly) with the thumbs pointing away from the body."
+      },
+      {
+        "q": "The wrist is located ________ to the fingers and ________ to the elbow.",
+        "opts": [
+          "A) Distal; Proximal",
+          "B) Proximal; Distal",
+          "C) Superior; Inferior",
+          "D) Medial; Lateral"
+        ],
+        "ans": 1,
+        "rationale": "The wrist is closer to the trunk/shoulder than the fingers (so it is proximal to the fingers), but farther from the trunk/shoulder than the elbow (so it is distal to the elbow)."
+      },
+      {
+        "q": "In a negative feedback loop regulating elevated body temperature, what role do the sweat glands play?",
+        "opts": [
+          "A) Sensor (Receptor)",
+          "B) Control Center (Integrator)",
+          "C) Effector",
+          "D) Variable stimulus"
+        ],
+        "ans": 2,
+        "rationale": "In feedback mechanisms, the Sensor (thermoreceptors) detects change; the Control Center (hypothalamus) evaluates the input and sets the command; and the Effector (sweat glands and cutaneous blood vessels) carries out the physiological response to cool the body down and reverse the deviation."
+      }
+    ],
+    "quest": {
+      "scenario": "Clinical Nurse Challenge (Module 1: Introduction to the Human Body & Homeostasis): Which of the following correctly orders the structural levels of the human body from simplest to most complex?",
+      "choices": [
+        {
+          "text": "B) Chemical, Cellular, Tissue, Organ, Organ System, Organism",
+          "correct": true
+        },
+        {
+          "text": "C) Chemical, Tissue, Cellular, Organ System, Organ, Organism",
+          "correct": false
+        }
+      ],
+      "rationale": "The hierarchical organization of the human body begins with atoms and molecules (Chemical), which form the basic living units (Cellular), which group to form functional fabrics (Tissue), which combine to form distinct functional structures (Organ), which coordinate as Systemic groups (Organ System), culminating in the complete living individual (Organism). Option A and D incorrectly place cellular before chemical. Option C places tissue before cellular."
+    }
+  },
+  "2": {
+    "title": "Module 2: Cell Biology & Transport Dynamics",
+    "labels": [
+      {
+        "id": "c1",
+        "term": "Mitochondria",
+        "def": "Powerhouse organelle synthesizing ATP energy"
+      },
+      {
+        "id": "c2",
+        "term": "Nucleus",
+        "def": "Control center containing DNA genetic code"
+      },
+      {
+        "id": "c3",
+        "term": "Ribosomes",
+        "def": "Protein synthesis factories"
+      },
+      {
+        "id": "c4",
+        "term": "Plasma Membrane",
+        "def": "Phospholipid bilayer selective permeability barrier"
+      },
+      {
+        "id": "c5",
+        "term": "Lysosome",
+        "def": "Digestive enzyme vesicle recycling cellular debris"
+      },
+      {
+        "id": "c6",
+        "term": "Golgi Apparatus",
+        "def": "Sorting, packaging & shipping center for proteins"
+      }
+    ],
+    "vocab": [
+      {
+        "term": "Osmosis",
+        "def": "Diffusion of water across a selectively permeable membrane"
+      },
+      {
+        "term": "Phagocytosis",
+        "def": "Vesicular active transport engulfing large solid particles"
+      },
+      {
+        "term": "Filtration",
+        "def": "Passive transport driven by hydrostatic pressure gradients"
+      },
+      {
+        "term": "Na+/K+ Pump",
+        "def": "Active transport pumping 3 Na+ OUT and 2 K+ IN per ATP"
+      }
+    ],
+    "quiz": [
+      {
+        "q": "Which cellular organelle is known as the 'powerhouse of the cell' and is responsible for synthesizing the majority of cellular ATP through aerobic cellular respiration?",
+        "opts": [
+          "A) Ribosome",
+          "B) Golgi apparatus",
+          "C) Mitochondrion",
+          "D) Lysosome"
+        ],
+        "ans": 2,
+        "rationale": "Mitochondria are double-membraned organelles that carry out the citric acid cycle and oxidative phosphorylation to produce adenosine triphosphate (ATP), the chemical energy currency of the cell. Ribosomes synthesize proteins, the Golgi sorts/packages substances, and lysosomes contain digestive enzymes."
+      },
+      {
+        "q": "A nurse administers an IV infusion of a hypotonic solution (such as 0.45% normal saline) to a dehydrated patient. What physiological effect will this solution have on the patient's red blood cells?",
+        "opts": [
+          "A) Water will leave the cells, causing them to crenate (shrink)",
+          "B) Water will enter the cells, causing them to swell and potentially lyse (burst)",
+          "C) Solutes will rapidly leave the cell, maintaining equal cell volume",
+          "D) No net movement of water will occur"
+        ],
+        "ans": 1,
+        "rationale": "A hypotonic solution has a lower solute concentration (higher water concentration) than intracellular fluid. By osmosis, water moves into the red blood cells, causing them to swell and risk lysis. In a hypertonic solution, water leaves and cells crenate. In an isotonic solution (0.9% NaCl), there is no net movement."
+      },
+      {
+        "q": "Which structural feature of the plasma membrane creates its selective permeability barrier to water-soluble substances?",
+        "opts": [
+          "A) Peripheral glycoproteins",
+          "B) Hydrophobic fatty acid tails of the phospholipid bilayer",
+          "C) Hydrophilic phosphate heads facing the cytoplasm",
+          "D) Cholesterol molecules dispersed on the surface"
+        ],
+        "ans": 1,
+        "rationale": "The interior core of the plasma membrane consists of nonpolar, hydrophobic fatty acid tails. This lipid core prevents polar, water-soluble ions and large molecules from freely crossing without transport proteins."
+      },
+      {
+        "q": "The movement of water and small solutes through a selectively permeable membrane driven by a hydrostatic pressure gradient (such as blood pressure across glomerular capillaries in the kidney) is called:",
+        "opts": [
+          "A) Simple diffusion",
+          "B) Osmosis",
+          "C) Filtration",
+          "D) Pinocytosis"
+        ],
+        "ans": 2,
+        "rationale": "Filtration is a passive transport process that requires a hydrostatic pressure gradient (a mechanical force like blood pressure) pushing water and solutes across a porous membrane, as seen in renal glomerular filtration."
+      },
+      {
+        "q": "A white blood cell encounters an invading bacterial pathogen and engulfs it by extending pseudopods around it, forming a vesicle for intracellular destruction. Which transport mechanism is this?",
+        "opts": [
+          "A) Pinocytosis",
+          "B) Phagocytosis",
+          "C) Exocytosis",
+          "D) Facilitated diffusion"
+        ],
+        "ans": 1,
+        "rationale": "Phagocytosis ('cell eating') is a form of active vesicular transport where large solid particles, such as microbes or cellular debris, are engulfed into a phagosome. Pinocytosis is 'cell drinking' of dissolved fluids."
+      },
+      {
+        "q": "Which organelle contains hydrolytic digestive enzymes that break down worn-out organelles, cellular debris, and foreign pathogens?",
+        "opts": [
+          "A) Peroxisome",
+          "B) Centriole",
+          "C) Lysosome",
+          "D) Rough Endoplasmic Reticulum"
+        ],
+        "ans": 2,
+        "rationale": "Lysosomes are membrane-bound vesicles originating from the Golgi apparatus that house powerful acid hydrolases ('digestive bags') to recycle intracellular organelles and degrade phagocytosed pathogens."
+      },
+      {
+        "q": "The sodium-potassium pump (Na+/K+ ATPase) is an active transport mechanism essential for resting membrane potentials in neurons and muscle cells. How many ions does it pump and in what directions per ATP molecule hydrolyzed?",
+        "opts": [
+          "A) 2 Na+ ions OUT, 3 K+ ions IN",
+          "B) 3 Na+ ions OUT, 2 K+ ions IN",
+          "C) 3 Na+ ions IN, 2 K+ ions OUT",
+          "D) 2 Na+ ions IN, 2 K+ ions OUT"
+        ],
+        "ans": 1,
+        "rationale": "The Na+/K+ pump uses 1 ATP to export 3 Na+ ions OUT of the cell and import 2 K+ ions INTO the cell against their respective concentration gradients, maintaining the negative resting membrane potential."
+      },
+      {
+        "q": "During which phase of mitosis do paired sister chromatids pull apart and move toward opposite poles of the dividing cell?",
+        "opts": [
+          "A) Prophase",
+          "B) Metaphase",
+          "C) Anaphase",
+          "D) Telophase"
+        ],
+        "ans": 2,
+        "rationale": "In Anaphase ('A' for Apart), centromeres split and sister chromatids are pulled by spindle fibers toward opposite poles. In Prophase chromosomes condense, in Metaphase they align along the equatorial plate, and in Telophase nuclear envelopes reform."
+      },
+      {
+        "q": "What is the primary function of ribosomes in human cells?",
+        "opts": [
+          "A) Synthesis of lipids and steroids",
+          "B) Protein synthesis (translation)",
+          "C) Packaging and sorting of glycoproteins",
+          "D) Generation of spindle fibers during mitosis"
+        ],
+        "ans": 1,
+        "rationale": "Ribosomes consist of ribosomal RNA (rRNA) and proteins and serve as the molecular machines that translate mRNA sequences into polypeptide chains (protein synthesis)."
+      },
+      {
+        "q": "Which cellular structure increases the surface area of the plasma membrane to maximize absorption in epithelial cells lining the small intestine?",
+        "opts": [
+          "A) Cilia",
+          "B) Flagella",
+          "C) Microvilli",
+          "D) Desmosomes"
+        ],
+        "ans": 2,
+        "rationale": "Microvilli are tiny finger-like projections of the plasma membrane that dramatically expand absorptive surface area. Cilia are longer, motile hair-like extensions that beat to move fluid along surfaces (e.g., respiratory tract), and flagella propel entire cells (sperm)."
+      }
+    ],
+    "quest": {
+      "scenario": "Clinical Nurse Challenge (Module 2: Cell Biology & Transport Dynamics): Which cellular organelle is known as the 'powerhouse of the cell' and is responsible for synthesizing the majority of cellular ATP through aerobic cellular respiration?",
+      "choices": [
+        {
+          "text": "C) Mitochondrion",
+          "correct": true
+        },
+        {
+          "text": "D) Lysosome",
+          "correct": false
+        }
+      ],
+      "rationale": "Mitochondria are double-membraned organelles that carry out the citric acid cycle and oxidative phosphorylation to produce adenosine triphosphate (ATP), the chemical energy currency of the cell. Ribosomes synthesize proteins, the Golgi sorts/packages substances, and lysosomes contain digestive enzymes."
+    }
+  },
+  "3": {
+    "title": "Module 3: The Integumentary System & Burn Assessment",
+    "labels": [
+      {
+        "id": "s1",
+        "term": "Epidermis",
+        "def": "Superficial avascular epithelial skin layer"
+      },
+      {
+        "id": "s2",
+        "term": "Dermis",
+        "def": "Vascular dermal layer containing collagen, nerves & glands"
+      },
+      {
+        "id": "s3",
+        "term": "Hypodermis",
+        "def": "Subcutaneous adipose layer providing insulation"
+      },
+      {
+        "id": "s4",
+        "term": "Stratum Basale",
+        "def": "Deepest epidermal stem cell layer undergoing active mitosis"
+      },
+      {
+        "id": "s5",
+        "term": "Melanocytes",
+        "def": "Cells producing melanin pigment to shield DNA from UV rays"
+      }
+    ],
+    "vocab": [
+      {
+        "term": "Melanocytes",
+        "def": "Cells producing melanin pigment to shield nuclear DNA from UV"
+      },
+      {
+        "term": "Rule of Nines",
+        "def": "Clinical method estimating Total Body Surface Area (TBSA) of burns"
+      },
+      {
+        "term": "Sebaceous Gland",
+        "def": "Holocrine exocrine gland secreting oil into hair follicles"
+      },
+      {
+        "term": "Pacinian Corpuscle",
+        "def": "Deep cutaneous mechanoreceptor detecting pressure & vibration"
+      }
+    ],
+    "quiz": [
+      {
+        "q": "Which layer of the epidermis is the deepest, directly adjacent to the dermis, and contains constantly dividing stem cells undergoing active mitosis?",
+        "opts": [
+          "A) Stratum corneum",
+          "B) Stratum granulosum",
+          "C) Stratum spinosum",
+          "D) Stratum basale (germinativum)"
+        ],
+        "ans": 3,
+        "rationale": "The stratum basale (also called stratum germinativum) is the single deepest monolayer of epidermal cells resting on the basement membrane. Its cells divide continuously by mitosis, pushing older keratinocytes upward toward the surface. Stratum corneum is the outermost dead layer."
+      },
+      {
+        "q": "A patient sustained a burn injury involving the entire epidermis and upper dermis, presenting with extreme pain, redness, and fluid-filled blisters. How is this burn classified?",
+        "opts": [
+          "A) First-degree (Superficial)",
+          "B) Second-degree (Partial thickness)",
+          "C) Third-degree (Full thickness)",
+          "D) Fourth-degree (Deep full thickness)"
+        ],
+        "ans": 1,
+        "rationale": "Second-degree burns (partial thickness) destroy the epidermis and extend into the upper dermis. Characteristic hallmarks are blister formation, erythema, edema, and severe pain because sensory nerve endings remain viable. First-degree burns only involve the epidermis (sunburn, no blisters); third-degree burns destroy the full skin depth into subcutaneous tissue."
+      },
+      {
+        "q": "Using the adult 'Rule of Nines', what percentage of Total Body Surface Area (TBSA) is burned if an adult patient sustains burns to the entire anterior trunk (chest and abdomen) and the entire right arm?",
+        "opts": [
+          "A) 18%",
+          "B) 27%",
+          "C) 36%",
+          "D) 45%"
+        ],
+        "ans": 1,
+        "rationale": "Under the Rule of Nines for an adult: The anterior trunk equals 18% (9% chest + 9% abdomen). The entire right arm equals 9% (4.5% anterior + 4.5% posterior). Total TBSA = 18% + 9% = 27%."
+      },
+      {
+        "q": "Which type of cutaneous gland secretes an oily substance called sebum into hair follicles to lubricate the skin and inhibit bacterial growth?",
+        "opts": [
+          "A) Eccrine sweat gland",
+          "B) Apocrine sweat gland",
+          "C) Sebaceous gland",
+          "D) Ceruminous gland"
+        ],
+        "ans": 2,
+        "rationale": "Sebaceous glands are exocrine holocrine glands attached to hair follicles that produce sebum, a lipid-rich mixture that moisturizes hair and skin and exerts mild antibacterial properties. Blockage leads to acne."
+      },
+      {
+        "q": "Which sweat glands are the most numerous throughout the entire human body and play the primary role in thermoregulatory cooling through watery perspiration?",
+        "opts": [
+          "A) Eccrine (merocrine) sweat glands",
+          "B) Apocrine sweat glands",
+          "C) Sebaceous glands",
+          "D) Mammary glands"
+        ],
+        "ans": 0,
+        "rationale": "Eccrine sweat glands are widely distributed over almost all skin surfaces (highest density on forehead, palms, and soles). They secrete a clear, watery hypotonic solution that evaporates to cool the body. Apocrine glands are localized to the axillae and anogenital regions and produce thick secretions activated at puberty."
+      },
+      {
+        "q": "What is the primary physiological function of melanin produced by melanocytes in the stratum basale?",
+        "opts": [
+          "A) Waterproofing the epidermal surface",
+          "B) Shielding keratinocyte DNA from ultraviolet (UV) radiation",
+          "C) Producing vitamin D precursor molecules",
+          "D) Providing mechanical cushioning against friction"
+        ],
+        "ans": 1,
+        "rationale": "Melanocytes produce melanin, which is transferred in melanosomes to keratinocytes. Melanin forms a supranuclear cap over the keratinocyte nucleus, absorbing harmful UV rays to shield DNA from mutagenic damage and skin cancer."
+      },
+      {
+        "q": "The papillary layer of the dermis features projections called dermal papillae that indent the epidermis. What clinically significant anatomical feature do these structures form?",
+        "opts": [
+          "A) Cleavage lines (Langer's lines)",
+          "B) Epidermal friction ridges (fingerprints and footprints)",
+          "C) Hair follicle root sheaths",
+          "D) Sebaceous gland openings"
+        ],
+        "ans": 1,
+        "rationale": "Dermal papillae in thick skin (palms and soles) push the overlying epidermis into distinct dermal ridges or friction ridges (fingerprints/footprints), enhancing grip and tactile sensitivity."
+      },
+      {
+        "q": "Which cutaneous mechanoreceptor located deep in the dermis and hypodermis is specialized to detect deep pressure and high-frequency vibration?",
+        "opts": [
+          "A) Meissner (tactile) corpuscle",
+          "B) Free nerve endings",
+          "C) Pacinian (lamellated) corpuscle",
+          "D) Merkel disc"
+        ],
+        "ans": 2,
+        "rationale": "Pacinian (lamellated) corpuscles are large, onion-like receptors situated deep in the reticular dermis and hypodermis that respond to deep pressure and rapid vibration. Meissner corpuscles detect light touch in the superficial dermal papillae."
+      },
+      {
+        "q": "Why is a full-thickness (third-degree) burn paradoxically painless in the burned area immediately after the injury?",
+        "opts": [
+          "A) Endorphins completely numb the cutaneous pain receptors",
+          "B) The pain receptors and free nerve endings in the dermis are completely destroyed",
+          "C) The protective stratum corneum has thickened",
+          "D) Local edema blocks all afferent sensory pathways to the spinal cord"
+        ],
+        "ans": 1,
+        "rationale": "In third-degree burns, the full thickness of the epidermis and dermis is incinerated, destroying sensory nerve endings, blood vessels, and dermal receptors in the area. Surrounding partial-thickness burn margins, however, remain exquisitely painful."
+      },
+      {
+        "q": "The tiny smooth muscle bundle attached to the hair follicle that contracts during cold exposure or fear to produce 'goosebumps' is the:",
+        "opts": [
+          "A) Orbicularis oculi",
+          "B) Arrector pili muscle",
+          "C) Cutaneous sphincter",
+          "D) Dermal levator"
+        ],
+        "ans": 1,
+        "rationale": "The arrector pili is a small band of smooth muscle innervated by the sympathetic nervous system. Contraction pulls the hair follicle upright and dimples the skin surface, creating goosebumps."
+      }
+    ],
+    "quest": {
+      "scenario": "Clinical Nurse Challenge (Module 3: The Integumentary System & Burn Assessment): Which layer of the epidermis is the deepest, directly adjacent to the dermis, and contains constantly dividing stem cells undergoing active mitosis?",
+      "choices": [
+        {
+          "text": "D) Stratum basale (germinativum)",
+          "correct": true
+        },
+        {
+          "text": "A) Stratum corneum",
+          "correct": false
+        }
+      ],
+      "rationale": "The stratum basale (also called stratum germinativum) is the single deepest monolayer of epidermal cells resting on the basement membrane. Its cells divide continuously by mitosis, pushing older keratinocytes upward toward the surface. Stratum corneum is the outermost dead layer."
+    }
+  },
+  "4": {
+    "title": "Module 4: The Skeletal System, Histology & Articulations",
+    "labels": [
+      {
+        "id": "b1",
+        "term": "Osteocytes",
+        "def": "Mature bone cells residing in lacunae"
+      },
+      {
+        "id": "b2",
+        "term": "Osteoblasts",
+        "def": "Bone-building cells depositing mineralized matrix"
+      },
+      {
+        "id": "b3",
+        "term": "Osteoclasts",
+        "def": "Bone-resorbing cells dissolving matrix to release calcium"
+      },
+      {
+        "id": "b4",
+        "term": "Epiphyseal Plate",
+        "def": "Cartilaginous growth plate in long bones"
+      },
+      {
+        "id": "b5",
+        "term": "Synovial Joint",
+        "def": "Freely movable fluid-filled joint cavity"
+      }
+    ],
+    "vocab": [
+      {
+        "term": "Osteoblasts",
+        "def": "Bone-building cells depositing extracellular bone matrix"
+      },
+      {
+        "term": "Osteoclasts",
+        "def": "Bone-resorbing cells dissolving bone matrix to release calcium"
+      },
+      {
+        "term": "Diaphysis",
+        "def": "Main tubular shaft portion of a long bone"
+      },
+      {
+        "term": "Synovial Fluid",
+        "def": "Lubricating fluid reducing friction inside joint capsules"
+      }
+    ],
+    "quiz": [
+      {
+        "q": "Which type of bone cell is responsible for bone resorption\u2014the enzymatic breakdown and demineralization of bone matrix to release calcium into the bloodstream?",
+        "opts": [
+          "A) Osteoblast",
+          "B) Osteoclast",
+          "C) Osteocyte",
+          "D) Osteogenic cell"
+        ],
+        "ans": 1,
+        "rationale": "Osteoclasts ('C' for Crushing / Cleaving) are large, multinucleated phagocytic cells derived from monocytes that secrete acid and proteolytic enzymes to dissolve bone matrix and mobilize calcium. Osteoblasts ('B' for Building) synthesize new bone matrix; osteocytes maintain mature bone."
+      },
+      {
+        "q": "What is the structural and functional microscopic unit of compact bone?",
+        "opts": [
+          "A) Trabecula",
+          "B) Osteon (Haversian system)",
+          "C) Sarcomere",
+          "D) Canaliculus"
+        ],
+        "ans": 1,
+        "rationale": "The osteon (Haversian system) is the cylindrical microscopic weight-bearing pillar of compact bone, consisting of concentric lamellae surrounding a central canal housing blood vessels and nerves. Trabeculae form spongy (cancellous) bone."
+      },
+      {
+        "q": "In a growing pediatric patient, where does longitudinal bone growth occur within a long bone?",
+        "opts": [
+          "A) Articular cartilage",
+          "B) Medullary cavity",
+          "C) Epiphyseal plate (growth plate)",
+          "D) Periosteal membrane"
+        ],
+        "ans": 2,
+        "rationale": "Longitudinal bone growth takes place at the epiphyseal plate (physis), a band of hyaline cartilage located between the diaphysis and epiphysis. When growth ceases after puberty, this plate ossifies into the epiphyseal line."
+      },
+      {
+        "q": "Which bone belongs to the axial skeleton rather than the appendicular skeleton?",
+        "opts": [
+          "A) Clavicle",
+          "B) Sternum",
+          "C) Scapula",
+          "D) Ilium"
+        ],
+        "ans": 1,
+        "rationale": "The axial skeleton (80 bones) forms the longitudinal axis of the body: skull, hyoid, vertebral column, ribs, and sternum. The clavicle, scapula, and ilium belong to the appendicular skeleton (pectoral/pelvic girdles and appendages)."
+      },
+      {
+        "q": "How many cervical, thoracic, and lumbar vertebrae comprise the adult vertebral column (excluding the sacrum and coccyx)?",
+        "opts": [
+          "A) 7 Cervical, 12 Thoracic, 5 Lumbar",
+          "B) 12 Cervical, 7 Thoracic, 5 Lumbar",
+          "C) 5 Cervical, 12 Thoracic, 7 Lumbar",
+          "D) 7 Cervical, 5 Thoracic, 12 Lumbar"
+        ],
+        "ans": 0,
+        "rationale": "A helpful memory aid is meal times: Breakfast at 7 (7 Cervical: C1-C7), Lunch at 12 (12 Thoracic: T1-T12, each articulating with a rib pair), Dinner at 5 (5 Lumbar: L1-L5, large weight-bearing bodies)."
+      },
+      {
+        "q": "The pubic symphysis and intervertebral discs allow slight movement and are united by fibrocartilage. Which functional joint classification applies to these articulations?",
+        "opts": [
+          "A) Synarthrosis",
+          "B) Amphiarthrosis",
+          "C) Diarthrosis",
+          "D) Synostosis"
+        ],
+        "ans": 1,
+        "rationale": "Amphiarthroses are slightly movable cartilaginous joints (e.g., symphysis pubis, intervertebral discs). Synarthroses are immovable joints (e.g., cranial sutures). Diarthroses are freely movable synovial joints."
+      },
+      {
+        "q": "Which freely movable synovial joint allows the widest range of motion (triaxial/multiaxial movement in all planes)?",
+        "opts": [
+          "A) Hinge joint",
+          "B) Pivot joint",
+          "C) Ball-and-socket joint",
+          "D) Gliding (plane) joint"
+        ],
+        "ans": 2,
+        "rationale": "Ball-and-socket joints (the shoulder/glenohumeral and hip/coxal joints) feature a spherical head resting in a cup-like socket, providing the greatest freedom of movement (flexion, extension, abduction, adduction, rotation, circumduction)."
+      },
+      {
+        "q": "What is the primary function of red bone marrow, and where is it predominantly located in an adult?",
+        "opts": [
+          "A) Fat storage; inside the medullary cavity of the femoral diaphysis",
+          "B) Hematopoiesis (blood cell production); within spongy bone trabeculae of flat bones and epiphyses",
+          "C) Calcium filtration; in the periosteum",
+          "D) Cartilage regeneration; at articular surfaces"
+        ],
+        "ans": 1,
+        "rationale": "Red bone marrow performs hematopoiesis (erythropoiesis, leukopoiesis, thrombopoiesis). In adults, active red marrow is found in the spongy bone of the sternum, ribs, pelvis, skull, and proximal epiphyses of the femur and humerus. The medullary cavity contains yellow marrow (adipose)."
+      },
+      {
+        "q": "The first cervical vertebra (C1), which articulates directly with the occipital condyles of the skull to support the head and permit nodding, is called the:",
+        "opts": [
+          "A) Axis",
+          "B) Atlas",
+          "C) Vertebra prominens",
+          "D) Dens"
+        ],
+        "ans": 1,
+        "rationale": "C1 is the Atlas (named after the mythical Titan holding the globe). It articulates with the skull and allows the 'yes' nodding motion. C2 is the Axis, featuring the dens (odontoid process) for 'no' rotation."
+      },
+      {
+        "q": "True ribs are distinguished from false ribs because true ribs:",
+        "opts": [
+          "A) Have no articulation with the vertebral column",
+          "B) Attach directly to the sternum via their own individual costal cartilages",
+          "C) Lack costal cartilage entirely",
+          "D) Are completely embedded within abdominal wall muscles"
+        ],
+        "ans": 1,
+        "rationale": "Rib pairs 1 through 7 are 'true ribs' (vertebrosternal) because their individual costal cartilages connect directly to the sternum. Ribs 8\u201310 are 'false ribs' (vertebrochondral) attaching indirectly, and ribs 11\u201312 are 'floating ribs' with no anterior attachment."
+      }
+    ],
+    "quest": {
+      "scenario": "Clinical Nurse Challenge (Module 4: The Skeletal System, Histology & Articulations): Which type of bone cell is responsible for bone resorption\u2014the enzymatic breakdown and demineralization of bone matrix to release calcium into the bloodstream?",
+      "choices": [
+        {
+          "text": "B) Osteoclast",
+          "correct": true
+        },
+        {
+          "text": "C) Osteocyte",
+          "correct": false
+        }
+      ],
+      "rationale": "Osteoclasts ('C' for Crushing / Cleaving) are large, multinucleated phagocytic cells derived from monocytes that secrete acid and proteolytic enzymes to dissolve bone matrix and mobilize calcium. Osteoblasts ('B' for Building) synthesize new bone matrix; osteocytes maintain mature bone."
+    }
+  },
+  "5": {
+    "title": "Module 5: The Muscular System & Sarcomere Dynamics",
+    "labels": [
+      {
+        "id": "m1",
+        "term": "Sarcomere",
+        "def": "Functional contractile unit of skeletal muscle fiber"
+      },
+      {
+        "id": "m2",
+        "term": "Actin",
+        "def": "Thin protein myofilament with binding sites"
+      },
+      {
+        "id": "m3",
+        "term": "Myosin",
+        "def": "Thick protein myofilament with cross-bridge heads"
+      },
+      {
+        "id": "m4",
+        "term": "Neuromuscular Junction",
+        "def": "Synapse between motor neuron motor endplate & muscle"
+      },
+      {
+        "id": "m5",
+        "term": "Tendon",
+        "def": "Dense fibrous connective tissue attaching muscle to bone"
+      }
+    ],
+    "vocab": [
+      {
+        "term": "Sliding Filament Model",
+        "def": "Actin filaments slide past myosin to shorten sarcomeres"
+      },
+      {
+        "term": "Acetylcholine (ACh)",
+        "def": "Neurotransmitter exciting muscle endplate action potentials"
+      },
+      {
+        "term": "Agonist (Prime Mover)",
+        "def": "Muscle primarily responsible for producing a specific movement"
+      },
+      {
+        "term": "Antagonist",
+        "def": "Muscle opposing or reversing the action of a prime mover"
+      }
+    ],
+    "quiz": [
+      {
+        "q": "Which muscle tissue type is characterized by voluntary control, prominent striations, and elongated multinucleated muscle fibers?",
+        "opts": [
+          "A) Cardiac muscle",
+          "B) Smooth (visceral) muscle",
+          "C) Skeletal muscle",
+          "D) Involuntary muscle"
+        ],
+        "ans": 2,
+        "rationale": "Skeletal muscle fibers are striated, under conscious voluntary somatic motor control, and multinucleated due to myoblast fusion. Cardiac muscle is striated and involuntary with intercalated discs; smooth muscle is non-striated, spindle-shaped, and involuntary."
+      },
+      {
+        "q": "What is the basic functional and contractile microscopic unit of a skeletal muscle myofibril?",
+        "opts": [
+          "A) Sarcolemma",
+          "B) Sarcomere",
+          "C) Fascicle",
+          "D) Sarcoplasmic reticulum"
+        ],
+        "ans": 1,
+        "rationale": "A sarcomere is the segment between two adjacent Z-lines (or Z-discs). It contains overlapping thick (myosin) and thin (actin) myofilaments that shorten during muscle contraction according to the sliding filament theory."
+      },
+      {
+        "q": "During excitation-contraction coupling in skeletal muscle, what critical ion is released from the sarcoplasmic reticulum to initiate cross-bridge cycling?",
+        "opts": [
+          "A) Sodium (Na+)",
+          "B) Potassium (K+)",
+          "C) Calcium (Ca2+)",
+          "D) Chloride (Cl-)"
+        ],
+        "ans": 2,
+        "rationale": "When an action potential propagates down the T-tubules, it triggers voltage-gated channels in the sarcoplasmic reticulum terminal cisternae to release Calcium (Ca2+) into the sarcoplasm. Calcium binds troponin, which shifts tropomyosin away from actin's myosin-binding sites."
+      },
+      {
+        "q": "According to the sliding filament theory, what happens during the 'power stroke' of muscle contraction?",
+        "opts": [
+          "A) Thick myosin filaments physically shorten in length",
+          "B) Thin actin filaments slide past thick myosin filaments toward the M-line of the sarcomere",
+          "C) The Z-lines move farther apart",
+          "D) Troponin dissociates from tropomyosin permanently"
+        ],
+        "ans": 1,
+        "rationale": "During contraction, neither thick nor thin filaments change their physical length. Instead, myosin heads pivot and pull the thin actin filaments inward toward the center (M-line), causing the sarcomere to shorten and the Z-lines to draw closer together."
+      },
+      {
+        "q": "What role does Adenosine Triphosphate (ATP) play during the detachment phase of the cross-bridge cycle?",
+        "opts": [
+          "A) ATP binds to the myosin head, causing it to detach from the actin filament",
+          "B) ATP binds to troponin to release calcium",
+          "C) ATP stiffens the cross-bridge permanently",
+          "D) ATP opens sodium channels in the motor end plate"
+        ],
+        "ans": 0,
+        "rationale": "Binding of a new ATP molecule to the myosin head causes it to release its hold on the actin active site. Without ATP (as seen post-mortem in rigor mortis), cross-bridges cannot detach, causing prolonged muscular rigidity."
+      },
+      {
+        "q": "When a person flexes their elbow to lift a cup of coffee, the biceps brachii serves as the:",
+        "opts": [
+          "A) Antagonist",
+          "B) Prime mover (Agonist)",
+          "C) Synergist",
+          "D) Fixator"
+        ],
+        "ans": 1,
+        "rationale": "The prime mover (agonist) is the primary muscle responsible for producing a specific motion (biceps brachii for elbow flexion). The triceps brachii acts as the antagonist (opposing muscle that must relax or lengthen)."
+      },
+      {
+        "q": "A client is instructed to push forcefully against an immovable brick wall with their hands. Muscle tension builds significantly, but no joint movement occurs and the muscle length does not change. This is an example of:",
+        "opts": [
+          "A) Concentric isotonic contraction",
+          "B) Eccentric isotonic contraction",
+          "C) Isometric contraction",
+          "D) Twitch summation"
+        ],
+        "ans": 2,
+        "rationale": "In an isometric contraction ('iso' = same, 'metric' = length), internal muscle tension increases dramatically, but muscle length remains unchanged because the load exceeds the force capability (no movement occurs). Isotonic contractions involve muscle shortening (concentric) or lengthening (eccentric)."
+      },
+      {
+        "q": "Which neurotransmitter is stored in synaptic vesicles at the neuromuscular junction (NMJ) and released into the synaptic cleft to stimulate skeletal muscle fibers?",
+        "opts": [
+          "A) Dopamine",
+          "B) Epinephrine",
+          "C) Acetylcholine (ACh)",
+          "D) Serotonin"
+        ],
+        "ans": 2,
+        "rationale": "Acetylcholine (ACh) is the universal neurotransmitter released by somatic motor axon terminals at the neuromuscular junction, binding to nicotinic receptors on the motor end plate to generate an end plate potential."
+      },
+      {
+        "q": "The connective tissue sheath that wraps around an individual muscle fascicle (bundle of muscle fibers) is the:",
+        "opts": [
+          "A) Epimysium",
+          "B) Perimysium",
+          "C) Endomysium",
+          "D) Fascia superficialis"
+        ],
+        "ans": 1,
+        "rationale": "From outside to inside: Epimysium wraps the ENTIRE muscle; Perimysium wraps FASCICLES (bundles of fibers); Endomysium wraps INDIVIDUAL muscle fibers."
+      },
+      {
+        "q": "Intercalated discs with gap junctions and desmosomes are a unique histological hallmark of which muscle tissue?",
+        "opts": [
+          "A) Skeletal muscle",
+          "B) Smooth muscle",
+          "C) Cardiac muscle",
+          "D) Myoepithelial tissue"
+        ],
+        "ans": 2,
+        "rationale": "Intercalated discs are specialized junctional complexes unique to cardiac muscle fibers. They contain gap junctions that permit rapid electrical ionic transmission (allowing the heart to contract as a functional syncytium) and desmosomes that prevent separation during forceful pumping."
+      }
+    ],
+    "quest": {
+      "scenario": "Clinical Nurse Challenge (Module 5: The Muscular System & Sarcomere Dynamics): Which muscle tissue type is characterized by voluntary control, prominent striations, and elongated multinucleated muscle fibers?",
+      "choices": [
+        {
+          "text": "C) Skeletal muscle",
+          "correct": true
+        },
+        {
+          "text": "D) Involuntary muscle",
+          "correct": false
+        }
+      ],
+      "rationale": "Skeletal muscle fibers are striated, under conscious voluntary somatic motor control, and multinucleated due to myoblast fusion. Cardiac muscle is striated and involuntary with intercalated discs; smooth muscle is non-striated, spindle-shaped, and involuntary."
+    }
+  },
+  "6": {
+    "title": "Module 6: The Nervous System, Synaptic Transmission & Reflex Arcs",
+    "labels": [
+      {
+        "id": "n1",
+        "term": "Dendrites",
+        "def": "Receptive neuronal extensions receiving chemical signals"
+      },
+      {
+        "id": "n2",
+        "term": "Axon",
+        "def": "Conducting nerve fiber transmitting action potentials"
+      },
+      {
+        "id": "n3",
+        "term": "Myelin Sheath",
+        "def": "Fatty insulating layer accelerating nerve impulse speed"
+      },
+      {
+        "id": "n4",
+        "term": "Cerebrum",
+        "def": "Center for sensory perception, reasoning & voluntary motor control"
+      },
+      {
+        "id": "n5",
+        "term": "Cerebellum",
+        "def": "Brain region regulating motor coordination, posture & balance"
+      }
+    ],
+    "vocab": [
+      {
+        "term": "Action Potential",
+        "def": "Rapid electrical wave traveling down an axon membrane"
+      },
+      {
+        "term": "Myelin Sheath",
+        "def": "Fatty insulating wrapping accelerating nerve conduction speed"
+      },
+      {
+        "term": "Sympathetic Division",
+        "def": "Fight-or-flight autonomic division elevating heart rate"
+      },
+      {
+        "term": "Cerebellum",
+        "def": "Brain region responsible for motor coordination, posture & balance"
+      }
+    ],
+    "quiz": [
+      {
+        "q": "Which type of neuroglial cell is responsible for forming the protective, lipid-rich myelin sheath around axons located within the Central Nervous System (CNS)?",
+        "opts": [
+          "A) Schwann cells",
+          "B) Oligodendrocytes",
+          "C) Astrocytes",
+          "D) Microglia"
+        ],
+        "ans": 1,
+        "rationale": "Oligodendrocytes produce myelin sheaths around multiple axons in the CNS (brain and spinal cord). Schwann cells produce myelin around axons in the Peripheral Nervous System (PNS). Astrocytes maintain the blood-brain barrier, and microglia are phagocytes."
+      },
+      {
+        "q": "During the generation of an action potential in a neuron, which event is directly responsible for the rapid DEPOLARIZATION phase?",
+        "opts": [
+          "A) Massive influx of Sodium ions (Na+) through voltage-gated sodium channels",
+          "B) Rapid efflux of Potassium ions (K+) out of the neuron",
+          "C) Influx of negative Chloride ions (Cl-)",
+          "D) Pumping of Calcium ions into the synaptic vesicle"
+        ],
+        "ans": 0,
+        "rationale": "When a threshold stimulus (-55 mV) is reached, voltage-gated Na+ channels snap open, allowing positively charged Sodium ions (Na+) to rush into the intracellular fluid down their electrical and chemical gradients, depolarizing the membrane toward +30 mV. Potassium efflux causes repolarization."
+      },
+      {
+        "q": "What is the correct anatomical sequence of components in a standard five-element reflex arc?",
+        "opts": [
+          "A) Receptor -> Motor neuron -> Interneuron -> Sensory neuron -> Effector",
+          "B) Receptor -> Sensory neuron -> Integration center (Interneuron) -> Motor neuron -> Effector",
+          "C) Effector -> Sensory neuron -> Interneuron -> Motor neuron -> Receptor",
+          "D) Integration center -> Sensory neuron -> Receptor -> Motor neuron -> Effector"
+        ],
+        "ans": 1,
+        "rationale": "A reflex arc flows in one strict direction: 1. Sensory Receptor (detects stimulus) -> 2. Sensory / Afferent Neuron (transmits to CNS) -> 3. Integration Center / Interneuron (processes in gray matter) -> 4. Motor / Efferent Neuron (conducts out from CNS) -> 5. Effector (muscle or gland responds)."
+      },
+      {
+        "q": "Which division of the autonomic nervous system is responsible for the 'Fight or Flight' emergency response, causing pupillary dilation, bronchodilation, and increased heart rate?",
+        "opts": [
+          "A) Parasympathetic division",
+          "B) Sympathetic division",
+          "C) Somatic motor division",
+          "D) Craniosacral division"
+        ],
+        "ans": 1,
+        "rationale": "The Sympathetic division (thoracolumbar origin) mobilizes the body during threats or exertion ('Fight or Flight'): elevates heart rate, dilates airways, dilates pupils, inhibits digestive secretions. The Parasympathetic division (craniosacral origin) directs 'Rest and Digest' functions."
+      },
+      {
+        "q": "Which part of the brainstem contains the vital cardiac, vasomotor (blood pressure), and respiratory control centers essential for basic life support?",
+        "opts": [
+          "A) Cerebrum",
+          "B) Cerebellum",
+          "C) Medulla oblongata",
+          "D) Thalamus"
+        ],
+        "ans": 2,
+        "rationale": "The medulla oblongata is the most inferior portion of the brainstem, transitioning into the spinal cord. It houses vital autonomic reflex centers that regulate heart rate, vascular resistance (blood pressure), and the basic respiratory rhythm."
+      },
+      {
+        "q": "Which brain structure acts as the 'master coordinator' for homeostasis, linking the nervous system to the endocrine system and regulating body temperature, thirst, hunger, and sleep-wake cycles?",
+        "opts": [
+          "A) Thalamus",
+          "B) Hypothalamus",
+          "C) Pons",
+          "D) Corpus callosum"
+        ],
+        "ans": 1,
+        "rationale": "The hypothalamus (located below the thalamus in the diencephalon) is the primary homeostatic control center of the body. It regulates the autonomic nervous system, body temperature, osmolarity/thirst, appetite, and directly directs pituitary gland secretions."
+      },
+      {
+        "q": "What is the function of the myelin sheath and the Nodes of Ranvier along a myelinated axon?",
+        "opts": [
+          "A) To release neurotransmitters directly into the bloodstream",
+          "B) To dramatically accelerate nerve impulse transmission via saltatory conduction",
+          "C) To produce cerebral spinal fluid",
+          "D) To block all sodium ion diffusion permanently"
+        ],
+        "ans": 1,
+        "rationale": "Myelin provides electrical insulation around axonal internodes. Action potentials jump from one unmyelinated Node of Ranvier to the next\u2014a process called saltatory conduction\u2014increasing conduction velocity up to 100-fold compared to unmyelinated fibers."
+      },
+      {
+        "q": "Which lobe of the cerebral cortex contains the primary visual cortex responsible for processing sight and vision?",
+        "opts": [
+          "A) Frontal lobe",
+          "B) Parietal lobe",
+          "C) Temporal lobe",
+          "D) Occipital lobe"
+        ],
+        "ans": 3,
+        "rationale": "The occipital lobe forms the posterior region of the cerebral hemisphere and houses the primary visual cortex and visual association areas. The frontal lobe governs motor function/planning; parietal processes somatosensory touch; temporal processes hearing and memory."
+      },
+      {
+        "q": "A patient experiences sudden ataxia, loss of motor coordination, stumbling gait, and inability to maintain balance. Which brain region is most likely impaired?",
+        "opts": [
+          "A) Cerebellum",
+          "B) Broca's area",
+          "C) Hippocampus",
+          "D) Medulla oblongata"
+        ],
+        "ans": 0,
+        "rationale": "The cerebellum ('little brain') coordinates voluntary skeletal muscle movements, calibrates balance, and fine-tunes posture and gait. Cerebellar damage produces ataxia (uncoordinated, unsteady movement)."
+      },
+      {
+        "q": "What are the three protective meningeal membranes surrounding the brain and spinal cord, listed from outermost to innermost?",
+        "opts": [
+          "A) Pia mater -> Arachnoid mater -> Dura mater",
+          "B) Dura mater -> Arachnoid mater -> Pia mater",
+          "C) Arachnoid mater -> Dura mater -> Pia mater",
+          "D) Dura mater -> Pia mater -> Arachnoid mater"
+        ],
+        "ans": 1,
+        "rationale": "Remember PAD from inside out, or DAP from outside in: 1. Dura mater (outermost tough, fibrous 'tough mother'), 2. Arachnoid mater (middle web-like membrane containing CSF in subarachnoid space), 3. Pia mater (innermost delicate 'gentle mother' clinging to neural tissue)."
+      }
+    ],
+    "quest": {
+      "scenario": "Clinical Nurse Challenge (Module 6: The Nervous System, Synaptic Transmission & Reflex Arcs): Which type of neuroglial cell is responsible for forming the protective, lipid-rich myelin sheath around axons located within the Central Nervous System (CNS)?",
+      "choices": [
+        {
+          "text": "B) Oligodendrocytes",
+          "correct": true
+        },
+        {
+          "text": "C) Astrocytes",
+          "correct": false
+        }
+      ],
+      "rationale": "Oligodendrocytes produce myelin sheaths around multiple axons in the CNS (brain and spinal cord). Schwann cells produce myelin around axons in the Peripheral Nervous System (PNS). Astrocytes maintain the blood-brain barrier, and microglia are phagocytes."
+    }
+  },
+  "7": {
+    "title": "Module 7: The Senses (Vision, Audition, Equilibrium, Olfaction & Gustation)",
+    "labels": [
+      {
+        "id": "e1",
+        "term": "Retina",
+        "def": "Inner sensory tunic containing photoreceptors (rods & cones)"
+      },
+      {
+        "id": "e2",
+        "term": "Cornea",
+        "def": "Transparent anterior window refracting light into eye"
+      },
+      {
+        "id": "e3",
+        "term": "Cochlea",
+        "def": "Snail-shaped inner ear structure housing organ of Corti for hearing"
+      },
+      {
+        "id": "e4",
+        "term": "Tympanic Membrane",
+        "def": "Eardrum vibrating in response to sound pressure waves"
+      },
+      {
+        "id": "e5",
+        "term": "Semicircular Canals",
+        "def": "Inner ear structures detecting dynamic equilibrium & balance"
+      }
+    ],
+    "vocab": [
+      {
+        "term": "Cones",
+        "def": "Photoreceptors for high-acuity color vision in bright light"
+      },
+      {
+        "term": "Rods",
+        "def": "Photoreceptors specialized for dim light & peripheral vision"
+      },
+      {
+        "term": "Organ of Corti",
+        "def": "Hearing receptor organ inside cochlea with hair cells"
+      },
+      {
+        "term": "Semicircular Canals",
+        "def": "Inner ear canals detecting dynamic rotational balance"
+      }
+    ],
+    "quiz": [
+      {
+        "q": "Which photoreceptor cells in the retina are highly sensitive to dim light and are responsible for night vision and peripheral vision, but do not produce color vision?",
+        "opts": [
+          "A) Cones",
+          "B) Rods",
+          "C) Bipolar cells",
+          "D) Ganglion cells"
+        ],
+        "ans": 1,
+        "rationale": "Rods are photoreceptors with high sensitivity to dim light, providing black-and-white, twilight, and peripheral vision. Cones operate in bright light, mediate color vision, and provide sharp visual acuity (concentrated in the fovea centralis)."
+      },
+      {
+        "q": "Where in the retina is visual acuity (sharpness of focus) highest due to the dense concentration of cone photoreceptors and the absence of rods?",
+        "opts": [
+          "A) Optic disc",
+          "B) Fovea centralis (within the macula lutea)",
+          "C) Ora serrata",
+          "D) Cornea"
+        ],
+        "ans": 1,
+        "rationale": "The fovea centralis is a tiny pit in the center of the macula lutea containing almost exclusively cones. It represents the point of maximum visual resolution. The optic disc is the 'blind spot' with zero photoreceptors."
+      },
+      {
+        "q": "A blockage of the Canal of Schlemm (scleral venous sinus) prevents the normal drainage of aqueous humor from the anterior chamber of the eye. What condition and complication does this cause?",
+        "opts": [
+          "A) Cataracts due to lens opacity",
+          "B) Glaucoma due to elevated intraocular pressure",
+          "C) Macular degeneration due to retinal detachment",
+          "D) Astigmatism due to corneal curvature irregularities"
+        ],
+        "ans": 1,
+        "rationale": "Aqueous humor is produced by the ciliary body and drains via the Canal of Schlemm. Blockage leads to fluid buildup, causing increased intraocular pressure (IOP)\u2014the hallmark of glaucoma. If untreated, elevated pressure compresses retinal blood vessels and damages the optic nerve."
+      },
+      {
+        "q": "What is the correct sequence of the three auditory ossicles that transmit mechanical sound vibrations across the middle ear?",
+        "opts": [
+          "A) Stapes -> Incus -> Malleus",
+          "B) Incus -> Malleus -> Stapes",
+          "C) Malleus (Hammer) -> Incus (Anvil) -> Stapes (Stirrup)",
+          "D) Malleus -> Stapes -> Incus"
+        ],
+        "ans": 2,
+        "rationale": "Sound vibrations travel from the tympanic membrane to the Malleus (Hammer), which articulates with the Incus (Anvil), which articulates with the Stapes (Stirrup). The footplate of the stapes rocks against the oval window of the cochlea."
+      },
+      {
+        "q": "Where is the true organ of hearing\u2014the Organ of Corti (spiral organ) containing sensory hair cells\u2014located within the inner ear?",
+        "opts": [
+          "A) Semicircular canals",
+          "B) Vestibule",
+          "C) Cochlea",
+          "D) Tympanic cavity"
+        ],
+        "ans": 2,
+        "rationale": "The cochlea is a snail-shaped bony structure in the inner ear. Inside the cochlear duct lies the Organ of Corti, which contains mechanosensory hair cells that bend against the tectorial membrane in response to fluid waves, generating nerve impulses transmitted via Cranial Nerve VIII (vestibulocochlear)."
+      },
+      {
+        "q": "Which inner ear structures detect rotational (angular) head acceleration and movement to maintain dynamic equilibrium?",
+        "opts": [
+          "A) Semicircular canals (cristae ampullares)",
+          "B) Utricle and saccule (maculae)",
+          "C) Cochlear duct",
+          "D) Eustachian tube"
+        ],
+        "ans": 0,
+        "rationale": "The three semicircular canals, oriented at right angles to one another, contain cristae ampullares that detect rotational head acceleration (dynamic equilibrium). The vestibule (utricle and saccule) contains otoliths that detect static equilibrium and linear acceleration."
+      },
+      {
+        "q": "What is the function of the pharyngotympanic (auditory / Eustachian) tube?",
+        "opts": [
+          "A) To secrete cerumen (earwax) into the auditory canal",
+          "B) To equalize air pressure between the middle ear cavity and the nasopharynx (atmosphere)",
+          "C) To conduct perilymph waves to the round window",
+          "D) To amplify high-frequency auditory pitches"
+        ],
+        "ans": 1,
+        "rationale": "The Eustachian tube links the middle ear to the nasopharynx. Swallowing or yawning opens it, equalizing air pressure on both sides of the tympanic membrane so it can vibrate freely."
+      },
+      {
+        "q": "The transparent anterior portion of the fibrous tunic that acts as the initial and most powerful refracting window for incoming light rays is the:",
+        "opts": [
+          "A) Sclera",
+          "B) Lens",
+          "C) Cornea",
+          "D) Choroid"
+        ],
+        "ans": 2,
+        "rationale": "The cornea is the avascular, transparent anterior sixth of the fibrous tunic. It allows light into the eye and provides approximately 75% of the eye's total refractive (bending) power."
+      },
+      {
+        "q": "Olfactory receptors (smell) and gustatory receptors (taste) both belong to which functional class of sensory receptors?",
+        "opts": [
+          "A) Photoreceptors",
+          "B) Mechanoreceptors",
+          "C) Chemoreceptors",
+          "D) Thermoreceptors"
+        ],
+        "ans": 2,
+        "rationale": "Both smell (olfaction) and taste (gustation) utilize chemoreceptors that detect specific chemical molecules dissolved in surrounding fluids (mucus in the olfactory epithelium, saliva in the oral cavity)."
+      },
+      {
+        "q": "Why is the optic disc known as the physiological 'blind spot' of the eye?",
+        "opts": [
+          "A) It has a high concentration of non-functional rod cells",
+          "B) It contains only blue cone photoreceptors",
+          "C) It completely lacks photoreceptor cells because ganglion cell axons exit here to form the optic nerve",
+          "D) The vitreous humor is too dense in this region to allow light penetration"
+        ],
+        "ans": 2,
+        "rationale": "The optic disc is the anatomical exit point where retinal ganglion cell axons converge to form Cranial Nerve II (the optic nerve) alongside central retinal blood vessels. Because there are no rods or cones located over the disc, light falling on this region cannot be detected."
+      }
+    ],
+    "quest": {
+      "scenario": "Clinical Nurse Challenge (Module 7: The Senses (Vision, Audition, Equilibrium, Olfaction & Gustation)): Which photoreceptor cells in the retina are highly sensitive to dim light and are responsible for night vision and peripheral vision, but do not produce color vision?",
+      "choices": [
+        {
+          "text": "B) Rods",
+          "correct": true
+        },
+        {
+          "text": "C) Bipolar cells",
+          "correct": false
+        }
+      ],
+      "rationale": "Rods are photoreceptors with high sensitivity to dim light, providing black-and-white, twilight, and peripheral vision. Cones operate in bright light, mediate color vision, and provide sharp visual acuity (concentrated in the fovea centralis)."
+    }
+  },
+  "8": {
+    "title": "Module 8: The Endocrine System, Glands & Hormone Mechanisms",
+    "labels": [
+      {
+        "id": "h1",
+        "term": "Pituitary Gland",
+        "def": "Master endocrine gland governed by hypothalamus"
+      },
+      {
+        "id": "h2",
+        "term": "Thyroid Gland",
+        "def": "Endocrine gland secreting T3/T4 for metabolic rate"
+      },
+      {
+        "id": "h3",
+        "term": "Adrenal Cortex",
+        "def": "Produces Cortisol & Aldosterone steroid hormones"
+      },
+      {
+        "id": "h4",
+        "term": "Pancreatic Islets",
+        "def": "Islets of Langerhans producing Insulin & Glucagon"
+      }
+    ],
+    "vocab": [
+      {
+        "term": "Insulin",
+        "def": "Pancreatic hormone secreted by beta cells to lower blood glucose"
+      },
+      {
+        "term": "Glucagon",
+        "def": "Pancreatic hormone secreted by alpha cells to raise blood glucose"
+      },
+      {
+        "term": "Cortisol",
+        "def": "Adrenal steroid hormone regulating metabolism during stress"
+      },
+      {
+        "term": "Thyroid Hormone (T3/T4)",
+        "def": "Hormones setting body metabolic rate and heat production"
+      }
+    ],
+    "quiz": [
+      {
+        "q": "How do endocrine glands differ fundamentally from exocrine glands?",
+        "opts": [
+          "A) Endocrine glands release secretions through ducts to external surfaces",
+          "B) Endocrine glands are ductless and release hormones directly into the bloodstream or interstitial fluid",
+          "C) Endocrine glands only secrete enzymes rather than chemical messengers",
+          "D) Endocrine glands are solely controlled by somatic motor nerves"
+        ],
+        "ans": 1,
+        "rationale": "Endocrine glands are ductless glands that synthesize hormones and secrete them directly into extracellular fluid and the bloodstream to act on distant target cells. Exocrine glands (e.g., salivary, sweat, sebaceous) secrete their products through ducts into lumens or body surfaces."
+      },
+      {
+        "q": "Which mechanism of action characterizes lipid-soluble steroid hormones (such as cortisol, estrogen, and testosterone)?",
+        "opts": [
+          "A) They bind to cell-surface receptors and activate intracellular cyclic AMP (cAMP)",
+          "B) They diffuse directly across the plasma membrane to bind intracellular receptors and alter gene transcription",
+          "C) They enter target cells via phagocytosis and are degraded by lysosomes",
+          "D) They open ligand-gated sodium channels to trigger an immediate action potential"
+        ],
+        "ans": 1,
+        "rationale": "Because steroid hormones are lipophilic (derived from cholesterol), they readily cross the phospholipid bilayer of the plasma membrane. They bind to intracellular receptors (in the cytoplasm or nucleus) to form a hormone-receptor complex that binds DNA and regulates gene transcription and protein synthesis."
+      },
+      {
+        "q": "A patient's serum calcium level drops below normal. Which endocrine gland responds by secreting a hormone to raise blood calcium levels, and which cells does this hormone stimulate?",
+        "opts": [
+          "A) Thyroid gland secretes Calcitonin; stimulates osteoblasts",
+          "B) Parathyroid glands secrete Parathyroid Hormone (PTH); stimulates osteoclasts",
+          "C) Adrenal cortex secretes Aldosterone; stimulates renal tubular excretion",
+          "D) Anterior pituitary secretes TSH; stimulates bone deposition"
+        ],
+        "ans": 1,
+        "rationale": "When blood calcium falls (hypocalcemia), the Parathyroid glands secrete PTH. PTH stimulates osteoclasts to resorb bone matrix and liberate calcium into the blood, promotes renal calcium reabsorption, and enhances vitamin D activation to increase dietary calcium absorption in the gut. Calcitonin (from thyroid) does the opposite."
+      },
+      {
+        "q": "Which pair of pancreatic hormones works antagonistically to maintain blood glucose homeostasis within normal limits?",
+        "opts": [
+          "A) Insulin (lowers blood glucose) and Glucagon (elevates blood glucose)",
+          "B) Cortisol and Epinephrine",
+          "C) Calcitonin and Parathyroid hormone",
+          "D) Aldosterone and Antidiuretic hormone"
+        ],
+        "ans": 0,
+        "rationale": "Beta cells of pancreatic islets secrete Insulin in response to elevated blood glucose, facilitating cellular uptake and glycogen storage (lowering blood glucose). Alpha cells secrete Glucagon in response to low blood glucose, stimulating glycogenolysis and gluconeogenesis in the liver (raising blood glucose)."
+      },
+      {
+        "q": "Which two hormones are synthesized by neurosecretory cells of the hypothalamus, but stored and released by the posterior pituitary (neurohypophysis)?",
+        "opts": [
+          "A) Thyroid-Stimulating Hormone (TSH) and Adrenocorticotropic Hormone (ACTH)",
+          "B) Growth Hormone (GH) and Prolactin (PRL)",
+          "C) Antidiuretic Hormone (ADH) and Oxytocin",
+          "D) Follicle-Stimulating Hormone (FSH) and Luteinizing Hormone (LH)"
+        ],
+        "ans": 2,
+        "rationale": "ADH (vasopressin) and Oxytocin are synthesized in the paraventricular and supraoptic nuclei of the hypothalamus and transported axonally to the posterior pituitary, which acts as a storage and release site. The anterior pituitary synthesizes TSH, ACTH, GH, PRL, FSH, and LH."
+      },
+      {
+        "q": "A patient with dehydration and hypovolemia secretes increased amounts of Antidiuretic Hormone (ADH / Vasopressin). What is the primary target organ and physiological action of ADH?",
+        "opts": [
+          "A) Heart; increases cardiac stroke volume",
+          "B) Kidney collecting ducts; increases water reabsorption, conserving water and reducing urine volume",
+          "C) Liver; stimulates glycogenolysis",
+          "D) Adrenal cortex; stimulates cortisol release"
+        ],
+        "ans": 1,
+        "rationale": "ADH targets the distal tubules and collecting ducts of the kidneys, causing aquaporin channels to insert into the membrane. This increases water reabsorption from urine filtrate back into blood circulation, conserving water and producing concentrated urine."
+      },
+      {
+        "q": "The primary hormones produced by the thyroid follicular cells\u2014Thyroxine (T4) and Triiodothyronine (T3)\u2014require which dietary mineral for their chemical synthesis?",
+        "opts": [
+          "A) Iron",
+          "B) Calcium",
+          "C) Iodine",
+          "D) Potassium"
+        ],
+        "ans": 2,
+        "rationale": "Synthesis of T3 (triiodothyronine) and T4 (tetraiodothyronine / thyroxine) requires dietary Iodine. Deficiency of iodine impairs thyroid hormone production, leading to compensatory TSH hypersecretion and enlargement of the thyroid gland (goiter)."
+      },
+      {
+        "q": "Which layer of the adrenal gland secretes catecholamines (Epinephrine and Norepinephrine) under direct sympathetic preganglionic neural stimulation?",
+        "opts": [
+          "A) Adrenal cortex (zona glomerulosa)",
+          "B) Adrenal cortex (zona fasciculata)",
+          "C) Adrenal cortex (zona reticularis)",
+          "D) Adrenal medulla"
+        ],
+        "ans": 3,
+        "rationale": "The adrenal medulla is modified nervous tissue derived from neural crest cells. Under sympathetic nerve stimulation during acute stress, chromaffin cells in the adrenal medulla release Epinephrine (80%) and Norepinephrine (20%) directly into blood to prolong the 'Fight or Flight' response."
+      },
+      {
+        "q": "What is the primary action of the mineralocorticoid hormone Aldosterone, secreted by the outer zone of the adrenal cortex?",
+        "opts": [
+          "A) Stimulates renal reabsorption of Sodium (Na+) and excretion of Potassium (K+)",
+          "B) Stimulates glucose conversion into fat",
+          "C) Lowers systemic blood pressure",
+          "D) Inhibits inflammatory cytokines"
+        ],
+        "ans": 0,
+        "rationale": "Aldosterone acts on renal tubule cells to promote Sodium (Na+) reabsorption into blood and Potassium (K+) excretion into urine. Because water follows sodium osmotically, aldosterone expands extracellular fluid volume and elevates blood pressure."
+      },
+      {
+        "q": "Which endocrine gland is located in the epithalamus of the brain and secretes Melatonin to regulate circadian rhythms and sleep-wake cycles?",
+        "opts": [
+          "A) Pituitary gland",
+          "B) Pineal gland",
+          "C) Thymus gland",
+          "D) Thyroid gland"
+        ],
+        "ans": 1,
+        "rationale": "The pineal gland is a small cone-shaped endocrine structure in the epithalamus. It receives visual input from the suprachiasmatic nucleus of the hypothalamus and secretes Melatonin in darkness to induce sleepiness and synchronize circadian rhythms."
+      }
+    ],
+    "quest": {
+      "scenario": "Clinical Nurse Challenge (Module 8: The Endocrine System, Glands & Hormone Mechanisms): How do endocrine glands differ fundamentally from exocrine glands?",
+      "choices": [
+        {
+          "text": "B) Endocrine glands are ductless and release hormones directly into the bloodstream or interstitial fluid",
+          "correct": true
+        },
+        {
+          "text": "C) Endocrine glands only secrete enzymes rather than chemical messengers",
+          "correct": false
+        }
+      ],
+      "rationale": "Endocrine glands are ductless glands that synthesize hormones and secrete them directly into extracellular fluid and the bloodstream to act on distant target cells. Exocrine glands (e.g., salivary, sweat, sebaceous) secrete their products through ducts into lumens or body surfaces."
+    }
+  }
+};
+
+    // GIZMO 1: DIAGRAM LABELING LAB LOGIC
+    let selectedWordChip = null;
+
+    function loadGizmoLab() {
+      const data = MODULE_DATA[currentModule];
+      document.getElementById('diagramTitle').textContent = data.title;
+      
+      const pinGrid = document.getElementById('targetPinsGrid');
+      pinGrid.innerHTML = '';
+      data.labels.forEach(item => {
+        const pin = document.createElement('div');
+        pin.className = 'target-pin';
+        pin.id = 'pin-' + item.id;
+        pin.setAttribute('data-target-term', item.term);
+        pin.onclick = () => dropWordOnPin(pin);
+        pin.innerHTML = `
+          <span style="font-size:0.775rem; font-weight:700; color:var(--text-muted);">📍 Target Slot:</span>
+          <span style="font-size:0.85rem; color:var(--accent-cyan); font-weight:600;">${item.def}</span>
+          <span class="placed-term" style="font-weight:700; color:#4ade80; font-size:0.9rem; margin-top:4px;"></span>
+        `;
+        pinGrid.appendChild(pin);
+      });
+
+      const wordContainer = document.getElementById('wordChipsContainer');
+      wordContainer.innerHTML = '';
+      const shuffled = [...data.labels].sort(() => Math.random() - 0.5);
+      shuffled.forEach(item => {
+        const chip = document.createElement('div');
+        chip.className = 'word-chip';
+        chip.textContent = item.term;
+        chip.setAttribute('data-term', item.term);
+        chip.onclick = () => selectWordChip(chip);
+        wordContainer.appendChild(chip);
+      });
+    }
+
+    function selectWordChip(chip) {
+      playSound('click');
+      document.querySelectorAll('.word-chip').forEach(c => c.classList.remove('selected'));
+      selectedWordChip = chip;
+      chip.classList.add('selected');
+    }
+
+    function dropWordOnPin(pin) {
+      if (!selectedWordChip) {
+        alert("Please tap a term from the Word Bank first!");
+        return;
+      }
+
+      const selectedTerm = selectedWordChip.getAttribute('data-term');
+      const targetTerm = pin.getAttribute('data-target-term');
+
+      if (selectedTerm === targetTerm) {
+        playSound('correct');
+        pin.className = 'target-pin correct';
+        pin.querySelector('.placed-term').textContent = '✅ ' + selectedTerm;
+        selectedWordChip.style.visibility = 'hidden';
+        selectedWordChip.classList.remove('selected');
+        selectedWordChip = null;
+        addXP(100);
+      } else {
+        playSound('wrong');
+        pin.className = 'target-pin incorrect';
+        resetCombo();
+        setTimeout(() => {
+          pin.className = 'target-pin';
+        }, 800);
+      }
+    }
+
+    // GIZMO 2: MEMORY FLIP MATCH LOGIC
+    let memoryTimerInterval = null;
+    let memoryTimeSec = 0;
+    let memoryMatchesFound = 0;
+    let firstCard = null;
+    let secondCard = null;
+    let lockBoard = false;
+
+    function initMemoryGame() {
+      clearInterval(memoryTimerInterval);
+      memoryTimeSec = 0;
+      memoryMatchesFound = 0;
+      firstCard = null;
+      secondCard = null;
+      lockBoard = false;
+      document.getElementById('memoryTimer').textContent = '0';
+      document.getElementById('memoryMatches').textContent = '0';
+
+      memoryTimerInterval = setInterval(() => {
+        memoryTimeSec++;
+        document.getElementById('memoryTimer').textContent = memoryTimeSec;
+      }, 1000);
+
+      const data = MODULE_DATA[currentModule];
+      const grid = document.getElementById('memoryGrid');
+      grid.innerHTML = '';
+
+      let deck = [];
+      data.vocab.forEach((pair, idx) => {
+        deck.push({ id: idx, type: 'term', text: pair.term });
+        deck.push({ id: idx, type: 'def', text: pair.def });
+      });
+
+      deck.sort(() => Math.random() - 0.5);
+
+      deck.forEach(item => {
+        const card = document.createElement('div');
+        card.className = 'memory-card';
+        card.setAttribute('data-pair-id', item.id);
+        card.innerHTML = `
+          <div class="memory-card-inner">
+            <div class="card-front">🧬</div>
+            <div class="card-back">${item.text}</div>
+          </div>
+        `;
+        card.onclick = () => flipMemoryCard(card);
+        grid.appendChild(card);
+      });
+    }
+
+    function flipMemoryCard(card) {
+      if (lockBoard || card === firstCard || card.classList.contains('matched')) return;
+
+      playSound('click');
+      card.classList.add('flipped');
+
+      if (!firstCard) {
+        firstCard = card;
+        return;
+      }
+
+      secondCard = card;
+      lockBoard = true;
+
+      const match = firstCard.getAttribute('data-pair-id') === secondCard.getAttribute('data-pair-id');
+
+      if (match) {
+        playSound('correct');
+        firstCard.classList.add('matched');
+        secondCard.classList.add('matched');
+        memoryMatchesFound++;
+        document.getElementById('memoryMatches').textContent = memoryMatchesFound;
+        addXP(150);
+        resetMemoryCards();
+
+        if (memoryMatchesFound === 4) {
+          clearInterval(memoryTimerInterval);
+          setTimeout(() => {
+            playSound('levelup');
+            alert(`🎉 EXCELLENT! Rayne completed the Memory Match in ${memoryTimeSec} seconds!`);
+          }, 300);
+        }
+      } else {
+        playSound('wrong');
+        resetCombo();
+        setTimeout(() => {
+          firstCard.classList.remove('flipped');
+          secondCard.classList.remove('flipped');
+          resetMemoryCards();
+        }, 1000);
+      }
+    }
+
+    function resetMemoryCards() {
+      [firstCard, secondCard] = [null, null];
+      lockBoard = false;
+    }
+
+    // GIZMO 3: SPEED ARCADE LOGIC
+    let quizLives = 3;
+    let currentQuizIdx = 0;
+    let hintsLeft = 2;
+
+    function loadSpeedArcade() {
+      quizLives = 3;
+      currentQuizIdx = 0;
+      hintsLeft = 2;
+      document.getElementById('quizLives').textContent = quizLives;
+      document.getElementById('count5050').textContent = hintsLeft;
+      renderQuizQuestion();
+    }
+
+    function renderQuizQuestion() {
+      const data = MODULE_DATA[currentModule];
+      const qData = data.quiz[currentQuizIdx % data.quiz.length];
+
+      document.getElementById('quizQuestionText').textContent = qData.q;
+      document.getElementById('quizFeedbackBox').style.display = 'none';
+
+      const grid = document.getElementById('quizOptionsGrid');
+      grid.innerHTML = '';
+      qData.opts.forEach((opt, idx) => {
+        const btn = document.createElement('button');
+        btn.className = 'quiz-opt-btn';
+        btn.textContent = opt;
+        btn.onclick = () => checkQuizAnswer(idx, qData);
+        grid.appendChild(btn);
+      });
+    }
+
+    function checkQuizAnswer(selectedIdx, qData) {
+      const btns = document.querySelectorAll('.quiz-opt-btn');
+      btns.forEach(b => b.disabled = true);
+
+      const box = document.getElementById('quizFeedbackBox');
+      box.style.display = 'block';
+
+      if (selectedIdx === qData.ans) {
+        playSound('correct');
+        btns[selectedIdx].classList.add('correct-opt');
+        box.style.background = 'rgba(34, 197, 94, 0.2)';
+        box.style.border = '1px solid #22c55e';
+        box.style.color = '#86efac';
+        box.innerHTML = `<strong>✅ CORRECT!</strong> ${qData.rationale}`;
+        addXP(100);
+      } else {
+        playSound('wrong');
+        btns[selectedIdx].classList.add('wrong-opt');
+        btns[qData.ans].classList.add('correct-opt');
+        box.style.background = 'rgba(239, 68, 68, 0.2)';
+        box.style.border = '1px solid #ef4444';
+        box.style.color = '#fca5a5';
+        box.innerHTML = `<strong>❌ NOT QUITE!</strong> ${qData.rationale}`;
+        quizLives--;
+        resetCombo();
+        document.getElementById('quizLives').textContent = quizLives;
+      }
+
+      setTimeout(() => {
+        if (quizLives <= 0) {
+          alert("Game Over! Restarting Quiz Arcade...");
+          loadSpeedArcade();
+        } else {
+          currentQuizIdx++;
+          renderQuizQuestion();
+        }
+      }, 2600);
+    }
+
+    function use5050Hint() {
+      if (hintsLeft <= 0) {
+        alert("No hints remaining!");
+        return;
+      }
+      hintsLeft--;
+      document.getElementById('count5050').textContent = hintsLeft;
+      const data = MODULE_DATA[currentModule];
+      const qData = data.quiz[currentQuizIdx % data.quiz.length];
+      const btns = document.querySelectorAll('.quiz-opt-btn');
+
+      let removed = 0;
+      btns.forEach((btn, idx) => {
+        if (idx !== qData.ans && removed < 2) {
+          btn.style.opacity = '0.2';
+          btn.disabled = true;
+          removed++;
+        }
+      });
+    }
+
+    // GIZMO 4: CLINICAL QUEST LOGIC
+    function loadClinicalQuest() {
+      const data = MODULE_DATA[currentModule].quest;
+      document.getElementById('questScenarioText').textContent = data.scenario;
+      document.getElementById('questRationaleBox').style.display = 'none';
+
+      const grid = document.getElementById('questChoicesGrid');
+      grid.innerHTML = '';
+      data.choices.forEach(c => {
+        const btn = document.createElement('button');
+        btn.className = 'quiz-opt-btn';
+        btn.textContent = c.text;
+        btn.onclick = () => selectQuestChoice(c, data);
+        grid.appendChild(btn);
+      });
+    }
+
+    function selectQuestChoice(choice, data) {
+      playSound(choice.correct ? 'correct' : 'wrong');
+      const box = document.getElementById('questRationaleBox');
+      box.style.display = 'block';
+      document.getElementById('questRationaleText').textContent = data.rationale;
+      if (choice.correct) {
+        addXP(200);
+      } else {
+        resetCombo();
+      }
+    }
+
+    function loadNextQuest() {
+      currentModule = (currentModule % 8) + 1;
+      selectModule(currentModule);
+      switchGameMode('clinicalQuest');
+    }
+
+    // INITIAL LAUNCH
+    window.onload = () => {
+      loadCurrentGizmo();
+    };
+  
+</script>
 <script>
 
     // AUDIO SYNTHESIZER (Web Audio API)
