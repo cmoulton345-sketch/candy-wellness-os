@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Rayne's Printable Anatomical Blueprint Sheets (Modules 1–8)</title>
+  <title>Rayne's Printable Anatomical Atlas & Blueprints Pack (Modules 1–8)</title>
   <style>
     @page {
       size: letter portrait;
-      margin: 0.4in;
+      margin: 0.35in;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -49,8 +49,8 @@
       background: #1e293b;
       border: 2px solid #38bdf8;
       border-radius: 12px;
-      padding: 24px;
-      margin-bottom: 40px;
+      padding: 20px;
+      margin-bottom: 36px;
       page-break-after: always;
     }
 
@@ -59,16 +59,16 @@
       justify-content: space-between;
       align-items: center;
       border-bottom: 2px solid #38bdf8;
-      padding-bottom: 10px;
-      margin-bottom: 18px;
+      padding-bottom: 8px;
+      margin-bottom: 14px;
     }
 
     .bp-title {
-      font-size: 1.6rem;
+      font-size: 1.45rem;
       font-weight: 800;
       color: #38bdf8;
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 0.5px;
     }
 
     .bp-badge {
@@ -83,47 +83,50 @@
 
     .bp-diagram-box {
       background: white;
-      padding: 8px;
+      padding: 10px;
       border-radius: 8px;
-      margin-bottom: 18px;
+      margin-bottom: 14px;
       text-align: center;
     }
 
     .bp-diagram-box img {
       max-width: 100%;
+      max-height: 480px;
       height: auto;
       border-radius: 4px;
+      display: block;
+      margin: 0 auto;
     }
 
-    .notes-grid {
+    .parts-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 16px;
-      margin-top: 14px;
+      gap: 10px;
+      margin-top: 10px;
     }
 
-    .note-card {
+    .part-pill {
       background: #0f172a;
-      border-left: 4px solid #38bdf8;
-      padding: 12px 14px;
-      border-radius: 6px;
-      font-size: 0.9rem;
+      border-left: 3px solid #38bdf8;
+      padding: 8px 12px;
+      border-radius: 4px;
+      font-size: 0.84rem;
     }
 
-    .note-card h4 {
-      color: #38bdf8;
-      margin-bottom: 6px;
-      font-size: 0.95rem;
+    .part-pill strong {
+      color: #67e8f9;
+      display: block;
+      margin-bottom: 2px;
     }
 
     @media print {
       body { background: white; color: black; padding: 0; }
       .no-print-bar { display: none; }
-      .bp-page { background: white; color: black; border: 1.5px solid #000; box-shadow: none; margin-bottom: 0; }
-      .bp-title { color: #000; border-bottom: 2px solid #000; }
+      .bp-page { background: white; color: black; border: 1.5px solid #000; box-shadow: none; margin-bottom: 0; padding: 12px; }
+      .bp-title { color: #000; border-bottom: 2px solid #000; font-size: 1.25rem; }
       .bp-badge { color: #000; border: 1px solid #000; background: #eee; }
-      .note-card { background: #f8fafc; color: #000; border: 1px solid #ccc; border-left: 4px solid #000; }
-      .note-card h4 { color: #000; }
+      .part-pill { background: #f8fafc; color: #000; border: 1px solid #ccc; border-left: 3px solid #000; }
+      .part-pill strong { color: #000; }
     }
   </style>
 </head>
@@ -131,169 +134,491 @@
 
   <div class="no-print-bar">
     <div>
-      <h2 style="font-size:1.3rem; margin-bottom:4px;">Rayne's Printable Blueprint Pack (Modules 1–8)</h2>
-      <p style="color:#94a3b8; font-size:0.9rem;">High-Yield Anatomical Blueprints for Practical Nursing Exam on Oct 13, 2026</p>
+      <h2 style="font-size:1.3rem; margin-bottom:4px;">Rayne's Printable Anatomical Atlas & Blueprint Pack</h2>
+      <p style="color:#94a3b8; font-size:0.9rem;">Complete Labeled Plates & Blueprints for NBCC Practical Nursing Exam on Oct 13, 2026</p>
     </div>
     <button class="print-btn" onclick="window.print()">🖨️ Print / Save to PDF</button>
   </div>
 
   <div class="bp-page">
     <div class="bp-title-row">
-      <div class="bp-title">Module 1: Introduction to the Human Body & Homeostasis</div>
+      <div class="bp-title">ATLAS: 1. Human Cell Ultrastructure & Organelles</div>
+      <div class="bp-badge">Cell Biology (Module 2 • Chapter 3)</div>
+    </div>
+    <div class="bp-diagram-box">
+      <img src="images/human_cell_labeled.jpg?t=3" alt="1. Human Cell Ultrastructure & Organelles">
+      
+    </div>
+    <div class="parts-grid">
+      
+        <div class="part-pill">
+          <strong>Nucleus</strong>
+          The control center of the cell; houses DNA chromosomes and directs protein synthesis.
+        </div>
+        
+        <div class="part-pill">
+          <strong>Nucleoli (Nucleolus)</strong>
+          Dense dark-staining region within the nucleus that synthesizes ribosomal RNA (rRNA).
+        </div>
+        
+        <div class="part-pill">
+          <strong>Mitochondria</strong>
+          The 'powerhouses of the cell'; generates ATP energy via aerobic cellular respiration.
+        </div>
+        
+        <div class="part-pill">
+          <strong>Ribosomes</strong>
+          Protein factories composed of rRNA; translate mRNA transcripts into polypeptide chains.
+        </div>
+        
+        <div class="part-pill">
+          <strong>Rough Endoplasmic Reticulum</strong>
+          Membranous network studded with ribosomes; folds and modifies nascent proteins.
+        </div>
+        
+        <div class="part-pill">
+          <strong>Smooth Endoplasmic Reticulum</strong>
+          Agranular network for lipid and steroid synthesis, calcium storage, and drug detox.
+        </div>
+        
+        <div class="part-pill">
+          <strong>Golgi Complex (Apparatus)</strong>
+          Stack of flattened sacs that chemically modifies, sorts, and packages glycoproteins for secretion.
+        </div>
+        
+        <div class="part-pill">
+          <strong>Lysosomes</strong>
+          'Digestive bags' packed with hydrolytic acid enzymes to recycle damaged organelles and bacteria.
+        </div>
+        
+        <div class="part-pill">
+          <strong>Centrioles</strong>
+          Paired barrel-shaped organelles that organize the mitotic spindle during cell division (mitosis).
+        </div>
+        
+        <div class="part-pill">
+          <strong>Plasma Membrane</strong>
+          Selectively permeable phospholipid bilayer regulating what enters and leaves the cytoplasm.
+        </div>
+        
+        <div class="part-pill">
+          <strong>Microvilli</strong>
+          Finger-like membrane folds that increase absorptive surface area (prominent in intestine/kidney).
+        </div>
+        
+    </div>
+  </div>
+
+  <div class="bp-page">
+    <div class="bp-title-row">
+      <div class="bp-title">ATLAS: 2. Integumentary System Architecture & Receptors</div>
+      <div class="bp-badge">The Skin & Appendages (Module 3 • Chapter 6)</div>
+    </div>
+    <div class="bp-diagram-box">
+      <img src="images/skin_layers_receptors_labeled.jpg?t=3" alt="2. Integumentary System Architecture & Receptors">
+      
+        <div style="margin-top:8px;">
+          <img src="images/skin_3d_cross_section.jpg?t=3" alt="2. Integumentary System Architecture & Receptors View" style="max-width:100%; max-height:240px; height:auto; border-radius:4px; display:block; margin:0 auto;">
+        </div>
+        
+    </div>
+    <div class="parts-grid">
+      
+        <div class="part-pill">
+          <strong>Epidermis</strong>
+          Avascular superficial protective layer of stratified squamous keratinized epithelium (5 strata).
+        </div>
+        
+        <div class="part-pill">
+          <strong>Stratum Basale</strong>
+          Deepest epidermal monolayer of stem cells undergoing active mitosis; houses melanocytes.
+        </div>
+        
+        <div class="part-pill">
+          <strong>Stratum Corneum</strong>
+          Outermost layer of dead, fully keratinized, shingle-like cells providing waterproof barrier.
+        </div>
+        
+        <div class="part-pill">
+          <strong>Dermis</strong>
+          Vascular, tough connective tissue layer (20x thicker than epidermis) containing nerves, vessels, and fibers.
+        </div>
+        
+        <div class="part-pill">
+          <strong>Papillary Dermis</strong>
+          Superficial dermal layer with dermal papillae forming fingerprint ridges and housing Meissner corpuscles.
+        </div>
+        
+        <div class="part-pill">
+          <strong>Reticular Dermis</strong>
+          Deep dense irregular connective tissue layer rich in collagen and elastin; houses Pacinian corpuscles.
+        </div>
+        
+        <div class="part-pill">
+          <strong>Hypodermis (Subcutaneous)</strong>
+          Adipose tissue foundation providing thermal insulation, energy reserve, and shock cushioning.
+        </div>
+        
+        <div class="part-pill">
+          <strong>Meissner Corpuscle</strong>
+          Encapsulated tactile receptor in dermal papillae that detects light touch and low-frequency vibration.
+        </div>
+        
+        <div class="part-pill">
+          <strong>Pacinian Corpuscle</strong>
+          Large lamellated onion-shaped receptor deep in reticular dermis/hypodermis detecting deep pressure.
+        </div>
+        
+        <div class="part-pill">
+          <strong>Free Nerve Endings</strong>
+          Unencapsulated sensory dendrites extending into epidermis to detect nociceptive pain and temperature.
+        </div>
+        
+        <div class="part-pill">
+          <strong>Sebaceous Glands</strong>
+          Oil glands attached to hair follicles secreting sebum to lubricate hair/skin and prevent microbial growth.
+        </div>
+        
+        <div class="part-pill">
+          <strong>Eccrine Sweat Glands</strong>
+          Coiled tubular glands distributed across the body that secrete watery sweat for thermoregulation.
+        </div>
+        
+        <div class="part-pill">
+          <strong>Arrector Pili Muscle</strong>
+          Smooth muscle bundle contracting under sympathetic stimulation to pull hair upright ('goosebumps').
+        </div>
+        
+    </div>
+  </div>
+
+  <div class="bp-page">
+    <div class="bp-title-row">
+      <div class="bp-title">ATLAS: 3. The Complete Human Skeleton (Axial & Appendicular)</div>
+      <div class="bp-badge">Skeletal System (Module 4 • Chapter 7)</div>
+    </div>
+    <div class="bp-diagram-box">
+      <img src="images/skeleton_complete_labeled.jpg?t=3" alt="3. The Complete Human Skeleton (Axial & Appendicular)">
+      
+    </div>
+    <div class="parts-grid">
+      
+        <div class="part-pill">
+          <strong>Cranium & Facial Bones</strong>
+          Axial: Protects brain (Frontal, Parietal, Occipital) and frames face (Maxilla, Zygomatic, Mandible).
+        </div>
+        
+        <div class="part-pill">
+          <strong>Vertebral Column</strong>
+          Axial: Flexible supportive column with 7 Cervical, 12 Thoracic, 5 Lumbar, Sacrum, and Coccyx.
+        </div>
+        
+        <div class="part-pill">
+          <strong>Thoracic Cage</strong>
+          Axial: Bony protection for heart/lungs composed of Sternum and 12 pairs of ribs (7 True, 3 False, 2 Floating).
+        </div>
+        
+        <div class="part-pill">
+          <strong>Pectoral Girdle</strong>
+          Appendicular: Attaches upper limbs to axial trunk; includes Clavicle (collarbone) and Scapula (shoulder blade).
+        </div>
+        
+        <div class="part-pill">
+          <strong>Humerus</strong>
+          Appendicular: Long bone of the upper arm articulating with glenoid cavity and elbow.
+        </div>
+        
+        <div class="part-pill">
+          <strong>Radius & Ulna</strong>
+          Appendicular: Forearm bones; Radius is lateral (thumb side) and Ulna is medial (pinky side).
+        </div>
+        
+        <div class="part-pill">
+          <strong>Carpals, Metacarpals, Phalanges</strong>
+          Appendicular: Wrist (8 carpals), palm (5 metacarpals), and fingers (14 phalanges).
+        </div>
+        
+        <div class="part-pill">
+          <strong>Pelvic Girdle (Coxal Bone)</strong>
+          Appendicular: Sturdy weight-bearing ring formed by fused Ilium, Ischium, and Pubis bones.
+        </div>
+        
+        <div class="part-pill">
+          <strong>Femur</strong>
+          Appendicular: Heaviest, strongest, and longest bone in the body; articulates with acetabulum at hip.
+        </div>
+        
+        <div class="part-pill">
+          <strong>Patella</strong>
+          Appendicular: Sesamoid kneecap protecting the knee joint and improving quadriceps leverage.
+        </div>
+        
+        <div class="part-pill">
+          <strong>Tibia & Fibula</strong>
+          Appendicular: Lower leg; Tibia (shinbone) is medial and weight-bearing; Fibula is lateral stabilizer.
+        </div>
+        
+        <div class="part-pill">
+          <strong>Tarsals, Metatarsals, Calcaneus</strong>
+          Appendicular: Ankle (7 tarsals), heel (calcaneus), arch (5 metatarsals), and toes (14 phalanges).
+        </div>
+        
+    </div>
+  </div>
+
+  <div class="bp-page">
+    <div class="bp-title-row">
+      <div class="bp-title">ATLAS: 4. Major Superficial Skeletal Muscles (Anterior & Posterior)</div>
+      <div class="bp-badge">Muscular System (Module 5 • Chapter 8)</div>
+    </div>
+    <div class="bp-diagram-box">
+      <img src="images/muscles_anterior_labeled.jpg?t=3" alt="4. Major Superficial Skeletal Muscles (Anterior & Posterior)">
+      
+        <div style="margin-top:8px;">
+          <img src="images/muscles_posterior_labeled.jpg?t=3" alt="4. Major Superficial Skeletal Muscles (Anterior & Posterior) View" style="max-width:100%; max-height:240px; height:auto; border-radius:4px; display:block; margin:0 auto;">
+        </div>
+        
+    </div>
+    <div class="parts-grid">
+      
+        <div class="part-pill">
+          <strong>Sternocleidomastoid</strong>
+          Neck muscle that flexes neck and rotates head to opposite side.
+        </div>
+        
+        <div class="part-pill">
+          <strong>Trapezius</strong>
+          Large triangular upper back/neck muscle that elevates, depresses, and retracts the scapula.
+        </div>
+        
+        <div class="part-pill">
+          <strong>Deltoid</strong>
+          Triangular shoulder muscle that serves as the prime mover of arm abduction.
+        </div>
+        
+        <div class="part-pill">
+          <strong>Pectoralis Major</strong>
+          Large chest muscle that adducts, flexes, and medially rotates the humerus at the shoulder.
+        </div>
+        
+        <div class="part-pill">
+          <strong>Biceps Brachii</strong>
+          Anterior arm muscle that is the prime mover of elbow flexion and powerful forearm supinator.
+        </div>
+        
+        <div class="part-pill">
+          <strong>Triceps Brachii</strong>
+          Posterior arm muscle that acts as the primary antagonist to biceps, extending the elbow joint.
+        </div>
+        
+        <div class="part-pill">
+          <strong>Rectus Abdominis</strong>
+          'Six-pack' abdominal muscle that flexes the lumbar vertebral column and compresses abdominal cavity.
+        </div>
+        
+        <div class="part-pill">
+          <strong>External Obliques</strong>
+          Lateral abdominal muscles that rotate and laterally flex the trunk.
+        </div>
+        
+        <div class="part-pill">
+          <strong>Latissimus Dorsi</strong>
+          'Swimmer's muscle'; broad lower back muscle that extends and adducts the arm.
+        </div>
+        
+        <div class="part-pill">
+          <strong>Gluteus Maximus</strong>
+          Largest muscle in the body; prime mover of hip extension (rising from sitting, climbing stairs).
+        </div>
+        
+        <div class="part-pill">
+          <strong>Quadriceps Femoris Group</strong>
+          Anterior thigh muscles (Rectus femoris, Vastus lateralis, medialis, intermedius) extending the knee.
+        </div>
+        
+        <div class="part-pill">
+          <strong>Hamstrings Group</strong>
+          Posterior thigh muscles (Biceps femoris, Semitendinosus, Semimembranosus) flexing knee and extending hip.
+        </div>
+        
+        <div class="part-pill">
+          <strong>Tibialis Anterior</strong>
+          Anterior shin muscle that performs ankle dorsiflexion and foot inversion.
+        </div>
+        
+        <div class="part-pill">
+          <strong>Gastrocnemius & Soleus</strong>
+          Posterior calf muscles that plantarflex the ankle via the strong Calcaneal (Achilles) tendon.
+        </div>
+        
+    </div>
+  </div>
+
+  <div class="bp-page">
+    <div class="bp-title-row">
+      <div class="bp-title">ATLAS: 5. The Human Endocrine System (Master Glands & Hormones)</div>
+      <div class="bp-badge">Endocrine System (Module 8 • Chapter 11)</div>
+    </div>
+    <div class="bp-diagram-box">
+      <img src="images/endocrine_system_labeled.jpg?t=3" alt="5. The Human Endocrine System (Master Glands & Hormones)">
+      
+    </div>
+    <div class="parts-grid">
+      
+        <div class="part-pill">
+          <strong>Pineal Gland</strong>
+          Located in brain epithalamus; secretes Melatonin in darkness to coordinate circadian sleep-wake cycles.
+        </div>
+        
+        <div class="part-pill">
+          <strong>Hypothalamus</strong>
+          Master neuroendocrine coordinator; synthesizes ADH and Oxytocin; controls anterior pituitary via releasing hormones.
+        </div>
+        
+        <div class="part-pill">
+          <strong>Pituitary Gland (Master Gland)</strong>
+          Anterior lobe secretes TSH, ACTH, GH, PRL, FSH, LH; Posterior lobe stores and releases ADH & Oxytocin.
+        </div>
+        
+        <div class="part-pill">
+          <strong>Thyroid Gland</strong>
+          Butterfly-shaped neck gland; secretes T3 & T4 (metabolic rate) and Calcitonin (lowers blood calcium).
+        </div>
+        
+        <div class="part-pill">
+          <strong>Parathyroid Glands</strong>
+          Four tiny glands on posterior thyroid; secrete Parathyroid Hormone (PTH) to elevate blood calcium levels.
+        </div>
+        
+        <div class="part-pill">
+          <strong>Thymus Gland</strong>
+          Located behind sternum; secretes Thymosin to program and mature immunocompetent T-lymphocytes.
+        </div>
+        
+        <div class="part-pill">
+          <strong>Adrenal Glands (Suprarenal)</strong>
+          Cortex secretes Aldosterone (Na+ retention) and Cortisol (glucose/stress); Medulla secretes Epinephrine.
+        </div>
+        
+        <div class="part-pill">
+          <strong>Pancreas (Islets of Langerhans)</strong>
+          Beta cells secrete Insulin (lowers blood glucose); Alpha cells secrete Glucagon (elevates blood glucose).
+        </div>
+        
+        <div class="part-pill">
+          <strong>Ovaries (Female)</strong>
+          Secrete Estrogen (secondary sex characteristics) and Progesterone (menstrual cycle & pregnancy support).
+        </div>
+        
+        <div class="part-pill">
+          <strong>Testes (Male)</strong>
+          Secrete Testosterone (spermatogenesis, muscle mass, secondary male sex characteristics).
+        </div>
+        
+    </div>
+  </div>
+
+  <div class="bp-page">
+    <div class="bp-title-row">
+      <div class="bp-title">BLUEPRINT: Module 1: Introduction to the Human Body & Homeostasis</div>
       <div class="bp-badge">Chapter 1 (Patton 17th Edition)</div>
     </div>
     <div class="bp-diagram-box">
-      <img src="images/mod1_anatomical_planes_cavities.png?t=2" alt="Module 1: Introduction to the Human Body & Homeostasis">
+      <img src="images/mod1_anatomical_planes_cavities.png?t=3" alt="Module 1: Introduction to the Human Body & Homeostasis">
     </div>
-    <div class="notes-grid">
-      <div class="note-card">
-        <h4>High-Yield Exam Scope</h4>
-        <p>Covers levels of structural organization, anatomical position, directional planes and axes, dorsal and ventral body cavities, abdominopelvic quadrants/regions, and homeostatic negative vs. positive feedback systems.</p>
-      </div>
-      <div class="note-card">
-        <h4>Clinical Success Pearls</h4>
-        <p>Ensure mastery of both anatomical structures and homeostatic functions. Practice active recall of bolded key terms before testing with the interactive quiz.</p>
-      </div>
+    <div style="background:#0f172a; padding:12px; border-radius:6px; font-size:0.88rem; border-left:4px solid #38bdf8;">
+      <strong>High-Yield Scope:</strong> Covers levels of structural organization, anatomical position, directional planes and axes, dorsal and ventral body cavities, abdominopelvic quadrants/regions, and homeostatic negative vs. positive feedback systems.
     </div>
   </div>
 
   <div class="bp-page">
     <div class="bp-title-row">
-      <div class="bp-title">Module 2: Cell Biology & Transport Dynamics</div>
+      <div class="bp-title">BLUEPRINT: Module 2: Cell Biology & Transport Dynamics</div>
       <div class="bp-badge">Chapter 3 (Patton 17th Edition)</div>
     </div>
     <div class="bp-diagram-box">
-      <img src="images/mod2_cell_organelles_transport.png?t=2" alt="Module 2: Cell Biology & Transport Dynamics">
+      <img src="images/mod2_cell_organelles_transport.png?t=3" alt="Module 2: Cell Biology & Transport Dynamics">
     </div>
-    <div class="notes-grid">
-      <div class="note-card">
-        <h4>High-Yield Exam Scope</h4>
-        <p>Explores the fluid mosaic plasma membrane, prominent organelles (Nucleus, Mitochondria, Ribosomes, ER, Golgi, Lysosomes), passive transport (diffusion, osmosis, filtration, tonicity), active transport (pumps, endocytosis, exocytosis), and the stages of mitosis.</p>
-      </div>
-      <div class="note-card">
-        <h4>Clinical Success Pearls</h4>
-        <p>Ensure mastery of both anatomical structures and homeostatic functions. Practice active recall of bolded key terms before testing with the interactive quiz.</p>
-      </div>
+    <div style="background:#0f172a; padding:12px; border-radius:6px; font-size:0.88rem; border-left:4px solid #38bdf8;">
+      <strong>High-Yield Scope:</strong> Explores the fluid mosaic plasma membrane, prominent organelles (Nucleus, Mitochondria, Ribosomes, ER, Golgi, Lysosomes), passive transport (diffusion, osmosis, filtration, tonicity), active transport (pumps, endocytosis, exocytosis), and the stages of mitosis.
     </div>
   </div>
 
   <div class="bp-page">
     <div class="bp-title-row">
-      <div class="bp-title">Module 3: The Integumentary System & Burn Assessment</div>
+      <div class="bp-title">BLUEPRINT: Module 3: The Integumentary System & Burn Assessment</div>
       <div class="bp-badge">Chapter 6 (Patton 17th Edition)</div>
     </div>
     <div class="bp-diagram-box">
-      <img src="images/mod3_skin_layers_appendages.png?t=2" alt="Module 3: The Integumentary System & Burn Assessment">
+      <img src="images/mod3_skin_layers_appendages.png?t=3" alt="Module 3: The Integumentary System & Burn Assessment">
     </div>
-    <div class="notes-grid">
-      <div class="note-card">
-        <h4>High-Yield Exam Scope</h4>
-        <p>Deconstructs the epidermis, dermis, and hypodermis, epidermal strata, keratinocytes and melanocytes, sweat (eccrine vs apocrine) and sebaceous glands, cutaneous sensory receptors, thermoregulation, and burn classifications including the Rule of Nines.</p>
-      </div>
-      <div class="note-card">
-        <h4>Clinical Success Pearls</h4>
-        <p>Ensure mastery of both anatomical structures and homeostatic functions. Practice active recall of bolded key terms before testing with the interactive quiz.</p>
-      </div>
+    <div style="background:#0f172a; padding:12px; border-radius:6px; font-size:0.88rem; border-left:4px solid #38bdf8;">
+      <strong>High-Yield Scope:</strong> Deconstructs the epidermis, dermis, and hypodermis, epidermal strata, keratinocytes and melanocytes, sweat (eccrine vs apocrine) and sebaceous glands, cutaneous sensory receptors, thermoregulation, and burn classifications including the Rule of Nines.
     </div>
   </div>
 
   <div class="bp-page">
     <div class="bp-title-row">
-      <div class="bp-title">Module 4: The Skeletal System, Histology & Articulations</div>
+      <div class="bp-title">BLUEPRINT: Module 4: The Skeletal System, Histology & Articulations</div>
       <div class="bp-badge">Chapter 7 (Patton 17th Edition)</div>
     </div>
     <div class="bp-diagram-box">
-      <img src="images/mod4_skeletal_osteon_divisions.png?t=2" alt="Module 4: The Skeletal System, Histology & Articulations">
+      <img src="images/mod4_skeletal_osteon_divisions.png?t=3" alt="Module 4: The Skeletal System, Histology & Articulations">
     </div>
-    <div class="notes-grid">
-      <div class="note-card">
-        <h4>High-Yield Exam Scope</h4>
-        <p>Covers skeletal functions, bone classifications, long bone gross anatomy, microscopic osteon (Haversian) histology, bone cells (osteoblasts, osteoclasts, osteocytes), axial (80) vs appendicular (126) divisions, and synarthrotic, amphiarthrotic, and diarthrotic joint types.</p>
-      </div>
-      <div class="note-card">
-        <h4>Clinical Success Pearls</h4>
-        <p>Ensure mastery of both anatomical structures and homeostatic functions. Practice active recall of bolded key terms before testing with the interactive quiz.</p>
-      </div>
+    <div style="background:#0f172a; padding:12px; border-radius:6px; font-size:0.88rem; border-left:4px solid #38bdf8;">
+      <strong>High-Yield Scope:</strong> Covers skeletal functions, bone classifications, long bone gross anatomy, microscopic osteon (Haversian) histology, bone cells (osteoblasts, osteoclasts, osteocytes), axial (80) vs appendicular (126) divisions, and synarthrotic, amphiarthrotic, and diarthrotic joint types.
     </div>
   </div>
 
   <div class="bp-page">
     <div class="bp-title-row">
-      <div class="bp-title">Module 5: The Muscular System & Sarcomere Dynamics</div>
+      <div class="bp-title">BLUEPRINT: Module 5: The Muscular System & Sarcomere Dynamics</div>
       <div class="bp-badge">Chapter 8 (Patton 17th Edition)</div>
     </div>
     <div class="bp-diagram-box">
-      <img src="images/mod5_muscle_sarcomere_contraction.png?t=2" alt="Module 5: The Muscular System & Sarcomere Dynamics">
+      <img src="images/mod5_muscle_sarcomere_contraction.png?t=3" alt="Module 5: The Muscular System & Sarcomere Dynamics">
     </div>
-    <div class="notes-grid">
-      <div class="note-card">
-        <h4>High-Yield Exam Scope</h4>
-        <p>Examines the three muscle tissue types (skeletal, cardiac, smooth), connective tissue wrappings (epimysium, perimysium, endomysium), sarcomere ultrastructure (actin vs myosin), sliding filament mechanism, excitation-contraction coupling, isotonic vs isometric contractions, and muscle actions.</p>
-      </div>
-      <div class="note-card">
-        <h4>Clinical Success Pearls</h4>
-        <p>Ensure mastery of both anatomical structures and homeostatic functions. Practice active recall of bolded key terms before testing with the interactive quiz.</p>
-      </div>
+    <div style="background:#0f172a; padding:12px; border-radius:6px; font-size:0.88rem; border-left:4px solid #38bdf8;">
+      <strong>High-Yield Scope:</strong> Examines the three muscle tissue types (skeletal, cardiac, smooth), connective tissue wrappings (epimysium, perimysium, endomysium), sarcomere ultrastructure (actin vs myosin), sliding filament mechanism, excitation-contraction coupling, isotonic vs isometric contractions, and muscle actions.
     </div>
   </div>
 
   <div class="bp-page">
     <div class="bp-title-row">
-      <div class="bp-title">Module 6: The Nervous System, Synaptic Transmission & Reflex Arcs</div>
+      <div class="bp-title">BLUEPRINT: Module 6: The Nervous System, Synaptic Transmission & Reflex Arcs</div>
       <div class="bp-badge">Chapter 9 (Patton 17th Edition)</div>
     </div>
     <div class="bp-diagram-box">
-      <img src="images/mod6_nervous_reflex_arc.png?t=2" alt="Module 6: The Nervous System, Synaptic Transmission & Reflex Arcs">
+      <img src="images/mod6_nervous_reflex_arc.png?t=3" alt="Module 6: The Nervous System, Synaptic Transmission & Reflex Arcs">
     </div>
-    <div class="notes-grid">
-      <div class="note-card">
-        <h4>High-Yield Exam Scope</h4>
-        <p>Deconstructs CNS vs PNS divisions, sensory (afferent) vs motor (efferent) pathways, somatic vs autonomic (sympathetic vs parasympathetic) systems, neuron anatomy, neuroglial cells, action potential generation, synaptic transmission, the 5-step reflex arc, and major brain regions.</p>
-      </div>
-      <div class="note-card">
-        <h4>Clinical Success Pearls</h4>
-        <p>Ensure mastery of both anatomical structures and homeostatic functions. Practice active recall of bolded key terms before testing with the interactive quiz.</p>
-      </div>
+    <div style="background:#0f172a; padding:12px; border-radius:6px; font-size:0.88rem; border-left:4px solid #38bdf8;">
+      <strong>High-Yield Scope:</strong> Deconstructs CNS vs PNS divisions, sensory (afferent) vs motor (efferent) pathways, somatic vs autonomic (sympathetic vs parasympathetic) systems, neuron anatomy, neuroglial cells, action potential generation, synaptic transmission, the 5-step reflex arc, and major brain regions.
     </div>
   </div>
 
   <div class="bp-page">
     <div class="bp-title-row">
-      <div class="bp-title">Module 7: The Senses (Vision, Audition, Equilibrium, Olfaction & Gustation)</div>
+      <div class="bp-title">BLUEPRINT: Module 7: The Senses (Vision, Audition, Equilibrium, Olfaction & Gustation)</div>
       <div class="bp-badge">Chapter 10 (Patton 17th Edition)</div>
     </div>
     <div class="bp-diagram-box">
-      <img src="images/mod7_special_senses_eye_ear.png?t=2" alt="Module 7: The Senses (Vision, Audition, Equilibrium, Olfaction & Gustation)">
+      <img src="images/mod7_special_senses_eye_ear.png?t=3" alt="Module 7: The Senses (Vision, Audition, Equilibrium, Olfaction & Gustation)">
     </div>
-    <div class="notes-grid">
-      <div class="note-card">
-        <h4>High-Yield Exam Scope</h4>
-        <p>Covers general vs special senses, photoreceptors, three tunics of the eye, rods vs cones, aqueous vs vitreous humor, auditory ossicles, cochlea and Organ of Corti, static (vestibule) vs dynamic (semicircular canals) equilibrium, and chemoreceptors for taste and smell.</p>
-      </div>
-      <div class="note-card">
-        <h4>Clinical Success Pearls</h4>
-        <p>Ensure mastery of both anatomical structures and homeostatic functions. Practice active recall of bolded key terms before testing with the interactive quiz.</p>
-      </div>
+    <div style="background:#0f172a; padding:12px; border-radius:6px; font-size:0.88rem; border-left:4px solid #38bdf8;">
+      <strong>High-Yield Scope:</strong> Covers general vs special senses, photoreceptors, three tunics of the eye, rods vs cones, aqueous vs vitreous humor, auditory ossicles, cochlea and Organ of Corti, static (vestibule) vs dynamic (semicircular canals) equilibrium, and chemoreceptors for taste and smell.
     </div>
   </div>
 
   <div class="bp-page">
     <div class="bp-title-row">
-      <div class="bp-title">Module 8: The Endocrine System, Glands & Hormone Mechanisms</div>
+      <div class="bp-title">BLUEPRINT: Module 8: The Endocrine System, Glands & Hormone Mechanisms</div>
       <div class="bp-badge">Chapter 11 (Patton 17th Edition)</div>
     </div>
     <div class="bp-diagram-box">
-      <img src="images/mod8_endocrine_axis_feedback.png?t=2" alt="Module 8: The Endocrine System, Glands & Hormone Mechanisms">
+      <img src="images/mod8_endocrine_axis_feedback.png?t=3" alt="Module 8: The Endocrine System, Glands & Hormone Mechanisms">
     </div>
-    <div class="notes-grid">
-      <div class="note-card">
-        <h4>High-Yield Exam Scope</h4>
-        <p>Compares endocrine vs exocrine glands, protein (second messenger cAMP) vs steroid (direct gene activation) hormones, negative feedback regulation, the hypothalamic-pituitary axis, thyroid/parathyroid calcium balance (calcitonin vs PTH), pancreatic blood glucose balance (insulin vs glucagon), and adrenal stress hormones.</p>
-      </div>
-      <div class="note-card">
-        <h4>Clinical Success Pearls</h4>
-        <p>Ensure mastery of both anatomical structures and homeostatic functions. Practice active recall of bolded key terms before testing with the interactive quiz.</p>
-      </div>
+    <div style="background:#0f172a; padding:12px; border-radius:6px; font-size:0.88rem; border-left:4px solid #38bdf8;">
+      <strong>High-Yield Scope:</strong> Compares endocrine vs exocrine glands, protein (second messenger cAMP) vs steroid (direct gene activation) hormones, negative feedback regulation, the hypothalamic-pituitary axis, thyroid/parathyroid calcium balance (calcitonin vs PTH), pancreatic blood glucose balance (insulin vs glucagon), and adrenal stress hormones.
     </div>
   </div>
 
