@@ -1,0 +1,1252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rayne's Master A&P Exam Hub (Modules 1–8) — NBCC Practical Nursing</title>
+  <style>
+    :root {
+      --primary: #9d174d;
+      --primary-dark: #831843;
+      --secondary: #be185d;
+      --accent: #f43f5e;
+      --bg: #fdf2f8;
+      --card-bg: #ffffff;
+      --text: #1e293b;
+      --text-muted: #64748b;
+      --border: #fbcfe8;
+      --success: #16a34a;
+      --success-bg: #f0fdf4;
+      --danger: #dc2626;
+      --danger-bg: #fef2f2;
+      --cyan: #0284c7;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 16px;
+    }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--primary-dark), #4c0519);
+      color: white;
+      padding: 28px 24px;
+      border-radius: 14px;
+      margin-bottom: 20px;
+      box-shadow: 0 8px 24px rgba(157, 23, 77, 0.25);
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.1rem;
+      font-weight: 800;
+      margin-bottom: 6px;
+      letter-spacing: -0.5px;
+    }
+
+    header p {
+      opacity: 0.95;
+      font-size: 1.05rem;
+    }
+
+    .badge-bar {
+      margin-top: 12px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      background: rgba(255, 255, 255, 0.18);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      padding: 4px 14px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    /* Mode Navigation Tabs */
+    .mode-nav {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .mode-btn {
+      background: white;
+      border: 2px solid var(--primary);
+      color: var(--primary);
+      padding: 10px 18px;
+      border-radius: 30px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .mode-btn.active, .mode-btn:hover {
+      background: var(--primary);
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(157, 23, 77, 0.3);
+    }
+
+    /* Module Filter Strip */
+    .module-filter {
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+
+    .mod-filter-btn {
+      background: white;
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s;
+    }
+
+    .mod-filter-btn.active {
+      background: var(--secondary);
+      color: white;
+      border-color: var(--secondary);
+    }
+
+    /* Section Containers */
+    .view-section {
+      display: none;
+      background: white;
+      padding: 26px;
+      border-radius: 14px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+      border: 1px solid rgba(251, 207, 232, 0.6);
+    }
+
+    .view-section.active {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Quiz Cards */
+    .q-card {
+      background: #ffffff;
+      border: 1px solid #f1f5f9;
+      border-left: 4px solid var(--primary);
+      border-radius: 10px;
+      padding: 18px;
+      margin-bottom: 18px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+    }
+
+    .q-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--secondary);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+
+    .q-stem {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 14px;
+    }
+
+    .opt-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .opt-label {
+      display: flex;
+      align-items: center;
+      padding: 10px 14px;
+      background: #fdf2f8;
+      border: 1.5px solid #fbcfe8;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: background 0.2s, border 0.2s;
+    }
+
+    .opt-label:hover {
+      background: #fce7f3;
+      border-color: var(--secondary);
+    }
+
+    .opt-label input {
+      margin-right: 12px;
+      accent-color: var(--primary);
+      transform: scale(1.15);
+    }
+
+    .q-feedback {
+      display: none;
+      margin-top: 12px;
+      padding: 12px 14px;
+      border-radius: 8px;
+      font-size: 0.92rem;
+      line-height: 1.5;
+    }
+
+    .q-feedback.correct {
+      display: block;
+      background: var(--success-bg);
+      border-left: 4px solid var(--success);
+      color: #14532d;
+    }
+
+    .q-feedback.incorrect {
+      display: block;
+      background: var(--danger-bg);
+      border-left: 4px solid var(--danger);
+      color: #7f1d1d;
+    }
+
+    .quiz-action-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0;
+      border-top: 2px solid var(--border);
+      margin-top: 24px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .action-btn {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+
+    .action-btn:hover { opacity: 0.9; }
+
+    .score-box {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    /* True/False Blitz */
+    .tf-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 18px;
+      margin-bottom: 16px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+    }
+
+    .tf-btn-row {
+      display: flex;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .tf-btn {
+      flex: 1;
+      padding: 10px;
+      border: 2px solid #cbd5e1;
+      background: #f8fafc;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .tf-btn:hover {
+      background: #e2e8f0;
+    }
+
+    .tf-btn.selected-true {
+      background: var(--success-bg);
+      border-color: var(--success);
+      color: #166534;
+    }
+
+    .tf-btn.selected-false {
+      background: var(--danger-bg);
+      border-color: var(--danger);
+      color: #991b1b;
+    }
+
+    /* Flashcard Deck */
+    .flashcard-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .flashcard {
+      width: 100%;
+      height: 330px;
+      perspective: 1000px;
+      cursor: pointer;
+      margin-bottom: 20px;
+    }
+
+    .flashcard-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      transform-style: preserve-3d;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    .flashcard.flipped .flashcard-inner {
+      transform: rotateY(180deg);
+    }
+
+    .fc-face {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 16px;
+      padding: 32px 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border: 2px solid var(--border);
+    }
+
+    .fc-front {
+      background: white;
+      color: var(--primary);
+    }
+
+    .fc-back {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: white;
+      transform: rotateY(180deg);
+    }
+
+    .fc-prompt {
+      font-size: 1.25rem;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+
+    .fc-meta {
+      position: absolute;
+      top: 14px;
+      left: 20px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      opacity: 0.7;
+    }
+
+    .fc-mod {
+      position: absolute;
+      top: 14px;
+      right: 20px;
+      background: var(--bg);
+      color: var(--primary);
+      padding: 3px 10px;
+      border-radius: 12px;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    .fc-back .fc-mod {
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+    }
+
+    .fc-nav {
+      display: flex;
+      gap: 12px;
+    }
+
+    /* Blueprints & Atlas */
+    .blueprint-grid, .atlas-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 26px;
+    }
+
+    .blueprint-item, .atlas-card {
+      background: #0f172a;
+      color: #e2e8f0;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 2px solid #334155;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    .bp-header, .atlas-header {
+      padding: 14px 20px;
+      background: #1e293b;
+      border-bottom: 2px solid #38bdf8;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .bp-title, .atlas-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #38bdf8;
+    }
+
+    .bp-tag, .atlas-badge {
+      background: rgba(56, 189, 248, 0.15);
+      color: #38bdf8;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      border: 1px solid #38bdf8;
+    }
+
+    .bp-img-box, .atlas-img-box {
+      background: #ffffff;
+      padding: 16px;
+      text-align: center;
+    }
+
+    .bp-img-box img, .atlas-img-box img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+      display: block;
+      margin: 0 auto;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    }
+
+    .bp-summary, .atlas-body {
+      padding: 18px 22px;
+      font-size: 0.94rem;
+      line-height: 1.55;
+      background: #0f172a;
+    }
+
+    /* Parts Breakdown Table */
+    .parts-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 14px;
+      background: #1e293b;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .parts-table th, .parts-table td {
+      padding: 10px 14px;
+      border-bottom: 1px solid #334155;
+      font-size: 0.9rem;
+      text-align: left;
+    }
+
+    .parts-table th {
+      background: #0d1e38;
+      color: #38bdf8;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.82rem;
+      letter-spacing: 0.5px;
+    }
+
+    .parts-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .part-name {
+      color: #67e8f9;
+      font-weight: 700;
+      white-space: nowrap;
+      width: 25%;
+    }
+
+    .part-role {
+      color: #cbd5e1;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <h1>Rayne's Master A&P Study Hub (Modules 1–8)</h1>
+      <p>NBCC Practical Nursing (HSCC 1087A) • Instructor: Jessica Freeze Snyder • Exam: Oct 13, 2026</p>
+      <div class="badge-bar">
+        <span class="badge">📘 Structure & Function 17th Ed</span>
+        <span class="badge">🎯 75% Passing Standard</span>
+        <span class="badge">🩺 80 MCQs + 40 True/False</span>
+        <span class="badge">🔬 Full Labeled Anatomical Atlas</span>
+        <span class="badge">🖼️ 8 Concept Blueprints</span>
+      </div>
+    </header>
+
+    <!-- Top Mode Navigation -->
+    <div class="mode-nav">
+      <button class="mode-btn active" onclick="switchView('exam')">📝 Practice Exam</button>
+      <button class="mode-btn" onclick="switchView('tf')">⚡ True / False Blitz</button>
+      <button class="mode-btn" onclick="switchView('flashcards')">🃏 Flashcards Deck</button>
+      <button class="mode-btn" onclick="switchView('atlas')">🔬 Anatomical Picture Atlas</button>
+      <button class="mode-btn" onclick="switchView('blueprints')">🖼️ Concept Blueprints</button>
+    </div>
+
+    <!-- Module Filter Buttons -->
+    <div class="module-filter">
+      <button class="mod-filter-btn active" onclick="filterModule('all')">All 8 Modules (Full Exam)</button>
+      <button class="mod-filter-btn" onclick="filterModule(1)">Mod 1: Intro & Homeostasis</button>
+      <button class="mod-filter-btn" onclick="filterModule(2)">Mod 2: Cells & Transport</button>
+      <button class="mod-filter-btn" onclick="filterModule(3)">Mod 3: Integumentary & Burns</button>
+      <button class="mod-filter-btn" onclick="filterModule(4)">Mod 4: Skeletal & Joints</button>
+      <button class="mod-filter-btn" onclick="filterModule(5)">Mod 5: Muscular & Sarcomere</button>
+      <button class="mod-filter-btn" onclick="filterModule(6)">Mod 6: Nervous & Reflexes</button>
+      <button class="mod-filter-btn" onclick="filterModule(7)">Mod 7: Special Senses</button>
+      <button class="mod-filter-btn" onclick="filterModule(8)">Mod 8: Endocrine System</button>
+    </div>
+
+    <!-- VIEW 1: PRACTICE EXAM -->
+    <section id="exam-view" class="view-section active">
+      <div id="quiz-container"></div>
+      <div class="quiz-action-bar">
+        <button class="action-btn" onclick="submitExam()">Submit Exam & Calculate Score</button>
+        <button class="action-btn" style="background:#64748b;" onclick="resetExam()">Reset Choices</button>
+        <div id="score-display" class="score-box"></div>
+      </div>
+    </section>
+
+    <!-- VIEW 2: TRUE / FALSE BLITZ -->
+    <section id="tf-view" class="view-section">
+      <div id="tf-container"></div>
+    </section>
+
+    <!-- VIEW 3: FLASHCARDS -->
+    <section id="fc-view" class="view-section">
+      <div class="flashcard-wrap">
+        <div class="flashcard" id="fc-card" onclick="flipFlashcard()">
+          <div class="flashcard-inner">
+            <div class="fc-face fc-front">
+              <span class="fc-meta" id="fc-idx">Card 1 / 40</span>
+              <span class="fc-mod" id="fc-mod-tag">Module 1</span>
+              <div class="fc-prompt" id="fc-front-text">Loading question...</div>
+            </div>
+            <div class="fc-face fc-back">
+              <span class="fc-meta">Answer & Concept</span>
+              <span class="fc-mod" id="fc-mod-back-tag">Module 1</span>
+              <div class="fc-prompt" id="fc-back-text">Loading explanation...</div>
+            </div>
+          </div>
+        </div>
+        <div class="fc-nav">
+          <button class="action-btn" onclick="prevFlashcard()">← Previous</button>
+          <button class="action-btn" style="background:var(--secondary);" onclick="shuffleFlashcards()">🔀 Shuffle</button>
+          <button class="action-btn" onclick="nextFlashcard()">Next →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIEW 4: ANATOMICAL PICTURE ATLAS (NEW) -->
+    <section id="atlas-view" class="view-section">
+      <h2 style="color:var(--primary); margin-bottom:12px; font-size:1.4rem;">🔬 Anatomical Picture Atlas (Full Labeled Figures)</h2>
+      <p style="color:var(--text-muted); margin-bottom:20px; font-size:0.95rem;">
+        Official high-resolution anatomical illustrations of the <strong>Human Cell, Skin Layers, Skeletal System, Muscular System, and Endocrine Glands</strong> with callout labels and learning keys for Rayne's exam review.
+      </p>
+      <div class="atlas-grid" id="atlas-container"></div>
+    </section>
+
+    <!-- VIEW 5: CONCEPT BLUEPRINTS -->
+    <section id="bp-view" class="view-section">
+      <h2 style="color:var(--primary); margin-bottom:12px; font-size:1.4rem;">🖼️ High-Yield Concept Blueprints (Summary Quadrants)</h2>
+      <p style="color:var(--text-muted); margin-bottom:20px; font-size:0.95rem;">
+        Four-quadrant quick reference blueprints for Modules 1 through 8 with zero margin overflow.
+      </p>
+      <div class="blueprint-grid" id="bp-container"></div>
+    </section>
+
+  </div>
+
+  <script>
+    const modulesData = [{"mod_num": 1, "title": "Module 1: Introduction to the Human Body & Homeostasis", "chapter": "Chapter 1 (Patton 17th Edition)", "diagram": "images/mod1_anatomical_planes_cavities.png", "summary": "Covers levels of structural organization, anatomical position, directional planes and axes, dorsal and ventral body cavities, abdominopelvic quadrants/regions, and homeostatic negative vs. positive feedback systems.", "mcqs": [{"q": "Which of the following correctly orders the structural levels of the human body from simplest to most complex?", "options": ["A) Cellular, Chemical, Tissue, Organ, Organ System, Organism", "B) Chemical, Cellular, Tissue, Organ, Organ System, Organism", "C) Chemical, Tissue, Cellular, Organ System, Organ, Organism", "D) Cellular, Tissue, Chemical, Organ, Organism, Organ System"], "ans": "B", "rationale": "The hierarchical organization of the human body begins with atoms and molecules (Chemical), which form the basic living units (Cellular), which group to form functional fabrics (Tissue), which combine to form distinct functional structures (Organ), which coordinate as Systemic groups (Organ System), culminating in the complete living individual (Organism). Option A and D incorrectly place cellular before chemical. Option C places tissue before cellular."}, {"q": "A nursing student is reviewing anatomical directional terminology. When describing the relationship between the knee and the ankle, which term is anatomically correct?", "options": ["A) The knee is distal to the ankle", "B) The knee is proximal to the ankle", "C) The knee is lateral to the ankle", "D) The knee is superficial to the ankle"], "ans": "B", "rationale": "In anatomical terminology applied to limbs, 'proximal' means closer to the point of attachment or trunk of the body, whereas 'distal' means farther away. Because the knee is closer to the hip joint/trunk than the ankle, the knee is proximal to the ankle. Option A is the inverse. Options C and D do not describe limb axis proximity."}, {"q": "A client undergoes a CT scan that divides the body into anterior (front) and posterior (back) sections. Which anatomical plane was used for this imaging?", "options": ["A) Sagittal plane", "B) Midsagittal plane", "C) Frontal (Coronal) plane", "D) Transverse (Horizontal) plane"], "ans": "C", "rationale": "The frontal (or coronal) plane runs vertically and divides the body or organ into anterior (ventral/front) and posterior (dorsal/back) portions. A sagittal plane divides into right and left sides; a midsagittal plane divides into equal right and left halves; and a transverse (horizontal) plane divides into superior (upper) and inferior (lower) portions."}, {"q": "Which anatomical structure separates the thoracic cavity from the abdominopelvic cavity?", "options": ["A) The mediastinum", "B) The diaphragm", "C) The peritoneum", "D) The pleural membrane"], "ans": "B", "rationale": "The diaphragm is the muscular partition that physically separates the superior thoracic cavity from the inferior abdominopelvic cavity. The mediastinum is a central compartment within the thoracic cavity containing the heart and trachea; the peritoneum lines the abdominopelvic cavity; and pleura surrounds the lungs."}, {"q": "A patient arrives at the Emergency Department complaining of acute pain localized in the Right Lower Quadrant (RLQ). Which organ is the nurse most concerned about assessing?", "options": ["A) Gallbladder", "B) Appendix", "C) Stomach", "D) Spleen"], "ans": "B", "rationale": "The appendix and cecum are located in the Right Lower Quadrant (RLQ). Acute pain in the RLQ is the classic presentation for appendicitis. The gallbladder is located in the Right Upper Quadrant (RUQ); the stomach and spleen are located in the Left Upper Quadrant (LUQ)."}, {"q": "During childbirth, the stretching of the cervix triggers the release of oxytocin, which causes stronger uterine contractions, which further stretches the cervix and causes even more oxytocin release until delivery. This is a classic example of which homeostatic mechanism?", "options": ["A) Negative feedback loop", "B) Positive feedback loop", "C) Dynamic equilibrium reversal", "D) Parasympathetic inhibition"], "ans": "B", "rationale": "A positive feedback loop amplifies or reinforces a change away from the normal set point to accelerate a physiological event to a definitive completion (e.g., labor contractions, blood clotting). Negative feedback, by contrast, reverses or negates a deviation back toward the set point (e.g., blood glucose or body temperature regulation)."}, {"q": "Which of the following organs is located within the dorsal body cavity?", "options": ["A) Heart", "B) Urinary bladder", "C) Brain", "D) Lungs"], "ans": "C", "rationale": "The dorsal body cavity is located along the posterior aspect of the body and consists of two contiguous subcavities: the cranial cavity (housing the brain) and the spinal/vertebral cavity (housing the spinal cord). The heart and lungs are located in the thoracic ventral cavity; the urinary bladder is in the pelvic ventral cavity."}, {"q": "When a person is standing in the standard anatomical position, their palms are oriented in which direction?", "options": ["A) Facing backward (posteriorly)", "B) Facing inward toward the thighs (medially)", "C) Facing forward (anteriorly)", "D) Facing upward (superiorly)"], "ans": "C", "rationale": "In the standard anatomical position, the human body stands erect with feet slightly apart, head and eyes forward, arms hanging at the sides, and palms facing forward (anteriorly) with the thumbs pointing away from the body."}, {"q": "The wrist is located ________ to the fingers and ________ to the elbow.", "options": ["A) Distal; Proximal", "B) Proximal; Distal", "C) Superior; Inferior", "D) Medial; Lateral"], "ans": "B", "rationale": "The wrist is closer to the trunk/shoulder than the fingers (so it is proximal to the fingers), but farther from the trunk/shoulder than the elbow (so it is distal to the elbow)."}, {"q": "In a negative feedback loop regulating elevated body temperature, what role do the sweat glands play?", "options": ["A) Sensor (Receptor)", "B) Control Center (Integrator)", "C) Effector", "D) Variable stimulus"], "ans": "C", "rationale": "In feedback mechanisms, the Sensor (thermoreceptors) detects change; the Control Center (hypothalamus) evaluates the input and sets the command; and the Effector (sweat glands and cutaneous blood vessels) carries out the physiological response to cool the body down and reverse the deviation."}], "true_false": [{"q": "Homeostasis refers to a fixed, rigid, and completely unchanging internal body state at all times.", "ans": "False", "explanation": "Homeostasis is a dynamic state of equilibrium, characterized by continuous fluctuations within normal narrow physiological ranges around a set point, rather than a rigid or static state."}, {"q": "The thoracic cavity is completely enclosed within the ventral body cavity.", "ans": "True", "explanation": "The ventral body cavity is subdivided into the superior thoracic cavity and the inferior abdominopelvic cavity."}, {"q": "A midsagittal section divides the body into unequal right and left portions.", "ans": "False", "explanation": "A midsagittal (or median) plane divides the body into exactly equal right and left halves. A parasagittal plane divides into unequal right and left portions."}, {"q": "The epigastric region is located directly superior to the umbilical region in the nine abdominopelvic regions.", "ans": "True", "explanation": "The vertical midline regions from superior to inferior are: Epigastric -> Umbilical -> Hypogastric (Pubic)."}, {"q": "Negative feedback loops are the primary homeostatic control mechanism in the human body because they oppose deviations from set points.", "ans": "True", "explanation": "Negative feedback is the predominant homeostatic regulatory mechanism because it stabilizes physiological parameters by counteracting deviations."}]}, {"mod_num": 2, "title": "Module 2: Cell Biology & Transport Dynamics", "chapter": "Chapter 3 (Patton 17th Edition)", "diagram": "images/mod2_cell_organelles_transport.png", "summary": "Explores the fluid mosaic plasma membrane, prominent organelles (Nucleus, Mitochondria, Ribosomes, ER, Golgi, Lysosomes), passive transport (diffusion, osmosis, filtration, tonicity), active transport (pumps, endocytosis, exocytosis), and the stages of mitosis.", "mcqs": [{"q": "Which cellular organelle is known as the 'powerhouse of the cell' and is responsible for synthesizing the majority of cellular ATP through aerobic cellular respiration?", "options": ["A) Ribosome", "B) Golgi apparatus", "C) Mitochondrion", "D) Lysosome"], "ans": "C", "rationale": "Mitochondria are double-membraned organelles that carry out the citric acid cycle and oxidative phosphorylation to produce adenosine triphosphate (ATP), the chemical energy currency of the cell. Ribosomes synthesize proteins, the Golgi sorts/packages substances, and lysosomes contain digestive enzymes."}, {"q": "A nurse administers an IV infusion of a hypotonic solution (such as 0.45% normal saline) to a dehydrated patient. What physiological effect will this solution have on the patient's red blood cells?", "options": ["A) Water will leave the cells, causing them to crenate (shrink)", "B) Water will enter the cells, causing them to swell and potentially lyse (burst)", "C) Solutes will rapidly leave the cell, maintaining equal cell volume", "D) No net movement of water will occur"], "ans": "B", "rationale": "A hypotonic solution has a lower solute concentration (higher water concentration) than intracellular fluid. By osmosis, water moves into the red blood cells, causing them to swell and risk lysis. In a hypertonic solution, water leaves and cells crenate. In an isotonic solution (0.9% NaCl), there is no net movement."}, {"q": "Which structural feature of the plasma membrane creates its selective permeability barrier to water-soluble substances?", "options": ["A) Peripheral glycoproteins", "B) Hydrophobic fatty acid tails of the phospholipid bilayer", "C) Hydrophilic phosphate heads facing the cytoplasm", "D) Cholesterol molecules dispersed on the surface"], "ans": "B", "rationale": "The interior core of the plasma membrane consists of nonpolar, hydrophobic fatty acid tails. This lipid core prevents polar, water-soluble ions and large molecules from freely crossing without transport proteins."}, {"q": "The movement of water and small solutes through a selectively permeable membrane driven by a hydrostatic pressure gradient (such as blood pressure across glomerular capillaries in the kidney) is called:", "options": ["A) Simple diffusion", "B) Osmosis", "C) Filtration", "D) Pinocytosis"], "ans": "C", "rationale": "Filtration is a passive transport process that requires a hydrostatic pressure gradient (a mechanical force like blood pressure) pushing water and solutes across a porous membrane, as seen in renal glomerular filtration."}, {"q": "A white blood cell encounters an invading bacterial pathogen and engulfs it by extending pseudopods around it, forming a vesicle for intracellular destruction. Which transport mechanism is this?", "options": ["A) Pinocytosis", "B) Phagocytosis", "C) Exocytosis", "D) Facilitated diffusion"], "ans": "B", "rationale": "Phagocytosis ('cell eating') is a form of active vesicular transport where large solid particles, such as microbes or cellular debris, are engulfed into a phagosome. Pinocytosis is 'cell drinking' of dissolved fluids."}, {"q": "Which organelle contains hydrolytic digestive enzymes that break down worn-out organelles, cellular debris, and foreign pathogens?", "options": ["A) Peroxisome", "B) Centriole", "C) Lysosome", "D) Rough Endoplasmic Reticulum"], "ans": "C", "rationale": "Lysosomes are membrane-bound vesicles originating from the Golgi apparatus that house powerful acid hydrolases ('digestive bags') to recycle intracellular organelles and degrade phagocytosed pathogens."}, {"q": "The sodium-potassium pump (Na+/K+ ATPase) is an active transport mechanism essential for resting membrane potentials in neurons and muscle cells. How many ions does it pump and in what directions per ATP molecule hydrolyzed?", "options": ["A) 2 Na+ ions OUT, 3 K+ ions IN", "B) 3 Na+ ions OUT, 2 K+ ions IN", "C) 3 Na+ ions IN, 2 K+ ions OUT", "D) 2 Na+ ions IN, 2 K+ ions OUT"], "ans": "B", "rationale": "The Na+/K+ pump uses 1 ATP to export 3 Na+ ions OUT of the cell and import 2 K+ ions INTO the cell against their respective concentration gradients, maintaining the negative resting membrane potential."}, {"q": "During which phase of mitosis do paired sister chromatids pull apart and move toward opposite poles of the dividing cell?", "options": ["A) Prophase", "B) Metaphase", "C) Anaphase", "D) Telophase"], "ans": "C", "rationale": "In Anaphase ('A' for Apart), centromeres split and sister chromatids are pulled by spindle fibers toward opposite poles. In Prophase chromosomes condense, in Metaphase they align along the equatorial plate, and in Telophase nuclear envelopes reform."}, {"q": "What is the primary function of ribosomes in human cells?", "options": ["A) Synthesis of lipids and steroids", "B) Protein synthesis (translation)", "C) Packaging and sorting of glycoproteins", "D) Generation of spindle fibers during mitosis"], "ans": "B", "rationale": "Ribosomes consist of ribosomal RNA (rRNA) and proteins and serve as the molecular machines that translate mRNA sequences into polypeptide chains (protein synthesis)."}, {"q": "Which cellular structure increases the surface area of the plasma membrane to maximize absorption in epithelial cells lining the small intestine?", "options": ["A) Cilia", "B) Flagella", "C) Microvilli", "D) Desmosomes"], "ans": "C", "rationale": "Microvilli are tiny finger-like projections of the plasma membrane that dramatically expand absorptive surface area. Cilia are longer, motile hair-like extensions that beat to move fluid along surfaces (e.g., respiratory tract), and flagella propel entire cells (sperm)."}], "true_false": [{"q": "Diffusion and osmosis are both passive transport mechanisms that require cellular energy in the form of ATP.", "ans": "False", "explanation": "Passive transport mechanisms (diffusion, osmosis, filtration) do NOT require cellular ATP; they are driven entirely by kinetic energy and concentration or pressure gradients."}, {"q": "The smooth endoplasmic reticulum is studded with ribosomes and is primarily responsible for protein modification.", "ans": "False", "explanation": "The ROUGH endoplasmic reticulum is studded with ribosomes. The SMOOTH endoplasmic reticulum lacks ribosomes and is responsible for lipid and steroid synthesis, calcium storage, and drug detoxification."}, {"q": "In an isotonic solution (such as normal 0.9% saline), red blood cells maintain their normal biconcave disc shape and volume.", "ans": "True", "explanation": "An isotonic solution has an identical osmolarity to intracellular fluid, resulting in zero net movement of water across the cell membrane."}, {"q": "The nucleus contains chromatin, which is composed of DNA and histone proteins.", "ans": "True", "explanation": "The cell nucleus houses chromatin\u2014the relaxed, uncoiled form of DNA intertwined with histone proteins that condenses into chromosomes during cell division."}, {"q": "Cytokinesis is the division of the cell nucleus, while mitosis refers exclusively to the division of the cytoplasm.", "ans": "False", "explanation": "Mitosis is the division of the nucleus (karyokinesis), whereas cytokinesis is the physical division of the cytoplasm and organelles into two daughter cells."}]}, {"mod_num": 3, "title": "Module 3: The Integumentary System & Burn Assessment", "chapter": "Chapter 6 (Patton 17th Edition)", "diagram": "images/mod3_skin_layers_appendages.png", "summary": "Deconstructs the epidermis, dermis, and hypodermis, epidermal strata, keratinocytes and melanocytes, sweat (eccrine vs apocrine) and sebaceous glands, cutaneous sensory receptors, thermoregulation, and burn classifications including the Rule of Nines.", "mcqs": [{"q": "Which layer of the epidermis is the deepest, directly adjacent to the dermis, and contains constantly dividing stem cells undergoing active mitosis?", "options": ["A) Stratum corneum", "B) Stratum granulosum", "C) Stratum spinosum", "D) Stratum basale (germinativum)"], "ans": "D", "rationale": "The stratum basale (also called stratum germinativum) is the single deepest monolayer of epidermal cells resting on the basement membrane. Its cells divide continuously by mitosis, pushing older keratinocytes upward toward the surface. Stratum corneum is the outermost dead layer."}, {"q": "A patient sustained a burn injury involving the entire epidermis and upper dermis, presenting with extreme pain, redness, and fluid-filled blisters. How is this burn classified?", "options": ["A) First-degree (Superficial)", "B) Second-degree (Partial thickness)", "C) Third-degree (Full thickness)", "D) Fourth-degree (Deep full thickness)"], "ans": "B", "rationale": "Second-degree burns (partial thickness) destroy the epidermis and extend into the upper dermis. Characteristic hallmarks are blister formation, erythema, edema, and severe pain because sensory nerve endings remain viable. First-degree burns only involve the epidermis (sunburn, no blisters); third-degree burns destroy the full skin depth into subcutaneous tissue."}, {"q": "Using the adult 'Rule of Nines', what percentage of Total Body Surface Area (TBSA) is burned if an adult patient sustains burns to the entire anterior trunk (chest and abdomen) and the entire right arm?", "options": ["A) 18%", "B) 27%", "C) 36%", "D) 45%"], "ans": "B", "rationale": "Under the Rule of Nines for an adult: The anterior trunk equals 18% (9% chest + 9% abdomen). The entire right arm equals 9% (4.5% anterior + 4.5% posterior). Total TBSA = 18% + 9% = 27%."}, {"q": "Which type of cutaneous gland secretes an oily substance called sebum into hair follicles to lubricate the skin and inhibit bacterial growth?", "options": ["A) Eccrine sweat gland", "B) Apocrine sweat gland", "C) Sebaceous gland", "D) Ceruminous gland"], "ans": "C", "rationale": "Sebaceous glands are exocrine holocrine glands attached to hair follicles that produce sebum, a lipid-rich mixture that moisturizes hair and skin and exerts mild antibacterial properties. Blockage leads to acne."}, {"q": "Which sweat glands are the most numerous throughout the entire human body and play the primary role in thermoregulatory cooling through watery perspiration?", "options": ["A) Eccrine (merocrine) sweat glands", "B) Apocrine sweat glands", "C) Sebaceous glands", "D) Mammary glands"], "ans": "A", "rationale": "Eccrine sweat glands are widely distributed over almost all skin surfaces (highest density on forehead, palms, and soles). They secrete a clear, watery hypotonic solution that evaporates to cool the body. Apocrine glands are localized to the axillae and anogenital regions and produce thick secretions activated at puberty."}, {"q": "What is the primary physiological function of melanin produced by melanocytes in the stratum basale?", "options": ["A) Waterproofing the epidermal surface", "B) Shielding keratinocyte DNA from ultraviolet (UV) radiation", "C) Producing vitamin D precursor molecules", "D) Providing mechanical cushioning against friction"], "ans": "B", "rationale": "Melanocytes produce melanin, which is transferred in melanosomes to keratinocytes. Melanin forms a supranuclear cap over the keratinocyte nucleus, absorbing harmful UV rays to shield DNA from mutagenic damage and skin cancer."}, {"q": "The papillary layer of the dermis features projections called dermal papillae that indent the epidermis. What clinically significant anatomical feature do these structures form?", "options": ["A) Cleavage lines (Langer's lines)", "B) Epidermal friction ridges (fingerprints and footprints)", "C) Hair follicle root sheaths", "D) Sebaceous gland openings"], "ans": "B", "rationale": "Dermal papillae in thick skin (palms and soles) push the overlying epidermis into distinct dermal ridges or friction ridges (fingerprints/footprints), enhancing grip and tactile sensitivity."}, {"q": "Which cutaneous mechanoreceptor located deep in the dermis and hypodermis is specialized to detect deep pressure and high-frequency vibration?", "options": ["A) Meissner (tactile) corpuscle", "B) Free nerve endings", "C) Pacinian (lamellated) corpuscle", "D) Merkel disc"], "ans": "C", "rationale": "Pacinian (lamellated) corpuscles are large, onion-like receptors situated deep in the reticular dermis and hypodermis that respond to deep pressure and rapid vibration. Meissner corpuscles detect light touch in the superficial dermal papillae."}, {"q": "Why is a full-thickness (third-degree) burn paradoxically painless in the burned area immediately after the injury?", "options": ["A) Endorphins completely numb the cutaneous pain receptors", "B) The pain receptors and free nerve endings in the dermis are completely destroyed", "C) The protective stratum corneum has thickened", "D) Local edema blocks all afferent sensory pathways to the spinal cord"], "ans": "B", "rationale": "In third-degree burns, the full thickness of the epidermis and dermis is incinerated, destroying sensory nerve endings, blood vessels, and dermal receptors in the area. Surrounding partial-thickness burn margins, however, remain exquisitely painful."}, {"q": "The tiny smooth muscle bundle attached to the hair follicle that contracts during cold exposure or fear to produce 'goosebumps' is the:", "options": ["A) Orbicularis oculi", "B) Arrector pili muscle", "C) Cutaneous sphincter", "D) Dermal levator"], "ans": "B", "rationale": "The arrector pili is a small band of smooth muscle innervated by the sympathetic nervous system. Contraction pulls the hair follicle upright and dimples the skin surface, creating goosebumps."}], "true_false": [{"q": "The epidermis is a vascular tissue that receives a direct and rich capillary blood supply throughout all its strata.", "ans": "False", "explanation": "The epidermis is entirely AVASCULAR; it contains no blood vessels and relies on diffusion of oxygen and nutrients from underlying dermal capillaries."}, {"q": "The hypodermis (subcutaneous layer) is composed predominantly of adipose tissue and loose connective tissue.", "ans": "True", "explanation": "The hypodermis consists of adipose tissue and loose areolar connective tissue, providing thermal insulation, energy storage, shock absorption, and anchorage."}, {"q": "Stratum lucidum is found in all skin surfaces across the entire human body.", "ans": "False", "explanation": "Stratum lucidum (the 'clear layer') is found ONLY in thick, hairless skin on the palms of the hands and soles of the feet."}, {"q": "When human body temperature rises, dermal blood vessels vasodilate to radiate heat away from the body surface.", "ans": "True", "explanation": "Vasodilation of dermal capillaries brings warm blood closer to the surface to dissipate heat via radiation and convection, complemented by eccrine sweating."}, {"q": "Keratin is an insoluble, fibrous protein that provides tensile strength and water resistance to skin, hair, and nails.", "ans": "True", "explanation": "Keratin is a tough fibrous structural protein that forms a durable, waterproof barrier across the stratum corneum and builds hair and nails."}]}, {"mod_num": 4, "title": "Module 4: The Skeletal System, Histology & Articulations", "chapter": "Chapter 7 (Patton 17th Edition)", "diagram": "images/mod4_skeletal_osteon_divisions.png", "summary": "Covers skeletal functions, bone classifications, long bone gross anatomy, microscopic osteon (Haversian) histology, bone cells (osteoblasts, osteoclasts, osteocytes), axial (80) vs appendicular (126) divisions, and synarthrotic, amphiarthrotic, and diarthrotic joint types.", "mcqs": [{"q": "Which type of bone cell is responsible for bone resorption\u2014the enzymatic breakdown and demineralization of bone matrix to release calcium into the bloodstream?", "options": ["A) Osteoblast", "B) Osteoclast", "C) Osteocyte", "D) Osteogenic cell"], "ans": "B", "rationale": "Osteoclasts ('C' for Crushing / Cleaving) are large, multinucleated phagocytic cells derived from monocytes that secrete acid and proteolytic enzymes to dissolve bone matrix and mobilize calcium. Osteoblasts ('B' for Building) synthesize new bone matrix; osteocytes maintain mature bone."}, {"q": "What is the structural and functional microscopic unit of compact bone?", "options": ["A) Trabecula", "B) Osteon (Haversian system)", "C) Sarcomere", "D) Canaliculus"], "ans": "B", "rationale": "The osteon (Haversian system) is the cylindrical microscopic weight-bearing pillar of compact bone, consisting of concentric lamellae surrounding a central canal housing blood vessels and nerves. Trabeculae form spongy (cancellous) bone."}, {"q": "In a growing pediatric patient, where does longitudinal bone growth occur within a long bone?", "options": ["A) Articular cartilage", "B) Medullary cavity", "C) Epiphyseal plate (growth plate)", "D) Periosteal membrane"], "ans": "C", "rationale": "Longitudinal bone growth takes place at the epiphyseal plate (physis), a band of hyaline cartilage located between the diaphysis and epiphysis. When growth ceases after puberty, this plate ossifies into the epiphyseal line."}, {"q": "Which bone belongs to the axial skeleton rather than the appendicular skeleton?", "options": ["A) Clavicle", "B) Sternum", "C) Scapula", "D) Ilium"], "ans": "B", "rationale": "The axial skeleton (80 bones) forms the longitudinal axis of the body: skull, hyoid, vertebral column, ribs, and sternum. The clavicle, scapula, and ilium belong to the appendicular skeleton (pectoral/pelvic girdles and appendages)."}, {"q": "How many cervical, thoracic, and lumbar vertebrae comprise the adult vertebral column (excluding the sacrum and coccyx)?", "options": ["A) 7 Cervical, 12 Thoracic, 5 Lumbar", "B) 12 Cervical, 7 Thoracic, 5 Lumbar", "C) 5 Cervical, 12 Thoracic, 7 Lumbar", "D) 7 Cervical, 5 Thoracic, 12 Lumbar"], "ans": "A", "rationale": "A helpful memory aid is meal times: Breakfast at 7 (7 Cervical: C1-C7), Lunch at 12 (12 Thoracic: T1-T12, each articulating with a rib pair), Dinner at 5 (5 Lumbar: L1-L5, large weight-bearing bodies)."}, {"q": "The pubic symphysis and intervertebral discs allow slight movement and are united by fibrocartilage. Which functional joint classification applies to these articulations?", "options": ["A) Synarthrosis", "B) Amphiarthrosis", "C) Diarthrosis", "D) Synostosis"], "ans": "B", "rationale": "Amphiarthroses are slightly movable cartilaginous joints (e.g., symphysis pubis, intervertebral discs). Synarthroses are immovable joints (e.g., cranial sutures). Diarthroses are freely movable synovial joints."}, {"q": "Which freely movable synovial joint allows the widest range of motion (triaxial/multiaxial movement in all planes)?", "options": ["A) Hinge joint", "B) Pivot joint", "C) Ball-and-socket joint", "D) Gliding (plane) joint"], "ans": "C", "rationale": "Ball-and-socket joints (the shoulder/glenohumeral and hip/coxal joints) feature a spherical head resting in a cup-like socket, providing the greatest freedom of movement (flexion, extension, abduction, adduction, rotation, circumduction)."}, {"q": "What is the primary function of red bone marrow, and where is it predominantly located in an adult?", "options": ["A) Fat storage; inside the medullary cavity of the femoral diaphysis", "B) Hematopoiesis (blood cell production); within spongy bone trabeculae of flat bones and epiphyses", "C) Calcium filtration; in the periosteum", "D) Cartilage regeneration; at articular surfaces"], "ans": "B", "rationale": "Red bone marrow performs hematopoiesis (erythropoiesis, leukopoiesis, thrombopoiesis). In adults, active red marrow is found in the spongy bone of the sternum, ribs, pelvis, skull, and proximal epiphyses of the femur and humerus. The medullary cavity contains yellow marrow (adipose)."}, {"q": "The first cervical vertebra (C1), which articulates directly with the occipital condyles of the skull to support the head and permit nodding, is called the:", "options": ["A) Axis", "B) Atlas", "C) Vertebra prominens", "D) Dens"], "ans": "B", "rationale": "C1 is the Atlas (named after the mythical Titan holding the globe). It articulates with the skull and allows the 'yes' nodding motion. C2 is the Axis, featuring the dens (odontoid process) for 'no' rotation."}, {"q": "True ribs are distinguished from false ribs because true ribs:", "options": ["A) Have no articulation with the vertebral column", "B) Attach directly to the sternum via their own individual costal cartilages", "C) Lack costal cartilage entirely", "D) Are completely embedded within abdominal wall muscles"], "ans": "B", "rationale": "Rib pairs 1 through 7 are 'true ribs' (vertebrosternal) because their individual costal cartilages connect directly to the sternum. Ribs 8\u201310 are 'false ribs' (vertebrochondral) attaching indirectly, and ribs 11\u201312 are 'floating ribs' with no anterior attachment."}], "true_false": [{"q": "The periosteum is a tough, double-layered fibrous membrane that covers the outer surface of bones except at articular cartilage surfaces.", "ans": "True", "explanation": "The periosteum covers external bone surfaces, providing attachment for tendons/ligaments and housing osteoprogenitor cells for appositional bone growth and repair."}, {"q": "Yellow bone marrow is primarily composed of hematopoietic stem cells producing red blood cells.", "ans": "False", "explanation": "Yellow marrow consists almost entirely of adipose (fat) tissue and stores triglycerides; red bone marrow performs hematopoiesis."}, {"q": "The knee and elbow joints are examples of hinge synovial joints that allow uniaxial movement primarily in flexion and extension.", "ans": "True", "explanation": "Hinge joints operate like a door hinge, restricting motion to a single plane (flexion and extension)."}, {"q": "The radius is located on the medial (pinky finger) side of the anatomical forearm.", "ans": "False", "explanation": "In anatomical position, the radius is LATERAL (on the thumb side), while the ulna is MEDIAL (on the pinky side)."}, {"q": "Canaliculi are microscopic hair-like canals that connect lacunae, allowing osteocytes to share nutrients and communicate via gap junctions.", "ans": "True", "explanation": "Canaliculi radiate outward from lacunae to the central canal, allowing mature osteocytes to exchange nutrients and waste despite the dense mineralized matrix."}]}, {"mod_num": 5, "title": "Module 5: The Muscular System & Sarcomere Dynamics", "chapter": "Chapter 8 (Patton 17th Edition)", "diagram": "images/mod5_muscle_sarcomere_contraction.png", "summary": "Examines the three muscle tissue types (skeletal, cardiac, smooth), connective tissue wrappings (epimysium, perimysium, endomysium), sarcomere ultrastructure (actin vs myosin), sliding filament mechanism, excitation-contraction coupling, isotonic vs isometric contractions, and muscle actions.", "mcqs": [{"q": "Which muscle tissue type is characterized by voluntary control, prominent striations, and elongated multinucleated muscle fibers?", "options": ["A) Cardiac muscle", "B) Smooth (visceral) muscle", "C) Skeletal muscle", "D) Involuntary muscle"], "ans": "C", "rationale": "Skeletal muscle fibers are striated, under conscious voluntary somatic motor control, and multinucleated due to myoblast fusion. Cardiac muscle is striated and involuntary with intercalated discs; smooth muscle is non-striated, spindle-shaped, and involuntary."}, {"q": "What is the basic functional and contractile microscopic unit of a skeletal muscle myofibril?", "options": ["A) Sarcolemma", "B) Sarcomere", "C) Fascicle", "D) Sarcoplasmic reticulum"], "ans": "B", "rationale": "A sarcomere is the segment between two adjacent Z-lines (or Z-discs). It contains overlapping thick (myosin) and thin (actin) myofilaments that shorten during muscle contraction according to the sliding filament theory."}, {"q": "During excitation-contraction coupling in skeletal muscle, what critical ion is released from the sarcoplasmic reticulum to initiate cross-bridge cycling?", "options": ["A) Sodium (Na+)", "B) Potassium (K+)", "C) Calcium (Ca2+)", "D) Chloride (Cl-)"], "ans": "C", "rationale": "When an action potential propagates down the T-tubules, it triggers voltage-gated channels in the sarcoplasmic reticulum terminal cisternae to release Calcium (Ca2+) into the sarcoplasm. Calcium binds troponin, which shifts tropomyosin away from actin's myosin-binding sites."}, {"q": "According to the sliding filament theory, what happens during the 'power stroke' of muscle contraction?", "options": ["A) Thick myosin filaments physically shorten in length", "B) Thin actin filaments slide past thick myosin filaments toward the M-line of the sarcomere", "C) The Z-lines move farther apart", "D) Troponin dissociates from tropomyosin permanently"], "ans": "B", "rationale": "During contraction, neither thick nor thin filaments change their physical length. Instead, myosin heads pivot and pull the thin actin filaments inward toward the center (M-line), causing the sarcomere to shorten and the Z-lines to draw closer together."}, {"q": "What role does Adenosine Triphosphate (ATP) play during the detachment phase of the cross-bridge cycle?", "options": ["A) ATP binds to the myosin head, causing it to detach from the actin filament", "B) ATP binds to troponin to release calcium", "C) ATP stiffens the cross-bridge permanently", "D) ATP opens sodium channels in the motor end plate"], "ans": "A", "rationale": "Binding of a new ATP molecule to the myosin head causes it to release its hold on the actin active site. Without ATP (as seen post-mortem in rigor mortis), cross-bridges cannot detach, causing prolonged muscular rigidity."}, {"q": "When a person flexes their elbow to lift a cup of coffee, the biceps brachii serves as the:", "options": ["A) Antagonist", "B) Prime mover (Agonist)", "C) Synergist", "D) Fixator"], "ans": "B", "rationale": "The prime mover (agonist) is the primary muscle responsible for producing a specific motion (biceps brachii for elbow flexion). The triceps brachii acts as the antagonist (opposing muscle that must relax or lengthen)."}, {"q": "A client is instructed to push forcefully against an immovable brick wall with their hands. Muscle tension builds significantly, but no joint movement occurs and the muscle length does not change. This is an example of:", "options": ["A) Concentric isotonic contraction", "B) Eccentric isotonic contraction", "C) Isometric contraction", "D) Twitch summation"], "ans": "C", "rationale": "In an isometric contraction ('iso' = same, 'metric' = length), internal muscle tension increases dramatically, but muscle length remains unchanged because the load exceeds the force capability (no movement occurs). Isotonic contractions involve muscle shortening (concentric) or lengthening (eccentric)."}, {"q": "Which neurotransmitter is stored in synaptic vesicles at the neuromuscular junction (NMJ) and released into the synaptic cleft to stimulate skeletal muscle fibers?", "options": ["A) Dopamine", "B) Epinephrine", "C) Acetylcholine (ACh)", "D) Serotonin"], "ans": "C", "rationale": "Acetylcholine (ACh) is the universal neurotransmitter released by somatic motor axon terminals at the neuromuscular junction, binding to nicotinic receptors on the motor end plate to generate an end plate potential."}, {"q": "The connective tissue sheath that wraps around an individual muscle fascicle (bundle of muscle fibers) is the:", "options": ["A) Epimysium", "B) Perimysium", "C) Endomysium", "D) Fascia superficialis"], "ans": "B", "rationale": "From outside to inside: Epimysium wraps the ENTIRE muscle; Perimysium wraps FASCICLES (bundles of fibers); Endomysium wraps INDIVIDUAL muscle fibers."}, {"q": "Intercalated discs with gap junctions and desmosomes are a unique histological hallmark of which muscle tissue?", "options": ["A) Skeletal muscle", "B) Smooth muscle", "C) Cardiac muscle", "D) Myoepithelial tissue"], "ans": "C", "rationale": "Intercalated discs are specialized junctional complexes unique to cardiac muscle fibers. They contain gap junctions that permit rapid electrical ionic transmission (allowing the heart to contract as a functional syncytium) and desmosomes that prevent separation during forceful pumping."}], "true_false": [{"q": "During a concentric isotonic contraction, the muscle generates tension and shortens to move a load.", "ans": "True", "explanation": "Concentric isotonic contraction involves tension development accompanied by muscle shortening (e.g., lifting a dumbbell during a bicep curl)."}, {"q": "In smooth muscle tissue, cells possess prominent transverse striations organized into identical sarcomeres.", "ans": "False", "explanation": "Smooth muscle lacks sarcomeres and transverse striations (hence the name 'smooth'); its actin and myosin filaments are arranged diagonally across dense bodies."}, {"q": "A tendon connects a bone to another bone, while a ligament connects a muscle to a bone.", "ans": "False", "explanation": "This is reversed: TENDONS connect muscle to bone; LIGAMENTS connect bone to bone."}, {"q": "The muscle origin is attached to the immovable or less movable bone, while the insertion is attached to the movable bone.", "ans": "True", "explanation": "By definition, the origin is the anchor point on the relatively stationary bone; when a muscle contracts, its insertion is pulled toward its origin."}, {"q": "Muscle fatigue can be caused by oxygen debt, ATP depletion, and accumulation of lactic acid during anaerobic glycolysis.", "ans": "True", "explanation": "When muscle demand exceeds aerobic supply, anaerobic glycolysis generates ATP rapidly but accumulates lactic acid and creates an oxygen debt that requires post-exercise hyperpnea to recover."}]}, {"mod_num": 6, "title": "Module 6: The Nervous System, Synaptic Transmission & Reflex Arcs", "chapter": "Chapter 9 (Patton 17th Edition)", "diagram": "images/mod6_nervous_reflex_arc.png", "summary": "Deconstructs CNS vs PNS divisions, sensory (afferent) vs motor (efferent) pathways, somatic vs autonomic (sympathetic vs parasympathetic) systems, neuron anatomy, neuroglial cells, action potential generation, synaptic transmission, the 5-step reflex arc, and major brain regions.", "mcqs": [{"q": "Which type of neuroglial cell is responsible for forming the protective, lipid-rich myelin sheath around axons located within the Central Nervous System (CNS)?", "options": ["A) Schwann cells", "B) Oligodendrocytes", "C) Astrocytes", "D) Microglia"], "ans": "B", "rationale": "Oligodendrocytes produce myelin sheaths around multiple axons in the CNS (brain and spinal cord). Schwann cells produce myelin around axons in the Peripheral Nervous System (PNS). Astrocytes maintain the blood-brain barrier, and microglia are phagocytes."}, {"q": "During the generation of an action potential in a neuron, which event is directly responsible for the rapid DEPOLARIZATION phase?", "options": ["A) Massive influx of Sodium ions (Na+) through voltage-gated sodium channels", "B) Rapid efflux of Potassium ions (K+) out of the neuron", "C) Influx of negative Chloride ions (Cl-)", "D) Pumping of Calcium ions into the synaptic vesicle"], "ans": "A", "rationale": "When a threshold stimulus (-55 mV) is reached, voltage-gated Na+ channels snap open, allowing positively charged Sodium ions (Na+) to rush into the intracellular fluid down their electrical and chemical gradients, depolarizing the membrane toward +30 mV. Potassium efflux causes repolarization."}, {"q": "What is the correct anatomical sequence of components in a standard five-element reflex arc?", "options": ["A) Receptor -> Motor neuron -> Interneuron -> Sensory neuron -> Effector", "B) Receptor -> Sensory neuron -> Integration center (Interneuron) -> Motor neuron -> Effector", "C) Effector -> Sensory neuron -> Interneuron -> Motor neuron -> Receptor", "D) Integration center -> Sensory neuron -> Receptor -> Motor neuron -> Effector"], "ans": "B", "rationale": "A reflex arc flows in one strict direction: 1. Sensory Receptor (detects stimulus) -> 2. Sensory / Afferent Neuron (transmits to CNS) -> 3. Integration Center / Interneuron (processes in gray matter) -> 4. Motor / Efferent Neuron (conducts out from CNS) -> 5. Effector (muscle or gland responds)."}, {"q": "Which division of the autonomic nervous system is responsible for the 'Fight or Flight' emergency response, causing pupillary dilation, bronchodilation, and increased heart rate?", "options": ["A) Parasympathetic division", "B) Sympathetic division", "C) Somatic motor division", "D) Craniosacral division"], "ans": "B", "rationale": "The Sympathetic division (thoracolumbar origin) mobilizes the body during threats or exertion ('Fight or Flight'): elevates heart rate, dilates airways, dilates pupils, inhibits digestive secretions. The Parasympathetic division (craniosacral origin) directs 'Rest and Digest' functions."}, {"q": "Which part of the brainstem contains the vital cardiac, vasomotor (blood pressure), and respiratory control centers essential for basic life support?", "options": ["A) Cerebrum", "B) Cerebellum", "C) Medulla oblongata", "D) Thalamus"], "ans": "C", "rationale": "The medulla oblongata is the most inferior portion of the brainstem, transitioning into the spinal cord. It houses vital autonomic reflex centers that regulate heart rate, vascular resistance (blood pressure), and the basic respiratory rhythm."}, {"q": "Which brain structure acts as the 'master coordinator' for homeostasis, linking the nervous system to the endocrine system and regulating body temperature, thirst, hunger, and sleep-wake cycles?", "options": ["A) Thalamus", "B) Hypothalamus", "C) Pons", "D) Corpus callosum"], "ans": "B", "rationale": "The hypothalamus (located below the thalamus in the diencephalon) is the primary homeostatic control center of the body. It regulates the autonomic nervous system, body temperature, osmolarity/thirst, appetite, and directly directs pituitary gland secretions."}, {"q": "What is the function of the myelin sheath and the Nodes of Ranvier along a myelinated axon?", "options": ["A) To release neurotransmitters directly into the bloodstream", "B) To dramatically accelerate nerve impulse transmission via saltatory conduction", "C) To produce cerebral spinal fluid", "D) To block all sodium ion diffusion permanently"], "ans": "B", "rationale": "Myelin provides electrical insulation around axonal internodes. Action potentials jump from one unmyelinated Node of Ranvier to the next\u2014a process called saltatory conduction\u2014increasing conduction velocity up to 100-fold compared to unmyelinated fibers."}, {"q": "Which lobe of the cerebral cortex contains the primary visual cortex responsible for processing sight and vision?", "options": ["A) Frontal lobe", "B) Parietal lobe", "C) Temporal lobe", "D) Occipital lobe"], "ans": "D", "rationale": "The occipital lobe forms the posterior region of the cerebral hemisphere and houses the primary visual cortex and visual association areas. The frontal lobe governs motor function/planning; parietal processes somatosensory touch; temporal processes hearing and memory."}, {"q": "A patient experiences sudden ataxia, loss of motor coordination, stumbling gait, and inability to maintain balance. Which brain region is most likely impaired?", "options": ["A) Cerebellum", "B) Broca's area", "C) Hippocampus", "D) Medulla oblongata"], "ans": "A", "rationale": "The cerebellum ('little brain') coordinates voluntary skeletal muscle movements, calibrates balance, and fine-tunes posture and gait. Cerebellar damage produces ataxia (uncoordinated, unsteady movement)."}, {"q": "What are the three protective meningeal membranes surrounding the brain and spinal cord, listed from outermost to innermost?", "options": ["A) Pia mater -> Arachnoid mater -> Dura mater", "B) Dura mater -> Arachnoid mater -> Pia mater", "C) Arachnoid mater -> Dura mater -> Pia mater", "D) Dura mater -> Pia mater -> Arachnoid mater"], "ans": "B", "rationale": "Remember PAD from inside out, or DAP from outside in: 1. Dura mater (outermost tough, fibrous 'tough mother'), 2. Arachnoid mater (middle web-like membrane containing CSF in subarachnoid space), 3. Pia mater (innermost delicate 'gentle mother' clinging to neural tissue)."}], "true_false": [{"q": "Sensory (afferent) neurons transmit nerve impulses away from the central nervous system toward peripheral effector organs.", "ans": "False", "explanation": "Sensory (AFFERENT) neurons carry impulses TOWARD the CNS (Afferent = Arriving). Motor (EFFERENT) neurons carry impulses AWAY from the CNS to effectors (Efferent = Exiting)."}, {"q": "The resting membrane potential of a typical neuron is approximately -70 millivolts (mV), with the interior of the cell negative relative to the outside.", "ans": "True", "explanation": "Due to intracellular negative proteins and the action of the Na+/K+ pump, a resting neuron has a polarized potential of roughly -70 mV."}, {"q": "Microglia are phagocytic neuroglial cells that clear cellular debris and defend against pathogens within the central nervous system.", "ans": "True", "explanation": "Microglia act as the resident macrophages of the CNS, engulfing necrotic tissue, foreign microbes, and damaged synapses."}, {"q": "The parasympathetic nervous system uses epinephrine as its primary postganglionic neurotransmitter.", "ans": "False", "explanation": "The Parasympathetic division uses ACETYLCHOLINE (ACh) at both pre- and postganglionic synapses. Norepinephrine and epinephrine are used by the sympathetic division."}, {"q": "The patellar tendon (knee-jerk) reflex is a classic example of a monosynaptic stretch reflex.", "ans": "True", "explanation": "The patellar reflex involves a single direct synapse between a sensory neuron and a motor neuron in the spinal cord, without an intervening interneuron."}]}, {"mod_num": 7, "title": "Module 7: The Senses (Vision, Audition, Equilibrium, Olfaction & Gustation)", "chapter": "Chapter 10 (Patton 17th Edition)", "diagram": "images/mod7_special_senses_eye_ear.png", "summary": "Covers general vs special senses, photoreceptors, three tunics of the eye, rods vs cones, aqueous vs vitreous humor, auditory ossicles, cochlea and Organ of Corti, static (vestibule) vs dynamic (semicircular canals) equilibrium, and chemoreceptors for taste and smell.", "mcqs": [{"q": "Which photoreceptor cells in the retina are highly sensitive to dim light and are responsible for night vision and peripheral vision, but do not produce color vision?", "options": ["A) Cones", "B) Rods", "C) Bipolar cells", "D) Ganglion cells"], "ans": "B", "rationale": "Rods are photoreceptors with high sensitivity to dim light, providing black-and-white, twilight, and peripheral vision. Cones operate in bright light, mediate color vision, and provide sharp visual acuity (concentrated in the fovea centralis)."}, {"q": "Where in the retina is visual acuity (sharpness of focus) highest due to the dense concentration of cone photoreceptors and the absence of rods?", "options": ["A) Optic disc", "B) Fovea centralis (within the macula lutea)", "C) Ora serrata", "D) Cornea"], "ans": "B", "rationale": "The fovea centralis is a tiny pit in the center of the macula lutea containing almost exclusively cones. It represents the point of maximum visual resolution. The optic disc is the 'blind spot' with zero photoreceptors."}, {"q": "A blockage of the Canal of Schlemm (scleral venous sinus) prevents the normal drainage of aqueous humor from the anterior chamber of the eye. What condition and complication does this cause?", "options": ["A) Cataracts due to lens opacity", "B) Glaucoma due to elevated intraocular pressure", "C) Macular degeneration due to retinal detachment", "D) Astigmatism due to corneal curvature irregularities"], "ans": "B", "rationale": "Aqueous humor is produced by the ciliary body and drains via the Canal of Schlemm. Blockage leads to fluid buildup, causing increased intraocular pressure (IOP)\u2014the hallmark of glaucoma. If untreated, elevated pressure compresses retinal blood vessels and damages the optic nerve."}, {"q": "What is the correct sequence of the three auditory ossicles that transmit mechanical sound vibrations across the middle ear?", "options": ["A) Stapes -> Incus -> Malleus", "B) Incus -> Malleus -> Stapes", "C) Malleus (Hammer) -> Incus (Anvil) -> Stapes (Stirrup)", "D) Malleus -> Stapes -> Incus"], "ans": "C", "rationale": "Sound vibrations travel from the tympanic membrane to the Malleus (Hammer), which articulates with the Incus (Anvil), which articulates with the Stapes (Stirrup). The footplate of the stapes rocks against the oval window of the cochlea."}, {"q": "Where is the true organ of hearing\u2014the Organ of Corti (spiral organ) containing sensory hair cells\u2014located within the inner ear?", "options": ["A) Semicircular canals", "B) Vestibule", "C) Cochlea", "D) Tympanic cavity"], "ans": "C", "rationale": "The cochlea is a snail-shaped bony structure in the inner ear. Inside the cochlear duct lies the Organ of Corti, which contains mechanosensory hair cells that bend against the tectorial membrane in response to fluid waves, generating nerve impulses transmitted via Cranial Nerve VIII (vestibulocochlear)."}, {"q": "Which inner ear structures detect rotational (angular) head acceleration and movement to maintain dynamic equilibrium?", "options": ["A) Semicircular canals (cristae ampullares)", "B) Utricle and saccule (maculae)", "C) Cochlear duct", "D) Eustachian tube"], "ans": "A", "rationale": "The three semicircular canals, oriented at right angles to one another, contain cristae ampullares that detect rotational head acceleration (dynamic equilibrium). The vestibule (utricle and saccule) contains otoliths that detect static equilibrium and linear acceleration."}, {"q": "What is the function of the pharyngotympanic (auditory / Eustachian) tube?", "options": ["A) To secrete cerumen (earwax) into the auditory canal", "B) To equalize air pressure between the middle ear cavity and the nasopharynx (atmosphere)", "C) To conduct perilymph waves to the round window", "D) To amplify high-frequency auditory pitches"], "ans": "B", "rationale": "The Eustachian tube links the middle ear to the nasopharynx. Swallowing or yawning opens it, equalizing air pressure on both sides of the tympanic membrane so it can vibrate freely."}, {"q": "The transparent anterior portion of the fibrous tunic that acts as the initial and most powerful refracting window for incoming light rays is the:", "options": ["A) Sclera", "B) Lens", "C) Cornea", "D) Choroid"], "ans": "C", "rationale": "The cornea is the avascular, transparent anterior sixth of the fibrous tunic. It allows light into the eye and provides approximately 75% of the eye's total refractive (bending) power."}, {"q": "Olfactory receptors (smell) and gustatory receptors (taste) both belong to which functional class of sensory receptors?", "options": ["A) Photoreceptors", "B) Mechanoreceptors", "C) Chemoreceptors", "D) Thermoreceptors"], "ans": "C", "rationale": "Both smell (olfaction) and taste (gustation) utilize chemoreceptors that detect specific chemical molecules dissolved in surrounding fluids (mucus in the olfactory epithelium, saliva in the oral cavity)."}, {"q": "Why is the optic disc known as the physiological 'blind spot' of the eye?", "options": ["A) It has a high concentration of non-functional rod cells", "B) It contains only blue cone photoreceptors", "C) It completely lacks photoreceptor cells because ganglion cell axons exit here to form the optic nerve", "D) The vitreous humor is too dense in this region to allow light penetration"], "ans": "C", "rationale": "The optic disc is the anatomical exit point where retinal ganglion cell axons converge to form Cranial Nerve II (the optic nerve) alongside central retinal blood vessels. Because there are no rods or cones located over the disc, light falling on this region cannot be detected."}], "true_false": [{"q": "The lens changes shape (accommodation) to focus near or far objects through the contraction and relaxation of the ciliary muscle.", "ans": "True", "explanation": "Ciliary muscle contraction relaxes suspensory ligaments, allowing the elastic lens to bulge for near vision; relaxation flattens the lens for distance vision."}, {"q": "The vitreous humor is a watery fluid located in the anterior cavity that is continuously drained and replenished throughout life.", "ans": "False", "explanation": "AQUEOUS humor is the watery fluid in the anterior cavity continuously turned over. VITREOUS humor is a permanent, gelatinous mass in the posterior cavity formed during embryogenesis that is not replaced."}, {"q": "The cranial nerve responsible for transmitting both auditory (hearing) and vestibular (balance) impulses to the brain is Cranial Nerve VIII (Vestibulocochlear).", "ans": "True", "explanation": "Cranial Nerve VIII (Vestibulocochlear nerve) carries both auditory signals from the cochlea and equilibrium signals from the vestibule and semicircular canals."}, {"q": "General senses include vision, hearing, taste, smell, and rotational equilibrium.", "ans": "False", "explanation": "Vision, hearing, taste, smell, and equilibrium are SPECIAL SENSES (localized to specialized complex organs). General senses are distributed throughout the body (touch, pressure, pain, temperature, proprioception)."}, {"q": "The Iris contains circular and radial smooth muscle fibers that constrict or dilate the pupil in response to autonomic stimulation.", "ans": "True", "explanation": "Parasympathetic stimulation contracts pupillary sphincter muscles (pupil constricts); sympathetic stimulation contracts radial pupillary dilator muscles (pupil dilates)."}]}, {"mod_num": 8, "title": "Module 8: The Endocrine System, Glands & Hormone Mechanisms", "chapter": "Chapter 11 (Patton 17th Edition)", "diagram": "images/mod8_endocrine_axis_feedback.png", "summary": "Compares endocrine vs exocrine glands, protein (second messenger cAMP) vs steroid (direct gene activation) hormones, negative feedback regulation, the hypothalamic-pituitary axis, thyroid/parathyroid calcium balance (calcitonin vs PTH), pancreatic blood glucose balance (insulin vs glucagon), and adrenal stress hormones.", "mcqs": [{"q": "How do endocrine glands differ fundamentally from exocrine glands?", "options": ["A) Endocrine glands release secretions through ducts to external surfaces", "B) Endocrine glands are ductless and release hormones directly into the bloodstream or interstitial fluid", "C) Endocrine glands only secrete enzymes rather than chemical messengers", "D) Endocrine glands are solely controlled by somatic motor nerves"], "ans": "B", "rationale": "Endocrine glands are ductless glands that synthesize hormones and secrete them directly into extracellular fluid and the bloodstream to act on distant target cells. Exocrine glands (e.g., salivary, sweat, sebaceous) secrete their products through ducts into lumens or body surfaces."}, {"q": "Which mechanism of action characterizes lipid-soluble steroid hormones (such as cortisol, estrogen, and testosterone)?", "options": ["A) They bind to cell-surface receptors and activate intracellular cyclic AMP (cAMP)", "B) They diffuse directly across the plasma membrane to bind intracellular receptors and alter gene transcription", "C) They enter target cells via phagocytosis and are degraded by lysosomes", "D) They open ligand-gated sodium channels to trigger an immediate action potential"], "ans": "B", "rationale": "Because steroid hormones are lipophilic (derived from cholesterol), they readily cross the phospholipid bilayer of the plasma membrane. They bind to intracellular receptors (in the cytoplasm or nucleus) to form a hormone-receptor complex that binds DNA and regulates gene transcription and protein synthesis."}, {"q": "A patient's serum calcium level drops below normal. Which endocrine gland responds by secreting a hormone to raise blood calcium levels, and which cells does this hormone stimulate?", "options": ["A) Thyroid gland secretes Calcitonin; stimulates osteoblasts", "B) Parathyroid glands secrete Parathyroid Hormone (PTH); stimulates osteoclasts", "C) Adrenal cortex secretes Aldosterone; stimulates renal tubular excretion", "D) Anterior pituitary secretes TSH; stimulates bone deposition"], "ans": "B", "rationale": "When blood calcium falls (hypocalcemia), the Parathyroid glands secrete PTH. PTH stimulates osteoclasts to resorb bone matrix and liberate calcium into the blood, promotes renal calcium reabsorption, and enhances vitamin D activation to increase dietary calcium absorption in the gut. Calcitonin (from thyroid) does the opposite."}, {"q": "Which pair of pancreatic hormones works antagonistically to maintain blood glucose homeostasis within normal limits?", "options": ["A) Insulin (lowers blood glucose) and Glucagon (elevates blood glucose)", "B) Cortisol and Epinephrine", "C) Calcitonin and Parathyroid hormone", "D) Aldosterone and Antidiuretic hormone"], "ans": "A", "rationale": "Beta cells of pancreatic islets secrete Insulin in response to elevated blood glucose, facilitating cellular uptake and glycogen storage (lowering blood glucose). Alpha cells secrete Glucagon in response to low blood glucose, stimulating glycogenolysis and gluconeogenesis in the liver (raising blood glucose)."}, {"q": "Which two hormones are synthesized by neurosecretory cells of the hypothalamus, but stored and released by the posterior pituitary (neurohypophysis)?", "options": ["A) Thyroid-Stimulating Hormone (TSH) and Adrenocorticotropic Hormone (ACTH)", "B) Growth Hormone (GH) and Prolactin (PRL)", "C) Antidiuretic Hormone (ADH) and Oxytocin", "D) Follicle-Stimulating Hormone (FSH) and Luteinizing Hormone (LH)"], "ans": "C", "rationale": "ADH (vasopressin) and Oxytocin are synthesized in the paraventricular and supraoptic nuclei of the hypothalamus and transported axonally to the posterior pituitary, which acts as a storage and release site. The anterior pituitary synthesizes TSH, ACTH, GH, PRL, FSH, and LH."}, {"q": "A patient with dehydration and hypovolemia secretes increased amounts of Antidiuretic Hormone (ADH / Vasopressin). What is the primary target organ and physiological action of ADH?", "options": ["A) Heart; increases cardiac stroke volume", "B) Kidney collecting ducts; increases water reabsorption, conserving water and reducing urine volume", "C) Liver; stimulates glycogenolysis", "D) Adrenal cortex; stimulates cortisol release"], "ans": "B", "rationale": "ADH targets the distal tubules and collecting ducts of the kidneys, causing aquaporin channels to insert into the membrane. This increases water reabsorption from urine filtrate back into blood circulation, conserving water and producing concentrated urine."}, {"q": "The primary hormones produced by the thyroid follicular cells\u2014Thyroxine (T4) and Triiodothyronine (T3)\u2014require which dietary mineral for their chemical synthesis?", "options": ["A) Iron", "B) Calcium", "C) Iodine", "D) Potassium"], "ans": "C", "rationale": "Synthesis of T3 (triiodothyronine) and T4 (tetraiodothyronine / thyroxine) requires dietary Iodine. Deficiency of iodine impairs thyroid hormone production, leading to compensatory TSH hypersecretion and enlargement of the thyroid gland (goiter)."}, {"q": "Which layer of the adrenal gland secretes catecholamines (Epinephrine and Norepinephrine) under direct sympathetic preganglionic neural stimulation?", "options": ["A) Adrenal cortex (zona glomerulosa)", "B) Adrenal cortex (zona fasciculata)", "C) Adrenal cortex (zona reticularis)", "D) Adrenal medulla"], "ans": "D", "rationale": "The adrenal medulla is modified nervous tissue derived from neural crest cells. Under sympathetic nerve stimulation during acute stress, chromaffin cells in the adrenal medulla release Epinephrine (80%) and Norepinephrine (20%) directly into blood to prolong the 'Fight or Flight' response."}, {"q": "What is the primary action of the mineralocorticoid hormone Aldosterone, secreted by the outer zone of the adrenal cortex?", "options": ["A) Stimulates renal reabsorption of Sodium (Na+) and excretion of Potassium (K+)", "B) Stimulates glucose conversion into fat", "C) Lowers systemic blood pressure", "D) Inhibits inflammatory cytokines"], "ans": "A", "rationale": "Aldosterone acts on renal tubule cells to promote Sodium (Na+) reabsorption into blood and Potassium (K+) excretion into urine. Because water follows sodium osmotically, aldosterone expands extracellular fluid volume and elevates blood pressure."}, {"q": "Which endocrine gland is located in the epithalamus of the brain and secretes Melatonin to regulate circadian rhythms and sleep-wake cycles?", "options": ["A) Pituitary gland", "B) Pineal gland", "C) Thymus gland", "D) Thyroid gland"], "ans": "B", "rationale": "The pineal gland is a small cone-shaped endocrine structure in the epithalamus. It receives visual input from the suprachiasmatic nucleus of the hypothalamus and secretes Melatonin in darkness to induce sleepiness and synchronize circadian rhythms."}], "true_false": [{"q": "Protein hormones cannot freely cross the plasma membrane and instead bind to membrane surface receptors to initiate an intracellular second-messenger cascade (such as cAMP).", "ans": "True", "explanation": "Because protein and peptide hormones are water-soluble and lipid-insoluble, they act as 'first messengers' binding surface transmembrane receptors, which activate G-proteins and secondary messengers (cAMP, IP3/DAG)."}, {"q": "Calcitonin is secreted by the parathyroid glands and acts to dramatically increase blood calcium levels.", "ans": "False", "explanation": "Calcitonin is secreted by PARAFOLLICULAR (C) cells of the THYROID gland and LOWERS blood calcium ('tones down' calcium) by stimulating osteoblast bone deposition. Parathyroid hormone (PTH) raises calcium."}, {"q": "In a negative feedback system, an increase in thyroid hormone levels (T3 and T4) in the bloodstream inhibits further secretion of TSH from the anterior pituitary and TRH from the hypothalamus.", "ans": "True", "explanation": "This is classic negative feedback inhibition: high circulating peripheral target hormones feed back to suppress the releasing (TRH) and stimulating (TSH) hormones to maintain endocrine equilibrium."}, {"q": "Insulin is secreted by the alpha cells of the pancreatic islets when blood glucose levels fall between meals.", "ans": "False", "explanation": "Insulin is secreted by BETA cells in response to HIGH blood glucose. GLUCAGON is secreted by ALPHA cells in response to LOW blood glucose."}, {"q": "The thymus gland secretes thymosin, which plays a critical role in the maturation and programming of T-lymphocytes for the immune system.", "ans": "True", "explanation": "The thymus gland produces thymosin hormones essential for the development, differentiation, and immunocompetence of T-cells during childhood and adolescence."}]}];
+    const atlasData = [{"id": "cell", "title": "1. Human Cell Ultrastructure & Organelles", "system": "Cell Biology (Module 2 \u2022 Chapter 3)", "badge": "Module 2", "img": "images/human_cell_labeled.jpg", "img_secondary": null, "description": "High-magnification cross-section illustrating the internal cellular architecture, metabolic organelles, and protective membrane.", "parts": [{"name": "Nucleus", "role": "The control center of the cell; houses DNA chromosomes and directs protein synthesis."}, {"name": "Nucleoli (Nucleolus)", "role": "Dense dark-staining region within the nucleus that synthesizes ribosomal RNA (rRNA)."}, {"name": "Mitochondria", "role": "The 'powerhouses of the cell'; generates ATP energy via aerobic cellular respiration."}, {"name": "Ribosomes", "role": "Protein factories composed of rRNA; translate mRNA transcripts into polypeptide chains."}, {"name": "Rough Endoplasmic Reticulum", "role": "Membranous network studded with ribosomes; folds and modifies nascent proteins."}, {"name": "Smooth Endoplasmic Reticulum", "role": "Agranular network for lipid and steroid synthesis, calcium storage, and drug detox."}, {"name": "Golgi Complex (Apparatus)", "role": "Stack of flattened sacs that chemically modifies, sorts, and packages glycoproteins for secretion."}, {"name": "Lysosomes", "role": "'Digestive bags' packed with hydrolytic acid enzymes to recycle damaged organelles and bacteria."}, {"name": "Centrioles", "role": "Paired barrel-shaped organelles that organize the mitotic spindle during cell division (mitosis)."}, {"name": "Plasma Membrane", "role": "Selectively permeable phospholipid bilayer regulating what enters and leaves the cytoplasm."}, {"name": "Microvilli", "role": "Finger-like membrane folds that increase absorptive surface area (prominent in intestine/kidney)."}]}, {"id": "skin", "title": "2. Integumentary System Architecture & Receptors", "system": "The Skin & Appendages (Module 3 \u2022 Chapter 6)", "badge": "Module 3", "img": "images/skin_layers_receptors_labeled.jpg", "img_secondary": "images/skin_3d_cross_section.jpg", "description": "3D anatomical block diagram displaying the three principal skin layers, epidermal strata, hair follicle, glands, and cutaneous mechanoreceptors.", "parts": [{"name": "Epidermis", "role": "Avascular superficial protective layer of stratified squamous keratinized epithelium (5 strata)."}, {"name": "Stratum Basale", "role": "Deepest epidermal monolayer of stem cells undergoing active mitosis; houses melanocytes."}, {"name": "Stratum Corneum", "role": "Outermost layer of dead, fully keratinized, shingle-like cells providing waterproof barrier."}, {"name": "Dermis", "role": "Vascular, tough connective tissue layer (20x thicker than epidermis) containing nerves, vessels, and fibers."}, {"name": "Papillary Dermis", "role": "Superficial dermal layer with dermal papillae forming fingerprint ridges and housing Meissner corpuscles."}, {"name": "Reticular Dermis", "role": "Deep dense irregular connective tissue layer rich in collagen and elastin; houses Pacinian corpuscles."}, {"name": "Hypodermis (Subcutaneous)", "role": "Adipose tissue foundation providing thermal insulation, energy reserve, and shock cushioning."}, {"name": "Meissner Corpuscle", "role": "Encapsulated tactile receptor in dermal papillae that detects light touch and low-frequency vibration."}, {"name": "Pacinian Corpuscle", "role": "Large lamellated onion-shaped receptor deep in reticular dermis/hypodermis detecting deep pressure."}, {"name": "Free Nerve Endings", "role": "Unencapsulated sensory dendrites extending into epidermis to detect nociceptive pain and temperature."}, {"name": "Sebaceous Glands", "role": "Oil glands attached to hair follicles secreting sebum to lubricate hair/skin and prevent microbial growth."}, {"name": "Eccrine Sweat Glands", "role": "Coiled tubular glands distributed across the body that secrete watery sweat for thermoregulation."}, {"name": "Arrector Pili Muscle", "role": "Smooth muscle bundle contracting under sympathetic stimulation to pull hair upright ('goosebumps')."}]}, {"id": "skeleton", "title": "3. The Complete Human Skeleton (Axial & Appendicular)", "system": "Skeletal System (Module 4 \u2022 Chapter 7)", "badge": "Module 4", "img": "images/skeleton_complete_labeled.jpg", "img_secondary": null, "description": "Anterior and posterior full-body skeletal views illustrating all 206 bones, categorized into the 80 axial bones and 126 appendicular bones.", "parts": [{"name": "Cranium & Facial Bones", "role": "Axial: Protects brain (Frontal, Parietal, Occipital) and frames face (Maxilla, Zygomatic, Mandible)."}, {"name": "Vertebral Column", "role": "Axial: Flexible supportive column with 7 Cervical, 12 Thoracic, 5 Lumbar, Sacrum, and Coccyx."}, {"name": "Thoracic Cage", "role": "Axial: Bony protection for heart/lungs composed of Sternum and 12 pairs of ribs (7 True, 3 False, 2 Floating)."}, {"name": "Pectoral Girdle", "role": "Appendicular: Attaches upper limbs to axial trunk; includes Clavicle (collarbone) and Scapula (shoulder blade)."}, {"name": "Humerus", "role": "Appendicular: Long bone of the upper arm articulating with glenoid cavity and elbow."}, {"name": "Radius & Ulna", "role": "Appendicular: Forearm bones; Radius is lateral (thumb side) and Ulna is medial (pinky side)."}, {"name": "Carpals, Metacarpals, Phalanges", "role": "Appendicular: Wrist (8 carpals), palm (5 metacarpals), and fingers (14 phalanges)."}, {"name": "Pelvic Girdle (Coxal Bone)", "role": "Appendicular: Sturdy weight-bearing ring formed by fused Ilium, Ischium, and Pubis bones."}, {"name": "Femur", "role": "Appendicular: Heaviest, strongest, and longest bone in the body; articulates with acetabulum at hip."}, {"name": "Patella", "role": "Appendicular: Sesamoid kneecap protecting the knee joint and improving quadriceps leverage."}, {"name": "Tibia & Fibula", "role": "Appendicular: Lower leg; Tibia (shinbone) is medial and weight-bearing; Fibula is lateral stabilizer."}, {"name": "Tarsals, Metatarsals, Calcaneus", "role": "Appendicular: Ankle (7 tarsals), heel (calcaneus), arch (5 metatarsals), and toes (14 phalanges)."}]}, {"id": "muscles", "title": "4. Major Superficial Skeletal Muscles (Anterior & Posterior)", "system": "Muscular System (Module 5 \u2022 Chapter 8)", "badge": "Module 5", "img": "images/muscles_anterior_labeled.jpg", "img_secondary": "images/muscles_posterior_labeled.jpg", "description": "Full-length anatomical plates detailing superficial muscle groups, prime movers, antagonists, and joint movements from both anterior and posterior perspectives.", "parts": [{"name": "Sternocleidomastoid", "role": "Neck muscle that flexes neck and rotates head to opposite side."}, {"name": "Trapezius", "role": "Large triangular upper back/neck muscle that elevates, depresses, and retracts the scapula."}, {"name": "Deltoid", "role": "Triangular shoulder muscle that serves as the prime mover of arm abduction."}, {"name": "Pectoralis Major", "role": "Large chest muscle that adducts, flexes, and medially rotates the humerus at the shoulder."}, {"name": "Biceps Brachii", "role": "Anterior arm muscle that is the prime mover of elbow flexion and powerful forearm supinator."}, {"name": "Triceps Brachii", "role": "Posterior arm muscle that acts as the primary antagonist to biceps, extending the elbow joint."}, {"name": "Rectus Abdominis", "role": "'Six-pack' abdominal muscle that flexes the lumbar vertebral column and compresses abdominal cavity."}, {"name": "External Obliques", "role": "Lateral abdominal muscles that rotate and laterally flex the trunk."}, {"name": "Latissimus Dorsi", "role": "'Swimmer's muscle'; broad lower back muscle that extends and adducts the arm."}, {"name": "Gluteus Maximus", "role": "Largest muscle in the body; prime mover of hip extension (rising from sitting, climbing stairs)."}, {"name": "Quadriceps Femoris Group", "role": "Anterior thigh muscles (Rectus femoris, Vastus lateralis, medialis, intermedius) extending the knee."}, {"name": "Hamstrings Group", "role": "Posterior thigh muscles (Biceps femoris, Semitendinosus, Semimembranosus) flexing knee and extending hip."}, {"name": "Tibialis Anterior", "role": "Anterior shin muscle that performs ankle dorsiflexion and foot inversion."}, {"name": "Gastrocnemius & Soleus", "role": "Posterior calf muscles that plantarflex the ankle via the strong Calcaneal (Achilles) tendon."}]}, {"id": "endocrine", "title": "5. The Human Endocrine System (Master Glands & Hormones)", "system": "Endocrine System (Module 8 \u2022 Chapter 11)", "badge": "Module 8", "img": "images/endocrine_system_labeled.jpg", "img_secondary": null, "description": "Full-body anatomical diagram displaying the exact positions of all master ductless endocrine glands and their secreted chemical messengers.", "parts": [{"name": "Pineal Gland", "role": "Located in brain epithalamus; secretes Melatonin in darkness to coordinate circadian sleep-wake cycles."}, {"name": "Hypothalamus", "role": "Master neuroendocrine coordinator; synthesizes ADH and Oxytocin; controls anterior pituitary via releasing hormones."}, {"name": "Pituitary Gland (Master Gland)", "role": "Anterior lobe secretes TSH, ACTH, GH, PRL, FSH, LH; Posterior lobe stores and releases ADH & Oxytocin."}, {"name": "Thyroid Gland", "role": "Butterfly-shaped neck gland; secretes T3 & T4 (metabolic rate) and Calcitonin (lowers blood calcium)."}, {"name": "Parathyroid Glands", "role": "Four tiny glands on posterior thyroid; secrete Parathyroid Hormone (PTH) to elevate blood calcium levels."}, {"name": "Thymus Gland", "role": "Located behind sternum; secretes Thymosin to program and mature immunocompetent T-lymphocytes."}, {"name": "Adrenal Glands (Suprarenal)", "role": "Cortex secretes Aldosterone (Na+ retention) and Cortisol (glucose/stress); Medulla secretes Epinephrine."}, {"name": "Pancreas (Islets of Langerhans)", "role": "Beta cells secrete Insulin (lowers blood glucose); Alpha cells secrete Glucagon (elevates blood glucose)."}, {"name": "Ovaries (Female)", "role": "Secrete Estrogen (secondary sex characteristics) and Progesterone (menstrual cycle & pregnancy support)."}, {"name": "Testes (Male)", "role": "Secrete Testosterone (spermatogenesis, muscle mass, secondary male sex characteristics)."}]}];
+
+    let currentModuleFilter = 'all';
+    let currentFlashcardIndex = 0;
+    let activeFlashcards = [];
+
+    window.onload = function() {
+      renderQuiz();
+      renderTF();
+      initFlashcards();
+      renderAtlas();
+      renderBlueprints();
+    };
+
+    function switchView(viewName) {
+      document.querySelectorAll('.mode-btn').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.view-section').forEach(sec => sec.classList.remove('active'));
+
+      if (viewName === 'exam') {
+        document.querySelector('.mode-btn:nth-child(1)').classList.add('active');
+        document.getElementById('exam-view').classList.add('active');
+      } else if (viewName === 'tf') {
+        document.querySelector('.mode-btn:nth-child(2)').classList.add('active');
+        document.getElementById('tf-view').classList.add('active');
+      } else if (viewName === 'flashcards') {
+        document.querySelector('.mode-btn:nth-child(3)').classList.add('active');
+        document.getElementById('fc-view').classList.add('active');
+      } else if (viewName === 'atlas') {
+        document.querySelector('.mode-btn:nth-child(4)').classList.add('active');
+        document.getElementById('atlas-view').classList.add('active');
+      } else if (viewName === 'blueprints') {
+        document.querySelector('.mode-btn:nth-child(5)').classList.add('active');
+        document.getElementById('bp-view').classList.add('active');
+      }
+    }
+
+    function filterModule(modId) {
+      currentModuleFilter = modId;
+      document.querySelectorAll('.mod-filter-btn').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+      renderQuiz();
+      renderTF();
+      initFlashcards();
+      renderAtlas();
+      renderBlueprints();
+    }
+
+    // 1. RENDER QUIZ
+    function renderQuiz() {
+      const container = document.getElementById('quiz-container');
+      container.innerHTML = '';
+      let qCount = 0;
+
+      modulesData.forEach(mod => {
+        if (currentModuleFilter !== 'all' && mod.mod_num !== parseInt(currentModuleFilter)) return;
+
+        mod.mcqs.forEach((mcq, idx) => {
+          qCount++;
+          const qDiv = document.createElement('div');
+          qDiv.className = 'q-card';
+          qDiv.dataset.ans = mcq.ans;
+          qDiv.id = `q-${mod.mod_num}-${idx}`;
+
+          let optsHtml = '';
+          mcq.options.forEach(opt => {
+            const letter = opt.trim().charAt(0);
+            optsHtml += `
+              <label class="opt-label">
+                <input type="radio" name="opt-${mod.mod_num}-${idx}" value="${letter}">
+                ${opt}
+              </label>
+            `;
+          });
+
+          qDiv.innerHTML = `
+            <div class="q-meta">
+              <span>Question ${qCount} • Module ${mod.mod_num}</span>
+              <span>${mod.chapter}</span>
+            </div>
+            <div class="q-stem">${mcq.q}</div>
+            <div class="opt-list">${optsHtml}</div>
+            <div class="q-feedback" id="fb-${mod.mod_num}-${idx}">
+              <strong>Correct Answer: ${mcq.ans}</strong><br>
+              ${mcq.rationale}
+            </div>
+          `;
+          container.appendChild(qDiv);
+        });
+      });
+      document.getElementById('score-display').innerText = '';
+    }
+
+    function submitExam() {
+      let total = 0;
+      let correct = 0;
+
+      document.querySelectorAll('.q-card').forEach(qCard => {
+        total++;
+        const correctAns = qCard.dataset.ans;
+        const selected = qCard.querySelector('input[type="radio"]:checked');
+        const feedback = qCard.querySelector('.q-feedback');
+
+        if (selected) {
+          if (selected.value === correctAns) {
+            correct++;
+            feedback.className = 'q-feedback correct';
+            feedback.innerHTML = `✅ <strong>Correct! (${correctAns})</strong><br>` + feedback.innerHTML.split('<br>')[1];
+          } else {
+            feedback.className = 'q-feedback incorrect';
+            feedback.innerHTML = `❌ <strong>Incorrect. You selected (${selected.value}). Correct answer is (${correctAns}):</strong><br>` + feedback.innerHTML.split('<br>')[1];
+          }
+        } else {
+          feedback.className = 'q-feedback incorrect';
+          feedback.innerHTML = `⚠️ <strong>Unanswered. Correct answer is (${correctAns}):</strong><br>` + feedback.innerHTML.split('<br>')[1];
+        }
+      });
+
+      const pct = Math.round((correct / total) * 100);
+      const scoreBanner = document.getElementById('score-display');
+      const passText = pct >= 75 ? '🎉 PASSED (Meets NBCC 75% Standard!)' : '⚠️ Keep Studying (Below 75% NBCC Standard)';
+      scoreBanner.innerHTML = `Score: ${correct} / ${total} (${pct}%) — ${passText}`;
+      scoreBanner.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function resetExam() {
+      document.querySelectorAll('.q-card input[type="radio"]').forEach(r => r.checked = false);
+      document.querySelectorAll('.q-feedback').forEach(fb => {
+        fb.className = 'q-feedback';
+        fb.style.display = 'none';
+      });
+      document.getElementById('score-display').innerText = '';
+    }
+
+    // 2. RENDER TRUE / FALSE
+    function renderTF() {
+      const container = document.getElementById('tf-container');
+      container.innerHTML = '';
+      let tfCount = 0;
+
+      modulesData.forEach(mod => {
+        if (currentModuleFilter !== 'all' && mod.mod_num !== parseInt(currentModuleFilter)) return;
+
+        mod.true_false.forEach((tf, idx) => {
+          tfCount++;
+          const card = document.createElement('div');
+          card.className = 'tf-card';
+          card.innerHTML = `
+            <div class="q-meta">
+              <span>T/F Question ${tfCount} • Module ${mod.mod_num}</span>
+              <span>${mod.chapter}</span>
+            </div>
+            <div class="q-stem">"${tf.q}"</div>
+            <div class="tf-btn-row">
+              <button class="tf-btn" onclick="checkTF(this, true, ${tf.ans === 'True'}, '${escapeQuotes(tf.explanation)}')">True</button>
+              <button class="tf-btn" onclick="checkTF(this, false, ${tf.ans === 'False'}, '${escapeQuotes(tf.explanation)}')">False</button>
+            </div>
+            <div class="q-feedback" style="margin-top:12px;"></div>
+          `;
+          container.appendChild(card);
+        });
+      });
+    }
+
+    function escapeQuotes(str) {
+      return str.replace(/'/g, "\\'");
+    }
+
+    function checkTF(btn, userChoice, isCorrect, explanation) {
+      const parent = btn.closest('.tf-card');
+      const buttons = parent.querySelectorAll('.tf-btn');
+      const fb = parent.querySelector('.q-feedback');
+
+      buttons.forEach(b => {
+        b.classList.remove('selected-true', 'selected-false');
+      });
+
+      if (userChoice) {
+        btn.classList.add('selected-true');
+      } else {
+        btn.classList.add('selected-false');
+      }
+
+      if (isCorrect) {
+        fb.className = 'q-feedback correct';
+        fb.innerHTML = `✅ <strong>Correct!</strong><br>${explanation}`;
+      } else {
+        fb.className = 'q-feedback incorrect';
+        fb.innerHTML = `❌ <strong>Incorrect!</strong><br>${explanation}`;
+      }
+      fb.style.display = 'block';
+    }
+
+    // 3. FLASHCARDS
+    function initFlashcards() {
+      activeFlashcards = [];
+      modulesData.forEach(mod => {
+        if (currentModuleFilter !== 'all' && mod.mod_num !== parseInt(currentModuleFilter)) return;
+
+        mod.mcqs.forEach(mcq => {
+          activeFlashcards.push({
+            mod: `Module ${mod.mod_num}`,
+            front: mcq.q,
+            back: `<strong>Answer: ${mcq.ans}</strong><br><br>${mcq.rationale}`
+          });
+        });
+        mod.true_false.forEach(tf => {
+          activeFlashcards.push({
+            mod: `Module ${mod.mod_num} (T/F)`,
+            front: `Statement: "${tf.q}"`,
+            back: `<strong>${tf.ans.toUpperCase()}</strong><br><br>${tf.explanation}`
+          });
+        });
+      });
+
+      currentFlashcardIndex = 0;
+      updateFlashcardView();
+    }
+
+    function updateFlashcardView() {
+      if (activeFlashcards.length === 0) return;
+      const card = document.getElementById('fc-card');
+      card.classList.remove('flipped');
+
+      const cur = activeFlashcards[currentFlashcardIndex];
+      document.getElementById('fc-idx').innerText = `Card ${currentFlashcardIndex + 1} / ${activeFlashcards.length}`;
+      document.getElementById('fc-mod-tag').innerText = cur.mod;
+      document.getElementById('fc-mod-back-tag').innerText = cur.mod;
+      document.getElementById('fc-front-text').innerHTML = cur.front;
+      document.getElementById('fc-back-text').innerHTML = cur.back;
+    }
+
+    function flipFlashcard() {
+      document.getElementById('fc-card').classList.toggle('flipped');
+    }
+
+    function nextFlashcard() {
+      if (currentFlashcardIndex < activeFlashcards.length - 1) {
+        currentFlashcardIndex++;
+        updateFlashcardView();
+      }
+    }
+
+    function prevFlashcard() {
+      if (currentFlashcardIndex > 0) {
+        currentFlashcardIndex--;
+        updateFlashcardView();
+      }
+    }
+
+    function shuffleFlashcards() {
+      for (let i = activeFlashcards.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [activeFlashcards[i], activeFlashcards[j]] = [activeFlashcards[j], activeFlashcards[i]];
+      }
+      currentFlashcardIndex = 0;
+      updateFlashcardView();
+    }
+
+    // 4. RENDER ANATOMICAL PICTURE ATLAS
+    function renderAtlas() {
+      const container = document.getElementById('atlas-container');
+      container.innerHTML = '';
+
+      atlasData.forEach(item => {
+        const card = document.createElement('div');
+        card.className = 'atlas-card';
+
+        let rows = '';
+        item.parts.forEach(p => {
+          rows += `
+            <tr>
+              <td class="part-name">${p.name}</td>
+              <td class="part-role">${p.role}</td>
+            </tr>
+          `;
+        });
+
+        let secondaryImgHtml = '';
+        if (item.img_secondary) {
+          secondaryImgHtml = `
+            <div style="margin-top:14px;">
+              <img src="${item.img_secondary}?t=3" alt="${item.title} Secondary View" style="max-width:100%; height:auto; border-radius:6px; display:block; margin:0 auto; box-shadow:0 4px 14px rgba(0,0,0,0.08);">
+            </div>
+          `;
+        }
+
+        card.innerHTML = `
+          <div class="atlas-header">
+            <span class="atlas-title">${item.title}</span>
+            <span class="atlas-badge">${item.system}</span>
+          </div>
+          <div class="atlas-img-box" onclick="openImageModal('${item.img}?t=3', '${item.title}')">
+            <img src="${item.img}?t=3" alt="${item.title}">
+            <div style="font-size:0.82rem; color:#0284c7; margin-top:6px; font-weight:700;">🔍 Click picture to zoom in full-screen</div>
+            ${secondaryImgHtml}
+          </div>
+          <div class="atlas-body">
+            <p><strong>Description:</strong> ${item.description}</p>
+            <h4 style="color:#38bdf8; margin-top:14px; margin-bottom:6px; font-size:1rem;">📌 Key Labeled Structures & Functions to Memorize (Click row to enlarge):</h4>
+            <table class="parts-table">
+              <thead>
+                <tr>
+                  <th>Anatomical Structure</th>
+                  <th>Function & Exam Key</th>
+                </tr>
+              </thead>
+              <tbody>
+                ${rows}
+              </tbody>
+            </table>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    // 5. RENDER CONCEPT BLUEPRINTS
+    function renderBlueprints() {
+      const container = document.getElementById('bp-container');
+      container.innerHTML = '';
+
+      modulesData.forEach(mod => {
+        if (currentModuleFilter !== 'all' && mod.mod_num !== parseInt(currentModuleFilter)) return;
+
+        const bpItem = document.createElement('div');
+        bpItem.className = 'blueprint-item';
+        bpItem.innerHTML = `
+          <div class="bp-header">
+            <span class="bp-title">${mod.title}</span>
+            <span class="bp-tag">${mod.chapter}</span>
+          </div>
+          <div class="bp-img-box">
+            <img src="${mod.diagram}?t=3" alt="${mod.title}">
+          </div>
+          <div class="bp-summary">
+            <strong>Key Focus Points:</strong> ${mod.summary}
+          </div>
+        `;
+        container.appendChild(bpItem);
+      });
+    }
+  </script>
+
+  <!-- Modal 1: Image Zoom Lightbox -->
+  <div class="modal-overlay" id="imageModal" onclick="closeImageModalOnBackdrop(event)">
+    <div class="modal-header-bar">
+      <span class="modal-title-text" id="modalImageTitle">Anatomical Diagram Zoom</span>
+      <div class="modal-zoom-controls">
+        <button class="modal-ctrl-btn" onclick="zoomImage(-0.25)">➖ Zoom Out</button>
+        <button class="modal-ctrl-btn" onclick="resetImageZoom()">↺ 100%</button>
+        <button class="modal-ctrl-btn" onclick="zoomImage(0.25)">➕ Zoom In</button>
+        <button class="modal-ctrl-btn" onclick="toggleFitScreen()">↔ Fit Screen</button>
+        <button class="modal-close-btn" onclick="closeImageModal()">✕ Close</button>
+      </div>
+    </div>
+    <div class="modal-img-viewport" id="modalViewport">
+      <img src="" id="modalImg" alt="Enlarged Diagram">
+    </div>
+  </div>
+
+  <!-- Modal 2: Giant Word / Flashcard Modal -->
+  <div class="word-modal-overlay" id="wordModal" onclick="closeWordModalOnBackdrop(event)">
+    <div class="word-card-popup" onclick="event.stopPropagation()">
+      <div class="word-modal-badge" id="wmBadge">System Badge</div>
+      <div class="word-modal-title" id="wmTitle">Anatomical Structure</div>
+      <div class="word-modal-body" id="wmBody">Physiological role and nursing exam rationale...</div>
+      <div class="word-modal-nav">
+        <button class="word-nav-btn" onclick="prevWord()">◀ Previous</button>
+        <span class="word-counter" id="wmCounter">Part 1 of 12</span>
+        <button class="word-nav-btn" onclick="nextWord()">Next ▶</button>
+        <button class="modal-close-btn" style="padding:10px 20px;" onclick="closeWordModal()">✕ Close</button>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    /* Modal 1: Image Zoom Lightbox */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(11, 17, 32, 0.94);
+      backdrop-filter: blur(8px);
+      z-index: 99999;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-header-bar {
+      width: 100%;
+      max-width: 1200px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #1e293b;
+      padding: 12px 24px;
+      border-radius: 12px;
+      border: 1px solid #334155;
+      color: white;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .modal-title-text {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #38bdf8;
+    }
+    .modal-zoom-controls { display: flex; gap: 8px; align-items: center; }
+    .modal-ctrl-btn {
+      background: #0f172a;
+      border: 1px solid #38bdf8;
+      color: #38bdf8;
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .modal-ctrl-btn:hover { background: #38bdf8; color: #0f172a; }
+    .modal-close-btn {
+      background: #ef4444;
+      border: none;
+      color: white;
+      padding: 6px 16px;
+      border-radius: 6px;
+      font-size: 1.1rem;
+      font-weight: 800;
+      cursor: pointer;
+    }
+    .modal-close-btn:hover { background: #dc2626; }
+    .modal-img-viewport {
+      flex: 1;
+      width: 100%;
+      max-width: 1200px;
+      overflow: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 16px;
+      cursor: grab;
+    }
+    .modal-img-viewport:active { cursor: grabbing; }
+    .modal-img-viewport img {
+      transition: transform 0.2s ease-out;
+      transform-origin: center center;
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+      background: white;
+    }
+
+    /* Modal 2: Giant Word / Study Card Lightbox */
+    .word-modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(11, 17, 32, 0.88);
+      backdrop-filter: blur(8px);
+      z-index: 99999;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+    .word-modal-overlay.active { display: flex; }
+    .word-card-popup {
+      background: #1e293b;
+      border: 3px solid #38bdf8;
+      border-radius: 18px;
+      padding: 36px 40px;
+      max-width: 820px;
+      width: 100%;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+      position: relative;
+    }
+    .word-modal-badge {
+      display: inline-block;
+      background: rgba(56, 189, 248, 0.15);
+      border: 1px solid #38bdf8;
+      color: #38bdf8;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    .word-modal-title {
+      font-size: 2.3rem;
+      font-weight: 800;
+      color: #67e8f9;
+      line-height: 1.2;
+      margin-bottom: 18px;
+      border-bottom: 2px solid #334155;
+      padding-bottom: 12px;
+    }
+    .word-modal-body {
+      font-size: 1.45rem;
+      line-height: 1.7;
+      color: #f1f5f9;
+      margin-bottom: 28px;
+    }
+    .word-modal-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+    }
+    .word-nav-btn {
+      background: #0f172a;
+      border: 2px solid #38bdf8;
+      color: #38bdf8;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .word-nav-btn:hover { background: #38bdf8; color: #0f172a; }
+    .word-counter { color: #94a3b8; font-size: 1rem; font-weight: 600; }
+
+    /* Atlas Image Hover */
+    .atlas-img-box, .bp-img-box {
+      position: relative;
+      cursor: zoom-in;
+    }
+    .parts-table tr {
+      cursor: pointer;
+      transition: background 0.15s ease;
+    }
+    .parts-table tr:hover {
+      background: #253349 !important;
+    }
+  </style>
+
+  <script>
+    // Lightbox and Word Zoom Scripts
+    let currentImgZoom = 1;
+    function openImageModal(imgSrc, title) {
+      const modal = document.getElementById('imageModal');
+      const modalImg = document.getElementById('modalImg');
+      const titleEl = document.getElementById('modalImageTitle');
+      modalImg.src = imgSrc;
+      titleEl.innerText = title;
+      currentImgZoom = 1;
+      modalImg.style.transform = `scale(${currentImgZoom})`;
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeImageModal() {
+      const modal = document.getElementById('imageModal');
+      modal.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+
+    function closeImageModalOnBackdrop(e) {
+      if (e.target.id === 'imageModal' || e.target.id === 'modalViewport') {
+        closeImageModal();
+      }
+    }
+
+    function zoomImage(delta) {
+      currentImgZoom = Math.max(0.5, Math.min(3.5, currentImgZoom + delta));
+      document.getElementById('modalImg').style.transform = `scale(${currentImgZoom})`;
+    }
+
+    function resetImageZoom() {
+      currentImgZoom = 1;
+      document.getElementById('modalImg').style.transform = `scale(1)`;
+    }
+
+    function toggleFitScreen() {
+      currentImgZoom = (currentImgZoom !== 1) ? 1 : 1.4;
+      document.getElementById('modalImg').style.transform = `scale(${currentImgZoom})`;
+    }
+
+    // Giant Word Modal
+    let activeAtlasIdx = 0;
+    let activePartIdx = 0;
+    function openWordModal(atlasIdx, partIdx) {
+      activeAtlasIdx = atlasIdx;
+      activePartIdx = partIdx;
+      renderWordModal();
+      document.getElementById('wordModal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function renderWordModal() {
+      const item = atlasData[activeAtlasIdx];
+      const part = item.parts[activePartIdx];
+      document.getElementById('wmBadge').innerText = `${item.system} • Plate ${activeAtlasIdx + 1}`;
+      document.getElementById('wmTitle').innerText = part.name;
+      document.getElementById('wmBody').innerText = part.role;
+      document.getElementById('wmCounter').innerText = `Structure ${activePartIdx + 1} of ${item.parts.length}`;
+    }
+
+    function closeWordModal() {
+      document.getElementById('wordModal').classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+
+    function closeWordModalOnBackdrop(e) {
+      if (e.target.id === 'wordModal') {
+        closeWordModal();
+      }
+    }
+
+    function nextWord() {
+      const item = atlasData[activeAtlasIdx];
+      activePartIdx = (activePartIdx < item.parts.length - 1) ? activePartIdx + 1 : 0;
+      renderWordModal();
+    }
+
+    function prevWord() {
+      const item = atlasData[activeAtlasIdx];
+      activePartIdx = (activePartIdx > 0) ? activePartIdx - 1 : item.parts.length - 1;
+      renderWordModal();
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeImageModal();
+        closeWordModal();
+      } else if (document.getElementById('wordModal').classList.contains('active')) {
+        if (e.key === 'ArrowRight') nextWord();
+        if (e.key === 'ArrowLeft') prevWord();
+      }
+    });
+  </script>
+</body>
+
+</html>
