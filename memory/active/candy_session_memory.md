@@ -88,6 +88,15 @@ I'm ready to respond to the updated call, sir.
   - **Friday - Joe's BC Relocation, Medical & Tax Strategy:** Audited Gemini's advice regarding interprovincial residency and healthcare. Flagged CRA Income Tax Folio S5-F1-C1 spousal primary tie risk (preventing surprise clawbacks) and exposed real-world NB family doctor de-rostering risks under BC MSP. Formulated two distinct medical pathways (Option A: Mobile Worker with protected NB Medicare vs Option B: BC MSP with Biologic transfer) and master 5-year roadmap. Filed master guide to [`daily_notes/joe_bc_relocation_medical_and_tax_guide.md`](file:///Users/valuedcustomer/Downloads/flowstate_ai_os_candy/daily_notes/joe_bc_relocation_medical_and_tax_guide.md).
 - **2026-10-02** (FRIDAY / SOMA):
   - **Vancouver Relocation & Healthcare Strategy Refinement:** Explored Western Canada doctor rostering mechanisms (Alberta PCN vs BC Health Connect Registry), corporate executive healthcare benefits for Joe's Director role (TELUS Health / Harrison Healthcare), and resolved Candy's emotional tension regarding residency. Confirmed Candy can spend up to 182 days/year in Vancouver with Joe while keeping her NB family doctor, Medicare, and Rayne's home base 100% protected.
+- **2026-10-06 / 2026-10-07** (CLARA):
+  - **Rayne NBCC Practical Nursing A&P Master Exam Prep Suite (Modules 1–8):**
+    - Sourced textbook: *Structure & Function of the Body* (17th Edition, Patton et al. — Elsevier).
+    - Extracted 100% of instructor Jessica Freeze Snyder's lecture slides, PDFs, and vocabulary files across Modules 1 to 8 from `Desktop/Anatomy ` and `Rayne_NBCC/`.
+    - Generated 8 high-resolution custom anatomical blueprint diagrams with zero text overflow (`mod1` through `mod8` in `images/`).
+    - Built comprehensive 80-question Multiple Choice Question Bank and 40 True/False Question Bank with full rationales in `Rayne_AP_Exam_Master_Question_Bank_Modules_1_8.md`.
+    - Built standalone, interactive offline web app `Rayne_AP_Master_Study_Hub_Modules_1_8.html` with Practice Exam Simulator (scored against NBCC 75% standard), T/F Speed Blitz, 3D Flashcards Deck, and Visual Blueprints gallery with cache-busting.
+    - Built clean printable PDF/print pack `Rayne_AP_Master_Blueprints_Printable_Modules_1_8.html`.
+    - Fully filed and synced to both `Desktop/Anatomy ` and GitHub remote (`main` branch `523d5a0`). Ready for Rayne's exam prep on October 13th!
   - **Soma - Day 25 Cycle Reset & Oura Logged:**
     - **Oura Temp & Scores:** Temp officially dipped below baseline at **-0.1°F** (-0.06°C), Readiness 80, Sleep 76. Confirms end of luteal phase / start of cycle reset.
     - **Hydration Win:** Drank 16 oz warm water prior to morning coffee (gentle liver & gut motility flush).
