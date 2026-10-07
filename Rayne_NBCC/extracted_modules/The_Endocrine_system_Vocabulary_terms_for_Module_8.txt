@@ -1,0 +1,79 @@
+Vocabulary terms for Module 8
+The Endocrine system
+Term | Definition
+Endocrine System | A body system that communicates and controls body functions through hormones carried in the bloodstream.
+Hormone | A chemical messenger that travels through the blood to regulate the activities of target cells and organs.
+Target Cell | A cell that contains specific receptors for a hormone.
+Endocrine Gland | A ductless gland that secretes hormones directly into the bloodstream.
+Steroid Hormone | A lipid-soluble hormone that binds to receptors inside the cell.
+Nonsteroid Hormone | A water-soluble hormone that binds to receptors on the outside of a cell.
+Negative Feedback | A homeostatic mechanism that reverses a change and maintains balance within the body.
+Positive Feedback | A mechanism that amplifies a change rather than reversing it.
+Pituitary Gland | A pea-sized gland at the base of the brain often called the "master gland" because it controls many other endocrine glands.
+Anterior Pituitary | The front lobe of the pituitary gland that secretes several major hormones.
+Posterior Pituitary | The back lobe of the pituitary gland that releases ADH and oxytocin.
+Thyroid-Stimulating Hormone (TSH) | A hormone that stimulates the thyroid gland to produce thyroid hormones.
+Adrenocorticotropic Hormone (ACTH) | A hormone that stimulates the adrenal cortex to release hormones such as cortisol.
+Follicle-Stimulating Hormone (FSH) | A hormone that stimulates egg development in females and sperm production in males.
+Luteinizing Hormone (LH) | A hormone involved in ovulation and the production of reproductive hormones.
+Growth Hormone (GH) | A hormone that stimulates growth and development of body tissues.
+Prolactin (PRL) | A hormone that stimulates milk production in the mammary glands.
+Antidiuretic Hormone (ADH) | A hormone that promotes water retention by the kidneys.
+Vasopressin | Another name for antidiuretic hormone (ADH).
+Oxytocin | A hormone that stimulates uterine contractions and milk release during breastfeeding.
+Hypothalamus | A brain structure that links the nervous and endocrine systems and regulates the pituitary gland.
+Releasing Hormones (RHs) | Hormones produced by the hypothalamus that stimulate the anterior pituitary.
+Inhibiting Hormones (IHs) | Hormones produced by the hypothalamus that suppress anterior pituitary hormone secretion.
+Thyroid Gland | A butterfly-shaped gland in the neck that regulates metabolism, growth, and development.
+Thyroxine (T4) | A thyroid hormone that helps regulate metabolism and energy use.
+Triiodothyronine (T3) | A thyroid hormone that helps control metabolic activity.
+Calcitonin (CT) | A hormone that lowers blood calcium levels by inhibiting bone breakdown.
+Parathyroid Gland | Small glands located behind the thyroid that regulate calcium levels in the blood.
+Parathyroid Hormone (PTH) | A hormone that raises blood calcium levels by stimulating bone breakdown.
+Adrenal Glands | Triangular glands located on top of the kidneys that help regulate stress responses, metabolism, and blood pressure.
+Adrenal Cortex | The outer portion of the adrenal gland that produces steroid hormones.
+Adrenal Medulla | The inner portion of the adrenal gland that produces epinephrine and norepinephrine.
+Aldosterone | A hormone that regulates fluid and electrolyte balance.
+Cortisol | A hormone that helps regulate metabolism, blood sugar, inflammation, and stress responses.
+Androgens | Hormones that promote male characteristics.
+Estrogens | Hormones that promote female characteristics.
+Epinephrine | A hormone involved in the body's fight-or-flight response; also known as adrenaline.
+Norepinephrine | A hormone that helps regulate blood vessel constriction and the stress response.
+Pineal Gland | A small gland in the brain that produces melatonin.
+Melatonin | A hormone that regulates sleep-wake cycles and circadian rhythms.
+Circadian Rhythm | The body's internal clock that regulates daily sleep and activity patterns.
+Thymus | A gland located behind the sternum that plays a role in immune system development.
+Thymosin | A hormone that promotes the development of immune system cells.
+T Cells | Immune cells that mature in the thymus and help fight infections.
+Pancreas | An organ that functions in both the digestive and endocrine systems.
+Islets of Langerhans | Clusters of endocrine cells within the pancreas that produce insulin and glucagon.
+Insulin | A hormone that lowers blood glucose by promoting the movement of glucose into cells.
+Glucagon | A hormone that raises blood glucose by stimulating glycogen breakdown in the liver.
+Glycogenolysis | The breakdown of glycogen into glucose.
+Blood Glucose | The amount of sugar present in the bloodstream.
+Ovaries | Female reproductive glands that produce eggs and hormones.
+Progesterone | A hormone that helps maintain conditions necessary for pregnancy.
+Testes | Male reproductive glands that produce sperm and testosterone.
+Testosterone | The primary male sex hormone responsible for male reproductive development and characteristics.
+Gonads | The reproductive glands; ovaries in females and testes in males.
+Metabolism | The sum of all chemical processes that occur within the body to maintain life.
+Homeostasis | The maintenance of a stable internal environment within the body
+Endocrine System | A body system that communicates and controls body functions through hormones carried in the bloodstream.
+Hormone | A chemical messenger that travels through the blood to regulate the activities of target cells and organs.
+Target Cell | A cell that contains specific receptors for a hormone.
+Endocrine Gland | A ductless gland that secretes hormones directly into the bloodstream.
+Steroid Hormone | A lipid-soluble hormone that binds to receptors inside the cell.
+Nonsteroid Hormone | A water-soluble hormone that binds to receptors on the outside of a cell.
+Negative Feedback | A homeostatic mechanism that reverses a change and maintains balance within the body.
+Positive Feedback | A mechanism that amplifies a change rather than reversing it.
+Pituitary Gland | A pea-sized gland at the base of the brain often called the "master gland" because it controls many other endocrine glands.
+Anterior Pituitary | The front lobe of the pituitary gland that secretes several major hormones.
+Posterior Pituitary | The back lobe of the pituitary gland that releases ADH and oxytocin.
+Thyroid-Stimulating Hormone (TSH) | A hormone that stimulates the thyroid gland to produce thyroid hormones.
+Adrenocorticotropic Hormone (ACTH) | A hormone that stimulates the adrenal cortex to release hormones such as cortisol.
+Follicle-Stimulating Hormone (FSH) | A hormone that stimulates egg development in females and sperm production in males.
+Luteinizing Hormone (LH) | A hormone involved in ovulation and the production of reproductive hormones.
+Growth Hormone (GH) | A hormone that stimulates growth and development of body tissues.
+Prolactin (PRL) | A hormone that stimulates milk production in the mammary glands.
+Antidiuretic Hormone (ADH) | A hormone that promotes water retention by the kidneys.
+Vasopressin | Another name for antidiuretic hormone (ADH).

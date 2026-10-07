@@ -1,0 +1,79 @@
+Vocabulary terms for Module 6
+The Nervous system
+Term | Definition
+Nervous System | The body system that coordinates activities and transmits signals between different parts of the body.
+Central Nervous System (CNS) | The portion of the nervous system consisting of the brain and spinal cord.
+Peripheral Nervous System (PNS) | The portion of the nervous system consisting of all nerves outside the brain and spinal cord.
+Neuron | A nerve cell and the basic functional unit of the nervous system.
+Glial Cells (Neuroglia) | Support cells that protect, nourish, and assist neurons.
+Relay Neuron | A neuron that sends signals between neurons and assists in reflex arcs.
+Astrocyte | A star-shaped glial cell that provides physical and nutritional support to neurons.
+Microglia | Glial cells that digest dead neurons and other debris.
+Oligodendroglia | CNS glial cells that produce myelin around neurons.
+Ependymal Cells | Glial cells involved in cerebrospinal fluid production and regulation.
+Satellite Cells | Glial cells that provide support to neurons in the peripheral nervous system.
+Schwann Cells | PNS glial cells that form the myelin sheath around axons.
+Cell Body (Soma) | The main part of a neuron containing the nucleus and cytoplasm.
+Axon | The neuron structure that carries nerve impulses away from the cell body.
+Dendrite | Branch-like structures that receive signals from other neurons and sensory cells.
+Myelin Sheath | A fatty insulating covering around axons that increases the speed of nerve impulse conduction.
+Nodes of Ranvier | Gaps between sections of the myelin sheath that allow impulses to travel faster.
+Sensory Neuron | A neuron that carries information from the body to the CNS; also called an afferent neuron.
+Motor Neuron | A neuron that carries information from the CNS to muscles and glands; also called an efferent neuron.
+Afferent Neuron | A sensory neuron that carries impulses toward the CNS.
+Efferent Neuron | A motor neuron that carries impulses away from the CNS.
+Nerve Impulse | An electrical signal that travels along a neuron.
+Action Potential | The transmission of an electrical impulse down the axon of a neuron.
+Resting Potential | The state of a neuron when it is not actively transmitting a signal.
+Depolarization | The stage when positive ions enter the neuron, initiating an impulse.
+Repolarization | The process of restoring the neuron's electrical balance after an impulse.
+Synapse | The junction where one neuron communicates with another neuron or cell.
+Neurotransmitter | A chemical messenger released by neurons to transmit signals across a synapse.
+Synaptic Knob | The end of an axon where neurotransmitters are released.
+Synaptic Cleft | The tiny gap between communicating neurons at a synapse.
+Brain | The control center of the nervous system located within the skull.
+Cerebrum | The largest part of the brain responsible for thought, memory, sensation, and voluntary movement.
+Cerebral Hemispheres | The right and left halves of the cerebrum.
+Contralateral Control | The principle that each side of the brain controls the opposite side of the body.
+Gyri | Raised folds on the surface of the cerebrum.
+Sulcus | A groove or indentation between gyri.
+Longitudinal Fissure | The deep groove separating the right and left cerebral hemispheres.
+Transverse Fissure | The groove separating the cerebrum from the cerebellum.
+Corpus Callosum | A band of nerve fibers connecting the two cerebral hemispheres.
+Central Sulcus | The groove separating the frontal and parietal lobes.
+Cerebellum | The second-largest brain region responsible for balance, posture, and coordination.
+Arbor Vitae | The tree-like arrangement of white matter inside the cerebellum.
+Diencephalon | The brain region located above the brain stem that helps regulate hormones, sensory information, and sleep cycles.
+Thalamus | The structure that relays sensory and motor signals to the cerebral cortex.
+Hypothalamus | The structure responsible for maintaining homeostasis, including temperature regulation.
+Epithalamus | The dorsal portion of the diencephalon containing the pineal gland.
+Subthalamus | The ventral portion of the diencephalon involved in regulating body functions.
+Pineal Gland | A gland that produces melatonin and helps regulate sleep.
+Melatonin | A hormone that regulates sleep and wake cycles.
+Pituitary Gland | The “master gland” that controls many other endocrine glands.
+Habenular Nuclei | Structures that help regulate neurotransmitter activity.
+Brain Stem | The part of the brain that controls vital functions such as breathing, heart rate, blood pressure, and sleep.
+Midbrain | The upper part of the brain stem involved in vision, hearing, alertness, and temperature regulation.
+Pons | The portion of the brain stem involved in controlling breathing.
+Medulla Oblongata | The lower brain stem that regulates heart rate, blood pressure, breathing, swallowing, and vomiting.
+Spinal Cord | The CNS structure that carries nerve impulses and coordinates reflex actions.
+Reflex Arc | An automatic response pathway that occurs at the spinal cord level without brain involvement.
+Meninges | The three protective connective tissue layers surrounding the brain and spinal cord.
+Dura Mater | The tough outermost layer of the meninges.
+Arachnoid Mater | The middle layer of the meninges.
+Pia Mater | The innermost meningeal layer that closely covers the brain and spinal cord.
+Cerebrospinal Fluid (CSF) | A clear fluid that cushions, nourishes, and removes waste from the brain and spinal cord.
+Choroid Plexus | Specialized tissue that produces cerebrospinal fluid.
+Cranial Nerves | Twelve pairs of nerves that emerge directly from the brain.
+Spinal Nerves | Thirty-one pairs of nerves that emerge from the spinal cord.
+Nerve | A bundle of neuron fibers that transmits electrical and chemical signals.
+Fascicle | A bundle of nerve fibers within a nerve.
+Perineurium | The connective tissue sheath surrounding a fascicle.
+Autonomic Nervous System (ANS) | The division of the PNS that controls involuntary functions of organs, glands, and smooth muscle.
+Sympathetic Nervous System | The division of the ANS responsible for the "fight-or-flight" response.
+Parasympathetic Nervous System | The division of the ANS responsible for "rest-and-digest" functions.
+Homeostasis | The maintenance of a stable internal environment within the body.
+Somatic Nervous System | The division of the PNS responsible for voluntary movement and sensory information processing.
+Voluntary Movement | A movement consciously controlled by skeletal muscles.
+Involuntary Movement | A movement that occurs automatically without conscious control.
+Olfactory Nerve (CN I) | Cranial nerve responsible for smell.

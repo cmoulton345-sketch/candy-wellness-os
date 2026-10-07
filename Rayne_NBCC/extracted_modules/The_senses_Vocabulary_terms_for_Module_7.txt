@@ -1,0 +1,79 @@
+Vocabulary terms for Module 7
+The Sense Organs
+Term | Definition
+Sense Organs | Structures that detect stimuli and send information to the nervous system.
+Sensory Receptors | Specialized cells that detect changes in the internal or external environment.
+General Sense Organs | Sensory receptors distributed throughout the body in the skin, muscles, tendons, joints, and organs.
+Special Sense Organs | Organs responsible for smell, taste, vision, hearing, and equilibrium.
+Photoreceptors | Receptors that detect light.
+Chemoreceptors | Receptors that detect chemical changes.
+Nociceptors | Receptors that detect pain or tissue injury.
+Thermoreceptors | Receptors that detect temperature changes.
+Mechanoreceptors | Receptors that detect touch, pressure, vibration, and movement.
+Proprioceptors | Receptors that detect body position and movement.
+Vision | The sense of sight.
+Eye | The special sense organ responsible for vision.
+Fibrous Layer | The outer layer of the eye consisting of the sclera and cornea.
+Sclera | The white outer portion of the eye.
+Cornea | The transparent front part of the eye that allows light to enter.
+Vascular Layer | The middle layer of the eye containing the choroid, ciliary muscle, and iris.
+Choroid | The pigmented layer of the eye that prevents light scattering and aids vision.
+Melanin | Dark pigment that helps absorb excess light within the eye.
+Ciliary Muscle | An involuntary muscle that changes the shape of the lens for focusing.
+Iris | The colored part of the eye that controls pupil size.
+Lens | The transparent structure behind the pupil that focuses light onto the retina.
+Inner Layer | The innermost layer of the eye containing the retina and optic nerve.
+Retina | The light-sensitive layer of the eye containing photoreceptors.
+Rods | Photoreceptor cells specialized for dim-light vision.
+Cones | Photoreceptor cells specialized for color and detailed vision.
+Optic Nerve | Cranial nerve II that carries visual information from the retina to the brain.
+Hearing | The sense that detects sound waves.
+Ear | The special sense organ responsible for hearing and balance.
+External Ear | The outer portion of the ear consisting of the auricle and external acoustic canal.
+Auricle (Pinna) | The visible external part of the ear that collects sound waves.
+External Acoustic Canal | The passageway that carries sound waves to the eardrum.
+Tympanic Membrane | The eardrum; a membrane that vibrates when struck by sound waves.
+Middle Ear | The air-filled cavity containing the auditory ossicles.
+Ossicles | The three tiny bones of the middle ear that transmit sound vibrations.
+Malleus | One of the three auditory ossicles located in the middle ear.
+Stapes | The smallest bone in the body and one of the auditory ossicles.
+Inner Ear | The portion of the ear containing the vestibule, semicircular canals, and cochlea.
+Vestibule | Inner ear structure involved in maintaining balance and equilibrium.
+Semicircular Canals | Inner ear structures that detect head movement and help maintain balance.
+Cochlea | Spiral-shaped inner ear structure responsible for hearing.
+Equilibrium | The sense of balance and body position.
+Vestibular Nerve | The nerve that carries balance information from the inner ear to the brain.
+Cochlear Nerve | The nerve that carries hearing information from the cochlea to the brain.
+Vestibulocochlear Nerve | Cranial Nerve VIII; formed by the vestibular and cochlear nerves and responsible for hearing and balance.
+Taste | The sense that detects chemicals in food and drink.
+Gustation | Another term for the sense of taste.
+Taste Buds | Specialized sense organs that detect taste.
+Gustatory Cells | Chemoreceptor cells within taste buds that detect taste stimuli.
+Papillae | Small projections on the tongue that contain most taste buds.
+Smell | The sense that detects airborne chemicals.
+Olfaction | Another term for the sense of smell.
+Olfactory Receptors | Chemoreceptors located in the upper nasal cavity that detect odors.
+Olfactory Nerve | Cranial Nerve I; carries smell information from the nose to the brain.
+Nasal Cavity | The space inside the nose where olfactory receptors are located.
+Cranial Nerve I | The olfactory nerve responsible for smell.
+Cranial Nerve II | The optic nerve responsible for vision.
+Cranial Nerve VIII | The vestibulocochlear nerve responsible for hearing and balance.
+Sense Organs | Structures that detect stimuli and send information to the nervous system.
+Sensory Receptors | Specialized cells that detect changes in the internal or external environment.
+General Sense Organs | Sensory receptors distributed throughout the body in the skin, muscles, tendons, joints, and organs.
+Special Sense Organs | Organs responsible for smell, taste, vision, hearing, and equilibrium.
+Photoreceptors | Receptors that detect light.
+Chemoreceptors | Receptors that detect chemical changes.
+Nociceptors | Receptors that detect pain or tissue injury.
+Thermoreceptors | Receptors that detect temperature changes.
+Mechanoreceptors | Receptors that detect touch, pressure, vibration, and movement.
+Proprioceptors | Receptors that detect body position and movement.
+Vision | The sense of sight.
+Eye | The special sense organ responsible for vision.
+Fibrous Layer | The outer layer of the eye consisting of the sclera and cornea.
+Sclera | The white outer portion of the eye.
+Cornea | The transparent front part of the eye that allows light to enter.
+Vascular Layer | The middle layer of the eye containing the choroid, ciliary muscle, and iris.
+Choroid | The pigmented layer of the eye that prevents light scattering and aids vision.
+Melanin | Dark pigment that helps absorb excess light within the eye.
+Ciliary Muscle | An involuntary muscle that changes the shape of the lens for focusing.

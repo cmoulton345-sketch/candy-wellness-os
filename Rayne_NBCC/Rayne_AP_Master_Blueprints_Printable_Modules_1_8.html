@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Rayne's Printable Anatomical Blueprint Sheets (Modules 1–8)</title>
+  <style>
+    @page {
+      size: letter portrait;
+      margin: 0.4in;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', -apple-system, sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
+      padding: 20px;
+      line-height: 1.5;
+    }
+
+    .no-print-bar {
+      background: #1e293b;
+      border: 2px solid #38bdf8;
+      color: #ffffff;
+      padding: 16px 24px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .print-btn {
+      background: #38bdf8;
+      color: #0f172a;
+      border: none;
+      padding: 10px 22px;
+      border-radius: 8px;
+      font-weight: 800;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(56, 189, 248, 0.3);
+    }
+
+    .print-btn:hover { background: #7dd3fc; }
+
+    .bp-page {
+      background: #1e293b;
+      border: 2px solid #38bdf8;
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 40px;
+      page-break-after: always;
+    }
+
+    .bp-title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #38bdf8;
+      padding-bottom: 10px;
+      margin-bottom: 18px;
+    }
+
+    .bp-title {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: #38bdf8;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .bp-badge {
+      background: rgba(56, 189, 248, 0.15);
+      border: 1px solid #38bdf8;
+      color: #38bdf8;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    .bp-diagram-box {
+      background: white;
+      padding: 8px;
+      border-radius: 8px;
+      margin-bottom: 18px;
+      text-align: center;
+    }
+
+    .bp-diagram-box img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 4px;
+    }
+
+    .notes-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 14px;
+    }
+
+    .note-card {
+      background: #0f172a;
+      border-left: 4px solid #38bdf8;
+      padding: 12px 14px;
+      border-radius: 6px;
+      font-size: 0.9rem;
+    }
+
+    .note-card h4 {
+      color: #38bdf8;
+      margin-bottom: 6px;
+      font-size: 0.95rem;
+    }
+
+    @media print {
+      body { background: white; color: black; padding: 0; }
+      .no-print-bar { display: none; }
+      .bp-page { background: white; color: black; border: 1.5px solid #000; box-shadow: none; margin-bottom: 0; }
+      .bp-title { color: #000; border-bottom: 2px solid #000; }
+      .bp-badge { color: #000; border: 1px solid #000; background: #eee; }
+      .note-card { background: #f8fafc; color: #000; border: 1px solid #ccc; border-left: 4px solid #000; }
+      .note-card h4 { color: #000; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="no-print-bar">
+    <div>
+      <h2 style="font-size:1.3rem; margin-bottom:4px;">Rayne's Printable Blueprint Pack (Modules 1–8)</h2>
+      <p style="color:#94a3b8; font-size:0.9rem;">High-Yield Anatomical Blueprints for Practical Nursing Exam on Oct 13, 2026</p>
+    </div>
+    <button class="print-btn" onclick="window.print()">🖨️ Print / Save to PDF</button>
+  </div>
+
+  <div class="bp-page">
+    <div class="bp-title-row">
+      <div class="bp-title">Module 1: Introduction to the Human Body & Homeostasis</div>
+      <div class="bp-badge">Chapter 1 (Patton 17th Edition)</div>
+    </div>
+    <div class="bp-diagram-box">
+      <img src="images/mod1_anatomical_planes_cavities.png?t=2" alt="Module 1: Introduction to the Human Body & Homeostasis">
+    </div>
+    <div class="notes-grid">
+      <div class="note-card">
+        <h4>High-Yield Exam Scope</h4>
+        <p>Covers levels of structural organization, anatomical position, directional planes and axes, dorsal and ventral body cavities, abdominopelvic quadrants/regions, and homeostatic negative vs. positive feedback systems.</p>
+      </div>
+      <div class="note-card">
+        <h4>Clinical Success Pearls</h4>
+        <p>Ensure mastery of both anatomical structures and homeostatic functions. Practice active recall of bolded key terms before testing with the interactive quiz.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="bp-page">
+    <div class="bp-title-row">
+      <div class="bp-title">Module 2: Cell Biology & Transport Dynamics</div>
+      <div class="bp-badge">Chapter 3 (Patton 17th Edition)</div>
+    </div>
+    <div class="bp-diagram-box">
+      <img src="images/mod2_cell_organelles_transport.png?t=2" alt="Module 2: Cell Biology & Transport Dynamics">
+    </div>
+    <div class="notes-grid">
+      <div class="note-card">
+        <h4>High-Yield Exam Scope</h4>
+        <p>Explores the fluid mosaic plasma membrane, prominent organelles (Nucleus, Mitochondria, Ribosomes, ER, Golgi, Lysosomes), passive transport (diffusion, osmosis, filtration, tonicity), active transport (pumps, endocytosis, exocytosis), and the stages of mitosis.</p>
+      </div>
+      <div class="note-card">
+        <h4>Clinical Success Pearls</h4>
+        <p>Ensure mastery of both anatomical structures and homeostatic functions. Practice active recall of bolded key terms before testing with the interactive quiz.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="bp-page">
+    <div class="bp-title-row">
+      <div class="bp-title">Module 3: The Integumentary System & Burn Assessment</div>
+      <div class="bp-badge">Chapter 6 (Patton 17th Edition)</div>
+    </div>
+    <div class="bp-diagram-box">
+      <img src="images/mod3_skin_layers_appendages.png?t=2" alt="Module 3: The Integumentary System & Burn Assessment">
+    </div>
+    <div class="notes-grid">
+      <div class="note-card">
+        <h4>High-Yield Exam Scope</h4>
+        <p>Deconstructs the epidermis, dermis, and hypodermis, epidermal strata, keratinocytes and melanocytes, sweat (eccrine vs apocrine) and sebaceous glands, cutaneous sensory receptors, thermoregulation, and burn classifications including the Rule of Nines.</p>
+      </div>
+      <div class="note-card">
+        <h4>Clinical Success Pearls</h4>
+        <p>Ensure mastery of both anatomical structures and homeostatic functions. Practice active recall of bolded key terms before testing with the interactive quiz.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="bp-page">
+    <div class="bp-title-row">
+      <div class="bp-title">Module 4: The Skeletal System, Histology & Articulations</div>
+      <div class="bp-badge">Chapter 7 (Patton 17th Edition)</div>
+    </div>
+    <div class="bp-diagram-box">
+      <img src="images/mod4_skeletal_osteon_divisions.png?t=2" alt="Module 4: The Skeletal System, Histology & Articulations">
+    </div>
+    <div class="notes-grid">
+      <div class="note-card">
+        <h4>High-Yield Exam Scope</h4>
+        <p>Covers skeletal functions, bone classifications, long bone gross anatomy, microscopic osteon (Haversian) histology, bone cells (osteoblasts, osteoclasts, osteocytes), axial (80) vs appendicular (126) divisions, and synarthrotic, amphiarthrotic, and diarthrotic joint types.</p>
+      </div>
+      <div class="note-card">
+        <h4>Clinical Success Pearls</h4>
+        <p>Ensure mastery of both anatomical structures and homeostatic functions. Practice active recall of bolded key terms before testing with the interactive quiz.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="bp-page">
+    <div class="bp-title-row">
+      <div class="bp-title">Module 5: The Muscular System & Sarcomere Dynamics</div>
+      <div class="bp-badge">Chapter 8 (Patton 17th Edition)</div>
+    </div>
+    <div class="bp-diagram-box">
+      <img src="images/mod5_muscle_sarcomere_contraction.png?t=2" alt="Module 5: The Muscular System & Sarcomere Dynamics">
+    </div>
+    <div class="notes-grid">
+      <div class="note-card">
+        <h4>High-Yield Exam Scope</h4>
+        <p>Examines the three muscle tissue types (skeletal, cardiac, smooth), connective tissue wrappings (epimysium, perimysium, endomysium), sarcomere ultrastructure (actin vs myosin), sliding filament mechanism, excitation-contraction coupling, isotonic vs isometric contractions, and muscle actions.</p>
+      </div>
+      <div class="note-card">
+        <h4>Clinical Success Pearls</h4>
+        <p>Ensure mastery of both anatomical structures and homeostatic functions. Practice active recall of bolded key terms before testing with the interactive quiz.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="bp-page">
+    <div class="bp-title-row">
+      <div class="bp-title">Module 6: The Nervous System, Synaptic Transmission & Reflex Arcs</div>
+      <div class="bp-badge">Chapter 9 (Patton 17th Edition)</div>
+    </div>
+    <div class="bp-diagram-box">
+      <img src="images/mod6_nervous_reflex_arc.png?t=2" alt="Module 6: The Nervous System, Synaptic Transmission & Reflex Arcs">
+    </div>
+    <div class="notes-grid">
+      <div class="note-card">
+        <h4>High-Yield Exam Scope</h4>
+        <p>Deconstructs CNS vs PNS divisions, sensory (afferent) vs motor (efferent) pathways, somatic vs autonomic (sympathetic vs parasympathetic) systems, neuron anatomy, neuroglial cells, action potential generation, synaptic transmission, the 5-step reflex arc, and major brain regions.</p>
+      </div>
+      <div class="note-card">
+        <h4>Clinical Success Pearls</h4>
+        <p>Ensure mastery of both anatomical structures and homeostatic functions. Practice active recall of bolded key terms before testing with the interactive quiz.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="bp-page">
+    <div class="bp-title-row">
+      <div class="bp-title">Module 7: The Senses (Vision, Audition, Equilibrium, Olfaction & Gustation)</div>
+      <div class="bp-badge">Chapter 10 (Patton 17th Edition)</div>
+    </div>
+    <div class="bp-diagram-box">
+      <img src="images/mod7_special_senses_eye_ear.png?t=2" alt="Module 7: The Senses (Vision, Audition, Equilibrium, Olfaction & Gustation)">
+    </div>
+    <div class="notes-grid">
+      <div class="note-card">
+        <h4>High-Yield Exam Scope</h4>
+        <p>Covers general vs special senses, photoreceptors, three tunics of the eye, rods vs cones, aqueous vs vitreous humor, auditory ossicles, cochlea and Organ of Corti, static (vestibule) vs dynamic (semicircular canals) equilibrium, and chemoreceptors for taste and smell.</p>
+      </div>
+      <div class="note-card">
+        <h4>Clinical Success Pearls</h4>
+        <p>Ensure mastery of both anatomical structures and homeostatic functions. Practice active recall of bolded key terms before testing with the interactive quiz.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="bp-page">
+    <div class="bp-title-row">
+      <div class="bp-title">Module 8: The Endocrine System, Glands & Hormone Mechanisms</div>
+      <div class="bp-badge">Chapter 11 (Patton 17th Edition)</div>
+    </div>
+    <div class="bp-diagram-box">
+      <img src="images/mod8_endocrine_axis_feedback.png?t=2" alt="Module 8: The Endocrine System, Glands & Hormone Mechanisms">
+    </div>
+    <div class="notes-grid">
+      <div class="note-card">
+        <h4>High-Yield Exam Scope</h4>
+        <p>Compares endocrine vs exocrine glands, protein (second messenger cAMP) vs steroid (direct gene activation) hormones, negative feedback regulation, the hypothalamic-pituitary axis, thyroid/parathyroid calcium balance (calcitonin vs PTH), pancreatic blood glucose balance (insulin vs glucagon), and adrenal stress hormones.</p>
+      </div>
+      <div class="note-card">
+        <h4>Clinical Success Pearls</h4>
+        <p>Ensure mastery of both anatomical structures and homeostatic functions. Practice active recall of bolded key terms before testing with the interactive quiz.</p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
