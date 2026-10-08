@@ -160,3 +160,15 @@ I'm ready to respond to the updated call, sir.
     - Saved single desktop master file: [`/Users/valuedcustomer/Desktop/Rayne_Anatomy_Master_Hub.html`](file:///Users/valuedcustomer/Desktop/Rayne_Anatomy_Master_Hub.html).
     - Updated Rayne's NBCC Practical Nursing Schedule across all files (`rayne_decoded_schedule.html`, `raynes_decoded_schedule.md`, `Rayne_NBCC_Nursing_Schedule.ics`, `Rayne_NBCC_Nursing_Schedule_Printable.html`) with explicit `🏫 AT SCHOOL` vs `💻 ONLINE` location badges, weekly location summary cards, and calendar `.ics` location tags.
     - Deployed live URL to GitHub Pages: `https://cmoulton345-sketch.github.io/candy-wellness-os/Rayne_NBCC/index.html`.
+- **2026-10-08** (PSYCHE / SOMA):
+  - **Daily Health & Oura Metrics:** Sleep 90, Readiness 86, Temp -0.7°F (Follicular/Push phase), Pain 0, Scale 150.2 lbs. Validated zero-pain win and reframed 150.2 scale jump as transient subcutaneous fluid retention matching temperature drop.
+  - **ADHD & Clinical Assessment Integration (NovoPsych - Amanda Geldart):**
+    - Analyzed 4 clinical report PDFs: ITQ (CPTSD criteria met, PTSD 88th %, DSO 97th %, Negative Self-Concept 99th %), ESQ-R (Executive Function 99.99th % High Difficulties across all 5 domains), CIA (Eating/Body Impairment score 39/48, 92.1st %), BCEs (14/20, 39th %).
+    - Provided deep trauma-informed reframes validating that her daily friction is a biological nervous system load (CPTSD + ADHD), not a character flaw.
+    - Updated [`memory/Candy's Therapy.md`](file:///Users/valuedcustomer/Downloads/flowstate_ai_os_candy/memory/Candy's%20Therapy.md) and [`wellness_and_mobility/candys_mental_health_protocol.md`](file:///Users/valuedcustomer/Downloads/flowstate_ai_os_candy/wellness_and_mobility/candys_mental_health_protocol.md).
+    - Formatted clean, symbol-free plain text summary for Candy to copy and paste into an email for her therapist.
+  - **Somatic & Trauma-Informed Starter Plan:**
+    - Integrated Gabor Maté & Bessel van der Kolk principles: Somatic work = nervous system safety, not intense exercise.
+    - Formulated 3-Tier Movement Switchboard (Green = Pilates/Weights/Active Yoga; Yellow = Somatic Floor Yoga/Slow Pilates; Red = Legs Up Wall + Somatic Shaking).
+    - Established 2-Minute Hand-on-Heart Micro-Meditation for ADHD and 5-minute bed reading strategy starting at Part 5 ("Pathways to Recovery") of *The Body Keeps the Score*.
+    - Set tonight's first step: 5 minutes of Legs Up the Wall with hand-on-heart breathing.

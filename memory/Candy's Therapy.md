@@ -106,6 +106,44 @@ Here are my 6 Pillars for Us...
 
 ---
 
+## 🔬 Clinical Assessment Results (NovoPsych - Administered Oct 5, 2026 by Amanda Geldart)
+
+### 1. International Trauma Questionnaire (ITQ) — Complex PTSD (CPTSD)
+- **Diagnostic Result:** Criteria met for **Complex PTSD (CPTSD)**
+- **PTSD Severity:** 88th Percentile (Raw 13/24 — **Severe**)
+  - *Avoidance:* 87th Percentile (**Severe**) — avoids internal reminders & external triggers
+  - *Sense of Threat:* 75th Percentile (**Moderate**) — hyper-vigilance, easily startled
+  - *Re-experiencing:* 73rd Percentile (**Moderate**)
+  - *Functional Impairment:* 93rd Percentile (**Severe**)
+- **Disturbances in Self-Organization (DSO):** 97th Percentile (Raw 17/24 — **Very Severe**)
+  - *Negative Self-Concept:* 99th Percentile (**Very Severe**) — persistent beliefs of worthlessness and feeling like a failure (trauma armor)
+  - *Disturbances in Relationships:* 84th Percentile (**Severe**) — feeling distant/cut off
+  - *Affective Dysregulation:* 72nd Percentile (**Moderate**) — difficulty calming down when upset
+  - *DSO Functional Impairment:* 79th Percentile (**Severe**)
+
+### 2. Executive Skills Questionnaire - Revised (ESQ-R) — ADHD / Executive Functioning
+- **Overall Result:** Total Score 59/75 (2.36/3 avg, **99.99th Percentile — High Difficulties**)
+- **Subscale Breakdown:**
+  - *Plan Management:* 99.99th Percentile (High Difficulty)
+  - *Time Management:* 98.7th Percentile (High Difficulty)
+  - *Organization:* 98.8th Percentile (High Difficulty)
+  - *Emotional Regulation:* 99.6th Percentile (High Difficulty)
+  - *Behavioral Regulation:* 98.8th Percentile (High Difficulty)
+- **Clinical Insight:** Candy’s executive function challenges are in the top 0.01% of difficulty. Tasks take exponentially more cognitive glucose and effort.
+
+### 3. Clinical Impairment Assessment (CIA) — Body Image & Eating Impairment
+- **Total Score:** 39 / 48 (92.1 Clinical Percentile; Cutoff = 16) — **Clinical Eating / Body Impairment Met**
+- **Subscales:**
+  - *Cognitive Impairment:* 94.7th Percentile — thoughts about body/eating disrupt focus, work, and memory
+  - *Personal Impairment:* 90.1st Percentile — self-criticism, guilt, and shame tied to body/weight
+  - *Social Impairment:* 84.5th Percentile — interfering with meals, family, and social outings
+
+### 4. Benevolent Childhood Experiences (BCEs)
+- **Total Score:** 14 / 20 (39th Percentile — **Average**)
+- **Protective Gaps Identified:** Absence of comforting beliefs in childhood, did not like school, lacked good neighborhood safety, and **did not feel comfortable with or like herself as a child**.
+
+---
+
 ## 📝 Follow-Up Notes for Amanda Geldart (Therapy Appointment - Thursday, Sept 17, 2026)
 
 Topics to explore for Candy:

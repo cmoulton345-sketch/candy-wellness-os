@@ -1,6 +1,17 @@
 # Candy's Mental Health Protocol
 
-> **Core Truth:** Your brain is not broken. It is a high-ADHD brain running on dual appetite suppressants in a perimenopausal body while managing a demanding job, an 18-year-old with OCD, aging parents, and a household. The fact that you're still standing is not luck — it's strength.
+> **Core Truth:** Your brain is not broken. You are operating with verified **Complex PTSD (CPTSD)**, **99.99th percentile Executive Function (ADHD) load**, and **Clinical Body Image/Eating Impairment**, running on dual appetite suppressants in a perimenopausal body while managing a demanding wealth management job, an 18-year-old with OCD, aging parents, and a household. The fact that you are standing, loving, and working every day is not luck — it is heroic strength.
+
+---
+
+## 🔬 Clinical Assessment Baseline (NovoPsych — Oct 5, 2026)
+
+| Assessment | Result / Score | Clinical Percentile | Core Meaning & Insight |
+|------------|----------------|---------------------|------------------------|
+| **International Trauma Questionnaire (ITQ)** | **Complex PTSD (CPTSD)** Criteria Met | 88th (PTSD) / 97th (DSO) | Chronic nervous system threat response + 99th percentile negative self-concept (trauma armor). |
+| **Executive Skills Questionnaire (ESQ-R)** | Total 59/75 — High Difficulties | **99.99th Percentile** | Executive functioning (ADHD) is in the top 0.01% of challenge. Tasks burn heavy glucose. |
+| **Clinical Impairment Assessment (CIA)** | Total 39/48 (Cutoff = 16) | **92.1st Percentile** | Body/weight thoughts cause high cognitive, personal, and social friction. |
+| **Benevolent Childhood Experiences (BCEs)** | Total 14/20 — Average | 39th Percentile | Foundational physical safety, but lacked self-acceptance & comforting internal beliefs in childhood. |
 
 ---
 
@@ -163,6 +174,29 @@ When your mind is racing with worst-case scenarios:
 | **Protect Phase onset** | Mood drops, patience thins, body image anxiety spikes | Switch to Protect mode training, increase magnesium, skip measurements |
 | **After heavy Rayne support** | Emotional depletion from OCD parenting | 5 min alone before re-engaging. Self-compassion script. |
 | **After social drinking nights** | Potential shame spiral the next morning | Zero-punishment protocol (see alcohol framework in body belonging doc) |
+
+---
+
+## 🌿 Somatic & Trauma-Informed Starter Protocol
+
+> **Gabor Maté & Bessel van der Kolk Principle:** Trauma and chronic stress are stored as physical bracing, joint pain, and exhaustion in the body. Somatic work is NOT intense exercise — it is signaling safety to your nervous system.
+
+### 1. The 3-Tier Movement Switchboard (Match Your Body Daily)
+
+| Tier / State | What to Do | Why |
+|--------------|------------|-----|
+| **🟢 High Energy** | Pilates, Weight Lifting, Active Yoga | Preserves muscle, builds strength when battery is full. |
+| **🟡 Stiff / Tired** | Gentle Somatic Floor Yoga & Slow Pilates | Decompresses joints, releases pelvic/hip bracing. |
+| **🔴 Exhausted / In Pain** | **Legs Up the Wall (5-10 min) + Somatic Shaking** | Zero-effort nervous system reset. Lowers CPTSD threat mode. |
+
+### 2. Micro-Meditation for ADHD (2-3 Minutes)
+- **Do not sit silently in a chair trying to clear your mind.** That causes ADHD friction.
+- **Hand-on-Heart Anchor:** Lie down, put your left hand on your heart and right hand on your belly. Breathe in for 4, hold for 4, exhale for 8. Notice the warmth of your hands. 3 cycles = done.
+
+### 3. Reading "The Body Keeps the Score" (ADHD Micro-Dosing Strategy)
+- **Do not read cover-to-cover.** It is heavy and dense.
+- **Start with Part 5 ("Pathways to Recovery"):** Jump straight to the healing tools (Somatic experiencing, Yoga, IFS, Neurofeedback).
+- **Rule:** 5 minutes (or 2-3 pages) in bed before sleep, or listen to the audiobook on walks.
 
 ---
 
