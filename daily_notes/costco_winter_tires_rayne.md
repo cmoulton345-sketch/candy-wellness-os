@@ -1,75 +1,54 @@
 # Costco Winter Tire Selection for Rayne's Jeep Compass (Saint John NB Commute)
-**Last Updated:** 2026-10-09  
-**For:** Rayne's Jeep Compass (`225/55R18` Limited trim) — Saint John NBCC Highway Commute  
+**Last Updated:** 2026-10-11  
+**Confirmed Size:** `225/60R17` (17-inch wheels confirmed on vehicle sidewall)  
+**Destination:** Saint John NBCC Highway Commute (Route 1 / MacIntosh Hill)
 
 ---
 
-## 🚗 Selected Tire Specs & Pricing
+## 🚗 Confirmed Tire Specs & Ordering Details (`225/60R17`)
 
-### 🏆 Top Choice: Michelin - X-Ice Snow+
-* **Size:** `225/55R18/XL`
-* **Item #:** `2055720`
-* **Price:** **$1,099.96 total for set of 4** ($299.99 each - $100 instant rebate)
-* **Rebate Window:** Valid **Sept 28, 2026 – Nov 1, 2026**
-* **Costco Link:** [Michelin X-Ice Snow+ at Costco Canada](https://tires.costco.ca/Product?ItemNo=2055720)
+### 🏆 Top Choice: Bridgestone BLIZZAK LM001
+* **Size:** `225/60R17`
+* **Costco Item #:** `1607094` (Part # `011980`)
+* **Price:** ~$919.96 total for set of 4 (approx. $254.99/tire)
+* **Direct Costco Link:** [Bridgestone BLIZZAK LM001 (225/60R17) at Costco Canada](https://tires.costco.ca/Product?ItemNo=1607094&tirename=bridgestone-blizzak-lm001&partno=011980&lang=en-ca&width=225&aspect=60&rim=17)
+* **Why it's #1 for 17":** Specially engineered with directional slush channels and stiffer sidewalls for SUV stability. Perfect for coastal Maritime freeze-thaw slush and highway lane changes.
 
----
+### 🥈 Backup Choice 1: Michelin X-Ice Snow / Snow+ (If in stock in 225/60R17)
+* **Size:** `225/60R17`
+* **Active Promo:** **$100 instant rebate** valid through **November 1, 2026**
+* **Why:** Industry gold standard for black ice, freezing rain, and tread longevity.
 
-## 💡 Key Rationale & Safety Highlights
-1. **Engineered for Saint John Black Ice & Freeze-Thaw:** Gold-standard ice grip and 3D sipes that bite into wet slush and freezing rain on Route 1 / MacIntosh Hill.
-2. **Highway Stability & Quiet Ride:** Firm sidewall response at 100–110 km/h with long-lasting tread wear.
-3. **Costco Out-the-Door Advantage:** Saves **$150 to $250 total** compared to Canadian Tire, Coast Tire, or local KV shops.
-4. **Included Perks:** Free **5-Year Road Hazard Protection** (pothole coverage), free lifetime rotations & balancing, nitrogen fill, and direct warehouse delivery to Saint John Costco (300 Retail Drive).
-
----
-
-## 📊 Local Out-the-Door Comparison
-
-| Retailer / Shop | Tire Set Price | Install & Balancing | Road Hazard & Perks | Estimated Total Before Tax |
-| :--- | :--- | :--- | :--- | :--- |
-| 🛒 **Costco (Saint John)** | **$1,099.96** *(after $100 rebate)* | Included / ~$79 | FREE 5-Yr Hazard + Lifetime Rotations | **~$1,099.96 – $1,179.92** 🏆 |
-| 🍁 **Canadian Tire (SJ/KV)** | ~$1,239.96 | ~$100–$120 | Extra fee (~$50+) | **~$1,340.00+** |
-| 🔧 **Coast Tire / OK Tire** | ~$1,260.00 | ~$110–$130 | Extra fee (~$60) | **~$1,380.00+** |
-| 📦 **Blackcircles.ca** | ~$1,203.80 | ~$120 *(local installer)* | Standard | **~$1,323.00** |
+### 🥉 Backup Choice 2: Bridgestone BLIZZAK ICEPEAK
+* **Size:** `225/60R17`
+* **Costco Item #:** `2060865` (Part # `013646`)
+* **Price:** ~$899.96 total for set of 4
+* **Direct Costco Link:** [Bridgestone BLIZZAK ICEPEAK (225/60R17) at Costco Canada](https://tires.costco.ca/Product?ItemNo=2060865&tirename=bridgestone-blizzak-icepeak&partno=013646&lang=en-ca&width=225&aspect=60&rim=17)
 
 ---
 
-## 📱 Copy & Paste Text for Joe
+## 💡 Key Ordering Notes for Costco (Saint John Warehouse)
+1. **Ship to Store:** Order online at [tires.costco.ca](https://tires.costco.ca) and select **Saint John (300 Retail Drive)**.
+2. **Installation Included Perks:** Free 5-year Road Hazard Protection (pothole damage on Route 1), free lifetime rotations & balancing every 10k km, and nitrogen fill.
+3. **Appointment:** You can pick the installation date/time during online checkout or at [costcotireappointments.ca](https://www.costcotireappointments.ca) once the tires arrive (3–5 business days).
+
+---
+
+## 📱 Quick Text for Joe
 
 ```text
-Hey babe! Here is the breakdown on winter tires for Rayne's Jeep Compass (18" wheels - 225/55R18) for driving to NBCC in Saint John. 
+Hey babe! Confirmed the tire size on Rayne’s Jeep Compass is 225/60R17 (17" rims). 
 
-Friday helped me compare prices across Costco, Canadian Tire, Coast Tire, OK Tire, and online shops. Costco is by far the cheapest option out-the-door.
+Here are the exact ones to order from Costco for her Saint John commute:
 
-🏆 TOP PICK: Michelin - X-Ice Snow+ (Item # 2055720)
-• Total Price: $1,099.96 for set of 4 (after $100 instant rebate)
-• Active Promo: $100 off valid until Nov 1st
-• Why: Gold standard for Saint John black ice, freezing rain, wet slush clearance, and highway stability.
+🏆 TOP PICK: Bridgestone BLIZZAK LM001
+- Size: 225/60R17
+- Costco Item #: 1607094
+- Why: Best tire in this 17" size for clearing wet Maritime slush, black ice, and stable highway driving on Route 1.
+- Link: https://tires.costco.ca/Product?ItemNo=1607094
 
-📊 OUT-THE-DOOR PRICE COMPARISON (TIRES + INSTALL):
+🥈 BACKUP: Michelin X-Ice Snow (in 225/60R17) or Blizzak ICEPEAK (Item # 2060865)
+- Active promo: Michelin currently has $100 off until Nov 1st if available in 225/60R17.
 
-1. COSTCO (Saint John - Retail Dr): ~$1,099.96 total
-   - Tire set: $1,099.96 (after $100 rebate)
-   - Install: Included / ~$79
-   - FREE Perks: 5-Year Road Hazard Warranty, lifetime free rotations & balancing, nitrogen fill.
-
-2. CANADIAN TIRE (SJ / Quispamsis): ~$1,340.00+ total
-   - Tires: $1,239.96
-   - Install/Balancing: ~$100-$120
-   - Road Hazard: Extra fee (~$50+)
-
-3. COAST TIRE / OK TIRE (SJ / Rothesay): ~$1,380.00+ total
-   - Tires: $1,260.00
-   - Install/Balancing: ~$120+
-
-4. BLACKCIRCLES.CA (Delivered to local shop): ~$1,323.00 total
-   - Tires: $1,203.80
-   - Local Install: ~$120
-
-💡 WHY COSTCO WINS:
-- Saves us $150 to $250 out-the-door compared to local shops.
-- Ships directly to the Saint John Costco warehouse—we just book an appointment time online, drive the Jeep in, and they do the install while we wait.
-- Free 5-year road hazard warranty covers any pothole damage on Route 1.
-
-Direct Costco Link: https://tires.costco.ca/Product?ItemNo=2055720
+They ship right to the Saint John Costco warehouse on Retail Dr and include free 5-yr road hazard warranty and free lifetime rotations.
 ```
