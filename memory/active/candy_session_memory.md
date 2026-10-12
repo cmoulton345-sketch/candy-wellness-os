@@ -185,3 +185,14 @@ I'm ready to respond to the updated call, sir.
       - Mapped anatomical line: Iliopsoas / Hip Flexor & Pelvic Torsion → Thoracolumbar Fascia & QL → Latissimus Dorsi / Endothoracic Fascia → Pectoralis Minor & Anterior Shoulder (Anterior Functional Sling / Deep Front Fascial Line).
       - Reassured Candy with anatomical clarity: Pelvic/hip flexor tightness commonly pulls up the ipsilateral trunk fascia into the chest and shoulder.
       - Logged in [`wellness_and_mobility/candys_hormones.md`](file:///Users/valuedcustomer/Downloads/flowstate_ai_os_candy/wellness_and_mobility/candys_hormones.md).
+- **2026-10-11** (FRIDAY):
+  - **Rayne's Jeep Winter Tires Confirmed & Ordered:**
+    - Confirmed vehicle tire size on sidewall: `225/60R17` (17-inch rims).
+    - Candy ordered **Michelin X-Ice Snow+** (Costco Item #`2055745`, `225/60R17/XL 103H`): $999.96 for set of 4 ($100 instant rebate applied).
+    - Installation Plan: Target date is Monday, November 2nd. Rolling 21-day booking window currently open through Oct 31; Nov 2nd unlocks on Tuesday, October 13th. Candy booking Oct 30/31 to lock in the tire order/rebate today, then rescheduling to Nov 2 on Tuesday at costcotireappointments.ca.
+    - Updated [`daily_notes/costco_winter_tires_rayne.md`](file:///Users/valuedcustomer/Downloads/flowstate_ai_os_candy/daily_notes/costco_winter_tires_rayne.md).
+- **2026-10-12** (SOMA):
+  - **Daily Health & Oura Metrics Logged (Cycle Day 8 - Peak Push Phase):**
+    - Metrics: Sleep Score 82, Readiness 85, Oura Temp -0.4°F (Follicular Low Temp Dip), Mouth Temp 35.7°C, Pain 1/10 (super low/minimal), Energy fine, feeling pretty good.
+    - **Breast & Hormonal Validation:** Breasts only tender if pressed (progesterone completely cleared, minimal swelling/water retention).
+    - **Mammogram Timing Win (Tuesday Oct 13):** Validated that scheduling during Day 8–9 Follicular Phase is the single best clinical window for a mammogram—minimal glandular engorgement, lowest breast sensitivity, and optimal radiographic clarity with least discomfort.
