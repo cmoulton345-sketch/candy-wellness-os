@@ -213,3 +213,8 @@ I'm ready to respond to the updated call, sir.
     - **Tuesday Tonight:** Low-impact cardio + Pilates (lymphatic drainage, pelvic stability, active recovery for achy joints, zero heavy compression post-mammogram).
     - **Wednesday:** Strength / Weights Day (fueled by rebounding sleep and rising follicular estrogen).
     - **Friday:** Strength / Weights Day (peak power and muscular output).
+  - **Friday - Rayne Criminology, Policing & University Qualification Audit:**
+    - **Context & Support:** Rayne experiencing second thoughts about nursing during heavy A&P exam week; explored Criminology, Policing, and Bachelor of Arts pathways.
+    - **KVHS Transcript Audit:** Evaluated official Kennebecasis Valley High School transcript (80 credit hours, graduated June 18, 2025). English Language Arts 122 mark is 69% (exceeds university 60% rule); top 5 academic average is 76%–83% (exceeds UNB 65% and STU 70% cutoffs). Highlighted strong academic performance: Economics 120 (94%), Graphic Novels 120 (89%), Early Child Dev 120 (89%), World Issues 120 (74%), Law 120 (67%), Sociology 120 (64%).
+    - **Admission Standing:** Confirmed 100% qualified for UNBSJ Bachelor of Arts (Sociology/Psychology with Criminal Justice minor), St. Thomas University (BA Criminology), Douglas College (Criminology Diploma/Associate Degree), and Justice Institute of BC (Bachelor of Law Enforcement Studies).
+    - **Documentation & Sync:** Formatted clean, symbol-free summary for Candy to print. Created and synced printable HTML and markdown versions across root and `raynes_ocd_adhd/`.
