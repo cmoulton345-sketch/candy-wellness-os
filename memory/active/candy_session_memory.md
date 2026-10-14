@@ -226,4 +226,7 @@ I'm ready to respond to the updated call, sir.
       - *Mood:* Classic post-alcohol neurotransmitter swing (GABA suppression clearing, rebound glutamate, transient dopamine dip in ADHD nervous system).
       - *Electric Belly Shocks & Bloat:* Wine sulfites/histamines irritating the enteric nervous system (gut nerve zaps) combined with Cycle Day 10 pre-ovulatory ovarian follicular tension.
       - *Sore Breasts & 36.3°C Temp:* Hepatic backlog (liver prioritizes ethanol breakdown, temporarily stalling estrogen metabolism, triggering acute estradiol/histamine breast tissue engorgement) plus alcohol metabolic heat.
-    - **Movement Strategy (Candy's Intuitive Win):** Validated morning Yin yoga + Pilates combo to downregulate the sympathetic nervous system, gently flush lymphatic fluid, and relieve pelvic/gut nerve hypersensitivity without spiking cortisol.
+    - **Movement Strategy & Workout Debrief:**
+      - *Yin Yoga:* Succeeded brilliantly—opened tight fascia, softened sympathetic tension, and felt awesome.
+      - *Pilates Joint Flare:* Pilates was heavy on joint compression and felt very painful. Root cause: alcohol-induced synovial dehydration + pro-inflammatory cytokines compounded by Cycle Day 10 high estrogen (increased joint/ligament laxity). 
+      - *Candy's Win:* Honored her body, did what she could, and stopped without forcing through severe pain (textbook self-compassion). Prescribed immediate hydration, warmth, and full permission to rest physical movement for the rest of the day.
