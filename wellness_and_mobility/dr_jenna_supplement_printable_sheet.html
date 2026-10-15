@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dr. Jenna Weeks ND — Clinical Supplement Protocol & Shopping List</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #eff6ff;
+      --accent: #0284c7;
+      --text: #1e293b;
+      --text-muted: #64748b;
+      --border: #cbd5e1;
+      --card-bg: #f8fafc;
+      --danger-bg: #fef2f2;
+      --danger-border: #f87171;
+      --danger-text: #991b1b;
+      --success-bg: #f0fdf4;
+      --success-border: #86efac;
+      --success-text: #166534;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: var(--text);
+      background-color: #f1f5f9;
+      line-height: 1.45;
+      margin: 0;
+      padding: 30px 20px;
+    }
+
+    .page-container {
+      max-width: 860px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 36px 40px;
+      border-radius: 8px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+    }
+
+    /* Floating No-Print Toolbar */
+    .no-print-bar {
+      position: sticky;
+      top: 15px;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #1e293b;
+      color: #ffffff;
+      padding: 12px 20px;
+      border-radius: 8px;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .no-print-bar span {
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .print-btn {
+      background: #0284c7;
+      color: #ffffff;
+      border: none;
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.15s ease;
+    }
+
+    .print-btn:hover {
+      background: #0369a1;
+    }
+
+    .copy-btn {
+      background: #475569;
+      color: #ffffff;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.15s ease;
+    }
+
+    .copy-btn:hover {
+      background: #334155;
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #10b981;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 13px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      display: none;
+      z-index: 2000;
+    }
+
+    /* Header */
+    .header-box {
+      border-bottom: 2px solid var(--primary);
+      padding-bottom: 14px;
+      margin-bottom: 20px;
+    }
+
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 8px;
+    }
+
+    .header-title {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--primary);
+      margin: 0;
+      letter-spacing: -0.3px;
+    }
+
+    .badge-clinical {
+      background: var(--primary-light);
+      color: var(--primary);
+      padding: 4px 10px;
+      border-radius: 9999px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border: 1px solid #bfdbfe;
+    }
+
+    .header-meta {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      background: var(--card-bg);
+      padding: 10px 14px;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      font-size: 12.5px;
+      margin-top: 10px;
+    }
+
+    .header-meta div strong {
+      color: var(--primary);
+      display: block;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* Warnings Banner */
+    .alert-box {
+      border-radius: 6px;
+      padding: 10px 14px;
+      font-size: 12.5px;
+      margin-bottom: 18px;
+      page-break-inside: avoid;
+    }
+
+    .alert-box.danger {
+      background: var(--danger-bg);
+      border: 1.5px solid var(--danger-border);
+      color: var(--danger-text);
+    }
+
+    .alert-box strong {
+      font-weight: 700;
+    }
+
+    /* Section Titles */
+    .section-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border-bottom: 1.5px solid var(--border);
+      padding-bottom: 5px;
+      margin: 22px 0 12px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .section-subtitle {
+      font-size: 11.5px;
+      color: var(--text-muted);
+      text-transform: none;
+      font-weight: normal;
+    }
+
+    /* Tables */
+    .supp-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 16px;
+      font-size: 12.5px;
+      page-break-inside: avoid;
+    }
+
+    .supp-table th, .supp-table td {
+      border: 1px solid var(--border);
+      padding: 8px 10px;
+      text-align: left;
+      vertical-align: middle;
+    }
+
+    .supp-table th {
+      background: #f1f5f9;
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 11.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+    }
+
+    .supp-table tr:nth-child(even) td {
+      background: #fafafa;
+    }
+
+    .col-chk { width: 34px; text-align: center; }
+    .col-name { width: 34%; font-weight: 600; }
+    .col-dose { width: 22%; }
+    .col-target { width: 40%; font-size: 11.5px; color: #475569; }
+
+    .checkbox-box {
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      border: 1.5px solid #94a3b8;
+      border-radius: 3px;
+      background: #ffffff;
+    }
+
+    /* Nighttime Drink Card */
+    .cocktail-card {
+      background: #f0fdf4;
+      border: 1.5px solid var(--success-border);
+      border-radius: 6px;
+      padding: 14px 18px;
+      margin-bottom: 18px;
+      page-break-inside: avoid;
+    }
+
+    .cocktail-card h3 {
+      margin: 0 0 6px 0;
+      color: var(--success-text);
+      font-size: 14px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .cocktail-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 10px;
+      font-size: 12px;
+    }
+
+    .cocktail-item {
+      background: #ffffff;
+      border: 1px solid var(--success-border);
+      padding: 8px 10px;
+      border-radius: 4px;
+    }
+
+    .cocktail-item strong {
+      display: block;
+      color: #14532d;
+      font-size: 12px;
+    }
+
+    /* Schedule Timeline */
+    .timeline-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 18px;
+      page-break-inside: avoid;
+    }
+
+    .timeline-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 12px 14px;
+      font-size: 12px;
+    }
+
+    .timeline-card h4 {
+      margin: 0 0 8px 0;
+      color: var(--primary);
+      font-size: 13px;
+      font-weight: 700;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 4px;
+    }
+
+    .timeline-card ul {
+      margin: 0;
+      padding-left: 16px;
+    }
+
+    .timeline-card li {
+      margin-bottom: 4px;
+    }
+
+    /* Footer Signoff */
+    .footer-box {
+      border-top: 1px solid var(--border);
+      padding-top: 12px;
+      font-size: 11px;
+      color: var(--text-muted);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      page-break-inside: avoid;
+    }
+
+    /* Print Specific Styles */
+    @media print {
+      body {
+        background: #ffffff;
+        padding: 0;
+        font-size: 11.5px;
+      }
+
+      .page-container {
+        max-width: 100%;
+        padding: 0;
+        box-shadow: none;
+      }
+
+      .no-print-bar {
+        display: none !important;
+      }
+
+      .section-title {
+        margin-top: 14px;
+        margin-bottom: 8px;
+      }
+
+      .supp-table {
+        margin-bottom: 12px;
+      }
+
+      .supp-table th, .supp-table td {
+        padding: 5px 8px;
+      }
+
+      .cocktail-card {
+        padding: 10px 14px;
+        margin-bottom: 12px;
+      }
+
+      .timeline-grid {
+        margin-bottom: 12px;
+      }
+
+      @page {
+        margin: 12mm 14mm;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating Print Bar -->
+  <div class="no-print-bar">
+    <span>🖨️ Dr. Jenna Weeks ND — Complete Clinical Supplement Protocol</span>
+    <div style="display: flex; gap: 10px; align-items: center;">
+      <button class="copy-btn" id="copy-btn" onclick="copyShoppingList()">
+        📋 Copy Text List
+      </button>
+      <button class="print-btn" onclick="window.print()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 6 2 18 2 18 9"></polyline>
+          <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+          <rect x="6" y="14" width="12" height="8"></rect>
+        </svg>
+        Print / Save as PDF
+      </button>
+    </div>
+  </div>
+  <div class="toast" id="toast">✓ Copied shopping list to clipboard!</div>
+
+  <div class="page-container">
+
+    <!-- Header Box -->
+    <div class="header-box">
+      <div class="header-top">
+        <div>
+          <h1 class="header-title">Clinical Supplement Protocol & Shopping List</h1>
+          <div style="font-size: 13px; color: var(--text-muted); margin-top: 3px;">
+            Prescribed by <strong>Dr. Jenna Weeks, ND</strong> • Targeted to <strong>PureGenomics DNA & Canada Food Lab Results</strong>
+          </div>
+        </div>
+        <span class="badge-clinical">Patient Protocol</span>
+      </div>
+
+      <div class="header-meta">
+        <div><strong>Patient</strong> Candy Moulton</div>
+        <div><strong>Primary Pharmacy</strong> Simply For Life (Rothesay Ave)</div>
+        <div><strong>Online Dispensary</strong> Fullscript / Seeking Health</div>
+        <div><strong>Core Genetics</strong> MTHFR C677T • FADS1 • CYP1A2</div>
+      </div>
+    </div>
+
+    <!-- Red Alert Clinical Safety Warning -->
+    <div class="alert-box danger">
+      <strong>🚨 CRITICAL SAFETY & GENETIC RULES:</strong><br>
+      • <strong>DO NOT TAKE CIPROFLOXACIN (Antibiotic):</strong> High risk of Achilles tendon rupture due to your MMP3 genetic variant.<br>
+      • <strong>AVOID SYNTHETIC FOLIC ACID & CYANOCOBALAMIN:</strong> Due to MTHFR C677T & MTR mutations, your body cannot convert synthetic folic acid. Always verify your B-vitamins use activated <strong>L-5-MTHF</strong> and <strong>Methylcobalamin</strong>.<br>
+      • <strong>3–5 DAY ROLL-OUT RULE:</strong> Introduce only <strong>ONE</strong> new supplement every 3 to 5 days to allow your body to comfortably adapt.
+    </div>
+
+    <!-- PART 1: SIMPLY FOR LIFE (ROTHESAY AVE) -->
+    <div class="section-title">
+      <span>🛒 Part 1: Simply For Life In-Store List (Rothesay Ave, Saint John)</span>
+      <span class="section-subtitle">Show this exact section to store staff</span>
+    </div>
+
+    <table class="supp-table">
+      <thead>
+        <tr>
+          <th class="col-chk">Buy</th>
+          <th class="col-name">Supplement & Clinical Brand</th>
+          <th class="col-dose">Dosage & Frequency</th>
+          <th class="col-target">Biological Purpose / Gene Target</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="col-chk"><span class="checkbox-box"></span></td>
+          <td class="col-name">AOR Advanced B Complex</td>
+          <td class="col-dose"><strong>1 capsule daily</strong> (morning with food)</td>
+          <td class="col-target"><strong>MTHFR C677T & MTR/TCN2:</strong> Delivers activated L-5-MTHF, Methyl-B12, and P-5-P (B6) to clear homocysteine. Buy 1 bottle.</td>
+        </tr>
+        <tr>
+          <td class="col-chk"><span class="checkbox-box"></span></td>
+          <td class="col-name">NutraSea HP Omega-3 Extra Strength</td>
+          <td class="col-dose"><strong>2 softgels daily</strong> (lunch or dinner)</td>
+          <td class="col-target"><strong>FADS1 gene:</strong> Inability to convert plant ALA. Delivers ~1,500mg direct active EPA/DHA for joint and heart protection.</td>
+        </tr>
+        <tr>
+          <td class="col-chk"><span class="checkbox-box"></span></td>
+          <td class="col-name">CanPrev D3 & K2 Liquid Drops</td>
+          <td class="col-dose"><strong>3 drops daily</strong> (morning with food/fat)</td>
+          <td class="col-target"><strong>Triple-risk D3 gene defect</strong> (CYP2R1, DHCR7, GC): Delivers 3,000 IU D3 + 100mcg K2 for bone and immune support.</td>
+        </tr>
+        <tr>
+          <td class="col-chk"><span class="checkbox-box"></span></td>
+          <td class="col-name">CanPrev Collagen Powder</td>
+          <td class="col-dose"><strong>1 to 2 scoops nightly</strong></td>
+          <td class="col-target">Connective tissue repair, joint cushioning, and gut mucosal lining restoration.</td>
+        </tr>
+        <tr>
+          <td class="col-chk"><span class="checkbox-box"></span></td>
+          <td class="col-name">CanPrev Glycine Powder</td>
+          <td class="col-dose"><strong>1 tsp (3g) nightly</strong></td>
+          <td class="col-target">Natural <strong>methylation buffer</strong>, deep restorative REM sleep support, and muscle/collagen synthesis.</td>
+        </tr>
+        <tr>
+          <td class="col-chk"><span class="checkbox-box"></span></td>
+          <td class="col-name">Vitamin C Powder (CanPrev or AOR)</td>
+          <td class="col-dose"><strong>3/4 tsp (4,000 mg) nightly</strong></td>
+          <td class="col-target">Essential cofactor for collagen synthesis, master antioxidant defense, and adrenal support.</td>
+        </tr>
+        <tr>
+          <td class="col-chk"><span class="checkbox-box"></span></td>
+          <td class="col-name">CanPrev Zinc + Copper (25mg)</td>
+          <td class="col-dose"><strong>1 capsule every 2nd or 3rd day</strong></td>
+          <td class="col-target"><strong>SLC30A8 zinc pathway:</strong> Balanced with copper to preserve immune and enzymatic health.</td>
+        </tr>
+        <tr>
+          <td class="col-chk"><span class="checkbox-box"></span></td>
+          <td class="col-name">CanPrev Resveratrol</td>
+          <td class="col-dose"><strong>1 capsule daily</strong> (morning)</td>
+          <td class="col-target"><strong>NQO1 & CRP inflammation:</strong> Master cellular antioxidant and vascular protection.</td>
+        </tr>
+        <tr>
+          <td class="col-chk"><span class="checkbox-box"></span></td>
+          <td class="col-name">CanPrev Vitamin E (400 IU)</td>
+          <td class="col-dose"><strong>1 capsule every 3 days</strong></td>
+          <td class="col-target">Cell membrane lipid protection. <em>Note: Buy 1 bottle only, then transition to raw sunflower seeds.</em></td>
+        </tr>
+        <tr>
+          <td class="col-chk"><span class="checkbox-box"></span></td>
+          <td class="col-name">BioSteel Electrolytes (Sugar-Free)</td>
+          <td class="col-dose"><strong>1 scoop daily</strong> (in water)</td>
+          <td class="col-target">Cellular hydration, joint lubrication, and GI electrolyte balance on Ozempic.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- PART 2: FULLSCRIPT / SEEKING HEALTH -->
+    <div class="section-title">
+      <span>📦 Part 2: Online Order (Fullscript / Seeking Health Link)</span>
+      <span class="section-subtitle">Ordered via Dr. Jenna's dispensary link</span>
+    </div>
+
+    <table class="supp-table">
+      <thead>
+        <tr>
+          <th class="col-chk">Order</th>
+          <th class="col-name">Product Name</th>
+          <th class="col-dose">Dosage & Frequency</th>
+          <th class="col-target">Biological Purpose / Gene Target</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="col-chk"><span class="checkbox-box"></span></td>
+          <td class="col-name">Seeking Health HistaminX</td>
+          <td class="col-dose"><strong>1 cap breakfast + 1 cap supper</strong></td>
+          <td class="col-target"><strong>AOC1/DAO gene support:</strong> Clears histamine buildup, skin itching, and mid-cycle histamine flares (take for 4 weeks).</td>
+        </tr>
+        <tr>
+          <td class="col-chk"><span class="checkbox-box"></span></td>
+          <td class="col-name">Seeking Health Histamine Nutrients</td>
+          <td class="col-dose"><strong>1 cap with largest meal</strong></td>
+          <td class="col-target">Nutritional co-factors to assist intestinal and systemic DAO breakdown during heavier meals.</td>
+        </tr>
+        <tr>
+          <td class="col-chk"><span class="checkbox-box"></span></td>
+          <td class="col-name">Vitamin A Liquid Drops (Retinol)</td>
+          <td class="col-dose"><strong>1 drop (10,000 IU) daily</strong> (morning)</td>
+          <td class="col-target"><strong>BCMO1 gene defect:</strong> Impaired beta-carotene conversion. Provides direct pre-formed active Retinol for mucosal immunity and skin integrity.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- PART 3: NIGHTTIME GUT & JOINT REPAIR COCKTAIL -->
+    <div class="cocktail-card">
+      <h3>🌙 Nighttime Gut & Joint Repair Drink (Drink 45 Minutes Before Bed)</h3>
+      <div style="font-size: 12px; color: #166534;">
+        Stir or shake the following ingredients into <strong>500 ml of water</strong> with <strong>1 scoop of BioSteel Electrolytes</strong>. Sip slowly over 20–30 minutes:
+      </div>
+      <div class="cocktail-grid">
+        <div class="cocktail-item">
+          <strong>1 to 2 Scoops</strong>
+          CanPrev Collagen Powder (Joints & Gut)
+        </div>
+        <div class="cocktail-item">
+          <strong>1 Teaspoon (3 grams)</strong>
+          CanPrev Glycine Powder (Sleep & Methylation)
+        </div>
+        <div class="cocktail-item">
+          <strong>3/4 Teaspoon (4,000 mg)</strong>
+          Vitamin C Powder (Collagen Binding)
+        </div>
+      </div>
+    </div>
+
+    <!-- PART 4: DAILY INTAKE SCHEDULE AT A GLANCE -->
+    <div class="section-title">
+      <span>⏰ Part 4: Daily Dosing Schedule at a Glance</span>
+      <span class="section-subtitle">Keep this on the fridge or bathroom counter</span>
+    </div>
+
+    <div class="timeline-grid">
+      <div class="timeline-card">
+        <h4>☀️ Morning (With Breakfast)</h4>
+        <ul>
+          <li><strong>AOR B-Complex:</strong> 1 capsule</li>
+          <li><strong>Vitamin D3 + K2:</strong> 3 liquid drops</li>
+          <li><strong>Vitamin A Retinol:</strong> 1 liquid drop</li>
+          <li><strong>CanPrev Resveratrol:</strong> 1 capsule</li>
+          <li><strong>Seeking Health HistaminX:</strong> 1 capsule</li>
+          <li><strong>Zinc + Copper:</strong> 1 cap (every 2nd or 3rd day)</li>
+          <li><strong>Vitamin E:</strong> 1 cap (every 3rd day)</li>
+        </ul>
+      </div>
+
+      <div class="timeline-card">
+        <h4>🥗 Lunch / Supper</h4>
+        <ul>
+          <li><strong>NutraSea HP Omega-3:</strong> 2 softgels with lunch or dinner</li>
+          <li><strong>Histamine Nutrients:</strong> 1 capsule with largest/high-histamine meal</li>
+          <li><strong>Seeking Health HistaminX:</strong> 1 capsule with supper</li>
+          <li><strong>BioSteel Electrolytes:</strong> 1 scoop in water throughout the day</li>
+        </ul>
+      </div>
+
+      <div class="timeline-card">
+        <h4>🌙 45 Mins Before Bed</h4>
+        <ul>
+          <li><strong>Gut & Joint Repair Drink:</strong> Collagen + Glycine + Vitamin C in 500ml water</li>
+          <li><strong>Legs Up the Wall:</strong> 5–10 minutes for pelvic/lumbar decompression</li>
+          <li><strong>Screen Shutdown:</strong> Let glycine induce natural deep parasympathetic sleep</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer-box">
+      <div>Prepared for Candy Moulton • Candy OS Wellness & Mobility</div>
+      <div>Confidential & Personal Health Blueprint • Dr. Jenna Weeks, ND Protocol</div>
+    </div>
+
+  </div>
+
+  <script>
+    function copyShoppingList() {
+      const text = `DR. JENNA WEEKS ND — CLINICAL SUPPLEMENT SHOPPING LIST
+
+PART 1: SIMPLY FOR LIFE (ROTHESAY AVE, SAINT JOHN)
+1. AOR Advanced B Complex (1 cap daily AM with food) - Activated L-5-MTHF & Methyl-B12. Buy 1 bottle.
+2. NutraSea HP Omega-3 Extra Strength (2 softgels daily with lunch or dinner) - ~1,500mg EPA/DHA.
+3. CanPrev D3 & K2 Liquid Drops (3 drops daily AM with food) - 3,000 IU D3 + 100mcg K2.
+4. CanPrev Collagen Powder (1 to 2 scoops nightly in bedtime drink).
+5. CanPrev Glycine Powder (1 tsp / 3g nightly in bedtime drink).
+6. Vitamin C Powder - CanPrev or AOR (3/4 tsp / 4,000 mg nightly in bedtime drink).
+7. CanPrev Zinc + Copper 25mg (1 cap every 2nd or 3rd day).
+8. CanPrev Resveratrol (1 cap daily AM).
+9. CanPrev Vitamin E 400 IU (1 cap every 3 days - 1 bottle only, then sunflower seeds).
+10. BioSteel Electrolytes Sugar-Free (1 scoop daily in water).
+
+PART 2: FULLSCRIPT / SEEKING HEALTH (ONLINE)
+1. Seeking Health HistaminX (1 cap with breakfast + 1 cap with supper for 4 weeks).
+2. Seeking Health Histamine Nutrients (1 cap with largest/heaviest meal).
+3. Vitamin A Liquid Drops Retinol (1 drop / 10,000 IU daily AM).
+
+NIGHTTIME REPAIR DRINK (45 MINS BEFORE BED)
+- 1-2 scoops Collagen + 1 tsp Glycine + 3/4 tsp Vit C in 500ml water with BioSteel.
+
+CRITICAL RULES:
+- NO CIPROFLOXACIN antibiotic (MMP3 gene tendon rupture risk).
+- NO synthetic folic acid or cyanocobalamin (must be L-5-MTHF & methylcobalamin).
+- Introduce 1 new supplement every 3-5 days.`;
+
+      navigator.clipboard.writeText(text).then(() => {
+        const toast = document.getElementById('toast');
+        const btn = document.getElementById('copy-btn');
+        toast.style.display = 'block';
+        btn.textContent = '✓ Copied!';
+        btn.style.background = '#10b981';
+        setTimeout(() => {
+          toast.style.display = 'none';
+          btn.textContent = '📋 Copy Text List';
+          btn.style.background = '#475569';
+        }, 2500);
+      }).catch(err => {
+        console.error('Copy failed:', err);
+      });
+    }
+  </script>
+</body>
+</html>
