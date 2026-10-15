@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Rayne Moulton - Medication & Symptom Tracker (Nov 5 Follow-Up)</title>
+  <style>
+    @page {
+      size: letter portrait;
+      margin: 0.4in;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #1a202c;
+      background: #ffffff;
+      margin: 0;
+      padding: 10px;
+      font-size: 11pt;
+      line-height: 1.35;
+    }
+    .header-box {
+      border: 2px solid #2b6cb0;
+      border-radius: 6px;
+      padding: 10px 14px;
+      background: #ebf8ff;
+      margin-bottom: 12px;
+    }
+    .header-title {
+      font-size: 16pt;
+      font-weight: 700;
+      color: #2b6cb0;
+      margin: 0 0 4px 0;
+    }
+    .header-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+      font-size: 10pt;
+    }
+    .alert-banner {
+      background: #fffaf0;
+      border-left: 4px solid #dd6b20;
+      padding: 8px 12px;
+      font-size: 9.5pt;
+      margin-bottom: 12px;
+      border-radius: 0 4px 4px 0;
+    }
+    h2 {
+      font-size: 11.5pt;
+      color: #2d3748;
+      border-bottom: 1.5px solid #cbd5e0;
+      padding-bottom: 3px;
+      margin: 10px 0 6px 0;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 12px;
+      font-size: 9pt;
+    }
+    th, td {
+      border: 1px solid #cbd5e0;
+      padding: 6px 4px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background-color: #f7fafc;
+      font-weight: 700;
+      color: #4a5568;
+    }
+    .col-date { width: 10%; }
+    .col-taken { width: 8%; text-align: center; }
+    .col-focus { width: 14%; }
+    .col-mood { width: 15%; }
+    .col-appetite { width: 13%; }
+    .col-physical { width: 14%; }
+    .col-sleep { width: 10%; }
+    .col-notes { width: 16%; }
+    .checklist-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      font-size: 9pt;
+      margin-bottom: 10px;
+    }
+    .check-card {
+      border: 1px solid #e2e8f0;
+      border-radius: 4px;
+      padding: 8px 10px;
+      background: #f7fafc;
+    }
+    .check-card strong {
+      display: block;
+      margin-bottom: 4px;
+      color: #2b6cb0;
+    }
+    .check-card ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+    .check-card li {
+      margin-bottom: 3px;
+    }
+    .footer-warning {
+      border: 1.5px dashed #e53e3e;
+      background: #fff5f5;
+      padding: 8px 12px;
+      border-radius: 4px;
+      font-size: 8.5pt;
+      color: #9b2c2c;
+    }
+    @media print {
+      body { padding: 0; font-size: 10pt; }
+      .no-print { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header-box">
+    <div class="header-title">Rayne Moulton — Daily Medication & Symptom Tracker</div>
+    <div class="header-grid">
+      <div><strong>Current Regimen:</strong> Fluoxetine 50mg + Vyvanse 10mg + Slynd 4mg</div>
+      <div><strong>Dosing Protocol:</strong> 8:00 AM daily with protein breakfast & water</div>
+      <div><strong>Target Symptoms:</strong> ADHD Focus, Fidgeting, Executive Function</div>
+      <div><strong>Follow-Up Appointment:</strong> November 5, 2026 (Nurse Practitioner)</div>
+    </div>
+  </div>
+
+  <div class="alert-banner">
+    <strong>Key Monitoring Note:</strong> On Vyvanse 30mg previously, Rayne felt <em>"very flat / no emotions / blah."</em> Watch to ensure this low 10mg dose improves school focus and task initiation <strong>without</strong> flattening her natural affect or dampening her personality.
+  </div>
+
+  <h2>Target Checkpoints to Evaluate Daily</h2>
+  <div class="checklist-grid">
+    <div class="check-card">
+      <strong>1. School Focus & ADHD (Target Goal)</strong>
+      <ul>
+        <li>Task initiation (ease of starting schoolwork)</li>
+        <li>Sitting still vs. physical fidgeting in class</li>
+        <li>Reduced hyperfixation & smoother activity transitions</li>
+      </ul>
+    </div>
+    <div class="check-card">
+      <strong>2. Emotional Affect & Personality</strong>
+      <ul>
+        <li>Vibrancy: Laughing, expressive, and feeling herself?</li>
+        <li>Check for emotional blunting, "flatness," or numbness</li>
+        <li>4:00 PM rebound: Late afternoon irritability or fatigue?</li>
+      </ul>
+    </div>
+    <div class="check-card">
+      <strong>3. Physical Tolerance & Vitals</strong>
+      <ul>
+        <li>Lunch appetite (watch for missed meals)</li>
+        <li>Headaches, jaw clenching, or stomach ache</li>
+        <li>Rapid pulse, palpitations, or dizziness on standing</li>
+      </ul>
+    </div>
+    <div class="check-card">
+      <strong>4. Sleep, OCD & Bleeding Safety</strong>
+      <ul>
+        <li>Evening sleep onset (falling asleep easily?)</li>
+        <li>OCD checking loops (staying calm and quiet?)</li>
+        <li>Bruising, nosebleeds, or breakthrough spotting (Fluoxetine antiplatelet check)</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>Daily Tracking Log (Oct 16 – Nov 5)</h2>
+  <table>
+    <thead>
+      <tr>
+        <th class="col-date">Date</th>
+        <th class="col-taken">Taken 8am?</th>
+        <th class="col-focus">ADHD & Focus (1-5)</th>
+        <th class="col-mood">Affect & Mood</th>
+        <th class="col-appetite">Lunch Appetite</th>
+        <th class="col-physical">Headaches / Physical</th>
+        <th class="col-sleep">Sleep Onset</th>
+        <th class="col-notes">OCD & Other Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Fri, Oct 16</td>
+        <td>[ ] Yes</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td><em>Day 1 Vyvanse 10mg</em></td>
+      </tr>
+      <tr>
+        <td>Sat, Oct 17</td>
+        <td>[ ] Yes</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>Sun, Oct 18</td>
+        <td>[ ] Yes</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>Mon, Oct 19</td>
+        <td>[ ] Yes</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td><em>School day focus check</em></td>
+      </tr>
+      <tr>
+        <td>Tue, Oct 20</td>
+        <td>[ ] Yes</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>Wed, Oct 21</td>
+        <td>[ ] Yes</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>Thu, Oct 22</td>
+        <td>[ ] Yes</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>Fri, Oct 23</td>
+        <td>[ ] Yes</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td><em>End of Week 1 Check</em></td>
+      </tr>
+      <tr>
+        <td>Sat, Oct 24</td>
+        <td>[ ] Yes</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>Sun, Oct 25</td>
+        <td>[ ] Yes</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>Mon, Oct 26</td>
+        <td>[ ] Yes</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>Tue, Oct 27</td>
+        <td>[ ] Yes</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>Wed, Oct 28</td>
+        <td>[ ] Yes</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>Thu, Oct 29</td>
+        <td>[ ] Yes</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>Fri, Oct 30</td>
+        <td>[ ] Yes</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td><em>End of Week 2 Check</em></td>
+      </tr>
+      <tr>
+        <td>Sat, Oct 31</td>
+        <td>[ ] Yes</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>Sun, Nov 1</td>
+        <td>[ ] Yes</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>Mon, Nov 2</td>
+        <td>[ ] Yes</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>Tue, Nov 3</td>
+        <td>[ ] Yes</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>Wed, Nov 4</td>
+        <td>[ ] Yes</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td><em>Prep for NP appointment</em></td>
+      </tr>
+      <tr style="background:#edf2f7; font-weight:bold;">
+        <td>Thu, Nov 5</td>
+        <td>[ ] Yes</td>
+        <td colspan="6" style="text-align:center; color:#2b6cb0;">APPOINTMENT DAY WITH NURSE PRACTITIONER — REVIEW LOG TOGETHER</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="footer-warning">
+    <strong>Contact NP / Seek Medical Guidance Immediately If:</strong> Signs of excessive serotonergic reaction appear (unexplained shivering, profuse sweating without fever, visible muscle tremors/twitches, agitation, or dilated pupils), or if resting heart rate feels consistently racing/pounding.
+  </div>
+
+</body>
+</html>
