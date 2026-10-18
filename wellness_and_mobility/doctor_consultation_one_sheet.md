@@ -5,7 +5,7 @@
 **Primary Focus:** Bioidentical Hormone Replacement Therapy (BHRT), Oura Cycle Tracking, ADHD & Metabolic Support  
 **Current Meds & Regimen:** Vyvanse (40mg), Ozempic (18 clicks), BHRT (BiEst, Progesterone, Testosterone)  
 **Surgical Status:** Hysterectomy (uterus removed), **ovaries intact**  
-**Date:** October 2026 (Updated: October 7, 2026)  
+**Date:** October 18, 2026 (Updated: Cycle 4, Day 14 - Ovulation Shift)  
 **Purpose:** BHRT Specialist & Primary Physician Consultation Guide  
 
 ---
@@ -20,36 +20,43 @@
 ---
 
 ### 2. Oura Ring Biomarker & Ovarian Cycle Confirmation
-* **Cycle Discovery:** Multi-month Oura temperature data confirms a highly regular **~25-day ovarian cycle**.
-* **Histamine Flare Pattern:** Skin, scalp, and breast itchiness occur consistently during temperature drops off high plateaus (e.g., Sept 25 temp spike of **+0.58°C** dropping to **+0.36°C** on Sept 26 triggered acute right breast itching).
-* **Mid-Cycle Temperature Dip & Joint Pain:** On Days 10–12 (Ovulation Shift), temperature drops to a low trough (-0.26°C) before rising, triggering joint pain, fatigue, and mild skin symptoms.
-* **Peak Protect Phase Symptoms (Sept 24–26):** Sustained +0.28°C baseline deviation with acute fluid retention (scale +2.3 lbs / 152 lbs, hand edema/tight rings) and severe glandular breast tenderness/hypersensitivity.
-* **Cycle 4 Follicular Reset & Pain Remission (Oct 5–7, 2026):**
-  - **Zero Pain Milestone (Day 3 Consecutive):** 3 consecutive days free of joint, hip, or low back pain (Oct 5–7), indicating complete systemic inflammatory settling upon entering follicular phase.
-  - **Basal Temperature:** Morning temperature recorded at 35.5°C (consistent low follicular baseline following late luteal drop).
-  - **Sleep & Fluid Dynamics:** 5.5 hours sleep (Sleep score 71, Readiness 78). Scale weight stable / persistent bloating noted, correlating with short-sleep cortisol elevations and late aldosterone/fluid recalibration.
+* **Cycle Discovery:** Multi-month Oura temperature data confirms a highly regular **~25-day ovarian cycle** with distinct follicular/push and luteal/protect phases.
+* **Histamine Flare Pattern:** Skin, scalp, and breast itchiness occur consistently during temperature shifts and estrogen transitions (e.g., late luteal drops and mid-cycle pre-ovulatory estrogen peaks on Days 11–13).
+* **Cycle 3 Peak Protect & Lab Benchmark (Sept 24–26):** Peak luteal temperature surge (+0.58°C) with fluid retention (scale 152 lbs) and breast tenderness. Capillary blood spot lab completed Day 19 (Sept 26).
+* **Cycle 4 Follicular Reset & Pain Remission (Oct 5–9 / Days 1–5):**
+  - **Zero Pain Milestone:** 3+ consecutive days completely free of systemic joint, hip, or low back pain entering the follicular phase.
+  - **Basal Temperature:** Oura reached -0.7°F (-0.39°C); basal mouth temp 35.5°C–35.6°C.
+* **Mammogram Window (Oct 13 / Day 9):** Successfully completed during optimal low-estrogen follicular phase for minimal glandular tissue sensitivity.
+* **Mid-Cycle Estrogen Surge & Joint Laxity (Oct 14–15 / Days 10–11):**
+  - **Ligamentous Laxity:** Post-Pilates joint soreness on Day 10 illustrated vulnerability of synovial and joint structures to mid-cycle estrogen surges.
+  - **Pre-Ovulatory Symptoms:** Nipple/breast center tenderness (estrogen ductal engorgement) and transient right breast histamine itching (Oct 15 & Oct 17).
+* **Pelvic & Mucosal Check (Oct 16 / Day 12):** Strong urine odor and mild pelvic itch resolved cleanly; attributed to methylated B-complex excretion and pre-ovulatory mucosal histamine permeability rather than infection.
+* **CURRENT STATUS — Ovulation Shift (Oct 18, 2026 / Day 14):**
+  - **Thermal Shift Initiated:** Oura temperature rose sharply to **+0.7°F (+0.39°C)**; basal mouth temperature **35.8°C**, confirming entry into the ovulatory shift and luteal progesterone rise.
+  - **Scale Baseline:** Steady and solid at **150.0 lbs**.
+  - **BHRT Rhythm:** Sunday scheduled double-off (Progesterone & Testosterone off; BiEst morning pump maintained).
 
 ---
 
 ### 3. Key Questions & Lab Status for BHRT Specialist
 1. **Finger Prick Blood Spot Lab Status:**  
-   **COMPLETED Saturday Morning, September 26, 2026 (Day 19)** per protocol (fasting AM collection, evening Progesterone taken, morning BiEst & Testosterone creams withheld until after blood collection).
+   **COMPLETED Saturday Morning, September 26, 2026 (Cycle 3, Day 19)** per protocol (fasting AM collection, evening Progesterone taken, morning BiEst & Testosterone creams withheld until after blood collection). Awaiting review with specialist.
 2. **Mid-Luteal Fluid Retention & Histamine Flare Inquiry:**  
    *"During my peak Protect Phase (Days 18–19), my Oura temp spiked to +0.58°C with acute water retention (scale 152 lbs, tight rings) and right breast histamine itching/tenderness. Do my capillary blood spot results indicate optimal tissue progesterone absorption, or should BHRT cream dosing be modulated during peak luteal surge?"*
-3. **Mid-Cycle Dip & Joint Pain Management:**  
-   *"On Days 10–12 of my cycle, my Oura temperature hits a low trough (-0.26°C) before climbing into the Protect phase. Should we adjust BHRT on dip days, or maintain my daily baseline?"*
+3. **Mid-Cycle Estrogen Surge & Ovulation Modulation:**  
+   *"On Days 10–14 of my cycle, my Oura temperature shifts sharply from a low follicular dip (-0.7°F) into an ovulatory climb (+0.7°F), accompanied by joint laxity and localized breast histamine itching. Does this warrant adjusting BiEst or Progesterone around the ovulatory window?"*
 
 ---
 
 ### 4. ADHD (Vyvanse 40mg) & Metabolic Optimization
 * **Vyvanse Dosing & Focus:** Stable on 40mg Vyvanse for executive function and daily focus.
-* **Appetite & Protein Defense:** Coordinating Vyvanse and Ozempic with a 5-meal compact, high-protein eating structure (135g+ protein/day target) to prevent muscle loss, fatigue, or late-day energy crashes.
+* **Appetite & Protein Defense:** Coordinating Vyvanse and Ozempic with a compact, high-protein eating structure (135g+ protein/day target) to prevent muscle loss, fatigue, or late-day energy crashes.
 
 ---
 
 ### 5. Summary of Action Items & Doctor Sign-Off
 - [x] Finger prick blood spot lab test completed on Sept 26 (Day 19 AM).
-- [ ] Review blood spot lab results alongside multi-month Oura cycle temperature logs.
+- [ ] Review blood spot lab results alongside 4 consecutive months of Oura cycle temperature logs (through Cycle 4, Day 14).
 - [ ] Discuss peak luteal fluid retention (scale 152 lbs, hand edema) and localized breast histamine symptoms.
-- [ ] Discuss mid-cycle temperature dip (-0.26°C) and joint flare management strategy.
+- [ ] Review mid-cycle estrogen surge patterns: joint laxity, pre-ovulatory breast tenderness, and ovulatory thermal shift (+0.7°F).
 - [ ] Review Vyvanse (40mg) + Ozempic (18 clicks) interaction with daily BHRT regimen.
