@@ -16,6 +16,7 @@ ehthumbs.db
 *.bak
 *.log
 *.exe
+~$*
 _temp/
 
 # Node (if ever used)

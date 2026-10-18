@@ -38,7 +38,7 @@ Copy this weekly template and fill in each day:
 | Date | Weight (lb) | Waist (in) | Hip (in) | 7-Day Avg Weight | Notes |
 |------|------------|-----------|---------|-----------------|-------|
 | 2026-10-11 | 150.7 | — | — | — | Sleep: 87, Readiness: 86, Temp: -0.1°F, 0 alcohol, puffiness dropping |
-| | | | | | |
+| 2026-10-18 | 150.0 | — | — | — | Sleep: 61, Readiness: 67, Temp: +0.7°F, Latency: 2h 8m, Day 14 Ovulation Shift |
 | | | | | | |
 | | | | | | |
 
