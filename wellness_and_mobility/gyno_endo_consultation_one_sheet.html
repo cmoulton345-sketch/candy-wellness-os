@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gynaecology &amp; Endometriosis Clinical Dossier - Candy Moulton</title>
+    <style>
+        :root {
+            --primary: #1e293b;
+            --accent: #0f766e;
+            --accent-light: #f0fdfa;
+            --text: #334155;
+            --text-dark: #0f172a;
+            --bg: #ffffff;
+            --card-bg: #f8fafc;
+            --border: #cbd5e1;
+            --alert-border: #0d9488;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: var(--text);
+            background-color: var(--bg);
+            line-height: 1.5;
+            margin: 0;
+            padding: 36px;
+            max-width: 860px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        header {
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 14px;
+            margin-bottom: 22px;
+        }
+
+        h1 {
+            color: var(--primary);
+            font-size: 22px;
+            margin: 0 0 6px 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .subtitle {
+            font-size: 14px;
+            color: var(--accent);
+            font-weight: 600;
+            margin: 0 0 12px 0;
+        }
+
+        .meta-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            font-size: 13.5px;
+            background: var(--card-bg);
+            padding: 12px 16px;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+        }
+
+        .meta-item {
+            margin: 0;
+        }
+
+        .meta-label {
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        section {
+            margin-bottom: 20px;
+            page-break-inside: avoid;
+        }
+
+        h2 {
+            font-size: 15px;
+            color: var(--primary);
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 4px;
+            margin-top: 18px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 6px;
+            font-size: 13.5px;
+        }
+
+        .highlight-box {
+            background-color: var(--accent-light);
+            border-left: 4px solid var(--alert-border);
+            padding: 10px 14px;
+            margin: 10px 0;
+            font-size: 13.5px;
+            border-radius: 0 6px 6px 0;
+            color: var(--text-dark);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 12px 0;
+            font-size: 13px;
+        }
+
+        th, td {
+            border: 1px solid var(--border);
+            padding: 8px 10px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: var(--card-bg);
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .checkbox-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .checkbox-list li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 8px;
+            font-size: 13.5px;
+        }
+
+        .checkbox-list li::before {
+            content: "☐";
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 15px;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        .print-btn {
+            background-color: var(--accent);
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            font-size: 14px;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-bottom: 20px;
+            transition: background 0.2s;
+        }
+
+        .print-btn:hover {
+            background-color: #0d5f57;
+        }
+
+        @media print {
+            body {
+                padding: 0;
+                max-width: 100%;
+                font-size: 11pt;
+            }
+            .no-print {
+                display: none;
+            }
+            section {
+                page-break-inside: avoid;
+            }
+            .print-btn {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <button class="print-btn no-print" onclick="window.print()">🖨️ Print Gynecologist &amp; Endo Consultation Sheet</button>
+
+    <header>
+        <h1>Clinical Consultation Dossier: Gynaecology &amp; Endometriosis Specialist</h1>
+        <p class="subtitle">Specialized Pelvic Pain, Intact Ovary Biometrics &amp; Post-Hysterectomy Care Plan</p>
+        <div class="meta-grid">
+            <p class="meta-item"><span class="meta-label">Patient:</span> Candy Moulton (Age 48)</p>
+            <p class="meta-item"><span class="meta-label">Referral Target:</span> Gynaecological Endometriosis Specialist</p>
+            <p class="meta-item"><span class="meta-label">Surgical Status:</span> Total Hysterectomy (uterus removed), <strong>bilateral ovaries intact</strong></p>
+            <p class="meta-item"><span class="meta-label">Current Regimen:</span> BiEst cream (1 pump AM), Testosterone (1 pump M-F), Progesterone (1 pump PM), Vyvanse (40mg), Ozempic</p>
+            <p class="meta-item"><span class="meta-label">Date Prepared:</span> October 19, 2026 (Updated: Cycle 4, Day 15 Ovulatory Shift)</p>
+            <p class="meta-item"><span class="meta-label">Status:</span> Waitlist Active / Living Consultation Dossier</p>
+        </div>
+    </header>
+
+    <section>
+        <h2>1. Chief Complaint &amp; Symptom Phenotype</h2>
+        <ul>
+            <li><strong>Primary Sensation:</strong> Chronic, cyclical lower pelvic pain presenting with prominent <strong>burning, raw, and electrical sensations</strong>, localized predominantly to the <strong>left lower quadrant / left pelvic sidewall</strong> and radiating into the midline pelvic basin.</li>
+            <li><strong>Cyclical Correlation:</strong> Pain sharpens noticeably during the <strong>ovulatory transition (Cycle Days 12–16)</strong> and during late luteal phase transitions, directly mirroring endogenous ovarian hormonal surges despite the absence of menstrual bleeding.</li>
+            <li><strong>Visceral Bloating vs. Peripheral Edema:</strong> Lower pelvic distension and smooth muscle slowing during flares; patient confirms finger rings slide freely off hands, ruling out generalized fluid retention and confirming localized visceral/pelvic origin.</li>
+            <li><strong>Musculoskeletal Guarding:</strong> Reflexive protective spasm of the left iliopsoas, hip flexors, and pelvic floor musculature secondary to local peritoneal irritation.</li>
+            <li><strong>Mast Cell / Histamine Comorbidity:</strong> Cyclical cutaneous and breast pruritus coinciding with rapid temperature/estrogen shifts, consistent with known mast cell-endometriosis crosstalk.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>2. PRIMARY REFERRAL CATALYST: Post-Physiotherapy Adverse Flare &amp; Physio Note</h2>
+        <div class="highlight-box" style="border-left-color: #dc2626; background-color: #fef2f2;">
+            <strong style="color: #991b1b;">Critical Clinical Trigger:</strong> This specialist consultation was directly precipitated by an extreme adverse reaction to specialized pelvic floor manual physical therapy.
+        </div>
+        <ul>
+            <li><strong>The Clinical Event:</strong> A Pelvic Health Physiotherapist conducted <strong>internal manual mobilization/massage of the post-hysterectomy vaginal cuff scar</strong> along with <strong>manual hip traction</strong>.</li>
+            <li><strong>The Reaction (Months of Incapacitation):</strong> The treatment provoked an immediate, catastrophic pain flare that "wrote the patient off for months." The pain was so agonizing and severe that she was barely able to walk, move, or perform daily living activities.</li>
+            <li><strong>Direct Clinical Consultation Note Sent:</strong> Recognizing that such a profound, multi-month reaction was completely outside the normal response of simple muscular hypertonicity, <strong>the Pelvic Floor Physiotherapist sent a formal clinical consultation note directly to the Gynecologist</strong> advocating for specialist intervention.</li>
+            <li><strong>Diagnostic Implications:</strong> Severe multi-month pain following direct cuff scar mobilization strongly indicates:
+                <ul>
+                    <li><strong>Deep infiltrating endometriosis (DIE)</strong> embedded in or adjacent to the vaginal cuff, uterosacral ligaments, or pouch of Douglas.</li>
+                    <li><strong>Dense fibrous surgical adhesions</strong> tethering the left adnexa or pelvic sidewall, mechanically strained by traction.</li>
+                    <li><strong>Severe pudendal or pelvic plexus nerve entrapment</strong> triggered by manual scar pressure.</li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>3. Surgical Baseline &amp; BHRT Exposure</h2>
+        <ul>
+            <li><strong>Surgical History:</strong> Total hysterectomy with cervical removal. <strong>Both ovaries were preserved and remain hormonally functional.</strong></li>
+            <li><strong>Anatomical Vulnerability:</strong> Pelvic sidewalls, broad ligaments, pouch of Douglas, and bladder peritoneum remain viable environments for residual or de novo ectopic endometrial implants and postoperative fibrous adhesions.</li>
+            <li><strong>Estrogen Exposure (BiEst):</strong> Patient utilizes daily bioidentical transdermal estrogen (BiEst 1 pump AM). Because endometriosis lesions express aromatase and are estrogen-dependent, exogenous estrogen therapy can stimulate residual peritoneal lesions if unopposed at the tissue level.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>4. Objective Biometric Proof: Intact ~25-Day Ovarian Cycle</h2>
+        <p style="font-size: 13.5px; margin-top: 4px; margin-bottom: 8px;">Continuous physiological tracking via Oura Ring basal temperature and resting metrics proves consistent, biphasic ovarian endocrine cycles across 4+ consecutive months:</p>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 25%;">Cycle Phase</th>
+                    <th style="width: 35%;">Documented Biomarker Signature</th>
+                    <th style="width: 40%;">Clinical Significance</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Follicular / Push Phase<br>(Days 1–10)</strong></td>
+                    <td>Basal body temp drops to nadir (-0.4°F to -0.7°F; mouth 35.5°C). 3+ consecutive days completely free of systemic joint/pelvic pain.</td>
+                    <td>Confirms low baseline hormone state with complete temporary pain remission.</td>
+                </tr>
+                <tr>
+                    <td><strong>Ovulatory Surge<br>(Days 12–15)</strong></td>
+                    <td>Rapid sustained thermal elevation (+0.7°F for 2+ consecutive days; mouth 36.2°C). Readiness rebound.</td>
+                    <td><strong>Trigger Window:</strong> Acute left pelvic burning and ovary ache (follicular swelling irritating adjacent peritoneal implants or scar tissue).</td>
+                </tr>
+                <tr>
+                    <td><strong>Luteal / Protect Phase<br>(Days 16–25)</strong></td>
+                    <td>Elevated thermal plateau (+0.2°C to +0.58°C). Aldosterone fluid shifts and progesterone smooth muscle relaxation.</td>
+                    <td>Visceral bloating, digestive slowing, and pelvic pressure prior to next reset.</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h2>5. Key Differentials for Specialist Evaluation</h2>
+        <div class="highlight-box">
+            <strong>Diagnostic Objective:</strong> Differentiate whether the burning and cyclical left pelvic pain is driven by:
+            <strong>(A)</strong> Residual/deep infiltrating peritoneal endometriosis (DIE) at the vaginal cuff or pouch of Douglas, 
+            <strong>(B)</strong> Post-hysterectomy fibrous adhesions tethering the left adnexa/cuff, 
+            <strong>(C)</strong> Severe pudendal/pelvic nerve entrapment, or 
+            <strong>(D)</strong> A combination of all three.
+        </div>
+    </section>
+
+    <section>
+        <h2>6. Priority Consultation Questions for the Specialist</h2>
+        <ul>
+            <li><strong>Physiotherapist Note Review:</strong> "Have you reviewed the clinical consultation note sent directly to your office by my Pelvic Floor Physiotherapist documenting my severe, multi-month flare from cuff scar mobilization?"</li>
+            <li><strong>Significance of the Physio Reaction:</strong> "Given that internal scar mobilization and hip traction incapacitated me for months, what does this extreme response indicate regarding deep peritoneal implants at the vaginal cuff, dense fibrous adhesions, or nerve entrapment?"</li>
+            <li><strong>Advanced Imaging:</strong> "Can we order a specialized high-resolution pelvic ultrasound with endometriosis protocol (specifically evaluating the sliding sign, left ovary mobility, and soft markers for vaginal cuff/bowel tethering) or a pelvic MRI?"</li>
+            <li><strong>Prior Surgical Records:</strong> "Can we request and review the operative and histology reports from my prior hysterectomy to verify whether endometriosis, adenomyosis, or adhesions were documented at that time?"</li>
+            <li><strong>BHRT Management:</strong> "Given that I require daily BiEst (estrogen) for perimenopausal bone, joint, and brain health, does my daily regimen need a targeted progestin or adjusted progesterone protocol to prevent stimulating ectopic endometrial implants?"</li>
+            <li><strong>Surgical Excision Candidacy:</strong> "If cyclical burning and left adnexal pain persist despite conservative measures, would diagnostic or therapeutic laparoscopy with cold-scissor excision be recommended?"</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>7. Specialist Intake Action Checklist</h2>
+        <ul class="checkbox-list">
+            <li>Review the Pelvic Floor Physiotherapist's clinical note sent directly to the Gynecologist.</li>
+            <li>Obtain and attach hysterectomy operative and surgical pathology reports.</li>
+            <li>Review 4-month Oura temperature charts proving active biphasic ovulatory cycles.</li>
+            <li>Review capillary blood spot hormone lab results (completed Cycle 3, Day 19).</li>
+            <li>Perform careful, gentle bimanual exam (strictly avoiding aggressive cuff palpation or traction).</li>
+            <li>Discuss order for specialized endometriosis protocol pelvic ultrasound or MRI.</li>
+            <li>Establish integrated care strategy between Endometriosis Specialist and BHRT Prescriber.</li>
+        </ul>
+    </section>
+
+</body>
+</html>

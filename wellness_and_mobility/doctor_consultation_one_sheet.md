@@ -5,7 +5,7 @@
 **Primary Focus:** Bioidentical Hormone Replacement Therapy (BHRT), Oura Cycle Tracking, ADHD & Metabolic Support  
 **Current Meds & Regimen:** Vyvanse (40mg), Ozempic (18 clicks), BHRT (BiEst, Progesterone, Testosterone)  
 **Surgical Status:** Hysterectomy (uterus removed), **ovaries intact**  
-**Date:** October 18, 2026 (Updated: Cycle 4, Day 14 - Ovulation Shift)  
+**Date:** October 19, 2026 (Updated: Cycle 4, Day 15 - Ovulation Shift & Early Protect Phase)  
 **Purpose:** BHRT Specialist & Primary Physician Consultation Guide  
 
 ---
@@ -31,10 +31,10 @@
   - **Ligamentous Laxity:** Post-Pilates joint soreness on Day 10 illustrated vulnerability of synovial and joint structures to mid-cycle estrogen surges.
   - **Pre-Ovulatory Symptoms:** Nipple/breast center tenderness (estrogen ductal engorgement) and transient right breast histamine itching (Oct 15 & Oct 17).
 * **Pelvic & Mucosal Check (Oct 16 / Day 12):** Strong urine odor and mild pelvic itch resolved cleanly; attributed to methylated B-complex excretion and pre-ovulatory mucosal histamine permeability rather than infection.
-* **CURRENT STATUS — Ovulation Shift (Oct 18, 2026 / Day 14):**
-  - **Thermal Shift Initiated:** Oura temperature rose sharply to **+0.7°F (+0.39°C)**; basal mouth temperature **35.8°C**, confirming entry into the ovulatory shift and luteal progesterone rise.
-  - **Scale Baseline:** Steady and solid at **150.0 lbs**.
-  - **BHRT Rhythm:** Sunday scheduled double-off (Progesterone & Testosterone off; BiEst morning pump maintained).
+* **CURRENT STATUS — Ovulation Shift & Early Protect Phase (Oct 18–19, 2026 / Days 14–15):**
+  - **Sustained Thermal Shift:** Oura temperature rose to and held at **+0.7°F (+0.39°C)** for two consecutive days (mouth temp 36.2°C on Day 15; sleep 80, readiness 83), confirming completion of LH surge and luteal progesterone entry.
+  - **Acute Pelvic Flare & Ring Fit:** Pronounced lower pelvic pain with left-sided ovary localization and burning sensation. Rings remain loose/sliding freely, distinguishing localized pelvic/smooth-muscle bloating from systemic peripheral edema.
+  - **BHRT Rhythm:** Resumed Monday schedule (BiEst morning, Testosterone M-F resumed, Progesterone evening).
 
 ---
 
@@ -45,6 +45,8 @@
    *"During my peak Protect Phase (Days 18–19), my Oura temp spiked to +0.58°C with acute water retention (scale 152 lbs, tight rings) and right breast histamine itching/tenderness. Do my capillary blood spot results indicate optimal tissue progesterone absorption, or should BHRT cream dosing be modulated during peak luteal surge?"*
 3. **Mid-Cycle Estrogen Surge & Ovulation Modulation:**  
    *"On Days 10–14 of my cycle, my Oura temperature shifts sharply from a low follicular dip (-0.7°F) into an ovulatory climb (+0.7°F), accompanied by joint laxity and localized breast histamine itching. Does this warrant adjusting BiEst or Progesterone around the ovulatory window?"*
+4. **Endometriosis, Adhesions & Pelvic Burning Inquiry:**  
+   *"Given that my ovaries are intact and I am on daily BiEst (estrogen), could residual peritoneal endometriosis, post-hysterectomy adhesions (scar bands around the left ovary), or hypertonic pelvic floor nerve irritation be responsible for my cyclical burning sensations and acute left-sided pelvic pain during ovulatory thermal shifts (+0.7°F)?"*
 
 ---
 
@@ -56,7 +58,8 @@
 
 ### 5. Summary of Action Items & Doctor Sign-Off
 - [x] Finger prick blood spot lab test completed on Sept 26 (Day 19 AM).
-- [ ] Review blood spot lab results alongside 4 consecutive months of Oura cycle temperature logs (through Cycle 4, Day 14).
+- [ ] Review blood spot lab results alongside 4 consecutive months of Oura cycle temperature logs (through Cycle 4, Day 15).
 - [ ] Discuss peak luteal fluid retention (scale 152 lbs, hand edema) and localized breast histamine symptoms.
 - [ ] Review mid-cycle estrogen surge patterns: joint laxity, pre-ovulatory breast tenderness, and ovulatory thermal shift (+0.7°F).
+- [ ] Evaluate persistent pelvic burning and left-sided pain for residual endometriosis implants, post-surgical adhesions, or pelvic floor nerve irritation.
 - [ ] Review Vyvanse (40mg) + Ozempic (18 clicks) interaction with daily BHRT regimen.

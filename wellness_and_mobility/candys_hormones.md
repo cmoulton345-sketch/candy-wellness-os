@@ -80,6 +80,7 @@
 | **Oct 16** | Day 12 | 35.4°C (Mouth) | **+0.2°F (+0.11°C)** | **75** | **Sleep Score 77.** Urine odor & pelvic itch check (ruled out fever; correlated to activated B-complex excretion & mid-cycle mucosal histamine surge). Hydration with warm water & BioSteel electrolytes. | 🟢 **Cycle 4 / Day 12 Peak Push Phase (Ovulation Transition)** |
 | **Oct 17** | Day 13 | 35.6°C (Mouth) | **0.0°F (Baseline)** | **74** | **Sleep Score 75.** Wine with friends Friday night; right breast itchy overnight (histamine flare from wine + peak estrogen); mild puffiness. Scale skipped to protect mental peace. | 🟢 **Cycle 4 / Day 13 Peak Push Phase (Estrogen Peak & Histamine Shift)** |
 | **Oct 18** | Day 14 | 35.8°C (Mouth) | **+0.7°F (+0.39°C)** | **67** | **Sleep Score 61 (Latency 2h 8m, Efficiency 70%).** Scale 150.0 lbs (steady baseline!). Second night wine with friends ("no more wine for a few weeks"); latency delay from alcohol alert rebound; ovulatory temp rise initiated (+0.7°F). Sunday BHRT: Testosterone & Progesterone OFF. Rest day / sloth mode. Evening: acute hip flexor/psoas & low-back guarding from ligamentous laxity + sitting; completed 10-min constructive rest, supported bridge & diaphragmatic release. | 🔄 **Cycle 4 / Day 14 Ovulation Shift (Progesterone Climb Initiating)** |
+| **Oct 19** | Day 15 | 36.2°C (Mouth) | **+0.7°F (+0.39°C)** | **83** | **Sleep Score 80!** Rings spinning freely (no peripheral water retention!). Mild visceral bloating. Acute lower pelvic pain (left-sided ovary sharp ache + midline pressure). 2nd consecutive day of +0.7°F confirms Mittelschmerz / ovulatory follicle rupture & early Protect Phase transition. BHRT resumed: Testosterone (M-F) & morning BiEst, evening Progesterone. Prioritizing pelvic floor decompression & psoas release over heavy squats. | 🟡 **Cycle 4 / Day 15 Protect Phase Transition (Mittelschmerz & Sustained Thermal Shift)** |
 
 ### September 16 Body Measurements & Physical Check-In
 * **Oura Temp / Readiness:** -0.25°C (Day 9 Peak Estrogen Dip) | Readiness: 96 | Sleep Scores: 77 (Sept 14 night) & 81 (Sept 15 night).
@@ -139,6 +140,7 @@ This proves 100% that your itchiness is tied to your **ovarian cycle reset** whe
   * **Option B (Late-Luteal Dose Reduction):** Discuss dropping to a half-pump of Progesterone from Day 20 until cycle resets.
   * **Option C (Estrogen Cushioning):** Review Sept 26 Estradiol-to-Progesterone ratio to see if morning BiEst should be micro-adjusted during late luteal temp drops to prevent body aches.
 - [ ] **Follow-Up Appointment:** Late October consultation to review Sept 26 blood spot test results + Oura cycle logs.
+- [x] **Endometriosis & Pelvic Specialist Dossier:** Created dedicated clinical consultation one-sheet ([Markdown](file:///Users/valuedcustomer/Downloads/flowstate_ai_os_candy/wellness_and_mobility/gyno_endo_consultation_one_sheet.md) / [Printable HTML](file:///Users/valuedcustomer/Downloads/flowstate_ai_os_candy/wellness_and_mobility/gyno_endo_consultation_one_sheet.html)) for upcoming gynecologist appointment.
 
 
 
