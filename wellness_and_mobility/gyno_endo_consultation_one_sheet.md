@@ -6,7 +6,7 @@
 **Specialty Referral:** Gynecological Endometriosis & Pelvic Pain Specialist  
 **Surgical Baseline:** Total Hysterectomy (uterus removed), **bilateral ovaries intact**  
 **Current Active Regimen:** BiEst cream (1 pump AM), Testosterone cream (1 pump M–F), Progesterone cream (1 pump PM), Vyvanse (40mg), Ozempic (18 clicks)  
-**Date Created / Updated:** October 19, 2026 (Active: Cycle 4, Day 15 Ovulatory Shift)  
+**Date Created / Updated:** October 20, 2026 (Active: Cycle 4, Day 16 Protect Phase Active)  
 **Document Purpose:** Specialized clinical summary, biomarker dossier, and diagnostic consultation guide for specialist intake appointment.
 
 ---
@@ -14,6 +14,7 @@
 ### 1. Chief Complaint & Symptom Presentation
 * **Primary Symptoms:** Chronic, cyclical lower pelvic pain with distinct **burning, raw, and electrical sensations**, predominantly localized to the **left lower quadrant / left pelvic sidewall** and radiating to the midline pelvic basin.
 * **Cyclical Correlation:** Pain sharply intensifies during the **ovulatory transition (Cycle Days 12–16)** and during **late luteal shifts**, matching endogenous ovarian hormonal surges despite having no menstrual bleed.
+* **Symptom Progression (Day 16 Milestone):** Following the acute peak ovulatory surge (Days 14–15), left pelvic burning and Mittelschmerz began softening/settling on Day 16 as progesterone rose (+0.5°F thermal shift; mouth 36.2°C). However, systemic musculoskeletal compensation and joint soreness (notably in the feet and chest/pec minor) flared post-exertion, reflecting kinetic chain strain.
 * **Secondary Associated Symptoms:**
   - **Visceral Bloating:** Lower abdominal distension without systemic peripheral edema (verified by freely spinning rings during acute flares).
   - **Neuropathic & Fascial Guarding:** Reflexive left hip flexor, psoas, and pelvic floor muscle contraction ("splinting" the left adnexa).
@@ -46,7 +47,7 @@
 | Cycle Benchmark | Documented Biomarker Pattern | Clinical Significance |
 |---|---|---|
 | **Follicular Phase (Days 1–10)** | Basal temperatures drop to nadir (-0.4°F to -0.7°F; 35.5°C mouth). Systemic pain completely remits (3+ consecutive days zero joint/pelvic pain). | Demonstrates low estrogen/progesterone baseline with minimal tissue inflammation. |
-| **Ovulatory Surge (Days 12–15)** | Rapid thermal shift (+0.7°F elevation sustained for 2+ consecutive days). Mid-cycle estrogen peak. | **Trigger Window:** Acute left pelvic burning and pain flare (Mittelschmerz / follicular enlargement irritating adjacent peritoneal implants or scar adhesions). |
+| **Ovulatory Surge & Shift (Days 12–16)** | Rapid thermal shift (+0.7°F for Days 14–15; sustained at +0.5°F on Day 16; mouth 36.2°C). Readiness rebound. | **Trigger Window:** Acute left pelvic burning and pain flare (Mittelschmerz / follicular enlargement irritating adjacent peritoneal implants or scar adhesions); begins softening as thermal shift transitions into active Protect Phase. |
 | **Luteal Phase (Days 16–25)** | High temperature plateau (+0.2°C to +0.58°C). Aldosterone fluid shifts and smooth muscle relaxation. | Visceral pelvic bloating, GI slowing, and breast tenderness. |
 
 ---
