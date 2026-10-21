@@ -35,6 +35,7 @@
   - **Sustained Thermal Shift (Day 4):** Oura temperature held elevated for 4 consecutive days (**+0.7°F, +0.7°F, +0.5°F, +0.6°F**; mouth temp 36.0°C on Day 17; sleep score 85, readiness 84), confirming active luteal **Protect Phase**.
   - **Pelvic Sensation & Pain Evolution:** Acute left-sided ovulatory Mittelschmerz has settled from 5/5 down to 3/5; rings are loosening/sliding, showing peripheral lymphatic drainage even as mid-luteal progesterone/aldosterone drives transient cellular water holding (scale 151.4 lbs).
   - **Breast Tissue Sensitivity:** Left breast especially tender to touch, matching expected luteal lobuloalveolar sensitivity to endogenous + BHRT progesterone.
+  - **Neuro-Affective & Mood Dysregulation (Luteal Agitation):** Marked acute emergence of irritability, agitation, grumpiness, and low frustration tolerance on Day 17. Correlates directly to the post-ovulatory estrogen drop reducing dopamine/Vyvanse buffer combined with surging progesterone/allopregnanolone GABA-A receptor modulation.
   - **BHRT Rhythm:** Standard weekday regimen maintained (BiEst AM, Testosterone M–F, Progesterone PM).
 
 ---
@@ -53,14 +54,15 @@
 
 ### 4. ADHD (Vyvanse 40mg) & Metabolic Optimization
 * **Vyvanse Dosing & Focus:** Stable on 40mg Vyvanse for executive function and daily focus.
+* **Luteal Neurotransmitter Shift & Dopamine Dip:** Mid-luteal estrogen drop sharply reduces prefrontal dopamine availability, causing Vyvanse (40mg) to feel noticeably less effective and unmasking severe emotional dysregulation (irritability, agitation, sensory overload). Discuss potential luteal BHRT estrogen cushioning or ADHD dosage strategies during the luteal drop.
 * **Appetite & Protein Defense:** Coordinating Vyvanse and Ozempic with a compact, high-protein eating structure (135g+ protein/day target) to prevent muscle loss, fatigue, or late-day energy crashes.
 
 ---
 
 ### 5. Summary of Action Items & Doctor Sign-Off
 - [x] Finger prick blood spot lab test completed on Sept 26 (Day 19 AM).
-- [ ] Review blood spot lab results alongside 4 consecutive months of Oura cycle temperature logs (through Cycle 4, Day 16).
+- [ ] Review blood spot lab results alongside 4 consecutive months of Oura cycle temperature logs (through Cycle 4, Day 17).
 - [ ] Discuss peak luteal fluid retention (scale 152 lbs, hand edema) and localized breast histamine symptoms.
 - [ ] Review mid-cycle estrogen surge patterns: joint laxity, pre-ovulatory breast tenderness, and ovulatory thermal shift (+0.7°F).
 - [ ] Evaluate persistent pelvic burning and left-sided pain for residual endometriosis implants, post-surgical adhesions, or pelvic floor nerve irritation.
-- [ ] Review Vyvanse (40mg) + Ozempic (18 clicks) interaction with daily BHRT regimen.
+- [ ] Review Vyvanse (40mg) + Ozempic (18 clicks) interaction with daily BHRT regimen, specifically addressing mid-luteal dopamine drops and acute irritability.
