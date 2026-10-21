@@ -6,7 +6,7 @@
 **Specialty Referral:** Gynecological Endometriosis & Pelvic Pain Specialist  
 **Surgical Baseline:** Total Hysterectomy (uterus removed), **bilateral ovaries intact**  
 **Current Active Regimen:** BiEst cream (1 pump AM), Testosterone cream (1 pump M–F), Progesterone cream (1 pump PM), Vyvanse (40mg), Ozempic (18 clicks)  
-**Date Created / Updated:** October 20, 2026 (Active: Cycle 4, Day 16 Protect Phase Active)  
+**Date Created / Updated:** October 21, 2026 (Active: Cycle 4, Day 17 Protect Phase Active)  
 **Document Purpose:** Specialized clinical summary, biomarker dossier, and diagnostic consultation guide for specialist intake appointment.
 
 ---
@@ -14,7 +14,7 @@
 ### 1. Chief Complaint & Symptom Presentation
 * **Primary Symptoms:** Chronic, cyclical lower pelvic pain with distinct **burning, raw, and electrical sensations**, predominantly localized to the **left lower quadrant / left pelvic sidewall** and radiating to the midline pelvic basin.
 * **Cyclical Correlation:** Pain sharply intensifies during the **ovulatory transition (Cycle Days 12–16)** and during **late luteal shifts**, matching endogenous ovarian hormonal surges despite having no menstrual bleed.
-* **Symptom Progression (Day 16 Milestone):** Following the acute peak ovulatory surge (Days 14–15), left pelvic burning and Mittelschmerz began softening/settling on Day 16 as progesterone rose (+0.5°F thermal shift; mouth 36.2°C). However, systemic musculoskeletal compensation and joint soreness (notably in the feet and chest/pec minor) flared post-exertion, reflecting kinetic chain strain.
+* **Symptom Progression (Days 16–17 Milestone):** Following the acute peak ovulatory surge (Days 14–15), left pelvic burning and Mittelschmerz settled from 5/5 to 3/5 on Days 16–17 as luteal progesterone rose and sustained a 4-day elevated thermal plateau (+0.5°F to +0.7°F; mouth 36.0°C–36.2°C). Peripheral edema is clearing (rings loosening), while mid-luteal lobuloalveolar breast tenderness (especially left breast) and visceral guarding remain active.
 * **Secondary Associated Symptoms:**
   - **Visceral Bloating:** Lower abdominal distension without systemic peripheral edema (verified by freely spinning rings during acute flares).
   - **Neuropathic & Fascial Guarding:** Reflexive left hip flexor, psoas, and pelvic floor muscle contraction ("splinting" the left adnexa).
