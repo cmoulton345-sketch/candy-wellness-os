@@ -5,7 +5,7 @@
 **Primary Focus:** Bioidentical Hormone Replacement Therapy (BHRT), Oura Cycle Tracking, ADHD & Metabolic Support  
 **Current Meds & Regimen:** Vyvanse (40mg), Ozempic (18 clicks), BHRT (BiEst, Progesterone, Testosterone)  
 **Surgical Status:** Hysterectomy (uterus removed), **ovaries intact**  
-**Date:** October 21, 2026 (Updated: Cycle 4, Day 17 - Protect Phase Active)  
+**Date:** October 22, 2026 (Updated: Cycle 4, Day 18 - Protect Phase Peak Crest)  
 **Purpose:** BHRT Specialist & Primary Physician Consultation Guide  
 
 ---
@@ -31,11 +31,11 @@
   - **Ligamentous Laxity:** Post-Pilates joint soreness on Day 10 illustrated vulnerability of synovial and joint structures to mid-cycle estrogen surges.
   - **Pre-Ovulatory Symptoms:** Nipple/breast center tenderness (estrogen ductal engorgement) and transient right breast histamine itching (Oct 15 & Oct 17).
 * **Pelvic & Mucosal Check (Oct 16 / Day 12):** Strong urine odor and mild pelvic itch resolved cleanly; attributed to methylated B-complex excretion and pre-ovulatory mucosal histamine permeability rather than infection.
-* **CURRENT STATUS — Protect Phase Active & Luteal Plateau (Oct 18–21, 2026 / Days 14–17):**
-  - **Sustained Thermal Shift (Day 4):** Oura temperature held elevated for 4 consecutive days (**+0.7°F, +0.7°F, +0.5°F, +0.6°F**; mouth temp 36.0°C on Day 17; sleep score 85, readiness 84), confirming active luteal **Protect Phase**.
-  - **Pelvic Sensation & Pain Evolution:** Acute left-sided ovulatory Mittelschmerz has settled from 5/5 down to 3/5; rings are loosening/sliding, showing peripheral lymphatic drainage even as mid-luteal progesterone/aldosterone drives transient cellular water holding (scale 151.4 lbs).
-  - **Breast Tissue Sensitivity:** Left breast especially tender to touch, matching expected luteal lobuloalveolar sensitivity to endogenous + BHRT progesterone.
-  - **Neuro-Affective & Mood Dysregulation (Luteal Agitation):** Marked acute emergence of irritability, agitation, grumpiness, and low frustration tolerance on Day 17. Correlates directly to the post-ovulatory estrogen drop reducing dopamine/Vyvanse buffer combined with surging progesterone/allopregnanolone GABA-A receptor modulation.
+* **CURRENT STATUS — Protect Phase Active & Peak Luteal Crest (Oct 18–22, 2026 / Days 14–18):**
+  - **Sustained Thermal Shift (Day 5):** Oura temperature held elevated for 5 consecutive nights (**+0.7°F, +0.7°F, +0.5°F, +0.6°F, +0.5°F**; mouth temp 35.7°C on Day 18; sleep score 87, readiness 80), confirming active, sustained luteal **Protect Phase**.
+  - **Peak Luteal Symptom Crest ("Progesterone Flu" & Malaise):** On Day 18, acute systemic malaise developed: diffuse body aching, pronounced neck stiffness, tension/hormone headache, and puffy fingers (aldosterone-mediated fluid holding). This matches the textbook "progesterone flu" inflammatory/neurosteroid surge seen during peak luteal progesterone stacking.
+  - **Pelvic Sensation & Pain Evolution:** Acute left-sided ovulatory Mittelschmerz has settled from 5/5 down to 3/5; breast tissue remains tender.
+  - **Neuro-Affective & Mood Dysregulation (Luteal Agitation):** Marked acute emergence of irritability, agitation, grumpiness, and low frustration tolerance on Days 17–18. Correlates directly to the post-ovulatory estrogen drop reducing dopamine/Vyvanse buffer combined with surging progesterone/allopregnanolone GABA-A receptor modulation.
   - **BHRT Rhythm:** Standard weekday regimen maintained (BiEst AM, Testosterone M–F, Progesterone PM).
 
 ---
@@ -44,7 +44,7 @@
 1. **Finger Prick Blood Spot Lab Status:**  
    **COMPLETED Saturday Morning, September 26, 2026 (Cycle 3, Day 19)** per protocol (fasting AM collection, evening Progesterone taken, morning BiEst & Testosterone creams withheld until after blood collection). Awaiting review with specialist.
 2. **Mid-Luteal Fluid Retention & Histamine Flare Inquiry:**  
-   *"During my peak Protect Phase (Days 18–19), my Oura temp spiked to +0.58°C with acute water retention (scale 152 lbs, tight rings) and right breast histamine itching/tenderness. Do my capillary blood spot results indicate optimal tissue progesterone absorption, or should BHRT cream dosing be modulated during peak luteal surge?"*
+   *"During my peak Protect Phase (Days 18–19), my Oura temp spikes with acute water retention (scale 151–152 lbs, puffy fingers), diffuse body/neck aching, headaches, and malaise ('luteal flu'). Do my capillary blood spot results indicate excessive tissue progesterone absorption, and should BHRT cream dosing be modulated during this peak luteal surge window?"*
 3. **Mid-Cycle Estrogen Surge & Ovulation Modulation:**  
    *"On Days 10–14 of my cycle, my Oura temperature shifts sharply from a low follicular dip (-0.7°F) into an ovulatory climb (+0.7°F), accompanied by joint laxity and localized breast histamine itching. Does this warrant adjusting BiEst or Progesterone around the ovulatory window?"*
 4. **Endometriosis, Adhesions & Pelvic Burning Inquiry:**  
@@ -61,8 +61,8 @@
 
 ### 5. Summary of Action Items & Doctor Sign-Off
 - [x] Finger prick blood spot lab test completed on Sept 26 (Day 19 AM).
-- [ ] Review blood spot lab results alongside 4 consecutive months of Oura cycle temperature logs (through Cycle 4, Day 17).
-- [ ] Discuss peak luteal fluid retention (scale 152 lbs, hand edema) and localized breast histamine symptoms.
+- [ ] Review blood spot lab results alongside 4 consecutive months of Oura cycle temperature logs (through Cycle 4, Day 18).
+- [ ] Discuss peak luteal fluid retention (scale 152 lbs, hand edema, puffy fingers) and localized breast histamine symptoms.
 - [ ] Review mid-cycle estrogen surge patterns: joint laxity, pre-ovulatory breast tenderness, and ovulatory thermal shift (+0.7°F).
 - [ ] Evaluate persistent pelvic burning and left-sided pain for residual endometriosis implants, post-surgical adhesions, or pelvic floor nerve irritation.
 - [ ] Review Vyvanse (40mg) + Ozempic (18 clicks) interaction with daily BHRT regimen, specifically addressing mid-luteal dopamine drops and acute irritability.

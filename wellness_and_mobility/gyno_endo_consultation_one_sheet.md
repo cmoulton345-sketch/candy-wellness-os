@@ -6,7 +6,7 @@
 **Specialty Referral:** Gynecological Endometriosis & Pelvic Pain Specialist  
 **Surgical Baseline:** Total Hysterectomy (uterus removed), **bilateral ovaries intact**  
 **Current Active Regimen:** BiEst cream (1 pump AM), Testosterone cream (1 pump M–F), Progesterone cream (1 pump PM), Vyvanse (40mg), Ozempic (18 clicks)  
-**Date Created / Updated:** October 21, 2026 (Active: Cycle 4, Day 17 Protect Phase Active)  
+**Date Created / Updated:** October 22, 2026 (Active: Cycle 4, Day 18 Protect Phase Peak Crest)  
 **Document Purpose:** Specialized clinical summary, biomarker dossier, and diagnostic consultation guide for specialist intake appointment.
 
 ---
@@ -14,12 +14,13 @@
 ### 1. Chief Complaint & Symptom Presentation
 * **Primary Symptoms:** Chronic, cyclical lower pelvic pain with distinct **burning, raw, and electrical sensations**, predominantly localized to the **left lower quadrant / left pelvic sidewall** and radiating to the midline pelvic basin.
 * **Cyclical Correlation:** Pain sharply intensifies during the **ovulatory transition (Cycle Days 12–16)** and during **late luteal shifts**, matching endogenous ovarian hormonal surges despite having no menstrual bleed.
-* **Symptom Progression (Days 16–17 Milestone):** Following the acute peak ovulatory surge (Days 14–15), left pelvic burning and Mittelschmerz settled from 5/5 to 3/5 on Days 16–17 as luteal progesterone rose and sustained a 4-day elevated thermal plateau (+0.5°F to +0.7°F; mouth 36.0°C–36.2°C). Peripheral edema is clearing (rings loosening), while mid-luteal lobuloalveolar breast tenderness (especially left breast) and visceral guarding remain active. Concurrently, acute luteal neuro-affective dysregulation (irritability, agitation, low frustration threshold) emerged, highlighting neurosteroid reactivity to intact ovarian progesterone surges.
+* **Symptom Progression (Days 16–18 Milestone):** Following the acute peak ovulatory surge (Days 14–15), left pelvic burning and Mittelschmerz settled from 5/5 to 3/5 on Days 16–17. By Day 18, as luteal progesterone hit peak saturation (5th consecutive elevated night at +0.5°F; mouth 35.7°C, sleep 87, readiness 80), systemic neuro-inflammatory symptoms peaked: acute "progesterone flu" (malaise, diffuse body aching, pronounced neck stiffness, headache), puffy fingers (aldosterone fluid holding), and persistent central irritability/agitation.
 * **Secondary Associated Symptoms:**
   - **Visceral Bloating:** Lower abdominal distension without systemic peripheral edema (verified by freely spinning rings during acute flares).
   - **Neuropathic & Fascial Guarding:** Reflexive left hip flexor, psoas, and pelvic floor muscle contraction ("splinting" the left adnexa).
   - **Mast Cell / Histamine Sensitivities:** Verified cyclical skin and breast itchiness coinciding with estrogen/temperature drops (mast cell-endometriosis crosstalk).
   - **Cyclical Neuro-Affective Symptoms (Irritability / Agitation):** Cyclical agitation, irritability, and sensory overstimulation during post-ovulatory progesterone entry (Days 16–17+), reflecting the interplay between visceral pelvic pain burden, dropping pre-ovulatory estrogen, and allopregnanolone GABA modulation.
+  - **Luteal Malaise & "Progesterone Flu" Symptoms:** Cyclical diffuse body aching, cervical/neck stiffness, vascular/tension headaches, and puffy fingers coinciding with peak luteal progesterone saturation (Days 18–20).
 
 ---
 
