@@ -178,6 +178,12 @@
             border-color: var(--reset-border);
         }
 
+        .day-cell.upcoming {
+            background: #ffffff;
+            border: 1px dashed #cbd5e1;
+            opacity: 0.9;
+        }
+
         .day-cell.today {
             outline: 3px solid #0f766e;
             outline-offset: -1px;
@@ -312,10 +318,10 @@
         <h1>Clinical Cycle Calendar: Candy Moulton</h1>
         <p>Biphasic Ovarian Cycle Biomarkers, Basal Temperatures, Scale Shifts &amp; Symptoms</p>
         <div class="header-meta">
-            <div><strong>Tracking Range:</strong> Sept 8, 2026 – Oct 22, 2026 (45 Days)</div>
+            <div><strong>Tracking Range:</strong> Sept 8, 2026 – Ongoing Live Daily Tracker</div>
             <div><strong>Surgical Context:</strong> Hysterectomy (uterus removed), <strong>ovaries intact</strong></div>
-            <div><strong>Current Cycle:</strong> Cycle 4, Day 18 (Protect Phase Active)</div>
-            <div><strong>Prepared For:</strong> WellNurture BHRT Clinical Consultation</div>
+            <div><strong>Current Status:</strong> Cycle 4, Day 18 (Protect Phase Peak Luteal Crest)</div>
+            <div><strong>Clinical Integration:</strong> Live Daily Sync with WellNurture Consult Sheets</div>
         </div>
     </header>
 
@@ -324,6 +330,7 @@
         <div class="legend-item"><div class="legend-dot" style="background:#10b981;"></div> Peak Push Phase / Low Temp (Days 5–11)</div>
         <div class="legend-item"><div class="legend-dot" style="background:#3b82f6;"></div> Ovulation Shift (Days 12–15)</div>
         <div class="legend-item"><div class="legend-dot" style="background:#f59e0b;"></div> Protect Phase / Peak Luteal Progesterone (Days 16–27)</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#ffffff; border:1px dashed #94a3b8;"></div> Upcoming / Active Daily Check-In Slot</div>
     </div>
 
     <!-- SEPTEMBER 2026 -->
@@ -808,18 +815,89 @@
                 <div class="temp-row"><span class="temp-val">+0.5°F / 35.7°C</span><span class="readiness-val">R:80</span></div>
                 <div class="symptom-tag highlight-event">⚠️ <strong>PEAK LUTEAL CREST.</strong> Sleep 87. Puffy fingers (rings stuck!), neck stiff, headache, body aches, feeling ill.</div>
             </div>
-            <!-- Oct 23-24 Empty / Future -->
-            <div class="day-cell empty"></div>
-            <div class="day-cell empty"></div>
+            <!-- Oct 23: DAY 19 (UPCOMING) -->
+            <div class="day-cell upcoming protect">
+                <div class="day-top">
+                    <span class="day-number">23</span>
+                    <span class="cycle-badge">Day 19</span>
+                </div>
+                <div class="temp-row"><span class="temp-val" style="color:#64748b; font-style:italic;">Awaiting log...</span></div>
+                <div class="symptom-tag" style="border-left-color: #cbd5e1; color: #64748b; font-style: italic;">Protect phase. Projected high progesterone plateau.</div>
+            </div>
+            <!-- Oct 24: DAY 20 (UPCOMING) -->
+            <div class="day-cell upcoming protect">
+                <div class="day-top">
+                    <span class="day-number">24</span>
+                    <span class="cycle-badge">Day 20</span>
+                </div>
+                <div class="temp-row"><span class="temp-val" style="color:#64748b; font-style:italic;">Awaiting log...</span></div>
+                <div class="symptom-tag" style="border-left-color: #cbd5e1; color: #64748b; font-style: italic;">Protect phase. Stacking crest tail.</div>
+            </div>
 
-            <!-- Week 5 Empty -->
-            <div class="day-cell empty"></div>
-            <div class="day-cell empty"></div>
-            <div class="day-cell empty"></div>
-            <div class="day-cell empty"></div>
-            <div class="day-cell empty"></div>
-            <div class="day-cell empty"></div>
-            <div class="day-cell empty"></div>
+            <!-- Week 5: Oct 25-31 -->
+            <!-- Oct 25: DAY 21 (UPCOMING) -->
+            <div class="day-cell upcoming protect">
+                <div class="day-top">
+                    <span class="day-number">25</span>
+                    <span class="cycle-badge">Day 21</span>
+                </div>
+                <div class="temp-row"><span class="temp-val" style="color:#64748b; font-style:italic;">Awaiting log...</span></div>
+                <div class="symptom-tag" style="border-left-color: #cbd5e1; color: #64748b; font-style: italic;">Protect phase. Mid-luteal transition.</div>
+            </div>
+            <!-- Oct 26: DAY 22 (UPCOMING) -->
+            <div class="day-cell upcoming protect">
+                <div class="day-top">
+                    <span class="day-number">26</span>
+                    <span class="cycle-badge">Day 22</span>
+                </div>
+                <div class="temp-row"><span class="temp-val" style="color:#64748b; font-style:italic;">Awaiting log...</span></div>
+                <div class="symptom-tag" style="border-left-color: #cbd5e1; color: #64748b; font-style: italic;">Protect phase. Luteal plateau.</div>
+            </div>
+            <!-- Oct 27: DAY 23 (UPCOMING) -->
+            <div class="day-cell upcoming protect">
+                <div class="day-top">
+                    <span class="day-number">27</span>
+                    <span class="cycle-badge">Day 23</span>
+                </div>
+                <div class="temp-row"><span class="temp-val" style="color:#64748b; font-style:italic;">Awaiting log...</span></div>
+                <div class="symptom-tag" style="border-left-color: #cbd5e1; color: #64748b; font-style: italic;">Late luteal phase. Premenstrual shift prep.</div>
+            </div>
+            <!-- Oct 28: DAY 24 (UPCOMING) -->
+            <div class="day-cell upcoming" style="background:#f0fdf4; border-color:#86efac;">
+                <div class="day-top">
+                    <span class="day-number">28</span>
+                    <span class="cycle-badge">Day 24</span>
+                </div>
+                <div class="temp-row"><span class="temp-val" style="color:#059669; font-weight:700;">💧 Anticipated</span></div>
+                <div class="symptom-tag" style="border-left-color: #10b981; color: #047857;"><strong>Projected Fluid Dump Window</strong> (Matching Oct 1 drop).</div>
+            </div>
+            <!-- Oct 29: DAY 25 (UPCOMING) -->
+            <div class="day-cell upcoming reset">
+                <div class="day-top">
+                    <span class="day-number">29</span>
+                    <span class="cycle-badge">Day 25</span>
+                </div>
+                <div class="temp-row"><span class="temp-val" style="color:#64748b; font-style:italic;">Awaiting log...</span></div>
+                <div class="symptom-tag" style="border-left-color: #f472b6; color: #831843;">Reset doorstep. Cycle 4 end window.</div>
+            </div>
+            <!-- Oct 30: DAY 26 / CYCLE 5 DAY 1 (UPCOMING) -->
+            <div class="day-cell upcoming reset">
+                <div class="day-top">
+                    <span class="day-number">30</span>
+                    <span class="cycle-badge" style="background:#fbcfe8; color:#9d174d;">C5 / Day 1 ?</span>
+                </div>
+                <div class="temp-row"><span class="temp-val" style="color:#db2777; font-weight:600;">Reset Window</span></div>
+                <div class="symptom-tag" style="border-left-color: #ec4899; color: #9d174d;">Projected Cycle 5 thermal drop &amp; joint relief window.</div>
+            </div>
+            <!-- Oct 31: DAY 27 / CYCLE 5 DAY 2 (UPCOMING) -->
+            <div class="day-cell upcoming push">
+                <div class="day-top">
+                    <span class="day-number">31</span>
+                    <span class="cycle-badge">C5 / Day 2 ?</span>
+                </div>
+                <div class="temp-row"><span class="temp-val" style="color:#64748b; font-style:italic;">Awaiting log...</span></div>
+                <div class="symptom-tag" style="border-left-color: #34d399; color: #065f46;">Follicular transition. Low temp baseline.</div>
+            </div>
         </div>
     </section>
 
