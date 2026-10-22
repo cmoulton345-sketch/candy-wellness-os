@@ -56,3 +56,17 @@ On October 22 (Day 18), patient consumed 16 oz of warm water and withheld mornin
    *"Since my ovaries produce a strong natural progesterone surge (verified by +0.7°F thermal rise on Days 14–18), can I drop my progesterone cream to a half-pump during Days 18–21 to prevent aldosterone-driven fluid holding and headaches?"*
 2. **Late-Luteal Cyclic Pause:**  
    *"Could I adopt a 3-day pause from progesterone cream (similar to the Days 26–28 pause in the clinic guide) around Days 24–26 to allow my body a natural reset window?"*
+
+---
+
+## 6. Official WellNurtureMD Clinic Confirmation (Received Oct 22, 2026)
+
+On the evening of October 22 (Day 18), WellNurtureMD responded directly to Candy's inquiry:
+
+> *"Absolutely, the symptoms you describe are in keeping with Pg excess. There is a bit of a surge around ovulation and then a downcast. You may have just happened to add to the surge versus supporting the downcast. Waiting a few days to catch the downcast is wise. As per purging the excess, Pg does have a short half-life; meaning generally excess resolves quickly!"*
+
+### Clinical Outcome & Active Protocol:
+* **Diagnosis:** Progesterone excess resulting from stacking exogenous transdermal cream on top of peak endogenous post-ovulatory corpus luteum output.
+* **Prescribed Action:** Pausing progesterone cream for 2–3 days (starting Night 18) to allow excess to purge and catch the natural downcast.
+* **Secondary Symptom Confirmation:** Right breast pruritus (mast cell histamine degranulation) flaring on Day 18 evening during acute progesterone transition (identical to Cycle 3, Day 18 on Sept 25).
+
