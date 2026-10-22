@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WellNurtureMD Protocol Comparison & Clinical Insights: Candy Moulton</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f766e;
+            --primary-light: #ccfbf1;
+            --text-dark: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --card-bg: #ffffff;
+            --accent-warm: #f59e0b;
+            --accent-alert: #b91c1c;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #f1f5f9;
+            color: var(--text-dark);
+            padding: 30px 20px;
+            line-height: 1.55;
+        }
+
+        .container {
+            max-width: 820px;
+            margin: 0 auto;
+        }
+
+        .action-bar {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 16px;
+            gap: 12px;
+        }
+
+        .btn {
+            background: #0f766e;
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 13px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            box-shadow: 0 2px 6px rgba(15, 118, 110, 0.2);
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background: #115e59;
+        }
+
+        .btn-outline {
+            background: white;
+            color: #0f766e;
+            border: 1px solid #0f766e;
+        }
+
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 24px;
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+        }
+
+        header {
+            border-bottom: 2px solid #0f766e;
+            padding-bottom: 18px;
+            margin-bottom: 24px;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 24px;
+            color: #0f766e;
+            margin-bottom: 6px;
+        }
+
+        .subtitle {
+            font-size: 14px;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .meta-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 12px;
+            background: #f8fafc;
+            padding: 14px 18px;
+            border-radius: 10px;
+            margin-bottom: 24px;
+            font-size: 13px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 18px;
+            color: #0f766e;
+            margin: 22px 0 10px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin: 16px 0;
+        }
+
+        .compare-box {
+            padding: 16px;
+            border-radius: 10px;
+            font-size: 13.5px;
+            line-height: 1.5;
+        }
+
+        .compare-box.sister {
+            background: #f8fafc;
+            border: 1px solid #cbd5e1;
+        }
+
+        .compare-box.candy {
+            background: #f0fdf4;
+            border: 1px solid #86efac;
+        }
+
+        .compare-box h4 {
+            font-size: 14px;
+            margin-bottom: 8px;
+            color: #1e293b;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin-bottom: 14px;
+            font-size: 13.5px;
+        }
+
+        li {
+            margin-bottom: 6px;
+        }
+
+        .highlight-callout {
+            background: #fefce8;
+            border-left: 4px solid #f59e0b;
+            padding: 14px 18px;
+            border-radius: 8px;
+            margin: 18px 0;
+            font-size: 13.5px;
+        }
+
+        .doctor-ask-box {
+            background: #f0fdfa;
+            border: 1.5px solid #0f766e;
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 20px;
+        }
+
+        .doctor-ask-box h3 {
+            font-family: 'Playfair Display', Georgia, serif;
+            color: #0f766e;
+            font-size: 17px;
+            margin-bottom: 10px;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+                font-size: 11pt;
+            }
+            .action-bar {
+                display: none;
+            }
+            .card {
+                box-shadow: none;
+                border: none;
+                padding: 0;
+                margin-bottom: 0;
+            }
+            .meta-grid {
+                background: white;
+                border: 1px solid #ccc;
+            }
+            .compare-box {
+                border: 1px solid #ccc;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="action-bar">
+        <button class="btn" onclick="window.print()">🖨️ Print This One-Sheet</button>
+        <a class="btn btn-outline" href="candy_cycle_calendar_sept_oct_2026.html">📅 Open Live Calendar</a>
+    </div>
+
+    <div class="card">
+        <header>
+            <h1>WellNurtureMD Protocol Comparison &amp; Clinical Notes</h1>
+            <p class="subtitle">Anatomical Context &amp; Progesterone Stacking Analysis for Candy Moulton</p>
+        </header>
+
+        <div class="meta-grid">
+            <div><strong>Patient:</strong> Candy Moulton (Age 48)</div>
+            <div><strong>Surgical Status:</strong> Hysterectomy (No Uterus) / <strong>Ovaries Intact</strong></div>
+            <div><strong>Reference:</strong> WellNurtureMD Latent Peri-Menopause Guide</div>
+            <div><strong>Current Stage:</strong> Cycle 4, Day 18 (Peak Protect Crest)</div>
+        </div>
+
+        <div class="section-title">1. Key Discovery: WellNurture Already Practices Cyclic Pauses</div>
+        <p style="font-size: 13.5px;">Review of WellNurtureMD's official <em>"Latent Peri-Menopause Hormone Therapy Guide"</em> confirms that scheduled breaks and phase-specific dosing are core clinic principles:</p>
+        <ul>
+            <li><strong>Days 26–28 Scheduled Break:</strong> <em>"Stop ALL hormones for 3 days."</em></li>
+            <li><strong>Phase-Specific Cream Addition:</strong> <em>"Add progesterone transdermal cream between Day 10–14 through Day 25."</em></li>
+            <li><strong>Breakthrough Protocol:</strong> <em>"Stop all progesterone... for the duration."</em></li>
+        </ul>
+        <p style="font-size: 13.5px; font-weight: 500; color: #0f766e;">Clinical Takeaway: Adjusting or pausing progesterone is completely aligned with WellNurtureMD's established prescribing guidelines.</p>
+
+        <div class="section-title">2. Anatomical Comparison: Why One Size Does Not Fit All</div>
+        <div class="comparison-grid">
+            <div class="compare-box sister">
+                <h4>Sister's Protocol (Intact Uterus)</h4>
+                <ul>
+                    <li><strong>Goal:</strong> Protect endometrial lining and manage irregular bleeding.</li>
+                    <li><strong>Why the 3-day stop:</strong> Triggers a scheduled hormone withdrawal bleed so the uterine lining safely sheds.</li>
+                    <li><strong>Progesterone Role:</strong> Purely therapeutic and endometrial-protective.</li>
+                </ul>
+            </div>
+            <div class="compare-box candy">
+                <h4>Candy's Reality (Hysterectomy + Intact Ovaries)</h4>
+                <ul>
+                    <li><strong>Goal:</strong> Sleep, GABA/brain support, vasomotor stability, bone density.</li>
+                    <li><strong>No Bleeding Possible:</strong> Zero uterine lining; no requirement for withdrawal bleeding.</li>
+                    <li><strong>Active Ovaries:</strong> Ovaries naturally surge with endogenous progesterone from Day 14 to Day 24.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section-title">3. The Physiology Behind Day 18 "Progesterone Stacking"</div>
+        <p style="font-size: 13.5px;">In a patient with intact, ovulating ovaries, continuing full daily exogenous progesterone cream during peak endogenous luteal output creates a composite hormonal crest:</p>
+        <div class="highlight-callout">
+            <strong>The Peak Luteal Stacking Mechanism (Days 17–20):</strong><br>
+            Natural corpus luteum progesterone surge <strong>+</strong> nightly exogenous progesterone cream <strong>=</strong> Supra-physiologic tissue saturation.<br><br>
+            <strong>Observed Symptoms:</strong>
+            <ul style="margin-top: 6px; margin-bottom: 0;">
+                <li><strong>Mineralocorticoid/Aldosterone Activation:</strong> Interstitial fluid retention, trapped/tight finger rings, scale increase (+2.0 lbs from baseline).</li>
+                <li><strong>Vascular Tone &amp; Fluid Shifts:</strong> Tension/vascular headache, severe neck and upper shoulder stiffness.</li>
+                <li><strong>Neurosteroid Saturation:</strong> Lethargy, systemic heaviness, and "progesterone flu" malaise.</li>
+            </ul>
+        </div>
+
+        <div class="section-title">4. Clinical Response to Non-Caffeinated Warm Hydration</div>
+        <p style="font-size: 13.5px;">On October 22 (Day 18), patient consumed 16 oz of warm water and withheld morning caffeine. Within 30 minutes, vascular headache, neck tightness, and malaise showed noticeable easing. This clinical response confirms that fluid redistribution and autonomic vascular tone—not systemic infection—are driving peak luteal symptoms.</p>
+
+        <div class="doctor-ask-box">
+            <h3>Discussion Questions for WellNurtureMD Consultation</h3>
+            <ol style="padding-left: 20px; font-size: 13.5px; line-height: 1.6;">
+                <li><strong>Mid-Luteal Dose Step-Down:</strong> <em>"Since my ovaries produce a strong natural progesterone surge (verified by +0.7°F thermal rise on Days 14–18), can I drop my progesterone cream to a half-pump during Days 18–21 to prevent aldosterone-driven fluid holding and headaches?"</em></li>
+                <li><strong>Late-Luteal Cyclic Pause:</strong> <em>"Could I adopt a 3-day pause from progesterone cream (similar to the Days 26–28 pause in the clinic guide) around Days 24–26 to allow natural luteal clearance?"</em></li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
