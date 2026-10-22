@@ -144,6 +144,7 @@ This proves 100% that your itchiness is tied to your **ovarian cycle reset** whe
   * **Option C (Estrogen Cushioning):** Review Sept 26 Estradiol-to-Progesterone ratio to see if morning BiEst should be micro-adjusted during late luteal temp drops to prevent body aches.
 - [ ] **Follow-Up Appointment:** Late October consultation to review Sept 26 blood spot test results + Oura cycle logs.
 - [x] **Endometriosis & Pelvic Specialist Dossier:** Created dedicated clinical consultation one-sheet ([Markdown](file:///Users/valuedcustomer/Downloads/flowstate_ai_os_candy/wellness_and_mobility/gyno_endo_consultation_one_sheet.md) / [Printable HTML](file:///Users/valuedcustomer/Downloads/flowstate_ai_os_candy/wellness_and_mobility/gyno_endo_consultation_one_sheet.html)) for upcoming gynecologist appointment.
+- [x] **WellNurtureMD Protocol Comparison:** Filed dedicated comparison one-sheet ([Markdown](file:///Users/valuedcustomer/Downloads/flowstate_ai_os_candy/wellness_and_mobility/wellnurture_sister_protocol_comparison.md) / [Printable HTML](file:///Users/valuedcustomer/Downloads/flowstate_ai_os_candy/wellness_and_mobility/wellnurture_sister_protocol_comparison.html)) analyzing sister's Latent Peri-Menopause Guide, confirming clinic precedent for 3-day pauses and mid-cycle progesterone dosing.
 
 
 
