@@ -4,7 +4,7 @@
 * **BiEst (Estrogen):** 1 pump (15 mL pump cream) every morning. *(Never apply to breast tissue—inner arms/thighs/lower abdomen only).*
 * **Testosterone:** 1 pump Monday to Friday (2 days off: Saturday & Sunday).
 * **Progesterone:** 1 pump every evening (1 day off: Sunday).
-* **Medication Context:** Ozempic (18 clicks) + Vyvanse (40mg).
+* **Medication Context:** Vyvanse (40mg).
 * **Surgical Status:** Hysterectomy (uterus removed), **ovaries intact**.
 
 ---
