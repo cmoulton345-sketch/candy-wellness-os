@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Rayne's 19th Birthday Credit Starter Guide - December 2026</title>
+  <style>
+    @page {
+      size: letter;
+      margin: 15mm;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #1e293b;
+      background: #f8fafc;
+      line-height: 1.5;
+      padding: 30px;
+      margin: 0;
+    }
+    .container {
+      max-width: 780px;
+      margin: 0 auto;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 36px 40px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    }
+    .header {
+      border-bottom: 2px solid #3b82f6;
+      padding-bottom: 16px;
+      margin-bottom: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    .header h1 {
+      margin: 0 0 6px 0;
+      font-size: 22px;
+      color: #0f172a;
+      letter-spacing: -0.02em;
+    }
+    .header p {
+      margin: 0;
+      font-size: 13px;
+      color: #64748b;
+      font-weight: 500;
+    }
+    .badge {
+      background: #eff6ff;
+      color: #1d4ed8;
+      border: 1px solid #bfdbfe;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .print-btn-bar {
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: flex-end;
+    }
+    .print-btn {
+      background: #2563eb;
+      color: #ffffff;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .print-btn:hover {
+      background: #1d4ed8;
+    }
+    .card-box {
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-left: 5px solid #22c55e;
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin-bottom: 22px;
+    }
+    .card-box h2 {
+      margin: 0 0 6px 0;
+      font-size: 16px;
+      color: #166534;
+    }
+    .card-box p {
+      margin: 0;
+      font-size: 13px;
+      color: #14532d;
+    }
+    h2.section-title {
+      font-size: 15px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #475569;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 6px;
+      margin: 22px 0 12px 0;
+    }
+    .step-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .step-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 12px 16px;
+    }
+    .step-card h3 {
+      margin: 0 0 4px 0;
+      font-size: 14px;
+      color: #0f172a;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .step-num {
+      background: #2563eb;
+      color: #fff;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: bold;
+    }
+    .step-card p {
+      margin: 0;
+      font-size: 13px;
+      color: #475569;
+      padding-left: 30px;
+    }
+    .checklist {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 18px 0;
+    }
+    .checklist li {
+      font-size: 13px;
+      padding: 6px 0;
+      border-bottom: 1px dashed #e2e8f0;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .checklist input[type="checkbox"] {
+      margin-top: 3px;
+      accent-color: #2563eb;
+    }
+    .warning-box {
+      background: #fffbeb;
+      border: 1px solid #fef3c7;
+      border-left: 5px solid #f59e0b;
+      border-radius: 8px;
+      padding: 12px 16px;
+      margin-bottom: 20px;
+      font-size: 12px;
+      color: #92400e;
+    }
+    .warning-box strong {
+      color: #78350f;
+    }
+    .goal-banner {
+      background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+      color: white;
+      border-radius: 8px;
+      padding: 16px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 20px;
+    }
+    .goal-banner h3 {
+      margin: 0 0 4px 0;
+      font-size: 15px;
+    }
+    .goal-banner p {
+      margin: 0;
+      font-size: 12px;
+      opacity: 0.9;
+    }
+    .goal-score {
+      font-size: 26px;
+      font-weight: 800;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 6px 14px;
+      border-radius: 8px;
+      letter-spacing: -0.02em;
+    }
+    .footer {
+      margin-top: 24px;
+      padding-top: 12px;
+      border-top: 1px solid #e2e8f0;
+      text-align: center;
+      font-size: 11px;
+      color: #94a3b8;
+    }
+    @media print {
+      body {
+        background: #ffffff;
+        padding: 0;
+      }
+      .container {
+        border: none;
+        box-shadow: none;
+        padding: 0;
+        max-width: 100%;
+      }
+      .print-btn-bar {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="print-btn-bar">
+    <button class="print-btn" onclick="window.print()">🖨️ Print This One-Sheet</button>
+  </div>
+
+  <div class="container">
+    <div class="header">
+      <div>
+        <h1>Rayne's 19th Birthday Credit Starter Guide</h1>
+        <p>Prepared by Friday for Candy & Rayne • Target Activation: December 2026</p>
+      </div>
+      <div class="badge">NB Age of Majority: 19</div>
+    </div>
+
+    <div class="card-box">
+      <h2>⭐ #1 Target Card: RBC Student Cash Back Mastercard (or RBC ION Visa)</h2>
+      <p><strong>Why this card:</strong> $0 Annual Fee forever • Guaranteed student approval path through NBCC enrollment • Built-in <strong>$500 safety guardrail limit</strong> • Links directly inside Rayne's existing RBC app.</p>
+    </div>
+
+    <h2 class="section-title">The 3-Step "Autopilot" Formula (Zero Stress & OCD-Friendly)</h2>
+    <div class="step-grid">
+      <div class="step-card">
+        <h3><span class="step-num">1</span> Pick ONE Recurring Monthly Bill</h3>
+        <p>Assign exactly <strong>one fixed bill</strong> to this card — e.g., her cell phone bill, Spotify/Apple Music, or one tank of gas a month ($50–$100 max). Nothing else gets charged to this card.</p>
+      </div>
+      <div class="step-card">
+        <h3><span class="step-num">2</span> Set Up Automatic Full Payment (Autopay)</h3>
+        <p>Inside RBC Online Banking, turn on <strong>Pre-Authorized Debit</strong> so the full credit card balance is automatically paid from her Student Chequing account every month on the due date.</p>
+      </div>
+      <div class="step-card">
+        <h3><span class="step-num">3</span> Store the Physical Card in a Safe Place</h3>
+        <p>Rayne does not need to carry the physical card in her daily wallet. It does all the work silently in the background without temptation, clutter, or tracking fatigue.</p>
+      </div>
+    </div>
+
+    <h2 class="section-title">Activation Checklist (December 2026)</h2>
+    <ul class="checklist">
+      <li>
+        <input type="checkbox">
+        <div><strong>Celebrate turning 19:</strong> She is now legally eligible to enter credit agreements in New Brunswick!</div>
+      </li>
+      <li>
+        <input type="checkbox">
+        <div><strong>Apply in RBC Online Banking / In-Branch:</strong> Select "RBC Student Credit Card" ($0 annual fee, $500 limit). Proof of NBCC nursing enrollment is all that's required.</div>
+      </li>
+      <li>
+        <input type="checkbox">
+        <div><strong>Link the Recurring Bill:</strong> Set her cell phone or streaming subscription to bill the new card.</div>
+      </li>
+      <li>
+        <input type="checkbox">
+        <div><strong>Confirm Autopay:</strong> Set payment to "Full Statement Balance" automatically each month.</div>
+      </li>
+    </ul>
+
+    <div class="warning-box">
+      <strong>⚠️ Golden Rules for Rayne:</strong>
+      Never use more than 30% of the limit ($150 max balance) • Never skip or delay a payment • Never apply for retail store cards (like Sephora, Walmart, or clothing stores) which carry predatory 29%+ interest rates.
+    </div>
+
+    <div class="goal-banner">
+      <div>
+        <h3>🎓 The Graduation Day Payoff (Age 21)</h3>
+        <p>24 straight months of 100% on-time payments • $0 in fees • $0 in interest paid.</p>
+      </div>
+      <div class="goal-score">740+ Score</div>
+    </div>
+
+    <div class="footer">
+      Flowstate AI OS • Family Sanctuary & Canadian Wealth Operations • Designed with love for Rayne Moulton
+    </div>
+  </div>
+
+</body>
+</html>
