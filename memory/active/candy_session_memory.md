@@ -268,3 +268,16 @@ I'm ready to respond to the updated call, sir.
     - Designed the step-by-step credit starter plan for December 2026 when Rayne turns 19: RBC Student Cash Back Mastercard / ION Visa ($0 annual fee, $500 safety limit, NBCC nursing enrollment approval path).
     - Established the "Autopilot Formula": 1 recurring bill (phone or subscription), physical card stored away, automatic full statement balance debit from student chequing to build a 740+ score by graduation at age 21 with $0 interest and zero tracking anxiety.
     - Created and synced printable guide: `raynes_ocd_adhd/Rayne_19th_Birthday_Credit_Starter_Guide.html` and `.md`. Candy planned to return in December when Rayne turns 19 for Friday to walk them through the online application step-by-step.
+
+- **2026-10-25** (SOMA):
+  - **Daily Health & Biometrics Logged (Cycle Day 21 - Mid/Late Luteal Protect Phase):**
+    - Metrics: Mouth Temp 35.6°C, Oura Temp +0.7°F (+0.39°C), Sleep Score 88, Readiness 80, Resting Heart Rate 75 bpm, Scale 153.2 lbs.
+    - **Symptom Mapping & Somatic Reframe:**
+      - *Puffiness & "Feeling Heavy":* Direct physiological outcome of beer last night (alcohol vasodilation, rebound aldosterone fluid retention, and yeast/carbohydrate fluid pull) combined with Day 21 peak luteal endogenous corpus luteum progesterone plateau.
+      - *Scale Reframe (153.2 lbs):* Weighed AFTER drinking a full coffee (~12–16 oz = 0.75–1.0 lb) and 14 oz Fairlife shake (~0.9 lb) with morning medication. Over 1.7–1.9 lbs of physical liquid in stomach/GI tract! Actual fasting dry weight is ~151.3–151.4 lbs (matching Day 17–20 baseline).
+      - *Breast Sensitivity:* Alcohol temporarily delays liver clearance of estrogen, causing transient free estradiol breast engorgement on top of Day 21 progesterone lobuloalveolar stimulation.
+      - *Elevated Ring Temp (+0.7°F) & RHR (75 bpm):* Classic alcohol hepatic metabolic heat and sympathetic alert rebound superimposed on mid-luteal thermal elevation.
+    - **Action Plan & Recovery Protocol:**
+      - Night 3 of Progesterone pause completed (Sunday is Candy's natural scheduled day off progesterone).
+      - Celebrated Candy's clear commitment: zero alcohol all week to let liver, lymphatic system, and kidneys flush excess fluid and reset.
+      - Prescribed gentle restorative recovery: hydration with electrolytes/lemon water, gentle pelvic/hip mobility, and 10–15 mins *Legs Up the Wall* (Viparita Karani) to drain interstitial fluid from lower limbs and settle heart rate.
