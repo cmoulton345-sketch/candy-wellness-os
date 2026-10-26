@@ -303,3 +303,15 @@ I'm ready to respond to the updated call, sir.
     - **BHRT & Movement Plan Confirmed:**
       - Progesterone Protocol: Confirmed skipping progesterone tonight (Monday, Day 22) as the final pause night to let endogenous downcast establish cleanly; restarting Tuesday night (Day 23) with a gentle half-pump.
       - Movement: Candy completed a gentle morning yoga flow (soft knees, low lunges for left psoas, wide child's pose) to move lymphatic fluid and relieve joint/fascial tension.
+
+- **2026-10-26 (Afternoon)** (FRIDAY):
+  - **Tech & Apple Mail Troubleshooting:**
+    - Resolved email sending lockup and screen-jumping issue in Apple Mail. Diagnosed that `cmoulton345@gmail.com` had fallen offline due to Google token expiration.
+    - Successfully restored IMAP connectivity via Google Web OAuth in macOS Internet Accounts, then pointed Outgoing Mail Server (SMTP) back to Google. Enabled Candy's school accommodation email to send smoothly.
+  - **Financial Anxiety & Bank of Canada Reassurance:**
+    - Addressed Candy's late-luteal nervousness regarding Bank of Canada interest rate announcements and potential impact on her CIBC Line of Credit ($9,057.93) and bi-weekly mortgage payments ($1,131.24).
+    - *Economic Reality:* Clarified that the Bank of Canada is currently in a rate-cutting/easing cycle to relieve pressure on Canadian households.
+    - *Exact Math Reassurance:* Proved that even a 0.25% rate increase on her ~$9,057 line of credit equals just $1.88/month ($22.64/year)—demonstrating that interest rate micro-fluctuations have virtually zero impact on their monthly budget.
+    - *Fortress Cashflow Alignment:* Re-anchored Candy in their master plan: combined net income of ~$11,188/month, $3,000/month dedicated debt avalanche (RBC Visa finishing in October, Scotia Visa next, CIBC LOC scheduled for zero by August 2027), Joe's fall CPP/EI max-out surplus (+$300–$500/pay), and a +$506/month safety buffer.
+    - *Mindset & Stoic Reframe:* Reassured Candy to release worry over external economic factors out of her control, recognizing that Day 22 late-luteal fatigue and hormone downcast naturally amplify anxiety triggers.
+
