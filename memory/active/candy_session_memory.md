@@ -315,3 +315,15 @@ I'm ready to respond to the updated call, sir.
     - *Fortress Cashflow Alignment:* Re-anchored Candy in their master plan: combined net income of ~$11,188/month, $3,000/month dedicated debt avalanche (RBC Visa finishing in October, Scotia Visa next, CIBC LOC scheduled for zero by August 2027), Joe's fall CPP/EI max-out surplus (+$300–$500/pay), and a +$506/month safety buffer.
     - *Mindset & Stoic Reframe:* Reassured Candy to release worry over external economic factors out of her control, recognizing that Day 22 late-luteal fatigue and hormone downcast naturally amplify anxiety triggers.
 
+- **2026-10-26 (Evening)** (SOMA):
+  - **Rayne Health & Medication Check-In (Vyvanse 10mg + Fluoxetine 50mg):**
+    - *Current State:* Rayne on Fluoxetine 50mg for several months; added Vyvanse 10mg ~10 days ago (Oct 16).
+    - *Symptoms Analyzed:* Off-and-on moods, intermittent headaches, OCD was slightly off during onboarding but now holding calm/okay, while ADHD symptoms (fidgeting, focus, executive function) remain high.
+    - *Clinical Analysis:*
+      - Confirmed that 10 mg Vyvanse is an ultra-low starter dose (deliberately chosen due to prior 30 mg emotional blunting/flatness), which explains persistent high ADHD symptoms. The anticipated Nov 5th increase to 20 mg is the appropriate clinical step.
+      - Headaches and moodiness mapped to 4 actionable mechanisms: (1) 3:00–4:30 PM wear-off rebound crash, (2) mild stimulant dehydration/vasoconstriction, (3) appetite suppression causing delayed meals and brain glucose dips, and (4) subconscious jaw clenching while studying.
+      - Formatted clean, copy-and-paste text summary for Candy to text directly to Rayne.
+    - *NAC SAP Inquiry (NFH - N-Acetylcysteine):*
+      - Evaluated NAC's glutamate-modulating role (System xc- antiporter) in dampening OCD intrusive thoughts and oxidative stress.
+      - Established the **"one variable at a time"** clinical safety protocol: Advised holding off on starting NAC SAP until after the November 5th Nurse Practitioner appointment to preserve clean baseline data for the planned Vyvanse 20 mg titration.
+    - *Files Updated & Synced:* Updated `raynes_ocd_adhd/Rayne_Medication_Tracking_Sheet.md`, `raynes_ocd_adhd/Rayne_Medication_Tracking_Sheet.html`, and synced to GitHub remote.

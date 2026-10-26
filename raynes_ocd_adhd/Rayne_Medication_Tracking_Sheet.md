@@ -86,18 +86,29 @@
 ### Weeks 2 & 3: Ongoing Observation (Oct 24 – Nov 4)
 *(Log daily entries in this pattern or using the printable HTML chart)*
 
-* **Sat, Oct 24 to Wed, Nov 4:**
-  * Continue tracking focus in class, lunch intake, 4:00 PM rebound, and affect.
-  * Note any cycle changes or breakthrough spotting on Slynd.
+* **Sat, Oct 24 & Sun, Oct 25:** Weekend baseline.
+* **Mon, Oct 26 (Day 11 on Vyvanse 10mg / Fluoxetine 50mg):**
+  * **ADHD & Focus:** ADHD symptoms remain high (fidgeting, difficulty with sustained school focus). Confirms 10 mg is an introductory, subtherapeutic dose.
+  * **Affect & Mood:** Off and on; noticeable late afternoon mood dips/irritability as the 10 mg clears her system (rebound crash). Vibrant affect remains intact (zero 30 mg blunting/numbness).
+  * **Physical / Headaches:** Intermittent headaches reported. 4 key root causes mapped:
+    1. *3:00–4:30 PM Rebound:* Dopamine drops as 10 mg wears off early.
+    2. *Vascular & Hydration:* Mild stimulant vasoconstriction; requires proactive water + electrolytes during school.
+    3. *Appetite & Blood Sugar Dips:* Daytime appetite suppression causing skipped or delayed lunch, depleting brain glucose.
+    4. *Subconscious Jaw Clenching:* Tension during intense study/screen work radiating to temples.
+  * **Action:** Electrolytes in class, mandatory protein at breakfast & easy lunch, plus evening Magnesium Bisglycinate (150–200 mg) for jaw/nervous system relaxation.
+  * **OCD Loops:** Stabilized and calm. (Was slightly elevated during initial Vyvanse onboarding, but settled back down nicely on 50 mg Prozac).
+  * **Integrative Inquiry (NAC SAP):** Evaluated N-Acetylcysteine (NAC SAP by NFH) for glutamate/OCD modulation. **Decision:** HOLD until after the November 5th NP follow-up to adhere to the "one variable at a time" protocol and preserve clean baseline data for the NP.
 
 ---
 
 ### Appointment Day: Thursday, November 5, 2026
 * **Nurse Practitioner Discussion Agenda:**
-  1. Review school focus and executive function improvements on 10 mg Vyvanse.
-  2. Confirm whether affect remained vibrant vs. flat.
-  3. Evaluate OCD stability on Fluoxetine 50 mg.
-  4. Discuss whether to maintain current doses, decrease Fluoxetine, or gently adjust Vyvanse based on the log.
+  1. **School Focus & Executive Function:** Review daily log showing ADHD symptoms remain high on 10 mg, confirming it is an introductory stepping stone.
+  2. **Affect & Personality:** Confirm emotional affect remains vibrant and expressive (no emotional blunting or "flat/blah" sensations seen previously on 30 mg).
+  3. **OCD Stability:** Report that OCD checking loops remain calm and well-managed on 50 mg Fluoxetine after brief initial onboarding fluctuation.
+  4. **Anticipated Titration:** Discuss stepping Vyvanse up by 10 mg (**from 10 mg to 20 mg**) to target focus and task initiation while staying safely below the 30 mg blunting threshold.
+  5. **Afternoon Rebound / Headaches:** Discuss afternoon wear-off timing (3:00–4:30 PM) and verify hydration/electrolyte and nutrition strategies.
+  6. **NAC SAP (N-Acetylcysteine) Inquiry:** Present NAC SAP (600 mg daily) as a potential adjunctive glutamate buffer for residual intrusive thoughts and emotional regulation once the 20 mg Vyvanse dose is dialed in.
 
 ---
 
