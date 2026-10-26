@@ -1,0 +1,1547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Rayne Moulton — Live Medication & Symptom Tracker (Nov 5 NP Prep)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b1329;
+      --surface: #111e38;
+      --card: #182848;
+      --card-hover: #1f335b;
+      --border: rgba(255, 255, 255, 0.1);
+      --border-accent: rgba(59, 130, 246, 0.4);
+      
+      --blue: #3b82f6;
+      --blue-dim: rgba(59, 130, 246, 0.15);
+      --teal: #06b6d4;
+      --teal-dim: rgba(6, 182, 212, 0.15);
+      --emerald: #10b981;
+      --emerald-dim: rgba(16, 185, 129, 0.15);
+      --amber: #f59e0b;
+      --amber-dim: rgba(245, 158, 11, 0.15);
+      --rose: #f43f5e;
+      --rose-dim: rgba(244, 63, 94, 0.15);
+      --purple: #a855f7;
+      --purple-dim: rgba(168, 85, 247, 0.15);
+
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-sub: #cbd5e1;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.45;
+      padding-bottom: 90px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* TOP APP BAR */
+    header {
+      background: rgba(17, 30, 56, 0.95);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 12px 18px;
+    }
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .brand-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .brand-badge {
+      background: var(--blue-dim);
+      color: var(--blue);
+      border: 1px solid var(--border-accent);
+      padding: 3px 8px;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    .header-actions {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+    .btn {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+      font-size: 0.82rem;
+      padding: 8px 14px;
+      border-radius: 8px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+      touch-action: manipulation;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, #3b82f6, #2563eb);
+      color: #fff;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
+    }
+    .btn-primary:hover {
+      background: linear-gradient(135deg, #60a5fa, #3b82f6);
+      transform: translateY(-1px);
+    }
+    .btn-secondary {
+      background: var(--card);
+      color: var(--text-sub);
+      border-color: var(--border);
+    }
+    .btn-secondary:hover {
+      background: var(--card-hover);
+      color: #fff;
+    }
+    .btn-print {
+      background: linear-gradient(135deg, #10b981, #059669);
+      color: #fff;
+      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+    }
+    .btn-print:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba(16, 185, 129, 0.45);
+    }
+
+    /* NAVIGATION TABS */
+    .tab-bar {
+      max-width: 1100px;
+      margin: 8px auto 0;
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      padding-bottom: 2px;
+    }
+    .tab-bar::-webkit-scrollbar { display: none; }
+    .tab-btn {
+      padding: 7px 14px;
+      border-radius: 6px;
+      background: transparent;
+      border: 1px solid transparent;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s;
+    }
+    .tab-btn.active {
+      background: rgba(59, 130, 246, 0.15);
+      border-color: var(--border-accent);
+      color: #fff;
+    }
+
+    /* CONTAINER */
+    .container {
+      max-width: 1100px;
+      margin: 16px auto;
+      padding: 0 16px;
+    }
+
+    /* PATIENT HERO STATS */
+    .patient-hero {
+      background: linear-gradient(135deg, #172554, #1e293b);
+      border: 1px solid var(--border-accent);
+      border-radius: 14px;
+      padding: 16px 20px;
+      margin-bottom: 18px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+    }
+    .hero-stat {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    .hero-label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+    .hero-val {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .hero-sub {
+      font-size: 0.78rem;
+      color: #93c5fd;
+    }
+
+    /* CLINICAL INSIGHTS CALLOUT */
+    .clinical-banner {
+      background: rgba(245, 158, 11, 0.08);
+      border-left: 4px solid var(--amber);
+      border-radius: 0 10px 10px 0;
+      padding: 12px 16px;
+      margin-bottom: 20px;
+      font-size: 0.88rem;
+      color: #fef3c7;
+      line-height: 1.45;
+    }
+    .clinical-banner strong { color: #fde68a; }
+
+    /* VIEW SECTIONS */
+    .view-panel { display: none; }
+    .view-panel.active { display: block; }
+
+    /* TIMELINE CARDS */
+    .day-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 14px;
+    }
+    .day-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      transition: all 0.2s ease;
+      position: relative;
+    }
+    .day-card:hover {
+      border-color: rgba(59, 130, 246, 0.5);
+      background: var(--card);
+      transform: translateY(-2px);
+    }
+    .day-card.today {
+      border: 2px solid var(--blue);
+      box-shadow: 0 0 16px rgba(59, 130, 246, 0.25);
+    }
+    .day-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding-bottom: 8px;
+    }
+    .day-title {
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .day-pill {
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 999px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .pill-active { background: var(--emerald-dim); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); }
+    .pill-pre { background: rgba(148, 163, 184, 0.15); color: #94a3b8; }
+    .pill-pending { background: rgba(255, 255, 255, 0.05); color: var(--text-muted); }
+
+    .day-metrics {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      font-size: 0.82rem;
+    }
+    .metric-row {
+      display: flex;
+      flex-direction: column;
+    }
+    .metric-lbl {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+    .metric-val {
+      font-weight: 600;
+      color: #f1f5f9;
+    }
+
+    .badge-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 4px;
+    }
+    .badge {
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 6px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .badge-headache { background: var(--rose-dim); color: #fda4af; border: 1px solid rgba(244, 63, 94, 0.3); }
+    .badge-no-headache { background: var(--emerald-dim); color: #6ee7b7; border: 1px solid rgba(16, 185, 129, 0.3); }
+    .badge-ocd { background: var(--purple-dim); color: #d8b4fe; border: 1px solid rgba(168, 85, 247, 0.3); }
+    .badge-picking { background: rgba(239, 68, 68, 0.2); color: #fca5a5; border: 1px solid rgba(239, 68, 68, 0.4); font-weight: 700; }
+    .badge-pms { background: rgba(236, 72, 153, 0.18); color: #f472b6; border: 1px solid rgba(236, 72, 153, 0.35); }
+    .badge-flushot { background: rgba(56, 189, 248, 0.15); color: #7dd3fc; border: 1px solid rgba(56, 189, 248, 0.3); }
+
+    .day-notes {
+      background: rgba(0, 0, 0, 0.25);
+      border-radius: 8px;
+      padding: 8px 10px;
+      font-size: 0.8rem;
+      color: var(--text-sub);
+      line-height: 1.4;
+      font-style: italic;
+    }
+    .card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: auto;
+      padding-top: 6px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .btn-edit-card {
+      font-size: 0.75rem;
+      color: var(--blue);
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      padding: 4px 6px;
+    }
+    .btn-edit-card:hover { text-decoration: underline; }
+
+    /* TABLE VIEW */
+    .table-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 24px;
+    }
+    .table-responsive {
+      overflow-x: auto;
+    }
+    table.data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.84rem;
+      text-align: left;
+    }
+    table.data-table th {
+      background: rgba(15, 23, 42, 0.85);
+      padding: 10px 12px;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--border);
+      white-space: nowrap;
+    }
+    table.data-table td {
+      padding: 10px 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      vertical-align: top;
+      color: var(--text-sub);
+    }
+    table.data-table tr:hover td {
+      background: rgba(255, 255, 255, 0.02);
+    }
+    table.data-table tr.row-today td {
+      background: rgba(59, 130, 246, 0.08);
+      font-weight: 500;
+    }
+    table.data-table tr.row-flag td {
+      background: rgba(239, 68, 68, 0.05);
+    }
+
+    /* CLINICAL NP CONSULTATION VIEW (PRINT-READY) */
+    .clinical-paper {
+      background: #ffffff;
+      color: #0f172a;
+      border-radius: 12px;
+      padding: 32px 36px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      margin-bottom: 24px;
+      font-size: 10pt;
+      line-height: 1.45;
+    }
+    .cp-header {
+      border-bottom: 2.5px solid #1e3a8a;
+      padding-bottom: 12px;
+      margin-bottom: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    .cp-title {
+      font-size: 16pt;
+      font-weight: 800;
+      color: #1e3a8a;
+      letter-spacing: -0.3px;
+    }
+    .cp-subtitle {
+      font-size: 9.5pt;
+      color: #475569;
+      font-weight: 500;
+    }
+    .cp-meta-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      background: #f1f5f9;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      padding: 10px 14px;
+      gap: 10px;
+      margin-bottom: 18px;
+      font-size: 9pt;
+    }
+    .cp-meta-item strong { color: #1e293b; display: block; font-size: 8pt; text-transform: uppercase; color: #64748b; }
+    
+    .cp-section { margin-bottom: 18px; }
+    .cp-section-title {
+      font-size: 11pt;
+      font-weight: 700;
+      color: #1e3a8a;
+      border-bottom: 1.5px solid #e2e8f0;
+      padding-bottom: 4px;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .cp-box {
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 10px 14px;
+      background: #f8fafc;
+      font-size: 9.2pt;
+      line-height: 1.45;
+    }
+    .cp-box ul { padding-left: 20px; margin: 4px 0; }
+    .cp-box li { margin-bottom: 3px; }
+
+    table.cp-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 8.5pt;
+      margin: 8px 0 14px;
+    }
+    table.cp-table th {
+      background: #1e3a8a;
+      color: #fff;
+      padding: 6px 8px;
+      text-align: left;
+      font-size: 8pt;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+    }
+    table.cp-table td {
+      border: 1px solid #cbd5e1;
+      padding: 5px 8px;
+      vertical-align: top;
+      color: #1e293b;
+    }
+    table.cp-table tr:nth-child(even) td { background: #f8fafc; }
+    table.cp-table tr.cp-highlight td { background: #eff6ff; font-weight: 600; }
+
+    /* EDIT MODAL */
+    .modal-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(8px);
+      z-index: 200;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+    .modal-backdrop.open { display: flex; }
+    .modal-box {
+      background: #111e38;
+      border: 1px solid var(--border-accent);
+      border-radius: 14px;
+      width: 100%;
+      max-width: 540px;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 20px 24px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    }
+    .modal-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .modal-close {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-size: 1.4rem;
+      cursor: pointer;
+    }
+    .form-group {
+      margin-bottom: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .form-label {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+    .form-input, .form-select, .form-textarea {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: #fff;
+      font-family: inherit;
+      font-size: 0.9rem;
+      padding: 9px 12px;
+      outline: none;
+      transition: border 0.2s;
+    }
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      border-color: var(--blue);
+    }
+    .form-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .checkbox-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 4px;
+    }
+    .checkbox-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.85rem;
+      color: var(--text-sub);
+      cursor: pointer;
+    }
+
+    /* TOAST ALERT */
+    #toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #1e3a8a;
+      color: #fff;
+      border: 1px solid #60a5fa;
+      padding: 12px 20px;
+      border-radius: 8px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+      z-index: 300;
+      font-size: 0.9rem;
+      font-weight: 600;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      pointer-events: none;
+    }
+    #toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* PRINT RULES */
+    @media print {
+      body {
+        background: #ffffff !important;
+        color: #000000 !important;
+        padding-bottom: 0 !important;
+      }
+      header, .tab-bar, .header-actions, .day-cards-grid, .btn, .clinical-banner, .modal-backdrop, #toast, .no-print {
+        display: none !important;
+      }
+      .container {
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      .view-panel { display: none !important; }
+      #view-clinical { display: block !important; }
+      .clinical-paper {
+        box-shadow: none !important;
+        border: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        page-break-after: avoid;
+      }
+      @page {
+        margin: 0.35in;
+        size: letter portrait;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-top">
+      <div class="brand-title">
+        <span>🩺 Rayne’s Tracker</span>
+        <span class="brand-badge">Nov 5 NP Prep</span>
+      </div>
+      <div class="header-actions">
+        <button class="btn btn-secondary" onclick="openLogModal()">✏️ + Log Today</button>
+        <button class="btn btn-secondary" onclick="copyUpdateForSoma()">📋 Copy for Soma</button>
+        <button class="btn btn-print" onclick="printClinicalReport()">🖨️ Print for NP</button>
+      </div>
+    </div>
+    <div class="tab-bar">
+      <button class="tab-btn active" id="tab-btn-cards" onclick="switchView('cards')">📱 Daily Cards View</button>
+      <button class="tab-btn" id="tab-btn-table" onclick="switchView('table')">📊 Data Grid Table</button>
+      <button class="tab-btn" id="tab-btn-clinical" onclick="switchView('clinical')">🩺 NP Clinical Consultation Brief</button>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <!-- PATIENT HERO STRIP -->
+    <div class="patient-hero no-print">
+      <div class="hero-stat">
+        <div class="hero-label">Patient &amp; Protocol</div>
+        <div class="hero-val">Rayne Moulton (18y)</div>
+        <div class="hero-sub">Fluoxetine 50mg + Vyvanse 10mg + Slynd 4mg</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-label">Target Follow-Up</div>
+        <div class="hero-val" style="color:#60a5fa;">Thursday, Nov 5, 2026</div>
+        <div class="hero-sub">Nurse Practitioner Follow-Up</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-label">Current Phase Status</div>
+        <div class="hero-val" style="color:#34d399;">Day 9 on Vyvanse 10mg</div>
+        <div class="hero-sub">Anticipating Step to 20mg Vyvanse</div>
+      </div>
+    </div>
+
+    <!-- CLINICAL BANNER -->
+    <div class="clinical-banner no-print">
+      💡 <strong>Live Clinical Summary:</strong> Vyvanse 10mg started Oct 18. Focus averaged 3–5/5 with a late-afternoon dopamine drop. Headaches recorded on 8 of 9 days (hydration, appetite dips, study jaw clenching). Mild OCD phone checking stabilized by Day 5; thumb picking (BFRB) active Oct 23, 25, 26 during PMS luteal drop. <strong>Action item for Nov 5:</strong> Step to 20mg Vyvanse &amp; discuss introducing <strong>NAC SAP (600mg)</strong> once stabilized.
+    </div>
+
+    <!-- VIEW 1: INTERACTIVE CARDS -->
+    <div id="view-cards" class="view-panel active">
+      <div class="day-cards-grid" id="cards-container">
+        <!-- Rendered by JavaScript -->
+      </div>
+    </div>
+
+    <!-- VIEW 2: DATA TABLE -->
+    <div id="view-table" class="view-panel">
+      <div class="table-card">
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>8am Dose</th>
+                <th>Focus (1-5)</th>
+                <th>Affect / Mood</th>
+                <th>Lunch Appetite</th>
+                <th>Physical / Headaches</th>
+                <th>Sleep Onset</th>
+                <th>OCD, BFRB &amp; Notes</th>
+                <th class="no-print">Edit</th>
+              </tr>
+            </thead>
+            <tbody id="table-body">
+              <!-- Rendered by JavaScript -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- VIEW 3: CLINICAL CONSULTATION BRIEF (PRINT VIEW) -->
+    <div id="view-clinical" class="view-panel">
+      <div class="clinical-paper">
+        <div class="cp-header">
+          <div>
+            <div class="cp-title">CLINICAL MEDICATION &amp; SYMPTOM BRIEF</div>
+            <div class="cp-subtitle">ADHD (Vyvanse) Initial Titration &amp; OCD (Fluoxetine) Evaluation</div>
+          </div>
+          <div style="text-align: right;">
+            <div style="font-weight: 700; color: #1e3a8a;">APPOINTMENT: NOV 5, 2026</div>
+            <div style="font-size: 8.5pt; color: #64748b;">Primary Prescriber / Nurse Practitioner</div>
+          </div>
+        </div>
+
+        <div class="cp-meta-grid">
+          <div class="cp-meta-item">
+            <strong>Patient Name &amp; DOB</strong>
+            Rayne Moulton • Age 18
+          </div>
+          <div class="cp-meta-item">
+            <strong>Current Active Regimen</strong>
+            Fluoxetine 50 mg AM • Vyvanse 10 mg AM • Slynd 4 mg PM
+          </div>
+          <div class="cp-meta-item">
+            <strong>Trial Duration Logged</strong>
+            Oct 18, 2026 – Present (Daily Observation)
+          </div>
+        </div>
+
+        <!-- EXECUTIVE SUMMARY -->
+        <div class="cp-section">
+          <div class="cp-section-title">1. Executive Clinical Synthesis (Oct 18 – Oct 26 Observations)</div>
+          <div class="cp-box">
+            <ul>
+              <li><strong>ADHD Focus &amp; Efficacy:</strong> Focus scored 4–5/5 on Day 1 with high productive output, settling into a 3/5 plateau on school days. Demonstrates that 10 mg is well-tolerated but subtherapeutic for sustained executive function and attention.</li>
+              <li><strong>Affect &amp; Personality Preservation:</strong> Critical win — 10 mg did <em>not</em> induce the flat, numb, "blah" emotional blunting Rayne previously experienced on 30 mg. Affect remains expressive, though late afternoon "rebound" dips (3:30–4:30 PM) occur as the low dose clears early.</li>
+              <li><strong>Headache Trajectory (8 of 9 Days):</strong> Intermittent daily headaches observed. Clinical correlates: (1) Stimulant vasoconstriction &amp; hydration deficit, (2) mild appetite suppression delaying lunch fuel, and (3) subconscious study jaw clenching.</li>
+              <li><strong>OCD Checking vs. Thumb Picking (BFRB):</strong> Checking loops (phone checking) flared during Days 1–3 onboarding, but stabilized significantly by Day 5 under 50 mg Fluoxetine. Thumb picking (excoriation) emerged Oct 23, 25, 26, exacerbated by the late-luteal PMS hormone drop.</li>
+              <li><strong>Hormonal Compounding (PMS):</strong> Cycle timing directly reduced dopamine receptor sensitivity over Oct 24–26, correlating with lower focus ratings (3/5) and increased repetitive thumb picking.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- CLINICAL TABLE -->
+        <div class="cp-section">
+          <div class="cp-section-title">2. Daily Observation Log (October 18 – November 5)</div>
+          <table class="cp-table">
+            <thead>
+              <tr>
+                <th style="width: 11%;">Date</th>
+                <th style="width: 10%;">Focus (1-5)</th>
+                <th style="width: 16%;">Affect / Mood</th>
+                <th style="width: 14%;">Appetite / Lunch</th>
+                <th style="width: 18%;">Headaches / Vitals</th>
+                <th style="width: 31%;">OCD, Thumb Picking &amp; Notes</th>
+              </tr>
+            </thead>
+            <tbody id="cp-table-body">
+              <!-- Rendered by JS -->
+            </tbody>
+          </table>
+        </div>
+
+        <!-- NP AGENDA -->
+        <div class="cp-section">
+          <div class="cp-section-title">3. Collaborative Discussion Agenda for Nurse Practitioner</div>
+          <div class="cp-box">
+            <ol style="padding-left: 20px; line-height: 1.5;">
+              <li style="margin-bottom: 6px;"><strong>Vyvanse Titration from 10 mg to 20 mg:</strong> 10 mg has proven that amphetamine therapy is tolerated without emotional blunting, but school focus remains incomplete (3/5). Request stepping to <strong>20 mg Vyvanse</strong> as the ideal intermediate target.</li>
+              <li style="margin-bottom: 6px;"><strong>Afternoon Rebound &amp; Headache Strategy:</strong> Confirm clinical strategies for 3:30–4:30 PM wear-off (hydration with electrolytes, mandatory protein at breakfast, and evening Magnesium Bisglycinate to relieve study jaw tension).</li>
+              <li style="margin-bottom: 6px;"><strong>OCD &amp; Thumb Picking (BFRB) Protocol:</strong> 50 mg Fluoxetine has stabilized intrusive checking loops. However, repetitive thumb picking flared during PMS.</li>
+              <li style="margin-bottom: 6px;"><strong>NAC SAP (N-Acetylcysteine) Inquiry:</strong> Propose adding practitioner-grade <strong>NAC SAP (600 mg daily)</strong> as an adjunctive glutamate modulator once the 20 mg Vyvanse dose is dialed in, targeting residual CSTC striatal tension and skin picking.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- EDIT / LOG MODAL -->
+  <div class="modal-backdrop" id="logModal">
+    <div class="modal-box">
+      <div class="modal-title">
+        <span id="modalDateTitle">Log / Edit Day</span>
+        <button class="modal-close" onclick="closeLogModal()">&times;</button>
+      </div>
+
+      <form id="logForm" onsubmit="saveModalEntry(event)">
+        <input type="hidden" id="entryDate">
+
+        <div class="form-grid-2">
+          <div class="form-group">
+            <label class="form-label">Vyvanse 10mg Taken?</label>
+            <select class="form-select" id="entryTaken">
+              <option value="true">Yes — Taken at 8:00 AM</option>
+              <option value="false">No — Skipped / Not Taken</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Focus Rating (1 to 5)</label>
+            <select class="form-select" id="entryFocus">
+              <option value="5">5 / 5 — Excellent Focus &amp; Output</option>
+              <option value="4">4 / 5 — Good School Focus</option>
+              <option value="3" selected>3 / 5 — Moderate / Subtherapeutic</option>
+              <option value="2">2 / 5 — Hard to Focus / Meh</option>
+              <option value="1">1 / 5 — Severe Inattention / Fidgeting</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-grid-2">
+          <div class="form-group">
+            <label class="form-label">Mood / Affect</label>
+            <input type="text" class="form-input" id="entryMood" placeholder="e.g. Good, 'Meh', Anxious, PM dip">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Lunch Appetite</label>
+            <select class="form-select" id="entryAppetite">
+              <option value="Good appetite">Good appetite at lunch</option>
+              <option value="Ate okay">Ate okay / Normal</option>
+              <option value="Low (made her eat)">Low (not hungry, mom made her eat)</option>
+              <option value="Skipped">Skipped lunch</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-grid-2">
+          <div class="form-group">
+            <label class="form-label">Headache Present?</label>
+            <select class="form-select" id="entryHeadache">
+              <option value="Yes">Yes — Intermittent Headache</option>
+              <option value="Yes (All Day)">Yes — Severe / All Day</option>
+              <option value="Mild">Mild / Dull</option>
+              <option value="None">None — No Headache</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Sleep Onset</label>
+            <input type="text" class="form-input" id="entrySleep" placeholder="e.g. Normal, Hard to settle, Great">
+          </div>
+        </div>
+
+        <div class="form-grid-2">
+          <div class="form-group">
+            <label class="form-label">OCD Checking</label>
+            <select class="form-select" id="entryOcd">
+              <option value="Calm">Calm / Well-managed</option>
+              <option value="Mild (1-2x)">Mild (1–2x, not bad at night)</option>
+              <option value="Moderate">Moderate phone checking</option>
+              <option value="High checking at night">High checking at night</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Thumb Picking (BFRB)</label>
+            <select class="form-select" id="entryPicking">
+              <option value="None">None</option>
+              <option value="Mild">Mild picking</option>
+              <option value="Picking thumbs a lot">Picking thumbs a lot</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Physical Tags / Conditions</label>
+          <div class="checkbox-group">
+            <label class="checkbox-item"><input type="checkbox" id="tagPms"> PMS Active</label>
+            <label class="checkbox-item"><input type="checkbox" id="tagFluShot"> Sore Arm (Flu Shot)</label>
+            <label class="checkbox-item"><input type="checkbox" id="tagCramps"> Belly Cramps</label>
+            <label class="checkbox-item"><input type="checkbox" id="tagFatigue"> Very Tired / Took Nap</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Detailed Notes &amp; Observations</label>
+          <textarea class="form-textarea" id="entryNotes" rows="3" placeholder="Enter specific observations, quotes, or feelings..."></textarea>
+        </div>
+
+        <div style="display: flex; justify-content: flex-end; gap: 8px; margin-top: 14px;">
+          <button type="button" class="btn btn-secondary" onclick="closeLogModal()">Cancel</button>
+          <button type="submit" class="btn btn-primary">💾 Save Entry</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div id="toast">Copied to clipboard!</div>
+
+  <script>
+    // MASTER DATA SET PRE-LOADED WITH AUTHENTIC OBSERVATIONS
+    const INITIAL_DAYS = [
+      {
+        date: '2026-10-16',
+        displayDate: 'Fri, Oct 16',
+        taken: false,
+        focus: 0,
+        focusLabel: 'Pre-Vyvanse',
+        mood: 'Prozac 50mg baseline',
+        appetite: 'Normal',
+        headache: 'None',
+        sleep: 'Normal',
+        ocd: 'Calm',
+        thumbPicking: 'None',
+        pms: false,
+        fluShot: false,
+        notes: 'Prior to starting Vyvanse 10mg trial.'
+      },
+      {
+        date: '2026-10-17',
+        displayDate: 'Sat, Oct 17',
+        taken: false,
+        focus: 0,
+        focusLabel: 'Pre-Vyvanse',
+        mood: 'Prozac 50mg baseline',
+        appetite: 'Normal',
+        headache: 'None',
+        sleep: 'Normal',
+        ocd: 'Calm',
+        thumbPicking: 'None',
+        pms: false,
+        fluShot: false,
+        notes: 'Prior to starting Vyvanse 10mg trial.'
+      },
+      {
+        date: '2026-10-18',
+        displayDate: 'Sun, Oct 18',
+        dayNumber: 1,
+        taken: true,
+        focus: 5,
+        focusLabel: '4–5 / 5',
+        mood: 'Happy at first, then really tired',
+        appetite: 'Ate normally',
+        headache: 'Yes',
+        sleep: 'Hard settling down',
+        ocd: 'Mild checking (phone)',
+        thumbPicking: 'None',
+        pms: false,
+        fluShot: false,
+        notes: 'Day 1 Vyvanse 10mg. Did lots of work! Seemed happy at first, then got really tired. Had a headache and hard time settling down.'
+      },
+      {
+        date: '2026-10-19',
+        displayDate: 'Mon, Oct 19',
+        dayNumber: 2,
+        taken: true,
+        focus: 4,
+        focusLabel: '4 / 5',
+        mood: 'Mood down ~1 hr, then fine',
+        appetite: 'Ate okay',
+        headache: 'None',
+        sleep: 'Needed mom to settle',
+        ocd: 'High checking at night',
+        thumbPicking: 'None',
+        pms: false,
+        fluShot: false,
+        notes: 'First school day on Vyvanse. Mood went down a bit for an hour then fine. Ate okay, no headache. High OCD checking at night; came down to hang out with mom to settle.'
+      },
+      {
+        date: '2026-10-20',
+        displayDate: 'Tue, Oct 20',
+        dayNumber: 3,
+        taken: true,
+        focus: 3,
+        focusLabel: '3 / 5',
+        mood: 'Mood was good',
+        appetite: 'Hungry, ate a bit',
+        headache: 'Yes (headache & cramps)',
+        sleep: 'Normal',
+        ocd: 'Lots of phone checking',
+        thumbPicking: 'None',
+        pms: false,
+        fluShot: false,
+        notes: 'Mood was good, hungry and ate a bit. Had headache and belly cramps. OCD still a bit off today with lots of phone checking.'
+      },
+      {
+        date: '2026-10-21',
+        displayDate: 'Wed, Oct 21',
+        dayNumber: 4,
+        taken: true,
+        focus: 3,
+        focusLabel: '3 / 5',
+        mood: "Didn't feel bad",
+        appetite: 'Low (mom made her eat)',
+        headache: 'Yes (tired / nap)',
+        sleep: 'Fell asleep easily',
+        ocd: 'Still checking phone',
+        thumbPicking: 'None',
+        pms: false,
+        fluShot: false,
+        notes: "Didn't feel bad. Wasn't hungry but mom made her eat. Had a headache, was very tired and had a nap. No trouble falling asleep; still checking phone."
+      },
+      {
+        date: '2026-10-22',
+        displayDate: 'Thu, Oct 22',
+        dayNumber: 5,
+        taken: true,
+        focus: 3,
+        focusLabel: '3 / 5',
+        mood: 'Seems fair',
+        appetite: 'Hungry for lunch',
+        headache: 'Yes',
+        sleep: 'Normal',
+        ocd: 'Improving (checking less)',
+        thumbPicking: 'None',
+        pms: false,
+        fluShot: false,
+        notes: 'Mood seems fair, hungry for lunch. Headache yes. OCD improving: not checking as much as she was earlier in the week.'
+      },
+      {
+        date: '2026-10-23',
+        displayDate: 'Fri, Oct 23',
+        dayNumber: 6,
+        taken: true,
+        focus: 2,
+        focusLabel: '2 / 5 (Hard to focus)',
+        mood: 'Bad mood, tired, anxiety',
+        appetite: 'Low appetite',
+        headache: 'All day',
+        sleep: "Didn't sleep well",
+        ocd: 'Elevated anxiety',
+        thumbPicking: 'Picking thumbs a lot',
+        pms: false,
+        fluShot: false,
+        notes: 'Not good mood, didn\'t sleep well. Brain is "meh" today, bad mood, tired, hard to focus. Picking thumbs a lot, some anxiety, headache all day.'
+      },
+      {
+        date: '2026-10-24',
+        displayDate: 'Sat, Oct 24',
+        dayNumber: 7,
+        taken: true,
+        focus: 3,
+        focusLabel: '3 / 5',
+        mood: 'Good, but felt off',
+        appetite: 'Good appetite at lunch',
+        headache: 'Yes (+ sore flu shot arm)',
+        sleep: 'Normal',
+        ocd: 'Moderate',
+        thumbPicking: 'Mild',
+        pms: true,
+        fluShot: true,
+        notes: 'Mood was good, had appetite at lunch. Headache yes. Got the flu shot so arm was very sore and didn\'t feel 100% great. Also PMSing, compounding fatigue.'
+      },
+      {
+        date: '2026-10-25',
+        displayDate: 'Sun, Oct 25',
+        dayNumber: 8,
+        taken: true,
+        focus: 3,
+        focusLabel: '3 / 5',
+        mood: '"Meh" (not bad, not happy/sad)',
+        appetite: 'Fair',
+        headache: 'Yes',
+        sleep: 'Good night',
+        ocd: 'Medium (1–2x, better at night)',
+        thumbPicking: 'Picking thumbs a lot',
+        pms: true,
+        fluShot: false,
+        notes: 'Focus 3/5. Mood not too bad, not happy, not really sad, just "meh". Headache again. Medium checking (1-2x, not as bad at night). Still picking thumbs a lot. PMS active.'
+      },
+      {
+        date: '2026-10-26',
+        displayDate: 'Mon, Oct 26',
+        dayNumber: 9,
+        taken: true,
+        focus: 3,
+        focusLabel: '3 / 5',
+        mood: '"Meh" (steady flat-neutral)',
+        appetite: 'Fair',
+        headache: 'Yes',
+        sleep: 'Good',
+        ocd: 'Medium (1–2x, better at night)',
+        thumbPicking: 'Picking thumbs a lot',
+        pms: true,
+        fluShot: false,
+        notes: 'Same as 25th. Focus 3/5. Mood not too bad, just "meh". Headache again. Medium checking (1-2x, not as bad at night). Still picking thumbs a lot. PMS active.'
+      },
+      {
+        date: '2026-10-27',
+        displayDate: 'Tue, Oct 27',
+        dayNumber: 10,
+        taken: true,
+        focus: 0,
+        focusLabel: 'Pending',
+        mood: '',
+        appetite: '',
+        headache: '',
+        sleep: '',
+        ocd: '',
+        thumbPicking: '',
+        pms: false,
+        fluShot: false,
+        notes: ''
+      },
+      {
+        date: '2026-10-28',
+        displayDate: 'Wed, Oct 28',
+        dayNumber: 11,
+        taken: true,
+        focus: 0,
+        focusLabel: 'Pending',
+        mood: '',
+        appetite: '',
+        headache: '',
+        sleep: '',
+        ocd: '',
+        thumbPicking: '',
+        pms: false,
+        fluShot: false,
+        notes: ''
+      },
+      {
+        date: '2026-10-29',
+        displayDate: 'Thu, Oct 29',
+        dayNumber: 12,
+        taken: true,
+        focus: 0,
+        focusLabel: 'Pending',
+        mood: '',
+        appetite: '',
+        headache: '',
+        sleep: '',
+        ocd: '',
+        thumbPicking: '',
+        pms: false,
+        fluShot: false,
+        notes: ''
+      },
+      {
+        date: '2026-10-30',
+        displayDate: 'Fri, Oct 30',
+        dayNumber: 13,
+        taken: true,
+        focus: 0,
+        focusLabel: 'Pending',
+        mood: '',
+        appetite: '',
+        headache: '',
+        sleep: '',
+        ocd: '',
+        thumbPicking: '',
+        pms: false,
+        fluShot: false,
+        notes: ''
+      },
+      {
+        date: '2026-10-31',
+        displayDate: 'Sat, Oct 31',
+        dayNumber: 14,
+        taken: true,
+        focus: 0,
+        focusLabel: 'Pending',
+        mood: '',
+        appetite: '',
+        headache: '',
+        sleep: '',
+        ocd: '',
+        thumbPicking: '',
+        pms: false,
+        fluShot: false,
+        notes: ''
+      },
+      {
+        date: '2026-11-01',
+        displayDate: 'Sun, Nov 1',
+        dayNumber: 15,
+        taken: true,
+        focus: 0,
+        focusLabel: 'Pending',
+        mood: '',
+        appetite: '',
+        headache: '',
+        sleep: '',
+        ocd: '',
+        thumbPicking: '',
+        pms: false,
+        fluShot: false,
+        notes: ''
+      },
+      {
+        date: '2026-11-02',
+        displayDate: 'Mon, Nov 2',
+        dayNumber: 16,
+        taken: true,
+        focus: 0,
+        focusLabel: 'Pending',
+        mood: '',
+        appetite: '',
+        headache: '',
+        sleep: '',
+        ocd: '',
+        thumbPicking: '',
+        pms: false,
+        fluShot: false,
+        notes: ''
+      },
+      {
+        date: '2026-11-03',
+        displayDate: 'Tue, Nov 3',
+        dayNumber: 17,
+        taken: true,
+        focus: 0,
+        focusLabel: 'Pending',
+        mood: '',
+        appetite: '',
+        headache: '',
+        sleep: '',
+        ocd: '',
+        thumbPicking: '',
+        pms: false,
+        fluShot: false,
+        notes: ''
+      },
+      {
+        date: '2026-11-04',
+        displayDate: 'Wed, Nov 4',
+        dayNumber: 18,
+        taken: true,
+        focus: 0,
+        focusLabel: 'Pending',
+        mood: '',
+        appetite: '',
+        headache: '',
+        sleep: '',
+        ocd: '',
+        thumbPicking: '',
+        pms: false,
+        fluShot: false,
+        notes: 'Final full day of tracking prior to Nurse Practitioner consultation.'
+      },
+      {
+        date: '2026-11-05',
+        displayDate: 'Thu, Nov 5',
+        dayNumber: 19,
+        taken: true,
+        focus: 0,
+        focusLabel: 'NP Visit',
+        mood: '',
+        appetite: '',
+        headache: '',
+        sleep: '',
+        ocd: '',
+        thumbPicking: '',
+        pms: false,
+        fluShot: false,
+        notes: 'APPOINTMENT DAY: Nurse Practitioner follow-up review.'
+      }
+    ];
+
+    // STORAGE HANDLER
+    function getStoredData() {
+      try {
+        const data = localStorage.getItem('rayne_med_tracker_v2');
+        if (data) return JSON.parse(data);
+      } catch (e) {
+        console.error('Error reading localStorage', e);
+      }
+      return INITIAL_DAYS;
+    }
+
+    function saveStoredData(data) {
+      try {
+        localStorage.setItem('rayne_med_tracker_v2', JSON.stringify(data));
+      } catch (e) {
+        console.error('Error saving localStorage', e);
+      }
+    }
+
+    let activeData = getStoredData();
+
+    // RENDER FUNCTIONS
+    function renderApp() {
+      renderCards();
+      renderTable();
+      renderClinicalTable();
+    }
+
+    function renderCards() {
+      const container = document.getElementById('cards-container');
+      const todayStr = '2026-10-26';
+      
+      container.innerHTML = activeData.map(item => {
+        const isToday = item.date === todayStr;
+        const hasData = item.mood || item.notes || item.focus > 0;
+        
+        let pillHtml = '';
+        if (!item.taken && item.focus === 0 && !hasData) {
+          pillHtml = `<span class="day-pill pill-pending">Pending</span>`;
+        } else if (!item.taken) {
+          pillHtml = `<span class="day-pill pill-pre">Pre-Vyvanse</span>`;
+        } else {
+          pillHtml = `<span class="day-pill pill-active">Day ${item.dayNumber || ''} • 10mg</span>`;
+        }
+
+        let badges = [];
+        if (item.headache && item.headache.toLowerCase().includes('yes')) {
+          badges.push(`<span class="badge badge-headache">⚡ Headache: ${item.headache}</span>`);
+        } else if (item.headache === 'None') {
+          badges.push(`<span class="badge badge-no-headache">✓ No Headache</span>`);
+        }
+        if (item.ocd) {
+          badges.push(`<span class="badge badge-ocd">🌀 OCD: ${item.ocd}</span>`);
+        }
+        if (item.thumbPicking && item.thumbPicking.toLowerCase().includes('picking')) {
+          badges.push(`<span class="badge badge-picking">⚠️ ${item.thumbPicking}</span>`);
+        }
+        if (item.pms) {
+          badges.push(`<span class="badge badge-pms">🌸 PMS Active</span>`);
+        }
+        if (item.fluShot) {
+          badges.push(`<span class="badge badge-flushot">💉 Flu Shot Soreness</span>`);
+        }
+
+        return `
+          <div class="day-card ${isToday ? 'today' : ''}">
+            <div class="day-header">
+              <div>
+                <div class="day-title">${item.displayDate} ${isToday ? '⭐ (Today)' : ''}</div>
+              </div>
+              ${pillHtml}
+            </div>
+
+            <div class="day-metrics">
+              <div class="metric-row">
+                <span class="metric-lbl">ADHD Focus</span>
+                <span class="metric-val">${item.focus ? `${item.focus}/5 Focus` : (hasData ? 'Not rated' : '—')}</span>
+              </div>
+              <div class="metric-row">
+                <span class="metric-lbl">Affect / Mood</span>
+                <span class="metric-val">${item.mood || '—'}</span>
+              </div>
+              <div class="metric-row">
+                <span class="metric-lbl">Lunch Appetite</span>
+                <span class="metric-val">${item.appetite || '—'}</span>
+              </div>
+              <div class="metric-row">
+                <span class="metric-lbl">Sleep Onset</span>
+                <span class="metric-val">${item.sleep || '—'}</span>
+              </div>
+            </div>
+
+            ${badges.length ? `<div class="badge-wrap">${badges.join('')}</div>` : ''}
+
+            ${item.notes ? `<div class="day-notes">"${item.notes}"</div>` : ''}
+
+            <div class="card-footer">
+              <span style="font-size:0.7rem; color:var(--text-muted);">${item.taken ? 'Taken 8:00 AM w/ Food' : 'Medication not logged'}</span>
+              <button class="btn-edit-card" onclick="openLogModal('${item.date}')">✏️ Edit Day</button>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function renderTable() {
+      const tbody = document.getElementById('table-body');
+      const todayStr = '2026-10-26';
+
+      tbody.innerHTML = activeData.map(item => {
+        const isToday = item.date === todayStr;
+        const isFlagged = item.thumbPicking && item.thumbPicking.includes('lot');
+
+        return `
+          <tr class="${isToday ? 'row-today' : ''} ${isFlagged ? 'row-flag' : ''}">
+            <td><strong>${item.displayDate}</strong></td>
+            <td>${item.taken ? '✓ 8am' : '—'}</td>
+            <td><strong>${item.focus ? `${item.focus}/5` : '—'}</strong></td>
+            <td>${item.mood || '—'}</td>
+            <td>${item.appetite || '—'}</td>
+            <td>${item.headache || '—'}</td>
+            <td>${item.sleep || '—'}</td>
+            <td>
+              <div>${item.notes || '—'}</div>
+              ${item.thumbPicking && item.thumbPicking.includes('lot') ? '<div style="color:#f87171; font-weight:700; font-size:0.75rem; margin-top:2px;">⚠️ Picking thumbs a lot</div>' : ''}
+              ${item.pms ? '<span style="color:#f472b6; font-size:0.72rem; font-weight:600;">[PMS Active] </span>' : ''}
+              ${item.fluShot ? '<span style="color:#38bdf8; font-size:0.72rem; font-weight:600;">[Flu Shot]</span>' : ''}
+            </td>
+            <td class="no-print">
+              <button class="btn-edit-card" onclick="openLogModal('${item.date}')">Edit</button>
+            </td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    function renderClinicalTable() {
+      const tbody = document.getElementById('cp-table-body');
+
+      // Only show up through active days or days with real content
+      const loggedDays = activeData.filter(d => d.notes || d.mood || d.focus > 0);
+
+      tbody.innerHTML = loggedDays.map(item => {
+        return `
+          <tr>
+            <td><strong>${item.displayDate}</strong><br><span style="font-size:7.5pt; color:#64748b;">${item.taken ? 'Vyvanse 10mg' : 'Pre-Trial'}</span></td>
+            <td><strong>${item.focus ? `${item.focus}/5` : '—'}</strong></td>
+            <td>${item.mood || '—'}</td>
+            <td>${item.appetite || '—'}</td>
+            <td>
+              ${item.headache || '—'}
+              ${item.fluShot ? '<br><em style="color:#0284c7;">+ Flu shot soreness</em>' : ''}
+            </td>
+            <td>
+              ${item.notes || '—'}
+              ${item.thumbPicking && item.thumbPicking.includes('lot') ? '<br><strong style="color:#dc2626;">• Thumb picking (excoriation) frequent</strong>' : ''}
+              ${item.pms ? '<br><em style="color:#be185d;">• PMS / late-luteal phase active</em>' : ''}
+            </td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    // VIEW SWITCHER
+    function switchView(viewName) {
+      document.querySelectorAll('.view-panel').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+
+      const targetView = document.getElementById('view-' + viewName);
+      const targetBtn = document.getElementById('tab-btn-' + viewName);
+
+      if (targetView) targetView.classList.add('active');
+      if (targetBtn) targetBtn.classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // MODAL HANDLERS
+    function openLogModal(dateStr) {
+      const targetDate = dateStr || '2026-10-26';
+      const item = activeData.find(d => d.date === targetDate) || {
+        date: targetDate,
+        displayDate: targetDate,
+        taken: true,
+        focus: 3,
+        mood: '',
+        appetite: 'Ate okay',
+        headache: 'Yes',
+        sleep: 'Normal',
+        ocd: 'Calm',
+        thumbPicking: 'None',
+        pms: false,
+        fluShot: false,
+        notes: ''
+      };
+
+      document.getElementById('modalDateTitle').innerText = 'Log / Edit: ' + (item.displayDate || item.date);
+      document.getElementById('entryDate').value = item.date;
+      document.getElementById('entryTaken').value = item.taken ? 'true' : 'false';
+      document.getElementById('entryFocus').value = item.focus || 3;
+      document.getElementById('entryMood').value = item.mood || '';
+      document.getElementById('entryAppetite').value = item.appetite || 'Ate okay';
+      document.getElementById('entryHeadache').value = item.headache || 'Yes';
+      document.getElementById('entrySleep').value = item.sleep || 'Normal';
+      document.getElementById('entryOcd').value = item.ocd || 'Calm';
+      document.getElementById('entryPicking').value = item.thumbPicking || 'None';
+      
+      document.getElementById('tagPms').checked = !!item.pms;
+      document.getElementById('tagFluShot').checked = !!item.fluShot;
+      document.getElementById('tagCramps').checked = (item.notes && item.notes.toLowerCase().includes('cramp'));
+      document.getElementById('tagFatigue').checked = (item.notes && (item.notes.toLowerCase().includes('tired') || item.notes.toLowerCase().includes('nap')));
+
+      document.getElementById('entryNotes').value = item.notes || '';
+
+      document.getElementById('logModal').classList.add('open');
+    }
+
+    function closeLogModal() {
+      document.getElementById('logModal').classList.remove('open');
+    }
+
+    function saveModalEntry(e) {
+      e.preventDefault();
+      const date = document.getElementById('entryDate').value;
+      const index = activeData.findIndex(d => d.date === date);
+
+      if (index === -1) return;
+
+      const pms = document.getElementById('tagPms').checked;
+      const fluShot = document.getElementById('tagFluShot').checked;
+      const cramps = document.getElementById('tagCramps').checked;
+      const fatigue = document.getElementById('tagFatigue').checked;
+
+      let notes = document.getElementById('entryNotes').value;
+      if (cramps && !notes.toLowerCase().includes('cramp')) notes += ' (Had belly cramps)';
+      if (fatigue && !notes.toLowerCase().includes('tired')) notes += ' (Felt very tired / took nap)';
+
+      activeData[index] = {
+        ...activeData[index],
+        taken: document.getElementById('entryTaken').value === 'true',
+        focus: parseInt(document.getElementById('entryFocus').value, 10),
+        mood: document.getElementById('entryMood').value,
+        appetite: document.getElementById('entryAppetite').value,
+        headache: document.getElementById('entryHeadache').value,
+        sleep: document.getElementById('entrySleep').value,
+        ocd: document.getElementById('entryOcd').value,
+        thumbPicking: document.getElementById('entryPicking').value,
+        pms: pms,
+        fluShot: fluShot,
+        notes: notes
+      };
+
+      saveStoredData(activeData);
+      renderApp();
+      closeLogModal();
+      showToast('✓ Saved entry for ' + activeData[index].displayDate);
+    }
+
+    // CLIPBOARD EXPORT FOR SOMA
+    function copyUpdateForSoma() {
+      // Pick today or recent logged entries
+      const today = activeData.find(d => d.date === '2026-10-26') || activeData[activeData.length - 1];
+      
+      const text = `Rayne Medication & Symptom Update (${today.displayDate}):
+- Vyvanse 10mg Taken: ${today.taken ? 'Yes (8:00 AM w/ food)' : 'No'}
+- Focus Rating: ${today.focus}/5
+- Mood / Affect: ${today.mood}
+- Lunch Appetite: ${today.appetite}
+- Headaches / Physical: ${today.headache}${today.pms ? ' (PMS active)' : ''}${today.fluShot ? ' (Flu shot sore arm)' : ''}
+- Sleep Onset: ${today.sleep}
+- OCD Checking: ${today.ocd}
+- Thumb Picking (BFRB): ${today.thumbPicking}
+- Notes: "${today.notes}"`;
+
+      navigator.clipboard.writeText(text).then(() => {
+        showToast('📋 Copied to clipboard! Ready to paste to Soma.');
+      }).catch(err => {
+        prompt('Copy your update for Soma below:', text);
+      });
+    }
+
+    // PRINT CLINICAL REPORT FOR NP
+    function printClinicalReport() {
+      switchView('clinical');
+      setTimeout(() => {
+        window.print();
+      }, 250);
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      toast.innerText = msg;
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 2600);
+    }
+
+    // INITIAL LOAD
+    document.addEventListener('DOMContentLoaded', () => {
+      renderApp();
+    });
+  </script>
+</body>
+</html>

@@ -317,13 +317,22 @@ I'm ready to respond to the updated call, sir.
 
 - **2026-10-26 (Evening)** (SOMA):
   - **Rayne Health & Medication Check-In (Vyvanse 10mg + Fluoxetine 50mg):**
-    - *Current State:* Rayne on Fluoxetine 50mg for several months; added Vyvanse 10mg ~10 days ago (Oct 16).
-    - *Symptoms Analyzed:* Off-and-on moods, intermittent headaches, OCD was slightly off during onboarding but now holding calm/okay, while ADHD symptoms (fidgeting, focus, executive function) remain high.
+    - *Actual Start Date Confirmed:* Vyvanse 10mg started on **Sunday, Oct 18, 2026** (taking at 8:00 AM with food).
+    - *Full 9-Day Symptom Audit (Oct 18 – Oct 26):*
+      - **Oct 18 (Day 1):** Focus 4–5/5 (happy at first, did lots of work, then very tired; headache; hard time settling at night; mild phone checking).
+      - **Oct 19 (Day 2):** First school day; mood dipped ~1 hr then recovered; ate okay; **no headache**; high nighttime OCD phone checking, came down to hang out with Candy to settle.
+      - **Oct 20 (Day 3):** Mood good, ate a bit; headache & belly cramps; OCD phone checking still active.
+      - **Oct 21 (Day 4):** Mood fine; low appetite (mom made her eat); headache, very tired, took a nap; fell asleep easily; phone checking.
+      - **Oct 22 (Day 5):** Mood fair, hungry for lunch, headache yes; **OCD checking noticeably improved**.
+      - **Oct 23 (Day 6):** Poor sleep; bad mood, tired, brain "meh", hard to focus (2/5); all-day headache; **picking thumbs a lot**; anxiety elevated.
+      - **Oct 24 (Day 7):** Mood good but felt off; lunch appetite good; headache yes; sore arm from flu shot; **PMS active** (compounding fatigue).
+      - **Oct 25 & 26 (Days 8 & 9):** Focus 3/5; mood steady "meh"; fair appetite; headache again; **PMS active**; medium checking (1–2x, better at night); **picking thumbs a lot**.
     - *Clinical Analysis:*
-      - Confirmed that 10 mg Vyvanse is an ultra-low starter dose (deliberately chosen due to prior 30 mg emotional blunting/flatness), which explains persistent high ADHD symptoms. The anticipated Nov 5th increase to 20 mg is the appropriate clinical step.
-      - Headaches and moodiness mapped to 4 actionable mechanisms: (1) 3:00–4:30 PM wear-off rebound crash, (2) mild stimulant dehydration/vasoconstriction, (3) appetite suppression causing delayed meals and brain glucose dips, and (4) subconscious jaw clenching while studying.
-      - Formatted clean, copy-and-paste text summary for Candy to text directly to Rayne.
-    - *NAC SAP Inquiry (NFH - N-Acetylcysteine):*
-      - Evaluated NAC's glutamate-modulating role (System xc- antiporter) in dampening OCD intrusive thoughts and oxidative stress.
-      - Established the **"one variable at a time"** clinical safety protocol: Advised holding off on starting NAC SAP until after the November 5th Nurse Practitioner appointment to preserve clean baseline data for the planned Vyvanse 20 mg titration.
-    - *Files Updated & Synced:* Updated `raynes_ocd_adhd/Rayne_Medication_Tracking_Sheet.md`, `raynes_ocd_adhd/Rayne_Medication_Tracking_Sheet.html`, and synced to GitHub remote.
+      - *Focus 3/5 & 10mg Subtherapeutic Plateau:* 10 mg avoids 30 mg blunting but leaves school attention under-supported. Titrating to 20 mg on Nov 5th is the optimal next clinical step.
+      - *Headache Pattern (8 of 9 days):* Onboarding vasoconstriction + 3:30 PM wear-off rebound + hydration/appetite dips + study jaw clenching. Addressed with electrolytes, protein meals, and evening Magnesium Bisglycinate.
+      - *Thumb Picking (BFRB) & NAC Rationale:* Repetitive thumb excoriation during PMS/luteal dopamine drops strongly indicates glutamate dysregulation in CSTC loops. Validated NAC SAP (600 mg) as the gold-standard psychiatric nutritional intervention for skin picking and OCD, to be introduced after the 20 mg Vyvanse step stabilizes.
+    - *Live Interactive Tracker Deployed:*
+      - Converted `raynes_ocd_adhd/Rayne_Medication_Tracking_Sheet.html` into a full-featured live web application with `localStorage` persistence, interactive cards, "+ Log Today" modal, 1-click **"📋 Copy for Soma"** button, and an executive print-ready **"🖨️ Print Clinical Summary for NP"** brief.
+      - Deployed identical root mirror to `rayne_tracker.html` for GitHub Pages hosting (`https://cmoulton345-sketch.github.io/candy-wellness-os/rayne_tracker.html`).
+      - Updated `Rayne_Medication_Tracking_Sheet.md` and synced repository.
+

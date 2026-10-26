@@ -36,79 +36,84 @@
 
 ## 4. Daily Log Sheet (October 16 – November 5, 2026)
 
-### Week 1: Initial Titration & School Baseline
-* **Fri, Oct 16 (Day 1 Vyvanse 10mg):**
-  * Taken at 8:00 AM with Protein? [ ] Yes  [ ] No
-  * Focus & Fidgeting (1-5): _____
-  * Mood / Affect: ___________________________________________________________
-  * Lunch Appetite: __________________________________________________________
-  * Physical / Headaches: ____________________________________________________
-  * 4:00 PM Crash? [ ] Yes  [ ] No  |  Sleep Onset: __________________________
-  * OCD Loops / Notes: _______________________________________________________
-
-* **Sat, Oct 17:**
-  * Taken 8am w/ Protein? [ ] Yes [ ] No | Focus: ___ | Mood: _________________
-  * Appetite: _____________ | Headaches: _____________ | Sleep: ______________
-  * Notes: ___________________________________________________________________
-
-* **Sun, Oct 18:**
-  * Taken 8am w/ Protein? [ ] Yes [ ] No | Focus: ___ | Mood: _________________
-  * Appetite: _____________ | Headaches: _____________ | Sleep: ______________
-  * Notes: ___________________________________________________________________
-
-* **Mon, Oct 19 (First Full School Day on Vyvanse):**
-  * Taken 8am w/ Protein? [ ] Yes [ ] No | Focus: ___ | Mood: _________________
-  * Appetite: _____________ | Headaches: _____________ | Sleep: ______________
-  * Notes on School Focus / Fidgeting: ______________________________________
-
-* **Tue, Oct 20:**
-  * Taken 8am w/ Protein? [ ] Yes [ ] No | Focus: ___ | Mood: _________________
-  * Appetite: _____________ | Headaches: _____________ | Sleep: ______________
-  * Notes: ___________________________________________________________________
-
-* **Wed, Oct 21:**
-  * Taken 8am w/ Protein? [ ] Yes [ ] No | Focus: ___ | Mood: _________________
-  * Appetite: _____________ | Headaches: _____________ | Sleep: ______________
-  * Notes: ___________________________________________________________________
-
-* **Thu, Oct 22:**
-  * Taken 8am w/ Protein? [ ] Yes [ ] No | Focus: ___ | Mood: _________________
-  * Appetite: _____________ | Headaches: _____________ | Sleep: ______________
-  * Notes: ___________________________________________________________________
-
-* **Fri, Oct 23 (End of Week 1):**
-  * Taken 8am w/ Protein? [ ] Yes [ ] No | Focus: ___ | Mood: _________________
-  * Appetite: _____________ | Headaches: _____________ | Sleep: ______________
-  * Notes / Week 1 Summary: _________________________________________________
+### Week 1: Initial Titration & Onboarding (Oct 16 – Oct 23)
+* **Fri, Oct 16 & Sat, Oct 17:** Pre-Vyvanse baseline on Fluoxetine 50mg.
+* **Sun, Oct 18 (Day 1 Vyvanse 10mg):**
+  * Taken at 8:00 AM w/ Food? [x] Yes
+  * Focus & Fidgeting: **4–5 / 5** (High focus, did lots of work!)
+  * Mood / Affect: Seemed happy at first, then got really tired
+  * Physical / Headaches: Had a headache, felt very tired
+  * Sleep Onset: Hard time settling down
+  * OCD Loops / Notes: Mild OCD checking (phone).
+* **Mon, Oct 19 (Day 2 - School Day):**
+  * Taken 8am w/ Food? [x] Yes | Focus: School focus check
+  * Mood / Affect: Mood went down a bit for ~1 hour, then was fine
+  * Appetite: Ate okay
+  * Physical / Headaches: **No headache**
+  * Sleep Onset: Needed mom to settle
+  * OCD Loops / Notes: High OCD checking at night; had to come down and hang out with Candy to get settled.
+* **Tue, Oct 20 (Day 3):**
+  * Taken 8am w/ Food? [x] Yes | Focus: Fair (3/5) | Mood: Mood was good
+  * Appetite: Hungry and ate a bit
+  * Physical / Headaches: Headache & belly cramps
+  * OCD Loops / Notes: OCD still a bit off today; lots of phone checking.
+* **Wed, Oct 21 (Day 4):**
+  * Taken 8am w/ Food? [x] Yes | Focus: Fair (3/5) | Mood: Didn't feel bad
+  * Appetite: Wasn't hungry, but mom made her eat
+  * Physical / Headaches: Headache, very tired, had a nap
+  * Sleep Onset: No trouble falling asleep
+  * OCD Loops / Notes: Still checking her phone.
+* **Thu, Oct 22 (Day 5):**
+  * Taken 8am w/ Food? [x] Yes | Focus: Fair (3/5) | Mood: Seems fair
+  * Appetite: Hungry for lunch
+  * Physical / Headaches: Headache (yes)
+  * OCD Loops / Notes: **OCD improving:** Not checking as much as earlier in the week.
+* **Fri, Oct 23 (Day 6):**
+  * Taken 8am w/ Food? [x] Yes | Focus: **2 / 5** (Hard to focus, brain "meh")
+  * Mood / Affect: Bad mood, tired, anxiety elevated
+  * Appetite: Low appetite
+  * Physical / Headaches: **Headache all day**
+  * Sleep Onset: Didn't sleep well
+  * OCD & BFRB: **Picking thumbs a lot;** anxiety elevated.
 
 ---
 
-### Weeks 2 & 3: Ongoing Observation (Oct 24 – Nov 4)
-*(Log daily entries in this pattern or using the printable HTML chart)*
+### Week 2: PMS Compounding & Stabilization (Oct 24 – Oct 31)
+* **Sat, Oct 24 (Day 7):**
+  * Taken 8am w/ Food? [x] Yes | Focus: Moderate (3/5) | Mood: Good, but felt off
+  * Appetite: Good appetite at lunch
+  * Physical / Headaches: Headache (yes); very sore arm from flu shot; **PMSing active** (compounding fatigue and physical discomfort).
+  * OCD Loops / Notes: Moderate; fatigue from immune response.
+* **Sun, Oct 25 (Day 8):**
+  * Taken 8am w/ Food? [x] Yes | Focus: **3 / 5** | Mood: Not too bad, not happy, not really sad, just "meh"
+  * Appetite: Fair
+  * Physical / Headaches: Headache again; **PMSing active**
+  * Sleep Onset: Good night
+  * OCD & BFRB: Medium checking (1–2x, not as bad at night); **still picking her thumbs a lot**.
+* **Mon, Oct 26 (Day 9 - Current):**
+  * Taken 8am w/ Food? [x] Yes | Focus: **3 / 5** | Mood: Steady, not bad, just "meh"
+  * Appetite: Fair
+  * Physical / Headaches: Headache again; **PMSing active**
+  * Sleep Onset: Good
+  * OCD & BFRB: Medium checking (1–2x, not as bad at night); **still picking her thumbs a lot**.
 
-* **Sat, Oct 24 & Sun, Oct 25:** Weekend baseline.
-* **Mon, Oct 26 (Day 11 on Vyvanse 10mg / Fluoxetine 50mg):**
-  * **ADHD & Focus:** ADHD symptoms remain high (fidgeting, difficulty with sustained school focus). Confirms 10 mg is an introductory, subtherapeutic dose.
-  * **Affect & Mood:** Off and on; noticeable late afternoon mood dips/irritability as the 10 mg clears her system (rebound crash). Vibrant affect remains intact (zero 30 mg blunting/numbness).
-  * **Physical / Headaches:** Intermittent headaches reported. 4 key root causes mapped:
-    1. *3:00–4:30 PM Rebound:* Dopamine drops as 10 mg wears off early.
-    2. *Vascular & Hydration:* Mild stimulant vasoconstriction; requires proactive water + electrolytes during school.
-    3. *Appetite & Blood Sugar Dips:* Daytime appetite suppression causing skipped or delayed lunch, depleting brain glucose.
-    4. *Subconscious Jaw Clenching:* Tension during intense study/screen work radiating to temples.
-  * **Action:** Electrolytes in class, mandatory protein at breakfast & easy lunch, plus evening Magnesium Bisglycinate (150–200 mg) for jaw/nervous system relaxation.
-  * **OCD Loops:** Stabilized and calm. (Was slightly elevated during initial Vyvanse onboarding, but settled back down nicely on 50 mg Prozac).
-  * **Integrative Inquiry (NAC SAP):** Evaluated N-Acetylcysteine (NAC SAP by NFH) for glutamate/OCD modulation. **Decision:** HOLD until after the November 5th NP follow-up to adhere to the "one variable at a time" protocol and preserve clean baseline data for the NP.
+---
+
+### Clinical Synthesis for Nurse Practitioner (Nov 5 Review)
+1. **Focus Plateau & Dose Sufficiency:** 10 mg Vyvanse is well tolerated without the emotional blunting ("flat/blah") experienced previously on 30 mg. However, focus has settled at an incomplete 3/5 with notable drop-offs during PMS. Moving to **20 mg** is the recommended clinical next step.
+2. **Headache Trajectory (8/9 Days):** Daily headaches reflect onboarding vasoconstriction, delayed hydration/fueling, and study jaw clenching. Addressed with proactive electrolytes, protein breakfast, and evening Magnesium Bisglycinate.
+3. **OCD Loops vs. Thumb Picking (BFRB):** Intrusive phone checking loops spiked Days 1–3 but stabilized under 50 mg Fluoxetine by Day 5. Repetitive thumb picking flared Oct 23, 25, 26 during PMS.
+4. **NAC SAP (N-Acetylcysteine) Recommendation:** NAC is the leading evidence-based nutritional medicine for excoriation (skin/thumb picking) and glutamate-driven OCD. Propose introducing **NAC SAP (600 mg daily)** *after* Rayne stabilizes on the anticipated 20 mg Vyvanse dose.
 
 ---
 
 ### Appointment Day: Thursday, November 5, 2026
 * **Nurse Practitioner Discussion Agenda:**
-  1. **School Focus & Executive Function:** Review daily log showing ADHD symptoms remain high on 10 mg, confirming it is an introductory stepping stone.
-  2. **Affect & Personality:** Confirm emotional affect remains vibrant and expressive (no emotional blunting or "flat/blah" sensations seen previously on 30 mg).
-  3. **OCD Stability:** Report that OCD checking loops remain calm and well-managed on 50 mg Fluoxetine after brief initial onboarding fluctuation.
-  4. **Anticipated Titration:** Discuss stepping Vyvanse up by 10 mg (**from 10 mg to 20 mg**) to target focus and task initiation while staying safely below the 30 mg blunting threshold.
-  5. **Afternoon Rebound / Headaches:** Discuss afternoon wear-off timing (3:00–4:30 PM) and verify hydration/electrolyte and nutrition strategies.
-  6. **NAC SAP (N-Acetylcysteine) Inquiry:** Present NAC SAP (600 mg daily) as a potential adjunctive glutamate buffer for residual intrusive thoughts and emotional regulation once the 20 mg Vyvanse dose is dialed in.
+  1. **School Focus & Executive Function:** Present daily log showing ADHD focus settling at 3/5 on 10 mg Vyvanse.
+  2. **Affect & Personality Preservation:** Confirm affect remains expressive and intact (zero 30 mg numbness).
+  3. **Anticipated Titration:** Request stepping Vyvanse up by 10 mg (**from 10 mg to 20 mg**).
+  4. **Headache & Rebound Mitigation:** Discuss wear-off timing (3:30–4:30 PM), hydration, and evening magnesium.
+  5. **NAC SAP Introduction:** Discuss adding NAC SAP (600 mg) for residual thumb picking and glutamate balance once 20 mg Vyvanse is stable.
 
 ---
 
