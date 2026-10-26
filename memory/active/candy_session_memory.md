@@ -300,3 +300,6 @@ I'm ready to respond to the updated call, sir.
     - **Movement Strategy & Pain-Adaptive Recovery:**
       - Prescribed zero heavy loading; shift from weights to restorative mobility (constructive rest / psoas lounge, gentle 90/90s, doorway chest stretch, 10–15 mins Legs Up the Wall tonight).
       - Reassured that zero-booze week gives her body the exact clean runway needed to trigger the anticipated fluid release over Days 24–26 (Oct 28–30).
+    - **BHRT & Movement Plan Confirmed:**
+      - Progesterone Protocol: Confirmed skipping progesterone tonight (Monday, Day 22) as the final pause night to let endogenous downcast establish cleanly; restarting Tuesday night (Day 23) with a gentle half-pump.
+      - Movement: Candy completed a gentle morning yoga flow (soft knees, low lunges for left psoas, wide child's pose) to move lymphatic fluid and relieve joint/fascial tension.

@@ -5,7 +5,7 @@
 **Primary Focus:** Bioidentical Hormone Replacement Therapy (BHRT), Oura Cycle Tracking, ADHD & Metabolic Support  
 **Current Meds & Regimen:** Vyvanse (40mg), Ozempic (18 clicks), BHRT (BiEst, Progesterone, Testosterone)  
 **Surgical Status:** Hysterectomy (uterus removed), **ovaries intact**  
-**Date:** October 25, 2026 (Updated: Cycle 4, Day 21 - Protect Phase Mid/Late Luteal Plateau)  
+**Date:** October 26, 2026 (Updated: Cycle 4, Day 22 - Protect Phase Late Luteal Plateau & Downcast)  
 **Purpose:** BHRT Specialist & Primary Physician Consultation Guide  
 
 ---
@@ -13,7 +13,7 @@
 ### 1. BHRT Regimen Baseline & Surgical Context
 * **BiEst (Estrogen):** 1 pump morning (applied to inner arms/thighs/lower abdomen; never breast tissue).
 * **Testosterone:** 1 pump Monday to Friday (Saturday & Sunday off).
-* **Progesterone:** 1 pump every evening (Sunday off; 3-day targeted luteal pause completed Oct 22–25).
+* **Progesterone:** 1 pump every evening (Sunday off; 4-day targeted luteal pause Oct 22–26; restarting Tuesday Oct 27 with a half-pump).
 * **Medication Context:** Vyvanse (40mg) for ADHD focus + Ozempic (18 clicks).
 * **Ovarian Status:** Ovaries remain intact, maintaining natural endogenous hormonal shifts despite hysterectomy.
 
@@ -31,9 +31,9 @@
   - **Ligamentous Laxity:** Post-Pilates joint soreness on Day 10 illustrated vulnerability of synovial and joint structures to mid-cycle estrogen surges.
   - **Pre-Ovulatory Symptoms:** Nipple/breast center tenderness (estrogen ductal engorgement) and transient right breast histamine itching (Oct 15 & Oct 17).
 * **Pelvic & Mucosal Check (Oct 16 / Day 12):** Strong urine odor and mild pelvic itch resolved cleanly; attributed to methylated B-complex excretion and pre-ovulatory mucosal histamine permeability rather than infection.
-* **Protect Phase Active & Targeted Pg Pause Outcome (Oct 18–25, 2026 / Days 14–21):**
-  - **Sustained Thermal Shift:** Oura temperature held elevated for 8 consecutive nights (+0.4°F to +0.7°F), confirming robust endogenous luteal activity.
-  - **Clinic-Confirmed Progesterone Excess & 3-Night Pause (Days 18–21):** On Day 18, acute systemic malaise, neck stiffness, and headache peaked. WellNurtureMD confirmed progesterone stacking/excess. Progesterone cream was paused for 3 nights: oral temp cooled to 35.4°C–35.6°C, and systemic malaise, neck stiffness, and headaches cleared within 24–48 hours, confirming progesterone's rapid clearance.
+* **Protect Phase Active & Targeted Pg Pause Outcome (Oct 18–26, 2026 / Days 14–22):**
+  - **Sustained Thermal Shift:** Oura temperature held elevated for 9 consecutive nights (+0.4°F to +0.7°F), confirming robust endogenous luteal activity.
+  - **Clinic-Confirmed Progesterone Excess & 4-Night Pause (Days 18–22):** On Day 18, acute systemic malaise, neck stiffness, and headache peaked. WellNurtureMD confirmed progesterone stacking/excess. Progesterone cream was paused Oct 22–26 (including Sunday off and Monday final pause night). Basal temp began cooling to +0.4°F on Day 22. Scheduled restart Tuesday night (Day 23) with a half-pump to support GABA sleep while avoiding fluid retention.
   - **Objective Measurement Stability (Oct 25 / Day 21):** Anthropometric measurements confirm 100% stable body composition (waist locked at 28.0", lower abdomen/midsection at 31.5" [down 1.5"–4.5" from September], hips 39.5", thighs 23"/23.5", chest 35.0"), proving that scale weight variations are strictly gastrointestinal volume and transient hormonal water holding.
 
 ---
