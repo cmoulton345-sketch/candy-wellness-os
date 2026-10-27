@@ -336,3 +336,13 @@ I'm ready to respond to the updated call, sir.
       - Deployed identical root mirror to `rayne_tracker.html` for GitHub Pages hosting (`https://cmoulton345-sketch.github.io/candy-wellness-os/rayne_tracker.html`).
       - Updated `Rayne_Medication_Tracking_Sheet.md` and synced repository.
 
+- **2026-10-27** (SOMA):
+  - **Daily Health & Biometrics Logged (Cycle Day 23 - Late Protect Phase / Luteal Downcast):**
+    - Metrics: Mouth Temp 35.3°C, Oura Temp -0.1°F (-0.06°C), Sleep Score 89, Readiness 92 (massive recovery rebound!). Zero alcohol overnight held strong.
+    - **Symptom Mapping & Somatic Validation:**
+      - *Thermal Plunge (-0.1°F & 35.3°C):* Temperature officially crossed below baseline, confirming endogenous luteal downcast is actively underway.
+      - *Body Super Itchy Last Night:* Classic mast cell histamine release triggered by rapid progesterone drop/thermal plunge (identical to histamine windows on Sept 8–10, Sept 25, and Oct 1). Validated as biological evidence of hormonal downshift.
+      - *Puffiness & Tight Fingers vs Loosening Up Yesterday:* Yesterday rings/body loosened up during the day. Morning finger tightness is early aldosterone/osmotic fluid recalibration as fluid mobilizes into the vascular tree for kidney processing. On the exact runway for the projected Days 24–26 fluid dump!
+    - **BHRT & Movement Strategy:**
+      - Progesterone Plan: Gentle half-pump tonight (Tuesday / Day 23) to cushion the downcast, or pause if sleep and nervous system continue to feel deep and settled.
+      - Hydration & gentle restorative flow / Legs Up the Wall to support lymphatic drainage and kidney fluid clearance.

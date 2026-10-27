@@ -39,7 +39,7 @@ Copy this weekly template and fill in each day:
 |------|------------|-----------|---------|-----------------|-------|
 | 2026-10-11 | 150.7 | — | — | — | Sleep: 87, Readiness: 86, Temp: -0.1°F, 0 alcohol, puffiness dropping |
 | 2026-10-18 | 150.0 | — | — | — | Sleep: 61, Readiness: 67, Temp: +0.7°F, Latency: 2h 8m, Day 14 Ovulation Shift |
-| | | | | | |
+| 2026-10-25 | 153.2* | 28.0 | 39.5 | — | Sleep: 88, Readiness: 80, Temp: +0.7°F, Midsection: 31.5" (down from 33-36"), *Post-coffee/Fairlife |
 | | | | | | |
 
 > **How to weigh yourself:** Sunday morning. Naked. After bathroom. Before food. Step on, read the number, write it down, step off, put the scale away. You are not allowed to weigh yourself again until next Sunday.
