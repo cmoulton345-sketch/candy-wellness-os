@@ -400,3 +400,13 @@ I'm ready to respond to the updated call, sir.
     - *Kendra Foote (Options Outreach) Correspondence:* Kendra confirmed in writing that Rayne's loan file remains in good standing for future studies, funding for 2026–2027 will be cleanly closed, and Amanda's therapist letter will protect her disability grant profile. Coordinated upcoming AT equipment drop-off at Options Outreach.
     - *UNB HotSpot Parking Refund Actioned:* Identified Rayne's annual student parking permit (`KHY712`, Sept 1 – June 30, $208.00 paid). Formulated refund request under UNB Parking Regulations for 8 unused months (~$166.40 CAD refund) to `parking@unb.ca` and `support@htsp.ca`.
 
+- **2026-10-28 (Evening)** (SOMA):
+  - **Somatic Triage & Movement Pivot (Cycle Day 24 Late Luteal):**
+    - High acute emotional strain & anxiety (Joe departed for BC, Rayne's formal NBCC nursing withdrawal finalized today).
+    - Prescribed nervous system grace: paused heavy strength training/weights to protect cortisol levels.
+    - Executed evening reset: gentle bilateral treadmill walk + lower body hip Pilates for pain relief and pelvic/psoas decompression.
+  - **BHRT Progesterone Protocol (1 Pump PM):**
+    - Resumed 1 full pump of evening progesterone cream (~30–45 min pre-bed) to supply neurosteroid GABA-A receptor cushion (allopregnanolone), soothing acute emotional alarm, facilitating sleep, and releasing pelvic floor muscle guarding.
+    - Confirmed zero stacking risk: basal temp plunged to **-0.5°F** below baseline and fluid dump active (-1.5 lbs to 151.8).
+  - **Living System Sync:** Updated `candy_cycle_calendar_sept_oct_2026.html`, `candys_hormones.md`, `doctor_consultation_one_sheet.md` / `.html`, and `gyno_endo_consultation_one_sheet.md` / `.html`.
+
