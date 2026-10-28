@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Candy's 1-Click Share Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b1329;
+      --card: #142244;
+      --border: rgba(255, 255, 255, 0.12);
+      --teal: #0d9488;
+      --blue: #3b82f6;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 24px 16px;
+    }
+    .wrap {
+      max-width: 640px;
+      width: 100%;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+    .header h1 {
+      font-size: 1.7rem;
+      font-weight: 800;
+      color: white;
+      margin-bottom: 6px;
+    }
+    .header p {
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px;
+      margin-bottom: 16px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+    .card-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: white;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+    .card-desc {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 14px;
+      line-height: 1.4;
+    }
+    .input-row {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    .url-input {
+      flex: 1;
+      background: rgba(0, 0, 0, 0.35);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px 14px;
+      color: #93c5fd;
+      font-family: monospace;
+      font-size: 0.88rem;
+    }
+    .url-input:focus {
+      outline: none;
+      border-color: var(--blue);
+    }
+    .btn {
+      padding: 12px 18px;
+      border-radius: 8px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      cursor: pointer;
+      border: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+      transition: all 0.15s ease;
+      text-decoration: none;
+    }
+    .btn-copy {
+      background: var(--teal);
+      color: white;
+    }
+    .btn-copy:hover { background: #0f766e; }
+    .btn-open {
+      background: rgba(255, 255, 255, 0.08);
+      color: white;
+      border: 1px solid var(--border);
+    }
+    .btn-open:hover { background: rgba(255, 255, 255, 0.15); }
+
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: #10b981;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      opacity: 0;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 2000;
+      pointer-events: none;
+    }
+    .toast.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="wrap">
+    <div class="header">
+      <h1>🔗 1-Click Link Copy Hub</h1>
+      <p>Tap "Copy" to instantly copy the exact link to your clipboard</p>
+    </div>
+
+    <!-- RAYNE BRIEF -->
+    <div class="card">
+      <div class="card-title">🩺 1. Rayne’s Clinical Medication &amp; Symptom Brief</div>
+      <div class="card-desc">For Colleen and her wife. Full 9-day observation table, affect preservation, headache analysis, and Nov 5 agenda.</div>
+      <div class="input-row">
+        <input type="text" class="url-input" id="link-rayne" value="https://cmoulton345-sketch.github.io/candy-wellness-os/rayne_clinical_brief.html" readonly onclick="this.select()">
+        <button class="btn btn-copy" onclick="copyUrl('link-rayne')">📋 Copy Link</button>
+        <a href="https://cmoulton345-sketch.github.io/candy-wellness-os/rayne_clinical_brief.html" target="_blank" class="btn btn-open">🌐 Open</a>
+      </div>
+    </div>
+
+    <!-- CANDY CALENDAR -->
+    <div class="card">
+      <div class="card-title">🗓️ 2. Candy’s Clinical Cycle Calendar</div>
+      <div class="card-desc">Updated through Oct 27 (Sleep 89, Readiness 92, -0.1°F temp plunge). 100% Ozempic-free.</div>
+      <div class="input-row">
+        <input type="text" class="url-input" id="link-calendar" value="https://cmoulton345-sketch.github.io/candy-wellness-os/calendar/" readonly onclick="this.select()">
+        <button class="btn btn-copy" onclick="copyUrl('link-calendar')">📋 Copy Link</button>
+        <a href="https://cmoulton345-sketch.github.io/candy-wellness-os/calendar/" target="_blank" class="btn btn-open">🌐 Open</a>
+      </div>
+    </div>
+
+    <!-- MOM'S TRACKER -->
+    <div class="card">
+      <div class="card-title">🤍 3. Mom’s Health &amp; Care Tracker</div>
+      <div class="card-desc">Trigeminal neuralgia pain log, seated vs standing orthostatic BP, and dizziness tracker.</div>
+      <div class="input-row">
+        <input type="text" class="url-input" id="link-mom" value="https://cmoulton345-sketch.github.io/candy-wellness-os/moms_care_tracker.html" readonly onclick="this.select()">
+        <button class="btn btn-copy" onclick="copyUrl('link-mom')">📋 Copy Link</button>
+        <a href="https://cmoulton345-sketch.github.io/candy-wellness-os/moms_care_tracker.html" target="_blank" class="btn btn-open">🌐 Open</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast">✓ Copied to clipboard! Ready to paste.</div>
+
+  <script>
+    function copyUrl(inputId) {
+      const input = document.getElementById(inputId);
+      input.select();
+      input.setSelectionRange(0, 99999);
+      navigator.clipboard.writeText(input.value).then(() => {
+        showToast('✓ Copied to clipboard! Ready to paste into Messages.');
+      }).catch(() => {
+        document.execCommand('copy');
+        showToast('✓ Copied to clipboard!');
+      });
+    }
+
+    function showToast(msg) {
+      const t = document.getElementById('toast');
+      t.innerText = msg;
+      t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), 2600);
+    }
+  </script>
+</body>
+</html>
