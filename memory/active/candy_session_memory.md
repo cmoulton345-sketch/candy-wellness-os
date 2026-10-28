@@ -371,8 +371,9 @@ I'm ready to respond to the updated call, sir.
     - Formulated comprehensive clinical intake guide and home comfort protocol in `wellness_and_mobility/moms_clinical_care_plan_trigeminal_and_vitals.md` covering the triad of facial nerve shocks, heavy anticonvulsants (Tegretol/Gabapentin) + antihypertensive orthostatic hypotension, the "30-second sit-to-stand" rule, wind scarves, and lukewarm soft food strategy for when Mom returns from Ottawa.
   - **Evening Health & Physiological Check-In (Cycle Day 23 Late Protect Phase):**
     - *Movement Win:* Almost 11,000 steps logged! Completed 20-min treadmill walk + lower body hip Pilates.
+    - *Nutrition & Fueling:* Fueled with 570 kcal Factor dinner before workout (avoided complete fasting depletion).
     - *Symptom Mapping & Physiological Validation:*
       - *Left Breast Itch:* Continued confirmation of mast cell histamine surge during rapid progesterone/thermal downcast (-0.1°F / 35.3°C plunge).
-      - *Breasts Feel Like 100 lbs & Puffy All Over:* Direct result of low water intake + nonexistent eating causing paradoxical antidiuretic hormone (ADH / vasopressin) and cortisol-driven aldosterone water retention on top of glandular lobuloalveolar congestion.
-      - *Nighttime Triage:* Prescribed warm mineralized water/herbal tea (avoids cold water shock to kidneys), small protein/glycogen snack to prevent 3:00 AM cortisol awakening, and 10 mins *Legs Up the Wall* to mobilize lower body fluid for kidney processing.
+      - *Breasts Feel Like 100 lbs & Puffy All Over:* Daytime dehydration + the standard sodium load in a 570 kcal prepared meal eaten before a heavy workout created an acute osmotic fluid shift (holding water in extracellular tissue).
+      - *Nighttime Triage:* Actively drinking water with electrolytes now (perfect antidote—potassium/magnesium helps kidneys pump out excess sodium and draw fluid into cells); 10 mins *Legs Up the Wall* and gentle half-pump or pause on progesterone to cushion downcast.
 
