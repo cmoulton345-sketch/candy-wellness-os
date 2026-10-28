@@ -427,4 +427,7 @@ I'm ready to respond to the updated call, sir.
       - Terms: Part-time, 24 hours/week, $15.90/hr, seasonal through Feb 17, 2027. Immediate start on/before Nov 12.
       - Strategic fit: 5-minute local commute, zero highway driving in winter, routine and independence without academic pressure.
       - Future Roadmap: Stepping stone to restaurant serving when she turns 19 (NB legal age for alcohol service / tips).
+  - **Joe Travel Check-In (8:20 PM):**
+    - FaceTimed with Candy: landed safe and sound in Toronto Pearson, awaiting his connecting flight to British Columbia.
+    - Emotional anchor: Provided deep nervous system relief for Candy after a high-demand day.
 
