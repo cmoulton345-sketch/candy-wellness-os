@@ -430,4 +430,7 @@ I'm ready to respond to the updated call, sir.
   - **Joe Travel Check-In (8:20 PM):**
     - FaceTimed with Candy: landed safe and sound in Toronto Pearson, awaiting his connecting flight to British Columbia.
     - Emotional anchor: Provided deep nervous system relief for Candy after a high-demand day.
+  - **Candy Evening Somatic & Vagal Reset Completed (8:30 PM):**
+    - *Movement:* 30 mins gentle treadmill walk (bilateral rhythmic clearance) + lower body hip pain & psoas release routine.
+    - *Vagus Nerve Reset:* Performed 30-second lateral eye holds (Rosenberg basic exercise) triggering ventral vagal engagement, downregulating the autonomic fight-or-flight sympathetic response and releasing cervical/suboccipital tension.
 
