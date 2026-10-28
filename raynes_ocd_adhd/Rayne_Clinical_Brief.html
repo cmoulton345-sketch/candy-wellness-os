@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Rayne Moulton — Clinical Medication & Symptom Brief (NP Consultation)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b1329;
+      --surface: #111e38;
+      --card: #182848;
+      --border: rgba(255, 255, 255, 0.1);
+      --blue: #3b82f6;
+      --blue-dim: rgba(59, 130, 246, 0.15);
+      --teal: #06b6d4;
+      --emerald: #10b981;
+      --amber: #f59e0b;
+      --rose: #f43f5e;
+      --purple: #a855f7;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-sub: #cbd5e1;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      padding-bottom: 60px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* TOP BAR */
+    header {
+      background: rgba(17, 30, 56, 0.95);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 12px 20px;
+    }
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .brand-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .brand-icon {
+      width: 38px;
+      height: 38px;
+      background: linear-gradient(135deg, #3b82f6, #06b6d4);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+    }
+    .brand-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: -0.2px;
+    }
+    .brand-sub {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+    .btn-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn {
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+      transition: all 0.15s ease;
+      border: 1px solid transparent;
+    }
+    .btn-primary {
+      background: var(--blue);
+      color: white;
+    }
+    .btn-primary:hover { background: #2563eb; }
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--text);
+      border-color: var(--border);
+    }
+    .btn-secondary:hover { background: rgba(255, 255, 255, 0.14); }
+    .btn-outline {
+      background: transparent;
+      color: var(--teal);
+      border-color: rgba(6, 182, 212, 0.4);
+    }
+    .btn-outline:hover { background: rgba(6, 182, 212, 0.1); }
+
+    .container {
+      max-width: 960px;
+      margin: 20px auto 0;
+      padding: 0 16px;
+    }
+
+    /* CLINICAL PAPER (WHITE EXECUTIVE DOSSIER) */
+    .clinical-paper {
+      background: #ffffff;
+      color: #0f172a;
+      border-radius: 12px;
+      padding: 36px 40px;
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.45);
+      font-size: 10pt;
+      line-height: 1.5;
+    }
+    .cp-header {
+      border-bottom: 2.5px solid #1e3a8a;
+      padding-bottom: 14px;
+      margin-bottom: 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+    }
+    .cp-title {
+      font-size: 17pt;
+      font-weight: 800;
+      color: #1e3a8a;
+      letter-spacing: -0.3px;
+    }
+    .cp-subtitle {
+      font-size: 10pt;
+      color: #475569;
+      font-weight: 500;
+      margin-top: 3px;
+    }
+    .cp-meta-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      background: #f1f5f9;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      padding: 12px 16px;
+      gap: 12px;
+      margin-bottom: 20px;
+      font-size: 9pt;
+    }
+    .cp-meta-item strong {
+      color: #64748b;
+      display: block;
+      font-size: 7.8pt;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 3px;
+    }
+    
+    .cp-section { margin-bottom: 22px; }
+    .cp-section-title {
+      font-size: 11.5pt;
+      font-weight: 700;
+      color: #1e3a8a;
+      border-bottom: 1.5px solid #e2e8f0;
+      padding-bottom: 5px;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .cp-box {
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 12px 16px;
+      background: #f8fafc;
+      font-size: 9.3pt;
+      line-height: 1.5;
+    }
+    .cp-box ul { padding-left: 20px; margin: 4px 0; }
+    .cp-box li { margin-bottom: 5px; }
+
+    table.cp-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 8.6pt;
+      margin-top: 8px;
+    }
+    table.cp-table th {
+      background: #1e3a8a;
+      color: white;
+      text-align: left;
+      padding: 7px 10px;
+      font-weight: 600;
+      font-size: 8pt;
+      text-transform: uppercase;
+    }
+    table.cp-table td {
+      padding: 8px 10px;
+      border-bottom: 1px solid #e2e8f0;
+      vertical-align: top;
+      color: #1e293b;
+    }
+    table.cp-table tr:nth-child(even) td { background: #f8fafc; }
+
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: #10b981;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+      opacity: 0;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 2000;
+      pointer-events: none;
+    }
+    .toast.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+
+    @media print {
+      body { background: white; padding-bottom: 0; }
+      header, .no-print, .toast { display: none !important; }
+      .container { max-width: 100%; margin: 0; padding: 0; }
+      .clinical-paper {
+        border-radius: 0;
+        box-shadow: none;
+        padding: 0;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .clinical-paper { padding: 20px 16px; font-size: 9.5pt; }
+      .cp-meta-grid { grid-template-columns: 1fr; gap: 8px; }
+      .cp-header { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP HEADER -->
+  <header>
+    <div class="header-inner">
+      <div class="brand-wrap">
+        <div class="brand-icon">🩺</div>
+        <div>
+          <div class="brand-title">Rayne Moulton — Clinical Brief</div>
+          <div class="brand-sub">Fluoxetine 50mg + Vyvanse 10mg Protocol</div>
+        </div>
+      </div>
+      <div class="btn-group no-print">
+        <button class="btn btn-secondary" onclick="copyShareLink()">🔗 Copy Link</button>
+        <a href="rayne_tracker.html" class="btn btn-outline">📱 Interactive Tracker</a>
+        <button class="btn btn-primary" onclick="window.print()">🖨️ Print / Save PDF</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="clinical-paper">
+      
+      <div class="cp-header">
+        <div>
+          <div class="cp-title">CLINICAL MEDICATION &amp; SYMPTOM BRIEF</div>
+          <div class="cp-subtitle">ADHD (Vyvanse) Initial Titration &amp; OCD (Fluoxetine) Evaluation</div>
+        </div>
+        <div style="text-align: right;">
+          <div style="font-weight: 700; color: #1e3a8a;">APPOINTMENT: NOV 5, 2026</div>
+          <div style="font-size: 8.5pt; color: #64748b;">Primary Prescriber / Nurse Practitioner</div>
+        </div>
+      </div>
+
+      <div class="cp-meta-grid">
+        <div class="cp-meta-item">
+          <strong>Patient Name &amp; DOB</strong>
+          Rayne Moulton • Age 18
+        </div>
+        <div class="cp-meta-item">
+          <strong>Current Active Regimen</strong>
+          Fluoxetine 50 mg AM • Vyvanse 10 mg AM • Slynd 4 mg PM
+        </div>
+        <div class="cp-meta-item">
+          <strong>Trial Duration Logged</strong>
+          Oct 18, 2026 – Present (Daily Observation)
+        </div>
+      </div>
+
+      <!-- EXECUTIVE SUMMARY -->
+      <div class="cp-section">
+        <div class="cp-section-title">1. Executive Clinical Synthesis (Oct 18 – Oct 26 Observations)</div>
+        <div class="cp-box">
+          <ul>
+            <li><strong>ADHD Focus &amp; Efficacy:</strong> Focus scored 4–5/5 on Day 1 with high productive output, settling into a 3/5 plateau on school days. Demonstrates that 10 mg is well-tolerated but subtherapeutic for sustained executive function and attention.</li>
+            <li><strong>Affect &amp; Personality Preservation:</strong> Critical win — 10 mg did <em>not</em> induce the flat, numb, "blah" emotional blunting Rayne previously experienced on 30 mg. Affect remains expressive, though late afternoon "rebound" dips (3:30–4:30 PM) occur as the low dose clears early.</li>
+            <li><strong>Headache Trajectory (8 of 9 Days):</strong> Intermittent daily headaches observed. Clinical correlates: (1) Stimulant vasoconstriction &amp; hydration deficit, (2) mild appetite suppression delaying lunch fuel, and (3) subconscious study jaw clenching.</li>
+            <li><strong>OCD Checking vs. Thumb Picking (BFRB):</strong> Checking loops (phone checking) flared during Days 1–3 onboarding, but stabilized significantly by Day 5 under 50 mg Fluoxetine. Thumb picking (excoriation) emerged Oct 23, 25, 26, exacerbated by the late-luteal PMS hormone drop.</li>
+            <li><strong>Hormonal Compounding (PMS):</strong> Cycle timing directly reduced dopamine receptor sensitivity over Oct 24–26, correlating with lower focus ratings (3/5) and increased repetitive thumb picking.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- CLINICAL TABLE -->
+      <div class="cp-section">
+        <div class="cp-section-title">2. Daily Observation Log (October 18 – November 5)</div>
+        <table class="cp-table">
+          <thead>
+            <tr>
+              <th style="width: 12%;">Date</th>
+              <th style="width: 9%;">Focus</th>
+              <th style="width: 16%;">Affect / Mood</th>
+              <th style="width: 14%;">Appetite</th>
+              <th style="width: 18%;">Headaches / Physical</th>
+              <th style="width: 31%;">OCD, Thumb Picking &amp; Notes</th>
+            </tr>
+          </thead>
+          <tbody id="cp-table-body">
+            <!-- Dynamic rows populated from local storage or defaults -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- NP AGENDA -->
+      <div class="cp-section">
+        <div class="cp-section-title">3. Collaborative Discussion Agenda for Nurse Practitioner (Nov 5 Review)</div>
+        <div class="cp-box">
+          <ol style="padding-left: 20px; line-height: 1.55;">
+            <li style="margin-bottom: 7px;"><strong>Vyvanse Titration from 10 mg to 20 mg:</strong> 10 mg has proven that amphetamine therapy is tolerated without emotional blunting, but school focus remains incomplete (3/5). Request stepping to <strong>20 mg Vyvanse</strong> as the ideal intermediate target.</li>
+            <li style="margin-bottom: 7px;"><strong>Afternoon Rebound &amp; Headache Strategy:</strong> Confirm clinical strategies for 3:30–4:30 PM wear-off (hydration with electrolytes, mandatory protein at breakfast, and evening Magnesium Bisglycinate to relieve study jaw tension).</li>
+            <li style="margin-bottom: 7px;"><strong>OCD &amp; Thumb Picking (BFRB) Protocol:</strong> 50 mg Fluoxetine has stabilized intrusive checking loops. However, repetitive thumb picking flared during PMS.</li>
+            <li style="margin-bottom: 7px;"><strong>NAC SAP (N-Acetylcysteine) Inquiry:</strong> Propose adding practitioner-grade <strong>NAC SAP (600 mg daily)</strong> as an adjunctive glutamate modulator once the 20 mg Vyvanse dose is dialed in, targeting residual CSTC striatal tension and skin picking.</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- PHARMACOGENOMIC & METABOLIC CONTEXT -->
+      <div class="cp-section">
+        <div class="cp-section-title">4. Pharmacogenomic &amp; Metabolic Context (Pillcheck Report)</div>
+        <div class="cp-box">
+          <ul>
+            <li><strong>CYP2D6 Interaction:</strong> Patient is a normal metabolizer. However, Fluoxetine at 50 mg is a potent CYP2D6 inhibitor, which moderately extends the active elimination half-life of dextroamphetamine. This confirms that <strong>10 mg to 20 mg steps</strong> provide optimal safety and avoid receptor saturation.</li>
+            <li><strong>Nutritional Iron Cofactor (Ferritin):</strong> Ferritin baseline was 32 ng/mL. Iron is the essential cofactor for tyrosine hydroxylase (dopamine synthesis). Alternate-day gentle iron bisglycinate remains indicated to optimize ferritin toward 50–70 ng/mL.</li>
+            <li><strong>Emergency Red Flags:</strong> Unexplained tremors, fever/sweating, extreme agitation, dilated pupils, or sustained resting tachycardia (&gt;110 bpm) warrant immediate clinic contact.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="toast" id="toast">✓ Copied link to clipboard!</div>
+
+  <script>
+    const defaultData = [
+      { date: '2026-10-18', displayDate: 'Sun, Oct 18', taken: true, focus: 5, mood: 'Happy at first, then very tired', appetite: 'Ate okay', headache: 'Yes (headache & tired)', sleep: 'Hard to settle down', ocd: 'Mild (checking phone)', thumbPicking: 'None', pms: false, fluShot: false, notes: 'Day 1 on 10mg Vyvanse. High focus, did lots of work, then hit fatigue crash.' },
+      { date: '2026-10-19', displayDate: 'Mon, Oct 19', taken: true, focus: 3, mood: 'Mood dipped ~1 hr, then fine', appetite: 'Ate okay', headache: 'No headache', sleep: 'Needed mom to settle', ocd: 'High checking at night', thumbPicking: 'None', pms: false, fluShot: false, notes: 'First school day on Vyvanse. High OCD checking at night; came down to hang out with mom to settle.' },
+      { date: '2026-10-20', displayDate: 'Tue, Oct 20', taken: true, focus: 3, mood: 'Good', appetite: 'Hungry, ate a bit', headache: 'Yes + belly cramps', sleep: 'Normal', ocd: 'Off, checking phone', thumbPicking: 'None', pms: false, fluShot: false, notes: 'OCD still a bit off today; lots of phone checking. Belly cramps reported.' },
+      { date: '2026-10-21', displayDate: 'Wed, Oct 21', taken: true, focus: 3, mood: 'Didn\'t feel bad', appetite: 'Low (mom made her eat)', headache: 'Yes (took afternoon nap)', sleep: 'Fell asleep easily', ocd: 'Still checking phone', thumbPicking: 'None', pms: false, fluShot: false, notes: 'Didn\'t feel bad. Wasn\'t hungry but mom made her eat. Had a headache, was very tired and had a nap. No trouble falling asleep; still checking phone.' },
+      { date: '2026-10-22', displayDate: 'Thu, Oct 22', taken: true, focus: 3, mood: 'Seems fair', appetite: 'Hungry for lunch', headache: 'Yes', sleep: 'Normal', ocd: 'Improved (not checking as much)', thumbPicking: 'None', pms: false, fluShot: false, notes: 'OCD noticeably improving; not checking phone as much as earlier in the week. Good lunch appetite.' },
+      { date: '2026-10-23', displayDate: 'Fri, Oct 23', taken: true, focus: 2, mood: 'Bad mood, tired, anxious', appetite: 'Low appetite', headache: 'All day headache', sleep: 'Didn\'t sleep well', ocd: 'Anxiety elevated', thumbPicking: 'Picking thumbs a lot', pms: false, fluShot: false, notes: 'Poor night sleep before. Hard to focus, brain felt "meh". Severe headache and started picking thumbs a lot.' },
+      { date: '2026-10-24', displayDate: 'Sat, Oct 24', taken: true, focus: 3, mood: 'Good, but felt off', appetite: 'Good at lunch', headache: 'Yes + sore arm (flu shot)', sleep: 'Normal', ocd: 'Moderate checking', thumbPicking: 'Mild', pms: true, fluShot: true, notes: 'Got flu shot (arm very sore). PMSing active, adding fatigue. Lunch appetite remained solid.' },
+      { date: '2026-10-25', displayDate: 'Sun, Oct 25', taken: true, focus: 3, mood: 'Not bad / not happy ("meh")', appetite: 'Fair', headache: 'Yes (headache again)', sleep: 'Good night', ocd: 'Medium (1-2x, better at night)', thumbPicking: 'Picking thumbs a lot', pms: true, fluShot: false, notes: 'Day 8 on Vyvanse. Mood steady "meh". Headache lingering. PMS active. Repetitive thumb picking active.' },
+      { date: '2026-10-26', displayDate: 'Mon, Oct 26', taken: true, focus: 3, mood: 'Steady "meh"', appetite: 'Fair', headache: 'Yes (headache again)', sleep: 'Good', ocd: 'Medium (1-2x, better at night)', thumbPicking: 'Picking thumbs a lot', pms: true, fluShot: false, notes: 'Day 9. Vyvanse 10mg taken 8:00 AM. 3/5 focus plateau confirmed without emotional numbness. Headaches persist; thumb picking ongoing during PMS.' }
+    ];
+
+    function getActiveData() {
+      try {
+        const stored = localStorage.getItem('rayne_med_tracker_data_v1');
+        if (stored) {
+          const parsed = JSON.parse(stored);
+          if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+        }
+      } catch (e) {
+        console.warn('LocalStorage load error', e);
+      }
+      return defaultData;
+    }
+
+    function renderClinicalTable() {
+      const data = getActiveData();
+      const tbody = document.getElementById('cp-table-body');
+      const loggedDays = data.filter(d => d.notes || d.mood || d.focus > 0);
+
+      tbody.innerHTML = loggedDays.map(item => {
+        return `
+          <tr>
+            <td><strong>${item.displayDate}</strong><br><span style="font-size:7.5pt; color:#64748b;">${item.taken ? 'Vyvanse 10mg' : 'Pre-Trial'}</span></td>
+            <td><strong>${item.focus ? `${item.focus}/5` : '—'}</strong></td>
+            <td>${item.mood || '—'}</td>
+            <td>${item.appetite || '—'}</td>
+            <td>
+              ${item.headache || '—'}
+              ${item.fluShot ? '<br><em style="color:#0284c7;">+ Flu shot soreness</em>' : ''}
+            </td>
+            <td>
+              ${item.notes || '—'}
+              ${item.thumbPicking && item.thumbPicking.includes('lot') ? '<br><strong style="color:#dc2626;">• Thumb picking (excoriation) frequent</strong>' : ''}
+              ${item.pms ? '<br><em style="color:#be185d;">• PMS / late-luteal phase active</em>' : ''}
+            </td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    function copyShareLink() {
+      navigator.clipboard.writeText(window.location.href).then(() => {
+        showToast('✓ Link copied to clipboard!');
+      }).catch(() => {
+        prompt('Copy link below:', window.location.href);
+      });
+    }
+
+    function showToast(msg) {
+      const t = document.getElementById('toast');
+      t.innerText = msg;
+      t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), 2500);
+    }
+
+    document.addEventListener('DOMContentLoaded', renderClinicalTable);
+  </script>
+</body>
+</html>

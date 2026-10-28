@@ -347,3 +347,26 @@ I'm ready to respond to the updated call, sir.
     - **BHRT & Movement Strategy:**
       - Progesterone Plan: Gentle half-pump tonight (Tuesday / Day 23) to cushion the downcast, or pause if sleep and nervous system continue to feel deep and settled.
       - Hydration & gentle restorative flow / Legs Up the Wall to support lymphatic drainage and kidney fluid clearance.
+
+- **2026-10-27 (Afternoon & Evening)** (FRIDAY):
+  - **Rayne NBCC Practical Nursing Withdrawal & Student Loan Protection:**
+    - *Decision & Strategy:* Rayne made the definite decision to step away from Practical Nursing immediately due to severe anxiety/OCD strain. Capitalized on NBCC Student Success Week (Oct 26–30 Reading Week) for a quiet, low-friction exit without missed classes or peer questioning.
+    - *Emails Sent (Tuesday ~12:15 PM):*
+      - *Kendra Foote (Options Outreach):* Notified that Rayne is dropping out immediately; requested cancellation of the Winter 2027 student loan disbursement so $0 is released or owed. Awaiting Kendra's reply Wednesday morning.
+      - *Amanda Geldart (Therapist):* Requested clinical supporting letter for medical withdrawal to protect Canada Student Grants ($2,800 disability grant) and keep permanent disability profile active. Requested upcoming session focus on decompression and releasing "quitter" guilt.
+      - *Direct Cross-CC:* Candy CC'd Kendra and Amanda on each other's threads to allow direct professional coordination.
+    - *Final NBCC Withdrawal Notice Prepared (Wednesday Morning Send):*
+      - Formatted official withdrawal notice under NBCC Policy: Student-Initiated Withdrawal, addressed to Academic Chair Tammy Groom (`Tammy.Groom@nbcc.ca`), Coordinating Instructor Betty Lydon (`Betty.Lydon@nbcc.ca`), Registrar (`studentrecords@nbcc.ca`), and Learning Strategist Jody Beresford (`jody.beresford@nbcc.ca`).
+      - Stated clearly that due to personal circumstances, Rayne declines an in-person exit meeting and decision is final.
+      - Wiped Term 2 registration and cancelled Winter billing.
+    - *Master Roadmap Filed:* Created master files [`raynes_ocd_adhd/Rayne_NBCC_Withdrawal_Action_Plan.md`](file:///Users/valuedcustomer/Downloads/flowstate_ai_os_candy/raynes_ocd_adhd/Rayne_NBCC_Withdrawal_Action_Plan.md) and interactive HTML [`raynes_ocd_adhd/Rayne_NBCC_Withdrawal_Action_Plan.html`](file:///Users/valuedcustomer/Downloads/flowstate_ai_os_candy/raynes_ocd_adhd/Rayne_NBCC_Withdrawal_Action_Plan.html) with 1-click clipboard copy for Wednesday morning execution.
+
+- **2026-10-27 (Night)** (SOMA):
+  - **Rayne Clinical Brief & Calendar Sharing Links:**
+    - Created and deployed dedicated standalone web page `rayne_clinical_brief.html` (and mirrored to `raynes_ocd_adhd/Rayne_Clinical_Brief.html`) featuring the full executive clinical synthesis, 9-day observation log (Oct 18–26), NP Nov 5 discussion agenda, and pharmacogenomic notes.
+    - Updated `rayne_tracker.html` and `Rayne_Medication_Tracking_Sheet.html` with deep-link hash routing (`#brief` / `#clinical`) to jump directly to the clinical brief tab on load.
+    - Verified Candy's living cycle calendar (`calendar/` -> `candy_cycle_calendar_sept_oct_2026.html`) updated with Oct 27 recovery milestone (Sleep 89, Readiness 92, temp plunge -0.1°F, zero alcohol hold, 100% Ozempic-free).
+  - **Mom's Clinical Care & Vitals Architecture (Trigeminal Neuralgia, BP & Dizziness):**
+    - Built and deployed `moms_care_tracker.html` (senior-friendly, large print, seated vs standing orthostatic BP log, 0–10 TN nerve pain & branch tracker, dizziness correlation, and 1-click clipboard/print for doctor).
+    - Formulated comprehensive clinical intake guide and home comfort protocol in `wellness_and_mobility/moms_clinical_care_plan_trigeminal_and_vitals.md` covering the triad of facial nerve shocks, heavy anticonvulsants (Tegretol/Gabapentin) + antihypertensive orthostatic hypotension, the "30-second sit-to-stand" rule, wind scarves, and lukewarm soft food strategy for when Mom returns from Ottawa.
+

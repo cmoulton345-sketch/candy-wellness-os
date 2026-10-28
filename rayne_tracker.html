@@ -1538,10 +1538,24 @@
       }, 2600);
     }
 
-    // INITIAL LOAD
+    // INITIAL LOAD & DEEP LINK HASH ROUTING
+    function applyHashRoute() {
+      const hash = (window.location.hash || '').toLowerCase();
+      if (hash === '#clinical' || hash === '#brief') {
+        switchView('clinical');
+      } else if (hash === '#table' || hash === '#grid') {
+        switchView('table');
+      } else if (hash === '#cards' || hash === '#home') {
+        switchView('cards');
+      }
+    }
+
     document.addEventListener('DOMContentLoaded', () => {
       renderApp();
+      applyHashRoute();
     });
+
+    window.addEventListener('hashchange', applyHashRoute);
   </script>
 </body>
 </html>
