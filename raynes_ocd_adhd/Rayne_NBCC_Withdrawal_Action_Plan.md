@@ -48,9 +48,13 @@ I am writing to formally request my official withdrawal from the Practical Nursi
 
 Please process the required Student Status Form with the Registrar's Office so my official withdrawal is completed and my course registration and billing for Term 2 (Winter 2027) are cancelled. 
 
-Due to personal circumstances, I am unable to attend an in-person exit meeting. My decision is final, and I appreciate your prompt processing of the internal withdrawal form.
+While personal health circumstances have contributed to this difficult decision, a significant factor has also been that my approved academic accommodations were unfortunately never implemented in my classes this term. Trying to navigate this rigorous program without the necessary supports in place has made continuing untenable. 
 
-Thank you for your guidance and support during my time at NBCC.
+Supporting documentation from my therapist will be submitted directly to MLOA@nbcc.ca for my student file. 
+
+Due to personal health circumstances, I am unable to attend an in-person exit meeting. My decision is final, and I appreciate your prompt processing of the internal withdrawal form.
+
+Please advise if there is anything further for me to do. Thank you for your time and assistance.
 
 Sincerely,
 
@@ -98,10 +102,60 @@ Practical Nursing — Saint John Campus
 
 ---
 
-## 7. Tomorrow Morning Checklist (Wednesday, Oct 28)
+## 7. Execution Checklist & Completed Milestones
 
-- [ ] **Step 1:** Review email draft with Rayne over morning coffee.
-- [ ] **Step 2:** Insert Rayne's NBCC Student ID into the subject line and signature.
-- [ ] **Step 3:** Send the email from Rayne's student email to Tammy, Betty, and Student Records.
-- [ ] **Step 4:** Watch for Kendra's reply to Candy's email from Tuesday regarding any quick portal confirmation.
-- [ ] **Step 5:** Turn off school alarms, pack away nursing books, and let Rayne rest.
+- [x] **Step 1 (COMPLETED):** Review email draft with Rayne over morning coffee.
+- [x] **Step 2 (COMPLETED):** Insert Rayne's NBCC Student ID (`5110565`) into the subject line and signature.
+- [x] **Step 3 (COMPLETED):** Sent the official withdrawal email on Wednesday, Oct 28 at ~2:24 PM to Tammy Groom, Betty Lydon, and Student Records.
+- [x] **Step 4 (COMPLETED):** Kendra confirmed in writing that loan file remains in good standing, funding for 2026–2027 is closed, and Amanda's letter will protect disability grants.
+- [x] **Step 5 (COMPLETED):** Jody Beresford's Thursday 11:30 AM accommodation meeting officially cancelled via Reply All confirming permanent withdrawal.
+- [x] **Step 6 (COMPLETED):** Paul's assistive technology (Read&Write) software session cancelled via polite withdrawal notification.
+- [ ] **Step 7 (NEXT):** Send UNB Parking Services email to `parking@unb.ca` for pro-rated refund on HotSpot permit (`KHY712`, ~$166.40).
+- [ ] **Step 8 (NEXT):** Drop off loaned assistive tech laptop at Options Outreach when convenient.
+
+---
+
+## 8. Complete Correspondence Archive (Official Record)
+
+### A. Jody Beresford (Accessibility) & Rayne's Clarification (Reply All)
+* **Jody's Note:**
+  > *"Hi Rayne, I’m sorry to learn that you are dealing with health issues. Based on your decision to take a MLOA, do you still want to meet on Thursday at 11:30am or would you prefer to meet when you are ready to return to your studies? Wishing you Well,"*
+* **Rayne's "Reply All" Clarification:**
+  > *"Hi Jody, Thank you so much for reaching out and for your kind words. To clarify for everyone, I am doing a full, permanent withdrawal from the Practical Nursing program, so we can go ahead and cancel our meeting for this Thursday at 11:30 AM. I will not be returning to the nursing program, but I truly appreciate all of your time, support, and kindness this term. Wishing you all the best, Rayne"*
+
+### B. Paul (Assistive Technology / Read&Write) & Rayne's Reply
+* **Paul's Note:** Offered to meet Thursday Oct 29 after 11:30 AM on Teams or AHEC to set up Read&Write software on Mac and iPad.
+* **Rayne's Response:**
+  > *"Hi Paul, Thank you so much for reaching out and for your willingness to help me get Read&Write set up on my Mac and iPad. I wanted to let you know that I have officially withdrawn from the Practical Nursing program at NBCC, so we will not need to schedule a meeting for tomorrow or moving forward. I really appreciate your time, flexibility, and kindness in offering to help me. Wishing you all the best, Rayne Moulton"*
+
+### C. Kendra Foote (Options Outreach) Equipment & Loan Wrap-Up
+* **Candy's Sent Reply:**
+  > *"Hi Kendra, Thank you so much for your kind, thoughtful words and your guidance on this. Your support means the world to our family, especially during such a stressful time. It is a huge relief to know Rayne’s loan file and disability standing remain protected for her future. We sent her official withdrawal notice to NBCC this morning... We would love to arrange a time to drop off Rayne’s equipment at your office so you can close out her current AT loan. What days and times work best for you this week or early next week? Should Rayne reset the laptop/device back to factory settings before bringing it in, or does your office prefer to handle the IT wipe on your end? Thank you again..."*
+
+### D. UNB HotSpot Parking Refund Email (Plate: KHY712)
+* **To:** `parking@unb.ca`
+* **CC:** `support@htsp.ca, traycan@hotmail.com`
+* **Subject:** Parking Permit Refund Request (Student Withdrawal) — Rayne Moulton (Plate: KHY712)
+* **Body:**
+  ```text
+  Dear UNB Parking Services & HotSpot Support,
+
+  I am writing to formally request the cancellation and pro-rated refund for my UNB student parking permit, as I am withdrawing from my studies at the Allied Health Centre / NBCC effective immediately.
+
+  Here are the exact permit details from my HotSpot account:
+  * Student Name: Rayne Moulton
+  * HotSpot Account Email: [Insert Email used for this HotSpot login]
+  * Permit Type: Sept-June Student (Student/General Lots)
+  * License Plate: KHY712
+  * Amount Paid: $208.00
+  * Purchase Date: 2026-08-18 (Valid: 2026-09-01 to 2027-06-30)
+
+  Under UNB Parking Regulations regarding student withdrawal, could you please cancel this virtual permit in the HotSpot system and process the pro-rated refund for the 8 unused months back to the original credit/debit card on file?
+
+  Thank you for your prompt assistance.
+
+  Sincerely,
+
+  Rayne Moulton (and Candy Moulton)
+  ```
+

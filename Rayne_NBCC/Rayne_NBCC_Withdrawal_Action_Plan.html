@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rayne Moulton — NBCC Practical Nursing Withdrawal Master Plan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b1329;
+      --surface: #111e38;
+      --card: #182848;
+      --card-hover: #1f335b;
+      --border: rgba(255, 255, 255, 0.1);
+      --border-accent: rgba(59, 130, 246, 0.4);
+      --blue: #3b82f6;
+      --teal: #06b6d4;
+      --emerald: #10b981;
+      --amber: #f59e0b;
+      --rose: #f43f5e;
+      --purple: #a855f7;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-sub: #cbd5e1;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      padding: 24px 16px 80px;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .header {
+      text-align: center;
+      padding: 28px 20px;
+      background: var(--surface);
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      margin-bottom: 24px;
+      position: relative;
+      overflow: hidden;
+    }
+    .header::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 4px;
+      background: linear-gradient(90deg, var(--teal), var(--blue), var(--purple));
+    }
+    .badge {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      background: rgba(16, 185, 129, 0.2);
+      color: var(--emerald);
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      margin-bottom: 12px;
+    }
+    h1 { font-size: 1.85rem; font-weight: 700; margin-bottom: 8px; color: var(--text); }
+    .subtitle { color: var(--text-muted); font-size: 0.95rem; }
+    
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 22px;
+      margin-bottom: 20px;
+    }
+    .card-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--teal);
+    }
+    .card-title.blue { color: var(--blue); }
+    .card-title.amber { color: var(--amber); }
+    .card-title.purple { color: var(--purple); }
+
+    .email-box {
+      background: var(--card);
+      border: 1px solid var(--border-accent);
+      border-radius: 10px;
+      padding: 16px;
+      margin: 14px 0;
+      position: relative;
+    }
+    .field-row {
+      margin-bottom: 10px;
+      font-size: 0.92rem;
+    }
+    .field-label {
+      font-weight: 700;
+      color: var(--teal);
+      display: inline-block;
+      width: 75px;
+    }
+    .field-value {
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--text);
+      background: rgba(0, 0, 0, 0.25);
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-size: 0.88rem;
+      word-break: break-all;
+    }
+    .email-body {
+      background: rgba(0, 0, 0, 0.35);
+      padding: 14px;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 0.95rem;
+      color: var(--text-sub);
+      white-space: pre-wrap;
+      line-height: 1.6;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      margin-top: 12px;
+    }
+    .copy-btn {
+      background: var(--blue);
+      color: #fff;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.88rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 10px;
+      transition: all 0.2s;
+    }
+    .copy-btn:hover { background: #2563eb; transform: translateY(-1px); }
+
+    ul { list-style: none; padding-left: 0; }
+    li {
+      position: relative;
+      padding-left: 26px;
+      margin-bottom: 10px;
+      font-size: 0.95rem;
+      color: var(--text-sub);
+    }
+    li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--emerald);
+      font-weight: 700;
+    }
+    .table-container {
+      overflow-x: auto;
+      margin-top: 12px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+    th, td {
+      padding: 10px 12px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    th {
+      background: var(--card);
+      color: var(--teal);
+      font-weight: 600;
+    }
+    td code {
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--amber);
+      font-size: 0.82rem;
+    }
+    .checklist-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      background: var(--card);
+      padding: 12px 14px;
+      border-radius: 8px;
+      margin-bottom: 8px;
+      border: 1px solid var(--border);
+    }
+    .check-box {
+      min-width: 20px;
+      height: 20px;
+      border-radius: 4px;
+      border: 2px solid var(--teal);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+    }
+    .footer {
+      text-align: center;
+      padding: 24px;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="badge">Action Plan Ready</div>
+    <h1>Rayne Moulton — Practical Nursing Withdrawal Guide</h1>
+    <div class="subtitle">Prepared by Friday • Flowstate AI OS • Wednesday Morning Ready</div>
+  </div>
+
+  <!-- SECTION 1: THE FINAL EMAIL -->
+  <div class="card">
+    <div class="card-title blue">
+      <span>✉️</span> Step 1: The Final NBCC Withdrawal Email (Send Wednesday Morning)
+    </div>
+    <p style="color: var(--text-sub); font-size: 0.92rem; margin-bottom: 12px;">
+      Send this directly from <strong>Rayne's NBCC student email account</strong> to the college administrators:
+    </p>
+
+    <div class="email-box" id="emailContent">
+      <div class="field-row">
+        <span class="field-label">To:</span>
+        <span class="field-value">Tammy.Groom@nbcc.ca, Betty.Lydon@nbcc.ca, studentrecords@nbcc.ca</span>
+      </div>
+      <div class="field-row">
+        <span class="field-label">CC:</span>
+        <span class="field-value">jody.beresford@nbcc.ca, success@nbcc.ca, traycan@hotmail.com</span>
+      </div>
+      <div class="field-row">
+        <span class="field-label">Subject:</span>
+        <span class="field-value">Notice of Program Withdrawal — Rayne Moulton</span>
+      </div>
+      <div class="email-body" id="emailBodyText">Dear Academic Chair Tammy Groom, Coordinating Instructor Betty Lydon & Registrar's Office,
+CC: Accessibility Services,
+
+I am writing to formally request my official withdrawal from the Practical Nursing program at NBCC Saint John, effective immediately. 
+
+Please process the required Student Status Form with the Registrar's Office so my official withdrawal is completed and my course registration and billing for Term 2 (Winter 2027) are cancelled. 
+
+While personal health circumstances have contributed to this difficult decision, a significant factor has also been that my approved academic accommodations were unfortunately never implemented in my classes this term. Trying to navigate this rigorous program without the necessary supports in place has made continuing untenable. 
+
+Supporting documentation from my therapist will be submitted directly to MLOA@nbcc.ca for my student file. 
+
+Due to personal health circumstances, I am unable to attend an in-person exit meeting. My decision is final, and I appreciate your prompt processing of the internal withdrawal form.
+
+Please advise if there is anything further for me to do. Thank you for your time and assistance.
+
+Sincerely,
+
+Rayne Moulton  
+Student ID: [Insert Rayne's Student ID Number]  
+Practical Nursing — Saint John Campus</div>
+    </div>
+    
+    <button class="copy-btn" onclick="copyEmail()">📋 Copy Email Text to Clipboard</button>
+    <span id="copyConfirm" style="color: var(--emerald); font-size: 0.85rem; margin-left: 10px; display: none;">Copied!</span>
+  </div>
+
+  <!-- SECTION 2: STATUS OF TODAY'S EMAILS -->
+  <div class="card">
+    <div class="card-title">
+      <span>✅</span> Status of Emails Sent Today (Tuesday, Oct 27)
+    </div>
+    <ul>
+      <li><strong>Kendra Foote (Options Employment Outreach):</strong> Sent Tuesday ~12:15 PM. Notified that Rayne is dropping out now and requested cancellation of the Winter 2027 student loan disbursement. Kendra is likely checking provincial procedures and will reply Wednesday morning.</li>
+      <li><strong>Amanda Geldart (Therapist):</strong> Sent Tuesday ~12:15 PM. Requested clinical medical/mental health support note and an upcoming session focused on emotional decompression and letting go of guilt.</li>
+      <li><strong>Cross-CC Masterstroke:</strong> Both Kendra and Amanda were CC'd on each other's emails, allowing them to coordinate paperwork directly if needed.</li>
+    </ul>
+  </div>
+
+  <!-- SECTION 3: KEY CONTACTS DIRECTORY -->
+  <div class="card">
+    <div class="card-title purple">
+      <span>👥</span> Key NBCC Contacts on the Email
+    </div>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Role</th>
+            <th>Email</th>
+            <th>Why They Are Included</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Tammy Groom</strong></td>
+            <td>Academic Chair (AC)</td>
+            <td><code>Tammy.Groom@nbcc.ca</code></td>
+            <td>Signs & submits the internal <em>Student Status Form</em> to Registrar.</td>
+          </tr>
+          <tr>
+            <td><strong>Betty Lydon</strong></td>
+            <td>Coordinating Instructor (CI)</td>
+            <td><code>Betty.Lydon@nbcc.ca</code></td>
+            <td>Head of nursing faculty; officially represents teaching team.</td>
+          </tr>
+          <tr>
+            <td><strong>Student Records</strong></td>
+            <td>College Registrar</td>
+            <td><code>studentrecords@nbcc.ca</code></td>
+            <td>Formally updates student database and zeroes out Winter tuition.</td>
+          </tr>
+          <tr>
+            <td><strong>Jody Beresford</strong></td>
+            <td>Accessibility Services</td>
+            <td><code>jody.beresford@nbcc.ca</code></td>
+            <td>Learning Strategist; closes Rayne's accommodation file cleanly.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- SECTION 4: STUDENT LOAN SAFETY NET -->
+  <div class="card">
+    <div class="card-title amber">
+      <span>🛡️</span> Student Loan & Financial Protections
+    </div>
+    <ul>
+      <li><strong>Winter Loan Disbursement is $0:</strong> The second half of the loan has not been paid. Dropping out now cancels the January release completely. Rayne will not receive or owe any winter loan funds.</li>
+      <li><strong>0.00% Permanent Interest:</strong> Both Canada and New Brunswick student loans are permanently interest-free. The loan will never grow while she is off.</li>
+      <li><strong>6-Month Payment Grace Period:</strong> Once withdrawn, a standard 6-month non-repayment window begins automatically with <strong>$0.00 monthly payments</strong>.</li>
+      <li><strong>Permanent Disability Grants Protected:</strong> Amanda's therapist note protects Rayne's Fall Canada Student Grants ($2,800 disability grant) from clawback under medical leave rules.</li>
+      <li><strong>Ready for Fall 2027:</strong> Rayne's disability status remains permanently locked in her NB Student Aid portal, ready for when she applies for UNBSJ or Justice Studies next fall!</li>
+    </ul>
+  </div>
+
+  <!-- SECTION 5: COMPLETED MILESTONES & NEXT STEPS -->
+  <div class="card">
+    <div class="card-title">
+      <span>🎉</span> Completed Milestones & Remaining Next Steps
+    </div>
+    <div class="checklist-item">
+      <div class="check-box" style="background: rgba(16,185,129,0.3); color: var(--emerald);">✓</div>
+      <div><strong>Withdrawal Notice Sent:</strong> Official withdrawal email transmitted Wednesday, Oct 28 at ~2:24 PM to Tammy Groom, Betty Lydon, and Student Records.</div>
+    </div>
+    <div class="checklist-item">
+      <div class="check-box" style="background: rgba(16,185,129,0.3); color: var(--emerald);">✓</div>
+      <div><strong>Jody Beresford Meeting Cancelled:</strong> Replied All to Jody, Tammy, and Betty confirming permanent withdrawal from nursing and canceling Thursday's 11:30 AM meeting.</div>
+    </div>
+    <div class="checklist-item">
+      <div class="check-box" style="background: rgba(16,185,129,0.3); color: var(--emerald);">✓</div>
+      <div><strong>Paul's Read&Write Session Cancelled:</strong> Sent polite note to Paul thanking him and canceling future assistive tech meetings.</div>
+    </div>
+    <div class="checklist-item">
+      <div class="check-box" style="background: rgba(16,185,129,0.3); color: var(--emerald);">✓</div>
+      <div><strong>Kendra Foote Loan Protection Confirmed:</strong> Kendra confirmed loan file stays in good standing, funding for 2026–2027 is closed, and coordinated upcoming AT equipment drop-off.</div>
+    </div>
+    <div class="checklist-item">
+      <div class="check-box">→</div>
+      <div><strong>UNB Parking Refund (~$166.40):</strong> Email <code>parking@unb.ca</code> with permit details (Plate: KHY712) for an 8-month pro-rated refund.</div>
+    </div>
+  </div>
+
+  <!-- SECTION 6: UNB HOTSPOT PARKING REFUND -->
+  <div class="card">
+    <div class="card-title teal">
+      <span>🚗</span> UNB HotSpot Parking Refund Email (~$166.40 CAD)
+    </div>
+    <p style="color: var(--text-sub); font-size: 0.92rem; margin-bottom: 12px;">
+      Send this to <strong>parking@unb.ca</strong> (CC: <strong>support@htsp.ca</strong>) to claim her refund for the 8 unused months:
+    </p>
+    <div class="email-box">
+      <div class="field-row"><span class="field-label">To:</span><span class="field-value">parking@unb.ca</span></div>
+      <div class="field-row"><span class="field-label">CC:</span><span class="field-value">support@htsp.ca, traycan@hotmail.com</span></div>
+      <div class="field-row"><span class="field-label">Subject:</span><span class="field-value">Parking Permit Refund Request (Student Withdrawal) — Rayne Moulton (Plate: KHY712)</span></div>
+      <div class="email-body">Dear UNB Parking Services & HotSpot Support,
+
+I am writing to formally request the cancellation and pro-rated refund for my UNB student parking permit, as I am withdrawing from my studies at the Allied Health Centre / NBCC effective immediately.
+
+Here are the exact permit details from my HotSpot account:
+* Student Name: Rayne Moulton
+* HotSpot Account Email: [Insert Email used for this HotSpot login]
+* Permit Type: Sept-June Student (Student/General Lots)
+* License Plate: KHY712
+* Amount Paid: $208.00
+* Purchase Date: 2026-08-18 (Valid: 2026-09-01 to 2027-06-30)
+
+Under UNB Parking Regulations regarding student withdrawal, could you please cancel this virtual permit in the HotSpot system and process the pro-rated refund for the 8 unused months back to the original credit/debit card on file?
+
+Thank you for your prompt assistance.
+
+Sincerely,
+
+Rayne Moulton (and Candy Moulton)</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    Flowstate AI OS • Family Sanctuary & Canadian Wealth Operations • Saved for Candy Moulton
+  </div>
+
+  <script>
+    function copyEmail() {
+      const text = document.getElementById('emailBodyText').innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        const confirm = document.getElementById('copyConfirm');
+        confirm.style.display = 'inline';
+        setTimeout(() => { confirm.style.display = 'none'; }, 3000);
+      });
+    }
+  </script>
+</body>
+</html>

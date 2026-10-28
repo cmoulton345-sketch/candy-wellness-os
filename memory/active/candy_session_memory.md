@@ -393,3 +393,10 @@ I'm ready to respond to the updated call, sir.
     - Tailored strictly to Candy's constraints: 1,500–1,530 kcal, 135–140g protein (stops cravings, protects lean muscle), 100% tree-nut safe for Rayne, egg yolk/sweet potato/maple syrup-free per DNA test.
     - Added exact MyFitnessPal search terms and 1-click clipboard export. Updated `share_links.html` with Card #4.
 
+- **2026-10-28 (Afternoon)** (FRIDAY):
+  - **Rayne NBCC Official Withdrawal Notice TRANSMITTED (Major Milestone):**
+    - *Email Officially Sent:* Transmitted Wednesday, Oct 28 at ~2:24 PM from Rayne's student email directly to Academic Chair Tammy Groom (`Tammy.Groom@nbcc.ca`), Coordinating Instructor Betty Lydon (`Betty.Lydon@nbcc.ca`), and Registrar Records (`studentrecords@nbcc.ca`), CC'ing Accessibility Learning Strategist Jody Beresford (`jody.beresford@nbcc.ca`), Student Success (`success@nbcc.ca`), and Candy (`traycan@hotmail.com`).
+    - *Institutional Record Documented:* Explicitly documented personal health circumstances, non-implementation of approved academic accommodations as a primary factor, referenced upcoming clinical documentation to `MLOA@nbcc.ca`, declined in-person exit meetings, and requested immediate cancellation of Term 2 (Winter 2027) registration and billing.
+    - *Kendra Foote (Options Outreach) Correspondence:* Kendra confirmed in writing that Rayne's loan file remains in good standing for future studies, funding for 2026–2027 will be cleanly closed, and Amanda's therapist letter will protect her disability grant profile. Coordinated upcoming AT equipment drop-off at Options Outreach.
+    - *UNB HotSpot Parking Refund Actioned:* Identified Rayne's annual student parking permit (`KHY712`, Sept 1 – June 30, $208.00 paid). Formulated refund request under UNB Parking Regulations for 8 unused months (~$166.40 CAD refund) to `parking@unb.ca` and `support@htsp.ca`.
+
