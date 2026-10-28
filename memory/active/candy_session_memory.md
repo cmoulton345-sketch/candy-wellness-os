@@ -422,4 +422,9 @@ I'm ready to respond to the updated call, sir.
     - *Retail-Focused Master Resume (1-Page Printable):*
       - Created [`Rayne_Moulton_Retail_Resume.md`](file:///Users/valuedcustomer/Downloads/flowstate_ai_os_candy/Rayne_Moulton_Retail_Resume.md) and print-ready [`Rayne_Moulton_Retail_Resume.html`](file:///Users/valuedcustomer/Downloads/flowstate_ai_os_candy/Rayne_Moulton_Retail_Resume.html).
       - Removed NBCC nursing references to eliminate employer hesitation regarding school schedules or clinical shifts; highlighted 2+ years of retail/hospitality experience (La Vie En Rose, Sport Chek, Tim Hortons) and KVHS honors.
+    - *Dollarama Job Offer Secured (Store #0254 - Quispamsis):*
+      - Successfully verified AppyHere mobile offer for Store Associate at 175 Hampton Road (The Landing plaza).
+      - Terms: Part-time, 24 hours/week, $15.90/hr, seasonal through Feb 17, 2027. Immediate start on/before Nov 12.
+      - Strategic fit: 5-minute local commute, zero highway driving in winter, routine and independence without academic pressure.
+      - Future Roadmap: Stepping stone to restaurant serving when she turns 19 (NB legal age for alcohol service / tips).
 
