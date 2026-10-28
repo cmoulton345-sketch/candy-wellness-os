@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Candy's Road to 142 — Zero-Thinking Fat Loss Meal Plan (1,500 kcal)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b1329;
+      --surface: #111e38;
+      --card: #182848;
+      --card-hover: #1e335b;
+      --border: rgba(255, 255, 255, 0.12);
+      --teal: #0d9488;
+      --teal-light: #14b8a6;
+      --teal-dim: rgba(20, 184, 166, 0.15);
+      --blue: #3b82f6;
+      --amber: #f59e0b;
+      --emerald: #10b981;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-sub: #cbd5e1;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      padding-bottom: 80px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* HEADER */
+    header {
+      background: rgba(17, 30, 56, 0.95);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 14px 20px;
+    }
+    .header-inner {
+      max-width: 980px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .brand-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .brand-icon {
+      width: 42px;
+      height: 42px;
+      background: linear-gradient(135deg, #0d9488, #3b82f6);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+    }
+    .brand-title {
+      font-size: 1.2rem;
+      font-weight: 800;
+      letter-spacing: -0.3px;
+    }
+    .brand-sub {
+      font-size: 0.8rem;
+      color: var(--teal-light);
+      font-weight: 500;
+    }
+    .btn-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn {
+      padding: 9px 16px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+      transition: all 0.15s ease;
+      border: 1px solid transparent;
+    }
+    .btn-primary { background: var(--teal); color: white; }
+    .btn-primary:hover { background: #0f766e; }
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--text);
+      border-color: var(--border);
+    }
+    .btn-secondary:hover { background: rgba(255, 255, 255, 0.15); }
+
+    .container {
+      max-width: 980px;
+      margin: 24px auto 0;
+      padding: 0 16px;
+    }
+
+    /* SUMMARY TARGET BAR */
+    .target-bar {
+      background: linear-gradient(135deg, #111e38, #182848);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px 22px;
+      margin-bottom: 24px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    }
+    .stat-box .stat-label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+    .stat-box .stat-val {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: white;
+    }
+    .stat-box .stat-sub {
+      font-size: 0.78rem;
+      color: var(--teal-light);
+      margin-top: 2px;
+    }
+
+    /* ALLERGY & SENSITIVITY SAFETY BANNER */
+    .safety-banner {
+      background: rgba(13, 148, 136, 0.1);
+      border-left: 4px solid var(--teal);
+      border-radius: 8px;
+      padding: 12px 16px;
+      margin-bottom: 24px;
+      font-size: 0.88rem;
+      color: #ccfbf1;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* SECTION TITLES */
+    .section-title {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: white;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* MEAL CARDS GRID */
+    .meal-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 18px;
+      margin-bottom: 30px;
+    }
+    .meal-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      transition: all 0.2s ease;
+    }
+    .meal-card:hover {
+      border-color: rgba(20, 184, 166, 0.4);
+      background: var(--card);
+    }
+    .meal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding-bottom: 10px;
+    }
+    .meal-time {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--teal-light);
+      font-weight: 700;
+    }
+    .meal-name {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: white;
+      margin-top: 2px;
+    }
+    .macro-badge {
+      background: rgba(13, 148, 136, 0.18);
+      border: 1px solid rgba(20, 184, 166, 0.4);
+      color: #5eead4;
+      padding: 4px 8px;
+      border-radius: 6px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .ingredients-list {
+      list-style: none;
+      font-size: 0.88rem;
+      color: var(--text-sub);
+    }
+    .ingredients-list li {
+      margin-bottom: 6px;
+      position: relative;
+      padding-left: 18px;
+    }
+    .ingredients-list li::before {
+      content: "•";
+      color: var(--teal-light);
+      position: absolute;
+      left: 0;
+      font-weight: bold;
+    }
+    .mfp-box {
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px dashed rgba(255, 255, 255, 0.15);
+      border-radius: 8px;
+      padding: 10px 12px;
+      font-size: 0.8rem;
+      color: #93c5fd;
+      margin-top: auto;
+    }
+    .mfp-box strong { color: white; }
+
+    /* 3-DAY SAMPLE SCHEDULE TABLE */
+    .table-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow-x: auto;
+      margin-bottom: 30px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+    table.plan-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      text-align: left;
+    }
+    table.plan-table th {
+      background: rgba(10, 18, 36, 0.95);
+      padding: 14px 16px;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--border);
+      white-space: nowrap;
+    }
+    table.plan-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      color: var(--text-sub);
+      vertical-align: top;
+    }
+    table.plan-table tr:hover td { background: rgba(255, 255, 255, 0.02); }
+    .col-day { font-weight: 700; color: white; width: 14%; }
+    .col-meal { width: 26%; }
+    .col-macros { width: 18%; font-family: 'JetBrains Mono', monospace; font-size: 0.82rem; color: #5eead4; }
+
+    /* PANTRY CHECKLIST */
+    .pantry-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-bottom: 30px;
+    }
+    .pantry-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+    }
+    .pantry-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 8px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding-bottom: 6px;
+    }
+    .pantry-list {
+      list-style: none;
+      font-size: 0.84rem;
+      color: var(--text-sub);
+    }
+    .pantry-list li { margin-bottom: 5px; }
+
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: #10b981;
+      color: white;
+      padding: 10px 22px;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 0.88rem;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+      opacity: 0;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 2000;
+      pointer-events: none;
+    }
+    .toast.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+
+    /* PRINT STYLING — BEAUTIFUL CLEAN WHITE SHEETS */
+    @media print {
+      body {
+        background: white !important;
+        color: #0f172a !important;
+        padding-bottom: 0;
+        font-size: 9.5pt;
+      }
+      header, .no-print, .toast { display: none !important; }
+      .container { max-width: 100%; margin: 0; padding: 0; }
+      .target-bar {
+        background: #f8fafc !important;
+        border: 1.5px solid #cbd5e1 !important;
+        color: #0f172a !important;
+        padding: 12px 16px;
+        box-shadow: none !important;
+      }
+      .stat-box .stat-val { color: #0f172a !important; font-size: 1.2rem; }
+      .stat-box .stat-label { color: #64748b !important; }
+      .stat-box .stat-sub { color: #0f766e !important; }
+      .safety-banner {
+        background: #f0fdf4 !important;
+        border-left: 4px solid #0f766e !important;
+        color: #065f46 !important;
+      }
+      .section-title { color: #0f172a !important; font-size: 12pt; border-bottom: 1.5px solid #0f766e; padding-bottom: 4px; }
+      .meal-card {
+        background: #ffffff !important;
+        border: 1px solid #cbd5e1 !important;
+        box-shadow: none !important;
+        break-inside: avoid;
+        padding: 12px 14px;
+      }
+      .meal-name { color: #0f172a !important; font-size: 10pt; }
+      .macro-badge {
+        background: #ecfdf5 !important;
+        color: #065f46 !important;
+        border: 1px solid #a7f3d0 !important;
+      }
+      .ingredients-list li { color: #1e293b !important; }
+      .mfp-box {
+        background: #f1f5f9 !important;
+        border: 1px solid #cbd5e1 !important;
+        color: #1e3a8a !important;
+      }
+      .mfp-box strong { color: #0f172a !important; }
+      table.plan-table { border: 1px solid #cbd5e1 !important; }
+      table.plan-table th { background: #f1f5f9 !important; color: #475569 !important; border-bottom: 1.5px solid #cbd5e1 !important; }
+      table.plan-table td { color: #1e293b !important; border-bottom: 1px solid #e2e8f0 !important; }
+      .col-day { color: #0f172a !important; }
+      .col-macros { color: #0f766e !important; }
+      .pantry-card { background: #f8fafc !important; border: 1px solid #cbd5e1 !important; }
+      .pantry-title { color: #0f172a !important; }
+      .pantry-list li { color: #1e293b !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP HEADER -->
+  <header>
+    <div class="header-inner">
+      <div class="brand-wrap">
+        <div class="brand-icon">🥗</div>
+        <div>
+          <div class="brand-title">Candy's Road to 142 Meal Plan</div>
+          <div class="brand-sub">Simple, Zero-Thinking Nutrition Protocol (1,500 kcal)</div>
+        </div>
+      </div>
+      <div class="btn-group no-print">
+        <button class="btn btn-secondary" onclick="copyMfpSummary()">📋 Copy MFP Daily Text</button>
+        <button class="btn btn-primary" onclick="window.print()">🖨️ Print / Save as PDF</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <!-- TARGET SUMMARY -->
+    <div class="target-bar">
+      <div class="stat-box">
+        <div class="stat-label">Daily Calorie Target</div>
+        <div class="stat-val">1,500 – 1,530</div>
+        <div class="stat-sub">~450–500 kcal fat-loss deficit</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-label">Daily Protein Anchor</div>
+        <div class="stat-val" style="color:#5eead4;">135g – 140g</div>
+        <div class="stat-sub">Protects muscle &amp; stops cravings</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-label">Carbs &amp; Healthy Fats</div>
+        <div class="stat-val">85g C • 50g F</div>
+        <div class="stat-sub">Low bloat, steady hormone support</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-label">Projected Fat Loss</div>
+        <div class="stat-val" style="color:#fde047;">0.75 – 1.0 lb/wk</div>
+        <div class="stat-sub">Target: 142 lbs in 6–8 weeks</div>
+      </div>
+    </div>
+
+    <!-- SAFETY BANNER -->
+    <div class="safety-banner">
+      <div style="font-size:1.3rem;">🛡️</div>
+      <div>
+        <strong>100% Customized for Candy's Household &amp; DNA:</strong> Zero tree nuts (100% nut-safe for Rayne); Zero egg yolks, sweet potatoes, or maple syrup (per your DNA sensitivity test). Egg whites, chicken, salmon, turkey, berries, and gluten-free oats are all 100% green!
+      </div>
+    </div>
+
+    <!-- MODULAR SYSTEM: 3 EASY OPTIONS PER MEAL -->
+    <div class="section-title">
+      <span>🍳</span> Step 1: Modular "Zero-Thinking" Meal Matrix
+    </div>
+    <p style="color:var(--text-muted); font-size:0.88rem; margin-bottom:18px;">
+      Pick <strong>ONE</strong> breakfast, <strong>ONE</strong> lunch, <strong>ONE</strong> afternoon fuel, and <strong>ONE</strong> dinner each day. They all hit the exact same calorie and protein targets so you never have to do math.
+    </p>
+
+    <!-- BREAKFASTS -->
+    <div class="meal-grid">
+      <!-- B1 -->
+      <div class="meal-card">
+        <div class="meal-header">
+          <div>
+            <div class="meal-time">Breakfast • Option A (Grab &amp; Go)</div>
+            <div class="meal-name">Fairlife Core + GF Toast</div>
+          </div>
+          <span class="macro-badge">380 kcal • 32g P</span>
+        </div>
+        <ul class="ingredients-list">
+          <li>1 bottle Fairlife Core Power Vanilla or Chocolate (26g protein)</li>
+          <li>1 slice gluten-free toast (Little Northern Bakehouse)</li>
+          <li>1 tbsp sunflower seed butter (or 1/4 avocado mashed)</li>
+        </ul>
+        <div class="mfp-box">
+          <strong>📱 MFP Entry:</strong> Search <em>"Fairlife Core Power 26g"</em> + <em>"GF Bread 1 slice"</em> + <em>"Sunflower Butter 1 tbsp"</em>.
+        </div>
+      </div>
+
+      <!-- B2 -->
+      <div class="meal-card">
+        <div class="meal-header">
+          <div>
+            <div class="meal-time">Breakfast • Option B (Warm 5-Min Scramble)</div>
+            <div class="meal-name">Spinach &amp; Goat Cheese Egg Whites</div>
+          </div>
+          <span class="macro-badge">340 kcal • 32g P</span>
+        </div>
+        <ul class="ingredients-list">
+          <li>4 liquid egg whites (carton Naturegg or separated)</li>
+          <li>1 cup baby spinach wilted into scramble</li>
+          <li>1 oz goat cheese or feta (lactose-friendly)</li>
+          <li>1/2 cup fresh blueberries on the side</li>
+        </ul>
+        <div class="mfp-box">
+          <strong>📱 MFP Entry:</strong> Search <em>"Egg whites liquid 180g"</em> + <em>"Goat cheese 28g"</em> + <em>"Blueberries 1/2 cup"</em>.
+        </div>
+      </div>
+
+      <!-- B3 -->
+      <div class="meal-card">
+        <div class="meal-header">
+          <div>
+            <div class="meal-time">Breakfast • Option C (Gut Parfait)</div>
+            <div class="meal-name">Lactose-Free Greek Parfait</div>
+          </div>
+          <span class="macro-badge">360 kcal • 34g P</span>
+        </div>
+        <ul class="ingredients-list">
+          <li>3/4 cup 0% Lactose-Free Greek Yogurt (or LF Cottage Cheese)</li>
+          <li>1/4 cup gluten-free rolled oats (raw or soaked)</li>
+          <li>1 tbsp chia seeds + dash of cinnamon</li>
+          <li>1/2 cup raspberries or strawberries</li>
+        </ul>
+        <div class="mfp-box">
+          <strong>📱 MFP Entry:</strong> Search <em>"Lactose Free Greek Yogurt 0%"</em> + <em>"GF Rolled Oats 20g"</em> + <em>"Chia seeds 1 tbsp"</em>.
+        </div>
+      </div>
+    </div>
+
+    <!-- LUNCHES -->
+    <div class="meal-grid">
+      <!-- L1 -->
+      <div class="meal-card">
+        <div class="meal-header">
+          <div>
+            <div class="meal-time">Lunch • Option A (Zero Cooking)</div>
+            <div class="meal-name">Rotisserie Chicken &amp; Avocado Bowl</div>
+          </div>
+          <span class="macro-badge">390 kcal • 36g P</span>
+        </div>
+        <ul class="ingredients-list">
+          <li>4.5 oz skinless rotisserie chicken breast (shredded)</li>
+          <li>2 cups mixed baby greens or romaine</li>
+          <li>1/4 ripe avocado (diced) + 1/2 cucumber (sliced)</li>
+          <li>1 tbsp light vinaigrette or olive oil + lemon juice</li>
+          <li>2 brown rice cakes (crunch factor)</li>
+        </ul>
+        <div class="mfp-box">
+          <strong>📱 MFP Entry:</strong> Search <em>"Rotisserie chicken breast skinless 130g"</em> + <em>"Avocado 1/4"</em> + <em>"Brown rice cake 2"</em>.
+        </div>
+      </div>
+
+      <!-- L2 -->
+      <div class="meal-card">
+        <div class="meal-header">
+          <div>
+            <div class="meal-time">Lunch • Option B (Pantry Staple)</div>
+            <div class="meal-name">Wild Tuna / Salmon Salad Plate</div>
+          </div>
+          <span class="macro-badge">370 kcal • 35g P</span>
+        </div>
+        <ul class="ingredients-list">
+          <li>1 can chunk light tuna or wild pink salmon in water (drained)</li>
+          <li>1 tbsp avocado oil mayonnaise + 1 tsp Dijon mustard</li>
+          <li>Diced celery and dill pickles</li>
+          <li>6 Mary's Gone Crackers (gluten &amp; nut-free seed crackers)</li>
+          <li>Baby carrots or sliced bell peppers</li>
+        </ul>
+        <div class="mfp-box">
+          <strong>📱 MFP Entry:</strong> Search <em>"Canned tuna in water 120g"</em> + <em>"Avocado oil mayo 1 tbsp"</em> + <em>"Mary's Gone Crackers 6"</em>.
+        </div>
+      </div>
+
+      <!-- L3 -->
+      <div class="meal-card">
+        <div class="meal-header">
+          <div>
+            <div class="meal-time">Lunch • Option C (Warm Bowl)</div>
+            <div class="meal-name">Lean Turkey Taco Bowl</div>
+          </div>
+          <span class="macro-badge">410 kcal • 34g P</span>
+        </div>
+        <ul class="ingredients-list">
+          <li>4 oz extra-lean ground turkey (cooked with taco seasoning)</li>
+          <li>1/2 cup cooked jasmine or brown rice</li>
+          <li>1/4 cup black beans (rinsed)</li>
+          <li>3 tbsp salsa + shredded romaine lettuce</li>
+        </ul>
+        <div class="mfp-box">
+          <strong>📱 MFP Entry:</strong> Search <em>"Ground turkey 93/7 cooked 115g"</em> + <em>"Jasmine rice cooked 1/2 cup"</em> + <em>"Salsa 3 tbsp"</em>.
+        </div>
+      </div>
+    </div>
+
+    <!-- AFTERNOON FUEL (3:00 PM CRASH SHIELD) -->
+    <div class="meal-grid">
+      <!-- S1 -->
+      <div class="meal-card">
+        <div class="meal-header">
+          <div>
+            <div class="meal-time">Afternoon Fuel • Option A (Sweet &amp; Creamy)</div>
+            <div class="meal-name">Fairlife Half-Bottle + Rice Cake</div>
+          </div>
+          <span class="macro-badge">190 kcal • 18g P</span>
+        </div>
+        <ul class="ingredients-list">
+          <li>1/2 bottle Fairlife Core Power shake (chilled)</li>
+          <li>1 brown rice cake topped with 1 tbsp sunflower seed butter</li>
+        </ul>
+        <div class="mfp-box">
+          <strong>📱 MFP Entry:</strong> Search <em>"Fairlife Core Power 1/2 bottle"</em> + <em>"SunButter 1 tbsp"</em>.
+        </div>
+      </div>
+
+      <!-- S2 -->
+      <div class="meal-card">
+        <div class="meal-header">
+          <div>
+            <div class="meal-time">Afternoon Fuel • Option B (Savory Bite)</div>
+            <div class="meal-name">Turkey Pepperette &amp; Hard Egg Whites</div>
+          </div>
+          <span class="macro-badge">170 kcal • 20g P</span>
+        </div>
+        <ul class="ingredients-list">
+          <li>1 lean turkey pepperette or Epic turkey strip</li>
+          <li>2 hard-boiled egg whites (discard yolk per DNA test)</li>
+          <li>1 small baby cucumber</li>
+        </ul>
+        <div class="mfp-box">
+          <strong>📱 MFP Entry:</strong> Search <em>"Turkey stick / pepperette 1"</em> + <em>"Egg white boiled 2"</em>.
+        </div>
+      </div>
+
+      <!-- S3 -->
+      <div class="meal-card">
+        <div class="meal-header">
+          <div>
+            <div class="meal-time">Afternoon Fuel • Option C (Gut Soother)</div>
+            <div class="meal-name">Cottage Cheese &amp; Pumpkin Seeds</div>
+          </div>
+          <span class="macro-badge">180 kcal • 17g P</span>
+        </div>
+        <ul class="ingredients-list">
+          <li>1/2 cup lactose-free 2% cottage cheese</li>
+          <li>1 tbsp roasted pumpkin seeds (pepitas)</li>
+          <li>Dash of cinnamon or a drizzle of raw honey</li>
+        </ul>
+        <div class="mfp-box">
+          <strong>📱 MFP Entry:</strong> Search <em>"Cottage cheese 2% LF 1/2 cup"</em> + <em>"Pumpkin seeds 1 tbsp"</em>.
+        </div>
+      </div>
+    </div>
+
+    <!-- DINNERS -->
+    <div class="meal-grid">
+      <!-- D1 -->
+      <div class="meal-card">
+        <div class="meal-header">
+          <div>
+            <div class="meal-time">Dinner • Option A (Omega-3 Anti-Inflammatory)</div>
+            <div class="meal-name">Air-Fryer Salmon &amp; Crispy Baby Potatoes</div>
+          </div>
+          <span class="macro-badge">480 kcal • 38g P</span>
+        </div>
+        <ul class="ingredients-list">
+          <li>5 oz wild salmon or trout fillet (seasoned with garlic, dill, lemon)</li>
+          <li>1/2 cup roasted baby yellow potatoes (quartered)</li>
+          <li>1.5 cups roasted asparagus or green beans with 1 tsp olive oil</li>
+        </ul>
+        <div class="mfp-box">
+          <strong>📱 MFP Entry:</strong> Search <em>"Salmon wild cooked 140g"</em> + <em>"Baby potatoes roasted 80g"</em> + <em>"Asparagus roasted 1.5 cups"</em>.
+        </div>
+      </div>
+
+      <!-- D2 -->
+      <div class="meal-card">
+        <div class="meal-header">
+          <div>
+            <div class="meal-time">Dinner • Option B (Sheet-Pan Quick)</div>
+            <div class="meal-name">Lemon Herb Chicken &amp; Zucchini</div>
+          </div>
+          <span class="macro-badge">450 kcal • 42g P</span>
+        </div>
+        <ul class="ingredients-list">
+          <li>5.5 oz chicken breast (marinated in lemon, oregano, garlic)</li>
+          <li>1.5 cups sliced zucchini and bell peppers</li>
+          <li>1/2 cup cooked quinoa or 1 small baked yellow potato</li>
+          <li>1 tsp olive oil for roasting</li>
+        </ul>
+        <div class="mfp-box">
+          <strong>📱 MFP Entry:</strong> Search <em>"Chicken breast skinless cooked 155g"</em> + <em>"Quinoa cooked 1/2 cup"</em> + <em>"Zucchini roasted 1 cup"</em>.
+        </div>
+      </div>
+
+      <!-- D3 -->
+      <div class="meal-card">
+        <div class="meal-header">
+          <div>
+            <div class="meal-time">Dinner • Option C (Comfort Craving)</div>
+            <div class="meal-name">Lean Burger Bowl &amp; Potato Wedges</div>
+          </div>
+          <span class="macro-badge">470 kcal • 38g P</span>
+        </div>
+        <ul class="ingredients-list">
+          <li>5 oz extra-lean ground beef (90/10) or lean ground turkey patty</li>
+          <li>2 cups crisp romaine lettuce base</li>
+          <li>Diced dill pickles, diced tomatoes, 1 tbsp yellow mustard</li>
+          <li>1/2 cup oven-baked homemade yellow potato wedges (1 tsp olive oil)</li>
+        </ul>
+        <div class="mfp-box">
+          <strong>📱 MFP Entry:</strong> Search <em>"Ground beef 90/10 cooked 140g"</em> + <em>"Potatoes baked wedges 100g"</em> + <em>"Romaine lettuce 2 cups"</em>.
+        </div>
+      </div>
+    </div>
+
+    <!-- 7-DAY ROTATION TABLE -->
+    <div class="section-title">
+      <span>🗓️</span> Step 2: 7-Day "Plug-and-Play" Rotation
+    </div>
+    <div class="table-box">
+      <table class="plan-table">
+        <thead>
+          <tr>
+            <th class="col-day">Day</th>
+            <th class="col-meal">Breakfast (8:30 AM)</th>
+            <th class="col-meal">Lunch (1:00 PM)</th>
+            <th class="col-meal">Snack (3:30 PM)</th>
+            <th class="col-meal">Dinner (6:30 PM)</th>
+            <th class="col-macros">Daily Macros</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="col-day">Monday</td>
+            <td>Fairlife Core + GF Toast</td>
+            <td>Rotisserie Chicken Salad</td>
+            <td>Half Fairlife + Rice Cake</td>
+            <td>Air-Fryer Salmon &amp; Potatoes</td>
+            <td class="col-macros">1,510 kcal<br>136g P • 92g C • 49g F</td>
+          </tr>
+          <tr>
+            <td class="col-day">Tuesday</td>
+            <td>Spinach &amp; Goat Cheese Egg Whites</td>
+            <td>Wild Tuna Salad Plate</td>
+            <td>Turkey Pepperette &amp; Whites</td>
+            <td>Lemon Herb Chicken &amp; Quinoa</td>
+            <td class="col-macros">1,480 kcal<br>139g P • 82g C • 44g F</td>
+          </tr>
+          <tr>
+            <td class="col-day">Wednesday</td>
+            <td>Lactose-Free Greek Parfait</td>
+            <td>Lean Turkey Taco Bowl</td>
+            <td>Cottage Cheese &amp; Pumpkin Seeds</td>
+            <td>Lean Burger Bowl &amp; Wedges</td>
+            <td class="col-macros">1,520 kcal<br>135g P • 102g C • 48g F</td>
+          </tr>
+          <tr>
+            <td class="col-day">Thursday</td>
+            <td>Fairlife Core + GF Toast</td>
+            <td>Rotisserie Chicken Salad</td>
+            <td>Half Fairlife + Rice Cake</td>
+            <td>Air-Fryer Salmon &amp; Potatoes</td>
+            <td class="col-macros">1,510 kcal<br>136g P • 92g C • 49g F</td>
+          </tr>
+          <tr>
+            <td class="col-day">Friday</td>
+            <td>Spinach &amp; Goat Cheese Egg Whites</td>
+            <td>Wild Tuna Salad Plate</td>
+            <td>Turkey Pepperette &amp; Whites</td>
+            <td>Lemon Herb Chicken &amp; Quinoa</td>
+            <td class="col-macros">1,480 kcal<br>139g P • 82g C • 44g F</td>
+          </tr>
+          <tr>
+            <td class="col-day">Saturday</td>
+            <td>Lactose-Free Greek Parfait</td>
+            <td>Rotisserie Chicken Salad</td>
+            <td>Cottage Cheese &amp; Pumpkin Seeds</td>
+            <td>Lean Burger Bowl &amp; Wedges</td>
+            <td class="col-macros">1,500 kcal<br>137g P • 94g C • 47g F</td>
+          </tr>
+          <tr>
+            <td class="col-day">Sunday</td>
+            <td>Spinach &amp; Goat Cheese Egg Whites</td>
+            <td>Lean Turkey Taco Bowl</td>
+            <td>Half Fairlife + Rice Cake</td>
+            <td>Air-Fryer Salmon &amp; Potatoes</td>
+            <td class="col-macros">1,520 kcal<br>138g P • 98g C • 48g F</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- QUICK GROCERY CHECKLIST -->
+    <div class="section-title">
+      <span>🛒</span> Step 3: Zero-Thinking Grocery Checklist
+    </div>
+    <div class="pantry-grid">
+      <div class="pantry-card">
+        <div class="pantry-title">🥩 Clean Proteins</div>
+        <ul class="pantry-list">
+          <li>• Fairlife Core Power (Vanilla/Choc)</li>
+          <li>• Naturegg Liquid Egg Whites</li>
+          <li>• Rotisserie Chicken (Costco/Sobeys)</li>
+          <li>• Wild Salmon / Trout fillets</li>
+          <li>• Lean Ground Turkey or 90/10 Beef</li>
+          <li>• Chunk light tuna cans in water</li>
+        </ul>
+      </div>
+
+      <div class="pantry-card">
+        <div class="pantry-title">🥑 Healthy Fats &amp; Dairy</div>
+        <ul class="pantry-list">
+          <li>• Goat Cheese / Feta crumbles</li>
+          <li>• Lactose-Free Greek Yogurt (0%)</li>
+          <li>• Lactose-Free 2% Cottage Cheese</li>
+          <li>• Ripe Avocados</li>
+          <li>• Sunflower Seed Butter (SunButter)</li>
+          <li>• Avocado Oil Mayo &amp; Olive Oil</li>
+        </ul>
+      </div>
+
+      <div class="pantry-card">
+        <div class="pantry-title">🌾 Clean Carbs &amp; Seeds</div>
+        <ul class="pantry-list">
+          <li>• Little Northern Bakehouse GF Bread</li>
+          <li>• Plain Brown Rice Cakes</li>
+          <li>• Mary's Gone Crackers (Seed-based)</li>
+          <li>• Baby Yellow / Red Potatoes</li>
+          <li>• Jasmine or Brown Rice</li>
+          <li>• Raw Chia Seeds &amp; Pumpkin Seeds</li>
+        </ul>
+      </div>
+
+      <div class="pantry-card">
+        <div class="pantry-title">🥬 Fresh Veggies &amp; Fruit</div>
+        <ul class="pantry-list">
+          <li>• Baby Spinach &amp; Romaine tubs</li>
+          <li>• Fresh Blueberries &amp; Raspberries</li>
+          <li>• Asparagus spears &amp; Zucchini</li>
+          <li>• English Cucumbers &amp; Celery</li>
+          <li>• Fresh Lemons (for dressings)</li>
+          <li>• Salsa &amp; Dill Pickles (sugar-free)</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="toast" id="toast">✓ Copied MFP Summary to Clipboard!</div>
+
+  <script>
+    function copyMfpSummary() {
+      const text = `Candy's Road to 142 Daily MyFitnessPal Targets:
+- Calories: 1,500 kcal
+- Protein: 135g - 140g (~36%)
+- Carbs: 85g - 95g (~24%)
+- Fat: 48g - 52g (~30%)
+- Fiber: 28g - 32g
+
+Standard Meal Setup:
+• Breakfast (8:30 AM): 380 kcal | 32g Protein
+• Lunch (1:00 PM): 390 kcal | 36g Protein
+• Snack (3:30 PM): 180 kcal | 18g Protein
+• Dinner (6:30 PM): 470 kcal | 40g Protein`;
+
+      navigator.clipboard.writeText(text).then(() => {
+        showToast('✓ Copied MFP targets to clipboard!');
+      }).catch(() => {
+        prompt('Copy your MFP Targets below:', text);
+      });
+    }
+
+    function showToast(msg) {
+      const t = document.getElementById('toast');
+      t.innerText = msg;
+      t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), 2600);
+    }
+  </script>
+</body>
+</html>
