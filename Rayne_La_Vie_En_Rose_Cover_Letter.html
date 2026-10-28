@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rayne Moulton — La Vie En Rose Cover Letter & Rehire Message</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0d1117;
+      --surface: #161b22;
+      --card: #21262d;
+      --border: rgba(255, 255, 255, 0.1);
+      --rose: #f43f5e;
+      --rose-light: #fda4af;
+      --rose-soft: rgba(244, 63, 94, 0.15);
+      --emerald: #10b981;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-sub: #cbd5e1;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      padding: 24px 16px 80px;
+      max-width: 840px;
+      margin: 0 auto;
+    }
+    .header {
+      text-align: center;
+      padding: 24px;
+      background: var(--surface);
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      margin-bottom: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    .header::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 4px;
+      background: linear-gradient(90deg, var(--rose), #fb7185, #ec4899);
+    }
+    .badge {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      background: var(--rose-soft);
+      color: var(--rose-light);
+      border: 1px solid rgba(244, 63, 94, 0.4);
+      margin-bottom: 10px;
+    }
+    h1 { font-size: 1.75rem; font-weight: 700; margin-bottom: 6px; }
+    .subtitle { color: var(--text-muted); font-size: 0.95rem; }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px;
+      margin-bottom: 20px;
+    }
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .card-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn {
+      padding: 9px 16px;
+      border-radius: 8px;
+      font-family: inherit;
+      font-weight: 600;
+      font-size: 0.88rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border: none;
+      transition: all 0.2s ease;
+    }
+    .btn-rose {
+      background: var(--rose);
+      color: #fff;
+    }
+    .btn-rose:hover { background: #e11d48; transform: translateY(-1px); }
+    .btn-secondary {
+      background: rgba(255,255,255,0.08);
+      color: var(--text-sub);
+      border: 1px solid var(--border);
+    }
+    .btn-secondary:hover { background: rgba(255,255,255,0.14); }
+
+    .alert {
+      padding: 14px 18px;
+      border-radius: 8px;
+      margin-bottom: 16px;
+      font-size: 0.92rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .alert-rose {
+      background: var(--rose-soft);
+      border-left: 4px solid var(--rose);
+      color: #ffe4e6;
+    }
+
+    .letter-preview {
+      background: #ffffff;
+      color: #1e293b;
+      padding: 32px 36px;
+      border-radius: 8px;
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+    }
+    .letter-preview h2 {
+      font-size: 1.3rem;
+      color: #0f172a;
+      margin-bottom: 4px;
+      border-bottom: 2px solid #f43f5e;
+      padding-bottom: 8px;
+    }
+    .contact-line {
+      font-size: 0.88rem;
+      color: #64748b;
+      margin-bottom: 20px;
+    }
+    .letter-preview p {
+      margin-bottom: 14px;
+    }
+    .letter-preview ul {
+      margin-left: 20px;
+      margin-bottom: 16px;
+    }
+    .letter-preview li {
+      margin-bottom: 6px;
+    }
+
+    .msg-preview {
+      background: #1e2530;
+      color: #f1f5f9;
+      padding: 20px;
+      border-radius: 8px;
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      border: 1px solid rgba(244, 63, 94, 0.3);
+    }
+    .subject-line {
+      background: rgba(255,255,255,0.06);
+      padding: 8px 12px;
+      border-radius: 6px;
+      margin-bottom: 12px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.86rem;
+      color: var(--rose-light);
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: var(--emerald);
+      color: #fff;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      display: none;
+      z-index: 1000;
+    }
+
+    @media print {
+      body { background: #fff; padding: 0; color: #000; }
+      .header, .card:first-of-type, .actions, .btn, .badge, .toast { display: none !important; }
+      .card { border: none; padding: 0; background: transparent; }
+      .letter-preview { box-shadow: none; padding: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="badge">Former Employee • Returning Associate</div>
+    <h1>La Vie En Rose — Job Application & Rehire</h1>
+    <div class="subtitle">Rayne Moulton • McAllister Place, Saint John • Holiday 2026 Seasonal</div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">⚡ Option 1: Direct Message to Former Manager (Recommended First Step)</div>
+      <button class="btn btn-rose" onclick="copyOption1()">📋 Copy Message</button>
+    </div>
+    <div class="alert alert-rose">
+      💡 <strong>The Fastest Way to Get Hired:</strong> Rayne left in September in 100% good standing strictly because of school. Since she already knows the POS, bra sizing, and visual standards, store managers LOVE rehiring former associates heading into November! Send this by text, email, or use it when walking into McAllister Place.
+    </div>
+    <div class="subject-line">Subject: Rayne Moulton — Returning to Saint John / Open Availability for Holiday Season!</div>
+    <div class="msg-preview" id="option1Text">Hi [Manager's Name],
+
+I hope you are having a wonderful week!
+
+I am reaching out to check if you have any sales associate openings heading into the busy holiday season at La Vie En Rose. As you know, I absolutely loved working with the team this past summer and only stepped away in September due to my post-secondary schedule.
+
+My circumstances have recently shifted, and my availability is now 100% completely open for all shifts—including weekdays, evenings, weekends, and holidays. Because I am already fully trained on your POS system, merchandise care, sizing, and floor visual standards, I can step right back in and contribute immediately with zero onboarding ramp-up time.
+
+I would love the chance to rejoin the store team! I have attached my updated resume, and I would be thrilled to drop by the store or chat whenever is convenient for you.
+
+Warmly,
+Rayne Moulton
+(403) 618-3006 | rayne.moulton1234@gmail.com</div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">📄 Option 2: Formal Cover Letter (Online Application / Print)</div>
+      <div class="actions">
+        <button class="btn btn-rose" onclick="copyOption2()">📋 Copy Letter</button>
+        <button class="btn btn-secondary" onclick="window.print()">🖨️ Print / Save PDF</button>
+      </div>
+    </div>
+
+    <div class="letter-preview" id="option2Text">
+      <h2>RAYNE MOULTON</h2>
+      <div class="contact-line">Quispamsis, NB • (403) 618-3006 • rayne.moulton1234@gmail.com</div>
+
+      <p><strong>Date:</strong> October 28, 2026</p>
+      <p>
+        <strong>Store Manager / Hiring Team</strong><br>
+        La Vie En Rose<br>
+        McAllister Place<br>
+        Saint John, NB
+      </p>
+
+      <p><strong>Re: Application for Retail Sales Associate (Returning Team Member)</strong></p>
+
+      <p>Dear Store Manager and La Vie En Rose Team,</p>
+
+      <p>I am writing to express my enthusiastic interest in rejoining the La Vie En Rose team as a Retail Sales Associate for the upcoming holiday season. Having had the privilege of working at your McAllister Place location from June through September 2026, I bring direct, hands-on familiarity with your brand values, store visual presentation standards, and personalized client-care approach. While I reluctantly stepped away in September solely due to the start of post-secondary studies, my circumstances have shifted and my availability is now completely open.</p>
+
+      <p>During my time at La Vie En Rose, I took great pride in creating an inviting, comfortable, and discreet shopping atmosphere for our guests. Whether guiding customers through delicate product selections, organizing bra and sleepwear displays, restocking high-traffic sales floor zones, or processing accurate transactions on the POS system, I consistently prioritized customer satisfaction and store excellence.</p>
+
+      <p>Returning to La Vie En Rose offers several immediate advantages for your team:</p>
+      <ul>
+        <li><strong>Zero Training Downtime:</strong> I am already familiar with your product categories, fabric care, inventory layouts, and cash-wrap procedures.</li>
+        <li><strong>100% Open Availability:</strong> Fully available for early morning shipments, peak afternoon rushes, evenings, weekends, and extended holiday hours.</li>
+        <li><strong>Proven Reliability & Customer Care:</strong> Dependable attendance, warm customer rapport, and a proactive attitude toward keeping the sales floor immaculate.</li>
+        <li><strong>Broader Retail Experience:</strong> Over two years of combined fast-paced retail and customer service experience across La Vie En Rose, Sport Chek, and Tim Hortons.</li>
+      </ul>
+
+      <p>I loved being part of the La Vie En Rose culture and would be thrilled to support the team once again during the store's busiest and most rewarding season of the year. I am available to start immediately.</p>
+
+      <p>Thank you very much for your time and continued support. I look forward to the opportunity to speak with you soon.</p>
+
+      <p>Sincerely,</p>
+      <p><strong>Rayne Moulton</strong><br>
+      (403) 618-3006<br>
+      rayne.moulton1234@gmail.com<br>
+      Quispamsis, NB</p>
+    </div>
+  </div>
+
+  <div class="toast" id="toast">Copied to clipboard!</div>
+
+  <script>
+    function copyOption1() {
+      const text = document.getElementById('option1Text').innerText;
+      navigator.clipboard.writeText(text).then(() => showToast('Manager reach-out message copied!'));
+    }
+    function copyOption2() {
+      const text = document.getElementById('option2Text').innerText;
+      navigator.clipboard.writeText(text).then(() => showToast('Formal cover letter copied!'));
+    }
+    function showToast(msg) {
+      const t = document.getElementById('toast');
+      t.innerText = msg;
+      t.style.display = 'block';
+      setTimeout(() => { t.style.display = 'none'; }, 2500);
+    }
+  </script>
+</body>
+</html>
