@@ -494,3 +494,6 @@ I'm ready to respond to the updated call, sir.
       3. [`Rayne_Moulton_Resume.html`](file:///Users/valuedcustomer/Downloads/flowstate_ai_os_candy/Rayne_Moulton_Resume.html), [`Rayne_Moulton_Master_Resume.md`](file:///Users/valuedcustomer/Downloads/flowstate_ai_os_candy/Rayne_Moulton_Master_Resume.md), and [`Rayne_Moulton_Resume.docx`](file:///Users/valuedcustomer/Downloads/Rayne_Moulton_Resume.docx).
       4. [`Rayne_Moulton_Sobeys_Resume.html`](file:///Users/valuedcustomer/Downloads/flowstate_ai_os_candy/Rayne_Moulton_Sobeys_Resume.html).
     - Copied updated `.docx` files directly to Candy's `/Users/valuedcustomer/Downloads/` folder for immediate access.
+  - **NBCC Practical Nursing Calendar Purge Completed:**
+    - Purged all legacy decoded NBCC Practical Nursing course events (`[ONLINE]`, `[AT SCHOOL]`, `[CLINICAL]`, NCSI, HCSS) across both `cmoulton345@gmail.com` and `rayne.moulton1234@gmail.com` calendars.
+    - Verified complete removal of all course reminders and duplicate blocks; personal appointments, interviews, and family events remain fully intact. Brings clean emotional closure to Rayne's school schedule.
