@@ -8,15 +8,16 @@
 ---
 
 ## PROFESSIONAL SUMMARY
-Motivated and dependable NBCC Practical Nursing student with strong communication skills and a proven ability to thrive in fast-paced customer service and retail environments. Seeking part-time or casual employment.
+Motivated, customer-focused, and dependable professional with strong communication skills and over two years of hands-on experience in fast-paced retail and customer service environments. WorkSafeNB JHSC safety trained and CPR/AED Level C certified. Proven ability to thrive in team settings with high accuracy in cash handling, inventory management, and client support.
 
 ---
 
 ## CORE COMPETENCIES
 - Customer Service & Client Relations | POS Systems & Cash Handling
+- Workplace Health & Safety (WorkSafeNB JHSC) | CPR/AED Level C Certified
 - Time Management & Organization | Operational Support & Efficiency
-- Team Collaboration | Attention to Detail & Accuracy
-- Adaptability & Flexibility
+- Team Collaboration & Reliability | Attention to Detail & Accuracy
+- Adaptability & Flexible Availability
 
 ---
 
@@ -45,7 +46,17 @@ Motivated and dependable NBCC Practical Nursing student with strong communicatio
 
 ---
 
+## CERTIFICATIONS & SAFETY TRAINING
+
+- **CPR / AED Level C Certification** — Life Start Training Inc. *(Certified through July 13, 2029)*
+  - Certified in adult, child, and infant emergency CPR, Automated External Defibrillator (AED) operation, and emergency first response.
+- **WorkSafeNB JHSC eLearning Series** — WorkSafeNB *(Completed October 2026)*
+  - Completed Joint Health and Safety Committee training, hazard identification, workplace risk mitigation, and New Brunswick OHS compliance.
+
+---
+
 ## EDUCATION
 
-**New Brunswick Community College** — *Current full-time student. Nursing Student 2026 – 2028*  
-**Kennebecasis Valley High School** — *High School Diploma*
+**New Brunswick Community College (NBCC)** — *Healthcare Studies / Nursing Foundations 2026*  
+**Kennebecasis Valley High School (KVHS)** — *High School Diploma (Graduated June 2025)*  
+- Honors with strong coursework in Business Economics (94%), Law, and Communications.

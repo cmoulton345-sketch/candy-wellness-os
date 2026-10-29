@@ -8,7 +8,7 @@
 ---
 
 ## PROFESSIONAL SUMMARY
-Motivated, customer-focused, and dependable retail sales associate with over two years of hands-on experience in fast-paced retail and customer service environments. Proven strengths in personalized customer assistance, point-of-sale (POS) cash handling, visual merchandising, and inventory restocking. Known for reliability, punctuality, strong teamwork, and flexible availability across weekdays, evenings, and weekends. Available to start immediately.
+Motivated, customer-focused, and dependable retail sales associate with over two years of hands-on experience in fast-paced retail and customer service environments. Proven strengths in personalized customer assistance, point-of-sale (POS) cash handling, visual merchandising, and inventory restocking. WorkSafeNB JHSC safety trained and certified in CPR/AED Level C. Known for reliability, punctuality, strong teamwork, and completely open, flexible availability across weekdays, evenings, and weekends. Available to start immediately.
 
 ---
 
@@ -16,8 +16,9 @@ Motivated, customer-focused, and dependable retail sales associate with over two
 * **Customer Service & Client Support:** Welcoming atmosphere, product recommendations, conflict resolution.
 * **POS Systems & Cash Handling:** Accurate cash, debit, credit, gift cards, and till balancing.
 * **Merchandising & Inventory:** Display setup, restocking high-traffic aisles, stockroom organization.
+* **Workplace Safety & First Aid:** WorkSafeNB JHSC eLearning & CPR/AED Level C certified.
 * **Reliability & Teamwork:** Strong work ethic, punctuality, collaboration under fast-paced retail volume.
-* **Flexibility:** Open availability for retail shifts, weekends, and holiday schedules.
+* **Flexibility & Availability:** Completely open availability for retail shifts, weekdays, evenings, and weekends.
 
 ---
 
@@ -46,8 +47,18 @@ Motivated, customer-focused, and dependable retail sales associate with over two
 
 ---
 
+## CERTIFICATIONS & SAFETY TRAINING
+
+* **CPR / AED Level C Certification** — Life Start Training Inc. *(Valid through July 13, 2029)*  
+  * Certified in adult, child, and infant emergency CPR, Automated External Defibrillator (AED) operation, and emergency first aid response.
+* **WorkSafeNB JHSC eLearning Series** — WorkSafeNB *(Completed October 2026)*  
+  * Comprehensive training in Joint Health and Safety Committee duties, workplace hazard identification, incident prevention, and New Brunswick OHS compliance.
+
+---
+
 ## EDUCATION
 
 **Kennebecasis Valley High School (KVHS)** — Quispamsis, NB  
 *High School Diploma (Graduated June 2025)*  
 * Honors / Strong coursework in Business Economics (94%), Law, and Communications.
+

@@ -485,4 +485,12 @@ I'm ready to respond to the updated call, sir.
     - Scheduled drop-off for Wednesday, November 4th (aligned with Rayne's 1:00 PM in-person therapy appointment with Amanda Geldart) or alternate personal drop-off on Monday/Tuesday (Nov 2–3).
     - Clarified that Easter Seals handles factory wiping; advised placing sticky note with login PIN/password on lid.
     - Reassured Candy on permanent disability profile status with Student Financial Services: Canada Student Grants ($2,800/yr disability grant + assistive technology grants) remain permanently protected and available for Rayne's future post-secondary enrollment.
-
+  - **Rayne's Resume Suite Updated with WorkSafeNB JHSC & CPR/AED Level C Certifications:**
+    - Integrated Rayne's **CPR / AED Level C Certification** (Life Start Training Inc., certified through July 13, 2029) and **WorkSafeNB JHSC eLearning Series** (Joint Health and Safety Committee certification, completed October 2026).
+    - Updated Core Competencies across all files to spotlight workplace health & safety, emergency first aid triage, and AED readiness.
+    - Updated and synchronized the full resume ecosystem:
+      1. [`Rayne_Moulton_Retail_Resume.html`](file:///Users/valuedcustomer/Downloads/flowstate_ai_os_candy/Rayne_Moulton_Retail_Resume.html) & [`Rayne_Moulton_Retail_Resume.md`](file:///Users/valuedcustomer/Downloads/flowstate_ai_os_candy/Rayne_Moulton_Retail_Resume.md) (1-page printable retail resume; verified 100% 1-page PDF print output).
+      2. [`Rayne_Moulton_Retail_Resume.docx`](file:///Users/valuedcustomer/Downloads/Rayne_Moulton_Retail_Resume.docx) (brand new formatted Word document for retail job portals and Indeed).
+      3. [`Rayne_Moulton_Resume.html`](file:///Users/valuedcustomer/Downloads/flowstate_ai_os_candy/Rayne_Moulton_Resume.html), [`Rayne_Moulton_Master_Resume.md`](file:///Users/valuedcustomer/Downloads/flowstate_ai_os_candy/Rayne_Moulton_Master_Resume.md), and [`Rayne_Moulton_Resume.docx`](file:///Users/valuedcustomer/Downloads/Rayne_Moulton_Resume.docx).
+      4. [`Rayne_Moulton_Sobeys_Resume.html`](file:///Users/valuedcustomer/Downloads/flowstate_ai_os_candy/Rayne_Moulton_Sobeys_Resume.html).
+    - Copied updated `.docx` files directly to Candy's `/Users/valuedcustomer/Downloads/` folder for immediate access.
