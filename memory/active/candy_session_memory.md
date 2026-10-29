@@ -451,7 +451,15 @@ I'm ready to respond to the updated call, sir.
   - **Coordinating Instructor Betty Lydon Response & Strategy (7:53 AM):**
     - Betty Lydon emailed suggesting a Medical Leave of Absence (MLOA) and questioned the accommodation history (citing a Medical Terminology quiz).
     - Rayne formulated a compassionate, graceful, non-adversarial response: identified the issue as a communication gap (instructors repeatedly not having her plan since September), explicitly declined an MLOA, confirmed Tammy's initiation of the permanent withdrawal, and wished faculty well without assigning blame.
-  - **Amanda Geldart Clinical Letter Coordination:**
-    - Formulated guidance email for Amanda Geldart to ensure her clinical support letter explicitly backs a permanent withdrawal (rather than MLOA) and documents the clinical impact of non-implemented accommodations to safeguard her $2,800 disability grant with Student Financial Services.
+  - **Amanda Geldart Clinical Letter Coordination (8:31 AM):**
+    - Formulated and transmitted guidance email to Amanda Geldart (`amandageldartcounselling@gmail.com`) to ensure her clinical support letter explicitly backs a permanent withdrawal (rather than MLOA) and documents the clinical impact of non-implemented accommodations to safeguard her $2,800 disability grant with Student Financial Services.
     - Prepared MLOA submission template for `MLOA@nbcc.ca`.
+  - **All NBCC Faculty Communications Officially Completed (8:31 AM):**
+    - Rayne transmitted her gentle, non-adversarial response to Betty Lydon (CC'ing Tammy Groom, Jody Beresford, and Candy).
+    - Faculty loop 100% closed with dignity and no open inquiries.
+    - *Remaining Action Items:*
+      1. Kendra Foote (Options Outreach): Coordinate drop-off of loaned assistive tech laptop to close AT grant cleanly.
+      2. Forward Amanda's clinical letter to Kendra for Student Financial Services grant protection.
+      3. UNB HotSpot parking permit refund request (~$166.40 for plate `KHY712`).
+      4. Dollarama orientation check-in at 175 Hampton Rd.
 
