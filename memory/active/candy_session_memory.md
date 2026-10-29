@@ -473,3 +473,16 @@ I'm ready to respond to the updated call, sir.
     - Sourcing Atrantil (botanical quebracho/horse chestnut/peppermint formula) to target methane-producing archaebacteria and calm motility.
   - **Living System Sync:** Updated `candy_cycle_calendar_sept_oct_2026.html`, `candys_hormones.md`, `doctor_consultation_one_sheet.md` / `.html`, and `gyno_endo_consultation_one_sheet.md` / `.html`.
 
+- **2026-10-29 (Afternoon)** (FRIDAY):
+  - **Rayne's iPhone 17 Pro Speaker Troubleshooting & Apple Mail-In Repair Authorized ($0 Cost):**
+    - Diagnosed bottom right loudspeaker failure; sound restricted exclusively to top earpiece receiver causing faint/muffled volume across music and apps.
+    - Verified physical cleaning, balance slider, and audio limits; completed Over-the-Air Apple Remote Diagnostics and Voice Memos speaker test with Apple Support technician.
+    - Bypassed distant Fredericton location (100km+ away); authorized 100% free Mail-In warranty service via Purolator/UPS directly to Quispamsis home under Limited Warranty.
+    - Formulated 4-step pre-shipping checklist: fresh iCloud backup, Find My iPhone toggled OFF, SIM card transfer to backup phone, and removal of third-party case/accessories.
+    - Created master reference and printable guide: [`daily_notes/rayne_iphone_mail_in_repair_guide.md`](file:///Users/valuedcustomer/Downloads/flowstate_ai_os_candy/daily_notes/rayne_iphone_mail_in_repair_guide.md) and [`daily_notes/rayne_iphone_mail_in_repair_guide.html`](file:///Users/valuedcustomer/Downloads/flowstate_ai_os_candy/daily_notes/rayne_iphone_mail_in_repair_guide.html).
+  - **Kendra Foote (Options Outreach) & Easter Seals Laptop Drop-Off Coordination:**
+    - Formulated warm response to Kendra Foote regarding Easter Seals loaner laptop return.
+    - Scheduled drop-off for Wednesday, November 4th (aligned with Rayne's 1:00 PM in-person therapy appointment with Amanda Geldart) or alternate personal drop-off on Monday/Tuesday (Nov 2–3).
+    - Clarified that Easter Seals handles factory wiping; advised placing sticky note with login PIN/password on lid.
+    - Reassured Candy on permanent disability profile status with Student Financial Services: Canada Student Grants ($2,800/yr disability grant + assistive technology grants) remain permanently protected and available for Rayne's future post-secondary enrollment.
+
