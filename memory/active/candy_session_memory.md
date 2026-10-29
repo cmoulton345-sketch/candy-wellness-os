@@ -463,3 +463,13 @@ I'm ready to respond to the updated call, sir.
       3. UNB HotSpot parking permit refund request (~$166.40 for plate `KHY712`).
       4. Dollarama orientation check-in at 175 Hampton Rd.
 
+- **2026-10-29 (Morning)** (SOMA):
+  - **Biometrics & Physical Recovery (Cycle Day 25 - Luteal Downcast):**
+    - Metrics: Scale **150.8 lbs** (-1.0 lb overnight, cumulative **-2.5 lbs in 72 hours** from 153.3!), Oura Temp **-0.5°F** (-0.28°C baseline deviation), Mouth Temp **35.5°C** (clear follicular nadir), Sleep Score **86**, Readiness **87** (optimal green recovery zone).
+    - Progesterone Impact: 1 pump PM taken last night; provided deep nervous system settling without triggering core temp rebound or fluid retention.
+    - Musculoskeletal & Inflammation: Upper body pain noticeably reduced (DOMS & cervical guarding cleared post-vagus reset & gentle treadmill); overall puffiness visibly improving; mild morning finger tightness noted as fluids mobilize through extremities into central vascular clearance.
+  - **SIBO / IBS Gastrointestinal Check-In:**
+    - Left-sided lower stomach ache active; correlates anatomically with descending colon / sigmoid flexure gas distension (enteric nervous system relaxation & motility shifts following acute emotional stress release).
+    - Sourcing Atrantil (botanical quebracho/horse chestnut/peppermint formula) to target methane-producing archaebacteria and calm motility.
+  - **Living System Sync:** Updated `candy_cycle_calendar_sept_oct_2026.html`, `candys_hormones.md`, `doctor_consultation_one_sheet.md` / `.html`, and `gyno_endo_consultation_one_sheet.md` / `.html`.
+
