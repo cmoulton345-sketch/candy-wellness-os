@@ -658,9 +658,11 @@
 
   function getPaidSet() {
     try {
-      return new Set(JSON.parse(localStorage.getItem('candy_paid_steps') || '[]'));
+      const stored = localStorage.getItem('candy_paid_steps');
+      if (stored) return new Set(JSON.parse(stored));
+      return new Set([1]); // Oct 30, 2026 is officially PAID!
     } catch(e) {
-      return new Set();
+      return new Set([1]);
     }
   }
 
