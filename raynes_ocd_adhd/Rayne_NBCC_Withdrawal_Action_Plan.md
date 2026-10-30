@@ -110,7 +110,7 @@ Practical Nursing — Saint John Campus
 - [x] **Step 4 (COMPLETED):** Kendra confirmed in writing that loan file remains in good standing, funding for 2026–2027 is closed, and Amanda's letter will protect disability grants.
 - [x] **Step 5 (COMPLETED):** Jody Beresford's Thursday 11:30 AM accommodation meeting officially cancelled via Reply All confirming permanent withdrawal.
 - [x] **Step 6 (COMPLETED):** Paul's assistive technology (Read&Write) software session cancelled via polite withdrawal notification.
-- [ ] **Step 7 (NEXT):** Send UNB Parking Services email to `parking@unb.ca` for pro-rated refund on HotSpot permit (`KHY712`, ~$166.40).
+- [x] **Step 7 (COMPLETED):** Follow-up email sent Friday, Oct 30 to `parking@unb.ca` and `support@htsp.ca` requesting pro-rated refund on HotSpot permit (`KHY712`, ~$166.40).
 - [ ] **Step 8 (NEXT):** Drop off loaned assistive tech laptop at Options Outreach when convenient.
 
 ---

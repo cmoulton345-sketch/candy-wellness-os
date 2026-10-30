@@ -568,3 +568,9 @@ I'm ready to respond to the updated call, sir.
       - Created [`Rayne_Inspire_Salon_Cover_Letter.md`](file:///Users/valuedcustomer/Downloads/flowstate_ai_os_candy/Rayne_Inspire_Salon_Cover_Letter.md) and interactive [`Rayne_Inspire_Salon_Cover_Letter.html`](file:///Users/valuedcustomer/Downloads/flowstate_ai_os_candy/Rayne_Inspire_Salon_Cover_Letter.html) with 1-click copy buttons.
       - Synchronized across `/Users/valuedcustomer/Desktop/Rayne School /`, Desktop, Downloads, `rayne/`, and `raynes_ocd_adhd/`.
       - Committed and pushed to GitHub remote `main`.
+  - **NBCC Withdrawal Status & Student Records Verification:**
+    - Confirmed full legal and academic wrap-up: Academic Chair Tammy Groom initiated the official withdrawal form with Registrar/Student Records (`studentrecords@nbcc.ca`).
+    - Clarified that Student Records operates as clerical back-office; no paperwork or response is required from Rayne. Winter tuition zeroed and winter loan disbursement cancelled ($0 owed). Kendra Foote confirmed disability grants protected.
+  - **UNB HotSpot Parking Refund Follow-Up Dispatched:**
+    - Candy sent the follow-up email to `parking@unb.ca` and `support@htsp.ca` (CC: Hotmail) requesting pro-rated cancellation and refund (~$166.40 CAD) for permit `KHY712`.
+    - Marked Step 7 completed across all withdrawal master plans and HTML hubs. Everything saved and synced.
