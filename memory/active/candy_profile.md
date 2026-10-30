@@ -15,6 +15,7 @@
   - Rayne (18, in nursing school at NBCC, navigating severe OCD; **CRITICAL MEDICAL ALERT:** Deathly / anaphylactic allergy to tree nuts — cashews, pistachios, and walnuts)
   - Parents living in basement suite of home
 - **Career:** Admin Assistant in Canadian Wealth Management (high compliance, transfers, RESPs, LIFs, RIFs, corporate accounts)
+- **Financial Boundaries:** Scotia Momentum Business Visa (ending in 3014) is strictly Joe's business card; Candy never touches it, and it is 100% excluded from personal household debt plans.
 - **Personal Nuances:** High ADHD, perimenopause, working memory fatigue, pain-adaptive movement needs, deep love for music and calm sanctuaries
 
 ---
