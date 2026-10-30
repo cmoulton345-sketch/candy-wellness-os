@@ -90,30 +90,41 @@
   * Physical / Headaches: Headache again; **PMSing active**
   * Sleep Onset: Good night
   * OCD & BFRB: Medium checking (1–2x, not as bad at night); **still picking her thumbs a lot**.
-* **Mon, Oct 26 (Day 9 - Current):**
+* **Mon, Oct 26 (Day 9):**
   * Taken 8am w/ Food? [x] Yes | Focus: **3 / 5** | Mood: Steady, not bad, just "meh"
   * Appetite: Fair
   * Physical / Headaches: Headache again; **PMSing active**
   * Sleep Onset: Good
   * OCD & BFRB: Medium checking (1–2x, not as bad at night); **still picking her thumbs a lot**.
+* **Fri, Oct 30 (Day 13 - Live Check-In):**
+  * Taken 8am w/ Food? [x] Yes (Fluoxetine 50mg + Vyvanse 10mg + Slynd 4mg)
+  * Focus: **3.5 / 5** (Focus is good, stable, but room for improvement; reinforces 20mg step for Nov 5)
+  * Mood / Affect: Pretty stable emotionally; no numbness or flattening
+  * OCD Checking Loops: **Stable & quiet / coming along nicely** (Fluoxetine 50mg maintaining effective control)
+  * Temperature: **36.1°C oral** (Normal / afebrile; effectively rules out acute bacterial infection or fever)
+  * Physical / GI Symptoms: **Middle-of-belly stomach pain & cramps for a few days + nausea**
+  * Bowels: **Normal & healthy** (formed, mid-soft/hard, no pieces, zero blood; rules out acute obstruction or colitis)
+  * Cycle / Slynd Context: On 2nd pack of Slynd (drospirenone); skipped green placebo pills (now week 2 of pack 2). **Timing is exactly 27–28 days since Oct 3–5 breakthrough bleeding** — consistent with a "phantom period" / cyclic hormonal prostaglandin release causing uterine/abdominal cramping and nausea despite no bleeding.
 
 ---
 
 ### Clinical Synthesis for Nurse Practitioner (Nov 5 Review)
-1. **Focus Plateau & Dose Sufficiency:** 10 mg Vyvanse is well tolerated without the emotional blunting ("flat/blah") experienced previously on 30 mg. However, focus has settled at an incomplete 3/5 with notable drop-offs during PMS. Moving to **20 mg** is the recommended clinical next step.
-2. **Headache Trajectory (8/9 Days):** Daily headaches reflect onboarding vasoconstriction, delayed hydration/fueling, and study jaw clenching. Addressed with proactive electrolytes, protein breakfast, and evening Magnesium Bisglycinate.
-3. **OCD Loops vs. Thumb Picking (BFRB):** Intrusive phone checking loops spiked Days 1–3 but stabilized under 50 mg Fluoxetine by Day 5. Repetitive thumb picking flared Oct 23, 25, 26 during PMS.
+1. **Focus Plateau & Dose Sufficiency:** 10 mg Vyvanse is well tolerated without the emotional blunting ("flat/blah") experienced previously on 30 mg. Focus has settled into a 3 to 3.5/5 plateau. Moving to **20 mg** is the recommended clinical next step.
+2. **Headache Trajectory (8/9 Days initially):** Early daily headaches reflected onboarding vasoconstriction, delayed hydration/fueling, and study jaw clenching. Addressed with proactive electrolytes, protein breakfast, and evening Magnesium Bisglycinate.
+3. **OCD Loops vs. Thumb Picking (BFRB):** Intrusive phone checking loops spiked Days 1–3 but stabilized under 50 mg Fluoxetine by Day 5. Checking loops remain calm, stable, and well-managed through Day 13.
 4. **NAC SAP (N-Acetylcysteine) Recommendation:** NAC is the leading evidence-based nutritional medicine for excoriation (skin/thumb picking) and glutamate-driven OCD. Propose introducing **NAC SAP (600 mg daily)** *after* Rayne stabilizes on the anticipated 20 mg Vyvanse dose.
+5. **GI & Slynd Continuous Pack Cycle (Oct 28–30):** Mid-belly cramps and mild nausea reported across Days 11–13. Clinical vitals/exam: **Oral temp 36.1°C (normal, afebrile)** and **healthy formed bowel movements (no pieces, zero blood)** rule out acute intra-abdominal infection/appendicitis or colitis. Etiology aligns with cyclic "phantom period" prostaglandin release at the 27–28 day milestone following Oct 3–5 breakthrough bleeding (suppressed withdrawal bleed from skipping green placebo pills), compounded by morning stomach sensitivity to the 3-medication morning regimen (Fluoxetine + Vyvanse + Slynd).
 
 ---
 
 ### Appointment Day: Thursday, November 5, 2026
 * **Nurse Practitioner Discussion Agenda:**
-  1. **School Focus & Executive Function:** Present daily log showing ADHD focus settling at 3/5 on 10 mg Vyvanse.
+  1. **School Focus & Executive Function:** Present daily log showing ADHD focus settling at 3–3.5/5 on 10 mg Vyvanse.
   2. **Affect & Personality Preservation:** Confirm affect remains expressive and intact (zero 30 mg numbness).
   3. **Anticipated Titration:** Request stepping Vyvanse up by 10 mg (**from 10 mg to 20 mg**).
   4. **Headache & Rebound Mitigation:** Discuss wear-off timing (3:30–4:30 PM), hydration, and evening magnesium.
   5. **NAC SAP Introduction:** Discuss adding NAC SAP (600 mg) for residual thumb picking and glutamate balance once 20 mg Vyvanse is stable.
+  6. **Slynd Continuous Use & GI Tolerance:** Review continuous progestin management (skipped green placebos). Discuss the 28-day cyclic phantom period cramping/nausea (temp 36.1°C, normal bowels) and reinforce meal buffering for morning doses.
 
 ---
 
