@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rayne’s Student Aid & Clinical Letter Upload Guide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #090e1a;
+      --card: #121c33;
+      --card-inner: rgba(255, 255, 255, 0.04);
+      --border: rgba(255, 255, 255, 0.1);
+      --teal: #0d9488;
+      --teal-light: #2dd4bf;
+      --blue: #3b82f6;
+      --gold: #f59e0b;
+      --emerald: #10b981;
+      --rose: #f43f5e;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 32px 16px 60px;
+    }
+    .container {
+      max-width: 820px;
+      margin: 0 auto;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(13, 148, 136, 0.15);
+      border: 1px solid var(--teal);
+      color: var(--teal-light);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 12px;
+    }
+    h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      color: white;
+      margin-bottom: 8px;
+    }
+    .subhead {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 24px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+    .card-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: white;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 12px;
+    }
+    .table-wrap {
+      overflow-x: auto;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+    }
+    th, td {
+      padding: 12px 14px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    th {
+      color: var(--muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      letter-spacing: 0.5px;
+    }
+    td strong {
+      color: white;
+    }
+    .step-box {
+      background: var(--card-inner);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 18px;
+    }
+    .step-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    .step-tag {
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 6px;
+    }
+    .tag-blue { background: rgba(59, 130, 246, 0.2); color: #93c5fd; }
+    .tag-teal { background: rgba(13, 148, 136, 0.2); color: var(--teal-light); }
+    .tag-gold { background: rgba(245, 158, 11, 0.2); color: #fde047; }
+    .step-num {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: white;
+    }
+    ol, ul {
+      padding-left: 20px;
+      margin-bottom: 12px;
+      color: #cbd5e1;
+      font-size: 0.95rem;
+    }
+    li {
+      margin-bottom: 6px;
+    }
+    .code-box {
+      background: #090e1a;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 8px;
+      padding: 12px 14px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.88rem;
+      color: #7dd3fc;
+      margin: 10px 0;
+      position: relative;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+    .btn {
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      cursor: pointer;
+      border: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.15s ease;
+      text-decoration: none;
+    }
+    .btn-teal { background: var(--teal); color: white; }
+    .btn-teal:hover { background: #0f766e; }
+    .btn-blue { background: var(--blue); color: white; }
+    .btn-blue:hover { background: #2563eb; }
+    .btn-outline {
+      background: rgba(255, 255, 255, 0.06);
+      color: white;
+      border: 1px solid var(--border);
+    }
+    .btn-outline:hover { background: rgba(255, 255, 255, 0.12); }
+    .actions-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+    .checklist-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      margin-bottom: 10px;
+      cursor: pointer;
+      transition: background 0.15s ease;
+    }
+    .checklist-row:hover {
+      background: rgba(255, 255, 255, 0.05);
+    }
+    .checkbox {
+      width: 22px;
+      height: 22px;
+      border-radius: 6px;
+      border: 2px solid var(--teal);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+      transition: all 0.2s ease;
+    }
+    .checkbox.checked {
+      background: var(--teal);
+      color: white;
+    }
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: var(--emerald);
+      color: white;
+      padding: 12px 24px;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      opacity: 0;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 2000;
+      pointer-events: none;
+    }
+    .toast.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+    .info-callout {
+      background: rgba(59, 130, 246, 0.08);
+      border-left: 4px solid var(--blue);
+      padding: 14px 16px;
+      border-radius: 0 8px 8px 0;
+      margin-top: 14px;
+      font-size: 0.92rem;
+      color: #bfdbfe;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="header">
+      <div class="badge">🛡️ Grant Protection & Student Aid Protocol</div>
+      <h1>Amanda’s Clinical Letter & Student Aid Guide</h1>
+      <p class="subhead">Exact instructions for uploading Amanda’s therapy letter to protect Rayne’s $2,800 disability grant, close Winter funding, and keep her profile in 100% good standing.</p>
+    </div>
+
+    <!-- ROLE DIVISION -->
+    <div class="card">
+      <div class="card-title">
+        <span>⚖️</span> Why Kendra Doesn't Touch the Loan (Division of Roles)
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Contact / Agency</th>
+              <th>Their Actual Scope</th>
+              <th>What They Control</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Kendra Foote</strong><br><small style="color:var(--muted)">Options Outreach</small></td>
+              <td>Community Advocate &amp; Case Worker</td>
+              <td>Coordinates the <strong>Easter Seals laptop return</strong> and maintains Rayne’s local disability advocacy file for 2027. She does <em>not</em> work for NB Student Aid or NBCC, so she has no administrative authority to cancel loans.</td>
+            </tr>
+            <tr>
+              <td><strong>Tammy Groom &amp; Registrar</strong><br><small style="color:var(--muted)">NBCC Nursing Chair &amp; Records</small></td>
+              <td>The Official Institutional Channel</td>
+              <td>Tammy initiated the official <em>Student Status Form</em>. NBCC electronically reports Rayne’s non-enrolment directly to <strong>NB Student Financial Services</strong>, which <strong>automatically terminates the Winter 2027 disbursement ($0 owed)</strong>.</td>
+            </tr>
+            <tr>
+              <td><strong>Amanda Geldart</strong><br><small style="color:var(--muted)">Therapist</small></td>
+              <td>The Clinical Protective Shield</td>
+              <td>Provides the official medical/psychological documentation. <strong>Legally shields the $2,800 Canada Student Disability Grant</strong> from clawback and keeps Rayne’s record 100% penalty-free.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ACTION PLAN: WHEN AMANDA'S LETTER ARRIVES -->
+    <div class="card">
+      <div class="card-title">
+        <span>🚀</span> Action Plan: When Amanda’s Letter Arrives Next Week
+      </div>
+
+      <!-- STEP 1 -->
+      <div class="step-box">
+        <div class="step-header">
+          <span class="step-num">Step 1: Upload to NB Student Aid Portal</span>
+          <span class="step-tag tag-blue">Primary Government Repository</span>
+        </div>
+        <p style="margin-bottom: 10px; color: #cbd5e1;">This is the official government system that manages Rayne's loan and grants.</p>
+        <ol>
+          <li>Log in to Rayne’s account on the <strong>NB Student Financial Services Portal</strong>.</li>
+          <li>Navigate to <strong>"Upload Documents"</strong> or <strong>"Submit Documents"</strong> under her active 2026–2027 application.</li>
+          <li>Choose Document Category: <strong>"Medical Documentation"</strong>, <strong>"Appeal"</strong>, or <strong>"Other / Supporting Documents"</strong>.</li>
+          <li>Copy and paste this exact note into the description field:</li>
+        </ol>
+
+        <div class="code-box" id="memoText">Clinical support documentation for medical withdrawal — Rayne Moulton</div>
+
+        <div class="actions-row">
+          <button class="btn btn-teal" onclick="copyText('memoText', 'Memo description copied!')">📋 Copy Note Text</button>
+          <a href="https://www.studentaid.gnb.ca/" target="_blank" class="btn btn-blue">🌐 Open NB Student Aid Portal</a>
+        </div>
+      </div>
+
+      <!-- STEP 2 -->
+      <div class="step-box">
+        <div class="step-header">
+          <span class="step-num">Step 2: Forward Copy to Kendra Foote</span>
+          <span class="step-tag tag-teal">Options Outreach Case File</span>
+        </div>
+        <p style="margin-bottom: 10px; color: #cbd5e1;">Kendra keeps this in Rayne's permanent file so her disability profile is ready for next year's application.</p>
+        
+        <div class="code-box" id="kendraEmail">To: Kendra Foote
+Subject: Clinical Support Letter — Rayne Moulton (Disability File & Equipment Return)
+
+Hi Kendra,
+
+I hope you are having a wonderful week!
+
+Attached is the clinical support letter from Rayne's therapist, Amanda Geldart, documenting her medical withdrawal from NBCC. We have also uploaded a copy directly to Rayne's NB Student Aid portal.
+
+Could you please keep this on file with Rayne's Options Outreach profile to ensure her permanent disability status remains fully protected for future post-secondary applications?
+
+Also, as discussed, we will be dropping off the Easter Seals loaner laptop to your office [e.g. Wednesday, Nov 4 around Rayne's therapy appointment]. We have Rayne's login PIN ready on a sticky note for your team.
+
+Thank you so much again for all your kindness, guidance, and support for Rayne!
+
+Warm regards,
+Candy and Rayne Moulton</div>
+
+        <div class="actions-row">
+          <button class="btn btn-teal" onclick="copyText('kendraEmail', 'Kendra email draft copied!')">📋 Copy Kendra Email</button>
+        </div>
+      </div>
+
+      <!-- STEP 3 -->
+      <div class="step-box">
+        <div class="step-header">
+          <span class="step-num">Step 3: Forward Copy to NBCC Medical Inbox</span>
+          <span class="step-tag tag-gold">NBCC Confidential Health Records</span>
+        </div>
+        <p style="margin-bottom: 10px; color: #cbd5e1;">Submits the letter to NBCC’s confidential central inbox so no instructors or administrators ever follow up.</p>
+
+        <div class="code-box" id="nbccEmail">To: MLOA@nbcc.ca
+Subject: Confidential Clinical Documentation — Rayne Moulton (Student ID: 5110565)
+
+Dear NBCC Medical Documentation / Student Records Team,
+
+Please find attached the official clinical support letter from therapist Amanda Geldart regarding Rayne Moulton (Student ID: 5110565).
+
+Following Academic Chair Tammy Groom's initiation of Rayne's student-initiated withdrawal from the Practical Nursing program, this documentation confirms her withdrawal on medical/health grounds for her permanent student record.
+
+Thank you for placing this confidentially in her file.
+
+Sincerely,
+Rayne Moulton (and Candy Moulton)
+NBCC Student ID: 5110565</div>
+
+        <div class="actions-row">
+          <button class="btn btn-teal" onclick="copyText('nbccEmail', 'NBCC medical email draft copied!')">📋 Copy NBCC Medical Email</button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- LIVING CHECKLIST -->
+    <div class="card">
+      <div class="card-title">
+        <span>✅</span> Interactive Progress Tracker
+      </div>
+
+      <div class="checklist-row" onclick="toggleCheck('c1')">
+        <div class="checkbox" id="c1">✓</div>
+        <div><strong>Tammy Groom Initiated Withdrawal:</strong> Tammy submitted official withdrawal form to Registrar (Completed Oct 29).</div>
+      </div>
+
+      <div class="checklist-row" onclick="toggleCheck('c2')">
+        <div class="checkbox" id="c2"></div>
+        <div><strong>Receive Letter from Amanda Geldart:</strong> Clinical letter received from therapy office.</div>
+      </div>
+
+      <div class="checklist-row" onclick="toggleCheck('c3')">
+        <div class="checkbox" id="c3"></div>
+        <div><strong>Upload to NB Student Aid Portal:</strong> Letter submitted under 2026–2027 application documents tab.</div>
+      </div>
+
+      <div class="checklist-row" onclick="toggleCheck('c4')">
+        <div class="checkbox" id="c4"></div>
+        <div><strong>Forward to Kendra Foote (Options Outreach):</strong> Sent copy to Kendra for Rayne’s permanent file.</div>
+      </div>
+
+      <div class="checklist-row" onclick="toggleCheck('c5')">
+        <div class="checkbox" id="c5"></div>
+        <div><strong>Forward to NBCC Central Medical:</strong> Sent copy to <code>MLOA@nbcc.ca</code> (Student ID: 5110565).</div>
+      </div>
+
+      <div class="checklist-row" onclick="toggleCheck('c6')">
+        <div class="checkbox" id="c6"></div>
+        <div><strong>Drop Off Easter Seals Laptop:</strong> Return loaner laptop to Options Outreach (Target: Nov 4).</div>
+      </div>
+
+      <div class="info-callout">
+        💡 <strong>Status Summary:</strong> Once Step 3 is completed, Rayne's <strong>$2,800 Canada Student Grant</strong> is permanently safeguarded, her Winter loan disbursement is $0, and her disability verification remains unlocked for 2027.
+      </div>
+    </div>
+
+  </div>
+
+  <div class="toast" id="toast">✓ Copied to clipboard!</div>
+
+  <script>
+    function copyText(elemId, toastMsg) {
+      const text = document.getElementById(elemId).innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        showToast(toastMsg || '✓ Copied to clipboard!');
+      }).catch(() => {
+        showToast('✓ Copied to clipboard!');
+      });
+    }
+
+    function showToast(msg) {
+      const t = document.getElementById('toast');
+      t.innerText = msg;
+      t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), 2600);
+    }
+
+    function toggleCheck(id) {
+      const el = document.getElementById(id);
+      if (el.innerText === '✓') {
+        el.innerText = '';
+        el.classList.remove('checked');
+        localStorage.setItem('aid_check_' + id, '0');
+      } else {
+        el.innerText = '✓';
+        el.classList.add('checked');
+        localStorage.setItem('aid_check_' + id, '1');
+      }
+    }
+
+    // Load saved states
+    window.onload = function() {
+      ['c1', 'c2', 'c3', 'c4', 'c5', 'c6'].forEach(id => {
+        const val = localStorage.getItem('aid_check_' + id);
+        const el = document.getElementById(id);
+        if (id === 'c1' && val === null) {
+          el.innerText = '✓';
+          el.classList.add('checked');
+        } else if (val === '1') {
+          el.innerText = '✓';
+          el.classList.add('checked');
+        } else if (val === '0') {
+          el.innerText = '';
+          el.classList.remove('checked');
+        }
+      });
+    };
+  </script>
+</body>
+</html>

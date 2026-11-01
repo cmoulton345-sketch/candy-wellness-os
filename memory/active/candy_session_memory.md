@@ -593,4 +593,16 @@ I'm ready to respond to the updated call, sir.
       - Dec 30: Full $1,500 allocation funds Christmas in cash ($1,789.21+ total cash fund, zero holiday debt!).
     - Synchronized [`debt_payoff_planner.html`](file:///Users/valuedcustomer/Downloads/flowstate_ai_os_candy/debt_payoff_planner.html) and [`candy_joe_living_debt_spreadsheet.csv`](file:///Users/valuedcustomer/Downloads/flowstate_ai_os_candy/candy_joe_living_debt_spreadsheet.csv). Total active consumer debt reduced to **$37,867.44**.
 
+- **2026-11-01 (Midday)** (FRIDAY):
+  - **Rayne Student Aid & Kendra Foote Scope Clarification:**
+    - Clarified institutional vs. community partner responsibilities: Kendra Foote (Options Outreach) is an external advocate and does not have administrative access to cancel government loans.
+    - Official loan cancellation pathway verified: NBCC (Tammy Groom -> Registrar) electronically notifies New Brunswick Student Financial Services under mandatory post-secondary reporting, automatically zeroing Winter 2027 tuition and terminating the second loan disbursement ($0 released, $0 owed).
+  - **Amanda Geldart Clinical Letter & Portal Upload Master Hub Built:**
+    - Confirmed purpose of Amanda's upcoming therapy letter: provides clinical backing for medical withdrawal, permanently safeguarding Rayne's **$2,800 Canada Student Grant for Students with Disabilities** from clawback and maintaining clean standing for 2027 re-enrollment.
+    - Created dedicated guides with 1-click copy buttons, email templates, and direct portal links:
+      1. [`raynes_ocd_adhd/amanda_letter_and_student_aid_upload_guide.md`](file:///Users/valuedcustomer/Downloads/flowstate_ai_os_candy/raynes_ocd_adhd/amanda_letter_and_student_aid_upload_guide.md)
+      2. [`raynes_ocd_adhd/amanda_letter_and_student_aid_upload_guide.html`](file:///Users/valuedcustomer/Downloads/flowstate_ai_os_candy/raynes_ocd_adhd/amanda_letter_and_student_aid_upload_guide.html)
+      3. Mirrored to `Rayne_NBCC/` and integrated Card #6 into [`share_links.html`](file:///Users/valuedcustomer/Downloads/flowstate_ai_os_candy/share_links.html).
+    - Updated master checklists in [`Rayne_NBCC_Withdrawal_Action_Plan.md`](file:///Users/valuedcustomer/Downloads/flowstate_ai_os_candy/raynes_ocd_adhd/Rayne_NBCC_Withdrawal_Action_Plan.md) and [`.html`](file:///Users/valuedcustomer/Downloads/flowstate_ai_os_candy/raynes_ocd_adhd/Rayne_NBCC_Withdrawal_Action_Plan.html).
+
 
