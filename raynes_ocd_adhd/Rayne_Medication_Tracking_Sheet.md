@@ -96,24 +96,41 @@
   * Physical / Headaches: Headache again; **PMSing active**
   * Sleep Onset: Good
   * OCD & BFRB: Medium checking (1–2x, not as bad at night); **still picking her thumbs a lot**.
-* **Fri, Oct 30 (Day 13 - Live Check-In):**
+* **Fri, Oct 30 (Day 13):**
   * Taken 8am w/ Food? [x] Yes (Fluoxetine 50mg + Vyvanse 10mg + Slynd 4mg)
-  * Focus: **3.5 / 5** (Focus is good, stable, but room for improvement; reinforces 20mg step for Nov 5)
+  * Focus: **3.5 / 5** (Focus good, stable, but room for improvement; reinforces 20mg step for Nov 5)
   * Mood / Affect: Pretty stable emotionally; no numbness or flattening
   * OCD Checking Loops: **Stable & quiet / coming along nicely** (Fluoxetine 50mg maintaining effective control)
   * Temperature: **36.1°C oral** (Normal / afebrile; effectively rules out acute bacterial infection or fever)
   * Physical / GI Symptoms: **Middle-of-belly stomach pain & cramps for a few days + nausea**
   * Bowels: **Normal & healthy** (formed, mid-soft/hard, no pieces, zero blood; rules out acute obstruction or colitis)
   * Cycle / Slynd Context: On 2nd pack of Slynd (drospirenone); skipped green placebo pills (now week 2 of pack 2). **Timing is exactly 27–28 days since Oct 3–5 breakthrough bleeding** — consistent with a "phantom period" / cyclic hormonal prostaglandin release causing uterine/abdominal cramping and nausea despite no bleeding.
+* **Sat, Oct 31 (Day 14):**
+  * Taken 8am w/ Food? [x] Yes
+  * Focus: **3.5 / 5**
+  * Mood / Affect: Improving as pain recedes
+  * Physical / Cycle: **Started brown breakthrough spotting**; uterine cramps and nausea began receding.
+  * Headaches: Starting to improve.
+  * OCD: Calm / stable.
+* **Sun, Nov 1 (Day 15 - Current):**
+  * Taken 8am w/ Food? [x] Yes
+  * Focus: **3.5 / 5** (Steady focus)
+  * Mood / Affect: **Feeling much better!**
+  * Physical / GI Symptoms: **No more nausea, no more belly pain!** Symptoms completely resolved as oxidized endometrial lining released. Light brown spotting ongoing (normal on continuous Slynd).
+  * Headaches: **Headache is better.**
+  * OCD: **Pretty good** (Fluoxetine 50mg maintaining steady control over intrusive checking loops).
+  * Upcoming Milestones:
+    * **Monday, Nov 2 (Tomorrow):** Therapy session with Amanda Geldart (emotional decompression, releasing guilt, ADHD/OCD strategies).
+    * **Thursday, Nov 5:** Doctor / Nurse Practitioner Consultation (Vyvanse 10mg -> 20mg step, Slynd continuous review).
 
 ---
 
 ### Clinical Synthesis for Nurse Practitioner (Nov 5 Review)
 1. **Focus Plateau & Dose Sufficiency:** 10 mg Vyvanse is well tolerated without the emotional blunting ("flat/blah") experienced previously on 30 mg. Focus has settled into a 3 to 3.5/5 plateau. Moving to **20 mg** is the recommended clinical next step.
-2. **Headache Trajectory (8/9 Days initially):** Early daily headaches reflected onboarding vasoconstriction, delayed hydration/fueling, and study jaw clenching. Addressed with proactive electrolytes, protein breakfast, and evening Magnesium Bisglycinate.
-3. **OCD Loops vs. Thumb Picking (BFRB):** Intrusive phone checking loops spiked Days 1–3 but stabilized under 50 mg Fluoxetine by Day 5. Checking loops remain calm, stable, and well-managed through Day 13.
+2. **Headache Trajectory:** Daily headaches during onboarding (8/9 days initially) have improved noticeably by Day 15 as hydration, nutrition, and routine stabilized.
+3. **OCD Loops vs. Thumb Picking (BFRB):** Intrusive phone checking loops stabilized under 50 mg Fluoxetine by Day 5. Checking loops remain calm, stable, and "pretty good" through Day 15.
 4. **NAC SAP (N-Acetylcysteine) Recommendation:** NAC is the leading evidence-based nutritional medicine for excoriation (skin/thumb picking) and glutamate-driven OCD. Propose introducing **NAC SAP (600 mg daily)** *after* Rayne stabilizes on the anticipated 20 mg Vyvanse dose.
-5. **GI & Slynd Continuous Pack Cycle (Oct 28–30):** Mid-belly cramps and mild nausea reported across Days 11–13. Clinical vitals/exam: **Oral temp 36.1°C (normal, afebrile)** and **healthy formed bowel movements (no pieces, zero blood)** rule out acute intra-abdominal infection/appendicitis or colitis. Etiology aligns with cyclic "phantom period" prostaglandin release at the 27–28 day milestone following Oct 3–5 breakthrough bleeding (suppressed withdrawal bleed from skipping green placebo pills), compounded by morning stomach sensitivity to the 3-medication morning regimen (Fluoxetine + Vyvanse + Slynd).
+5. **GI Cramps Resolution & Slynd Continuous Cycle (Oct 28 – Nov 1):** Mid-belly cramps and nausea reported Oct 28–30 completely resolved following onset of brown breakthrough spotting on Oct 31. This definitively confirms that the symptoms were uterine/prostaglandin-driven ("phantom period" at the 28-day mark post-Oct 3 breakthrough bleed) rather than GI pathology. Once the old oxidized blood released, prostaglandins dropped and symptoms disappeared. Brown spotting is expected on continuous Slynd (drospirenone 4 mg).
 
 ---
 
