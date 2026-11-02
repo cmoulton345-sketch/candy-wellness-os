@@ -886,6 +886,7 @@
         </div>
       </div>
       <div class="btn-group no-print">
+        <button class="btn btn-secondary" onclick="copyShareUrl()" style="background:rgba(20,184,166,0.18); border-color:var(--teal-light); color:#5eead4;">🔗 Copy Link for Sisters</button>
         <button class="btn btn-secondary" onclick="copyUpdateForSoma()">📋 Copy for Soma</button>
         <button class="btn btn-primary" onclick="openLogModal()">+ Log Today's Vitals</button>
       </div>
@@ -1772,6 +1773,15 @@
         renderApp();
         showToast('Entry removed');
       }
+    }
+
+    function copyShareUrl() {
+      const url = 'https://cmoulton345-sketch.github.io/candy-wellness-os/moms_care_tracker.html';
+      navigator.clipboard.writeText(url).then(() => {
+        showToast('🔗 Link copied to clipboard! Ready to paste to your sisters.');
+      }).catch(() => {
+        prompt('Copy Mom\'s Care Tracker URL below:', url);
+      });
     }
 
     function copyUpdateForSoma() {
