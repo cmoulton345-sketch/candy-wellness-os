@@ -110,9 +110,9 @@ Practical Nursing — Saint John Campus
 - [x] **Step 4 (COMPLETED):** Kendra confirmed in writing that loan file remains in good standing, funding for 2026–2027 is closed, and Amanda's letter will protect disability grants.
 - [x] **Step 5 (COMPLETED):** Jody Beresford's Thursday 11:30 AM accommodation meeting officially cancelled via Reply All confirming permanent withdrawal.
 - [x] **Step 6 (COMPLETED):** Paul's assistive technology (Read&Write) software session cancelled via polite withdrawal notification.
-- [x] **Step 7 (COMPLETED):** Follow-up email sent Friday, Oct 30 to `parking@unb.ca` and `support@htsp.ca` requesting pro-rated refund on HotSpot permit (`KHY712`, ~$166.40).
-- [ ] **Step 8 (NEXT):** Drop off loaned assistive tech laptop at Options Outreach (Target: Wednesday, Nov 4 around Rayne's 1:00 PM therapy appt).
-- [ ] **Step 9 (NEXT):** Receive clinical letter from Amanda Geldart ➔ upload to [NB Student Aid Portal](https://www.studentaid.gnb.ca/) under 2026–2027 documents, and forward copies to Kendra Foote and `MLOA@nbcc.ca`. (See full interactive hub: [`amanda_letter_and_student_aid_upload_guide.html`](file:///Users/valuedcustomer/Downloads/flowstate_ai_os_candy/raynes_ocd_adhd/amanda_letter_and_student_aid_upload_guide.html)).
+- [ ] **Step 8 (SCHEDULED):** Drop off loaned assistive tech iPad to Kendra Foote at Options Outreach on Friday morning (Nov 6) to close out AT grant cleanly.
+- [ ] **Step 9 (IN PROGRESS):** Receive finalized clinical letter from Amanda Geldart (completed great prep conversation Monday morning, Nov 2) ➔ upload to [NB Student Aid Portal](https://www.studentaid.gnb.ca/) under 2026–2027 documents, and forward copies to Kendra Foote and `MLOA@nbcc.ca`. (See full interactive hub: [`amanda_letter_and_student_aid_upload_guide.html`](file:///Users/valuedcustomer/Downloads/flowstate_ai_os_candy/raynes_ocd_adhd/amanda_letter_and_student_aid_upload_guide.html)).
+- [ ] **Step 10 (EXPLORING):** Math upgrading course exploration (Rayne expressed interest in upgrading math to expand future program pathways like Business Admin / Marketing or UNBSJ).
 
 ---
 
