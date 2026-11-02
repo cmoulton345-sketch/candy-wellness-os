@@ -472,15 +472,404 @@
       opacity: 1;
     }
 
+    /* CRITICAL EMERGENCY BANNER */
+    .alert-banner-danger {
+      background: linear-gradient(135deg, rgba(225, 29, 72, 0.22), rgba(159, 18, 57, 0.3));
+      border: 1px solid rgba(244, 63, 94, 0.45);
+      border-left: 5px solid #f43f5e;
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin-bottom: 22px;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      box-shadow: 0 8px 24px rgba(225, 29, 72, 0.15);
+    }
+
+    /* BADGE CRITICAL */
+    .badge-critical {
+      background: rgba(244, 63, 94, 0.25);
+      color: #fda4af;
+      border: 1px solid rgba(244, 63, 94, 0.45);
+    }
+
+    /* CALENDAR COMPONENT */
+    .calendar-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 22px 24px;
+      margin-bottom: 24px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    }
+    .calendar-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 18px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .calendar-title-wrap h2 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .calendar-title-wrap p {
+      font-size: 0.84rem;
+      color: var(--teal-light);
+      margin-top: 2px;
+    }
+    .calendar-legend {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .legend-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.74rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-sub);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .legend-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+    .legend-dot.red { background: #f43f5e; box-shadow: 0 0 8px #f43f5e; }
+    .legend-dot.amber { background: #f59e0b; }
+    .legend-dot.teal { background: #14b8a6; }
+    .legend-dot.purple { background: #a855f7; }
+
+    .calendar-grid-header {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 6px;
+      margin-bottom: 6px;
+    }
+    .calendar-day-label {
+      text-align: center;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-muted);
+      padding: 6px 0;
+    }
+
+    .calendar-grid-days {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 6px;
+    }
+    .cal-cell {
+      min-height: 86px;
+      background: rgba(0, 0, 0, 0.22);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 10px;
+      padding: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      transition: all 0.18s ease;
+      position: relative;
+    }
+    .cal-cell:hover {
+      background: rgba(255, 255, 255, 0.04);
+      border-color: rgba(20, 184, 166, 0.35);
+    }
+    .cal-cell.today {
+      border: 1.5px solid var(--teal-light);
+      background: rgba(20, 184, 166, 0.09);
+    }
+    .cal-cell.alert {
+      border: 1.5px solid #f43f5e;
+      background: rgba(244, 63, 94, 0.14);
+    }
+    .cal-cell.past-event {
+      border: 1px solid rgba(59, 130, 246, 0.35);
+      background: rgba(59, 130, 246, 0.08);
+    }
+    .cal-cell.milestone {
+      border: 1.5px dashed #a855f7;
+      background: rgba(168, 85, 247, 0.08);
+    }
+    .cal-cell.muted-cell {
+      opacity: 0.22;
+      pointer-events: none;
+    }
+    .cal-cell-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .cal-date-num {
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: var(--text);
+    }
+    .cal-today-tag {
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: var(--teal-light);
+      text-transform: uppercase;
+    }
+    .cal-badge {
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 3px 6px;
+      border-radius: 6px;
+      line-height: 1.2;
+      display: block;
+      margin-top: 2px;
+      text-align: left;
+    }
+    .cal-badge.red { background: rgba(244, 63, 94, 0.3); color: #fecdd3; border: 1px solid rgba(244, 63, 94, 0.4); }
+    .cal-badge.blue { background: rgba(59, 130, 246, 0.25); color: #bfdbfe; border: 1px solid rgba(59, 130, 246, 0.35); }
+    .cal-badge.purple { background: rgba(168, 85, 247, 0.25); color: #e9d5ff; border: 1px solid rgba(168, 85, 247, 0.35); }
+    .cal-snippet {
+      font-size: 0.68rem;
+      color: var(--text-sub);
+      line-height: 1.25;
+      margin-top: 2px;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+
+    /* TIMELINE */
+    .timeline-wrap {
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .timeline-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .timeline-item {
+      display: flex;
+      gap: 16px;
+      padding-bottom: 16px;
+      position: relative;
+    }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      top: 24px;
+      left: 15px;
+      bottom: 0;
+      width: 2px;
+      background: rgba(255, 255, 255, 0.1);
+    }
+    .timeline-item:last-child::before { display: none; }
+    .timeline-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.95rem;
+      flex-shrink: 0;
+      z-index: 1;
+    }
+    .timeline-icon.red { background: #f43f5e; box-shadow: 0 0 10px rgba(244, 63, 94, 0.5); }
+    .timeline-icon.blue { background: #3b82f6; }
+    .timeline-icon.purple { background: #a855f7; }
+    .timeline-content {
+      background: rgba(0, 0, 0, 0.22);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 10px;
+      padding: 12px 16px;
+      flex: 1;
+    }
+    .timeline-date {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--teal-light);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+    .timeline-heading {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 4px;
+    }
+    .timeline-text {
+      font-size: 0.84rem;
+      color: var(--text-sub);
+      line-height: 1.45;
+    }
+
+    /* SURGICAL OPTIONS MATRIX */
+    .surgery-intro {
+      background: linear-gradient(135deg, rgba(20, 184, 166, 0.12), rgba(59, 130, 246, 0.12));
+      border: 1px solid rgba(20, 184, 166, 0.3);
+      border-radius: 12px;
+      padding: 18px 20px;
+      margin-bottom: 22px;
+    }
+    .surgery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 18px;
+      margin-bottom: 24px;
+    }
+    .surgery-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      position: relative;
+      transition: all 0.2s ease;
+    }
+    .surgery-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+    }
+    .surgery-card.recommended {
+      border: 2px solid var(--teal-light);
+      background: linear-gradient(180deg, rgba(20, 184, 166, 0.12), rgba(16, 30, 56, 0.95));
+    }
+    .rec-ribbon {
+      position: absolute;
+      top: -12px;
+      right: 18px;
+      background: var(--teal);
+      color: white;
+      font-size: 0.7rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 20px;
+      letter-spacing: 0.5px;
+      box-shadow: 0 4px 12px rgba(13, 148, 136, 0.4);
+    }
+    .surgery-header {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding-bottom: 12px;
+    }
+    .surgery-name {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: white;
+    }
+    .surgery-alias {
+      font-size: 0.78rem;
+      color: var(--teal-light);
+      font-weight: 600;
+    }
+    .stress-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.74rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 20px;
+      margin-top: 8px;
+    }
+    .stress-low { background: rgba(16, 185, 129, 0.2); color: #6ee7b7; border: 1px solid rgba(16, 185, 129, 0.4); }
+    .stress-med { background: rgba(245, 158, 11, 0.2); color: #fde68a; border: 1px solid rgba(245, 158, 11, 0.4); }
+    .stress-high { background: rgba(244, 63, 94, 0.2); color: #fda4af; border: 1px solid rgba(244, 63, 94, 0.4); }
+
+    .surgery-specs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      font-size: 0.8rem;
+    }
+    .spec-item {
+      background: rgba(0, 0, 0, 0.25);
+      border-radius: 8px;
+      padding: 8px 10px;
+    }
+    .spec-label {
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .spec-val {
+      font-weight: 700;
+      color: white;
+      margin-top: 2px;
+    }
+
+    .pros-cons-box {
+      font-size: 0.82rem;
+      line-height: 1.45;
+    }
+    .pros-cons-box ul { padding-left: 18px; margin-top: 4px; }
+    .pros-cons-box li { margin-bottom: 4px; }
+
+    .surgery-verdict {
+      background: rgba(255, 255, 255, 0.04);
+      border-radius: 8px;
+      padding: 10px 12px;
+      font-size: 0.82rem;
+      border-left: 3px solid var(--teal);
+      margin-top: auto;
+    }
+
+    .talk-box {
+      background: rgba(24, 40, 73, 0.85);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 24px;
+    }
+    .talk-box h3 {
+      font-size: 1.05rem;
+      color: var(--teal-light);
+      margin-bottom: 10px;
+    }
+    .talk-script {
+      background: rgba(0, 0, 0, 0.25);
+      border-left: 3px solid #38bdf8;
+      border-radius: 8px;
+      padding: 12px 14px;
+      font-size: 0.88rem;
+      color: #e0f2fe;
+      font-style: italic;
+      line-height: 1.5;
+    }
+
     @media print {
       body { background: white; padding-bottom: 0; }
-      header, .no-print, .toast, .tab-bar, .hero-strip, .alert-banner { display: none !important; }
+      header, .no-print, .toast, .tab-bar, .hero-strip, .alert-banner, .alert-banner-danger { display: none !important; }
       .container { max-width: 100%; margin: 0; padding: 0; }
       .clinical-paper { border-radius: 0; box-shadow: none; padding: 0; }
     }
     @media (max-width: 680px) {
       .clinical-paper { padding: 20px 16px; }
       .form-row { grid-template-columns: 1fr; }
+      .calendar-grid-header, .calendar-grid-days { gap: 3px; }
+      .cal-cell { min-height: 60px; padding: 4px; }
+      .cal-badge { font-size: 0.6rem; padding: 2px 4px; }
     }
   </style>
 </head>
@@ -493,7 +882,7 @@
         <div class="brand-icon">🤍</div>
         <div>
           <div class="brand-title">Mom's Health &amp; Care Tracker</div>
-          <div class="brand-sub">Trigeminal Neuralgia, Blood Pressure &amp; Dizziness Protocol</div>
+          <div class="brand-sub">Trigeminal Neuralgia, Blood Pressure, Dizziness &amp; Surgical Care Architecture</div>
         </div>
       </div>
       <div class="btn-group no-print">
@@ -504,10 +893,12 @@
 
     <!-- TABS -->
     <div class="tab-bar no-print">
-      <button class="tab-btn active" id="tab-btn-cards" onclick="switchView('cards')">📱 Daily Log Cards</button>
+      <button class="tab-btn active" id="tab-btn-calendar" onclick="switchView('calendar')">📅 Summary Calendar &amp; Timeline</button>
+      <button class="tab-btn" id="tab-btn-cards" onclick="switchView('cards')">📱 Daily Log Cards</button>
       <button class="tab-btn" id="tab-btn-table" onclick="switchView('table')">📊 Blood Pressure &amp; Pain Grid</button>
+      <button class="tab-btn" id="tab-btn-surgery" onclick="switchView('surgery')">🧠 Surgical Options Decision Guide</button>
       <button class="tab-btn" id="tab-btn-brief" onclick="switchView('brief')">🩺 Doctor Consultation Brief</button>
-      <button class="tab-btn" id="tab-btn-checklist" onclick="switchView('checklist')">🛡️ Home Comfort &amp; Safety Guide</button>
+      <button class="tab-btn" id="tab-btn-checklist" onclick="switchView('checklist')">🛡️ Home Comfort &amp; Fall Safety</button>
     </div>
   </header>
 
@@ -521,14 +912,31 @@
         <div class="sub">Trigeminal Neuralgia &amp; BP Swings</div>
       </div>
       <div class="hero-stat">
-        <div class="label">Primary Red Flag to Watch</div>
-        <div class="val" style="color:#fb7185;">Orthostatic Dizziness</div>
-        <div class="sub">Standing BP Drop &amp; Med Sedation</div>
+        <div class="label">Acute Red Flag Alert (Nov 2)</div>
+        <div class="val" style="color:#fb7185;">Ataxia &amp; Dragging Feet</div>
+        <div class="sub">Carbamazepine + Gabapentin Toxicity</div>
       </div>
       <div class="hero-stat">
-        <div class="label">Safety Rule #1</div>
-        <div class="val" style="color:#fde047;">30-Second Sit-to-Stand</div>
-        <div class="sub">Pause on bedside before rising</div>
+        <div class="label">Immediate Fall Defense</div>
+        <div class="val" style="color:#fde047;">Rollator / Walker + Bedside Rule</div>
+        <div class="sub">Protecting severe knee pain from falls</div>
+      </div>
+      <div class="hero-stat">
+        <div class="label">Target Milestone</div>
+        <div class="val" style="color:#38bdf8;">December Neurologist</div>
+        <div class="sub">Minimally Invasive Surgery Review</div>
+      </div>
+    </div>
+
+    <!-- URGENT CLINICAL ALERT BANNER -->
+    <div class="alert-banner-danger no-print">
+      <div style="font-size: 1.6rem; line-height: 1;">🚨</div>
+      <div>
+        <strong style="color:#fecdd3; font-size:0.95rem; display:block; margin-bottom:4px;">URGENT CLINICAL ALERT (Nov 2 Sister Update): Drug Toxicity, Ataxia &amp; Imminent Fall Risk</strong>
+        <p style="font-size:0.86rem; color:#ffe4e6; line-height:1.45;">
+          Mom is presenting with classic <strong>central nervous system / cerebellar toxicity</strong> ("seems drunk", dragging feet, off balance, almost falling, forgetful) compounded by severe knee pain, limping, and high BP swings. This is driven by the synergistic sedation of <strong>Carbamazepine (Tegretol) + Gabapentin</strong> and possible medication-induced hyponatremia (low blood sodium). 
+          <br><strong style="color:white;">Immediate Action:</strong> Do <em>not</em> wait until the December appointment to report this. Call her prescribing physician or neurologist's office this week to request a serum Carbamazepine level, sodium check, and dose review. In the meantime, use a 4-wheel rollator walker for every step to prevent a catastrophic fall.
+        </p>
       </div>
     </div>
 
@@ -536,12 +944,83 @@
     <div class="alert-banner no-print">
       <div style="font-size: 1.3rem;">⚠️</div>
       <div>
-        <strong>Clinical Note on Heavy Medications &amp; Dizziness:</strong> Neuropathic pain drugs (Tegretol / Gabapentin / Baclofen) heavily sedate the cerebellar balance centers. When combined with blood pressure drugs, sudden standing can trigger acute cerebral blood drops. Always log seated <em>and</em> standing blood pressure.
+        <strong>Clinical Note on Heavy Medications &amp; Dizziness:</strong> Neuropathic pain drugs (Tegretol / Gabapentin) heavily sedate the cerebellar balance centers. When combined with blood pressure drugs, sudden standing triggers acute cerebral blood drops. Always log seated <em>and</em> standing blood pressure.
+      </div>
+    </div>
+
+    <!-- VIEW 0: SUMMARY CALENDAR & TIMELINE -->
+    <div id="view-calendar" class="view-panel active">
+      <div class="calendar-card">
+        <div class="calendar-top">
+          <div class="calendar-title-wrap">
+            <h2>📅 November 2026 Care &amp; Clinical Calendar</h2>
+            <p>Live tracking of trigeminal attacks, blood pressure swings, medication side effects, and neurology milestones</p>
+          </div>
+          <div class="calendar-legend">
+            <span class="legend-item"><span class="legend-dot red"></span> Critical Toxicity / Fall Risk</span>
+            <span class="legend-item"><span class="legend-dot blue"></span> Vitals &amp; Pain Logged</span>
+            <span class="legend-item"><span class="legend-dot purple"></span> Clinical Milestone</span>
+          </div>
+        </div>
+
+        <div class="calendar-grid-header">
+          <div class="calendar-day-label">Sun</div>
+          <div class="calendar-day-label">Mon</div>
+          <div class="calendar-day-label">Tue</div>
+          <div class="calendar-day-label">Wed</div>
+          <div class="calendar-day-label">Thu</div>
+          <div class="calendar-day-label">Fri</div>
+          <div class="calendar-day-label">Sat</div>
+        </div>
+
+        <div class="calendar-grid-days" id="calendar-days-container">
+          <!-- Rendered dynamically by JS -->
+        </div>
+
+        <!-- TIMELINE SECTION -->
+        <div class="timeline-wrap">
+          <div class="timeline-title">
+            <span>⏱️ Chronological Care Timeline &amp; Upcoming Milestones</span>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-icon red">🚨</div>
+            <div class="timeline-content">
+              <div class="timeline-date">Nov 2, 2026 (Today) • Sister Intake Alert</div>
+              <div class="timeline-heading">Acute Cerebellar Ataxia, High Fall Risk &amp; Severe Knee Pain</div>
+              <div class="timeline-text">
+                Sister reported Mom has high BP, severe dizziness, is dragging her feet, almost falling, and seems "drunk" with forgetfulness. Severe knee pain causing a heavy limp. Dual high-dose anticonvulsants (Carbamazepine + Gabapentin) are causing severe central nervous system depression. Urgent call to clinic advised; family exploring least-stressful surgical options to stop pills.
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-icon blue">✈️</div>
+            <div class="timeline-content">
+              <div class="timeline-date">Oct 26–27, 2026 • Post-Ottawa Trip</div>
+              <div class="timeline-heading">Airport Cold Draft Shocks &amp; Orthostatic BP Drop</div>
+              <div class="timeline-text">
+                Cold drafts in travel sparked severe V2 cheek shocks (Pain 8/10). Seated BP spiked to 142/88. Standing BP plunged 20 points to 118/72 with acute lightheadedness and unsteadiness.
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-icon purple">🩺</div>
+            <div class="timeline-content">
+              <div class="timeline-date">December 2026 • Target Appointment</div>
+              <div class="timeline-heading">Neurologist Consultation &amp; Surgical Intervention Decision</div>
+              <div class="timeline-text">
+                Clinical review of high-resolution MRI (neurovascular compression), evaluation of Percutaneous Balloon Compression (minimally invasive needle, immediate relief) vs. Gamma Knife Radiosurgery (zero incision) to safely discontinue fall-inducing medications.
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
     <!-- VIEW 1: DAILY CARDS -->
-    <div id="view-cards" class="view-panel active">
+    <div id="view-cards" class="view-panel">
       <div class="cards-grid" id="cards-container">
         <!-- Rendered by JS -->
       </div>
@@ -567,6 +1046,184 @@
             <!-- Rendered by JS -->
           </tbody>
         </table>
+      </div>
+    </div>
+
+    <!-- VIEW: SURGICAL OPTIONS DECISION GUIDE -->
+    <div id="view-surgery" class="view-panel">
+      <div class="surgery-intro">
+        <h2 style="font-size: 1.35rem; font-weight: 800; color: white; margin-bottom: 6px;">🧠 Trigeminal Neuralgia Surgical Decision Matrix</h2>
+        <p style="font-size: 0.88rem; color: #cbd5e1; line-height: 1.5;">
+          When heavy nerve medications (Carbamazepine + Gabapentin) induce dangerous dizziness, drunk-like unsteadiness, dragging feet, and near-falls, <strong>interventional procedures become the safer medical pathway</strong> to eliminate facial pain and wean off toxic pills. Here is the objective clinical comparison of the 3 primary procedures to share with her neurologist in December:
+        </p>
+      </div>
+
+      <div class="surgery-grid">
+        <!-- PROCEDURE 1: PERCUTANEOUS BALLOON COMPRESSION (RECOMMENDED FOR MOM) -->
+        <div class="surgery-card recommended">
+          <div class="rec-ribbon">⭐ Top Strategic Fit for Mom</div>
+          <div class="surgery-header">
+            <div class="surgery-name">1. Percutaneous Balloon Compression (PBC)</div>
+            <div class="surgery-alias">Minimally Invasive Needle Rhizotomy • Outpatient / 1 Night</div>
+            <div class="stress-badge stress-low">Physiological Stress: 2/5 (Very Low / Fast)</div>
+          </div>
+
+          <div class="surgery-specs">
+            <div class="spec-item">
+              <div class="spec-label">Invasiveness</div>
+              <div class="spec-val" style="color:#2dd4bf;">Needle through cheek (Zero cut)</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-label">Anesthesia</div>
+              <div class="spec-val">Light General / Twilight (30–45m)</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-label">Pain Relief Speed</div>
+              <div class="spec-val" style="color:#34d399;">⚡ Immediate (24–48 Hours)</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-label">Durability</div>
+              <div class="spec-val">3 to 5+ Years (85–90% initial)</div>
+            </div>
+          </div>
+
+          <div class="pros-cons-box">
+            <strong style="color:var(--teal-light);">Clinical Pros for Mom:</strong>
+            <ul>
+              <li><strong>Immediate pain relief:</strong> Allows her physician to rapidly taper her off Carbamazepine and Gabapentin, ending her dizziness and "drunk" gait right away.</li>
+              <li><strong>Zero skull opening:</strong> Only a tiny needle puncture in the cheek; heals in 48 hours with a band-aid.</li>
+              <li>Can be easily and safely repeated if nerve pain returns in future years.</li>
+            </ul>
+            <strong style="color:#fb7185; margin-top:6px; display:block;">Trade-offs / Nuances:</strong>
+            <ul>
+              <li>Causes mild-to-moderate facial numbness on that side (patients strongly prefer this over lightning pain).</li>
+              <li>Mild temporary chewing stiffness for 1–2 weeks.</li>
+            </ul>
+          </div>
+
+          <div class="surgery-verdict">
+            <strong style="color:white; display:block; margin-bottom:2px;">Soma's Clinical Verdict:</strong>
+            <strong>The best balance of low stress and rapid relief.</strong> Because it works immediately, Mom doesn't have to spend months on dizzying pills waiting for relief.
+          </div>
+        </div>
+
+        <!-- PROCEDURE 2: STEREOTACTIC RADIOSURGERY (GAMMA KNIFE) -->
+        <div class="surgery-card">
+          <div class="surgery-header">
+            <div class="surgery-name">2. Stereotactic Radiosurgery (Gamma Knife / CyberKnife)</div>
+            <div class="surgery-alias">Non-Invasive Radiation Beam • 100% Outpatient Day Trip</div>
+            <div class="stress-badge stress-low" style="background:rgba(59,130,246,0.2); color:#93c5fd; border-color:rgba(59,130,246,0.4);">
+              Physiological Stress: 1/5 (Least Stressful Overall)
+            </div>
+          </div>
+
+          <div class="surgery-specs">
+            <div class="spec-item">
+              <div class="spec-label">Invasiveness</div>
+              <div class="spec-val" style="color:#60a5fa;">Non-Invasive (Zero incisions)</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-label">Anesthesia</div>
+              <div class="spec-val">Zero General Anesthesia (Local)</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-label">Pain Relief Speed</div>
+              <div class="spec-val" style="color:#fbbf24;">⏳ Delayed (3 to 12 Weeks)</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-label">Durability</div>
+              <div class="spec-val">3 to 5 Years (70–80% initial)</div>
+            </div>
+          </div>
+
+          <div class="pros-cons-box">
+            <strong style="color:#93c5fd;">Clinical Pros for Mom:</strong>
+            <ul>
+              <li><strong>Zero physical trauma:</strong> Completely non-invasive. No needles in the nerve, no incisions, zero hospital stay.</li>
+              <li>Safest for patients with cardiac, blood pressure, or general anesthesia contraindications.</li>
+              <li>Lowest risk of severe facial numbness (~15–20% mild numbness).</li>
+            </ul>
+            <strong style="color:#fb7185; margin-top:6px; display:block;">Trade-offs / Nuances:</strong>
+            <ul>
+              <li><strong>The Lag Time:</strong> Takes 1 to 3 months to work. Mom would have to remain on her fall-inducing medications during this window.</li>
+              <li>Higher recurrence rate over 5 years (~30–40%) compared to MVD.</li>
+            </ul>
+          </div>
+
+          <div class="surgery-verdict" style="border-left-color: #3b82f6;">
+            <strong style="color:white; display:block; margin-bottom:2px;">Soma's Clinical Verdict:</strong>
+            <strong>The absolute gentlest option on the body.</strong> Ideal if Mom is terrified of anesthesia, but requires an urgent medication bridge while waiting for the radiation to take effect.
+          </div>
+        </div>
+
+        <!-- PROCEDURE 3: MICROVASCULAR DECOMPRESSION (MVD) -->
+        <div class="surgery-card">
+          <div class="surgery-header">
+            <div class="surgery-name">3. Microvascular Decompression (MVD / Jannetta)</div>
+            <div class="surgery-alias">Open Cranial Neurosurgery • Hospital Inpatient (2–4 Days)</div>
+            <div class="stress-badge stress-high">Physiological Stress: 5/5 (Highest Stress &amp; Risk)</div>
+          </div>
+
+          <div class="surgery-specs">
+            <div class="spec-item">
+              <div class="spec-label">Invasiveness</div>
+              <div class="spec-val" style="color:#fb7185;">Craniotomy (Behind Ear)</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-label">Anesthesia</div>
+              <div class="spec-val">Full General Anesthesia (3–4h)</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-label">Pain Relief Speed</div>
+              <div class="spec-val" style="color:#34d399;">⚡ Immediate upon waking</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-label">Durability</div>
+              <div class="spec-val">10 to 20+ Years (85–90% cure)</div>
+            </div>
+          </div>
+
+          <div class="pros-cons-box">
+            <strong style="color:#fb7185;">Clinical Pros:</strong>
+            <ul>
+              <li><strong>The Gold Standard Cure:</strong> Highest long-term success rate and lowest recurrence rate of any procedure.</li>
+              <li>Preserves facial sensation (does not intentionally numb the face).</li>
+            </ul>
+            <strong style="color:#fb7185; margin-top:6px; display:block;">Why It May Be Too Stressful for Mom:</strong>
+            <ul>
+              <li><strong>Major Open Brain Surgery:</strong> Requires cutting a window in the skull behind the ear and brainstem vessel dissection.</li>
+              <li>Higher physiological risks: CSF leak, hearing loss, infection, stroke, anesthesia complications.</li>
+              <li>Given Mom's unsteady gait, dragging feet, high BP swings, and bad knee pain, post-op recovery would be grueling.</li>
+            </ul>
+          </div>
+
+          <div class="surgery-verdict" style="border-left-color: #f43f5e;">
+            <strong style="color:white; display:block; margin-bottom:2px;">Soma's Clinical Verdict:</strong>
+            <strong>Likely too aggressive and stressful.</strong> While celebrated as the permanent cure for younger patients, minimally invasive alternatives (PBC or Gamma Knife) offer vastly superior safety profiles for Mom.
+          </div>
+        </div>
+      </div>
+
+      <!-- SCRIPT: HOW TO TALK TO MOM -->
+      <div class="talk-box">
+        <h3>💬 How to Talk to Mom Without Scaring Her</h3>
+        <p style="font-size: 0.88rem; color: #cbd5e1; margin-bottom: 12px;">
+          Most seniors refuse "surgery" because they picture open brain surgery (cutting the skull open). Reframe the conversation around modern <strong>outpatient nerve treatments</strong> that free her from the pills:
+        </p>
+        <div class="talk-script">
+          "Mom, Colleen and I love you and we hate seeing you dizzy, limping, and dragging your feet. The pills you are taking for your face are what's making you feel drunk and off balance. Modern doctors don't have to cut open your head to fix this. They have gentle, 30-minute outpatient procedures—either a tiny needle through the cheek while you sleep for half an hour, or a focused laser beam with zero cuts at all. You go home the same day, the facial shocks stop, and we can finally take away the pills that are making you fall. Let's just ask the neurologist in December which gentle treatment fits your MRI best."
+        </div>
+      </div>
+
+      <!-- DECEMBER NEUROLOGIST APPOINTMENT AGENDA -->
+      <div style="background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:20px; margin-bottom:24px;">
+        <h3 style="font-size:1.1rem; color:#38bdf8; margin-bottom:12px;">📋 Questions to Ask the Neurologist in December</h3>
+        <ol style="padding-left:22px; font-size:0.88rem; line-height:1.6; color:var(--text-sub);">
+          <li><strong>High-Resolution FIESTA / CISS 3D MRI:</strong> <em>"Does Mom's MRI confirm neurovascular compression of Cranial Nerve V, and which specific branch (V2/V3) is affected?"</em></li>
+          <li><strong>Percutaneous Balloon Compression (PBC) Candidacy:</strong> <em>"Given Mom's severe medication ataxia and fall risk, is she a candidate for a percutaneous balloon rhizotomy so she can immediately wean off Carbamazepine and Gabapentin?"</em></li>
+          <li><strong>Stereotactic Radiosurgery (Gamma Knife) Timeline:</strong> <em>"If we choose Gamma Knife radiosurgery to avoid all anesthesia, how will we safely manage her pain and reduce her drug sedation during the 6 to 12-week lag time before radiation takes effect?"</em></li>
+          <li><strong>Medication Weaning Roadmap:</strong> <em>"What is the step-by-step tapering schedule to step down Carbamazepine and Gabapentin post-procedure without triggering rebound pain or withdrawal?"</em></li>
+        </ol>
       </div>
     </div>
 
@@ -677,6 +1334,27 @@
               Avoid walking around in slick socks on hardwood or tile. Wear supportive, seamless slip-on walking shoes (like her Skechers Go Walk Joy Wide) with non-skid rubber soles to stabilize unsteady balance.
             </p>
           </div>
+
+          <div style="background:rgba(0,0,0,0.25); border-radius:10px; padding:16px; border-left:4px solid #f43f5e;">
+            <h3 style="font-size:1rem; margin-bottom:6px; color:#fecdd3;">🦽 4-Wheel Rollator Walker Defense</h3>
+            <p style="font-size:0.86rem; color:var(--text-sub);">
+              With active limping from severe knee pain and dragging feet from drug ataxia, Mom must <strong>never walk unassisted</strong>. A 4-wheel rollator walker with hand brakes and a padded seat offloads knee joint weight by 40%, stops foot drag tripping, and gives her an instant seat the second a dizzy spell hits.
+            </p>
+          </div>
+
+          <div style="background:rgba(0,0,0,0.25); border-radius:10px; padding:16px; border-left:4px solid #06b6d4;">
+            <h3 style="font-size:1rem; margin-bottom:6px; color:#a5f3fc;">🦵 Acute Knee Pain Offloading &amp; Cold Therapy</h3>
+            <p style="font-size:0.86rem; color:var(--text-sub);">
+              Severe knee pain forces an asymmetrical limp, which exhausts her good leg and amplifies vestibular imbalance. Use a lightweight, pull-on elastic knee compression sleeve during the day for joint stability. Apply a 15-minute gel ice pack wrapped in a tea towel after movement to blunt joint inflammation.
+            </p>
+          </div>
+
+          <div style="background:rgba(0,0,0,0.25); border-radius:10px; padding:16px; border-left:4px solid #e11d48;">
+            <h3 style="font-size:1rem; margin-bottom:6px; color:#fda4af;">📞 Immediate Clinic Call Protocol (This Week)</h3>
+            <p style="font-size:0.86rem; color:var(--text-sub);">
+              Do not wait for December. Call her prescribing physician: <em>"Mom is on Tegretol and Gabapentin and is showing marked ataxia, dragging her feet, and having near-falls. We request an urgent serum Carbamazepine level and basic metabolic panel (sodium check) to rule out drug toxicity and hyponatremia."</em>
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -785,6 +1463,18 @@
   <script>
     const defaultData = [
       {
+        date: '2026-11-02',
+        time: 'Morning (Sister Clinical Intake)',
+        seatedBP: '158/94',
+        standingBP: '118/72',
+        pulse: 78,
+        pain: 8,
+        branch: 'Cheek & Jaw (V2/V3)',
+        dizziness: '🚨 Acute Ataxia / Almost Falling',
+        meds: 'Carbamazepine (Tegretol) + Gabapentin (Neurontin)',
+        notes: 'Sister reported: Mom has high blood pressure, extreme dizziness, almost falling, dragging feet, limping with bad knee pain, forgetful, and appears drunk/off balance. Severe CNS cerebellar depression from combined Gabapentin + Carbamazepine, plus hyponatremia risk. Family actively exploring least-stressful facial surgery options to stop pills before December neurology appointment.'
+      },
+      {
         date: '2026-10-27',
         time: 'Evening (7:30 PM)',
         seatedBP: '138/84',
@@ -812,10 +1502,21 @@
 
     function getStoredData() {
       try {
-        const item = localStorage.getItem('moms_care_tracker_data_v1');
+        const item = localStorage.getItem('moms_care_tracker_data_v2');
         if (item) {
           const parsed = JSON.parse(item);
           if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+        }
+        // Auto-migration from v1
+        const v1 = localStorage.getItem('moms_care_tracker_data_v1');
+        if (v1) {
+          const parsedV1 = JSON.parse(v1);
+          if (Array.isArray(parsedV1)) {
+            const hasNov2 = parsedV1.some(e => e.date === '2026-11-02');
+            if (!hasNov2) parsedV1.unshift(defaultData[0]);
+            localStorage.setItem('moms_care_tracker_data_v2', JSON.stringify(parsedV1));
+            return parsedV1;
+          }
         }
       } catch (e) {
         console.warn('LocalStorage error', e);
@@ -824,32 +1525,94 @@
     }
 
     function saveStoredData(data) {
-      localStorage.setItem('moms_care_tracker_data_v1', JSON.stringify(data));
+      localStorage.setItem('moms_care_tracker_data_v2', JSON.stringify(data));
     }
 
     let activeData = getStoredData();
 
     function renderApp() {
+      renderCalendar();
       renderCards();
       renderTable();
       renderBrief();
     }
 
+    function renderCalendar() {
+      const container = document.getElementById('calendar-days-container');
+      if (!container) return;
+
+      // November 2026: Nov 1 is Sunday (index 0), 30 days
+      let html = '';
+      for (let day = 1; day <= 30; day++) {
+        const dateStr = `2026-11-${day < 10 ? '0' + day : day}`;
+        const entry = activeData.find(item => item.date === dateStr);
+        const isToday = (dateStr === '2026-11-02');
+
+        let cellClasses = 'cal-cell';
+        if (isToday) cellClasses += ' today';
+        if (entry && (entry.dizziness.includes('Ataxia') || entry.dizziness.includes('Fall') || entry.pain >= 8)) {
+          cellClasses += ' alert';
+        } else if (entry) {
+          cellClasses += ' past-event';
+        }
+
+        let badgeHtml = '';
+        if (entry) {
+          if (entry.dizziness.includes('Ataxia') || entry.dizziness.includes('Fall')) {
+            badgeHtml = `<span class="cal-badge red">🚨 Ataxia Alert</span>
+                         <span class="cal-snippet">Pain ${entry.pain}/10 • Limping Knee</span>`;
+          } else {
+            badgeHtml = `<span class="cal-badge blue">Pain ${entry.pain}/10</span>
+                         <span class="cal-snippet">${entry.dizziness}</span>`;
+          }
+        } else if (day === 25 || day === 26) {
+          badgeHtml = `<span class="cal-badge purple" style="font-size:0.62rem;">🩺 Pre-Clinic Review</span>`;
+        }
+
+        html += `
+          <div class="${cellClasses}" onclick="handleDayClick('${dateStr}')" style="cursor:pointer;" title="Click to view/log for ${dateStr}">
+            <div class="cal-cell-top">
+              <span class="cal-date-num">${day}</span>
+              ${isToday ? '<span class="cal-today-tag">TODAY</span>' : ''}
+            </div>
+            ${badgeHtml}
+          </div>
+        `;
+      }
+      container.innerHTML = html;
+    }
+
+    function handleDayClick(dateStr) {
+      const idx = activeData.findIndex(item => item.date === dateStr);
+      if (idx >= 0) {
+        editEntry(idx);
+      } else {
+        openLogModal();
+        document.getElementById('inputDate').value = dateStr;
+      }
+    }
+
     function renderCards() {
       const container = document.getElementById('cards-container');
+      if (!container) return;
       container.innerHTML = activeData.map((item, idx) => {
         let painBadgeClass = 'badge-pain-low';
         if (item.pain >= 7) painBadgeClass = 'badge-pain-high';
         else if (item.pain >= 4) painBadgeClass = 'badge-pain-med';
 
+        const isCritical = item.dizziness && (item.dizziness.includes('Ataxia') || item.dizziness.includes('Fall'));
+
         return `
-          <div class="care-card">
+          <div class="care-card" style="${isCritical ? 'border-color: rgba(244, 63, 94, 0.45); background: rgba(244, 63, 94, 0.06);' : ''}">
             <div class="card-top">
               <div>
                 <span class="card-date">${item.date}</span>
                 <span style="font-size:0.75rem; color:#94a3b8; margin-left:6px;">${item.time}</span>
               </div>
-              <span class="badge ${painBadgeClass}">Pain: ${item.pain}/10</span>
+              <div style="display:flex; gap:6px;">
+                ${isCritical ? '<span class="badge badge-critical">FALL RISK</span>' : ''}
+                <span class="badge ${painBadgeClass}">Pain: ${item.pain}/10</span>
+              </div>
             </div>
 
             <div class="card-metrics">
@@ -869,13 +1632,13 @@
               </div>
               <div class="metric-box">
                 <div class="metric-label">Dizziness</div>
-                <div class="metric-val" style="font-size:0.85rem; color:#fb7185;">${item.dizziness}</div>
+                <div class="metric-val" style="font-size:0.82rem; color:${isCritical ? '#f43f5e; font-weight:800;' : '#fb7185;'}">${item.dizziness}</div>
               </div>
             </div>
 
             <div class="card-notes">
               <strong style="color:var(--teal-light); display:block; font-size:0.75rem; text-transform:uppercase;">Meds &amp; Context:</strong>
-              <div style="font-size:0.82rem; margin-bottom:4px;">${item.meds || 'Meds logged'}</div>
+              <div style="font-size:0.82rem; margin-bottom:4px; font-weight:600; color:#e2e8f0;">${item.meds || 'Meds logged'}</div>
               <div>"${item.notes || 'No extra notes'}"</div>
             </div>
 
@@ -890,24 +1653,29 @@
 
     function renderTable() {
       const tbody = document.getElementById('table-body');
-      tbody.innerHTML = activeData.map((item, idx) => `
-        <tr>
-          <td><strong>${item.date}</strong><br><span style="font-size:0.75rem; color:#94a3b8;">${item.time}</span></td>
-          <td><strong style="color:#60a5fa;">${item.seatedBP}</strong><br><span style="font-size:0.75rem;">Pulse: ${item.pulse || '—'}</span></td>
-          <td><strong style="color:#fbbf24;">${item.standingBP || '—'}</strong></td>
-          <td><strong style="color:${item.pain >= 7 ? '#f87171' : '#2dd4bf'};">${item.pain}/10</strong></td>
-          <td>${item.branch}</td>
-          <td><span style="color:#f472b6; font-weight:600;">${item.dizziness}</span></td>
-          <td>${item.meds}</td>
-          <td class="no-print">
-            <button class="btn btn-secondary" style="font-size:0.72rem; padding:3px 6px;" onclick="editEntry(${idx})">Edit</button>
-          </td>
-        </tr>
-      `).join('');
+      if (!tbody) return;
+      tbody.innerHTML = activeData.map((item, idx) => {
+        const isCritical = item.dizziness && (item.dizziness.includes('Ataxia') || item.dizziness.includes('Fall'));
+        return `
+          <tr style="${isCritical ? 'background: rgba(244, 63, 94, 0.05);' : ''}">
+            <td><strong>${item.date}</strong><br><span style="font-size:0.75rem; color:#94a3b8;">${item.time}</span></td>
+            <td><strong style="color:#60a5fa;">${item.seatedBP}</strong><br><span style="font-size:0.75rem;">Pulse: ${item.pulse || '—'}</span></td>
+            <td><strong style="color:#fbbf24;">${item.standingBP || '—'}</strong></td>
+            <td><strong style="color:${item.pain >= 7 ? '#f87171' : '#2dd4bf'};">${item.pain}/10</strong></td>
+            <td>${item.branch}</td>
+            <td><span style="color:${isCritical ? '#f43f5e; font-weight:800;' : '#f472b6; font-weight:600;'}">${item.dizziness}</span></td>
+            <td>${item.meds}</td>
+            <td class="no-print">
+              <button class="btn btn-secondary" style="font-size:0.72rem; padding:3px 6px;" onclick="editEntry(${idx})">Edit</button>
+            </td>
+          </tr>
+        `;
+      }).join('');
     }
 
     function renderBrief() {
       const tbody = document.getElementById('brief-table-body');
+      if (!tbody) return;
       tbody.innerHTML = activeData.map(item => `
         <tr>
           <td><strong>${item.date}</strong> (${item.time})</td>
@@ -1012,7 +1780,7 @@
       const text = `Mom's Health & Vitals Update (${top.date} ${top.time}):
 - Seated BP: ${top.seatedBP} | Standing BP: ${top.standingBP || 'N/A'} (Pulse: ${top.pulse || '—'})
 - Trigeminal Pain: ${top.pain}/10 (${top.branch})
-- Dizziness & Balance: ${top.dizziness}
+- Dizziness & Mobility: ${top.dizziness}
 - Meds Logged: ${top.meds}
 - Notes: "${top.notes}"`;
 

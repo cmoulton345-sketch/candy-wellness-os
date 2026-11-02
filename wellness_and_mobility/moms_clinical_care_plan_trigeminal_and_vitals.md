@@ -67,18 +67,60 @@ Sit down at the kitchen table and write down her exact current prescription bott
 
 ---
 
-## 4. Discussion Guide for Her Doctor / Neurologist
+---
 
-When Candy accompanies Mom to her next clinical review, here are the key questions to present:
+## 4. November 2, 2026 Clinical Intake: Acute Ataxia & Drug Toxicity Triage
 
-1. **Dizziness vs. Dose Timing:** *"Mom is having significant dizziness and unsteadiness. Can we review her anticonvulsant timing relative to her blood pressure medication to see if they are peaking at the same time and dropping her blood pressure?"*
-2. **Orthostatic Assessment:** *"Can we check Mom's lying/seated versus standing blood pressure to verify if she has orthostatic hypotension?"*
-3. **Electrolyte Screen (Sodium):** *"Can we run a basic metabolic panel to check her serum sodium levels? (Carbamazepine/oxcarbazepine can lower sodium, compounding dizziness and lethargy)."*
-4. **Non-Drowsy Adjuncts / Specialist Referral:** *"Is Mom rostered with a neurologist for Trigeminal Neuralgia, and are we evaluating procedures if medications reach high side-effect thresholds?"*
+### A. The Sister's Report & Symptom Cluster
+* **Reported Symptoms:** High blood pressure, severe dizziness, near-falls, dragging feet, bad knee pain causing an asymmetrical limp, forgetfulness, unsteadiness, appearing "drunk" / off balance.
+* **Current Medications:** Dual anticonvulsants: **Carbamazepine (Tegretol)** + **Gabapentin (Neurontin)**.
+* **Target Milestone:** Neurologist appointment scheduled for **December 2026**.
+
+### B. The Pharmacology: Why She Appears "Drunk" & Drags Her Feet
+1. **Cerebellar Toxicity:** Both Carbamazepine and Gabapentin act as potent central nervous system depressants. When combined, their inhibitory effects on the cerebellum (the brain's balance and motor coordination hub) multiply synergistically. This produces **ataxia**—a wide-based, dragging gait, loss of equilibrium, and slurred or slowed cognitive processing that directly mimics alcohol intoxication.
+2. **Medication-Induced Hyponatremia (Low Blood Sodium):** Carbamazepine is well-documented to stimulate anti-diuretic hormone (SIADH), causing dilutional hyponatremia. Low sodium presents as progressive confusion, forgetfulness, lethargy, muscle weakness, and acute postural instability.
+3. **The Knee Pain Compounder:** A painful knee forces her to favor one leg, shortening stance time and inducing a heavy limp. Combined with foot dragging from drug-induced muscle hypotonia, any small rug, threshold, or loss of balance becomes an **imminent, high-velocity fall risk**.
 
 ---
 
-## 5. Live Digital Tooling
-All of these checkpoints are embedded into Mom's dedicated web application:
+## 5. Surgical Evaluation for Trigeminal Neuralgia: Least Stressful vs. Most Effective
+
+When medications reach toxic thresholds where the side effects (ataxia, falls, cognitive clouding) are more dangerous than the condition itself, **surgical intervention becomes the preferred, life-saving pathway**.
+
+| Procedure | Invasiveness & Anesthesia | Pain Relief Speed | Durability | Stress Level (1–5) | Clinical Fit for Mom |
+|---|---|---|---|---|---|
+| **1. Percutaneous Balloon Compression (PBC)** *(Recommended)* | **Minimally Invasive Needle**<br>Needle through cheek into foramen ovale. 30–45 min light twilight anesthesia. Outpatient / 1 night. | **⚡ Immediate**<br>(Within 24–48 hours) | **3 to 5+ Years**<br>(85–90% initial complete relief) | **⭐⭐ 2 / 5**<br>*(Very Low / Fast)* | **TOP STRATEGIC FIT:** Avoids craniotomy. Immediate relief allows rapid discontinuation of toxic Gabapentin + Carbamazepine immediately. |
+| **2. Stereotactic Radiosurgery (Gamma Knife)** | **Non-Invasive Radiation**<br>Focused radiation beams to nerve root. Zero incisions. Zero general anesthesia. 100% outpatient day trip. | **⏳ Delayed**<br>(Takes 3 to 12 weeks to take effect) | **3 to 5 Years**<br>(70–80% initial relief; ~30% recurrence) | **⭐ 1 / 5**<br>*(Least Stressful Overall)* | **GENTLEST ON BODY:** Zero cuts or anesthesia. Main drawback is the 1–3 month lag time, which requires staying on fall-inducing pills temporarily. |
+| **3. Microvascular Decompression (MVD)** | **Major Open Brain Surgery**<br>Craniotomy behind ear, brainstem vessel dissection, Teflon sponge placement. 3–4h general anesthesia, 2–4 days hospital/ICU. | **⚡ Immediate**<br>(Upon waking from surgery) | **10 to 20+ Years**<br>(Gold standard ~85–90% permanent cure) | **⭐⭐⭐⭐⭐ 5 / 5**<br>*(Highest Surgical Stress)* | **LIKELY TOO STRESSFUL:** Open skull surgery carries significant surgical/anesthetic risk given Mom's age, labile hypertension, and existing knee/mobility impairment. |
+
+### Soma's Executive Verdict for Mom:
+* **The "Least Stressful" Procedure:** **Stereotactic Radiosurgery (Gamma Knife)** is physically the least stressful (zero cuts, zero general anesthesia).
+* **The "Best Overall Help & Safety" Procedure:** **Percutaneous Balloon Compression (PBC)** is the true clinical winner. It is a 30-minute needle procedure through the cheek. Because it works **immediately**, Mom can promptly taper off the Gabapentin and Carbamazepine within days—eliminating her dizziness, drunkenness, and dragging feet before a catastrophic fall occurs.
+
+### How Candy & Colleen Can Talk to Mom:
+> *"Mom, nobody has to cut open your head. Modern medicine has gentle, 30-minute outpatient treatments—either a tiny needle through the cheek while you sleep for a half hour, or a focused laser beam with zero incisions. You go home the same day, the facial lightning stops, and we can finally take away the pills that are making you dizzy and off balance."*
+
+---
+
+## 6. Immediate Action Items (Do NOT Wait for December)
+
+1. **Call Prescribing Doctor / Neurologist This Week:**
+   * Report: *"Mom is experiencing severe drug-induced ataxia, dragging feet, confusion, and near-falls on Carbamazepine + Gabapentin."*
+   * Request: Serum Carbamazepine level, Basic Metabolic Panel (serum sodium check), and a physician-guided dosage adjustment.
+   * *Safety Rule:* Never stop or taper Carbamazepine abruptly without medical supervision due to rebound seizures or unbearable trigeminal crises.
+2. **Deploy a 4-Wheel Rollator Walker Immediately:**
+   * A rolling walker with hand brakes and a padded seat eliminates the danger of dragging feet and unloads 40% of the weight from her painful knee.
+3. **Knee Pain Stabilization:**
+   * Apply a light elastic compression knee sleeve during daytime hours.
+   * Apply 15-minute gel ice packs post-walking to reduce joint inflammation.
+4. **December Neurologist Appointment Prep:**
+   * Request high-resolution 3D FIESTA/CISS MRI protocol to inspect the trigeminal root entry zone.
+   * Present the printed Doctor Brief from `moms_care_tracker.html` comparing Percutaneous Balloon Compression vs. Gamma Knife.
+
+---
+
+## 7. Live Digital Tooling
+All data, calendar views, and surgical matrices are live in Mom's dedicated web application:
 * **App:** `moms_care_tracker.html`
-* **Features:** Senior-friendly large text, quick 1-click vitals logging, pain scale with branch selector, dizziness correlation, and 1-click clipboard export for clinical appointments.
+* **Live Features:** Interactive November 2026 Summary Calendar, Sister's Acute Intake Log (Nov 2), Side-by-Side Surgical Comparison Matrix, Printable Physician Brief, and 1-Click Clipboard Export for Soma.
+* **Live URL:** `https://cmoulton345-sketch.github.io/candy-wellness-os/moms_care_tracker.html`

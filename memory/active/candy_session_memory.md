@@ -6,10 +6,25 @@
 
 ## Recent Interactions
 
-- **2026-09-07**:
-  - **Soma**: Discussed intermittent fasting and flexible daily scheduling for health & recovery.
-  - **Jarvis**: Verified voice recognition setup and "Yes ma'am" protocol.
-  - **Psyche**: Mindset and presence check.
+- **2026-11-02 (Midday)** (SOMA):
+  - **Mom's Care Tracker & Trigeminal Neuralgia Acute Triage:**
+    - *Sister's Intake:* High BP, severe dizziness, near-falls, dragging feet, bad knee pain/limping, forgetfulness, unsteadiness, appearing "drunk" on dual anticonvulsants: **Carbamazepine (Tegretol) + Gabapentin**.
+    - *Pharmacology & Red Flag:* Identified synergistic cerebellar depression and possible Carbamazepine-induced hyponatremia (low blood sodium). Compounded by knee limp, this is an **imminent, critical fall risk**.
+    - *Web App Updates:* Upgraded `moms_care_tracker.html` with an interactive **November 2026 Summary Calendar & Timeline** tab, **Surgical Options Decision Guide**, acute red flag alert banner, 4-wheel rollator walker protocol, and knee offloading. Updated default data and migrated storage to `v2`.
+    - *Surgical Evaluation for December Neurologist:*
+      - **Least Stressful Overall:** Stereotactic Radiosurgery (Gamma Knife / CyberKnife) — zero incision, 100% outpatient, zero general anesthesia (takes 3–12 weeks to work).
+      - **Top Strategic Fit for Mom:** Percutaneous Balloon Compression (PBC) — 30-min needle rhizotomy through cheek, low stress (2/5), **immediate pain relief**, allowing rapid discontinuation of dizzying pills right away.
+      - **MVD (Craniotomy):** Gold standard permanent cure, but 5/5 highest stress (open brain surgery, hospital stay, high anesthetic risk); likely too aggressive for Mom.
+    - *Immediate Safety Action:* Advised Candy and Colleen not to wait for December; call prescribing doctor this week for serum Carbamazepine + sodium levels and dosage audit, and deploy a 4-wheel rollator immediately.
+    - *Care Plan Synced:* Updated `wellness_and_mobility/moms_clinical_care_plan_trigeminal_and_vitals.md` with full pharmacology breakdown, comparison matrix, and script for reassuring Mom.
+
+- **2026-11-02 (Morning)** (SOMA):
+  - **Morning Biometrics & Health Triage:** Sleep Score 88, Readiness 89, Ring Temp -+0.0° (flat baseline; heat bump from weekend dancing/vodka fully cleared). Scale skipped to protect peace post-donair & candy.
+  - **Symptom Triage:** Total body stiffness (upper body hurt, low back & hips tight), puffiness, and **super itchy last night (textbook Day 1 histamine flare)**. Validated Candy's intuition: "Stone Sleep" immobility (static posture in deep sleep) + donair sodium/carbohydrate osmotic fascial swelling ("wetsuit effect") + visceral gut-psoas reflex guarding + cycle reset mast cell surge compounded by cured spiced meat.
+  - **Action Plan:** Updated Clinical Cycle Calendar (`candy_cycle_calendar_sept_oct_2026.html`) to active Day 1 (Today); filed `daily_notes/soma_health_brief_nov_02.md` and `.html`. Prescribed 6-minute morning "Fascial Thaw" (Cat-Cow with rib circles, Child's pose side-reach, sacral rocks/twist, Legs Up the Wall). Resumed weekday Testosterone (1 pump), morning BiEst, evening Progesterone. Hydration with lemon/electrolytes to flush donair sodium.
+
+- **2026-11-01** (SOMA):
+  - **Morning Biometrics & Breakthrough:** Scale 149.4 lbs (-3.9 lbs from peak luteal). Sleep 82, Readiness 70, Temp +0.2°. Clean craft vodka strategy succeeded (rings looser). Sore feet from dancing protocol provided.
 
 - **2026-09-06 22:14** (JARVIS): I can do that, sir. I will now append the response trigger "Candy" to the existing activation phrases for general system status, diagnostics, and speech synthesis configuration.
 
@@ -604,5 +619,9 @@ I'm ready to respond to the updated call, sir.
       2. [`raynes_ocd_adhd/amanda_letter_and_student_aid_upload_guide.html`](file:///Users/valuedcustomer/Downloads/flowstate_ai_os_candy/raynes_ocd_adhd/amanda_letter_and_student_aid_upload_guide.html)
       3. Mirrored to `Rayne_NBCC/` and integrated Card #6 into [`share_links.html`](file:///Users/valuedcustomer/Downloads/flowstate_ai_os_candy/share_links.html).
     - Updated master checklists in [`Rayne_NBCC_Withdrawal_Action_Plan.md`](file:///Users/valuedcustomer/Downloads/flowstate_ai_os_candy/raynes_ocd_adhd/Rayne_NBCC_Withdrawal_Action_Plan.md) and [`.html`](file:///Users/valuedcustomer/Downloads/flowstate_ai_os_candy/raynes_ocd_adhd/Rayne_NBCC_Withdrawal_Action_Plan.html).
+  - **iPhone Sensory & Focus Notification Configuration:**
+    - Configured selective call audio so Candy avoids auditory sensory overload while ensuring she never misses Joe's incoming calls.
+    - Verified iOS system constraint: third-party VoIP apps (Facebook Messenger) cannot bypass hardware Silent Mode.
+    - Successfully configured Focus / Do Not Disturb exception filtering (or FaceTime Audio Emergency Bypass) so background noise stays muted while Joe connects seamlessly.
 
 
