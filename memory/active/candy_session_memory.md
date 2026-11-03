@@ -13,6 +13,7 @@
     - Spotlighted NBCC's 1-Year Certificate programs (*Business Fundamentals* and *Administrative Professional*) operating under Profile A (High School Diploma only; zero extra math required) with direct laddering into Year 2 of the 2-Year Business Administration diploma.
     - Outlined Continuing Education a la carte courses (QuickBooks, HR, small business management) and free industry credentials (Intuit QuickBooks ProAdvisor).
     - Built and styled dedicated printable handout [`Rayne_Business_and_Career_Pathways_Guide.html`](file:///Users/valuedcustomer/Downloads/flowstate_ai_os_candy/raynes_ocd_adhd/Rayne_Business_and_Career_Pathways_Guide.html) and [`.md`](file:///Users/valuedcustomer/Downloads/flowstate_ai_os_candy/raynes_ocd_adhd/Rayne_Business_and_Career_Pathways_Guide.md), copied both to Candy's Downloads folder, opened the browser automatically for 1-click printing, and linked Card #9 in `share_links.html`.
+    - **Family Meeting Milestone:** Candy, Rayne, and Joe scheduled a family meeting for next week once Joe returns home from British Columbia to review the printed guide, explore 1-year business/admin certificates vs. justice pathways, and map out Rayne's calm, confident next steps together.
 
 - **2026-11-03 (Morning)** (SOMA):
   - **Scale Reframe & Neck Pain Triage:** Scale 151.2 lbs (48h donair sodium peak + missed 500ml nighttime flushing drink). Ring temp plunged to -0.9°F (steepest follicular nadir); oral temp 36.1°C; Sleep 82; Readiness 88.
