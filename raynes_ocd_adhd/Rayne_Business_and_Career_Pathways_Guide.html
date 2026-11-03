@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rayne Moulton — Post-Secondary & Career Pathways Guide</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@600;700;800&display=swap');
+
+    :root {
+      --bg: #0d1117;
+      --card-bg: #161b22;
+      --card-border: #30363d;
+      --text-main: #f0f6fc;
+      --text-sub: #8b949e;
+      --accent: #38bdf8;
+      --accent-glow: rgba(56, 189, 248, 0.15);
+      --emerald: #34d399;
+      --emerald-bg: rgba(52, 211, 153, 0.1);
+      --purple: #a78bfa;
+      --purple-bg: rgba(167, 139, 250, 0.1);
+      --amber: #fbbf24;
+      --amber-bg: rgba(251, 191, 36, 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text-main);
+      line-height: 1.55;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    /* Print Button Bar (hidden in print) */
+    .action-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #1f2937;
+      padding: 14px 20px;
+      border-radius: 12px;
+      margin-bottom: 24px;
+      border: 1px solid #374151;
+    }
+
+    .action-bar p {
+      font-size: 0.9rem;
+      color: #9ca3af;
+    }
+
+    .btn-print {
+      background: linear-gradient(135deg, #38bdf8, #2563eb);
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.9rem;
+      border: none;
+      padding: 10px 22px;
+      border-radius: 8px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+    }
+
+    .btn-print:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(56, 189, 248, 0.35);
+    }
+
+    /* Document Header */
+    header {
+      border-bottom: 2px solid var(--card-border);
+      padding-bottom: 24px;
+      margin-bottom: 30px;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 9999px;
+      background: var(--accent-glow);
+      color: var(--accent);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      font-size: 1.05rem;
+      color: var(--text-sub);
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      padding: 14px 18px;
+      border-radius: 10px;
+      font-size: 0.88rem;
+    }
+
+    .meta-item strong {
+      color: var(--text-main);
+      display: block;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-sub);
+      margin-bottom: 2px;
+    }
+
+    /* Core Insight Callout */
+    .callout {
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.08), rgba(52, 211, 153, 0.05));
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin-bottom: 32px;
+    }
+
+    .callout h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.3rem;
+      color: var(--accent);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .callout p {
+      color: #e2e8f0;
+      font-size: 0.98rem;
+      line-height: 1.6;
+    }
+
+    /* Section Headings */
+    h2.section-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 36px 0 16px 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* Cards */
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 22px;
+      margin-bottom: 20px;
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      padding-bottom: 12px;
+    }
+
+    .card-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 3px 10px;
+      border-radius: 6px;
+    }
+
+    .tag-emerald { background: var(--emerald-bg); color: var(--emerald); border: 1px solid rgba(52, 211, 153, 0.3); }
+    .tag-purple { background: var(--purple-bg); color: var(--purple); border: 1px solid rgba(167, 139, 250, 0.3); }
+    .tag-amber { background: var(--amber-bg); color: var(--amber); border: 1px solid rgba(251, 191, 36, 0.3); }
+
+    .card-body p {
+      font-size: 0.92rem;
+      color: #cbd5e1;
+      margin-bottom: 10px;
+    }
+
+    .card-body ul {
+      margin-left: 20px;
+      margin-bottom: 12px;
+    }
+
+    .card-body li {
+      font-size: 0.9rem;
+      color: #cbd5e1;
+      margin-bottom: 6px;
+    }
+
+    .highlight-box {
+      background: rgba(255, 255, 255, 0.03);
+      border-left: 3px solid var(--accent);
+      padding: 10px 14px;
+      border-radius: 0 8px 8px 0;
+      font-size: 0.88rem;
+      color: #e2e8f0;
+      margin-top: 10px;
+    }
+
+    /* Comparison Table */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      font-size: 0.88rem;
+      background: var(--card-bg);
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--card-border);
+    }
+
+    th, td {
+      padding: 12px 14px;
+      text-align: left;
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    th {
+      background: #1f2937;
+      color: #f3f4f6;
+      font-weight: 600;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    .status-badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 0.75rem;
+    }
+
+    .status-ready { background: rgba(52, 211, 153, 0.2); color: #34d399; }
+    .status-upgrade { background: rgba(251, 191, 36, 0.2); color: #fbbf24; }
+
+    /* Print Styles */
+    @media print {
+      body {
+        background: #ffffff !important;
+        color: #111827 !important;
+        padding: 0;
+        font-size: 11pt;
+      }
+
+      .action-bar {
+        display: none !important;
+      }
+
+      .container {
+        max-width: 100% !important;
+      }
+
+      h1 {
+        color: #111827 !important;
+        font-size: 1.8rem !important;
+      }
+
+      .subtitle {
+        color: #4b5563 !important;
+      }
+
+      .badge {
+        border: 1px solid #111827 !important;
+        color: #111827 !important;
+        background: transparent !important;
+      }
+
+      .meta-grid {
+        background: #f9fafb !important;
+        border: 1px solid #d1d5db !important;
+      }
+
+      .meta-item strong {
+        color: #6b7280 !important;
+      }
+
+      .callout {
+        background: #f0fdf4 !important;
+        border: 1px solid #86efac !important;
+      }
+
+      .callout h2 {
+        color: #166534 !important;
+      }
+
+      .callout p {
+        color: #1f2937 !important;
+      }
+
+      h2.section-title {
+        color: #111827 !important;
+        border-bottom: 1px solid #e5e7eb;
+        padding-bottom: 4px;
+        page-break-after: avoid;
+      }
+
+      .card {
+        background: #ffffff !important;
+        border: 1px solid #d1d5db !important;
+        page-break-inside: avoid;
+        margin-bottom: 16px;
+      }
+
+      .card-title {
+        color: #111827 !important;
+      }
+
+      .card-body p, .card-body li {
+        color: #374151 !important;
+      }
+
+      .tag-emerald, .tag-purple, .tag-amber {
+        border: 1px solid #9ca3af !important;
+        background: #f3f4f6 !important;
+        color: #111827 !important;
+      }
+
+      .highlight-box {
+        background: #f9fafb !important;
+        border-left: 3px solid #374151 !important;
+        color: #1f2937 !important;
+      }
+
+      table {
+        background: #ffffff !important;
+        border: 1px solid #d1d5db !important;
+        page-break-inside: avoid;
+      }
+
+      th {
+        background: #f3f4f6 !important;
+        color: #111827 !important;
+        border-bottom: 2px solid #d1d5db !important;
+      }
+
+      td {
+        border-bottom: 1px solid #e5e7eb !important;
+        color: #374151 !important;
+      }
+
+      .status-ready {
+        background: #dcfce7 !important;
+        color: #166534 !important;
+      }
+
+      .status-upgrade {
+        background: #fef3c7 !important;
+        color: #92400e !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Printable Control Bar -->
+  <div class="action-bar">
+    <div>
+      <strong style="color:#fff; font-size: 1rem;">📄 Family Discussion & Decision Guide</strong>
+      <p>Prepared for Candy, Rayne, and Joe — Ready for 1-Click Printing (or Save as PDF)</p>
+    </div>
+    <button class="btn-print" onclick="window.print()">
+      🖨️ Print This Guide
+    </button>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="badge">Education & Career Strategy</div>
+    <h1>Rayne's Post-Secondary & Career Roadmap</h1>
+    <p class="subtitle">A complete guide to business, administration, justice, and self-employment pathways — without the burden of a 4-year degree.</p>
+
+    <div class="meta-grid">
+      <div class="meta-item">
+        <strong>Student</strong>
+        Rayne Elizabeth Moulton
+      </div>
+      <div class="meta-item">
+        <strong>High School Credential</strong>
+        KVHS Diploma (Graduated June 2025, 80 CrHrs)
+      </div>
+      <div class="meta-item">
+        <strong>Math Completed</strong>
+        Financial & Workplace Math 11 & 12 (72%)
+      </div>
+      <div class="meta-item">
+        <strong>Top Academic Average</strong>
+        76% – 83% (English 122 at 69%, Econ 120 at 94%)
+      </div>
+    </div>
+  </header>
+
+  <!-- Big Core Takeaway -->
+  <div class="callout">
+    <h2>💡 The Big Truth: You Do NOT Need a 4-Year Degree</h2>
+    <p>
+      In today’s job market, especially for <strong>business operations, human resources support, bookkeeping, and small business ownership</strong>, a 4-year university degree is completely unnecessary. In fact, employers and small businesses strongly prefer graduates with <strong>hands-on practical skills</strong> (like QuickBooks, payroll, office software, and real administration) from 1-year college certificates and 2-year diplomas. Rayne can get working fast, earn great money, and avoid 4 years of intense academic stress and student debt.
+    </p>
+  </div>
+
+  <!-- Part 1: Math Pathways Clarification -->
+  <h2 class="section-title">🔢 1. Math Pathways Explained (Why It Matters)</h2>
+  <div class="card">
+    <div class="card-body">
+      <p><strong>Are Financial & Workplace Math and Foundations Math the same thing?</strong></p>
+      <p style="color: #ef4444; font-weight: 600;">❌ No. In New Brunswick, they are two separate math paths:</p>
+      <ul>
+        <li><strong>Financial & Workplace Math (110 & 120):</strong> Focuses on everyday budgeting, trade math, interest, and practical life calculations. <em>Rayne completed both of these with flying colors (72% in Workplace 120).</em></li>
+        <li><strong>Foundations of Mathematics (110 & 120):</strong> Focuses on algebra, functions, and graphing. Required for traditional 2-year Business Admin diplomas and university business degrees.</li>
+      </ul>
+      <div class="highlight-box">
+        <strong>The Great News:</strong> Rayne is <strong>NOT locked out of business!</strong> NBCC has specific 1-year business certificate programs designed under <strong>Profile A</strong> that accept high school diplomas with <em>zero extra math requirements</em>.
+      </div>
+    </div>
+  </div>
+
+  <!-- Part 2: Practical Business & Admin Pathways (No Math Upgrading!) -->
+  <h2 class="section-title">💼 2. Practical Business, HR & Bookkeeping (Zero Math Upgrades Needed)</h2>
+
+  <div class="card">
+    <div class="card-header">
+      <div>
+        <div class="card-title">Option A: NBCC Business Fundamentals (1-Year Certificate)</div>
+        <div style="font-size: 0.82rem; color: var(--text-sub);">Saint John & Other Campuses / Online Delivery Options</div>
+      </div>
+      <span class="tag tag-emerald">Profile A • 100% Qualified Now</span>
+    </div>
+    <div class="card-body">
+      <p>A 1-year college certificate that teaches all the core fundamentals of business from the ground up.</p>
+      <ul>
+        <li><strong>What She Learns:</strong> Practical business math, introduction to financial accounting, marketing, management, and professional business communications.</li>
+        <li><strong>Admission:</strong> <strong>Profile A</strong> (High school diploma only). <em>Rayne already meets every single requirement today!</em></li>
+        <li><strong>The "Secret Ladder":</strong> If she finishes this 1-year certificate and later decides she wants the full 2-year Business Administration Diploma, <strong>NBCC lets her transfer directly into Year 2</strong> of the diploma program—bypassing high school math entirely!</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <div>
+        <div class="card-title">Option B: NBCC Administrative Professional (1-Year Certificate)</div>
+        <div style="font-size: 0.82rem; color: var(--text-sub);">Hands-On Office, Bookkeeping & HR Operations</div>
+      </div>
+      <span class="tag tag-emerald">Profile A • 100% Qualified Now</span>
+    </div>
+    <div class="card-body">
+      <p>The ultimate practical, job-ready credential for running office operations, managing accounts, and assisting in HR.</p>
+      <ul>
+        <li><strong>What She Learns:</strong> Computerized bookkeeping software (QuickBooks & Sage 50), spreadsheets (Excel), office procedures, records management, and executive support.</li>
+        <li><strong>Career Outcomes:</strong> Office Administrator, HR Assistant, Bookkeeper, Billing Coordinator, or managing all operations for her own future business.</li>
+        <li><strong>Admission:</strong> <strong>Profile A</strong> (Requires only a high school diploma. Zero advanced math needed!).</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <div>
+        <div class="card-title">Option C: "A La Carte" Online Courses (NBCC Continuing Education)</div>
+        <div style="font-size: 0.82rem; color: var(--text-sub);">Zero Commitment • Work at Her Own Pace While Working Part-Time</div>
+      </div>
+      <span class="tag tag-purple">Open Enrollment • No Applications</span>
+    </div>
+    <div class="card-body">
+      <p>If Rayne doesn't want full-time school right now, anyone 18+ can sign up for individual online or evening courses:</p>
+      <ul>
+        <li><strong>Bookkeeping & Software:</strong> Single courses in <em>QuickBooks Online</em>, <em>Sage 50</em>, or <em>Bookkeeping Principles</em>.</li>
+        <li><strong>Human Resources:</strong> <em>Introduction to Human Resources Management</em> or <em>Workplace Communications</em>.</li>
+        <li><strong>Small Business:</strong> <em>Starting a Small Business</em> or <em>Small Business Marketing</em>.</li>
+        <li><strong>How It Works:</strong> Register online, pay course-by-course (~$250–$400), take it from home. Zero prerequisites, zero stress.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <div>
+        <div class="card-title">Option D: Industry Micro-Credentials & Software Certifications</div>
+        <div style="font-size: 0.82rem; color: var(--text-sub);">Free & Low-Cost Real-World Badges</div>
+      </div>
+      <span class="tag tag-amber">Direct Resume Power</span>
+    </div>
+    <div class="card-body">
+      <ul>
+        <li><strong>Intuit QuickBooks Certified User / ProAdvisor:</strong> Completely free self-paced training direct from Intuit. Once certified, she has proof of bookkeeping competence to freelance, work in any small business, or manage her own company.</li>
+        <li><strong>Google Project Management or Digital Marketing (Coursera):</strong> Self-paced, ~$50/mo, highly practical for small business ownership and digital coordination.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Part 3: Justice & Policing -->
+  <h2 class="section-title">🛡️ 3. Criminal Justice & Policing (Also 100% Qualified Today!)</h2>
+  <div class="card">
+    <div class="card-body">
+      <p>If Rayne decides she prefers law enforcement, public safety, or justice:</p>
+      <ul>
+        <li><strong>NBCC Justice Studies (Police Foundations / Public Safety):</strong> 2-year diploma at the Saint John campus. Admission is <strong>Profile A</strong>—Rayne meets 100% of requirements right now.</li>
+        <li><strong>Direct Policing (RCMP / Municipal / CBSA / Sheriffs):</strong> Requires a high school diploma and valid driver's license. Having 1 or 2 years of college credits gives her top hiring priority.</li>
+        <li><strong>University Bachelor of Arts (UNBSJ / STU Criminology):</strong> If she <em>ever</em> decides she wants a 4-year degree, a Bachelor of Arts requires <strong>zero math</strong>. Her KVHS English 122 (69%) and 76%–83% average already qualify her for immediate acceptance!</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Part 4: Master Summary Table -->
+  <h2 class="section-title">📊 4. Master Comparison at a Glance</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Pathway</th>
+        <th>Credential</th>
+        <th>Length</th>
+        <th>Math Needed?</th>
+        <th>Rayne's Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>NBCC Business Fundamentals</strong></td>
+        <td>College Certificate</td>
+        <td>1 Year</td>
+        <td>None (Profile A)</td>
+        <td><span class="status-badge status-ready">✓ 100% Qualified</span></td>
+      </tr>
+      <tr>
+        <td><strong>NBCC Administrative Professional</strong></td>
+        <td>College Certificate</td>
+        <td>1 Year</td>
+        <td>None (Profile A)</td>
+        <td><span class="status-badge status-ready">✓ 100% Qualified</span></td>
+      </tr>
+      <tr>
+        <td><strong>Single Courses (QuickBooks/HR)</strong></td>
+        <td>Continuing Ed / Micro-cert</td>
+        <td>Flexible / Self-paced</td>
+        <td>None (Open entry)</td>
+        <td><span class="status-badge status-ready">✓ 100% Qualified</span></td>
+      </tr>
+      <tr>
+        <td><strong>NBCC Justice Studies</strong></td>
+        <td>College Diploma</td>
+        <td>2 Years</td>
+        <td>None (Profile A)</td>
+        <td><span class="status-badge status-ready">✓ 100% Qualified</span></td>
+      </tr>
+      <tr>
+        <td><strong>UNBSJ / STU Bachelor of Arts (Criminology)</strong></td>
+        <td>University Degree (BA)</td>
+        <td>4 Years</td>
+        <td>None (English 122 + GPA)</td>
+        <td><span class="status-badge status-ready">✓ 100% Qualified</span></td>
+      </tr>
+      <tr>
+        <td><strong>Traditional NBCC Business Admin</strong></td>
+        <td>College Diploma</td>
+        <td>2 Years</td>
+        <td>Foundations Math 110</td>
+        <td><span class="status-badge status-upgrade">Needs 1 Quick Upgrade OR Ladder from 1-Yr Cert</span></td>
+      </tr>
+      <tr>
+        <td><strong>UNB Bachelor of Business Admin (BBA)</strong></td>
+        <td>University Degree</td>
+        <td>4 Years</td>
+        <td>Pre-Calc or Foundations 120</td>
+        <td><span class="status-badge status-upgrade">Requires Heavy Math Prerequisites</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Part 5: Action Plan for Rayne & Joe -->
+  <h2 class="section-title">🧭 5. Recommended Next Steps for Rayne (Zero Pressure)</h2>
+  <div class="card">
+    <div class="card-body">
+      <ol style="margin-left: 20px;">
+        <li style="margin-bottom: 8px;"><strong>Wrap Up Fall 2026 at NBCC:</strong> Complete her current term in mid-December in good standing to protect her fall grants.</li>
+        <li style="margin-bottom: 8px;"><strong>Enjoy the 8-Month Reset (Jan – Aug 2027):</strong> Work part-time, earn money, let her nervous system recover with zero academic pressure and $0 student loan payments.</li>
+        <li style="margin-bottom: 8px;"><strong>Test the Waters with Zero Risk:</strong> If she is curious about business, she can take a single online QuickBooks or HR course through NBCC Continuing Ed, or do free QuickBooks training from home.</li>
+        <li style="margin-bottom: 8px;"><strong>Fall 2027 Fresh Launch:</strong> Step into a career-aligned 1-year certificate (Business Fundamentals or Admin Professional) or Justice Studies with renewed energy and purpose!</li>
+      </ol>
+    </div>
+  </div>
+
+  <div style="text-align: center; margin-top: 30px; font-size: 0.85rem; color: var(--text-sub); border-top: 1px solid var(--card-border); padding-top: 16px;">
+    Prepared with care by Friday • Flowstate AI OS • Dedicated to Rayne's Bright Future
+  </div>
+
+</div>
+
+</body>
+</html>
