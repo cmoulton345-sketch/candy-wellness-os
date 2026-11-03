@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Christina's MCAS & Ozempic Clinical Tracker — Soma Health OS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #070d1e;
+      --surface: #0f1c38;
+      --card: #15254b;
+      --card-hover: #1b2f5d;
+      --border: rgba(255, 255, 255, 0.12);
+      --teal: #0d9488;
+      --teal-light: #14b8a6;
+      --teal-dim: rgba(20, 184, 166, 0.15);
+      --emerald: #10b981;
+      --emerald-dim: rgba(16, 185, 129, 0.15);
+      --cyan: #06b6d4;
+      --amber: #f59e0b;
+      --amber-dim: rgba(245, 158, 11, 0.15);
+      --rose: #f43f5e;
+      --rose-dim: rgba(244, 63, 94, 0.15);
+      --purple: #a855f7;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-sub: #cbd5e1;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      padding-bottom: 90px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* TOP BAR */
+    header {
+      background: rgba(15, 28, 56, 0.95);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 14px 20px;
+    }
+    .header-top {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .brand-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .brand-icon {
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, #0d9488, #06b6d4);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      box-shadow: 0 4px 14px rgba(13, 148, 136, 0.35);
+    }
+    .brand-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: -0.2px;
+    }
+    .brand-sub {
+      font-size: 0.82rem;
+      color: var(--teal-light);
+      font-weight: 500;
+    }
+    .btn-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn {
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 0.84rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+    .btn:hover {
+      background: var(--card-hover);
+      transform: translateY(-1px);
+    }
+    .btn-primary {
+      background: var(--teal);
+      border-color: var(--teal-light);
+      color: white;
+    }
+    .btn-primary:hover {
+      background: #0f766e;
+    }
+    .btn-emerald {
+      background: var(--emerald);
+      border-color: #34d399;
+      color: white;
+    }
+    .btn-emerald:hover { background: #059669; }
+
+    /* CONTAINER */
+    .container {
+      max-width: 1080px;
+      margin: 24px auto 0;
+      padding: 0 16px;
+    }
+
+    /* BANNER */
+    .status-banner {
+      background: linear-gradient(135deg, rgba(13, 148, 136, 0.2) 0%, rgba(6, 182, 212, 0.1) 100%);
+      border: 1px solid rgba(20, 184, 166, 0.35);
+      border-radius: 14px;
+      padding: 16px 20px;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .banner-text h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #99f6e4;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .banner-text p {
+      font-size: 0.88rem;
+      color: var(--text-sub);
+      margin-top: 4px;
+    }
+
+    /* NAV TABS */
+    .nav-tabs {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 24px;
+      scrollbar-width: thin;
+    }
+    .tab-btn {
+      padding: 10px 18px;
+      border-radius: 10px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .tab-btn.active {
+      background: var(--teal);
+      color: white;
+      border-color: var(--teal-light);
+      box-shadow: 0 4px 12px rgba(13, 148, 136, 0.3);
+    }
+
+    /* TAB CONTENT */
+    .tab-pane {
+      display: none;
+      animation: fadeIn 0.25s ease;
+    }
+    .tab-pane.active {
+      display: block;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* GRID & CARDS */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 18px;
+      margin-bottom: 24px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+    }
+    .card-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: white;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+    .card-title .badge {
+      font-size: 0.72rem;
+      padding: 2px 8px;
+      border-radius: 6px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .badge-teal { background: var(--teal-dim); color: #5eead4; border: 1px solid rgba(94, 234, 212, 0.3); }
+    .badge-amber { background: var(--amber-dim); color: #fcd34d; border: 1px solid rgba(252, 211, 77, 0.3); }
+    .badge-rose { background: var(--rose-dim); color: #fda4af; border: 1px solid rgba(253, 164, 175, 0.3); }
+    .badge-purple { background: rgba(168, 85, 247, 0.15); color: #d8b4fe; border: 1px solid rgba(216, 180, 254, 0.3); }
+
+    /* DATA LISTS */
+    .data-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      font-size: 0.9rem;
+    }
+    .data-row:last-child { border-bottom: none; }
+    .data-label { color: var(--text-muted); }
+    .data-val { font-weight: 600; color: #f1f5f9; text-align: right; }
+
+    /* CLINICAL BOXES */
+    .callout {
+      border-left: 4px solid var(--teal);
+      background: rgba(13, 148, 136, 0.08);
+      padding: 14px 16px;
+      border-radius: 0 10px 10px 0;
+      margin: 14px 0;
+      font-size: 0.9rem;
+      color: #ccfbf1;
+      line-height: 1.5;
+    }
+    .callout-amber {
+      border-left-color: var(--amber);
+      background: rgba(245, 158, 11, 0.08);
+      color: #fef3c7;
+    }
+    .callout-rose {
+      border-left-color: var(--rose);
+      background: rgba(244, 63, 94, 0.08);
+      color: #ffe4e6;
+    }
+
+    /* QUESTIONNAIRE ITEMS */
+    .q-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 14px;
+    }
+    .q-num {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--teal-light);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+    .q-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 8px;
+    }
+    .q-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+    .q-input {
+      width: 100%;
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px 12px;
+      color: white;
+      font-family: inherit;
+      font-size: 0.88rem;
+      resize: vertical;
+      min-height: 60px;
+    }
+    .q-input:focus {
+      outline: none;
+      border-color: var(--teal-light);
+    }
+
+    /* LOG ENTRIES */
+    .log-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      margin-top: 12px;
+    }
+    .log-table th {
+      text-align: left;
+      padding: 10px;
+      background: rgba(0, 0, 0, 0.3);
+      color: var(--text-muted);
+      font-weight: 600;
+      border-bottom: 1px solid var(--border);
+    }
+    .log-table td {
+      padding: 12px 10px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      vertical-align: top;
+    }
+
+    /* FORM STYLES */
+    .form-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .form-group label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+    .form-control {
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 9px 12px;
+      color: white;
+      font-family: inherit;
+      font-size: 0.88rem;
+    }
+    .form-control:focus {
+      outline: none;
+      border-color: var(--teal);
+    }
+
+    /* TOAST */
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: #0d9488;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+      opacity: 0;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 2000;
+      pointer-events: none;
+    }
+    .toast.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+
+    /* PRINT STYLES */
+    @media print {
+      body {
+        background: white !important;
+        color: black !important;
+        padding-bottom: 0;
+      }
+      header, .nav-tabs, .btn, .status-banner, .toast {
+        display: none !important;
+      }
+      .tab-pane {
+        display: block !important;
+        page-break-after: always;
+      }
+      .card {
+        background: white !important;
+        border: 1px solid #ccc !important;
+        box-shadow: none !important;
+        color: black !important;
+        margin-bottom: 16px !important;
+      }
+      .card-title, .brand-title, .q-title {
+        color: black !important;
+      }
+      .callout {
+        background: #f8fafc !important;
+        color: black !important;
+        border-left: 4px solid #333 !important;
+      }
+      .data-val { color: black !important; }
+      .q-item { background: #fafafa !important; border-color: #ddd !important; }
+      .q-input { background: white !important; color: black !important; border: 1px solid #ccc !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-top">
+      <div class="brand-wrap">
+        <div class="brand-icon">🧬</div>
+        <div>
+          <div class="brand-title">Christina's MCAS &amp; Ozempic Care Tracker</div>
+          <div class="brand-sub">Soma Health Intelligence OS • Dr. Carson Protocol</div>
+        </div>
+      </div>
+      <div class="btn-group">
+        <button class="btn btn-primary" onclick="copyCareBrief()">📋 Copy for Soma / Doctor</button>
+        <button class="btn btn-emerald" onclick="window.print()">🖨️ Print Clinical Sheet</button>
+        <a href="share_links.html" class="btn">🔗 Hub</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <!-- STATUS BANNER -->
+    <div class="status-banner">
+      <div class="banner-text">
+        <h3>🌴 Staged for December 2026 Intake (Post-Florida Vacation)</h3>
+        <p>Pre-meeting architecture created by Candy &amp; Soma. Ready to record symptoms, Ozempic titration, and histamine triggers upon Chris &amp; Elaine's return.</p>
+      </div>
+      <div style="display:flex; gap:8px;">
+        <span class="badge badge-teal" style="font-size:0.85rem; padding: 6px 12px;">Dr. Carson (Allergy)</span>
+        <span class="badge badge-amber" style="font-size:0.85rem; padding: 6px 12px;">Rocket Doctor Backup</span>
+      </div>
+    </div>
+
+    <!-- TABS -->
+    <div class="nav-tabs">
+      <button class="tab-btn active" onclick="switchTab('overview')">📋 Care Team &amp; Status</button>
+      <button class="tab-btn" onclick="switchTab('ozempic')">💉 Ozempic &amp; MCAS Science</button>
+      <button class="tab-btn" onclick="switchTab('symptoms')">🧬 Multi-System Symptom Map</button>
+      <button class="tab-btn" onclick="switchTab('florida')">☀️ Florida &amp; Heat Trigger Audit</button>
+      <button class="tab-btn" onclick="switchTab('questionnaire')">☕ December Coffee Intake</button>
+      <button class="tab-btn" onclick="switchTab('logger')">📝 Live Reaction Log</button>
+    </div>
+
+    <!-- TAB 1: OVERVIEW -->
+    <div id="tab-overview" class="tab-pane active">
+      <div class="grid-2">
+        <!-- CARE TEAM -->
+        <div class="card">
+          <div class="card-title">
+            <span>🩺 Care Team Architecture</span>
+            <span class="badge badge-teal">Active</span>
+          </div>
+          <div class="data-row">
+            <span class="data-label">Patient:</span>
+            <span class="data-val">Christina (Candy's Sister)</span>
+          </div>
+          <div class="data-row">
+            <span class="data-label">Partner / Spouse:</span>
+            <span class="data-val">Elaine (Dedicated Neuro Track)</span>
+          </div>
+          <div class="data-row">
+            <span class="data-label">Allergy &amp; Immunology Specialist:</span>
+            <span class="data-val">Dr. Carson (Lead Specialist)</span>
+          </div>
+          <div class="data-row">
+            <span class="data-label">Primary Care Status:</span>
+            <span class="data-val" style="color:#f87171;">Family GP Not Listening / Dismissive</span>
+          </div>
+          <div class="data-row">
+            <span class="data-label">Virtual Requisition Conduit:</span>
+            <span class="data-val" style="color:#5eead4;">Rocket Doctor (Staged for Requisitions)</span>
+          </div>
+          <div class="data-row">
+            <span class="data-label">Care Advocate:</span>
+            <span class="data-val">Candy Moulton (Soma Health OS)</span>
+          </div>
+          <div class="callout" style="margin-top:16px;">
+            <strong>Why Rocket Doctor?</strong> When a primary GP dismisses complex immune or histamine flares, Rocket Doctor provides fast, unbiased Canadian virtual physicians who can issue lab requisitions (serum tryptase, IgE panels) and specialist renewals without gatekeeping.
+          </div>
+        </div>
+
+        <!-- CORE MCAS SNAPSHOT -->
+        <div class="card">
+          <div class="card-title">
+            <span>🛡️ Mast Cell Profile Snapshot</span>
+            <span class="badge badge-purple">Immunology</span>
+          </div>
+          <p style="font-size:0.88rem; color:var(--text-sub); margin-bottom:12px;">
+            Mast cells reside in barrier tissues (skin, gut, lungs). In MCAS, they misfire and degranulate without true anaphylaxis triggers, flooding the bloodstream with histamine, leukotrienes, and cytokines.
+          </p>
+          <div class="callout callout-amber">
+            <strong>The Doctor Obstacle:</strong> Because symptoms fluctuate between gut cramps, skin flushing, brain fog, and nasal congestion, conventional GPs mistake MCAS for separate unrelated problems. Our job in December is to present a single unified immunological timeline.
+          </div>
+          <div style="margin-top: 14px;">
+            <div style="font-size:0.85rem; font-weight:700; color:white; margin-bottom:6px;">Current Staged Interventions:</div>
+            <ul style="font-size:0.85rem; color:var(--text-muted); padding-left:18px; line-height:1.6;">
+              <li>Ozempic (Semaglutide) trial under Dr. Carson</li>
+              <li>Histamine trigger tracking (Florida heat + food)</li>
+              <li>H1/H2 antihistamine baseline audit (December)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 2: OZEMPIC & SCIENCE -->
+    <div id="tab-ozempic" class="tab-pane">
+      <div class="card" style="margin-bottom:20px;">
+        <div class="card-title">
+          <span>💉 Why Dr. Carson is Using Ozempic for Mast Cell Activation</span>
+          <span class="badge badge-teal">Clinical Immunology</span>
+        </div>
+        <p style="font-size:0.92rem; color:var(--text-sub); line-height:1.6; margin-bottom:14px;">
+          While semaglutide is best known for blood sugar and weight regulation, cutting-edge allergists and immunologists like Dr. Carson are utilizing GLP-1 receptor agonists for their <strong>direct mast-cell stabilizing and systemic anti-inflammatory actions</strong>:
+        </p>
+
+        <div class="grid-2">
+          <div style="background:var(--surface); padding:16px; border-radius:10px; border:1px solid var(--border);">
+            <div style="font-weight:700; color:#5eead4; margin-bottom:6px;">1. GLP-1 Receptors on Immune Cells</div>
+            <p style="font-size:0.85rem; color:var(--text-muted);">
+              Human mast cells possess GLP-1 receptors. When activated, semaglutide directly dampens mast cell degranulation, blocking the release of tumor necrosis factor (TNF-α) and interleukin-6 (IL-6).
+            </p>
+          </div>
+
+          <div style="background:var(--surface); padding:16px; border-radius:10px; border:1px solid var(--border);">
+            <div style="font-weight:700; color:#5eead4; margin-bottom:6px;">2. Gut Mucosal Barrier Sealing</div>
+            <p style="font-size:0.85rem; color:var(--text-muted);">
+              Over 70% of mast cells sit in the gut lining. GLP-1 strengthens tight junction proteins (occludin, claudins), stopping macromolecule antigens from crossing into the bloodstream and triggering flares.
+            </p>
+          </div>
+
+          <div style="background:var(--surface); padding:16px; border-radius:10px; border:1px solid var(--border);">
+            <div style="font-weight:700; color:#5eead4; margin-bottom:6px;">3. Neuro-Vascular Inflammation</div>
+            <p style="font-size:0.85rem; color:var(--text-muted);">
+              Mast cells wrap around sensory nerve terminals. Ozempic decreases neurogenic inflammation, calming down the autonomic "hyper-reactive" feedback loop that causes dizziness, brain fog, and flushing.
+            </p>
+          </div>
+
+          <div style="background:var(--surface); padding:16px; border-radius:10px; border:1px solid var(--border);">
+            <div style="font-weight:700; color:#5eead4; margin-bottom:6px;">4. What Needs Careful Monitoring</div>
+            <p style="font-size:0.85rem; color:var(--text-muted);">
+              Because Ozempic delays gastric emptying, it can cause transient nausea or reflux. We must ensure GI symptoms are from normal titration rather than a mast cell reaction to excipients.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- OZEMPIC TITRATION LOG -->
+      <div class="card">
+        <div class="card-title">
+          <span>📊 Ozempic Titration &amp; Response Record</span>
+          <span class="badge badge-amber">Tracking</span>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Current Weekly Dose</label>
+            <input type="text" id="ozempic-dose" class="form-control" placeholder="e.g. 0.25 mg or 0.5 mg" value="0.25 mg (Initiation)">
+          </div>
+          <div class="form-group">
+            <label>Injection Day</label>
+            <input type="text" id="ozempic-day" class="form-control" placeholder="e.g. Sunday evening" value="Weekly">
+          </div>
+          <div class="form-group">
+            <label>Date Started</label>
+            <input type="date" id="ozempic-date" class="form-control">
+          </div>
+        </div>
+        <div class="form-group" style="margin-top:10px;">
+          <label>Observable Effects on Flushing, Hives, and Energy (Notes for Dr. Carson)</label>
+          <textarea id="ozempic-notes" class="q-input" placeholder="Record changes: Has flushing decreased? Did gut pain lessen? Any nausea or injection site reaction?"></textarea>
+        </div>
+        <button class="btn btn-primary" onclick="saveOzempicDetails()" style="margin-top:12px;">💾 Save Ozempic Status</button>
+      </div>
+    </div>
+
+    <!-- TAB 3: SYMPTOMS MAP -->
+    <div id="tab-symptoms" class="tab-pane">
+      <div class="card" style="margin-bottom:20px;">
+        <div class="card-title">
+          <span>🧬 Systematic MCAS Organ-System Checklist</span>
+          <span class="badge badge-purple">Clinical Map</span>
+        </div>
+        <p style="font-size:0.88rem; color:var(--text-sub); margin-bottom:16px;">
+          Review these 5 core branches with Christina in December. Check each system that actively flares:
+        </p>
+
+        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:16px;">
+          <!-- SKIN -->
+          <div style="background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:16px;">
+            <div style="font-weight:700; color:#f43f5e; margin-bottom:8px; display:flex; align-items:center; gap:6px;">
+              <span>🔴 Dermatological (Skin)</span>
+            </div>
+            <label style="display:block; font-size:0.85rem; margin-bottom:6px;"><input type="checkbox" id="sym-flush"> Sudden chest/neck/facial flushing</label>
+            <label style="display:block; font-size:0.85rem; margin-bottom:6px;"><input type="checkbox" id="sym-hives"> Urticaria (unexplained hives or welts)</label>
+            <label style="display:block; font-size:0.85rem; margin-bottom:6px;"><input type="checkbox" id="sym-itch"> Pruritus (severe all-over skin itching)</label>
+            <label style="display:block; font-size:0.85rem; margin-bottom:6px;"><input type="checkbox" id="sym-derm"> Dermatographia (raised red lines from light scratches)</label>
+            <label style="display:block; font-size:0.85rem;"><input type="checkbox" id="sym-angio"> Angioedema (swelling of lips, eyelids, fingers)</label>
+          </div>
+
+          <!-- GI -->
+          <div style="background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:16px;">
+            <div style="font-weight:700; color:#f59e0b; margin-bottom:8px; display:flex; align-items:center; gap:6px;">
+              <span>🟡 Gastrointestinal (Gut)</span>
+            </div>
+            <label style="display:block; font-size:0.85rem; margin-bottom:6px;"><input type="checkbox" id="sym-bloat"> Rapid postprandial bloating ("food belly")</label>
+            <label style="display:block; font-size:0.85rem; margin-bottom:6px;"><input type="checkbox" id="sym-cramp"> Severe abdominal spasms &amp; cramping</label>
+            <label style="display:block; font-size:0.85rem; margin-bottom:6px;"><input type="checkbox" id="sym-diarrhea"> Sudden urgent diarrhea post-trigger</label>
+            <label style="display:block; font-size:0.85rem; margin-bottom:6px;"><input type="checkbox" id="sym-reflux"> Acid reflux / burning heartburn</label>
+            <label style="display:block; font-size:0.85rem;"><input type="checkbox" id="sym-nausea"> Chronic low-grade nausea</label>
+          </div>
+
+          <!-- NEURO -->
+          <div style="background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:16px;">
+            <div style="font-weight:700; color:#a855f7; margin-bottom:8px; display:flex; align-items:center; gap:6px;">
+              <span>🟣 Neurological &amp; Autonomic</span>
+            </div>
+            <label style="display:block; font-size:0.85rem; margin-bottom:6px;"><input type="checkbox" id="sym-fog"> "Brain fog" &amp; cognitive sluggishness</label>
+            <label style="display:block; font-size:0.85rem; margin-bottom:6px;"><input type="checkbox" id="sym-migraine"> Vascular or throbbing headaches</label>
+            <label style="display:block; font-size:0.85rem; margin-bottom:6px;"><input type="checkbox" id="sym-pots"> Heart racing / tachycardia upon standing (POTS)</label>
+            <label style="display:block; font-size:0.85rem; margin-bottom:6px;"><input type="checkbox" id="sym-dizzy"> Dizziness, lightheadedness, or presyncope</label>
+            <label style="display:block; font-size:0.85rem;"><input type="checkbox" id="sym-overload"> Extreme sensory sensitivity (lights, sound)</label>
+          </div>
+
+          <!-- RESPIRATORY -->
+          <div style="background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:16px;">
+            <div style="font-weight:700; color:#06b6d4; margin-bottom:8px; display:flex; align-items:center; gap:6px;">
+              <span>🔵 Respiratory &amp; ENT</span>
+            </div>
+            <label style="display:block; font-size:0.85rem; margin-bottom:6px;"><input type="checkbox" id="sym-drip"> Chronic post-nasal drip / clear runny nose</label>
+            <label style="display:block; font-size:0.85rem; margin-bottom:6px;"><input type="checkbox" id="sym-throat"> Throat clearing or "lump in throat" (globus)</label>
+            <label style="display:block; font-size:0.85rem; margin-bottom:6px;"><input type="checkbox" id="sym-wheeze"> Episodic bronchospasm or tight breathing</label>
+            <label style="display:block; font-size:0.85rem;"><input type="checkbox" id="sym-scents"> Immediate congestion from perfumes/cleaning chemicals</label>
+          </div>
+        </div>
+        <button class="btn btn-primary" onclick="saveSymptomChecklist()" style="margin-top:16px;">💾 Save Active Symptoms</button>
+      </div>
+    </div>
+
+    <!-- TAB 4: FLORIDA & HEAT -->
+    <div id="tab-florida" class="tab-pane">
+      <div class="card">
+        <div class="card-title">
+          <span>☀️ Florida Travel &amp; Environmental Heat Analysis</span>
+          <span class="badge badge-amber">November 2026</span>
+        </div>
+        <div class="callout callout-amber">
+          <strong>The Florida Mast Cell Trigger Effect:</strong> Physical stimuli like direct sunlight, high heat, and humidity are known physical mast cell secretagogues. High ambient heat causes cutaneous vasodilation and induces mast cells in the dermis to degranulate.
+        </div>
+
+        <div style="margin-top:16px;">
+          <div class="form-group" style="margin-bottom:14px;">
+            <label>Florida Climate Reaction Summary (To ask in December)</label>
+            <textarea id="florida-notes" class="q-input" placeholder="Did the Florida heat make Christina break out in hives or fatigue? Did air-conditioning rescue her? How did restaurant food affect her?"></textarea>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Heat Sensitivity Level</label>
+              <select id="florida-heat" class="form-control">
+                <option value="Severe Flares in Heat">Severe (Instant flushing/hives)</option>
+                <option value="Moderate (Fatigue/Sweating)">Moderate (Fatigue / Puffy)</option>
+                <option value="Mild / Well Tolerated">Mild (Tolerated fine)</option>
+                <option value="Actually Improved in Sun">Unexpectedly felt better</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Dietary / Restaurant Tolerance</label>
+              <select id="florida-diet" class="form-control">
+                <option value="Frequent GI upset">Frequent GI upset</option>
+                <option value="Strict low-histamine required">Strict low-histamine required</option>
+                <option value="Surprisingly tolerated well">Surprisingly tolerated well</option>
+              </select>
+            </div>
+          </div>
+          <button class="btn btn-primary" onclick="saveFloridaAudit()" style="margin-top:10px;">💾 Save Florida Climate Audit</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 5: KITCHEN TABLE QUESTIONNAIRE -->
+    <div id="tab-questionnaire" class="tab-pane">
+      <div class="card" style="margin-bottom:18px;">
+        <div class="card-title">
+          <span>☕ December Kitchen-Table Intake Prompts (For Candy)</span>
+          <span class="badge badge-teal">Meeting Script</span>
+        </div>
+        <p style="font-size:0.88rem; color:var(--text-sub); margin-bottom:16px;">
+          When you sit down with Chris over coffee, use these questions to guide the conversation without overwhelming her:
+        </p>
+
+        <div class="q-item">
+          <div class="q-num">Question 1 • Current Medications</div>
+          <div class="q-title">What antihistamines and stabilizers are you taking every single day?</div>
+          <div class="q-desc">Include H1 blockers (Blexten, Reactine, Rupall), H2 blockers (Famotidine/Pepcid), Cromolyn, Ketotifen, or Quercetin.</div>
+          <textarea id="q-meds" class="q-input" placeholder="Enter current medication list and daily doses..."></textarea>
+        </div>
+
+        <div class="q-item">
+          <div class="q-num">Question 2 • Ozempic Protocol</div>
+          <div class="q-title">What exact dose of Ozempic are you on, and how does your body feel 24–48 hours after the shot?</div>
+          <div class="q-desc">Did Dr. Carson start you at 0.25 mg? Has your appetite shut down or have you noticed less full-body swelling?</div>
+          <textarea id="q-ozempic-feel" class="q-input" placeholder="Record injection reaction and subjective changes..."></textarea>
+        </div>
+
+        <div class="q-item">
+          <div class="q-num">Question 3 • Top 3 Worst Food Triggers</div>
+          <div class="q-title">What are the 3 foods that trigger an immediate stomach blow-up or flushing?</div>
+          <div class="q-desc">Examples: Aged cheeses, wine, tomatoes, cured meats, avocados, gluten, leftovers.</div>
+          <textarea id="q-foods" class="q-input" placeholder="List top 3 food culprits..."></textarea>
+        </div>
+
+        <div class="q-item">
+          <div class="q-num">Question 4 • Dr. Carson's Next Plan</div>
+          <div class="q-title">What is the next step Dr. Carson wants to take, and when is your next appointment?</div>
+          <div class="q-desc">Are there pending blood tests (serum tryptase), 24-hr urine tests, or dose increases planned?</div>
+          <textarea id="q-carson-plan" class="q-input" placeholder="Record Dr. Carson's instructions and next consult date..."></textarea>
+        </div>
+
+        <div class="q-item">
+          <div class="q-num">Question 5 • Family Doctor Barriers &amp; Rocket Doctor</div>
+          <div class="q-title">What has your family doctor refused to do or brushed off?</div>
+          <div class="q-desc">This helps us prepare the Rocket Doctor requisition request so she gets her labs without arguments.</div>
+          <textarea id="q-gp-issues" class="q-input" placeholder="Record what the GP dismissed..."></textarea>
+        </div>
+
+        <button class="btn btn-primary" onclick="saveIntakeResponses()" style="width:100%; justify-content:center; padding:12px; font-size:0.95rem;">
+          💾 Save Full December Intake Responses
+        </button>
+      </div>
+    </div>
+
+    <!-- TAB 6: LIVE REACTION LOGGER -->
+    <div id="tab-logger" class="tab-pane">
+      <div class="card" style="margin-bottom:20px;">
+        <div class="card-title">
+          <span>📝 Log a Mast Cell Flare / Event</span>
+          <span class="badge badge-rose">New Entry</span>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Date &amp; Time</label>
+            <input type="datetime-local" id="log-date" class="form-control">
+          </div>
+          <div class="form-group">
+            <label>Suspected Trigger</label>
+            <input type="text" id="log-trigger" class="form-control" placeholder="e.g. Heat, Seafood, Fragrance, Stress">
+          </div>
+          <div class="form-group">
+            <label>Severity (1–10)</label>
+            <select id="log-sev" class="form-control">
+              <option value="Mild (1-3)">Mild (1-3)</option>
+              <option value="Moderate (4-6)">Moderate (4-6)</option>
+              <option value="Severe (7-9)">Severe (7-9)</option>
+              <option value="Emergency (10)">Emergency / Throat (10)</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group" style="margin-bottom:12px;">
+          <label>Symptoms Experienced &amp; Treatment Taken</label>
+          <input type="text" id="log-notes" class="form-control" placeholder="e.g. Chest flushing + sudden gut cramps. Took 20mg Famotidine + ice pack.">
+        </div>
+        <button class="btn btn-primary" onclick="addLogEntry()">➕ Add Flare Entry</button>
+      </div>
+
+      <!-- SAVED LOGS TABLE -->
+      <div class="card">
+        <div class="card-title" style="justify-content:space-between;">
+          <span>📋 Recorded Reaction History</span>
+          <button class="btn" onclick="clearLogs()" style="font-size:0.75rem; padding:4px 8px;">Clear Log</button>
+        </div>
+        <div style="overflow-x:auto;">
+          <table class="log-table">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Trigger</th>
+                <th>Severity</th>
+                <th>Symptoms &amp; Recovery</th>
+              </tr>
+            </thead>
+            <tbody id="log-tbody">
+              <!-- Rendered via JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast">✓ Saved to memory!</div>
+
+  <script>
+    // TAB SWITCHER
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+      
+      const targetPane = document.getElementById('tab-' + tabId);
+      if (targetPane) targetPane.classList.add('active');
+      
+      const activeBtn = Array.from(document.querySelectorAll('.tab-btn')).find(b => b.getAttribute('onclick').includes(tabId));
+      if (activeBtn) activeBtn.classList.add('active');
+    }
+
+    // TOAST
+    function showToast(msg) {
+      const t = document.getElementById('toast');
+      t.innerText = msg;
+      t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), 2500);
+    }
+
+    // LOCAL STORAGE KEYS
+    const STORAGE_KEY = 'christina_mcas_data_v1';
+
+    // LOAD STORED DATA
+    function loadData() {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if (!raw) {
+        initDefaultLogs();
+        return;
+      }
+      try {
+        const data = JSON.parse(raw);
+        if (data.ozempicDose) document.getElementById('ozempic-dose').value = data.ozempicDose;
+        if (data.ozempicDay) document.getElementById('ozempic-day').value = data.ozempicDay;
+        if (data.ozempicDate) document.getElementById('ozempic-date').value = data.ozempicDate;
+        if (data.ozempicNotes) document.getElementById('ozempic-notes').value = data.ozempicNotes;
+
+        if (data.floridaNotes) document.getElementById('florida-notes').value = data.floridaNotes;
+        if (data.floridaHeat) document.getElementById('florida-heat').value = data.floridaHeat;
+        if (data.floridaDiet) document.getElementById('florida-diet').value = data.floridaDiet;
+
+        if (data.qMeds) document.getElementById('q-meds').value = data.qMeds;
+        if (data.qOzempicFeel) document.getElementById('q-ozempic-feel').value = data.qOzempicFeel;
+        if (data.qFoods) document.getElementById('q-foods').value = data.qFoods;
+        if (data.qCarsonPlan) document.getElementById('q-carson-plan').value = data.qCarsonPlan;
+        if (data.qGpIssues) document.getElementById('q-gp-issues').value = data.qGpIssues;
+
+        if (data.symptoms) {
+          for (let k in data.symptoms) {
+            const el = document.getElementById(k);
+            if (el) el.checked = data.symptoms[k];
+          }
+        }
+
+        renderLogs(data.logs || []);
+      } catch(e) {
+        console.error(e);
+      }
+    }
+
+    function initDefaultLogs() {
+      const defaultLogs = [
+        {
+          date: '2026-10-25 18:30',
+          trigger: 'High Ambient Heat + Spiced Meal',
+          sev: 'Moderate (4-6)',
+          notes: 'Sudden chest and neck flush, stomach distended. Took extra Famotidine, settled in 45 mins.'
+        },
+        {
+          date: '2026-10-28 09:00',
+          trigger: 'Weekly Ozempic Injection',
+          sev: 'Mild (1-3)',
+          notes: 'Mild transient nausea at 12 hours; noticeable reduction in daytime food-bloat.'
+        }
+      ];
+      saveRawData({ logs: defaultLogs });
+      renderLogs(defaultLogs);
+    }
+
+    function getRawData() {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      return raw ? JSON.parse(raw) : {};
+    }
+
+    function saveRawData(newData) {
+      const current = getRawData();
+      const merged = Object.assign(current, newData);
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(merged));
+    }
+
+    function saveOzempicDetails() {
+      saveRawData({
+        ozempicDose: document.getElementById('ozempic-dose').value,
+        ozempicDay: document.getElementById('ozempic-day').value,
+        ozempicDate: document.getElementById('ozempic-date').value,
+        ozempicNotes: document.getElementById('ozempic-notes').value
+      });
+      showToast('✓ Ozempic protocol saved!');
+    }
+
+    function saveSymptomChecklist() {
+      const symCheckboxes = document.querySelectorAll('#tab-symptoms input[type="checkbox"]');
+      const symObj = {};
+      symCheckboxes.forEach(cb => {
+        symObj[cb.id] = cb.checked;
+      });
+      saveRawData({ symptoms: symObj });
+      showToast('✓ Active symptoms saved!');
+    }
+
+    function saveFloridaAudit() {
+      saveRawData({
+        floridaNotes: document.getElementById('florida-notes').value,
+        floridaHeat: document.getElementById('florida-heat').value,
+        floridaDiet: document.getElementById('florida-diet').value
+      });
+      showToast('✓ Florida climate audit saved!');
+    }
+
+    function saveIntakeResponses() {
+      saveRawData({
+        qMeds: document.getElementById('q-meds').value,
+        qOzempicFeel: document.getElementById('q-ozempic-feel').value,
+        qFoods: document.getElementById('q-foods').value,
+        qCarsonPlan: document.getElementById('q-carson-plan').value,
+        qGpIssues: document.getElementById('q-gp-issues').value
+      });
+      showToast('✓ Full December intake saved!');
+    }
+
+    function addLogEntry() {
+      const date = document.getElementById('log-date').value || new Date().toISOString().slice(0, 16).replace('T', ' ');
+      const trigger = document.getElementById('log-trigger').value.trim() || 'Unspecified';
+      const sev = document.getElementById('log-sev').value;
+      const notes = document.getElementById('log-notes').value.trim() || 'No additional notes';
+
+      const data = getRawData();
+      const logs = data.logs || [];
+      logs.unshift({ date, trigger, sev, notes });
+      saveRawData({ logs });
+      renderLogs(logs);
+
+      document.getElementById('log-trigger').value = '';
+      document.getElementById('log-notes').value = '';
+      showToast('✓ Flare logged successfully!');
+    }
+
+    function renderLogs(logs) {
+      const tbody = document.getElementById('log-tbody');
+      tbody.innerHTML = '';
+      if (!logs || logs.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="4" style="text-align:center; color:var(--text-muted); padding:16px;">No entries recorded yet.</td></tr>';
+        return;
+      }
+      logs.forEach(l => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td style="font-family:'JetBrains Mono', monospace; font-size:0.8rem; color:var(--text-muted);">${l.date}</td>
+          <td style="font-weight:600; color:#5eead4;">${l.trigger}</td>
+          <td><span class="badge ${l.sev.includes('Severe') ? 'badge-rose' : (l.sev.includes('Moderate') ? 'badge-amber' : 'badge-teal')}">${l.sev}</span></td>
+          <td style="color:var(--text-sub);">${l.notes}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    function clearLogs() {
+      if (confirm('Clear all recorded reaction logs?')) {
+        saveRawData({ logs: [] });
+        renderLogs([]);
+        showToast('Logs cleared.');
+      }
+    }
+
+    // COPY CARE BRIEF FOR SOMA / DR CARSON
+    function copyCareBrief() {
+      const data = getRawData();
+      let text = `### 🧬 Christina's Mast Cell (MCAS) & Ozempic Clinical Brief\n`;
+      text += `* **Patient:** Christina | **Specialist:** Dr. Carson (Allergist)\n`;
+      text += `* **Primary Care Note:** Family GP dismissive; Rocket Doctor backup active\n`;
+      text += `* **Ozempic Dose:** ${data.ozempicDose || '0.25 mg'} | **Injection:** ${data.ozempicDay || 'Weekly'}\n`;
+      text += `* **Ozempic Response Notes:** ${data.ozempicNotes || 'None recorded'}\n\n`;
+      text += `#### Florida Climate & Heat Observations:\n`;
+      text += `* **Heat Sensitivity:** ${data.floridaHeat || 'Not recorded'}\n`;
+      text += `* **Dietary Tolerance:** ${data.floridaDiet || 'Not recorded'}\n`;
+      text += `* **Notes:** ${data.floridaNotes || 'None'}\n\n`;
+      text += `#### Current Medications & December Intake:\n`;
+      text += `* **Meds:** ${data.qMeds || 'Pending'}\n`;
+      text += `* **Worst Foods:** ${data.qFoods || 'Pending'}\n`;
+      text += `* **Dr. Carson Plan:** ${data.qCarsonPlan || 'Pending'}\n`;
+      text += `* **Family GP Issues:** ${data.qGpIssues || 'Pending'}\n`;
+
+      navigator.clipboard.writeText(text).then(() => {
+        showToast('📋 Copied brief to clipboard! Ready to paste to Soma.');
+      }).catch(() => {
+        prompt('Copy clinical brief below:', text);
+      });
+    }
+
+    // INITIALIZE
+    window.onload = function() {
+      // Set current datetime in log picker
+      const now = new Date();
+      now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+      document.getElementById('log-date').value = now.toISOString().slice(0, 16);
+      loadData();
+    };
+  </script>
+</body>
+</html>
