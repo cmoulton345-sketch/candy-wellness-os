@@ -4,6 +4,14 @@
 
 ---
 
+- **2026-11-04 (Evening)** (SOMA):
+  - **Physical Check-In & Recovery Strategy:**
+    - Yin Yoga was great; 10:15 AM Pilates triggered acute C-sign / psoas and hip flexor guarding (femoral-acetabular & iliopsoas tension from 3 hours in the car to Moncton + loaded hip flexion during Pilates on top of cool 35.5°C follicular baseline).
+    - Celebrated skipping the scheduled evening weights workout to protect the central nervous system and avoid cortisol spiking.
+    - Decoded ring tightness fluctuation (super loose post-workout &rarr; tight this evening): natural post-exercise micro-inflammatory repair shift + afternoon dependent hydrostatic pressure + ongoing renal clearance of Irving Big Stop sodium.
+    - Validated dandelion tea strategy (potassium-rich natural diuretic supporting sodium excretion without electrolyte depletion) + hydration. Prescribed 10 minutes of Legs Up the Wall / Constructive Rest and evening Progesterone for deep sleep.
+  - **Ecosystem Synced:** Updated `candys_hormones.md`, `candy_cycle_calendar_sept_oct_2026.html`, `soma_health_brief_nov_04.md` and `.html`.
+
 - **2026-11-04 (Afternoon)** (SOMA):
   - **Dr. Jenna Weeks BHRT Consultation Rescheduled:** Appointment moved to **Thursday, November 5, 2026 at 1:00 PM**.
   - **ZRT Blood Spot Lab Results Decoded & Preserved (Test Date: Sept 26 / Day 19 Peak Luteal):**

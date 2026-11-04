@@ -85,3 +85,24 @@ Doing **Yin Yoga this morning followed by Pilates at 10:15 AM** is an exceptiona
   - Make sure your CanPrev Glycine is stocked for your 500ml BioSteel/collagen night drink tonight to relax muscles and support deep restorative sleep.
 * [ ] **4. Evening Sanctuary:**
   - 10 minutes of **Legs Up the Wall** (*Viparita Karani*) before bed to drain fluid pooled from travel and soothe your central nervous system.
+
+---
+
+## 🍵 5. Evening Physical Check-In: C-Sign Psoas Guarding & The Dandelion Tea Strategy
+
+* **Yin Yoga Win:** Yin provided wonderful, gentle fascial rehydration after last night's long drive.
+* **Pilates "C-Sign" / Psoas Flare:**
+  - Experiencing classic "C-sign" pain (hand cupped over the hip/groin) is textbook iliopsoas tendon and anterior hip joint guarding.
+  - **The Root Cause:** 3 hours of highway driving late last night held your hips in static 90° flexion, shortening the psoas. Pilates loaded those contracted hip flexors in table-top, leg extensions, and core holds on top of a cool 35.5°C synovial baseline and short sleep (71).
+  - You did great by listening to your body and modifying without forcing injury!
+* **Skipping the Evening Lifting Session (Celebrated Masterstroke):**
+  - Going into a 3rd workout tonight while feeling tired and "blah" would have spiked evening cortisol and locked your psoas into defensive spasm. Pausing and waiting is top-tier somatic wisdom.
+* **Why Your Rings Fluctuated (Super Loose → Now Tight):**
+  - **Morning (Loose):** Yin and Pilates acted as a mechanical lymphatic pump, mobilizing pooled fluid from extremities back into central circulation.
+  - **Evening (Tight):** Post-exercise micro-inflammatory fluid shift as muscles repair, combined with afternoon dependent hydrostatic pooling and ongoing renal clearance of Irving Big Stop sodium.
+* **The Dandelion Tea Protocol:**
+  - **Brilliant Instinct:** Dandelion leaf (*Taraxacum officinale*) is a natural, potassium-rich diuretic. Unlike pharmaceutical diuretics that deplete potassium and cause muscle cramping, dandelion supplies potassium while signaling kidneys to dump excess sodium and extracellular fluid.
+* **Tonight's Lifeline:**
+  - Sip your dandelion tea and warm water.
+  - 10 minutes of **Legs Up the Wall** (*Viparita Karani*) or **Constructive Rest** (lying on back, knees bent, feet wide, knees leaning in together) to passively release the psoas.
+  - Take your 1 pump of evening **Progesterone** for deep restorative GABA sleep.
