@@ -2,71 +2,83 @@
 ## BHRT & ADHD (VYVANSE) INTEGRATED CARE PLAN
 
 **Patient:** Candy Moulton  
-**Primary Focus:** Bioidentical Hormone Replacement Therapy (BHRT), Oura Cycle Tracking, ADHD & Metabolic Support  
-**Current Meds & Regimen:** Vyvanse (40mg), Ozempic (18 clicks), BHRT (BiEst, Progesterone, Testosterone)  
-**Surgical Status:** Hysterectomy (uterus removed), **ovaries intact**  
-**Date:** October 27, 2026 (Updated: Cycle 4, Day 23 - Late Protect Phase / Luteal Downcast Transition)  
-**Purpose:** BHRT Specialist & Primary Physician Consultation Guide  
+**Age:** 48  
+**Practitioner:** Dr. Jenna Weeks, ND (WellNurtureMD)  
+**Primary Focus:** Bioidentical Hormone Replacement Therapy (BHRT), Blood Spot Lab Review, Oura Cycle Tracking, ADHD & Metabolic Support  
+**Current Regimen:** BiEst cream (1 pump AM), Testosterone cream (1 pump M–F), Progesterone cream (1 pump PM), Vyvanse (40mg), Ozempic (18 clicks)  
+**Surgical Status:** Total Hysterectomy (uterus removed), **bilateral ovaries intact & actively cycling (~25-day cycle)**  
+**Date:** Wednesday, November 4, 2026 (Active: Cycle 5, Day 3 — Early Follicular Push Reset / Low Basal Nadir)  
+**Purpose:** BHRT Specialist Intake & Follow-Up Consultation Guide  
 
 ---
 
-### 1. BHRT Regimen Baseline & Surgical Context
-* **BiEst (Estrogen):** 1 pump morning (applied to inner arms/thighs/lower abdomen; never breast tissue).
+### ⚡ QUICK APPOINTMENT AGENDA (Top 3 Priorities for Today)
+1. 🩸 **Review Sept 26 Blood Spot Lab Results:** Examine Estradiol, Progesterone, Testosterone, and DHEA-S levels from the Day 19 peak luteal collection window.
+2. 🔄 **Formalize Progesterone Cycling / Dose Reduction:** Discuss preventing the clinic-confirmed "progesterone stacking" on Days 18–22 (aldosterone fluid holding, neck stiffness, vascular headache) via a scheduled late-luteal pause (Days 23–27) or half-pump step-down.
+3. 🧠 **ADHD (Vyvanse 40mg) & Luteal Dopamine Cushion:** Address the mid-luteal estrogen drop that degrades dopamine signaling, impairs Vyvanse efficacy, and triggers acute irritability/sensory overload.
+
+---
+
+### 1. Current BHRT Baseline & Clinical Context
+* **BiEst (Estrogen):** 1 pump morning (applied to inner arms/thighs/lower abdomen; never breast tissue). Maintained as steady daily baseline; no reactive doubling during acute follicular symptom dips.
 * **Testosterone:** 1 pump Monday to Friday (Saturday & Sunday off).
-* **Progesterone:** 1 pump every evening (Sunday off; 4-day targeted luteal pause Oct 22–26; Day 23 temp plunged to -0.1°F; Day 24 [Oct 28] temp dropped to -0.5°F with -1.5 lb fluid dump; resumed 1 pump PM to cushion GABA and sleep during late luteal downcast without stacking risk).
+* **Progesterone:** 1 pump evening (Sunday off; 4-day targeted luteal pause Oct 22–26 resolved clinic-confirmed excess; resumed Oct 28 at 1 pump PM; paused Sun Nov 1; taken Mon Nov 2 & Tue Nov 3).
 * **Medication Context:** Vyvanse (40mg) for ADHD focus + Ozempic (18 clicks).
-* **Ovarian Status:** Ovaries remain intact, maintaining natural endogenous hormonal shifts despite hysterectomy.
+* **Ovarian Status:** Ovaries remain intact, maintaining natural endogenous ~25-day ovulatory and hormonal shifts despite hysterectomy.
 
 ---
 
-### 2. Oura Ring Biomarker & Ovarian Cycle Confirmation
-* **Cycle Discovery:** Multi-month Oura temperature data confirms a highly regular **~25-day ovarian cycle** with distinct follicular/push and luteal/protect phases.
-* **Histamine Flare Pattern:** Skin, scalp, and breast itchiness occur consistently during temperature shifts and estrogen transitions (e.g., late luteal drops and mid-cycle pre-ovulatory estrogen peaks on Days 11–13).
+### 2. Multi-Month Oura Ring Biomarker & Ovarian Cycle Confirmation
+* **Cycle Discovery:** Multi-month continuous Oura temperature data proves a textbook, highly regular **~25-day ovarian cycle** with distinct follicular/push and luteal/protect phases.
+* **Histamine Flare Pattern:** Skin, scalp, and breast itchiness occur consistently during temperature transitions and progesterone downcasts (mast cell-hormone crosstalk).
 * **Cycle 3 Peak Protect & Lab Benchmark (Sept 24–26):** Peak luteal temperature surge (+0.58°C) with fluid retention (scale 152 lbs) and breast tenderness. Capillary blood spot lab completed Day 19 (Sept 26).
-* **Cycle 4 Follicular Reset & Pain Remission (Oct 5–9 / Days 1–5):**
-  - **Zero Pain Milestone:** 3+ consecutive days completely free of systemic joint, hip, or low back pain entering the follicular phase.
-  - **Basal Temperature:** Oura reached -0.7°F (-0.39°C); basal mouth temp 35.5°C–35.6°C.
-* **Mammogram Window (Oct 13 / Day 9):** Successfully completed during optimal low-estrogen follicular phase for minimal glandular tissue sensitivity.
-* **Mid-Cycle Estrogen Surge & Joint Laxity (Oct 14–15 / Days 10–11):**
-  - **Ligamentous Laxity:** Post-Pilates joint soreness on Day 10 illustrated vulnerability of synovial and joint structures to mid-cycle estrogen surges.
-  - **Pre-Ovulatory Symptoms:** Nipple/breast center tenderness (estrogen ductal engorgement) and transient right breast histamine itching (Oct 15 & Oct 17).
-* **Pelvic & Mucosal Check (Oct 16 / Day 12):** Strong urine odor and mild pelvic itch resolved cleanly; attributed to methylated B-complex excretion and pre-ovulatory mucosal histamine permeability rather than infection.
-* **Protect Phase Active & Targeted Pg Pause Outcome (Oct 18–30, 2026 / Days 14–26):**
-  - **Sustained Thermal Shift:** Oura temperature held elevated for 9 consecutive nights (+0.4°F to +0.7°F), confirming robust endogenous luteal activity.
-  - **Clinic-Confirmed Progesterone Excess & 4-Night Pause (Days 18–22):** On Day 18, acute systemic malaise, neck stiffness, and headache peaked. WellNurtureMD confirmed progesterone stacking/excess. Progesterone cream was paused Oct 22–26 (including Sunday off and Monday final pause night). Basal temp began cooling to +0.4°F on Day 22. Scheduled restart Tuesday night (Day 23) with a half-pump to support GABA sleep while avoiding fluid retention.
-  - **Objective Measurement Stability (Oct 25 / Day 21):** Anthropometric measurements confirm 100% stable body composition (waist locked at 28.0", lower abdomen/midsection at 31.5" [down 1.5"–4.5" from September], hips 39.5", thighs 23"/23.5", chest 35.0"), proving that scale weight variations are strictly gastrointestinal volume and transient hormonal water holding.
-  - **Thermal Plunge & Luteal Downcast (Oct 27 / Day 23):** Basal temp plunged below baseline (-0.1°F Oura, 35.3°C oral), marking official entry into late luteal cycle reset. Sleep Score 89, Readiness 92 (massive recovery rebound with zero alcohol overnight). Full-body itchiness overnight confirmed classic mast cell histamine release during rapid progesterone downshift. Tight fingers upon waking with daytime softening reflects early vascular fluid mobilization ahead of projected Days 24–26 fluid dump. Upper body soreness noted as 24-hr post-yoga muscular DOMS.
-  - **Sustained Thermal Plunge & -3.3 lb Fluid Dump (Oct 28–30 / Days 24–26):** Scale dropped sharply to 151.8 lbs on Day 24, 150.8 lbs on Day 25, and reached **150.0 lbs on Day 26 (-3.3 lbs in 96 hours from 153.3 lbs)**, validating the predicted late-luteal fluid clearance. Oura temp held below baseline for 4 consecutive days (-0.5°F to -0.3°F). **Rings moving freely and spinning easily**, proving peripheral capillary and extremity edema has fully resolved. Systemic puffiness noticeably gone, upper body and pelvic pain nearly gone, and breast tenderness substantially eased ("nothing like the other day"). Sleep Score 81, Readiness 88. Doorstep of Cycle 5 follicular reset.
-  - **Pre-Reset Threshold & Joint Sensitivity (Oct 31 / Day 27):** 5th consecutive day below baseline (-0.4°F ring, 35.3°C mouth nadir). Scale 150.7 lbs measured post-Fairlife shake (~1.0 lb liquid in gut, establishing true fasting baseline at ~149.7 lbs). Woke with sore joints, hands, and feet alongside transient extremity puffiness, reflecting the cyclical pre-reset estrogen nadir (drying synovial fluid and cartilage cushioning) combined with treadmill impact and dependent vascular pooling. Sleep 79, Readiness 75. Responded with pain-adaptive morning Vinyasa flow and clear-spirit craft vodka strategy (zero wine/congeners) with SFL Drink Smart prep for Halloween social evening.
-  - **Sub-150 Breakthrough & Fluid Clearance Confirmation (Nov 1 / Day 28 / Cycle Reset Threshold):** Scale hit **149.4 lbs** (confirming official breakthrough into the 149s and establishing a **-3.9 lb total fluid dump** from the luteal peak of 153.3 lbs). Achieved following Halloween social event, validating the clean-spirit craft vodka strategy (zero wine/sulfites/congeners preventing the acute inflammatory fluid holding seen with previous alcohol intake). Rings noticeably looser than yesterday and puffiness reduced. Oura ring temperature showed mild metabolic elevation (+0.2° deviation) and mouth temp 35.7°C reflecting overnight alcohol metabolic clearance and dancing, with Sleep 82 and Readiness 70 reflecting late night bedtime, dancing in unsupportive footwear (acute localized plantar fascia/calf strain), and the 1-hour Daylight Saving Time shift (sleep debt 1h 10m). Confirms full resolution of luteal fluid accumulation heading into Cycle 5 follicular reset.
-
-
+* **Cycle 4 Milestones & Progesterone Stacking Resolution:**
+  - *Zero Pain Milestone (Oct 5–9 / Days 1–5):* 3+ consecutive days completely free of systemic joint, hip, or back pain entering follicular phase (Oura -0.7°F, mouth 35.5°C).
+  - *Mammogram Window (Oct 13 / Day 9):* Completed during optimal low-estrogen follicular window with minimal breast tissue sensitivity.
+  - *Mid-Cycle Surge & Ovulation (Oct 14–19 / Days 10–15):* Oura shifted from -0.7°F to +0.7°F; mid-cycle joint laxity post-Pilates and localized breast itching noted.
+  - *Clinic-Confirmed Progesterone Excess & 4-Night Pause (Oct 22–26 / Days 18–22):* On Day 18, acute systemic malaise, neck stiffness, vascular headache, and scale 153.3 lbs peaked. WellNurtureMD confirmed progesterone stacking/excess. Progesterone cream was paused for 4 nights. Symptoms cleared rapidly within 24–48 hours; left pelvic baseline remained calm.
+  - *Objective Measurement Stability (Oct 25 / Day 21):* Tape measurements proved 100% stable body composition (waist locked at 28.0", midsection down to 31.5", hips 39.5"), proving scale swings are purely fluid/GI shifts.
+  - *Thermal Plunge & Fluid Clearance (Oct 27–30 / Days 23–26):* Basal temp plunged to -0.5°F; scale dropped from 153.3 to 150.0 lbs (-3.3 lbs in 96h). Rings spinning freely, systemic puffiness gone.
+  - *Sub-150 Breakthrough (Nov 1 / Day 28 Reset):* Scale hit **149.4 lbs (-3.9 lb total fluid dump)**. Rings noticeably looser. Clean craft vodka strategy for Halloween validated zero delayed inflammatory fluid holding.
+* **Cycle 5 Early Follicular Reset (Active Nov 2–4, 2026):**
+  - *Day 1 (Nov 2):* Temp returned to flat zero baseline (0.0°). Sleep 88, Readiness 89. Classic Day 1 mast cell histamine surge as progesterone cleared overnight. Woke up puffy from donair/sugar osmotic shift; resolved cleanly.
+  - *Day 2 (Nov 3):* Deep follicular trough (-0.9°F / -0.50°C). Sleep 82, Readiness 88. Scale 151.2 lbs (donair sodium holding + missed evening glycine). Acute neck and facet joint stiffness from estrogen nadir (drying synovial fluid) + missing glycine. Reassured to keep BiEst steady at 1 pump (did not double dose).
+  - *Day 3 (Nov 4 - TODAY):* Basal temperature cool at low follicular nadir (-0.6° ring / 35.5°C oral). Readiness 81 (solid green recovery zone), Sleep 71 (shortened sleep from late Moncton airport run for parents). Scale dropped -0.5 lbs to **150.7 lbs** (fluid dumping despite late pancakes & bacon). **Full-body itchiness overnight** (systemic mast cell histamine surge tied to Day 3 progesterone clearance/estrogen climb + bacon dietary histamines). Breasts calm and non-tender!
 
 ---
 
-### 3. Key Questions & Lab Status for BHRT Specialist
-1. **Finger Prick Blood Spot Lab Status:**  
-   **COMPLETED Saturday Morning, September 26, 2026 (Cycle 3, Day 19)** per protocol (fasting AM collection, evening Progesterone taken, morning BiEst & Testosterone creams withheld until after blood collection). Awaiting review with specialist.
-2. **Mid-Luteal Fluid Retention & Histamine Flare Inquiry:**  
-   *"During my peak Protect Phase (Days 18–19), my Oura temp spikes with acute water retention (scale 151–152 lbs, puffy fingers), diffuse body/neck aching, headaches, and malaise ('luteal flu'). Do my capillary blood spot results indicate excessive tissue progesterone absorption, and should BHRT cream dosing be modulated during this peak luteal surge window?"*
-3. **Mid-Cycle Estrogen Surge & Ovulation Modulation:**  
-   *"On Days 10–14 of my cycle, my Oura temperature shifts sharply from a low follicular dip (-0.7°F) into an ovulatory climb (+0.7°F), accompanied by joint laxity and localized breast histamine itching. Does this warrant adjusting BiEst or Progesterone around the ovulatory window?"*
-4. **Endometriosis, Adhesions & Pelvic Burning Inquiry:**  
-   *"Given that my ovaries are intact and I am on daily BiEst (estrogen), could residual peritoneal endometriosis, post-hysterectomy adhesions (scar bands around the left ovary), or hypertonic pelvic floor nerve irritation be responsible for my cyclical burning sensations and acute left-sided pelvic pain during ovulatory thermal shifts (+0.7°F)?"*
+### 3. Key Discussion Questions for Dr. Jenna Weeks (BHRT Specialist)
+
+1. 🩸 **Capillary Blood Spot Lab Review (Collected Sept 26 / Day 19 Peak Luteal):**
+   * *"What are my exact circulating levels for Estradiol, Progesterone, Testosterone, and DHEA-S from the September 26 blood spot test?"*
+   * *"Do the numbers confirm that combining my intact ovaries' natural luteal surge with full nightly progesterone cream creates supra-physiologic tissue saturation?"*
+
+2. 🔄 **Progesterone Stacking & Cyclic Protocol Adjustment:**
+   * *"On October 22 (Day 18), your clinic astutely confirmed that my severe malaise, neck stiffness, vascular headache, and fluid retention were classic Progesterone Excess. Pausing for 4 nights cleared the symptoms and initiated a 3.9 lb fluid dump."*
+   * *"Can we formalize a cyclic protocol? For example, pausing progesterone for 3–5 days during the late-luteal downcast (Days 23–27), or stepping down to a half-pump from Day 18 until cycle reset?"*
+
+3. 🧴 **BiEst (Estrogen) Consistency & Joint Protection:**
+   * *"I have maintained a strict 1 pump BiEst morning application without doubling during acute symptom dips. Does my blood spot Estradiol level support staying at 1 pump daily, or is there any role for micro-adjusting during the mid-cycle ovulatory transition or late luteal drop?"*
+
+4. 🪶 **Mast Cell / Histamine Activation at Cycle Transitions:**
+   * *"My Oura ring data proves an exact correlation: intense pruritus/itching (scalp, skin, breasts) occurs specifically during the 48–72 hour windows when progesterone rapidly drops and core temperature falls below baseline (documented Day 23, Day 1, and Day 3). Do you recommend targeted DAO enzyme support or mast cell stabilizing strategies during these cycle transition windows?"*
+
+5. 🧠 **ADHD (Vyvanse 40mg) & Mid-Luteal Dopamine Dip:**
+   * *"During my late luteal phase (Days 17–22), when estrogen drops and progesterone is high, my Vyvanse (40mg) feels significantly less effective, and I experience acute irritability, agitation, and sensory overstimulation. How can we best support prefrontal dopamine and GABA harmony during that luteal window?"*
 
 ---
 
 ### 4. ADHD (Vyvanse 40mg) & Metabolic Optimization
 * **Vyvanse Dosing & Focus:** Stable on 40mg Vyvanse for executive function and daily focus.
-* **Luteal Neurotransmitter Shift & Dopamine Dip:** Mid-luteal estrogen drop sharply reduces prefrontal dopamine availability, causing Vyvanse (40mg) to feel noticeably less effective and unmasking severe emotional dysregulation (irritability, agitation, sensory overload). Discuss potential luteal BHRT estrogen cushioning or ADHD dosage strategies during the luteal drop.
-* **Appetite & Protein Defense:** Coordinating Vyvanse and Ozempic with a compact, high-protein eating structure (135g+ protein/day target) to prevent muscle loss, fatigue, or late-day energy crashes.
+* **Luteal Neurotransmitter Shift:** Mid-luteal estrogen drop sharply reduces prefrontal dopamine receptor sensitivity, unmasking emotional dysregulation. Discuss potential luteal BHRT estrogen cushioning or cofactor support (L-tyrosine, P-5-P, magnesium glycinate).
+* **Appetite & Protein Defense:** Coordinating Vyvanse and Ozempic with a high-protein structure (135g+ protein target) to protect lean muscle mass and prevent late-day energy crashes.
 
 ---
 
-### 5. Summary of Action Items & Doctor Sign-Off
+### 5. Summary of Action Items & Consultation Sign-Off
 - [x] Finger prick blood spot lab test completed on Sept 26 (Day 19 AM).
-- [ ] Review blood spot lab results alongside 4 consecutive months of Oura cycle temperature logs (through Cycle 4, Day 18).
-- [ ] Discuss peak luteal fluid retention (scale 152 lbs, hand edema, puffy fingers) and localized breast histamine symptoms.
-- [ ] Review mid-cycle estrogen surge patterns: joint laxity, pre-ovulatory breast tenderness, and ovulatory thermal shift (+0.7°F).
-- [ ] Evaluate persistent pelvic burning and left-sided pain for residual endometriosis implants, post-surgical adhesions, or pelvic floor nerve irritation.
-- [ ] Review Vyvanse (40mg) + Ozempic (18 clicks) interaction with daily BHRT regimen, specifically addressing mid-luteal dopamine drops and acute irritability.
+- [ ] Review blood spot lab values (Estradiol, Progesterone, Free/Total Testosterone, DHEA-S).
+- [ ] Finalize cyclic progesterone protocol (scheduled late-luteal pause vs. half-pump step-down).
+- [ ] Confirm ongoing 1 pump BiEst (morning) and 1 pump Testosterone (M–F) dosing.
+- [ ] Review mast cell / histamine protocol (DAO / quercetin / dietary histamine awareness during cycle transitions).
+- [ ] Agree on ADHD (Vyvanse 40mg) luteal cushioning strategy.
