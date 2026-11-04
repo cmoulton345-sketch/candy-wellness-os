@@ -7,7 +7,7 @@
 **Primary Focus:** Bioidentical Hormone Replacement Therapy (BHRT), Blood Spot Lab Review, Oura Cycle Tracking, ADHD & Metabolic Support  
 **Current Regimen:** BiEst cream (1 pump AM), Testosterone cream (1 pump M–F), Progesterone cream (1 pump PM), Vyvanse (40mg), Ozempic (18 clicks)  
 **Surgical Status:** Total Hysterectomy (uterus removed), **bilateral ovaries intact & actively cycling (~25-day cycle)**  
-**Date:** Wednesday, November 4, 2026 (Active: Cycle 5, Day 3 — Early Follicular Push Reset / Low Basal Nadir)  
+**Date:** Rescheduled for Thursday, November 5, 2026 at 1:00 PM (Active: Cycle 5, Day 4 — Early Follicular Push Phase)  
 **Purpose:** BHRT Specialist Intake & Follow-Up Consultation Guide  
 
 ---
