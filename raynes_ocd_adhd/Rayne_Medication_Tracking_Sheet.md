@@ -7,10 +7,10 @@
 ## 1. Regimen Overview & Protocol
 * **Patient:** Rayne Moulton
 * **Medications:**
-  * **Fluoxetine (Prozac):** 50 mg daily (currently maintaining OCD control / stopping checking rituals)
-  * **Vyvanse (lisdexamfetamine):** 10 mg daily (starting trial for ADHD, focus, fidgeting, executive function)
-  * **Slynd (drospirenone):** 4 mg daily (oral progestin contraceptive)
-* **Administration Protocol:** All taken together at **8:00 AM** with a protein-rich breakfast and a full glass of water.
+  * **Fluoxetine (Prozac):** 50 mg daily (maintaining OCD checking control; **Pill count reduction request:** Prescribe as **1 x 40 mg capsule + 1 x 10 mg capsule** to reduce pill burden to 2 capsules)
+  * **Vyvanse (lisdexamfetamine):** 10 mg daily (trial proved tolerability without blunting; **Titration evaluation:** Stepping to **20 mg daily** with NP Jen to address focus plateau and phone dopamine-seeking)
+  * **Slynd (drospirenone):** 4 mg daily (oral progestin contraceptive, continuous use)
+* **Morning Pill Count Goal:** Reduced to **3 capsules total** (1 x 40mg Prozac + 1 x 10mg Prozac + 1 x 20mg Vyvanse) taken together at **8:00 AM** with a protein-rich breakfast and a full glass of water.
 * **Why 8:00 AM:** Ensures the 10–14 hour Vyvanse duration tapers by 6:00–8:00 PM to protect nighttime sleep.
 
 ---
@@ -112,36 +112,56 @@
   * Physical / Cycle: **Started brown breakthrough spotting**; uterine cramps and nausea began receding.
   * Headaches: Starting to improve.
   * OCD: Calm / stable.
-* **Sun, Nov 1 (Day 15 - Current):**
-  * Taken 8am w/ Food? [x] Yes
-  * Focus: **3.5 / 5** (Steady focus)
-  * Mood / Affect: **Feeling much better!**
-  * Physical / GI Symptoms: **No more nausea, no more belly pain!** Symptoms completely resolved as oxidized endometrial lining released. Light brown spotting ongoing (normal on continuous Slynd).
-  * Headaches: **Headache is better.**
-  * OCD: **Pretty good** (Fluoxetine 50mg maintaining steady control over intrusive checking loops).
-  * Upcoming Milestones:
-    * **Monday, Nov 2 (Tomorrow):** Therapy session with Amanda Geldart (emotional decompression, releasing guilt, ADHD/OCD strategies).
-    * **Thursday, Nov 5:** Doctor / Nurse Practitioner Consultation (Vyvanse 10mg -> 20mg step, Slynd continuous review).
+* **Wed, Nov 4 (Day 18 - Today / Pre-NP Check-In):**
+  * Taken 8am w/ Food? [x] Yes (Fluoxetine 50mg + Vyvanse 10mg + Slynd 4mg)
+  * Focus: **3 / 5** (Focus plateaued; executive initiation under-supported on 10mg)
+  * Mood / Affect: **Anxiety elevated lately & feelings "all over the map"** (Classic adrenaline let-down & neuro-endocrine decompression post-college exit; she reports doing better overall, but emotions fluctuate day-to-day)
+  * Appetite: Normal with breakfast
+  * Physical / Headaches: Stable; mild afternoon wear-off fatigue around 3:30–4:30 PM
+  * Sleep Onset: Fair
+  * OCD Loops / Checking: **Doing really well with OCD checking** (Fluoxetine 50mg maintaining robust control over compulsive physical checking rituals)
+  * Screen Time / Executive Function: **On phone a lot** (ADHD dopamine-seeking behavior; brain reaches for frictionless digital stimulation when prefrontal dopamine is subtherapeutic on 10mg Vyvanse in unstructured time)
+  * Pill Burden Simplification: **Requests streamlining to 1 x 40 mg capsule + 1 x 10 mg capsule** (drops Prozac pill count down to 2 capsules to eliminate pill fatigue)
+  * Upcoming Milestone: **Tomorrow, Thursday, Nov 5 — Doctor / Nurse Practitioner Review with Jen**
+
+* **Mon, Nov 2 (Day 16):**
+  * Taken 8am w/ Food? [x] Yes | Focus: **3.5 / 5**
+  * Mood / Affect: **Significant relief post-therapy with Amanda Geldart**; processed and released "quitter" guilt over NBCC nursing withdrawal. In the car before therapy, Rayne initiated a proactive conversation about taking a **math upgrading course** (showing forward-looking momentum).
+  * Physical / Headaches: Minimal / manageable. Light brown spotting tapering.
+  * OCD: Calm & quiet.
+  * Notes: Amanda finalized clinical medical withdrawal letter to protect Rayne's $2,800 disability grant with Student Financial Services.
+
+* **Tue, Nov 3 (Day 17):**
+  * Taken 8am w/ Food? [x] Yes | Focus: **3 / 5**
+  * Mood / Affect: Mixed / shifting feelings; adjusting to the quietness and lack of college structure.
+  * Appetite: Normal.
+  * Physical / Headaches: None reported.
+  * Sleep Onset: Normal.
+  * OCD Loops: Compulsive checking well-managed.
+  * Screen Time: Elevated phone scrolling as brain searches for stimulation.
 
 ---
 
 ### Clinical Synthesis for Nurse Practitioner (Nov 5 Review)
-1. **Focus Plateau & Dose Sufficiency:** 10 mg Vyvanse is well tolerated without the emotional blunting ("flat/blah") experienced previously on 30 mg. Focus has settled into a 3 to 3.5/5 plateau. Moving to **20 mg** is the recommended clinical next step.
-2. **Headache Trajectory:** Daily headaches during onboarding (8/9 days initially) have improved noticeably by Day 15 as hydration, nutrition, and routine stabilized.
-3. **OCD Loops vs. Thumb Picking (BFRB):** Intrusive phone checking loops stabilized under 50 mg Fluoxetine by Day 5. Checking loops remain calm, stable, and "pretty good" through Day 15.
-4. **NAC SAP (N-Acetylcysteine) Recommendation:** NAC is the leading evidence-based nutritional medicine for excoriation (skin/thumb picking) and glutamate-driven OCD. Propose introducing **NAC SAP (600 mg daily)** *after* Rayne stabilizes on the anticipated 20 mg Vyvanse dose.
-5. **GI Cramps Resolution & Slynd Continuous Cycle (Oct 28 – Nov 1):** Mid-belly cramps and nausea reported Oct 28–30 completely resolved following onset of brown breakthrough spotting on Oct 31. This definitively confirms that the symptoms were uterine/prostaglandin-driven ("phantom period" at the 28-day mark post-Oct 3 breakthrough bleed) rather than GI pathology. Once the old oxidized blood released, prostaglandins dropped and symptoms disappeared. Brown spotting is expected on continuous Slynd (drospirenone 4 mg).
+1. **Pill Burden Reduction (Fluoxetine 50 mg):** Rayne is currently taking multiple capsules to make 50 mg. She wants to simplify her daily regimen to **1 x 40 mg capsule + 1 x 10 mg capsule** (2 pills total). This cuts pill burden significantly, improves morning compliance, and reduces pill fatigue.
+2. **Focus Plateau & Dose Sufficiency (Vyvanse 10 mg → 20 mg):** 10 mg Vyvanse proved that amphetamine therapy is tolerated without the emotional blunting ("flat/blah") experienced previously on 30 mg. However, focus has settled into a 3/5 plateau, executive function remains under-supported, and she is experiencing high dopamine-seeking phone screen time. Stepping to **20 mg** is the recommended clinical next step.
+3. **OCD Checking vs. Transition Anxiety & Emotional Lability:** Intrusive OCD checking rituals (doors, locks, appliances) are **doing really well** under 50 mg Fluoxetine. However, Rayne has experienced elevated anxiety and feelings "all over the map" over the past week. This correlates with the normal psychological and autonomic "adrenaline let-down" following her formal withdrawal from NBCC Practical Nursing on Oct 28.
+4. **Phone Use as ADHD Dopamine Seeking:** Excessive phone scrolling reflects under-stimulated executive attention on a subtherapeutic stimulant dose during unstructured days rather than OCD pathology. Increasing Vyvanse to 20 mg will support task initiation and reduce compulsive phone checking.
+5. **Headache Trajectory:** Daily onboarding headaches have largely stabilized, though mild late afternoon wear-off fatigue occurs around 3:30–4:30 PM.
+6. **NAC SAP (N-Acetylcysteine) Recommendation:** Maintain plan to propose practitioner-grade **NAC SAP (600 mg daily)** for residual thumb picking (excoriation) and glutamate balance once 20 mg Vyvanse is stabilized.
+7. **GI Cramps Resolution & Slynd Continuous Cycle:** Phantom period cramping and nausea from Oct 28–30 completely resolved once brown breakthrough spotting began on Oct 31, confirming uterine prostaglandin etiology rather than GI illness.
 
 ---
 
 ### Appointment Day: Thursday, November 5, 2026
-* **Nurse Practitioner Discussion Agenda:**
-  1. **School Focus & Executive Function:** Present daily log showing ADHD focus settling at 3–3.5/5 on 10 mg Vyvanse.
-  2. **Affect & Personality Preservation:** Confirm affect remains expressive and intact (zero 30 mg numbness).
-  3. **Anticipated Titration:** Request stepping Vyvanse up by 10 mg (**from 10 mg to 20 mg**).
-  4. **Headache & Rebound Mitigation:** Discuss wear-off timing (3:30–4:30 PM), hydration, and evening magnesium.
-  5. **NAC SAP Introduction:** Discuss adding NAC SAP (600 mg) for residual thumb picking and glutamate balance once 20 mg Vyvanse is stable.
-  6. **Slynd Continuous Use & GI Tolerance:** Review continuous progestin management (skipped green placebos). Discuss the 28-day cyclic phantom period cramping/nausea (temp 36.1°C, normal bowels) and reinforce meal buffering for morning doses.
+* **Nurse Practitioner Discussion Agenda with Jen:**
+  1. **Pill Count Reduction:** Request Fluoxetine 50 mg written as **1 x 40 mg capsule + 1 x 10 mg capsule** (reduces morning Prozac to 2 pills).
+  2. **Vyvanse Titration:** Evaluate increasing Vyvanse **from 10 mg to 20 mg** daily to address focus plateau and excessive phone dopamine-seeking while preserving affect.
+  3. **OCD Checking Stability:** Report that OCD checking rituals remain quiet and well-controlled on 50 mg Fluoxetine.
+  4. **Transition Anxiety & Emotional Lability:** Contextualize recent emotional swings and anxiety as normal decompression / adrenaline let-down post-college exit.
+  5. **Afternoon Rebound & Support:** Discuss wear-off timing (3:30–4:30 PM), morning protein pairing, and evening Magnesium Bisglycinate.
+  6. **NAC SAP (600 mg) Timing:** Sign-off on adding NAC SAP once 20 mg Vyvanse is stable.
+  7. **Slynd Continuous Confirmation:** Confirm continuation of drospirenone 4 mg without placebo breaks.
 
 ---
 
