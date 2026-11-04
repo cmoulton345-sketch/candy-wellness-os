@@ -689,4 +689,22 @@ I'm ready to respond to the updated call, sir.
   - **Assistive Technology Return Scheduled:**
     - Candy scheduled to drop off Rayne's loaned iPad to Kendra Foote at Options Employment Outreach in Saint John on Friday morning (Nov 6) to officially close the Assistive Technology grant file cleanly.
 
+- **2026-11-04 (Afternoon & Evening)** (SOMA):
+  - **Rayne Health & Medication Review (Nov 5 Nurse Practitioner Follow-Up Prep with Jen):**
+    - *Clinical State Audited (Day 18 on Vyvanse 10mg + Fluoxetine 50mg):*
+      - OCD Checking: Intrusive physical checking loops (doors, locks, appliances) remain quiet, stable, and well-managed under 50 mg Fluoxetine.
+      - Emotional Lability & Anxiety: Recent elevated anxiety and feelings "all over the map" contextualized as normal autonomic "adrenaline let-down" and emotional decompression following her formal NBCC Practical Nursing withdrawal on Oct 28.
+      - ADHD Dopamine Seeking / Screen Time: Subtherapeutic 10 mg Vyvanse plateaued at 3/5 focus with 3:30 PM wear-off; open schedule leads to high phone scrolling as brain searches for frictionless dopamine.
+    - *The Two Primary Prescriber Requests Formulated:*
+      1. *Pill Count Simplification (Fluoxetine 50mg):* Request prescribing as **1 × 40 mg capsule + 1 × 10 mg capsule** daily (reducing Prozac to 2 capsules and total morning regimen to just 3 pills including Vyvanse) to eliminate morning pill fatigue.
+      2. *Vyvanse Titration (10mg → 20mg):* 10 mg confirmed tolerability without emotional blunting ("flat/blah" on 30mg); stepping to 20 mg bridges the therapeutic attention gap while respecting CYP2D6 clearance.
+    - *Full Ecosystem Updated & Synchronized:*
+      - Updated `raynes_ocd_adhd/Rayne_Medication_Tracking_Sheet.md`, `Rayne_Medication_Tracking_Sheet.html`, and `rayne_tracker.html`.
+      - Updated `raynes_ocd_adhd/Rayne_Clinical_Brief.html` and `rayne_clinical_brief.html`.
+      - Built standalone 1-click printable sheet: [`Rayne_Doctor_Talking_Points_Printable.html`](file:///Users/valuedcustomer/Downloads/flowstate_ai_os_candy/Rayne_Doctor_Talking_Points_Printable.html) and markdown guide [`Rayne_Doctor_Talking_Points.md`](file:///Users/valuedcustomer/Downloads/flowstate_ai_os_candy/raynes_ocd_adhd/Rayne_Doctor_Talking_Points.md).
+      - Copied printable sheet to Candy's Downloads folder (`/Users/valuedcustomer/Downloads/Rayne_Doctor_Talking_Points_Printable.html`) and automatically launched in browser.
+      - Integrated Card #12 into [`share_links.html`](file:///Users/valuedcustomer/Downloads/flowstate_ai_os_candy/share_links.html).
+      - Full git commit and push completed to `origin/main`.
+
+
 
