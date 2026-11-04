@@ -13,6 +13,7 @@
 | **Oura Sleep Score** | **71 🌙** | 💤 **Shortened sleep window.** Direct result of the late-night round trip to Moncton Airport for Mom & Dad + late digestion. |
 | **Oura Ring Temp** | **-0.6° 📉** | ❄️ **Cool follicular trough.** Rebounding slightly from yesterday's -0.9°F plunge; confirms you are anchored in the cool follicular basement. |
 | **Oral Basal Temp** | **35.5°C** | 🌡️ Textbook low follicular baseline nadir. |
+| **Scale Weight** | **150.7 lbs 📉** | ⚖️ **Down -0.5 lbs overnight from 151.2!** Major biological proof that kidneys are dumping fluid despite late pancakes & bacon. On runway for 149s by Sunday. |
 | **Physical Sensation** | **Full-Body Itchiness (Not Breasts)** | 🪶 **Day 3 systemic mast cell histamine surge** amplified by cured bacon histamines + late pancake sugar spike. Breasts calm! |
 | **Extremity & Body Status** | **Puffy All Over & Tired** | 🥞 **Irving Big Stop late carbs + sodium** (glycogen water-sponge effect) + dependent fluid from sitting in the car to Moncton. Zero fat! |
 | **Morning BHRT** | **BiEst: 1 Pump / Testosterone: 1 Pump** | 🧴 Steady baseline. Weekday Testosterone active; BiEst supports natural follicular climb. |
