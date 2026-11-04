@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soma's Health & Mobility Brief — Nov 4, 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b1329;
+      --card-bg: #131f3d;
+      --card-border: rgba(255, 255, 255, 0.1);
+      --teal: #0d9488;
+      --teal-light: #14b8a6;
+      --teal-glow: rgba(13, 148, 136, 0.2);
+      --purple: #8b5cf6;
+      --pink: #ec4899;
+      --emerald: #10b981;
+      --amber: #f59e0b;
+      --rose: #f43f5e;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 24px 16px 60px;
+      display: flex;
+      justify-content: center;
+    }
+    .container {
+      max-width: 680px;
+      width: 100%;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 24px;
+      padding: 24px 20px;
+      background: linear-gradient(135deg, rgba(13, 148, 136, 0.22), rgba(139, 92, 246, 0.22));
+      border: 1px solid var(--card-border);
+      border-radius: 18px;
+    }
+    .badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 4px 12px;
+      border-radius: 999px;
+      background: rgba(13, 148, 136, 0.25);
+      color: #5eead4;
+      border: 1px solid rgba(13, 148, 136, 0.4);
+      margin-bottom: 10px;
+    }
+    h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: white;
+      margin-bottom: 6px;
+    }
+    .subtitle {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    @media (max-width: 500px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+    .metric-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 16px;
+    }
+    .metric-label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 4px;
+    }
+    .metric-value {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: white;
+    }
+    .metric-sub {
+      font-size: 0.8rem;
+      color: #34d399;
+      font-weight: 600;
+      margin-top: 2px;
+    }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 16px;
+    }
+    .card-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: white;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding-bottom: 10px;
+    }
+    .card p, .card li {
+      font-size: 0.92rem;
+      color: #cbd5e1;
+      margin-bottom: 8px;
+    }
+    ul { list-style: none; }
+    li { position: relative; padding-left: 20px; }
+    li::before {
+      content: "•";
+      position: absolute;
+      left: 6px;
+      color: var(--teal-light);
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+    .highlight {
+      color: #38bdf8;
+      font-weight: 600;
+    }
+    .success {
+      color: #34d399;
+      font-weight: 700;
+    }
+    .warning {
+      color: #fbbf24;
+      font-weight: 600;
+    }
+    .danger {
+      color: #f43f5e;
+      font-weight: 700;
+    }
+    .checklist-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px 14px;
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 12px;
+      margin-bottom: 10px;
+      border-left: 3px solid var(--teal);
+    }
+    .btn-print {
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding: 12px;
+      background: linear-gradient(135deg, var(--teal), #0284c7);
+      color: white;
+      font-weight: 700;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 10px;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="header">
+    <div class="badge">SOMA HEALTH &amp; MOBILITY BRIEF</div>
+    <h1>Wednesday Triage: The Histamine Surge &amp; Recovery Plan</h1>
+    <div class="subtitle">November 4, 2026 • Cycle 5, Day 3 (Early Follicular Push Reset)</div>
+  </div>
+
+  <div class="grid">
+    <div class="metric-card" style="border-color: rgba(16, 185, 129, 0.4);">
+      <div class="metric-label">Oura Readiness</div>
+      <div class="metric-value" style="color: #34d399;">81 🟢</div>
+      <div class="metric-sub" style="color: #34d399;">Autonomic system resilient</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">Oura Sleep Score</div>
+      <div class="metric-value" style="color: #fbbf24;">71 🌙</div>
+      <div class="metric-sub" style="color: var(--muted);">Late airport run + diner digestion</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">Oura Ring &amp; Mouth Temp</div>
+      <div class="metric-value" style="color: #38bdf8;">-0.6° <span style="font-size: 1rem; color: var(--muted);">/ 35.5°C</span></div>
+      <div class="metric-sub" style="color: #38bdf8;">Cool follicular baseline nadir</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">Morning State</div>
+      <div class="metric-value" style="font-size: 1.15rem; color: #f472b6;">Puffy &amp; Itchy</div>
+      <div class="metric-sub" style="color: var(--muted);">Big Stop carbs + bacon histamine</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">🪶 1. Whole-Body Itchiness: Why Your Breasts Were Spared</div>
+    <p>Your observation that <span class="highlight">"not my breast but my whole body"</span> was itchy is a textbook clinical clue:</p>
+    <ul>
+      <li><strong>Systemic Cutaneous Mast Cell Release:</strong> Breast itchiness is driven by localized estrogen/progesterone glandular shifts (ovulation and luteal swelling). When your entire body itches, it is a <strong>systemic cutaneous mast cell histamine surge</strong>.</li>
+      <li><strong>Day 3 Biological Window:</strong> Progesterone clearance has dropped your natural DAO enzyme (the primary enzyme that degrades histamine), lowering your systemic threshold.</li>
+      <li><strong>The Irving Big Stop "Triple Trigger":</strong>
+        <ul>
+          <li><strong>Cured Bacon:</strong> High dietary histamines and nitrates.</li>
+          <li><strong>Pancakes &amp; Syrup:</strong> Late sugar/insulin surge spikes sensory C-nerve fiber reactivity in the skin.</li>
+          <li><strong>Late Night Highway Driving:</strong> Moncton airport travel elevated nighttime sympathetic stress and cortisol.</li>
+        </ul>
+      </li>
+      <li><strong>The Reassurance:</strong> This is a transient clearance spike. With hydration and movement, it clears out quickly today!</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="card-title">🥞 2. Puffiness Explained: The Glycogen Water Sponge</div>
+    <p>Waking up puffy after late pancakes and bacon is <span class="success">100% human water physiology, zero fat gained</span>:</p>
+    <ul>
+      <li><strong>The 4:1 Water Ratio:</strong> Every gram of carbohydrate stores <strong>3 to 4 grams of water</strong> in your muscles and connective fascia.</li>
+      <li><strong>Sodium Dilution:</strong> Bacon sodium prompted your kidneys to retain water overnight to maintain osmotic balance.</li>
+      <li><strong>Car Seat Dependent Pooling:</strong> Sitting in the vehicle for nearly 3 hours late at night pooled lymph in your lower pelvis and legs.</li>
+      <li><strong>Bottom Line:</strong> It is pure extracellular fluid. Your kidneys will dump it as you hydrate today.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="card-title">🧘‍♀️ 3. Today's Movement Plan: Yin Yoga &amp; 10:15 AM Pilates</div>
+    <p>Combining Yin Yoga with 10:15 AM Pilates is an ideal medicine for this morning:</p>
+    <ul>
+      <li><strong>Yin Yoga (AM):</strong> Softens fascial restriction, decompresses the lumbar spine and psoas from driving, and activates parasympathetic recovery.</li>
+      <li><strong>Pilates (10:15 AM):</strong> Acts as a natural lymphatic pump to flush out sodium and de-puff your tissues.</li>
+      <li><strong>Key Protection:</strong> Because your mouth temp is at 35.5°C and sleep was 71, keep joint compressive loading gentle. No forcing through pain!</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="card-title">📋 4. Today's Recovery Protocol</div>
+    <div class="checklist-item">
+      <div style="font-size: 1.2rem;">💧</div>
+      <div><strong>Daytime Sodium &amp; Histamine Flush:</strong> Drink 24–32 oz of warm water with BioSteel electrolytes or lemon to clear sodium and dilate kidneys.</div>
+    </div>
+    <div class="checklist-item">
+      <div style="font-size: 1.2rem;">🧴</div>
+      <div><strong>BHRT Steady:</strong> 1 pump BiEst morning; 1 pump Testosterone morning (Wednesday); 1 pump Progesterone tonight.</div>
+    </div>
+    <div class="checklist-item">
+      <div style="font-size: 1.2rem;">🌙</div>
+      <div><strong>Glycine Nighttime Drink:</strong> Ensure CanPrev Glycine is prepped with collagen &amp; BioSteel for deep sleep recovery tonight.</div>
+    </div>
+    <div class="checklist-item">
+      <div style="font-size: 1.2rem;">🧱</div>
+      <div><strong>Evening Sanctuary:</strong> 10 minutes of Legs Up the Wall (Viparita Karani) to drain highway travel fluid from pelvis.</div>
+    </div>
+  </div>
+
+  <button class="btn-print" onclick="window.print()">🖨️ Print / Save Daily Brief</button>
+</div>
+
+</body>
+</html>
