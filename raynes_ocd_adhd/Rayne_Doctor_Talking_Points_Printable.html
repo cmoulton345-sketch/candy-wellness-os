@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rayne Moulton — Doctor Consultation & Talking Points (Nov 5, 2026)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #eff6ff;
+      --accent: #2563eb;
+      --accent-green: #059669;
+      --accent-green-bg: #ecfdf5;
+      --accent-amber: #d97706;
+      --accent-amber-bg: #fffbeb;
+      --accent-purple: #7c3aed;
+      --accent-purple-bg: #f5f3ff;
+      --border: #e2e8f0;
+      --text: #0f172a;
+      --text-muted: #475569;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #f8fafc;
+      color: var(--text);
+      line-height: 1.5;
+      padding: 24px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .toolbar {
+      max-width: 820px;
+      margin: 0 auto 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      background: white;
+      padding: 12px 18px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    .toolbar-title {
+      font-weight: 700;
+      color: var(--primary);
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .btn {
+      font-family: inherit;
+      font-weight: 600;
+      font-size: 0.85rem;
+      padding: 9px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border: 1px solid transparent;
+      transition: all 0.15s ease;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      color: white;
+      box-shadow: 0 4px 10px rgba(37, 99, 235, 0.25);
+    }
+    .btn-primary:hover {
+      background: #1e40af;
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background: #f1f5f9;
+      color: #334155;
+      border-color: #cbd5e1;
+    }
+    .btn-secondary:hover {
+      background: #e2e8f0;
+    }
+
+    /* PRINTABLE DOCUMENT SHEET */
+    .sheet {
+      max-width: 820px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 14px;
+      padding: 38px 44px;
+      border: 1px solid var(--border);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+    }
+
+    /* HEADER */
+    .sheet-header {
+      border-bottom: 3px solid var(--primary);
+      padding-bottom: 14px;
+      margin-bottom: 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+    .sheet-title {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: var(--primary);
+      letter-spacing: -0.3px;
+    }
+    .sheet-subtitle {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-top: 3px;
+      font-weight: 500;
+    }
+    .sheet-date-box {
+      text-align: right;
+    }
+    .sheet-date {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    .sheet-doctor {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* SUMMARY META PILLS */
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 20px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      padding: 12px 16px;
+      border-radius: 10px;
+    }
+    .meta-item {
+      display: flex;
+      flex-direction: column;
+    }
+    .meta-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-weight: 700;
+      color: #64748b;
+    }
+    .meta-val {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: #0f172a;
+    }
+    .meta-sub {
+      font-size: 0.75rem;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    /* ACTION CALLOUT: THE 2 ASKS */
+    .highlight-card {
+      background: linear-gradient(135deg, #eff6ff, #f0fdf4);
+      border: 2px solid #3b82f6;
+      border-radius: 10px;
+      padding: 14px 18px;
+      margin-bottom: 22px;
+    }
+    .highlight-card-title {
+      font-size: 0.92rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #1e40af;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .highlight-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .ask-box {
+      background: white;
+      border: 1px solid #bfdbfe;
+      border-radius: 8px;
+      padding: 10px 14px;
+    }
+    .ask-box.green {
+      border-color: #a7f3d0;
+    }
+    .ask-box strong {
+      display: block;
+      color: #1e3a8a;
+      font-size: 0.88rem;
+      margin-bottom: 3px;
+    }
+    .ask-box.green strong {
+      color: #065f46;
+    }
+    .ask-desc {
+      font-size: 0.82rem;
+      color: #334155;
+      line-height: 1.4;
+    }
+
+    /* SECTION HEADINGS */
+    .section-title {
+      font-size: 1.02rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--primary);
+      border-bottom: 1.5px solid #e2e8f0;
+      padding-bottom: 5px;
+      margin: 20px 0 12px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* TALKING POINTS LIST */
+    .talking-card {
+      border-radius: 10px;
+      padding: 14px 16px;
+      margin-bottom: 12px;
+      border: 1px solid var(--border);
+    }
+    .tc-green { background: #f0fdf4; border-color: #bbf7d0; }
+    .tc-amber { background: #fffbeb; border-color: #fde68a; }
+    .tc-blue { background: #eff6ff; border-color: #bfdbfe; }
+    .tc-purple { background: #faf5ff; border-color: #e9d5ff; }
+
+    .tc-header {
+      font-weight: 800;
+      font-size: 0.88rem;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .tc-green .tc-header { color: #166534; }
+    .tc-amber .tc-header { color: #9a3412; }
+    .tc-blue .tc-header { color: #1e40af; }
+    .tc-purple .tc-header { color: #6b21a8; }
+
+    .quote-box {
+      font-size: 0.88rem;
+      line-height: 1.5;
+      color: #1e293b;
+      background: white;
+      border-left: 3.5px solid;
+      border-radius: 4px;
+      padding: 8px 12px;
+      margin-top: 6px;
+    }
+    .tc-green .quote-box { border-left-color: #22c55e; }
+    .tc-amber .quote-box { border-left-color: #f59e0b; }
+    .tc-blue .quote-box { border-left-color: #3b82f6; }
+    .tc-purple .quote-box { border-left-color: #a855f7; }
+
+    .bullet-list {
+      padding-left: 18px;
+      margin: 6px 0;
+      font-size: 0.84rem;
+      color: #334155;
+    }
+    .bullet-list li {
+      margin-bottom: 4px;
+    }
+
+    /* CLINICAL RATIONALE TABLE */
+    table.rationale-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.82rem;
+      margin-top: 8px;
+    }
+    table.rationale-table th {
+      background: #1e3a8a;
+      color: white;
+      text-align: left;
+      padding: 6px 10px;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    table.rationale-table td {
+      padding: 8px 10px;
+      border-bottom: 1px solid #e2e8f0;
+      color: #1e293b;
+      vertical-align: top;
+    }
+    table.rationale-table tr:nth-child(even) td { background: #f8fafc; }
+
+    /* TOAST */
+    #toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #1e3a8a;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.25s ease;
+      z-index: 999;
+      pointer-events: none;
+    }
+    #toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* PRINT STYLES */
+    @media print {
+      body {
+        background: white !important;
+        padding: 0 !important;
+      }
+      .toolbar, #toast { display: none !important; }
+      .sheet {
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+        max-width: 100% !important;
+      }
+      @page {
+        margin: 0.4in;
+        size: letter portrait;
+      }
+      .talking-card, .highlight-card {
+        page-break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- FLOATING TOOLBAR -->
+  <div class="toolbar">
+    <div class="toolbar-title">
+      <span>🩺 Rayne’s Doctor Appointment Prep</span>
+      <span style="font-size: 0.75rem; background: #e0f2fe; color: #0284c7; padding: 2px 8px; border-radius: 999px;">Nov 5, 2026</span>
+    </div>
+    <div class="btn-group">
+      <button class="btn btn-secondary" onclick="copyTalkingPoints()">📋 Copy All Talking Points</button>
+      <button class="btn btn-primary" onclick="window.print()">🖨️ Print This Sheet</button>
+    </div>
+  </div>
+
+  <!-- PRINTABLE SHEET -->
+  <div class="sheet">
+    
+    <!-- HEADER -->
+    <div class="sheet-header">
+      <div>
+        <div class="sheet-title">Rayne Moulton — Medication Consultation &amp; Talking Points</div>
+        <div class="sheet-subtitle">ADHD (Vyvanse) &amp; OCD (Fluoxetine) Review • Nurse Practitioner Follow-Up</div>
+      </div>
+      <div class="sheet-date-box">
+        <div class="sheet-date">Thursday, Nov 5, 2026</div>
+        <div class="sheet-doctor">Prescriber: Jen (NP)</div>
+      </div>
+    </div>
+
+    <!-- SUMMARY META GRID -->
+    <div class="meta-grid">
+      <div class="meta-item">
+        <span class="meta-label">Patient</span>
+        <span class="meta-val">Rayne Moulton (18y)</span>
+        <span class="meta-sub">Active Follow-Up</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Current Regimen</span>
+        <span class="meta-val">Prozac 50mg • Vyvanse 10mg</span>
+        <span class="meta-sub">Slynd 4mg Continuous</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Trial Duration Logged</span>
+        <span class="meta-val">18 Days Logged</span>
+        <span class="meta-sub">Oct 18 – Nov 4, 2026</span>
+      </div>
+    </div>
+
+    <!-- THE 2 SPECIFIC MEDICATION ASKS -->
+    <div class="highlight-card">
+      <div class="highlight-card-title">🎯 The 2 Specific Requests for Jen Tomorrow</div>
+      <div class="highlight-grid">
+        <div class="ask-box">
+          <strong>1. Prozac Pill Count Reduction (50 mg)</strong>
+          <div class="ask-desc">
+            Request prescribing 50 mg as <strong>1 × 40 mg capsule + 1 × 10 mg capsule</strong>. Cuts Prozac down to only <strong>2 capsules</strong> (reducing morning pill fatigue).
+          </div>
+        </div>
+        <div class="ask-box green">
+          <strong>2. Vyvanse Titration (10 mg → 20 mg)</strong>
+          <div class="ask-desc">
+            Request trialing <strong>20 mg Vyvanse</strong>. 10 mg proved tolerability without 30 mg blunting, but focus has plateaued (3/5) with dopamine-seeking phone habits.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RAYNE'S WORD-FOR-WORD POCKET SCRIPT -->
+    <div class="section-title">🗣️ Rayne’s Word-For-Word Pocket Script (What to Say)</div>
+
+    <!-- CARD 1: THE WINS -->
+    <div class="talking-card tc-green">
+      <div class="tc-header">✅ 1. What’s Going Really Well (The Wins)</div>
+      <div class="quote-box">
+        <em>"My <strong>OCD checking rituals</strong> (doors, stove, appliances, physical loops) have been doing really well on 50 mg of Prozac. That part feels quiet, stable, and well-managed."</em>
+      </div>
+      <div class="quote-box" style="margin-top: 6px;">
+        <em>"The <strong>10 mg Vyvanse</strong> trial proved that my body can handle a stimulant without making me feel emotionally flat, numb, or 'blah' like the 30 mg did in the past."</em>
+      </div>
+      <div class="quote-box" style="margin-top: 6px;">
+        <em>"My stomach cramps and nausea from last week completely cleared up once I had some light breakthrough spotting over the weekend (confirming it was cyclic hormonal cramping on continuous Slynd)."</em>
+      </div>
+    </div>
+
+    <!-- CARD 2: CURRENT EXPERIENCE -->
+    <div class="talking-card tc-amber">
+      <div class="tc-header">🧠 2. What I’m Experiencing Right Now (The Context)</div>
+      <div class="quote-box">
+        <em>"Lately, I’ve had <strong>elevated anxiety and my feelings have been a bit all over the map</strong>. I just made the big decision to step away from nursing school last week, so my nervous system is coming down from that stress (adrenaline let-down)."</em>
+      </div>
+      <div class="quote-box" style="margin-top: 6px;">
+        <em>"My focus on 10 mg Vyvanse has <strong>plateaued at about 3 out of 5</strong>. By 3:30 in the afternoon, it feels like it has worn off. Because my focus feels half-supported and my schedule is open right now, I find myself <strong>stuck on my phone scrolling a lot</strong> just looking for focus and stimulation."</em>
+      </div>
+    </div>
+
+    <!-- CARD 3: THE SPECIFIC ASKS -->
+    <div class="talking-card tc-blue">
+      <div class="tc-header">📋 3. What We’d Like to Ask For</div>
+      <div class="quote-box">
+        <strong>Ask 1 (Fewer Pills):</strong><br>
+        <em>"I want to take fewer pills in the morning. If we stay at 50 mg of Prozac, can we write the prescription as <strong>one 40 mg pill and one 10 mg pill</strong> so I only have to take two capsules instead of multiple?"</em>
+      </div>
+      <div class="quote-box" style="margin-top: 8px;">
+        <strong>Ask 2 (20 mg Vyvanse Step):</strong><br>
+        <em>"Since 10 mg didn’t cause any emotional blunting but my focus is plateauing, do you think it’s a good time to <strong>try increasing my Vyvanse from 10 mg to 20 mg</strong> to help with daytime focus and task initiation?"</em>
+      </div>
+    </div>
+
+    <!-- CARD 4: FUTURE RADAR -->
+    <div class="talking-card tc-purple">
+      <div class="tc-header">🌿 4. Future Add-On (For Jen’s Thoughts)</div>
+      <div class="quote-box">
+        <em>"Once I stabilize on 20 mg Vyvanse, we’d love your thoughts on adding <strong>NAC (N-Acetylcysteine, 600 mg)</strong> to help with residual thumb picking (skin picking)."</em>
+      </div>
+    </div>
+
+    <!-- CLINICAL CORRELATES TABLE -->
+    <div class="section-title">🩺 Clinical Reference for Candy &amp; Jen</div>
+    <table class="rationale-table">
+      <thead>
+        <tr>
+          <th style="width: 25%;">Observation</th>
+          <th style="width: 35%;">Biological / Neurochemical Mechanism</th>
+          <th style="width: 40%;">Clinical Action Item</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Feelings "All Over the Map" &amp; Anxiety</strong></td>
+          <td><strong>Adrenaline Let-Down post-NBCC exit.</strong> Transitioning from acute college stress to wide-open days triggers autonomic recalibration. Not an OCD recurrence.</td>
+          <td>Reassure Rayne that transition lability is normal. Therapy with Amanda Geldart is supporting healthy decompression.</td>
+        </tr>
+        <tr>
+          <td><strong>High Phone Screen Time</strong></td>
+          <td><strong>ADHD dopamine seeking.</strong> 10 mg Vyvanse is subtherapeutic for sustained task initiation. Frictionless digital browsing fills the dopamine deficit.</td>
+          <td>Titrate Vyvanse to <strong>20 mg</strong>. Provides prefrontal dopamine coverage to initiate retail onboarding and math upgrading.</td>
+        </tr>
+        <tr>
+          <td><strong>Pill Burden / Morning Routine</strong></td>
+          <td>Pill fatigue from swallowing multiple capsules daily causes morning resistance and compliance friction.</td>
+          <td>Prescribe Prozac 50 mg as <strong>1 × 40 mg + 1 × 10 mg</strong>. Total morning stack drops to just 3 capsules with breakfast.</td>
+        </tr>
+        <tr>
+          <td><strong>CYP2D6 Clearance</strong></td>
+          <td>Fluoxetine 50 mg moderately slows amphetamine metabolism. Moving in 10 mg steps (10 → 20 mg) prevents receptor saturation.</td>
+          <td>Confirm 20 mg Vyvanse provides optimal therapeutic efficacy without jumping to the 30 mg blunting dose.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div style="margin-top: 18px; padding-top: 10px; border-top: 1px solid #e2e8f0; font-size: 0.75rem; color: #64748b; text-align: center;">
+      Rayne Moulton Health OS • Generated from Live Medication &amp; Symptom Tracker • November 4, 2026
+    </div>
+
+  </div>
+
+  <div id="toast">📋 Copied talking points to clipboard!</div>
+
+  <script>
+    function copyTalkingPoints() {
+      const text = `RAYNE MOULTON — TALKING POINTS FOR JEN (NOV 5, 2026)
+
+🌟 1. WHAT'S GOING REALLY WELL (THE WINS):
+• "My OCD checking rituals (doors, stove, appliances, physical loops) have been doing really well on 50 mg of Prozac. That part feels quiet, stable, and well-managed."
+• "The 10 mg Vyvanse trial proved that my body can handle a stimulant without making me feel emotionally flat, numb, or 'blah' like the 30 mg did in the past."
+• "My stomach cramps and nausea from last week completely cleared up once I had some light breakthrough spotting over the weekend (confirming it was hormonal adjustment on continuous Slynd)."
+
+🧠 2. WHAT I'M EXPERIENCING RIGHT NOW (THE CONTEXT):
+• "Lately, I've had elevated anxiety and my feelings have been a bit all over the map. I just made the big decision to step away from nursing school last week, so my nervous system is coming down from that stress (adrenaline let-down)."
+• "My focus on 10 mg Vyvanse has plateaued at about 3 out of 5. By 3:30 in the afternoon, it feels like it has worn off. Because my focus feels half-supported and my schedule is open right now, I find myself stuck on my phone scrolling a lot just looking for focus and stimulation."
+
+📋 3. WHAT WE'D LIKE TO ASK FOR:
+1. Fewer Pills for Prozac:
+"I want to take fewer pills in the morning. If we stay at 50 mg of Prozac, can we write the prescription as ONE 40 mg pill and ONE 10 mg pill so I only have to take two capsules instead of multiple?"
+2. Trialing 20 mg Vyvanse:
+"Since 10 mg didn't cause any emotional blunting but my focus is plateauing, do you think it's a good time to try increasing my Vyvanse from 10 mg to 20 mg to help with daytime focus and task initiation?"
+
+🌿 4. FUTURE ADD-ON (FOR JEN'S THOUGHTS):
+• "Once I stabilize on 20 mg Vyvanse, we'd love your thoughts on adding NAC (N-Acetylcysteine, 600 mg) to help with residual thumb picking (skin picking)."`;
+
+      navigator.clipboard.writeText(text).then(() => {
+        showToast('📋 Copied talking points to clipboard!');
+      }).catch(() => {
+        prompt('Copy talking points below:', text);
+      });
+    }
+
+    function showToast(msg) {
+      const t = document.getElementById('toast');
+      t.innerText = msg;
+      t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), 2500);
+    }
+  </script>
+</body>
+</html>
