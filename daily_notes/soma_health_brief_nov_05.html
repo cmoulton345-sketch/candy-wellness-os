@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soma's Health & Mobility Brief — Nov 5, 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b1329;
+      --card-bg: #131f3d;
+      --card-border: rgba(255, 255, 255, 0.1);
+      --teal: #0d9488;
+      --teal-light: #14b8a6;
+      --teal-glow: rgba(13, 148, 136, 0.2);
+      --purple: #8b5cf6;
+      --pink: #ec4899;
+      --emerald: #10b981;
+      --amber: #f59e0b;
+      --rose: #f43f5e;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 24px 16px 60px;
+      display: flex;
+      justify-content: center;
+    }
+    .container {
+      max-width: 680px;
+      width: 100%;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 24px;
+      padding: 24px 20px;
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.22), rgba(13, 148, 136, 0.25));
+      border: 1px solid var(--card-border);
+      border-radius: 18px;
+    }
+    .badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 4px 12px;
+      border-radius: 999px;
+      background: rgba(16, 185, 129, 0.25);
+      color: #6ee7b7;
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      margin-bottom: 10px;
+    }
+    h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: white;
+      margin-bottom: 6px;
+    }
+    .subtitle {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    @media (max-width: 500px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+    .metric-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 16px;
+    }
+    .metric-label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 4px;
+    }
+    .metric-value {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: white;
+    }
+    .metric-sub {
+      font-size: 0.8rem;
+      color: #34d399;
+      font-weight: 600;
+      margin-top: 2px;
+    }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 16px;
+    }
+    .card-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: white;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding-bottom: 10px;
+    }
+    .card p, .card li {
+      font-size: 0.92rem;
+      color: #cbd5e1;
+      margin-bottom: 8px;
+    }
+    ul { list-style: none; }
+    li { position: relative; padding-left: 20px; }
+    li::before {
+      content: "•";
+      position: absolute;
+      left: 6px;
+      color: var(--teal-light);
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+    .highlight {
+      color: #38bdf8;
+      font-weight: 600;
+    }
+    .success {
+      color: #34d399;
+      font-weight: 700;
+    }
+    .warning {
+      color: #fbbf24;
+      font-weight: 600;
+    }
+    .danger {
+      color: #f43f5e;
+      font-weight: 700;
+    }
+    .checklist-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px 14px;
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 12px;
+      margin-bottom: 10px;
+      border-left: 3px solid var(--teal);
+    }
+    .btn-print {
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding: 12px;
+      background: linear-gradient(135deg, var(--teal), #0284c7);
+      color: white;
+      font-weight: 700;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 10px;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="header">
+    <div class="badge">SOMA HEALTH &amp; MOBILITY BRIEF</div>
+    <h1>Thursday Surge: Readiness 90 &amp; Weather Headache Care</h1>
+    <div class="subtitle">November 5, 2026 • Cycle 5, Day 4 (Early Follicular Transition)</div>
+  </div>
+
+  <div class="grid">
+    <div class="metric-card" style="border-color: rgba(16, 185, 129, 0.4);">
+      <div class="metric-label">Scale Weight</div>
+      <div class="metric-value" style="color: #34d399;">150.2 lbs 📉</div>
+      <div class="metric-sub" style="color: #34d399;">-1.0 lb in 48h! (Doorstep of 149s)</div>
+    </div>
+    <div class="metric-card" style="border-color: rgba(16, 185, 129, 0.4);">
+      <div class="metric-label">Oura Readiness</div>
+      <div class="metric-value" style="color: #34d399;">90 🟢</div>
+      <div class="metric-sub" style="color: #34d399;">Highest score of Cycle 5!</div>
+    </div>
+    <div class="metric-card" style="border-color: rgba(56, 189, 248, 0.4);">
+      <div class="metric-label">Sleep Score &amp; Debt</div>
+      <div class="metric-value" style="color: #38bdf8;">82 🌙 <span style="font-size: 0.95rem; color: #fbbf24;">(Debt 2h 20m)</span></div>
+      <div class="metric-sub" style="color: var(--muted);">Rolling deficit from Moncton trip</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">Ring &amp; Mouth Temp</div>
+      <div class="metric-value" style="color: #38bdf8;">-0.3° <span style="font-size: 1rem; color: var(--muted);">/ 35.6°C</span></div>
+      <div class="metric-sub" style="color: #38bdf8;">Warming toward baseline</div>
+    </div>
+  </div>
+
+  <div class="card" style="border-color: rgba(245, 158, 11, 0.3);">
+    <div class="card-title" style="color: #fbbf24;">⛈️ 1. The Weather Pressure Headache: The Rayne Connection</div>
+    <p>Waking up with a pressure headache when Maritime weather shifts is <span class="highlight">100% biological reality</span>, and Rayne experiencing the exact same thing confirms a shared neuro-vascular trait:</p>
+    <ul>
+      <li><strong>Intracranial Pressure Differential:</strong> When atmospheric pressure outside drops, the air density decreases while the fluid and air in your cranial vault and sinus cavities remain pressurized. This exerts an outward mechanical force on dural blood vessels and sinus walls.</li>
+      <li><strong>Shared Neurodivergent Sensory Sensitivity:</strong> Sensitive nervous systems (ADHD &amp; sensory processing traits shared by you and Rayne) possess a much lower threshold for barometric mechanoreceptor activation.</li>
+      <li><strong>Why It Recurred:</strong> Sitting up initially allowed venous blood to drain from your head (creating temporary relief), but the barometric pressure differential continues stimulating trigeminovascular nerves until the weather front passes.</li>
+      <li><strong>Relief Strategy:</strong> BioSteel electrolyte hydration (buffers cranial capillary pressure), warm compress on neck/sinuses, and gentle pacing.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="card-title">💪 2. Full-Body Soreness: Healthy 24-Hour DOMS</div>
+    <p>Feeling sore all over today is <span class="success">textbook muscular repair and remodeling</span>:</p>
+    <ul>
+      <li>Delayed Onset Muscle Soreness (DOMS) naturally peaks 24 to 36 hours post-exercise.</li>
+      <li>Yesterday morning you completed <strong>both Yin Yoga and Pilates</strong>, loading your core, glutes, and psoas after a 3-hour car trip to Moncton.</li>
+      <li><strong>Smart Strategy:</strong> Skipping weights yesterday evening allowed your muscle fibers to initiate clean repair without cortisol spiking.</li>
+    </ul>
+  </div>
+
+  <div class="card" style="border-color: rgba(13, 148, 136, 0.4);">
+    <div class="card-title" style="color: #5eead4;">🩺 3. 1:00 PM Today: Dr. Jenna Weeks Consultation</div>
+    <p>You are stepping into your appointment from a position of absolute physiological power:</p>
+    <ul>
+      <li><strong>Readiness is 90:</strong> Autonomic nervous system is rock-solid.</li>
+      <li><strong>ZRT Triumph:</strong> Estradiol 227 pg/mL (restored from 46 crash) &amp; Testosterone 76 ng/dL (optimal TRT sweet spot).</li>
+      <li><strong>Core Discussion:</strong> Progesterone 17.3 ng/mL + Ratio 76 L confirms late-luteal excess; request a 3–5 day pause or half-pump taper for Days 21–26 bloat.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="card-title">📋 4. Today's Gentle Pacing Checklist</div>
+    <div class="checklist-item">
+      <div style="font-size: 1.2rem;">💧</div>
+      <div><strong>BioSteel Hydration Flush:</strong> Drink 20–24 oz warm water with BioSteel electrolytes to stabilize cranial vascular tone.</div>
+    </div>
+    <div class="checklist-item">
+      <div style="font-size: 1.2rem;">🧴</div>
+      <div><strong>Morning BHRT:</strong> 1 pump BiEst + 1 pump Testosterone.</div>
+    </div>
+    <div class="checklist-item">
+      <div style="font-size: 1.2rem;">🩺</div>
+      <div><strong>1:00 PM Appointment:</strong> Review ZRT results and late-luteal progesterone taper with Dr. Jenna Weeks.</div>
+    </div>
+    <div class="checklist-item">
+      <div style="font-size: 1.2rem;">🌙</div>
+      <div><strong>Evening Sanctuary:</strong> 10 mins Legs Up the Wall + 1 pump evening Progesterone for deep recovery sleep.</div>
+    </div>
+  </div>
+
+  <button class="btn-print" onclick="window.print()">🖨️ Print / Save Daily Brief</button>
+</div>
+
+</body>
+</html>
