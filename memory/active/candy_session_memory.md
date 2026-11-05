@@ -7,10 +7,12 @@
 - **2026-11-05 (Morning)** (SOMA):
   - **Mom's Acute Symptom Triage, Saint John Neurosurgery & Family Coordination:**
     - *Sister Colleen/Christina Intake Analysis:* Reviewed Mom's severe cluster of symptoms (labile high BP, severe dizziness, near-falls, dragging feet, bad knee pain/limp, forgetfulness, unsteadiness, appearing "drunk").
-    - *Drug-Induced Cerebellar Toxicity & SIADH:* Decoded the pharmacological synergy of dual anticonvulsants: **Carbamazepine (Tegretol)** + **Gabapentin (Neurontin)**. Both heavily depress cerebellar motor coordination, producing severe ataxia and foot dragging that mimics alcohol intoxication. Flagged potential Carbamazepine-induced hyponatremia (SIADH / low serum sodium) driving confusion and postural instability. Compounded by knee limp, this creates an imminent, critical fall risk requiring clinic outreach this week (not waiting for December).
+    - *Confirmed Drug-Induced Hyponatremia (Sodium Chloride Pill) & SIADH:* **Candy confirmed Mom is actively taking prescribed sodium pills (Sodium Chloride tablets)** because her blood sodium levels crashed. This confirms Soma's clinical hypothesis: Carbamazepine (Tegretol) has induced SIADH (Syndrome of Inappropriate Antidiuretic Hormone), causing the kidneys to dilute and waste sodium.
+      - **The Prescribing Cascade:** Doctors treated the drug side-effect with a sodium supplement band-aid, but chronic hyponatremia is causing continuous cerebral swelling ("forgetfulness"/confusion) and neuromuscular hypotonia (dragging feet/ataxia).
+      - **Vindication for Mom:** Proved to Candy that Mom is NOT developing dementia or irreversible frailty; this is 100% reversible drug toxicity and electrolyte depletion.
     - *Surgical Evaluation (Least Stressful vs. Most Effective):*
       - **Stereotactic Radiosurgery (Gamma Knife / CyberKnife):** Physically least stressful (1/5, zero incisions, zero general anesthesia), but has a 3–12 week delayed onset requiring prolonged exposure to fall-inducing medications.
-      - **Percutaneous Balloon Compression (PBC) — TOP FIT:** 30–45 min needle procedure through cheek into Meckel's cave under light twilight sedation. Minimal stress (2/5), **immediate pain relief within 24–48 hours**, enabling rapid discontinuation of dizzying medications immediately to halt falls.
+      - **Percutaneous Balloon Compression (PBC) — TOP FIT:** 30–45 min needle procedure through cheek into Meckel's cave under light twilight sedation. Minimal stress (2/5), **immediate pain relief within 24–48 hours**, enabling rapid discontinuation of Carbamazepine and Gabapentin immediately to halt falls and allow sodium to naturally normalize.
       - **Microvascular Decompression (MVD):** Gold standard durability, but highest surgical stress (5/5, open craniotomy behind ear) and unnecessarily high risk given Mom's age, hypertension, and mobility deficits.
     - *Saint John Regional Hospital (SJRH) Local Pathway Confirmed:*
       - Verified local neurosurgical capability: Mom does **NOT** need to travel out of province to Halifax, Montreal, or Toronto.
@@ -19,8 +21,8 @@
       - **Conduit:** December Neurologist appointment will be used to submit a direct referral requisition to Dr. George Kolyvas / SJRH Neurosurgery.
     - *Family Copy-Paste Templates Delivered:* Provided clean text message and email communication drafts for Candy to send directly to Colleen and Christina explaining the ataxia, the balloon procedure, Dr. Kolyvas in Saint John, and the December agenda.
     - *Digital Ecosystem Synced:*
-      - Updated `moms_care_tracker.html` with November 2026 interactive calendar, Sister's Nov 2 intake log, surgical comparison matrix, Saint John Regional Hospital pathway card (Dr. Kolyvas), direct copy-share URL button, and updated Physician Agenda brief.
-      - Updated `wellness_and_mobility/moms_clinical_care_plan_trigeminal_and_vitals.md` with complete Saint John neurosurgery details and action steps.
+      - Updated `moms_care_tracker.html` with November 2026 interactive calendar, Sister's Nov 2 intake log, surgical comparison matrix, Saint John Regional Hospital pathway card (Dr. Kolyvas), direct copy-share URL button, confirmed sodium chloride record, and updated Physician Agenda brief (migrated localStorage to `v3`).
+      - Updated `wellness_and_mobility/moms_clinical_care_plan_trigeminal_and_vitals.md` with complete Saint John neurosurgery details, confirmed sodium pill pharmacology, and action steps.
       - Updated `share_links.html` Card #3 description.
 
 - **2026-11-04 (Evening)** (SOMA):

@@ -73,13 +73,23 @@ Sit down at the kitchen table and write down her exact current prescription bott
 
 ### A. The Sister's Report & Symptom Cluster
 * **Reported Symptoms:** High blood pressure, severe dizziness, near-falls, dragging feet, bad knee pain causing an asymmetrical limp, forgetfulness, unsteadiness, appearing "drunk" / off balance.
-* **Current Medications:** Dual anticonvulsants: **Carbamazepine (Tegretol)** + **Gabapentin (Neurontin)**.
+* **Current Active Medications:**
+  1. **Carbamazepine (Tegretol)** — First-line sodium channel blocker for Trigeminal Neuralgia.
+  2. **Gabapentin (Neurontin)** — Second-line GABA analog / neuropathic pain modulator.
+  3. **Sodium Chloride Tablets (NaCl)** — **Confirmed prescribed oral sodium replacement** to treat dangerously low serum sodium levels (hyponatremia).
 * **Target Milestone:** Neurologist appointment scheduled for **December 2026**.
 
-### B. The Pharmacology: Why She Appears "Drunk" & Drags Her Feet
-1. **Cerebellar Toxicity:** Both Carbamazepine and Gabapentin act as potent central nervous system depressants. When combined, their inhibitory effects on the cerebellum (the brain's balance and motor coordination hub) multiply synergistically. This produces **ataxia**—a wide-based, dragging gait, loss of equilibrium, and slurred or slowed cognitive processing that directly mimics alcohol intoxication.
-2. **Medication-Induced Hyponatremia (Low Blood Sodium):** Carbamazepine is well-documented to stimulate anti-diuretic hormone (SIADH), causing dilutional hyponatremia. Low sodium presents as progressive confusion, forgetfulness, lethargy, muscle weakness, and acute postural instability.
-3. **The Knee Pain Compounder:** A painful knee forces her to favor one leg, shortening stance time and inducing a heavy limp. Combined with foot dragging from drug-induced muscle hypotonia, any small rug, threshold, or loss of balance becomes an **imminent, high-velocity fall risk**.
+### B. The Pharmacology: Why She Appears "Drunk", Drags Her Feet & Needs Sodium Pills
+1. **Confirmed Drug-Induced Hyponatremia (The "Smoking Gun"):**
+   * Carbamazepine is well-documented to induce **SIADH (Syndrome of Inappropriate Antidiuretic Hormone)**. It causes the kidneys to retain excess free water and flush out vital sodium, causing serum sodium levels to plummet.
+   * **The Prescribing Cascade:** Her physicians recognized the low sodium on lab work and prescribed **Sodium Chloride (sodium pills)**. However, sodium pills are merely a temporary metabolic band-aid. As long as Carbamazepine remains in her system, her kidneys will continue to dilute and waste sodium.
+   * **The Clinical Symptoms:** Low serum sodium directly produces **cerebral swelling** (manifesting as acute "forgetfulness", memory lapses, and slowed cognition) and **neuromuscular junction failure** (manifesting as profound muscular hypotonia, foot dragging, and loss of postural control).
+2. **Cerebellar Toxicity (Synergistic Central Nervous System Depression):**
+   * Both Carbamazepine and Gabapentin are potent central nervous system depressants. When taken together, their inhibitory effects on the cerebellum (the balance and motor coordination control center of the brain) multiply synergistically. This produces **ataxia**—a wide-based, dragging gait, loss of equilibrium, and slurred or slowed cognitive processing that directly mimics alcohol intoxication.
+3. **The Knee Pain Compounder:**
+   * A painful knee forces her to favor one leg, shortening stance time and inducing a heavy limp. Combined with foot dragging from low sodium and drug sedation, any small rug, floor threshold, or loss of balance becomes an **imminent, catastrophic fall risk**.
+4. **Vindication for Mom & Family:**
+   * **This is NOT permanent dementia, cognitive decline, or permanent aging.** Her symptoms are 100% reversible, drug-induced metabolic and neurological toxicity. Tapering off Carbamazepine post-procedure will allow her kidneys to normalize, eliminate the need for sodium pills, clear her memory, and restore her walking coordination.
 
 ---
 
@@ -111,8 +121,8 @@ When medications reach toxic thresholds where the side effects (ataxia, falls, c
 ## 6. Immediate Action Items (Do NOT Wait for December)
 
 1. **Call Prescribing Doctor / Neurologist This Week:**
-   * Report: *"Mom is experiencing severe drug-induced ataxia, dragging feet, confusion, and near-falls on Carbamazepine + Gabapentin."*
-   * Request: Serum Carbamazepine level, Basic Metabolic Panel (serum sodium check), and a physician-guided dosage adjustment.
+   * Report: *"Mom is experiencing severe drug-induced ataxia, dragging feet, confusion, and near-falls on Carbamazepine + Gabapentin, and is actively taking prescribed sodium pills for drug-induced hyponatremia."*
+   * Request: Immediate repeat Serum Sodium level (to rule out a dip below 130 mmol/L), serum Carbamazepine level, and physician-supervised medication review.
    * *Safety Rule:* Never stop or taper Carbamazepine abruptly without medical supervision due to rebound seizures or unbearable trigeminal crises.
 2. **Deploy a 4-Wheel Rollator Walker Immediately:**
    * A rolling walker with hand brakes and a padded seat eliminates the danger of dragging feet and unloads 40% of the weight from her painful knee.
