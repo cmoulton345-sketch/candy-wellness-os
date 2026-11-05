@@ -100,6 +100,12 @@ When medications reach toxic thresholds where the side effects (ataxia, falls, c
 ### How Candy & Colleen Can Talk to Mom:
 > *"Mom, nobody has to cut open your head. Modern medicine has gentle, 30-minute outpatient treatments—either a tiny needle through the cheek while you sleep for a half hour, or a focused laser beam with zero incisions. You go home the same day, the facial lightning stops, and we can finally take away the pills that are making you dizzy and off balance."*
 
+### C. Local Saint John Neurosurgery Pathway: Dr. George Kolyvas (SJRH)
+* **Local Capability Confirmed:** Mom does **NOT** need to travel out of province (to Halifax, Montreal, or Toronto) to access high-level surgical relief. The **Saint John Regional Hospital (SJRH)** is New Brunswick's Level 1 trauma and tertiary cranial surgery center, affiliated with Dalhousie University Faculty of Medicine and Horizon Health Network.
+* **Lead Neurosurgeon:** **Dr. George Kolyvas, MD, FRCSC** — Clinical Division Head of Neurosurgery at Saint John Regional Hospital. Surgical management of Trigeminal Neuralgia—specifically minimally invasive percutaneous rhizotomy / balloon compression and microvascular decompression—is directly within his clinical scope of practice.
+* **Cost & Medicare Coverage:** 100% covered under New Brunswick Medicare. Zero private out-of-pocket surgical fees, zero travel flights, and zero inter-provincial red tape.
+* **Conduit to Dr. Kolyvas:** The **December Neurologist appointment** is the official gateway. Under New Brunswick health protocols, neurosurgeons require a physician/specialist referral. The sisters will instruct the neurologist to submit an immediate requisition specifically to Dr. George Kolyvas / Division of Neurosurgery at SJRH for Percutaneous Balloon Compression (PBC) evaluation.
+
 ---
 
 ## 6. Immediate Action Items (Do NOT Wait for December)
@@ -115,12 +121,13 @@ When medications reach toxic thresholds where the side effects (ataxia, falls, c
    * Apply 15-minute gel ice packs post-walking to reduce joint inflammation.
 4. **December Neurologist Appointment Prep:**
    * Request high-resolution 3D FIESTA/CISS MRI protocol to inspect the trigeminal root entry zone.
-   * Present the printed Doctor Brief from `moms_care_tracker.html` comparing Percutaneous Balloon Compression vs. Gamma Knife.
+   * **Demand Direct SJRH Requisition:** Present the clinical brief and request an urgent consult requisition to **Dr. George Kolyvas, Division of Neurosurgery at Saint John Regional Hospital** for minimally invasive Percutaneous Balloon Compression.
 
 ---
 
 ## 7. Live Digital Tooling
 All data, calendar views, and surgical matrices are live in Mom's dedicated web application:
 * **App:** `moms_care_tracker.html`
-* **Live Features:** Interactive November 2026 Summary Calendar, Sister's Acute Intake Log (Nov 2), Side-by-Side Surgical Comparison Matrix, Printable Physician Brief, and 1-Click Clipboard Export for Soma.
+* **Live Features:** Interactive November 2026 Summary Calendar, Sister's Acute Intake Log (Nov 2), Side-by-Side Surgical Comparison Matrix, Saint John Regional Hospital Pathway Card (Dr. Kolyvas), Printable Physician Brief, and 1-Click Clipboard Export for Soma.
 * **Live URL:** `https://cmoulton345-sketch.github.io/candy-wellness-os/moms_care_tracker.html`
+
