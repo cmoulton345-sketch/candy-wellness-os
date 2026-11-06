@@ -858,11 +858,236 @@
       line-height: 1.5;
     }
 
+    .print-only { display: none !important; }
+
     @media print {
-      body { background: white; padding-bottom: 0; }
-      header, .no-print, .toast, .tab-bar, .hero-strip, .alert-banner, .alert-banner-danger { display: none !important; }
-      .container { max-width: 100%; margin: 0; padding: 0; }
-      .clinical-paper { border-radius: 0; box-shadow: none; padding: 0; }
+      body {
+        background: #ffffff !important;
+        color: #0f172a !important;
+        font-size: 10pt;
+        padding-bottom: 0 !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+      header, .no-print, .toast, .tab-bar, .hero-strip, .alert-banner, .alert-banner-danger, .modal-backdrop {
+        display: none !important;
+      }
+      .container {
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+      }
+      .print-only {
+        display: block !important;
+      }
+
+      /* Active view is forced visible */
+      .view-panel { display: none !important; }
+      .view-panel.active { display: block !important; }
+
+      /* Surgical Options Decision Guide Print Styles */
+      .surgery-intro {
+        background: none !important;
+        border: none !important;
+        padding: 0 0 10px 0 !important;
+        margin-bottom: 12px !important;
+      }
+      .surgery-intro h2 { color: #0f172a !important; font-size: 14pt !important; }
+      .surgery-intro p { color: #334155 !important; font-size: 9.5pt !important; }
+
+      .surgery-grid {
+        display: block !important;
+      }
+      .surgery-card {
+        background: #ffffff !important;
+        border: 1.5pt solid #cbd5e1 !important;
+        border-radius: 8px !important;
+        padding: 12pt !important;
+        color: #0f172a !important;
+        box-shadow: none !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+        margin-bottom: 14pt !important;
+      }
+      .surgery-card.recommended {
+        border: 2.5pt solid #0f766e !important;
+        background: #f0fdfa !important;
+      }
+      .rec-ribbon {
+        background: #0f766e !important;
+        color: white !important;
+        font-weight: 700 !important;
+        font-size: 8pt !important;
+        padding: 4px 10px !important;
+      }
+      .surgery-name { color: #0f172a !important; font-size: 12pt !important; font-weight: 800 !important; }
+      .surgery-alias { color: #475569 !important; font-size: 9pt !important; }
+      .stress-badge {
+        background: #f1f5f9 !important;
+        border: 1px solid #cbd5e1 !important;
+        color: #334155 !important;
+        font-size: 8.5pt !important;
+      }
+      .stress-badge.stress-low {
+        background: #ecfdf5 !important;
+        color: #065f46 !important;
+        border-color: #a7f3d0 !important;
+      }
+      .stress-badge.stress-high {
+        background: #fff1f2 !important;
+        color: #9f1239 !important;
+        border-color: #fecdd3 !important;
+      }
+
+      .surgery-specs {
+        background: #f8fafc !important;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 6px !important;
+        padding: 8px 12px !important;
+        display: grid !important;
+        grid-template-columns: repeat(4, 1fr) !important;
+        gap: 8px !important;
+        margin: 10px 0 !important;
+      }
+      .spec-label { color: #64748b !important; font-size: 7.5pt !important; }
+      .spec-val { color: #0f172a !important; font-size: 8.5pt !important; font-weight: 700 !important; }
+
+      .pros-cons-box {
+        background: #ffffff !important;
+        border: 1px solid #e2e8f0 !important;
+        padding: 10px 12px !important;
+        font-size: 8.5pt !important;
+        color: #1e293b !important;
+        border-radius: 6px !important;
+      }
+      .pros-cons-box strong { color: #0f766e !important; font-size: 9pt !important; }
+      .pros-cons-box ul { padding-left: 16px !important; margin: 4px 0 !important; }
+      .pros-cons-box li { color: #334155 !important; margin-bottom: 3px !important; }
+
+      .surgery-verdict {
+        background: #f8fafc !important;
+        border-left: 3.5pt solid #0f766e !important;
+        color: #0f172a !important;
+        font-size: 8.5pt !important;
+        padding: 8px 10px !important;
+        margin-top: 10px !important;
+        border-radius: 4px !important;
+      }
+      .surgery-verdict strong { color: #0f172a !important; }
+
+      .talk-box {
+        background: #f8fafc !important;
+        border: 1.5pt solid #cbd5e1 !important;
+        padding: 12pt 14pt !important;
+        margin-bottom: 14pt !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+        border-radius: 8px !important;
+      }
+      .talk-box h3 { color: #0f172a !important; font-size: 11pt !important; }
+      .talk-box p { color: #334155 !important; font-size: 9pt !important; }
+      .talk-script {
+        background: #ffffff !important;
+        border-left: 3pt solid #0284c7 !important;
+        color: #0f172a !important;
+        font-size: 9pt !important;
+        padding: 10px 12px !important;
+        border-radius: 4px !important;
+      }
+
+      .sjrh-card {
+        background: #f0fdfa !important;
+        border: 1.5pt solid #0f766e !important;
+        border-radius: 8px !important;
+        padding: 12pt 14pt !important;
+        margin-bottom: 14pt !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+      }
+      .sjrh-card h3 { color: #0f172a !important; font-size: 11pt !important; }
+      .sjrh-card p { color: #334155 !important; font-size: 9pt !important; }
+
+      .agenda-card {
+        background: #f8fafc !important;
+        border: 1.5pt solid #cbd5e1 !important;
+        border-radius: 8px !important;
+        padding: 12pt 14pt !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+      }
+      .agenda-card h3 { color: #0f172a !important; font-size: 11pt !important; }
+      .agenda-card li { color: #334155 !important; margin-bottom: 4px !important; }
+
+      /* Home Protocols Checklist Print Styles */
+      #view-checklist > div {
+        background: #ffffff !important;
+        border: none !important;
+        padding: 0 !important;
+      }
+      #view-checklist h2 { color: #0f172a !important; font-size: 14pt !important; margin-bottom: 10px !important; }
+      #view-checklist > div > div {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 10pt !important;
+      }
+      #view-checklist > div > div > div {
+        background: #ffffff !important;
+        border: 1.5pt solid #cbd5e1 !important;
+        color: #0f172a !important;
+        border-radius: 6px !important;
+        padding: 10pt !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+      }
+      #view-checklist h3 { color: #0f172a !important; font-size: 10pt !important; }
+      #view-checklist p { color: #334155 !important; font-size: 8.5pt !important; }
+
+      /* Calendar & Timeline Print Styles */
+      .calendar-card {
+        background: white !important;
+        border: none !important;
+        padding: 0 !important;
+      }
+      .calendar-title-wrap h2 { color: #0f172a !important; font-size: 14pt !important; }
+      .calendar-title-wrap p { color: #475569 !important; font-size: 8.5pt !important; }
+      .calendar-grid-header > div {
+        background: #f1f5f9 !important;
+        color: #1e293b !important;
+        border: 1px solid #cbd5e1 !important;
+        font-weight: 700 !important;
+      }
+      .cal-cell {
+        background: white !important;
+        border: 1px solid #cbd5e1 !important;
+        color: #0f172a !important;
+        min-height: 55px !important;
+      }
+      .cal-date-num { color: #0f172a !important; }
+      .cal-badge { border: 1px solid #94a3b8 !important; }
+      .timeline-wrap { border-left-color: #cbd5e1 !important; margin-top: 14pt !important; }
+      .timeline-item { color: #0f172a !important; page-break-inside: avoid !important; }
+      .timeline-heading { color: #0f172a !important; }
+      .timeline-text { color: #334155 !important; }
+
+      /* Data Table Print */
+      .table-box { background: white !important; border: 1px solid #cbd5e1 !important; }
+      .data-table th { background: #f1f5f9 !important; color: #1e293b !important; border-bottom: 2px solid #cbd5e1 !important; }
+      .data-table td { color: #1e293b !important; border-bottom: 1px solid #e2e8f0 !important; }
+
+      /* Clinical Paper Brief Print */
+      .clinical-paper {
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+        background: white !important;
+        color: #0f172a !important;
+      }
+      .cp-title { color: #0f172a !important; font-size: 14pt !important; }
+      .cp-meta-grid { background: #f8fafc !important; border: 1px solid #cbd5e1 !important; }
+      .cp-meta-item { color: #334155 !important; border-right-color: #cbd5e1 !important; }
+      .cp-section-title { color: #0f766e !important; border-bottom-color: #0f766e !important; }
+      .cp-box { background: #ffffff !important; border: 1px solid #cbd5e1 !important; color: #1e293b !important; }
     }
     @media (max-width: 680px) {
       .clinical-paper { padding: 20px 16px; }
@@ -887,7 +1112,8 @@
       </div>
       <div class="btn-group no-print">
         <button class="btn btn-secondary" onclick="copyShareUrl()" style="background:rgba(20,184,166,0.18); border-color:var(--teal-light); color:#5eead4;">🔗 Copy Link for Sisters</button>
-        <button class="btn btn-secondary" onclick="copyUpdateForSoma()">📋 Copy for Soma</button>
+        <button class="btn btn-secondary" onclick="printView('surgery')" style="background:linear-gradient(135deg, rgba(20,184,166,0.25), rgba(59,130,246,0.25)); border-color:#38bdf8; color:#93c5fd; font-weight:700;">🖨️ Print Surgery Guide</button>
+        <button class="btn btn-secondary" onclick="window.print()" title="Print currently active tab">🖨️ Print Tab</button>
         <button class="btn btn-primary" onclick="openLogModal()">+ Log Today's Vitals</button>
       </div>
     </div>
@@ -1079,6 +1305,31 @@
 
     <!-- VIEW: SURGICAL OPTIONS DECISION GUIDE -->
     <div id="view-surgery" class="view-panel">
+      <!-- PRINT HEADER (ONLY VISIBLE ON PRINTED PAGE) -->
+      <div class="print-header print-only">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; border-bottom:2px solid #0f766e; padding-bottom:8px; margin-bottom:14px;">
+          <div>
+            <h1 style="font-size:16pt; font-weight:800; color:#0f172a; margin:0 0 4px 0;">🧠 MOM'S TRIGEMINAL NEURALGIA SURGICAL DECISION GUIDE</h1>
+            <p style="font-size:9pt; color:#475569; margin:0;">Clinical Procedure Evaluation &bull; Saint John Regional Hospital Neurosurgery Pathway (Dr. George Kolyvas) &bull; December Neurologist Consultation</p>
+          </div>
+          <div style="text-align:right; font-size:8.5pt; color:#64748b;">
+            <strong>Patient:</strong> Mom<br>
+            <strong>Prepared by:</strong> Family Care OS
+          </div>
+        </div>
+      </div>
+
+      <!-- NO-PRINT ACTION BAR -->
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:16px; background:rgba(15,23,42,0.6); border:1px solid rgba(56,189,248,0.25); border-radius:10px; padding:12px 18px;" class="no-print">
+        <div>
+          <strong style="color:#38bdf8; font-size:0.95rem; display:block;">🖨️ Print-Ready Surgical Comparison &amp; Doctor Script</strong>
+          <span style="font-size:0.82rem; color:#94a3b8;">Formatted for 8.5x11 paper for Mom, Colleen, Christina, or to hand directly to the Neurologist in December.</span>
+        </div>
+        <button class="btn btn-secondary" onclick="window.print()" style="background:linear-gradient(135deg, #0f766e, #0284c7); color:white; border:none; padding:10px 18px; font-weight:700; box-shadow:0 4px 12px rgba(15,118,110,0.3); display:inline-flex; align-items:center; gap:6px;">
+          🖨️ Print This Surgical Guide
+        </button>
+      </div>
+
       <div class="surgery-intro">
         <h2 style="font-size: 1.35rem; font-weight: 800; color: white; margin-bottom: 6px;">🧠 Trigeminal Neuralgia Surgical Decision Matrix</h2>
         <p style="font-size: 0.88rem; color: #cbd5e1; line-height: 1.5;">
@@ -1244,7 +1495,7 @@
       </div>
 
       <!-- LOCAL SAINT JOHN NEUROSURGERY PATHWAY -->
-      <div style="background:linear-gradient(135deg, rgba(20, 184, 166, 0.15), rgba(59, 130, 246, 0.15)); border:1.5px solid rgba(20, 184, 166, 0.4); border-radius:12px; padding:20px; margin-bottom:20px;">
+      <div class="sjrh-card" style="background:linear-gradient(135deg, rgba(20, 184, 166, 0.15), rgba(59, 130, 246, 0.15)); border:1.5px solid rgba(20, 184, 166, 0.4); border-radius:12px; padding:20px; margin-bottom:20px;">
         <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:10px; margin-bottom:10px;">
           <div>
             <span style="font-size:0.72rem; text-transform:uppercase; letter-spacing:0.5px; color:#5eead4; font-weight:700;">Local Hospital &amp; Surgeon Confirmed</span>
@@ -1263,7 +1514,7 @@
       </div>
 
       <!-- DECEMBER NEUROLOGIST APPOINTMENT AGENDA -->
-      <div style="background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:20px; margin-bottom:24px;">
+      <div class="agenda-card" style="background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:20px; margin-bottom:24px;">
         <h3 style="font-size:1.1rem; color:#38bdf8; margin-bottom:12px;">📋 Questions &amp; Exact Referral Script for December Neurologist</h3>
         <ol style="padding-left:22px; font-size:0.88rem; line-height:1.6; color:var(--text-sub);">
           <li><strong>Direct SJRH Neurosurgery Requisition:</strong> <em>"Mom is failing medical therapy due to severe cerebellar ataxia, dragging feet, and near-falls on Tegretol + Gabapentin. Please submit an immediate consult referral to <strong>Dr. George Kolyvas / Division of Neurosurgery at the Saint John Regional Hospital</strong> for evaluation of minimally invasive <strong>Percutaneous Balloon Compression (PBC)</strong>."</em></li>
@@ -1352,6 +1603,31 @@
 
     <!-- VIEW 4: HOME COMFORT & SAFETY GUIDE -->
     <div id="view-checklist" class="view-panel">
+      <!-- PRINT HEADER (ONLY VISIBLE ON PRINTED PAGE) -->
+      <div class="print-header print-only">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; border-bottom:2px solid #0f766e; padding-bottom:8px; margin-bottom:14px;">
+          <div>
+            <h1 style="font-size:16pt; font-weight:800; color:#0f172a; margin:0 0 4px 0;">🛡️ MOM'S HOME COMFORT, SAFETY &amp; KNEE REHAB PROTOCOLS</h1>
+            <p style="font-size:9pt; color:#475569; margin:0;">Left Inner Knee (Medial Meniscus) Hinged Brace Guide &bull; 4 Zero-Pinch Exercises &bull; BP Med Staggering &bull; Fall Defense</p>
+          </div>
+          <div style="text-align:right; font-size:8.5pt; color:#64748b;">
+            <strong>Patient:</strong> Mom<br>
+            <strong>Prescribed:</strong> Nov 6, 2026 Clinic Follow-Up
+          </div>
+        </div>
+      </div>
+
+      <!-- NO-PRINT ACTION BAR -->
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:16px; background:rgba(15,23,42,0.6); border:1px solid rgba(20,184,166,0.3); border-radius:10px; padding:12px 18px;" class="no-print">
+        <div>
+          <strong style="color:var(--teal-light); font-size:0.95rem; display:block;">🖨️ Print-Ready Home, Knee &amp; Medication Protocols</strong>
+          <span style="font-size:0.82rem; color:#94a3b8;">Formatted for 8.5x11 paper for Mom's bedside, fridge, or for family caregivers.</span>
+        </div>
+        <button class="btn btn-secondary" onclick="window.print()" style="background:linear-gradient(135deg, #0f766e, #0284c7); color:white; border:none; padding:10px 18px; font-weight:700; box-shadow:0 4px 12px rgba(15,118,110,0.3); display:inline-flex; align-items:center; gap:6px;">
+          🖨️ Print Home &amp; Knee Protocols
+        </button>
+      </div>
+
       <div style="background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:24px; margin-bottom:24px;">
         <h2 style="color:var(--teal-light); margin-bottom:12px;">🛡️ Practical Home Protocols for Mom</h2>
         
@@ -1392,22 +1668,23 @@
           </div>
 
           <div style="background:rgba(0,0,0,0.25); border-radius:10px; padding:16px; border-left:4px solid #06b6d4;">
-            <h3 style="font-size:1rem; margin-bottom:6px; color:#a5f3fc;">🦵 Hinged Metal Knee Brace (Meniscus Tear Protection)</h3>
+            <h3 style="font-size:1rem; margin-bottom:6px; color:#a5f3fc;">🦵 Left Inner Knee: Hinged Brace (Medial Meniscus Protection)</h3>
             <p style="font-size:0.86rem; color:var(--text-sub); line-height:1.5;">
-              Doctor confirmed knee pain is a <strong>meniscus tear</strong>. A simple pull-on sleeve fails because it doesn't block rotary twisting or joint shearing. 
-              <br>• <strong>Recommended Design:</strong> Front wrap-around style with <strong>bilateral polycentric aluminum metal hinges</strong> and an open patella (kneecap donut). Wrap-around is vastly easier to put on without bending or tugging.
-              <br>• <strong>Fit &amp; Safety:</strong> Align hinge pivot with center of kneecap. Ensure two fingers slip under straps so it doesn't pinch the outer peroneal nerve or calf veins. Wear during all walking/weight bearing; remove for resting/elevating.
+              Doctor confirmed knee pain is a <strong>meniscus tear located on her Left Inner Knee (Medial Compartment)</strong>. The inner knee absorbs 60–70% of walking weight. When she limps or drags her foot, it crushes this inner joint line.
+              <br>• <strong>Recommended Design:</strong> Front wrap-around style with <strong>bilateral polycentric aluminum metal hinges</strong> and an open patella. Wrap-around is vastly easier to put on while seated without painful tugging.
+              <br>• <strong>Inner Hinge Placement:</strong> Fasten on the <strong>LEFT leg</strong> with the inner metal hinge centered directly over the tender inner knee joint line. This rigid metal stay blocks inward "varus" bowing and rotary twisting, physically opening up space in her left inner knee.
+              <br>• <strong>Side-Sleeping Pillow:</strong> When resting or sleeping on her side, place a soft pillow between her knees so her right knee doesn't press down on her tender left inner knee.
             </p>
           </div>
 
           <div style="background:rgba(0,0,0,0.25); border-radius:10px; padding:16px; border-left:4px solid #10b981;">
-            <h3 style="font-size:1rem; margin-bottom:6px; color:#a7f3d0;">🌊 4 "Zero-Pinch" Meniscus Strengthening &amp; De-Puffing Exercises</h3>
+            <h3 style="font-size:1rem; margin-bottom:6px; color:#a7f3d0;">🌊 4 "Zero-Pinch" Left Knee Strengthening &amp; De-Puffing Exercises</h3>
             <p style="font-size:0.86rem; color:var(--text-sub); line-height:1.5;">
               <em>Zero squats, zero lunges, zero loaded twisting. Perform while lying in bed or sitting on couch:</em>
-              <br>1. <strong>Quad Sets (Isometric Towel Press):</strong> Place rolled washcloth under knee. Press back of knee flat down into bed to tighten front thigh. Hold 5s, relax. 10 reps. (Wakes up quads with zero cartilage friction).
-              <br>2. <strong>Straight Leg Raises (SLR):</strong> Lock knee straight, lift heel 6–10 inches off bed. Hold 2s, lower slowly. 8–10 reps.
-              <br>3. <strong>Ankle Pumps (Lymphatic Pump):</strong> Point toes forward, pull back to shins continuously. 25–30 pumps. (Calf muscle pump squeezes fluid and swelling out of the knee).
-              <br>4. <strong>Seated Smooth Heel Slides:</strong> Slide heel back gently on a smooth towel over hardwood/tile to comfortable bend, then slide straight. 10 reps. (Circulates synovial joint fluid to heal cartilage).
+              <br>1. <strong>Quad Sets (VMO Inner Thigh Focus):</strong> Place rolled hand towel under left knee. With toes slightly turned outward 5–10°, press back of knee flat down to tighten inner thigh (VMO). Hold 5s, relax. 10 reps. (Wakes up quads, pulls pressure off the inner meniscus).
+              <br>2. <strong>Straight Leg Raises (SLR):</strong> Lock left knee straight, lift heel 6–10 inches off bed. Hold 2s, lower slowly. 8–10 reps. (Builds quad and hip stability with zero knee bend).
+              <br>3. <strong>Ankle Pumps (Lymphatic Pump):</strong> Point toes forward, pull back to shins continuously. 25–30 pumps. (Calf muscle pump squeezes fluid and swelling out of the inner knee).
+              <br>4. <strong>Seated Smooth Heel Slides:</strong> Slide left heel back gently on a smooth towel over hardwood/tile to comfortable bend (zero pinch!), then slide straight. 10 reps. (Circulates healing synovial fluid).
             </p>
           </div>
 
@@ -1419,9 +1696,9 @@
           </div>
 
           <div style="background:rgba(0,0,0,0.25); border-radius:10px; padding:16px; border-left:4px solid #38bdf8;">
-            <h3 style="font-size:1rem; margin-bottom:6px; color:#bae6fd;">🧊 R.I.C.E. Puffiness Clearing Protocol</h3>
+            <h3 style="font-size:1rem; margin-bottom:6px; color:#bae6fd;">🧊 Left Inner Knee Elevation &amp; Ice Protocol</h3>
             <p style="font-size:0.86rem; color:var(--text-sub); line-height:1.5;">
-              Whenever resting, have Mom lie back with her leg elevated on <strong>2 to 3 pillows above heart level</strong> for 15–20 minutes. Apply a pliable gel ice pack wrapped in a tea towel over the knee. Gravity + cold naturally constricts micro-capillaries and drains inflammatory effusion.
+              Whenever resting, have Mom lie back with her left leg elevated on <strong>2 to 3 pillows above heart level</strong> for 15–20 minutes. Apply a pliable gel ice pack wrapped in a tea towel over the left inner joint line. Gravity + cold naturally constricts micro-capillaries and drains inflammatory effusion.
             </p>
           </div>
         </div>
@@ -1783,6 +2060,15 @@
       if (target) target.classList.add('active');
       if (btn) btn.classList.add('active');
       window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function printView(viewName) {
+      if (viewName) {
+        switchView(viewName);
+      }
+      setTimeout(() => {
+        window.print();
+      }, 200);
     }
 
     function openLogModal() {

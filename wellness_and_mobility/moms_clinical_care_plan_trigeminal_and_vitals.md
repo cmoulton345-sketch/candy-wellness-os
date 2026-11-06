@@ -127,37 +127,39 @@ When medications reach toxic thresholds where the side effects (ataxia, falls, c
 * **⚠️ Critical Orthostatic Hypotension Alert:** Antihypertensives act synergistically with Carbamazepine (Tegretol) and Gabapentin. Taking these together creates peak overlapping vasodilation and cerebellar depression, causing blood to pool in the lower body upon standing $\rightarrow$ sudden cerebral hypoperfusion $\rightarrow$ catastrophic blackouts/falls.
 * **Mandatory Staggering Protocol:** **NEVER** administer the new blood pressure pill at the same time as morning Tegretol and Gabapentin. Separate dosing by **2 to 3 hours** (e.g., Tegretol at 8:00 AM, BP med at 11:00 AM, or take BP med at bedtime if directed by her physician). Always measure seated vs. 1-minute standing BP daily.
 
-### B. Knee Diagnosis: Meniscus Tear & Hinged Metal Brace Selection
-* **The Pathology:** The meniscus is the knee's fibrocartilage shock absorber. Weight-bearing rotary shear (twisting while dragging feet or limping) pinches the torn meniscus flap between the femur and tibia, triggering acute joint-line pain, reactive synovial effusion ("puffiness"), and sudden reflex joint buckling ("giving way").
-* **Why an Elastic Sleeve Fails:** Simple compression sleeves provide warmth and mild edema control, but **zero mechanical resistance against rotary twisting or hyperextension buckling**.
-* **The Recommended Brace Architecture:** **Wrap-Around Hinged Knee Brace with Dual Polycentric Metal Stays/Hinges & Open Patella Buttress**.
-  * **Front Wrap-Around Design:** Avoids the painful struggle of pulling a tight sleeve over an inflamed, swollen knee and foot. Mom wraps it around while seated and secures the opposing hook-and-loop Velcro straps.
-  * **Dual Polycentric Aluminum Hinges:** Rigid side metal stays mirror natural knee articulation while physically blocking lateral/medial shearing and hyperextension, preventing the torn meniscus from being pinched or ground down.
+### B. Knee Diagnosis: Left Inner Knee (Medial Meniscus Tear) & Hinged Brace Selection
+* **Anatomical Confirmation — Left Inner Knee (Medial Meniscus):** The inner knee joint line houses the **medial meniscus**, which is anatomically anchored to the deep Medial Collateral Ligament (MCL). Unlike the outer meniscus, it cannot shift out of harm's way. 
+* **The Biomechanics:** The medial compartment bears **60% to 70% of total knee load** during weight-bearing. When Mom drags her feet (from Tegretol/Gabapentin ataxia) or limps, every step exerts severe rotary torque and inward "varus" shear directly over this torn inner cartilage horn, resulting in acute medial joint pain, reactive synovial effusion ("puffiness"), and sudden reflex "giving way."
+* **Why an Elastic Sleeve Fails:** Simple compression sleeves provide warmth and mild edema control, but provide **zero mechanical resistance against rotary twisting or inward joint collapse**.
+* **The Recommended Brace Architecture:** **Front Wrap-Around Hinged Knee Brace with Dual Polycentric Metal Stays & Open Patella Buttress**.
+  * **Front Wrap-Around Design:** Avoids the painful struggle of pulling a tight sleeve over an inflamed, swollen left knee and foot. Mom wraps it around while seated and secures the opposing hook-and-loop Velcro straps.
+  * **Dual Polycentric Aluminum Hinges (Medial Offloading):** Rigid side metal stays mirror natural knee articulation while physically blocking inward "varus" collapse and lateral/medial shearing. The **inner (medial) metal hinge must sit flush over the tender inner joint line**, physically acting as an external pillar that opens up the medial compartment and stops the femur from crushing the torn meniscus.
   * **Open Patella (Kneecap Cutout):** Stabilizes patellar tracking and prevents direct pressure against the kneecap while allowing reactive joint fluid to disperse.
   * **Fitting & Wearing Rules:** Align hinge pivots with the center of the kneecap. Ensure two fingers slip under straps to prevent peroneal nerve compression. Wear during all upright walking/weight-bearing; **remove when resting, elevating, or sleeping**.
+  * **The "Side-Sleeping Pillow" Rule:** When resting or sleeping on her side, place a soft pillow between her knees so her right knee does not rest directly on or compress her inflamed left inner knee.
 
-### C. 4 "Zero-Pinch" Meniscus Strengthening & De-Puffing Exercises
+### C. 4 "Zero-Pinch" Left Knee Strengthening & De-Puffing Exercises
 *(Zero squats, zero lunges, zero loaded twisting. Perform while lying in bed or sitting on couch)*:
-1. **Quad Sets (Isometric Towel Roll Press):**  
-   * *Method:* Lie in bed or on couch with leg straight. Place a rolled washcloth under the ankle or knee. Press the back of the knee flat into the bed to tighten the front thigh muscle (quadriceps).
+1. **Quad Sets with VMO Focus (Isometric Towel Roll Press):**  
+   * *Method:* Lie in bed or on couch with left leg straight. Place a rolled washcloth under the left knee. Turn left toes slightly outward (5–10° external rotation). Press the back of the knee flat into the bed to tighten the teardrop-shaped inner thigh muscle (Vastus Medialis Oblique / VMO).
    * *Hold:* 5 seconds, relax for 3 seconds. 10 repetitions, 2–3 times daily.
-   * *Benefit:* Wakes up the vastus medialis (VMO) without any cartilage compression or joint movement.
+   * *Benefit:* Selectively activates the VMO, which acts as an internal stabilizer pulling dynamic tension *away* from the torn medial meniscus without bearing compressive weight.
 2. **Straight Leg Raises (SLR):**  
-   * *Method:* Lie flat, bend the *other* (healthy) knee with foot flat. Lock the injured knee completely straight, pull toes toward shin, and lift heel 6–10 inches off the mattress.
+   * *Method:* Lie flat, bend the *other* (right) knee with foot flat. Lock the left knee completely straight, pull toes toward shin, and lift heel 6–10 inches off the mattress.
    * *Hold:* 2 seconds at the top, lower smoothly. 8–10 repetitions.
-   * *Benefit:* Strengthens the entire anterior chain and dynamic knee stabilizers without bending the torn meniscus.
+   * *Benefit:* Strengthens the entire anterior chain and dynamic knee stabilizers without bending the torn inner meniscus.
 3. **Ankle Pumps (The Lymphatic Muscle Pump):**  
    * *Method:* Lying down or seated with legs elevated. Rhythmically point toes forward (gas pedal) and pull them back toward shins continuously.
    * *Dose:* 25–30 pumps, 4–5 times daily.
    * *Benefit:* The calf muscles act as the "peripheral lymphatic heart," mechanically squeezing pooled edema and synovial fluid up out of the lower leg and knee joint.
 4. **Seated Smooth Heel Slides (Synovial Fluid Circulation):**  
-   * *Method:* Sit tall on a sturdy chair. Place a smooth towel under her foot over hardwood, tile, or lino. Gently slide the heel backward into a comfortable bend (stop before any pain/pinch!), then slide forward back to straight.
+   * *Method:* Sit tall on a sturdy chair. Place a smooth towel under her left foot over hardwood, tile, or lino. Gently slide the heel backward into a comfortable bend (stop before any pain/pinch!), then slide forward back to straight.
    * *Dose:* 10 smooth, slow repetitions.
    * *Benefit:* Lubricates the articular cartilage with nutrient-rich synovial fluid without bearing compressive bodyweight.
 
 ### D. R.I.C.E. Joint De-Puffing Protocol
-* **Elevate Above Heart Level:** When resting, elevate the leg on 2–3 pillows so the knee rests above heart level for 15–20 minutes. Gravity naturally drains dependent inflammatory fluid.
-* **15-Minute Cold Gel Pack:** Apply a pliable gel ice pack wrapped in a thin tea towel over the knee joint line for 15 minutes after movement. Vasoconstriction shuts down reactive capillary leaking and dulls pain.
+* **Elevate Above Heart Level:** When resting, elevate the left leg on 2–3 pillows so the knee rests above heart level for 15–20 minutes. Gravity naturally drains dependent inflammatory fluid.
+* **15-Minute Cold Gel Pack:** Apply a pliable gel ice pack wrapped in a thin tea towel over the left inner joint line for 15 minutes after movement. Vasoconstriction shuts down reactive capillary leaking and dulls pain.
 
 ---
 
