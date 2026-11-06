@@ -174,43 +174,59 @@
 
 ---
 
-### Week 1 on 20 mg: Initial Titration & Onboarding (Nov 6 – Nov 12)
-* **Fri, Nov 6 (Day 1 on Vyvanse 20mg):**
+### Final 10 mg Transition Days (Nov 6 – Nov 7)
+* **Fri, Nov 6 (Day 20 on Stimulant Therapy — 10 mg Vyvanse):**
+  * Taken at 8:00 AM w/ Protein Breakfast? [ ] Yes  [ ] No
+  * Focus & Fidgeting: _____ | Mood: _________________________________________
+  * Lunch Appetite: _____________ | Headaches/Physical: _______________________
+  * Nighttime Drink: Tried Collagen + Glycine (3g) + Low Vit C? [ ] Yes
+  * Notes: Remaining on 10 mg today; starting 20 mg on Sunday.
+
+* **Sat, Nov 7 (Day 21 — 10 mg Vyvanse):**
+  * Taken at 8:00 AM w/ Food? [ ] Yes  [ ] No
+  * Focus: _____ | Mood: ________________ | Lunch: ___________________________
+  * Headaches / Sleep: ___________________ | OCD Checking: ___________________
+  * Notes: Final 10 mg day before Sunday step-up.
+
+---
+
+### Week 1 on 20 mg: Official Titration & Onboarding (Nov 8 – Nov 14)
+* **Sun, Nov 8 (Day 1 on Vyvanse 20mg — Official Step-Up Day):**
   * Taken at 8:00 AM w/ Protein Breakfast? [ ] Yes  [ ] No
   * Focus & Executive Function (1-5): _____
-  * Mood & Affect (Vibrant vs. Flat): __________________________________________
-  * Lunch Appetite: ___________________________________________________________
+  * Mood & Affect (Vibrant vs. Flat / Blah): ____________________________________
+  * Lunch Appetite (12–2 PM): _________________________________________________
   * Physical / Headaches / Vitals: _____________________________________________
   * Afternoon Rebound (3:30–5:00 PM): __________________________________________
-  * Sleep Onset: ______________________________________________________________
-  * OCD Loops & General Notes: ________________________________________________
+  * Evening Settling & Sleep Onset: ___________________________________________
+  * OCD Loops & General Notes: Weekend home environment to observe first 20mg response.
 
-* **Sat, Nov 7 (Day 2 on 20mg):**
+* **Mon, Nov 9 (Day 2 on 20mg — First Weekday on 20mg):**
   * Taken 8am w/ Food? [ ] Yes | Focus: ___ | Mood: __________________________
   * Lunch Appetite: _____________ | Headaches/Physical: _______________________
   * Rebound/Evening: ___________ | Sleep: ____________ | OCD: ________________
 
-* **Sun, Nov 8 (Day 3 on 20mg):**
+* **Tue, Nov 10 (Day 3 on 20mg):**
   * Taken 8am w/ Food? [ ] Yes | Focus: ___ | Mood: __________________________
   * Lunch Appetite: _____________ | Headaches/Physical: _______________________
   * Rebound/Evening: ___________ | Sleep: ____________ | OCD: ________________
 
-* **Mon, Nov 9 (Day 4 on 20mg):**
+* **Wed, Nov 11 (Day 4 on 20mg):**
   * Taken 8am w/ Food? [ ] Yes | Focus: ___ | Mood: __________________________
   * Lunch Appetite: _____________ | Headaches/Physical: _______________________
   * Rebound/Evening: ___________ | Sleep: ____________ | OCD: ________________
 
-* **Tue, Nov 10 (Day 5 on 20mg):**
+* **Thu, Nov 12 (Day 5 on 20mg):**
   * Taken 8am w/ Food? [ ] Yes | Focus: ___ | Mood: __________________________
   * Lunch Appetite: _____________ | Headaches/Physical: _______________________
   * Rebound/Evening: ___________ | Sleep: ____________ | OCD: ________________
 
-* **Wed, Nov 11 (Day 6 on 20mg):**
+* **Fri, Nov 13 (Day 6 on 20mg):**
   * Taken 8am w/ Food? [ ] Yes | Focus: ___ | Mood: __________________________
   * Lunch Appetite: _____________ | Headaches/Physical: _______________________
   * Rebound/Evening: ___________ | Sleep: ____________ | OCD: ________________
 
-* **Thu, Nov 12 (Day 7 on 20mg — Week 1 Review):**
+* **Sat, Nov 14 (Day 7 on 20mg — Week 1 Review):**
   * Taken 8am w/ Food? [ ] Yes | Focus: ___ | Mood: __________________________
   * Lunch Appetite: _____________ | Headaches/Physical: _______________________
   * Notes / Week 1 Synthesis: _________________________________________________
