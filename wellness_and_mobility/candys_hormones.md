@@ -9,7 +9,7 @@
   * **Current Bottle Bridge Dose:** **1 1/2 pumps** nightly during the "ON" luteal window until current bottle finishes.
   * **New Refill Dose:** Compounded at **3.75 strength** &rarr; will be **1 pump** nightly during the "ON" window.
   * **OFF Phase:** Days 1–13 (Follicular reset) cream is paused (capsule continues nightly).
-* **Medication Context:** Vyvanse (40mg), Ozempic (18 clicks).
+* **Medication Context:** Vyvanse (40mg), Ozempic (18 clicks ~0.25mg QW; prescribed by Dr. Hui in Toronto; 100% active coverage via **Canada Life**; successfully maintained 145–150 lbs for ~2 years; December 2026 virtual follow-up planned).
 * **Surgical Status:** Hysterectomy (uterus removed), **ovaries intact and cycling (~25 days)**.
 
 ---
