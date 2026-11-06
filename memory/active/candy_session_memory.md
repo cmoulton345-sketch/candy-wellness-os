@@ -4,6 +4,17 @@
 
 ---
 
+- **2026-11-06 (Morning)** (SOMA):
+  - **Candy's Physical Biometrics & Hip Relief Breakthrough (Cycle 5, Day 5):**
+    - Biometrics: Oura Temp **-0.3°F** (below baseline, cool follicular Push phase), Mouth Temp **35.9°C** (rising toward baseline), Sleep **79 🌙**, Readiness **81 🟢** (Optimal green recovery zone!). Scale skipped (protecting peace).
+    - Symptoms & Clinical Triage:
+      1. *Hip Flexor / C-Sign Breakthrough:* "Not as much pain so that is good!" Huge validation that halting deep lunge stretches, resting the psoas, and using joint centration (Psoas Lounge / gravity decompression) de-escalated the anterior femoral impingement immediately.
+      2. *Zero Itch:* Histamine flare completely resolved as follicular estrogen baseline stabilizes and mast cells settle.
+      3. *Morning Puffiness & Tight Rings:* First night of oral progesterone capsule (150mg bridge) caused expected peripheral vascular relaxation and dependent overnight interstitial fluid holding in fingers/hands. Reassured that this will mobilize and drain as daytime movement and hydration commence.
+      4. *Energy & Outlook:* "Tired but good" — normal end-of-week circadian fatigue + mild GABA sedative residue.
+    - BHRT Regimen Executed: Morning BiEst **1/2 pump** (Day 1 of new lower dose), Testosterone **1 pump** (Friday weekday final), Progesterone cream paused (OFF), Progesterone oral capsule bedtime.
+    - System Sync: Updated `candys_hormones.md` (Day 5 entry) and `candy_cycle_calendar_sept_oct_2026.html` (Day 5 live status).
+
 - **2026-11-05 (Afternoon)** (SOMA):
   - **Dr. Jenna Weeks BHRT Consultation Successfully Completed:**
     - *Protocol Transformation & Agreement:*
