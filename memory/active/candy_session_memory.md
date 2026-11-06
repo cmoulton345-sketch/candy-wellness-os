@@ -2,6 +2,25 @@
 
 > **Active Log:** Voice & Persona Interactions with Candy
 
+- **2026-11-06 (Afternoon)** (SOMA):
+  - **Mom's Doctor Visit Follow-Up: Low-Dose BP Med, Meniscus Diagnosis & Hinged Brace Selection:**
+    - *Physician Visit Updates:*
+      1. **Low-Dose Blood Pressure Med Initiated:** Prescribed to control episodic hypertension surges from trigeminal attacks.
+      2. **Knee Diagnosis Confirmed (Meniscus Tear):** Doctor diagnosed Mom's severe knee pain and limp as a meniscus tear and recommended a stabilizing brace with metal side pieces.
+    - *Critical Pharmacological Safety Protocol (Orthostatic Crash Prevention):*
+      - Warned Candy that adding an antihypertensive on top of Carbamazepine (Tegretol), Gabapentin, and low sodium creates acute orthostatic hypotension.
+      - **Mandatory Rule:** Stagger new BP med by 2–3 hours away from morning Tegretol and Gabapentin. Never take together at 8:00 AM.
+    - *Hinged Knee Brace Recommendation:*
+      - Prescribed: **Front Wrap-Around Hinged Knee Brace with Dual Polycentric Aluminum Hinges & Open Patella Buttress**.
+      - Wrap-around design eliminates painful pull-on struggles; dual metal hinges prevent rotary twisting and hyperextension, stopping the torn meniscus from being pinched or crushed.
+    - *4 Zero-Pinch Meniscus Strengthening & De-Puffing Exercises Prescribed:*
+      1. Quad Sets (Isometric Towel Roll Press) — wakes up VMO with zero joint shearing.
+      2. Straight Leg Raises (SLR) — anterior chain strength without bending.
+      3. Ankle Pumps — calf muscle pump to mechanically drain pooled edema and knee effusion.
+      4. Seated Smooth Heel Slides — circulates synovial fluid to nourish cartilage.
+      5. R.I.C.E. Protocol (15-min ice pack + leg elevation on 2–3 pillows above heart level).
+    - *Ecosystem Synced:* Updated `moms_care_tracker.html` (View 4, Timeline, Nov 6 default data, storage `v4`), `wellness_and_mobility/moms_clinical_care_plan_trigeminal_and_vitals.md`, and committed/pushed to GitHub.
+
 - **2026-11-06 (Midday)** (SOMA):
   - **Dr. Hui (Toronto) Ozempic Maintenance Consultation Strategy & December Virtual Booking:**
     - *Candy's Objectives:*
