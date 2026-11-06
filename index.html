@@ -323,7 +323,7 @@
 <nav>
   <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
     <div class="nav-logo" style="margin-bottom:0;">🌸 Candy's <span>Wellness OS</span></div>
-    <button onclick="alert('📱 Phone Link:\nhttp://192.168.2.22:8080\n\nOpen Safari or Chrome on your phone Wi-Fi and type this address!')" style="background:var(--rose-dim); border:1px solid var(--rose-glow); color:var(--rose); padding:5px 12px; border-radius:50px; font-size:0.75rem; font-weight:700; cursor:pointer;">📱 Phone App Link</button>
+    <button onclick="copyPhoneLink()" style="background:var(--rose-dim); border:1px solid var(--rose-glow); color:var(--rose); padding:5px 12px; border-radius:50px; font-size:0.75rem; font-weight:700; cursor:pointer;">📱 Phone App Link</button>
   </div>
   <div class="nav-tabs">
     <button class="nav-tab active" onclick="showPage('today',this)">Today</button>
@@ -400,6 +400,7 @@
     <div class="check-list">
       <div class="check-item" onclick="toggle(this)"><div class="check-box">✓</div><div><div class="check-label">🌅 Morning — 90/90 hips + cat-cow (3 min)</div><div class="check-sub">Breaks overnight stiffness</div></div></div>
       <div class="check-item" onclick="toggle(this)"><div class="check-box">✓</div><div><div class="check-label">🏋️ 6:30 PM — Workout</div><div class="check-sub" id="today-workout-sub">Push: Full strength session — go for it</div></div></div>
+      <div class="check-item" style="border-color:rgba(94,231,208,0.35); background:rgba(94,231,208,0.06);" onclick="showPage('hip-relief', document.querySelector('.nav-tab[onclick*=\'hip-relief\']'))"><div class="check-box" style="border-color:var(--teal); color:var(--teal);">🦵</div><div><div class="check-label" style="color:var(--teal);">C-Sign Hip &amp; Psoas Reset Hub</div><div class="check-sub">Pinching? Tap here for 3-step decompression &amp; safe exercise swaps.</div></div></div>
       <div class="check-item" onclick="toggle(this)"><div class="check-box">✓</div><div><div class="check-label">🌙 Bedtime — Legs Up the Wall (5-10 min)</div><div class="check-sub">Drains inflammation • Resets nervous system</div></div></div>
     </div>
   </div>
@@ -1274,6 +1275,15 @@ function copyHipResetSummary() {
     document.execCommand('copy');
     document.body.removeChild(ta);
     showToast('✓ Copied to clipboard!');
+  });
+}
+
+function copyPhoneLink() {
+  const url = 'https://cmoulton345-sketch.github.io/candy-wellness-os/';
+  navigator.clipboard.writeText(url).then(() => {
+    alert('📱 Live Phone App Link Copied!\n\n' + url + '\n\n1. Open Safari on your iPhone and paste this link.\n2. Tap the Share button (square with arrow pointing up at bottom).\n3. Tap "Add to Home Screen" to install it as an app icon!');
+  }).catch(() => {
+    prompt('Copy this link and open in Safari on your iPhone:', url);
   });
 }
 
