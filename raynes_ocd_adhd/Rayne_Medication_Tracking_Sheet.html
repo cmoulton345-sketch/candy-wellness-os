@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Rayne Moulton — Live Medication & Symptom Tracker (Nov 5 NP Prep)</title>
+  <title>Rayne Moulton — Live Medication & Symptom Tracker (Phase 2: Vyvanse 20mg)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
@@ -618,7 +618,7 @@
     <div class="header-top">
       <div class="brand-title">
         <span>🩺 Rayne’s Tracker</span>
-        <span class="brand-badge">Nov 5 NP Prep</span>
+        <span class="brand-badge">Phase 2: 20mg Trial</span>
       </div>
       <div class="header-actions">
         <button class="btn btn-secondary" onclick="openLogModal()">✏️ + Log Today</button>
@@ -640,23 +640,23 @@
       <div class="hero-stat">
         <div class="hero-label">Patient &amp; Protocol</div>
         <div class="hero-val">Rayne Moulton (18y)</div>
-        <div class="hero-sub">Fluoxetine 50mg + Vyvanse 10mg + Slynd 4mg</div>
+        <div class="hero-sub">Fluoxetine 50mg + Vyvanse 20mg + Slynd 4mg</div>
       </div>
       <div class="hero-stat">
         <div class="hero-label">Target Follow-Up</div>
-        <div class="hero-val" style="color:#60a5fa;">Thursday, Nov 5, 2026</div>
-        <div class="hero-sub">Nurse Practitioner Follow-Up</div>
+        <div class="hero-val" style="color:#60a5fa;">Early December 2026</div>
+        <div class="hero-sub">1-Month 20mg Evaluation</div>
       </div>
       <div class="hero-stat">
         <div class="hero-label">Current Phase Status</div>
-        <div class="hero-val" style="color:#34d399;">Day 18 on Vyvanse 10mg</div>
-        <div class="hero-sub">Pill Simplification &amp; 20mg Step Prep</div>
+        <div class="hero-val" style="color:#34d399;">Phase 2: Day 1 on 20mg</div>
+        <div class="hero-sub">Active Titration Period</div>
       </div>
     </div>
 
     <!-- CLINICAL BANNER -->
     <div class="clinical-banner no-print">
-      💡 <strong>Live Clinical Summary (Nov 4 Pre-NP Check-In):</strong> Day 18 on Vyvanse 10mg. Rayne is doing really well with OCD checking under Fluoxetine 50mg. Anxiety has been elevated lately with feelings "all over the map" (natural adrenaline let-down and emotional transition post-NBCC withdrawal). Focus has plateaued at 3/5 with high phone screen time (ADHD dopamine-seeking on a subtherapeutic stimulant dose). <strong>Tomorrow with NP Jen (Nov 5):</strong> Requesting pill burden reduction (Prozac 50mg prescribed as 1 x 40mg + 1 x 10mg) and evaluating stepping Vyvanse from 10mg to 20mg.
+      💡 <strong>Phase 2 Active (Nov 6 – Dec 8):</strong> Following the Nov 5 doctor consultation, Rayne is remaining on <strong>Fluoxetine 50mg</strong> to maintain solid OCD checking control, and has stepped up to <strong>Vyvanse 20mg</strong> daily. Over the next month, we are tracking executive function, school/daily focus, emotional affect (ensuring no emotional blunting/flatness), lunch appetite, and afternoon wear-off.
     </div>
 
     <!-- VIEW 1: INTERACTIVE CARDS -->
@@ -1231,24 +1231,651 @@
         displayDate: 'Thu, Nov 5',
         dayNumber: 19,
         taken: true,
-        focus: 0,
-        focusLabel: 'NP Visit',
-        mood: 'NP Follow-Up w/ Jen',
+        focus: 4,
+        focusLabel: 'Doctor Visit',
+        mood: 'Doctor Appointment Completed',
         appetite: 'Normal',
-        headache: 'Pending',
-        sleep: 'Pending',
+        headache: 'None',
+        sleep: 'Normal',
         ocd: 'Stable',
-        thumbPicking: 'Pending',
+        thumbPicking: 'Low',
         pms: false,
         fluShot: false,
-        notes: 'APPOINTMENT DAY: Nurse Practitioner follow-up with Jen. Agenda: (1) Simplify Prozac 50mg to 1x 40mg + 1x 10mg; (2) Evaluate Vyvanse increase from 10mg to 20mg; (3) Review transition anxiety vs. stable OCD checking.'
+        notes: 'DOCTOR APPOINTMENT COMPLETED: Doctor approved staying on Fluoxetine 50mg to protect OCD checking stability and increased Vyvanse from 10mg to 20mg daily. Phase 2 (20mg) begins Nov 6 for a 1-month evaluation.'
+      },
+      {
+        date: '2026-11-06',
+        displayDate: 'Fri, Nov 6',
+        dayNumber: 20,
+        v20Day: 1,
+        dose: '20mg',
+        taken: true,
+        focus: 0,
+        focusLabel: 'Day 1 (20mg)',
+        mood: 'First day on 20mg',
+        appetite: 'Normal',
+        headache: 'None',
+        sleep: 'Pending',
+        ocd: 'Stable',
+        thumbPicking: 'Low',
+        pms: false,
+        fluShot: false,
+        notes: 'Day 1 on Vyvanse 20mg. Taken at 8:00 AM with protein breakfast. Monitoring focus lift, affect stability (avoiding flatness), lunch appetite, and afternoon rebound.'
+      },
+      {
+        date: '2026-11-07',
+        displayDate: 'Sat, Nov 7',
+        dayNumber: 21,
+        v20Day: 2,
+        dose: '20mg',
+        taken: false,
+        focus: 0,
+        focusLabel: 'Pending',
+        mood: '',
+        appetite: '',
+        headache: '',
+        sleep: 'Pending',
+        ocd: 'Stable',
+        thumbPicking: 'Low',
+        pms: false,
+        fluShot: false,
+        notes: 'Phase 2: Day 2 on Vyvanse 20mg + Fluoxetine 50mg.'
+      },
+      {
+        date: '2026-11-08',
+        displayDate: 'Sun, Nov 8',
+        dayNumber: 22,
+        v20Day: 3,
+        dose: '20mg',
+        taken: false,
+        focus: 0,
+        focusLabel: 'Pending',
+        mood: '',
+        appetite: '',
+        headache: '',
+        sleep: 'Pending',
+        ocd: 'Stable',
+        thumbPicking: 'Low',
+        pms: false,
+        fluShot: false,
+        notes: 'Phase 2: Day 3 on Vyvanse 20mg + Fluoxetine 50mg.'
+      },
+      {
+        date: '2026-11-09',
+        displayDate: 'Mon, Nov 9',
+        dayNumber: 23,
+        v20Day: 4,
+        dose: '20mg',
+        taken: false,
+        focus: 0,
+        focusLabel: 'Pending',
+        mood: '',
+        appetite: '',
+        headache: '',
+        sleep: 'Pending',
+        ocd: 'Stable',
+        thumbPicking: 'Low',
+        pms: false,
+        fluShot: false,
+        notes: 'Phase 2: Day 4 on Vyvanse 20mg + Fluoxetine 50mg.'
+      },
+      {
+        date: '2026-11-10',
+        displayDate: 'Tue, Nov 10',
+        dayNumber: 24,
+        v20Day: 5,
+        dose: '20mg',
+        taken: false,
+        focus: 0,
+        focusLabel: 'Pending',
+        mood: '',
+        appetite: '',
+        headache: '',
+        sleep: 'Pending',
+        ocd: 'Stable',
+        thumbPicking: 'Low',
+        pms: false,
+        fluShot: false,
+        notes: 'Phase 2: Day 5 on Vyvanse 20mg + Fluoxetine 50mg.'
+      },
+      {
+        date: '2026-11-11',
+        displayDate: 'Wed, Nov 11',
+        dayNumber: 25,
+        v20Day: 6,
+        dose: '20mg',
+        taken: false,
+        focus: 0,
+        focusLabel: 'Pending',
+        mood: '',
+        appetite: '',
+        headache: '',
+        sleep: 'Pending',
+        ocd: 'Stable',
+        thumbPicking: 'Low',
+        pms: false,
+        fluShot: false,
+        notes: 'Phase 2: Day 6 on Vyvanse 20mg + Fluoxetine 50mg.'
+      },
+      {
+        date: '2026-11-12',
+        displayDate: 'Thu, Nov 12',
+        dayNumber: 26,
+        v20Day: 7,
+        dose: '20mg',
+        taken: false,
+        focus: 0,
+        focusLabel: 'Pending',
+        mood: '',
+        appetite: '',
+        headache: '',
+        sleep: 'Pending',
+        ocd: 'Stable',
+        thumbPicking: 'Low',
+        pms: false,
+        fluShot: false,
+        notes: 'End of Week 1 on 20mg Vyvanse. Review overall focus lift vs 3/5 plateau.'
+      },
+      {
+        date: '2026-11-13',
+        displayDate: 'Fri, Nov 13',
+        dayNumber: 27,
+        v20Day: 8,
+        dose: '20mg',
+        taken: false,
+        focus: 0,
+        focusLabel: 'Pending',
+        mood: '',
+        appetite: '',
+        headache: '',
+        sleep: 'Pending',
+        ocd: 'Stable',
+        thumbPicking: 'Low',
+        pms: false,
+        fluShot: false,
+        notes: 'Phase 2: Day 8 on Vyvanse 20mg + Fluoxetine 50mg.'
+      },
+      {
+        date: '2026-11-14',
+        displayDate: 'Sat, Nov 14',
+        dayNumber: 28,
+        v20Day: 9,
+        dose: '20mg',
+        taken: false,
+        focus: 0,
+        focusLabel: 'Pending',
+        mood: '',
+        appetite: '',
+        headache: '',
+        sleep: 'Pending',
+        ocd: 'Stable',
+        thumbPicking: 'Low',
+        pms: false,
+        fluShot: false,
+        notes: 'Phase 2: Day 9 on Vyvanse 20mg + Fluoxetine 50mg.'
+      },
+      {
+        date: '2026-11-15',
+        displayDate: 'Sun, Nov 15',
+        dayNumber: 29,
+        v20Day: 10,
+        dose: '20mg',
+        taken: false,
+        focus: 0,
+        focusLabel: 'Pending',
+        mood: '',
+        appetite: '',
+        headache: '',
+        sleep: 'Pending',
+        ocd: 'Stable',
+        thumbPicking: 'Low',
+        pms: false,
+        fluShot: false,
+        notes: 'Phase 2: Day 10 on Vyvanse 20mg + Fluoxetine 50mg.'
+      },
+      {
+        date: '2026-11-16',
+        displayDate: 'Mon, Nov 16',
+        dayNumber: 30,
+        v20Day: 11,
+        dose: '20mg',
+        taken: false,
+        focus: 0,
+        focusLabel: 'Pending',
+        mood: '',
+        appetite: '',
+        headache: '',
+        sleep: 'Pending',
+        ocd: 'Stable',
+        thumbPicking: 'Low',
+        pms: false,
+        fluShot: false,
+        notes: 'Phase 2: Day 11 on Vyvanse 20mg + Fluoxetine 50mg.'
+      },
+      {
+        date: '2026-11-17',
+        displayDate: 'Tue, Nov 17',
+        dayNumber: 31,
+        v20Day: 12,
+        dose: '20mg',
+        taken: false,
+        focus: 0,
+        focusLabel: 'Pending',
+        mood: '',
+        appetite: '',
+        headache: '',
+        sleep: 'Pending',
+        ocd: 'Stable',
+        thumbPicking: 'Low',
+        pms: false,
+        fluShot: false,
+        notes: 'Phase 2: Day 12 on Vyvanse 20mg + Fluoxetine 50mg.'
+      },
+      {
+        date: '2026-11-18',
+        displayDate: 'Wed, Nov 18',
+        dayNumber: 32,
+        v20Day: 13,
+        dose: '20mg',
+        taken: false,
+        focus: 0,
+        focusLabel: 'Pending',
+        mood: '',
+        appetite: '',
+        headache: '',
+        sleep: 'Pending',
+        ocd: 'Stable',
+        thumbPicking: 'Low',
+        pms: false,
+        fluShot: false,
+        notes: 'Phase 2: Day 13 on Vyvanse 20mg + Fluoxetine 50mg.'
+      },
+      {
+        date: '2026-11-19',
+        displayDate: 'Thu, Nov 19',
+        dayNumber: 33,
+        v20Day: 14,
+        dose: '20mg',
+        taken: false,
+        focus: 0,
+        focusLabel: 'Pending',
+        mood: '',
+        appetite: '',
+        headache: '',
+        sleep: 'Pending',
+        ocd: 'Stable',
+        thumbPicking: 'Low',
+        pms: false,
+        fluShot: false,
+        notes: 'End of Week 2 on 20mg Vyvanse. Mid-trial check on executive function and affect stability.'
+      },
+      {
+        date: '2026-11-20',
+        displayDate: 'Fri, Nov 20',
+        dayNumber: 34,
+        v20Day: 15,
+        dose: '20mg',
+        taken: false,
+        focus: 0,
+        focusLabel: 'Pending',
+        mood: '',
+        appetite: '',
+        headache: '',
+        sleep: 'Pending',
+        ocd: 'Stable',
+        thumbPicking: 'Low',
+        pms: false,
+        fluShot: false,
+        notes: 'Phase 2: Day 15 on Vyvanse 20mg + Fluoxetine 50mg.'
+      },
+      {
+        date: '2026-11-21',
+        displayDate: 'Sat, Nov 21',
+        dayNumber: 35,
+        v20Day: 16,
+        dose: '20mg',
+        taken: false,
+        focus: 0,
+        focusLabel: 'Pending',
+        mood: '',
+        appetite: '',
+        headache: '',
+        sleep: 'Pending',
+        ocd: 'Stable',
+        thumbPicking: 'Low',
+        pms: false,
+        fluShot: false,
+        notes: 'Phase 2: Day 16 on Vyvanse 20mg + Fluoxetine 50mg.'
+      },
+      {
+        date: '2026-11-22',
+        displayDate: 'Sun, Nov 22',
+        dayNumber: 36,
+        v20Day: 17,
+        dose: '20mg',
+        taken: false,
+        focus: 0,
+        focusLabel: 'Pending',
+        mood: '',
+        appetite: '',
+        headache: '',
+        sleep: 'Pending',
+        ocd: 'Stable',
+        thumbPicking: 'Low',
+        pms: false,
+        fluShot: false,
+        notes: 'Phase 2: Day 17 on Vyvanse 20mg + Fluoxetine 50mg.'
+      },
+      {
+        date: '2026-11-23',
+        displayDate: 'Mon, Nov 23',
+        dayNumber: 37,
+        v20Day: 18,
+        dose: '20mg',
+        taken: false,
+        focus: 0,
+        focusLabel: 'Pending',
+        mood: '',
+        appetite: '',
+        headache: '',
+        sleep: 'Pending',
+        ocd: 'Stable',
+        thumbPicking: 'Low',
+        pms: false,
+        fluShot: false,
+        notes: 'Phase 2: Day 18 on Vyvanse 20mg + Fluoxetine 50mg.'
+      },
+      {
+        date: '2026-11-24',
+        displayDate: 'Tue, Nov 24',
+        dayNumber: 38,
+        v20Day: 19,
+        dose: '20mg',
+        taken: false,
+        focus: 0,
+        focusLabel: 'Pending',
+        mood: '',
+        appetite: '',
+        headache: '',
+        sleep: 'Pending',
+        ocd: 'Stable',
+        thumbPicking: 'Low',
+        pms: false,
+        fluShot: false,
+        notes: 'Phase 2: Day 19 on Vyvanse 20mg + Fluoxetine 50mg.'
+      },
+      {
+        date: '2026-11-25',
+        displayDate: 'Wed, Nov 25',
+        dayNumber: 39,
+        v20Day: 20,
+        dose: '20mg',
+        taken: false,
+        focus: 0,
+        focusLabel: 'Pending',
+        mood: '',
+        appetite: '',
+        headache: '',
+        sleep: 'Pending',
+        ocd: 'Stable',
+        thumbPicking: 'Low',
+        pms: false,
+        fluShot: false,
+        notes: 'Phase 2: Day 20 on Vyvanse 20mg + Fluoxetine 50mg.'
+      },
+      {
+        date: '2026-11-26',
+        displayDate: 'Thu, Nov 26',
+        dayNumber: 40,
+        v20Day: 21,
+        dose: '20mg',
+        taken: false,
+        focus: 0,
+        focusLabel: 'Pending',
+        mood: '',
+        appetite: '',
+        headache: '',
+        sleep: 'Pending',
+        ocd: 'Stable',
+        thumbPicking: 'Low',
+        pms: false,
+        fluShot: false,
+        notes: 'End of Week 3 on 20mg Vyvanse.'
+      },
+      {
+        date: '2026-11-27',
+        displayDate: 'Fri, Nov 27',
+        dayNumber: 41,
+        v20Day: 22,
+        dose: '20mg',
+        taken: false,
+        focus: 0,
+        focusLabel: 'Pending',
+        mood: '',
+        appetite: '',
+        headache: '',
+        sleep: 'Pending',
+        ocd: 'Stable',
+        thumbPicking: 'Low',
+        pms: false,
+        fluShot: false,
+        notes: 'Phase 2: Day 22 on Vyvanse 20mg + Fluoxetine 50mg.'
+      },
+      {
+        date: '2026-11-28',
+        displayDate: 'Sat, Nov 28',
+        dayNumber: 42,
+        v20Day: 23,
+        dose: '20mg',
+        taken: false,
+        focus: 0,
+        focusLabel: 'Pending',
+        mood: '',
+        appetite: '',
+        headache: '',
+        sleep: 'Pending',
+        ocd: 'Stable',
+        thumbPicking: 'Low',
+        pms: false,
+        fluShot: false,
+        notes: 'Phase 2: Day 23 on Vyvanse 20mg + Fluoxetine 50mg.'
+      },
+      {
+        date: '2026-11-29',
+        displayDate: 'Sun, Nov 29',
+        dayNumber: 43,
+        v20Day: 24,
+        dose: '20mg',
+        taken: false,
+        focus: 0,
+        focusLabel: 'Pending',
+        mood: '',
+        appetite: '',
+        headache: '',
+        sleep: 'Pending',
+        ocd: 'Stable',
+        thumbPicking: 'Low',
+        pms: false,
+        fluShot: false,
+        notes: 'Phase 2: Day 24 on Vyvanse 20mg + Fluoxetine 50mg.'
+      },
+      {
+        date: '2026-11-30',
+        displayDate: 'Mon, Nov 30',
+        dayNumber: 44,
+        v20Day: 25,
+        dose: '20mg',
+        taken: false,
+        focus: 0,
+        focusLabel: 'Pending',
+        mood: '',
+        appetite: '',
+        headache: '',
+        sleep: 'Pending',
+        ocd: 'Stable',
+        thumbPicking: 'Low',
+        pms: false,
+        fluShot: false,
+        notes: 'Phase 2: Day 25 on Vyvanse 20mg + Fluoxetine 50mg.'
+      },
+      {
+        date: '2026-12-01',
+        displayDate: 'Tue, Dec 1',
+        dayNumber: 45,
+        v20Day: 26,
+        dose: '20mg',
+        taken: false,
+        focus: 0,
+        focusLabel: 'Pending',
+        mood: '',
+        appetite: '',
+        headache: '',
+        sleep: 'Pending',
+        ocd: 'Stable',
+        thumbPicking: 'Low',
+        pms: false,
+        fluShot: false,
+        notes: 'Phase 2: Day 26 on Vyvanse 20mg + Fluoxetine 50mg.'
+      },
+      {
+        date: '2026-12-02',
+        displayDate: 'Wed, Dec 2',
+        dayNumber: 46,
+        v20Day: 27,
+        dose: '20mg',
+        taken: false,
+        focus: 0,
+        focusLabel: 'Pending',
+        mood: '',
+        appetite: '',
+        headache: '',
+        sleep: 'Pending',
+        ocd: 'Stable',
+        thumbPicking: 'Low',
+        pms: false,
+        fluShot: false,
+        notes: 'Phase 2: Day 27 on Vyvanse 20mg + Fluoxetine 50mg.'
+      },
+      {
+        date: '2026-12-03',
+        displayDate: 'Thu, Dec 3',
+        dayNumber: 47,
+        v20Day: 28,
+        dose: '20mg',
+        taken: false,
+        focus: 0,
+        focusLabel: 'Pending',
+        mood: '',
+        appetite: '',
+        headache: '',
+        sleep: 'Pending',
+        ocd: 'Stable',
+        thumbPicking: 'Low',
+        pms: false,
+        fluShot: false,
+        notes: 'Phase 2: Day 28 on Vyvanse 20mg + Fluoxetine 50mg.'
+      },
+      {
+        date: '2026-12-04',
+        displayDate: 'Fri, Dec 4',
+        dayNumber: 48,
+        v20Day: 29,
+        dose: '20mg',
+        taken: false,
+        focus: 0,
+        focusLabel: 'Pending',
+        mood: '',
+        appetite: '',
+        headache: '',
+        sleep: 'Pending',
+        ocd: 'Stable',
+        thumbPicking: 'Low',
+        pms: false,
+        fluShot: false,
+        notes: 'Phase 2: Day 29 on Vyvanse 20mg + Fluoxetine 50mg.'
+      },
+      {
+        date: '2026-12-05',
+        displayDate: 'Sat, Dec 5',
+        dayNumber: 49,
+        v20Day: 30,
+        dose: '20mg',
+        taken: false,
+        focus: 0,
+        focusLabel: 'Pending',
+        mood: '',
+        appetite: '',
+        headache: '',
+        sleep: 'Pending',
+        ocd: 'Stable',
+        thumbPicking: 'Low',
+        pms: false,
+        fluShot: false,
+        notes: 'Phase 2: Day 30 on Vyvanse 20mg + Fluoxetine 50mg.'
+      },
+      {
+        date: '2026-12-06',
+        displayDate: 'Sun, Dec 6',
+        dayNumber: 50,
+        v20Day: 31,
+        dose: '20mg',
+        taken: false,
+        focus: 0,
+        focusLabel: 'Pending',
+        mood: '',
+        appetite: '',
+        headache: '',
+        sleep: 'Pending',
+        ocd: 'Stable',
+        thumbPicking: 'Low',
+        pms: false,
+        fluShot: false,
+        notes: 'Phase 2: Day 31 on Vyvanse 20mg + Fluoxetine 50mg.'
+      },
+      {
+        date: '2026-12-07',
+        displayDate: 'Mon, Dec 7',
+        dayNumber: 51,
+        v20Day: 32,
+        dose: '20mg',
+        taken: false,
+        focus: 0,
+        focusLabel: 'Pending',
+        mood: '',
+        appetite: '',
+        headache: '',
+        sleep: 'Pending',
+        ocd: 'Stable',
+        thumbPicking: 'Low',
+        pms: false,
+        fluShot: false,
+        notes: 'Phase 2: Day 32 on Vyvanse 20mg + Fluoxetine 50mg.'
+      },
+      {
+        date: '2026-12-08',
+        displayDate: 'Tue, Dec 8',
+        dayNumber: 52,
+        v20Day: 33,
+        dose: '20mg',
+        taken: false,
+        focus: 0,
+        focusLabel: 'Pending',
+        mood: '',
+        appetite: '',
+        headache: '',
+        sleep: 'Pending',
+        ocd: 'Stable',
+        thumbPicking: 'Low',
+        pms: false,
+        fluShot: false,
+        notes: '1-Month Follow-Up Checkpoint on Vyvanse 20mg.'
       }
     ];
 
     // STORAGE HANDLER
     function getStoredData() {
       try {
-        const data = localStorage.getItem('rayne_med_tracker_v3');
+        const data = localStorage.getItem('rayne_med_tracker_v4');
         if (data) return JSON.parse(data);
       } catch (e) {
         console.error('Error reading localStorage', e);
@@ -1258,7 +1885,7 @@
 
     function saveStoredData(data) {
       try {
-        localStorage.setItem('rayne_med_tracker_v3', JSON.stringify(data));
+        localStorage.setItem('rayne_med_tracker_v4', JSON.stringify(data));
       } catch (e) {
         console.error('Error saving localStorage', e);
       }
@@ -1275,7 +1902,7 @@
 
     function renderCards() {
       const container = document.getElementById('cards-container');
-      const todayStr = '2026-11-04';
+      const todayStr = '2026-11-06';
       
       container.innerHTML = activeData.map(item => {
         const isToday = item.date === todayStr;
@@ -1287,7 +1914,9 @@
         } else if (!item.taken) {
           pillHtml = `<span class="day-pill pill-pre">Pre-Vyvanse</span>`;
         } else {
-          pillHtml = `<span class="day-pill pill-active">Day ${item.dayNumber || ''} • 10mg</span>`;
+          const dose = item.dose || (item.dayNumber >= 20 ? '20mg' : '10mg');
+          const dayLabel = item.v20Day ? `Day ${item.v20Day} • ${dose}` : `Day ${item.dayNumber || ''} • ${dose}`;
+          pillHtml = `<span class="day-pill pill-active">${dayLabel}</span>`;
         }
 
         let badges = [];
@@ -1505,7 +2134,7 @@
     // CLIPBOARD EXPORT FOR SOMA
     function copyUpdateForSoma() {
       // Pick today or recent logged entries
-      const today = activeData.find(d => d.date === '2026-11-04') || activeData[activeData.length - 1];
+      const today = activeData.find(d => d.date === '2026-11-06') || activeData[activeData.length - 1];
       
       const text = `Rayne Medication & Symptom Update (${today.displayDate}):
 - Vyvanse 10mg Taken: ${today.taken ? 'Yes (8:00 AM w/ food)' : 'No'}

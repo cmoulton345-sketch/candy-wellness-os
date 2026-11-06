@@ -1,16 +1,17 @@
 # Rayne Moulton — Medication & Symptom Tracker
-**Target Follow-Up:** November 5, 2026 (Nurse Practitioner)  
+**Active Phase:** Phase 2 (Vyvanse 20 mg Titration & 1-Month Observation)  
+**Target Follow-Up:** Early December 2026 (4-Week 20 mg Review)  
 **File Location:** `raynes_ocd_adhd/Rayne_Medication_Tracking_Sheet.md`
 
 ---
 
-## 1. Regimen Overview & Protocol
+## 1. Regimen Overview & Protocol (Phase 2)
 * **Patient:** Rayne Moulton
-* **Medications:**
-  * **Fluoxetine (Prozac):** 50 mg daily (maintaining OCD checking control; **Pill count reduction request:** Prescribe as **1 x 40 mg capsule + 1 x 10 mg capsule** to reduce pill burden to 2 capsules)
-  * **Vyvanse (lisdexamfetamine):** 10 mg daily (trial proved tolerability without blunting; **Titration evaluation:** Stepping to **20 mg daily** with NP Jen to address focus plateau and phone dopamine-seeking)
+* **Active Regimen (Starting Nov 6, 2026):**
+  * **Fluoxetine (Prozac):** 50 mg daily (prescribed as 1 x 40 mg capsule + 1 x 10 mg capsule; maintains robust control over OCD checking rituals)
+  * **Vyvanse (lisdexamfetamine):** 20 mg daily (stepped up from 10 mg on Nov 6 to treat focus plateau and phone dopamine-seeking while maintaining vibrant emotional affect)
   * **Slynd (drospirenone):** 4 mg daily (oral progestin contraceptive, continuous use)
-* **Morning Pill Count Goal:** Reduced to **3 capsules total** (1 x 40mg Prozac + 1 x 10mg Prozac + 1 x 20mg Vyvanse) taken together at **8:00 AM** with a protein-rich breakfast and a full glass of water.
+* **Morning Routine:** All 3 taken together at **8:00 AM** with a high-protein breakfast and full glass of water.
 * **Why 8:00 AM:** Ensures the 10–14 hour Vyvanse duration tapers by 6:00–8:00 PM to protect nighttime sleep.
 
 ---
@@ -153,20 +154,91 @@
 
 ---
 
-### Appointment Day: Thursday, November 5, 2026
-* **Nurse Practitioner Discussion Agenda with Jen:**
-  1. **Pill Count Reduction:** Request Fluoxetine 50 mg written as **1 x 40 mg capsule + 1 x 10 mg capsule** (reduces morning Prozac to 2 pills).
-  2. **Vyvanse Titration:** Evaluate increasing Vyvanse **from 10 mg to 20 mg** daily to address focus plateau and excessive phone dopamine-seeking while preserving affect.
-  3. **OCD Checking Stability:** Report that OCD checking rituals remain quiet and well-controlled on 50 mg Fluoxetine.
-  4. **Transition Anxiety & Emotional Lability:** Contextualize recent emotional swings and anxiety as normal decompression / adrenaline let-down post-college exit.
-  5. **Afternoon Rebound & Support:** Discuss wear-off timing (3:30–4:30 PM), morning protein pairing, and evening Magnesium Bisglycinate.
-  6. **NAC SAP (600 mg) Timing:** Sign-off on adding NAC SAP once 20 mg Vyvanse is stable.
-  7. **Slynd Continuous Confirmation:** Confirm continuation of drospirenone 4 mg without placebo breaks.
+### Appointment Day: Thursday, November 5, 2026 (Completed)
+* **Doctor / Nurse Practitioner Review Outcome:**
+  * **Fluoxetine (Prozac):** **Maintained at 50 mg** daily. OCD checking rituals remain quiet and well-controlled, and the clinical team agreed not to destabilize OCD control while adjusting ADHD meds.
+  * **Vyvanse:** **Titrated from 10 mg up to 20 mg** daily. The 10 mg trial confirmed good physiological tolerance and absence of the emotional blunting ("flat/blah") seen on 30 mg in the past. 20 mg aims to overcome the 3/5 focus plateau and reduce phone dopamine-seeking.
+  * **Observation Plan:** Track daily for **1 month (Nov 6 – Dec 8, 2026)** to evaluate response, affect, appetite, and sleep before the next follow-up.
 
 ---
 
-## 5. Red Flags — When to Contact the Clinic
-* Unexplained shivering, chills, or heavy sweating without fever
-* Visible muscle tremors, twitches, or unusually brisk reflexes
-* Agitation, confusion, or pupils that remain unusually dilated
-* Resting heart rate that feels consistently racing or pounding
+## 5. Phase 2 Daily Log Sheet: Vyvanse 20 mg Titration (Nov 6 – Dec 8, 2026)
+
+### Key Observation Checkpoints for the 20 mg Dose:
+1. **Focus & Executive Function (1 to 5):** Does 20 mg lift focus above the 3/5 plateau? Does it reduce phone scrolling and make task initiation easier?
+2. **Emotional Affect & Warmth (The 30 mg Contrast):** Does Rayne remain expressive, smiling, and feeling her feelings? Watch for any return of the "flat / blah / zombie" effect.
+3. **Midday Lunch Appetite:** Stimulants often peak between 11:30 AM and 2:00 PM. Watch if lunch intake remains steady or drops.
+4. **Late Afternoon Wear-Off:** Does she experience rebound fatigue, headache, or irritability around 3:30–5:00 PM?
+5. **Evening Sleep Onset:** Ensure 8:00 AM dosing protects normal bedtime settling.
+6. **OCD Loop Check:** Verify checking rituals remain completely quiet on 50 mg Fluoxetine.
+
+---
+
+### Week 1 on 20 mg: Initial Titration & Onboarding (Nov 6 – Nov 12)
+* **Fri, Nov 6 (Day 1 on Vyvanse 20mg):**
+  * Taken at 8:00 AM w/ Protein Breakfast? [ ] Yes  [ ] No
+  * Focus & Executive Function (1-5): _____
+  * Mood & Affect (Vibrant vs. Flat): __________________________________________
+  * Lunch Appetite: ___________________________________________________________
+  * Physical / Headaches / Vitals: _____________________________________________
+  * Afternoon Rebound (3:30–5:00 PM): __________________________________________
+  * Sleep Onset: ______________________________________________________________
+  * OCD Loops & General Notes: ________________________________________________
+
+* **Sat, Nov 7 (Day 2 on 20mg):**
+  * Taken 8am w/ Food? [ ] Yes | Focus: ___ | Mood: __________________________
+  * Lunch Appetite: _____________ | Headaches/Physical: _______________________
+  * Rebound/Evening: ___________ | Sleep: ____________ | OCD: ________________
+
+* **Sun, Nov 8 (Day 3 on 20mg):**
+  * Taken 8am w/ Food? [ ] Yes | Focus: ___ | Mood: __________________________
+  * Lunch Appetite: _____________ | Headaches/Physical: _______________________
+  * Rebound/Evening: ___________ | Sleep: ____________ | OCD: ________________
+
+* **Mon, Nov 9 (Day 4 on 20mg):**
+  * Taken 8am w/ Food? [ ] Yes | Focus: ___ | Mood: __________________________
+  * Lunch Appetite: _____________ | Headaches/Physical: _______________________
+  * Rebound/Evening: ___________ | Sleep: ____________ | OCD: ________________
+
+* **Tue, Nov 10 (Day 5 on 20mg):**
+  * Taken 8am w/ Food? [ ] Yes | Focus: ___ | Mood: __________________________
+  * Lunch Appetite: _____________ | Headaches/Physical: _______________________
+  * Rebound/Evening: ___________ | Sleep: ____________ | OCD: ________________
+
+* **Wed, Nov 11 (Day 6 on 20mg):**
+  * Taken 8am w/ Food? [ ] Yes | Focus: ___ | Mood: __________________________
+  * Lunch Appetite: _____________ | Headaches/Physical: _______________________
+  * Rebound/Evening: ___________ | Sleep: ____________ | OCD: ________________
+
+* **Thu, Nov 12 (Day 7 on 20mg — Week 1 Review):**
+  * Taken 8am w/ Food? [ ] Yes | Focus: ___ | Mood: __________________________
+  * Lunch Appetite: _____________ | Headaches/Physical: _______________________
+  * Notes / Week 1 Synthesis: _________________________________________________
+
+---
+
+### Week 2 on 20 mg: Routine & Stabilization (Nov 13 – Nov 19)
+* **Fri, Nov 13 to Thu, Nov 19:**
+  * Track daily focus level, lunch intake, 4:00 PM wear-off, and emotional affect.
+  * *Mid-trial checkpoint:* Is task initiation consistently better than on 10 mg? Any jaw clenching or late-day headaches?
+
+---
+
+### Week 3 on 20 mg: Mid-Month Evaluation (Nov 20 – Nov 26)
+* **Fri, Nov 20 to Thu, Nov 26:**
+  * Continue tracking. Note any cycle changes or spotting on Slynd.
+  * Evaluate screen time / phone scrolling: has the dopamine-seeking urge calmed down?
+
+---
+
+### Week 4 on 20 mg: Final Titration Assessment (Nov 27 – Dec 8)
+* **Fri, Nov 27 to Tue, Dec 8:**
+  * Final week of 1-month observation period.
+  * Prepare synthesis notes for the early December doctor follow-up.
+
+---
+
+## 6. Red Flags — When to Contact the Clinic
+* Signs of excessive serotonergic stimulation: unexplained shivering, chills, heavy sweating without fever, visible tremors/twitches, agitation, or dilated pupils.
+* Cardiovascular: Resting heart rate consistently racing or pounding, or significant dizziness when standing.
+* Severe emotional blunting or mood crash that does not resolve.
