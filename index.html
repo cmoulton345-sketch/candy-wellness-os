@@ -328,6 +328,7 @@
   <div class="nav-tabs">
     <button class="nav-tab active" onclick="showPage('today',this)">Today</button>
     <button class="nav-tab" onclick="showPage('workout',this)">Workout</button>
+    <button class="nav-tab" onclick="showPage('hip-relief',this)" style="color:var(--teal); font-weight:700;">🦵 Hip &amp; Psoas</button>
     <button class="nav-tab" onclick="showPage('nutrition',this)">Nutrition</button>
     <button class="nav-tab" onclick="showPage('anti-inflammatory',this)" style="color:var(--rose);">🔥 Anti-Inflammatory</button>
     <button class="nav-tab" onclick="showPage('tapping',this)">Tapping</button>
@@ -435,6 +436,15 @@
       <button class="phase-btn push-btn selected" onclick="setWorkoutPhase('push')">Push</button>
       <button class="phase-btn protect-btn" onclick="setWorkoutPhase('protect')">Protect</button>
     </div>
+  </div>
+
+  <!-- Hip Flexor / Psoas Alert Callout -->
+  <div class="alert-box teal" style="display:flex; justify-content:space-between; align-items:center; cursor:pointer; background:rgba(94,231,208,0.12); border:1px solid rgba(94,231,208,0.3); border-radius:12px; padding:12px 16px; margin-bottom:14px;" onclick="showPage('hip-relief', document.querySelector('.nav-tab[onclick*=\'hip-relief\']'))">
+    <div>
+      <strong style="color:var(--teal); font-size:0.9rem;">🦵 Experiencing C-Sign / Hip Flexor Pinch?</strong>
+      <div style="font-size:0.78rem; color:var(--text); opacity:0.9; margin-top:3px;">STOP stretching into lunges! Tap here for the 3-step joint reset &amp; safe exercise swaps.</div>
+    </div>
+    <span style="font-size:1.3rem; margin-left:10px;">👉</span>
   </div>
 
   <!-- Equipment -->
@@ -1143,7 +1153,130 @@
   </div>
 </div>
 
+<!-- ══ HIP & PSOAS RESET ══ -->
+<div class="page" id="page-hip-relief">
+  <div class="page-header">
+    <h1>C-Sign Hip &amp; Psoas Reset 🦵</h1>
+    <p>Anterior Femoral Glide Protocol: Why stretching worsens the pinch, how to decompress the joint, and zero-pinch workout day swaps.</p>
+  </div>
+
+  <button class="save-btn" onclick="copyHipResetSummary()" style="background:linear-gradient(135deg, var(--teal), #0f766e); box-shadow:0 4px 18px rgba(94,231,208,0.25); margin-bottom:16px;">
+    📋 Copy Quick Summary to Clipboard
+  </button>
+
+  <!-- The Clinical Truth -->
+  <div class="card" style="border-color:rgba(239, 68, 68, 0.3); background:rgba(239, 68, 68, 0.05);">
+    <div class="card-title" style="color:#f87171;"><div class="dot" style="background:#ef4444"></div>🛑 The Truth: Why Stretching Doesn't Help</div>
+    <div style="font-size:0.86rem; line-height:1.6; color:#f1f5f9;">
+      <strong style="color:#fca5a5;">Your hip flexor is NOT "tight." It is pinching because the ball of your thigh bone (femur) has drifted slightly forward in the socket.</strong><br><br>
+      When you feel that deep pinch in the front crease of your hip (<em>C-sign</em>), your natural instinct is to do a lunge stretch. But in an anterior femoral glide, <strong>stretching literally rams the ball of the bone harder into the inflamed front capsule and labrum</strong>. Your nervous system panics and clamps the psoas down into an even tighter defensive spasm!
+      <br><br>
+      👉 <strong>You cannot stretch an impingement. You must DECOMPRESS and GLIDE the bone backward.</strong>
+    </div>
+  </div>
+
+  <!-- The 3-Step Reset -->
+  <div class="card">
+    <div class="card-title"><div class="dot" style="background:var(--teal)"></div>🛋️ The 3-Step Mechanical Reset (Pre-Workout &amp; Nightly)</div>
+    
+    <div class="check-list">
+      <div class="check-item chk-item" onclick="toggle(this)">
+        <div class="check-box">✓</div>
+        <div class="check-text">
+          <div class="check-label">1. The Psoas Lounge (90/90 Gravity Release) — 5 to 10 Mins</div>
+          <div class="check-sub">Lie flat on your back, calves up on couch/chair (90° at hips &amp; knees). Heat pad on front hip crease. Gravity drops femur back into socket.</div>
+        </div>
+      </div>
+
+      <div class="check-item chk-item" onclick="toggle(this)">
+        <div class="check-box">✓</div>
+        <div class="check-text">
+          <div class="check-label">2. Quadruped Rock-Backs (Joint Centration) — 8 to 10 Reps</div>
+          <div class="check-sub">On hands and knees, knees wide, toes touching. Rock hips back 3-4" only in pain-free zone. Stop 1" before any pinch to glide bone backward.</div>
+        </div>
+      </div>
+
+      <div class="check-item chk-item" onclick="toggle(this)">
+        <div class="check-box">✓</div>
+        <div class="check-text">
+          <div class="check-label">3. Glute Bridge with Pillow Squeeze — 5 Reps x 5s Hold</div>
+          <div class="check-sub">Low 2-inch bridge. Squeeze pillow and glutes. Firing the glute neurologically forces the brain to shut off the front hip flexor spasm!</div>
+        </div>
+      </div>
+
+      <div class="check-item chk-item" onclick="toggle(this)">
+        <div class="check-box">✓</div>
+        <div class="check-text">
+          <div class="check-label">4. Posterior Wall Ball Release — 2 Mins</div>
+          <div class="check-sub">Tennis or lacrosse ball into upper outer butt cheek (glute medius). Softening the back wall lets the thigh bone settle backward.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 48-Hour Red Flags -->
+  <div class="card" style="border-color:rgba(245, 158, 11, 0.3);">
+    <div class="card-title" style="color:var(--gold);"><div class="dot" style="background:var(--gold)"></div>🚫 48-Hour Red Flags (Stop Doing These)</div>
+    <div style="font-size:0.84rem; line-height:1.5; color:#cbd5e1;">
+      • <strong>NO lunge hip flexor stretches</strong> (pulling leg back into extension).<br>
+      • <strong>NO deep squats below 90°</strong> or walking lunges.<br>
+      • <strong>NO Pilates tabletop leg levers</strong> (feet suspended in air forces the psoas to grip).<br>
+      • <strong>NO crossing legs when sitting</strong> (keep hips slightly higher than knees).
+    </div>
+  </div>
+
+  <!-- Safe Workout Swaps Table -->
+  <div class="card">
+    <div class="card-title"><div class="dot" style="background:var(--green)"></div>🏋️ Workout Day Swaps (Keep Training Pain-Free)</div>
+    <div style="display:flex; flex-direction:column; gap:8px;">
+      <div style="background:var(--card2); border:1px solid var(--border); border-radius:10px; padding:10px 12px;">
+        <div style="font-size:0.85rem; font-weight:700; color:var(--text); margin-bottom:2px;">Instead of Deep Squats:</div>
+        <div style="font-size:0.8rem; color:var(--green); font-weight:600;">✓ Chair / Bench Box Squats</div>
+        <div style="font-size:0.75rem; color:var(--muted);">Sit back to chair, pause, drive through heels — zero anterior pinch!</div>
+      </div>
+
+      <div style="background:var(--card2); border:1px solid var(--border); border-radius:10px; padding:10px 12px;">
+        <div style="font-size:0.85rem; font-weight:700; color:var(--text); margin-bottom:2px;">Instead of Lunges / Step-Ups:</div>
+        <div style="font-size:0.8rem; color:var(--green); font-weight:600;">✓ Banded Glute Kickbacks or Pull-Throughs</div>
+        <div style="font-size:0.75rem; color:var(--muted);">Fires glutes directly without repetitive loaded hip flexion shear.</div>
+      </div>
+
+      <div style="background:var(--card2); border:1px solid var(--border); border-radius:10px; padding:10px 12px;">
+        <div style="font-size:0.85rem; font-weight:700; color:var(--text); margin-bottom:2px;">In Pilates (Tabletop / Leg Lowers):</div>
+        <div style="font-size:0.8rem; color:var(--green); font-weight:600;">✓ Feet-Flat Pelvic Bridges &amp; Supported Knee Rocks</div>
+        <div style="font-size:0.75rem; color:var(--muted);">Keep feet on floor or hug knees closer to chest to keep psoas slack.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Copy Box -->
+  <div class="card">
+    <div class="card-title"><div class="dot" style="background:var(--teal)"></div>📋 Quick Reference Text (For Notes / Text)</div>
+    <div id="hip-text-box" style="background:#090910; border:1px solid var(--border); border-radius:10px; padding:12px; font-family:monospace; font-size:0.78rem; color:#93c5fd; white-space:pre-wrap; line-height:1.4;">C-SIGN HIP &amp; PSOAS RESET PROTOCOL:
+1. STOP STRETCHING: Front pinch is an anterior femoral head shift, NOT a tight muscle. Stretching worsens the pinch!
+2. PSOAS LOUNGE (5-10 min): Calves up on couch (90/90). Let gravity drop femur back into socket + heat pad on groin.
+3. QUADRUPED ROCK-BACKS (8 reps): On hands/knees, rock back 3-4" ONLY in pain-free range to glide bone backward.
+4. GLUTE BRIDGE (5 reps x 5s hold): Low 2-inch bridge with pillow squeeze to shut off hip flexor spasm.
+5. WORKOUT SWAPS: No deep squats or lunges. Swap with Chair Box Squats and Banded Glute Bridges.</div>
+  </div>
+</div>
+
 <script>
+function copyHipResetSummary() {
+  const text = document.getElementById('hip-text-box').innerText;
+  navigator.clipboard.writeText(text).then(() => {
+    showToast('✓ Copied to clipboard! Ready to paste into Notes.');
+  }).catch(() => {
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    showToast('✓ Copied to clipboard!');
+  });
+}
+
 // DATE
 document.getElementById('today-date').textContent = new Date().toLocaleDateString('en-CA',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
 

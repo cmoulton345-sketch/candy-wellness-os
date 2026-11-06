@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Candy's Hip Flexor & Psoas Reset Protocol</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #1e293b;
+      --card-accent: #334155;
+      --teal: #14b8a6;
+      --teal-light: #ccfbf1;
+      --teal-dim: rgba(20, 184, 166, 0.15);
+      --red: #ef4444;
+      --red-dim: rgba(239, 68, 68, 0.12);
+      --gold: #f59e0b;
+      --gold-dim: rgba(245, 158, 11, 0.12);
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --border: rgba(255, 255, 255, 0.1);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Outfit', -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      padding: 24px 16px;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+    }
+    .container {
+      max-width: 760px;
+      width: 100%;
+    }
+    header {
+      background: linear-gradient(135deg, #0f766e, #115e59);
+      padding: 24px 28px;
+      border-radius: 18px;
+      margin-bottom: 20px;
+      box-shadow: 0 10px 25px rgba(15, 118, 110, 0.2);
+    }
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      margin-bottom: 6px;
+      color: white;
+    }
+    .subtitle {
+      color: var(--teal-light);
+      font-size: 0.95rem;
+      line-height: 1.4;
+    }
+    .action-bar {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      padding: 12px 20px;
+      border-radius: 10px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      cursor: pointer;
+      border: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
+    }
+    .btn-teal {
+      background: var(--teal);
+      color: #042f2e;
+    }
+    .btn-teal:hover {
+      background: #2dd4bf;
+      transform: translateY(-1px);
+    }
+    .btn-outline {
+      background: var(--card);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+    .btn-outline:hover {
+      background: var(--card-accent);
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 22px;
+      margin-bottom: 18px;
+    }
+    .card-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .badge {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 4px 10px;
+      border-radius: 50px;
+      font-weight: 800;
+    }
+    .badge-red { background: var(--red-dim); color: #f87171; border: 1px solid rgba(248, 113, 113, 0.3); }
+    .badge-teal { background: var(--teal-dim); color: var(--teal); border: 1px solid rgba(20, 184, 166, 0.3); }
+    .badge-gold { background: var(--gold-dim); color: var(--gold); border: 1px solid rgba(245, 158, 11, 0.3); }
+    
+    .truth-box {
+      background: rgba(239, 68, 68, 0.08);
+      border-left: 4px solid var(--red);
+      padding: 16px;
+      border-radius: 0 12px 12px 0;
+      margin-bottom: 16px;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .truth-box strong { color: #fca5a5; }
+
+    .step-item {
+      background: var(--card-accent);
+      border-radius: 12px;
+      padding: 16px 18px;
+      margin-bottom: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .step-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+    .step-name {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: white;
+    }
+    .step-meta {
+      font-size: 0.8rem;
+      color: var(--teal);
+      font-weight: 600;
+    }
+    .step-desc {
+      font-size: 0.88rem;
+      color: #cbd5e1;
+      margin-bottom: 8px;
+      line-height: 1.5;
+    }
+    .step-why {
+      font-size: 0.82rem;
+      color: var(--teal-light);
+      background: rgba(20, 184, 166, 0.1);
+      padding: 8px 12px;
+      border-radius: 8px;
+      line-height: 1.4;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      margin-top: 10px;
+    }
+    th, td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    th {
+      color: var(--muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 0.5px;
+    }
+    td strong { color: white; }
+
+    .copy-box {
+      background: #090e1a;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 12px;
+      padding: 16px;
+      font-family: monospace;
+      font-size: 0.85rem;
+      color: #93c5fd;
+      white-space: pre-wrap;
+      line-height: 1.5;
+      position: relative;
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: var(--teal);
+      color: #042f2e;
+      padding: 12px 24px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+      transition: all 0.3s ease;
+      z-index: 1000;
+      pointer-events: none;
+    }
+    .toast.show {
+      transform: translateX(-50%) translateY(0);
+    }
+
+    @media print {
+      body { background: white; color: black; padding: 0; }
+      .action-bar, .toast { display: none; }
+      header { background: #0f766e; color: white; -webkit-print-color-adjust: exact; }
+      .card { border: 1px solid #ccc; background: white; color: black; page-break-inside: avoid; }
+      .step-item { background: #f8fafc; border: 1px solid #e2e8f0; color: black; }
+      .step-name { color: black; }
+      .step-desc { color: #334155; }
+      .step-why { background: #f0fdf4; color: #166534; }
+      .truth-box { background: #fef2f2; color: #991b1b; }
+      .truth-box strong { color: #b91c1c; }
+      .copy-box { background: #f8fafc; color: #334155; border: 1px solid #e2e8f0; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="action-bar">
+    <button class="btn btn-teal" onclick="copyFullGuide()">📋 Copy Quick Summary to Clipboard</button>
+    <button class="btn btn-outline" onclick="window.print()">🖨️ Print Protocol</button>
+  </div>
+
+  <header>
+    <h1>Candy’s C-Sign Hip &amp; Psoas Reset</h1>
+    <div class="subtitle">Anterior Femoral Glide Protocol: Why stretching worsens the pinch, how to decompress the joint, and zero-pinch workout day swaps.</div>
+  </header>
+
+  <!-- CARD 1: THE TRUTH -->
+  <div class="card">
+    <div class="card-title">
+      <span>🛑 The Medical Truth: Why Stretching Doesn't Help</span>
+      <span class="badge badge-red">Critical Clinician Insight</span>
+    </div>
+    <div class="truth-box">
+      <strong>Your hip flexor is NOT "tight." It is pinched because the ball of your thigh bone (femur) has drifted slightly forward in the socket.</strong><br><br>
+      When you feel that deep pinch in the front crease of your hip (*C-sign*), your natural instinct is to do a lunge stretch to pull the muscle back. But in an anterior femoral glide, <strong>stretching literally rams the ball of the bone harder into the inflamed front capsule and labrum</strong>. Your nervous system panics and clamps the psoas down into an even tighter defensive spasm!
+      <br><br>
+      👉 <strong>You cannot stretch an impingement. You must DECOMPRESS and GLIDE the bone backward.</strong>
+    </div>
+  </div>
+
+  <!-- CARD 2: THE 3-STEP RESET -->
+  <div class="card">
+    <div class="card-title">
+      <span>🛋️ The 3-Step Mechanical Reset</span>
+      <span class="badge badge-teal">Daily &amp; Pre-Workout</span>
+    </div>
+
+    <!-- Step 1 -->
+    <div class="step-item">
+      <div class="step-header">
+        <span class="step-name">1. The Psoas Lounge (90/90 Gravity Release)</span>
+        <span class="step-meta">5 to 10 Minutes</span>
+      </div>
+      <div class="step-desc">
+        Lie flat on your back on the floor or bed. Place your calves and lower legs up on a couch, chair, or stack of pillows so your hips and knees are at a relaxed 90-degree angle. Place a warm heating pad right across your front hip crease/groin. Breathe into your lower belly (4s in, 6s out).
+      </div>
+      <div class="step-why">
+        💡 <strong>The Magic:</strong> In 90/90, hip flexors require zero effort and go completely slack. Gravity naturally traction-drops the ball of your femur backward into the center of the socket.
+      </div>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="step-item">
+      <div class="step-header">
+        <span class="step-name">2. Quadruped Rock-Backs (Joint Centering)</span>
+        <span class="step-meta">8 to 10 Slow Reps</span>
+      </div>
+      <div class="step-desc">
+        Come onto your hands and knees. Open your knees slightly wider than your hips with your big toes touching behind you. Keeping your back flat (do not round or arch), gently rock your hips straight back toward your heels <strong>just 3 to 4 inches</strong>. <em>STOP 1 inch before any pinch!</em> Pause 2s, then return.
+      </div>
+      <div class="step-why">
+        💡 <strong>The Magic:</strong> Mechanically slides the femoral head backward into the acetabulum, clearing impingement space in the front crease.
+      </div>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="step-item">
+      <div class="step-header">
+        <span class="step-name">3. Gentle Glute Bridge with Pillow Squeeze</span>
+        <span class="step-meta">5 Reps x 5s Hold</span>
+      </div>
+      <div class="step-desc">
+        Lie on your back, knees bent, feet flat on the floor, with a small pillow between your knees. Squeeze the pillow, squeeze your butt cheeks, and lift your hips just <strong>2 to 3 inches</strong> off the floor (low bridge—do not arch your back). Hold for 5 seconds, focusing 100% on your glutes.
+      </div>
+      <div class="step-why">
+        💡 <strong>The Magic (Reciprocal Inhibition):</strong> When your glute muscle fires, your brain is neurologically forced to send a reflex command to the front hip flexor (psoas) to shut off its defensive spasm.
+      </div>
+    </div>
+
+    <!-- Step 4 -->
+    <div class="step-item">
+      <div class="step-header">
+        <span class="step-name">4. Posterior Wall Release (Tennis / Lacrosse Ball)</span>
+        <span class="step-meta">2 Minutes</span>
+      </div>
+      <div class="step-desc">
+        Place a tennis ball or lacrosse ball into the back-outside of your hip (upper outer butt cheek / glute medius) against the wall or floor. Breathe into tender spots.
+      </div>
+      <div class="step-why">
+        💡 <strong>The Magic:</strong> Tightness in the back-outside of the hip shoves the thigh bone forward. Softening the back wall lets the bone glide backward into place.
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD 3: WORKOUT SWAPS -->
+  <div class="card">
+    <div class="card-title">
+      <span>🏋️ Workout Day Swaps (Zero-Pinch Replacements)</span>
+      <span class="badge badge-gold">Active Training Modifiers</span>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Problem Exercise</th>
+            <th>Why It Pinches</th>
+            <th>Safe Zero-Pinch Replacement</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Deep Squats</strong></td>
+            <td>Femur hits front socket rim</td>
+            <td><strong>Chair / Bench Box Squats</strong> (Sit back to chair, pause, drive through heels)</td>
+          </tr>
+          <tr>
+            <td><strong>Walking / Reverse Lunges</strong></td>
+            <td>Heavy anterior shear on trailing hip</td>
+            <td><strong>Banded Glute Kickbacks</strong> or <strong>Bench Glute Thrusts</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Pilates Tabletop Leg Lowers</strong></td>
+            <td>Psoas forced into violent gripping</td>
+            <td><strong>Feet-Flat Pelvic Bridges</strong> or <strong>Supported Knees-to-Chest</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Step-Ups</strong></td>
+            <td>Repetitive loaded hip flexion</td>
+            <td><strong>Banded Glute Pull-Throughs</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- CARD 4: COPY BOX -->
+  <div class="card">
+    <div class="card-title">
+      <span>📋 Copy-Pastable Quick Reference Box</span>
+      <button class="btn btn-teal" style="padding: 6px 12px; font-size: 0.78rem;" onclick="copyBoxText()">Copy Text</button>
+    </div>
+    <div class="copy-box" id="copy-summary">C-SIGN HIP & PSOAS RESET PROTOCOL:
+1. STOP STRETCHING: Front pinch is an anterior femoral head shift, NOT a tight muscle. Stretching worsens the pinch!
+2. PSOAS LOUNGE (5-10 min): Calves up on couch (90/90). Let gravity drop femur back into socket + heat pad on groin.
+3. QUADRUPED ROCK-BACKS (8 reps): On hands/knees, rock back 3-4" ONLY in pain-free range to glide bone backward.
+4. GLUTE BRIDGE (5 reps x 5s hold): Low 2-inch bridge with pillow squeeze to shut off hip flexor spasm.
+5. WORKOUT SWAPS: No deep squats or lunges. Swap with Chair Box Squats and Banded Glute Bridges.</div>
+  </div>
+</div>
+
+<div class="toast" id="toast">✓ Copied to clipboard! Ready to paste into Notes.</div>
+
+<script>
+  function copyFullGuide() {
+    copyBoxText();
+  }
+
+  function copyBoxText() {
+    const text = document.getElementById('copy-summary').innerText;
+    navigator.clipboard.writeText(text).then(() => {
+      showToast('✓ Copied to clipboard! Ready to paste into Notes or Messages.');
+    }).catch(() => {
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textarea);
+      showToast('✓ Copied to clipboard!');
+    });
+  }
+
+  function showToast(msg) {
+    const t = document.getElementById('toast');
+    t.innerText = msg;
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 2600);
+  }
+</script>
+
+</body>
+</html>

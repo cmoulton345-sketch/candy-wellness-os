@@ -4,6 +4,17 @@
 
 ---
 
+- **2026-11-05 (Afternoon)** (SOMA):
+  - **Dr. Jenna Weeks BHRT Consultation Successfully Completed:**
+    - *Protocol Transformation & Agreement:*
+      1. **BiEst (Estrogen):** Dropped to **1/2 pump daily** (down from 1 pump). Protects synovial joint fluid, brain, and bones while taking top-end pressure off the system, mitigating relative estrogen dominance (rebalancing 76 L Pg/E2 ratio) and blunting pre-ovulatory histamine flares.
+      2. **Cyclic Progesterone Cream (2 Weeks ON / 2 Weeks OFF):** Strictly triggered by **Oura Ovulation Temperature Spike** (~Days 13–15 through Day 27/Reset). Halts continuous follicular application that previously caused Day 18 progesterone excess/stacking ("progesterone flu" and 153.3 lb fluid retention).
+         - *Bridge Dosing:* Taking **1 1/2 pumps** of current compounded bottle during upcoming ON luteal window until bottle is finished.
+         - *New Refill:* Prescribed compounded strength **3.75**, which will be **1 pump** nightly during the 2-week ON window.
+      3. **Oral Micronized Progesterone Capsule (100 mg):** Prescribed **100 mg capsule taken every single night before bed continuously**. Delivers unbroken neurosteroid GABA buffer (via liver conversion to allopregnanolone) to protect sleep, reduce anxiety, and stabilize mast cells during the 2 weeks when topical cream is OFF. Dr. Chaisson cleared bridging with existing 150 mg capsules until 100 mg script is picked up.
+      4. **Cycle Sync Strategy:** Temperature-based tracking confirmed as optimal biological compass for 48 y/o post-hysterectomy with intact ovaries. Scheduled follow-up in 4–5 months (~3 cycles) to evaluate clinical efficacy.
+    - *System Sync:* Updated `wellness_and_mobility/candys_hormones.md` with new baseline regimen, bridge dosing, and Day 4 consultation record.
+
 - **2026-11-05 (Morning)** (SOMA):
   - **Candy's Physical Biometrics & Barometric Pressure Triage (Cycle 5, Day 4):**
     - Biometrics: Scale **150.2 lbs** (-0.5 lbs drop overnight from 150.7; **-1.0 lb in 48h!** Knocking right on the door of the 149s!), Readiness **90 🟢** (Optimal green recovery rebound; highest of Cycle 5!), Sleep **82 🌙**, Sleep Debt **2h 20m** (rolling deficit from late Moncton trip + DST shift), Temp by ring **-0.3°** (warming toward baseline), Mouth Temp **35.6°C** (cool follicular baseline).
