@@ -762,9 +762,14 @@ I'm ready to respond to the updated call, sir.
       - Updated `raynes_ocd_adhd/Rayne_Medication_Tracking_Sheet.md`, `Rayne_Medication_Tracking_Sheet.html`, and `rayne_tracker.html`.
       - Updated `raynes_ocd_adhd/Rayne_Clinical_Brief.html` and `rayne_clinical_brief.html`.
       - Built standalone 1-click printable sheet: [`Rayne_Doctor_Talking_Points_Printable.html`](file:///Users/valuedcustomer/Downloads/flowstate_ai_os_candy/Rayne_Doctor_Talking_Points_Printable.html) and markdown guide [`Rayne_Doctor_Talking_Points.md`](file:///Users/valuedcustomer/Downloads/flowstate_ai_os_candy/raynes_ocd_adhd/Rayne_Doctor_Talking_Points.md).
-      - Copied printable sheet to Candy's Downloads folder (`/Users/valuedcustomer/Downloads/Rayne_Doctor_Talking_Points_Printable.html`) and automatically launched in browser.
-      - Integrated Card #12 into [`share_links.html`](file:///Users/valuedcustomer/Downloads/flowstate_ai_os_candy/share_links.html).
-      - Full git commit and push completed to `origin/main`.
+- **2026-11-06 (Midday)** (FRIDAY):
+  - **NBCC Withdrawal Follow-Up Transmitted to Tammy Groom:**
+    - Rayne transmitted her follow-up email directly to Academic Chair Tammy Groom (`Tammy.Groom@nbcc.ca`).
+    - Formally requested confirmation on: (1) the internal Student Status Form completion with the Registrar's Office for file good standing, and (2) updating enrollment status so that Winter 2027 tuition billing and New Brunswick Student Financial Services funding are officially cancelled.
+  - **UNB HotSpot Parking Refund Officially Approved (~$166.40):**
+    - HotSpot / UNB Parking Services responded confirming that the pro-rated refund for Rayne's student parking permit (`KHY712`, $208.00 baseline) has been **officially approved**.
+    - Funds will be reimbursed directly back to the original credit card on/after **November 12, 2026**.
+    - Successfully recovers ~$166.40 in unspent cash for the family budget!
 
 
 
