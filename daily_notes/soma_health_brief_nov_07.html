@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soma's Health & Mobility Brief — Nov 7, 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b1329;
+      --card-bg: #131f3d;
+      --card-border: rgba(255, 255, 255, 0.1);
+      --teal: #0d9488;
+      --teal-light: #14b8a6;
+      --teal-glow: rgba(13, 148, 136, 0.2);
+      --purple: #8b5cf6;
+      --pink: #ec4899;
+      --emerald: #10b981;
+      --amber: #f59e0b;
+      --rose: #f43f5e;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 24px 16px 60px;
+      display: flex;
+      justify-content: center;
+    }
+    .container {
+      max-width: 680px;
+      width: 100%;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 24px;
+      padding: 24px 20px;
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.22), rgba(13, 148, 136, 0.25));
+      border: 1px solid var(--card-border);
+      border-radius: 18px;
+    }
+    .badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 4px 12px;
+      border-radius: 999px;
+      background: rgba(16, 185, 129, 0.25);
+      color: #6ee7b7;
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      margin-bottom: 10px;
+    }
+    h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: white;
+      margin-bottom: 6px;
+    }
+    .subtitle {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    @media (max-width: 500px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+    .metric-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 16px;
+    }
+    .metric-label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 4px;
+    }
+    .metric-value {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: white;
+    }
+    .metric-sub {
+      font-size: 0.8rem;
+      color: #34d399;
+      font-weight: 600;
+      margin-top: 2px;
+    }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 16px;
+    }
+    .card-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: white;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+    .card p {
+      font-size: 0.95rem;
+      color: #cbd5e1;
+      margin-bottom: 12px;
+    }
+    .card ul {
+      padding-left: 20px;
+      font-size: 0.92rem;
+      color: #cbd5e1;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .highlight {
+      color: #38bdf8;
+      font-weight: 600;
+    }
+    .success {
+      color: #34d399;
+      font-weight: 600;
+    }
+    .warning {
+      color: #fbbf24;
+      font-weight: 600;
+    }
+    .checklist-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px;
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 10px;
+      margin-bottom: 8px;
+      font-size: 0.92rem;
+    }
+    .btn-print {
+      display: block;
+      width: 100%;
+      text-align: center;
+      background: var(--teal);
+      color: white;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 14px;
+      border-radius: 12px;
+      border: none;
+      cursor: pointer;
+      margin-top: 24px;
+      transition: all 0.2s;
+    }
+    .btn-print:hover {
+      background: var(--teal-light);
+    }
+    @media print {
+      body { background: white; color: #0f172a; padding: 0; }
+      .container { max-width: 100%; }
+      .card, .metric-card, .header { background: white !important; border: 1px solid #cbd5e1 !important; color: #0f172a !important; box-shadow: none !important; }
+      .card-title, h1, .metric-value { color: #0f172a !important; }
+      .card p, .card ul, .subtitle { color: #334155 !important; }
+      .btn-print { display: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="header">
+    <div class="badge">Push Phase (Day 6 of 25)</div>
+    <h1>Soma's Health &amp; Recovery Brief</h1>
+    <div class="subtitle">Saturday, November 7, 2026 • Wine Recovery &amp; Back Pain Relief Milestone</div>
+  </div>
+
+  <div class="grid">
+    <div class="metric-card" style="border-color: rgba(245, 158, 11, 0.4);">
+      <div class="metric-label">Oral Temp (Wine Flush)</div>
+      <div class="metric-value" style="color: #fbbf24;">36.9°C <span style="font-size: 0.95rem; color: #34d399;">(36.4° Forehead)</span></div>
+      <div class="metric-sub" style="color: #fbbf24;">Hepatic alcohol clearance flush</div>
+    </div>
+    <div class="metric-card" style="border-color: rgba(16, 185, 129, 0.4);">
+      <div class="metric-label">Scale Status</div>
+      <div class="metric-value" style="color: #34d399;">Skipped 🛡️</div>
+      <div class="metric-sub" style="color: #34d399;">Masterclass self-protection!</div>
+    </div>
+    <div class="metric-card" style="border-color: rgba(56, 189, 248, 0.4);">
+      <div class="metric-label">Back &amp; Mobility</div>
+      <div class="metric-value" style="color: #38bdf8;">Zero Pain! 🎉</div>
+      <div class="metric-sub" style="color: #38bdf8;">Rayne's bed topper breakthrough</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">Fluid &amp; Oura Ring</div>
+      <div class="metric-value" style="color: #f43f5e;">Super Puffy</div>
+      <div class="metric-sub" style="color: var(--muted);">Ring missed; zero trend impact</div>
+    </div>
+  </div>
+
+  <div class="card" style="border-color: rgba(16, 185, 129, 0.4);">
+    <div class="card-title" style="color: #34d399;">🛏️ 1. The Big Physical Win: Zero Back Pain on Waking!</div>
+    <p>This is the highlight of your week physically! Sleeping with Rayne on her bed with a top cover pad gave your body exact pressure-relief mechanics:</p>
+    <ul>
+      <li><strong>Sacral &amp; Lumbar Decompression:</strong> Standard mattresses often create focal pressure beneath the sacrum, keeping the lumbar muscles and psoas in a state of reflexive contraction all night.</li>
+      <li><strong>Topper Equalization:</strong> The mattress topper distributed your bodyweight evenly across the entire surface of your hips and spine, allowing your deep postural stabilizers to disarm completely.</li>
+      <li><strong>Result:</strong> Zero back pain and not too stiff on waking—proof that supportive sleeping surfaces are your spine's best medicine.</li>
+    </ul>
+  </div>
+
+  <div class="card" style="border-color: rgba(245, 158, 11, 0.3);">
+    <div class="card-title" style="color: #fbbf24;">🍷 2. Wine Thermal Elevation (36.9°C) &amp; Forgetting the Ring</div>
+    <p>Take a deep breath and let go of any frustration about the ring!</p>
+    <ul>
+      <li><strong>Why Oral Temp Hit 36.9°C:</strong> Alcohol metabolism in the liver produces acetate, causing acute systemic vasodilation and increased oral mucosal blood flow. Even 0-sugar wine causes this temporary 8–12 hour heat flush (just like on Oct 14 when wine bumped your temp to 36.3°C).</li>
+      <li><strong>Forehead Temp (36.4°C) Proves Baseline:</strong> Your forehead surface reading confirms that your core is completely cool, stable, and non-febrile.</li>
+      <li><strong>Missing the Ring Is Fine:</strong> Missing one night on Cycle Day 6 does not disrupt your ovulatory trend tracking at all. You have several days before the ovulatory shift (~Days 13–15).</li>
+    </ul>
+  </div>
+
+  <div class="card" style="border-color: rgba(56, 189, 248, 0.3);">
+    <div class="card-title" style="color: #38bdf8;">💧 3. "Super Puffy" &amp; Skipping the Scale</div>
+    <p>Waking up puffy after wine is <span class="highlight">100% water and zero fat</span>:</p>
+    <ul>
+      <li><strong>The Aldosterone Rebound:</strong> Alcohol suppresses ADH while drinking, causing dehydration. Overnight, the body over-compensates by surging aldosterone, which instructs the kidneys to temporarily hoard water and sodium.</li>
+      <li><strong>Scale Protection:</strong> Skipping the scale today was an act of high somatic intelligence. Stepping on would have shown an artificial 2–3 lb water spike that would only create stress. It will flush out over the next 24–36 hours!</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="card-title">📋 4. Today's Saturday Gentle Recovery Plan</div>
+    <div class="checklist-item">
+      <div style="font-size: 1.2rem;">💧</div>
+      <div><strong>BioSteel &amp; Lemon Flush:</strong> Drink 24–32 oz of water with BioSteel electrolytes to signal the kidneys to shut off aldosterone and release the puffiness.</div>
+    </div>
+    <div class="checklist-item">
+      <div style="font-size: 1.2rem;">🍵</div>
+      <div><strong>Dandelion Tea:</strong> A cup of warm dandelion tea acts as a gentle, potassium-rich diuretic for natural lymphatic drainage.</div>
+    </div>
+    <div class="checklist-item">
+      <div style="font-size: 1.2rem;">🧴</div>
+      <div><strong>Weekend BHRT:</strong> 1/2 pump BiEst AM. Testosterone OFF (Saturday rule). Progesterone cream paused (OFF). Oral capsule tonight.</div>
+    </div>
+    <div class="checklist-item">
+      <div style="font-size: 1.2rem;">🚶‍♀️</div>
+      <div><strong>Gentle Walk:</strong> A relaxed 20–30 min outdoor stroll to activate calf muscle pumps and clear metabolic fog.</div>
+    </div>
+  </div>
+
+  <button class="btn-print" onclick="window.print()">🖨️ Print / Save Daily Brief</button>
+</div>
+
+</body>
+</html>

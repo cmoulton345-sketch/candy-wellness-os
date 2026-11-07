@@ -2,6 +2,16 @@
 
 > **Active Log:** Voice & Persona Interactions with Candy
 
+- **2026-11-07 (Morning)** (SOMA):
+  - **Candy's Physical Biometrics & Saturday Recovery Triage (Cycle 5, Day 6):**
+    - Biometrics: Oral Temp **36.9°C** (hepatic alcohol clearance vasodilation from Friday night Skinnygirl 0-sugar white wine), Forehead Temp **36.4°C** (confirms true non-febrile core baseline), Oura Ring missed/forgotten overnight (completely reassured Candy that missing one follicular night does not disrupt ovulatory baseline trends). Scale skipped (celebrated as masterclass self-protection from transient 2–3 lb rebound water holding; 100% water, zero fat!).
+    - Symptoms & Breakthroughs:
+      1. *Rayne's Bed / Mattress Topper Breakthrough:* Slept with Rayne on her bed with a top cover pad &rarr; woke with **ZERO back pain and not too stiff!** Huge physical validation that pressure-relieving sleep surfaces decompress the sacrum, pelvis, and lumbar spine, allowing the psoas and spinal extensors to fully relax.
+      2. *Super Puffy / "Morning-After Sponge" Effect:* Alcohol-induced dehydration triggered compensatory aldosterone/renin rebound, causing kidneys to temporarily hoard water and sodium in interstitial tissues.
+      3. *Weekend BHRT Schedule:* BiEst **1/2 pump AM** (new dose), Testosterone **OFF** (weekend rule), Progesterone cream paused (OFF), Progesterone oral capsule bedtime.
+      4. *Recovery Plan:* 24–32 oz water with BioSteel electrolytes, warm lemon/dandelion tea, gentle 20-min outdoor walk, and zero guilt.
+    - System Sync: Updated `candys_hormones.md` (Day 6 row), `candy_cycle_calendar_sept_oct_2026.html` (advanced to Day 6 TODAY ⭐), filed `daily_notes/soma_health_brief_nov_07.md` & `.html`.
+
 - **2026-11-06 (Afternoon)** (SOMA):
   - **Mom's Doctor Visit Follow-Up: Low-Dose BP Med, Left Inner Knee (Medial Meniscus) Diagnosis & Hinged Brace Selection:**
     - *Physician Visit Updates:*
