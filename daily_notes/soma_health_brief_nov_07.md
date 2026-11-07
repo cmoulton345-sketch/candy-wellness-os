@@ -95,6 +95,30 @@ Seeing your lower belly distended and "sticking out" can feel alarming, but phys
 
 ---
 
+## ⚡ 6. Left-Sided Belly Pain: The Sigmoid Gas Trap & Atrantil + Booze Collision
+
+It is so frustrating when an old symptom reappears after being gone for so long! Take heart: **this is NOT a permanent setback, but a very specific pharmacological and mechanical collision.**
+
+### Why Your Left Side Specifically?
+1. **The Anatomy of the "Sigmoid Bend":** 
+   - The left lower abdomen is home to the **descending colon and the sigmoid colon**. 
+   - The sigmoid is an S-shaped, narrow turn before the rectum. When gut motility slows down or when gas spikes, the gas bubble physically wedges right at that left bend, stretching the visceral nerve fibers and creating sharp or crampy localized pain.
+2. **The Atrantil (2 Pills) + Alcohol Flare:**
+   - **Atrantil's Power:** Atrantil contains horse chestnut (saponins) and quebracho Colorado (polyphenols) that target methane-producing archaebacteria. Going up to **2 pills** sharply accelerates microbial die-off and bacterial cell wall disruption.
+   - **The Alcohol Collision:** Alcohol strips the protective mucus layer of the gut lining and increases permeability. Taking a double dose of strong botanical saponins on top of an alcohol-irritated intestinal mucosa causes acute smooth muscle cramping, mucosal irritation, and a sudden surge in trapped gas.
+   - **Combined Transit Stall:** Alcohol and your bedtime progesterone capsule relax the intestinal smooth muscle, so the colon cannot push the gas past the left sigmoid bend.
+
+### Immediate Action Plan for the Left Side:
+* **Pause Atrantil for Today:** Give your gut lining a 24-hour break to settle and re-coat. When you resume tomorrow or Monday, drop back to **1 pill strictly with a solid meal** (never on an empty or wine-sensitized stomach).
+* **The "Sigmoid Gravity Release" Position:**
+  - Lie on your **left side** for 3–5 minutes with your knees bent toward your chest.
+  - Slowly roll onto your back and hug both knees to your chest (Pavanmuktasana / Wind-Relieving Pose).
+  - Then roll onto your **right side**. This sequence uses natural anatomical gravity to move the trapped gas bubble out of the sigmoid loop and toward the rectum for release.
+* **Warmth Over Left Flank:** Place a warm heating pad or hot water bottle directly on your lower left abdomen to melt the smooth muscle spasm.
+* **Warm Chamomile or Peppermint Tea:** Sip warm tea to soothe the enteric nervous system.
+
+---
+
 ## 📋 4. Today's Saturday Gentle Recovery Plan
 
 * [ ] **1. BioSteel Electrolyte Flush:**
