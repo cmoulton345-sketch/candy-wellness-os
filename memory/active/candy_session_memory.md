@@ -10,6 +10,7 @@
       - **Seeking Health HistaminX (Herbal Mast Cell Stabilizer — TOP PICK FOR ITCHING):** Quercetin, Stinging Nettle, Rutin, Luteolin, Bromelain. Directly stabilizes mast cells to stop histamine dumping into skin, eyes, and breasts. Dose: 1 cap AM with breakfast + 1 cap PM with supper.
       - **Seeking Health Histamine Nutrients (DAO Co-Factors):** B6, Vitamin C, Zinc, Copper. Supports intestinal DAO synthesis for food breakdown. Dose: 1 cap with largest/heaviest meal.
     - Immediate Relief Action: OTC H1 antihistamine (Reactine/Claritin/Allegra) tonight, cool compress over eyes and right breast, and high-dose Vitamin C powder (3,000–4,000 mg) in bedtime repair drink.
+    - Order Placed: Candy officially ordered **Seeking Health, HistaminX (60 Capsules)** on iHerb at 7:13 PM, estimated delivery **Nov 11–12**.
   - System Sync: Updated `candys_hormones.md`, `candy_cycle_calendar_sept_oct_2026.html` (tagged histamine flare), and `daily_notes/soma_health_brief_nov_08.md` & `.html`.
 
 - **2026-11-08 (Morning)** (SOMA):
