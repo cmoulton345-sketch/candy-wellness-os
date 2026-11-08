@@ -305,8 +305,8 @@
   <div class="kpi-grid">
     <div class="kpi-card yellow">
       <div class="kpi-title">Current Active Debt</div>
-      <div class="kpi-value" id="kpi-total-debt">$37,867.44</div>
-      <div class="kpi-sub">5 Scheduled Payoff Steps (Excl. RBC LOC)</div>
+      <div class="kpi-value" id="kpi-total-debt">$38,849.83</div>
+      <div class="kpi-sub">Includes $309.61 Pending (Excl. RBC LOC)</div>
     </div>
     <div class="kpi-card teal">
       <div class="kpi-title">Debt Elimination Engine</div>
@@ -315,8 +315,8 @@
     </div>
     <div class="kpi-card coral">
       <div class="kpi-title">Christmas 2026 Fund</div>
-      <div class="kpi-value">$1,789.21+ Cash</div>
-      <div class="kpi-sub">$289 Dec 15 + $1,500 Dec 30 (Zero Debt!)</div>
+      <div class="kpi-value">$806.82+ Cash</div>
+      <div class="kpi-sub">Leftover Surplus Dec 30 (Zero Holiday Debt!)</div>
     </div>
     <div class="kpi-card purple">
       <div class="kpi-title">Age 60 Wealth Portfolio</div>
@@ -383,14 +383,15 @@
           <div class="inv-header">
             <div>
               <div class="inv-name">RBC Visa Classic Low Rate</div>
-              <span class="badge badge-yellow">Target #1: Wipe by Dec 15</span>
+              <span class="badge badge-yellow">Target #1: Wipe by Dec 30</span>
             </div>
-            <div class="inv-bal" style="color:var(--rbc-yellow);">$4,210.79</div>
+            <div class="inv-bal" style="color:var(--rbc-yellow);">$5,193.18</div>
           </div>
           <div class="inv-meta">
+            <div><strong>Balance Breakdown:</strong> $4,883.57 posted + $309.61 pending charges</div>
             <div><strong>Interest Rate:</strong> ~12.99% (Highest active card rate)</div>
-            <div><strong>Strategy:</strong> $1,500 Nov 15, $1,500 Nov 30, and $1,210.79 on Dec 15.</div>
-            <div><strong>Payoff Date:</strong> 🎯 December 15, 2026 (Wiped before Christmas!)</div>
+            <div><strong>Strategy:</strong> $1,500 Nov 15, $1,500 Nov 30, $1,500 Dec 15, and $693.18 on Dec 30.</div>
+            <div><strong>Payoff Date:</strong> 🎯 December 30, 2026 (100% Wiped before 2027!)</div>
           </div>
         </div>
 
@@ -629,10 +630,10 @@
 <script>
   const scheduleData = [
     { id: 1, date: 'Oct 30, 2026', period: '2026 Pay', target: 'RBC Visa', badge: 'badge-yellow', amount: 1500, bal: 'Paid ($1,500)', note: 'Phase 1: Wipe RBC Visa' },
-    { id: 2, date: 'Nov 15, 2026', period: '2026 Pay', target: 'RBC Visa', badge: 'badge-yellow', amount: 1500, bal: 'RBC Visa: $2,710.79', note: 'In Progress' },
-    { id: 3, date: 'Nov 30, 2026', period: '2026 Pay', target: 'RBC Visa', badge: 'badge-yellow', amount: 1500, bal: 'RBC Visa: $1,210.79', note: 'In Progress' },
-    { id: 4, date: 'Dec 15, 2026', period: '2026 Pay', target: 'RBC Visa (FINAL) & Xmas', badge: 'badge-green', amount: 1500, bal: 'RBC: $0.00 | Xmas: +$289.21', note: '🎉 RBC VISA 100% PAID OFF TO $0.00!' },
-    { id: 5, date: 'Dec 30, 2026', period: '2026 Pay', target: 'Christmas Fund (Cash)', badge: 'badge-blue', amount: 1500, bal: 'Christmas Cash: $1,789.21 Total', note: '🎄 Christmas Cash 100% Funded!' },
+    { id: 2, date: 'Nov 15, 2026', period: '2026 Pay', target: 'RBC Visa', badge: 'badge-yellow', amount: 1500, bal: 'RBC Visa: $3,693.18', note: 'In Progress (Balance: $5,193.18 incl. pending)' },
+    { id: 3, date: 'Nov 30, 2026', period: '2026 Pay', target: 'RBC Visa', badge: 'badge-yellow', amount: 1500, bal: 'RBC Visa: $2,193.18', note: 'In Progress' },
+    { id: 4, date: 'Dec 15, 2026', period: '2026 Pay', target: 'RBC Visa', badge: 'badge-yellow', amount: 1500, bal: 'RBC Visa: $693.18', note: 'In Progress (Final stretch!)' },
+    { id: 5, date: 'Dec 30, 2026', period: '2026 Pay', target: 'RBC Visa (FINAL) & Xmas Cash', badge: 'badge-green', amount: 1500, bal: 'RBC: $0.00 | Xmas: +$806.82 Cash', note: '🎉 RBC VISA 100% PAID OFF TO $0.00! + $806.82 Holiday Cash' },
     { id: 6, date: 'Jan 15, 2027', period: 'Pay 1 (2027)', target: 'Scotia Visa (Chunk 1)', badge: 'badge-coral', amount: 1500, bal: 'Scotia Chunk 1: $4,099.97', note: 'Phase 2: Beat 10-Mo Clock' },
     { id: 7, date: 'Jan 29, 2027', period: 'Pay 2 (2027)', target: 'Scotia Visa (Chunk 1)', badge: 'badge-coral', amount: 1500, bal: 'Scotia Chunk 1: $2,599.97', note: 'In Progress' },
     { id: 8, date: 'Feb 12, 2027', period: 'Pay 3 (2027)', target: 'Scotia Visa (Chunk 1)', badge: 'badge-coral', amount: 1500, bal: 'Scotia Chunk 1: $1,099.97', note: 'In Progress' },
