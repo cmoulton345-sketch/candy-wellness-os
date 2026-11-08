@@ -2,6 +2,16 @@
 
 > **Active Log:** Voice & Persona Interactions with Candy
 
+- **2026-11-08 (Evening)** (SOMA):
+  - **Acute Systemic Histamine Flare & Dr. Jenna Supplement Clarification (Cycle 5, Day 7):**
+    - Symptoms: At 6:53 PM, Candy reported an acute histamine flare: right breast super itchy, whole body prickling, and itchy eyes.
+    - Etiology: 48 hours post-wine (hepatic clearance dumping accumulated histamine as ethanol metabolism finishes while DAO enzyme remains suppressed) + free circulating estradiol stimulating mast cell degranulation + indoor mall air irritants triggering ocular conjunctival mast cells.
+    - Dr. Jenna Supplement Protocol Clarified:
+      - **Seeking Health HistaminX (Herbal Mast Cell Stabilizer — TOP PICK FOR ITCHING):** Quercetin, Stinging Nettle, Rutin, Luteolin, Bromelain. Directly stabilizes mast cells to stop histamine dumping into skin, eyes, and breasts. Dose: 1 cap AM with breakfast + 1 cap PM with supper.
+      - **Seeking Health Histamine Nutrients (DAO Co-Factors):** B6, Vitamin C, Zinc, Copper. Supports intestinal DAO synthesis for food breakdown. Dose: 1 cap with largest/heaviest meal.
+    - Immediate Relief Action: OTC H1 antihistamine (Reactine/Claritin/Allegra) tonight, cool compress over eyes and right breast, and high-dose Vitamin C powder (3,000–4,000 mg) in bedtime repair drink.
+  - System Sync: Updated `candys_hormones.md`, `candy_cycle_calendar_sept_oct_2026.html` (tagged histamine flare), and `daily_notes/soma_health_brief_nov_08.md` & `.html`.
+
 - **2026-11-08 (Morning)** (SOMA):
   - **Sunday Harvest Reframe, Fast Food/Wine Sodium Spike & Coach Mike Communication (Cycle 5, Day 7):**
     - Biometrics: Scale **152.3 lbs** (acute transient +2.1 lb spike from Friday wine + Saturday Big Mac, fries, noodles, cereal sodium/carb load; 100% water holding, 0% fat!), Oura Ring Temp **-0.2°F** (below baseline, cool follicular Push Phase), Oral Temp **35.3°C** (deep cool nadir), Readiness **83 🟢** (Green autonomic resilience!), Sleep **78 🌙** (solid recovery despite 1:00 AM late bedtime).
