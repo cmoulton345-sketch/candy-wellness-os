@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Candy's GoodLife Fitness Circuit & RPM Guide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b1329;
+      --card-bg: #131f3d;
+      --card2: #1a294f;
+      --card-border: rgba(255, 255, 255, 0.1);
+      --teal: #0d9488;
+      --teal-light: #14b8a6;
+      --emerald: #10b981;
+      --amber: #f59e0b;
+      --rose: #f43f5e;
+      --indigo: #6366f1;
+      --purple: #a855f7;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      padding: 16px 12px 80px;
+      display: flex;
+      justify-content: center;
+      -webkit-font-smoothing: antialiased;
+    }
+    .container {
+      max-width: 680px;
+      width: 100%;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 16px;
+      padding: 20px 16px;
+      background: linear-gradient(135deg, rgba(13, 148, 136, 0.25), rgba(99, 102, 241, 0.22));
+      border: 1px solid var(--card-border);
+      border-radius: 18px;
+    }
+    .badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 4px 12px;
+      border-radius: 999px;
+      background: rgba(13, 148, 136, 0.3);
+      color: #5eead4;
+      border: 1px solid rgba(13, 148, 136, 0.5);
+      margin-bottom: 8px;
+    }
+    h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: white;
+      margin-bottom: 4px;
+    }
+    .subtitle {
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+    
+    /* NAV FILTER TABS */
+    .filter-tabs {
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      padding-bottom: 8px;
+      margin-bottom: 16px;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+    }
+    .filter-tabs::-webkit-scrollbar { display: none; }
+    .filter-btn {
+      padding: 8px 14px;
+      border-radius: 50px;
+      border: 1px solid var(--card-border);
+      background: var(--card-bg);
+      color: var(--muted);
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s;
+    }
+    .filter-btn.active {
+      background: var(--teal);
+      color: white;
+      border-color: var(--teal-light);
+      box-shadow: 0 4px 14px rgba(13, 148, 136, 0.35);
+    }
+
+    /* CARD STYLING */
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 18px;
+      margin-bottom: 14px;
+      position: relative;
+    }
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 10px;
+      gap: 10px;
+    }
+    .card-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: white;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .target-badge {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 3px 9px;
+      border-radius: 50px;
+      background: rgba(99, 102, 241, 0.2);
+      color: #a5b4fc;
+      border: 1px solid rgba(99, 102, 241, 0.35);
+      white-space: nowrap;
+    }
+    .guardrail-box {
+      background: rgba(244, 63, 94, 0.12);
+      border: 1px solid rgba(244, 63, 94, 0.35);
+      border-radius: 12px;
+      padding: 12px 14px;
+      margin: 10px 0;
+      color: #fecdd3;
+      font-size: 0.86rem;
+      line-height: 1.45;
+    }
+    .guardrail-box strong {
+      color: #fda4af;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 4px;
+      font-size: 0.88rem;
+    }
+    .setup-list {
+      font-size: 0.86rem;
+      color: #cbd5e1;
+      padding-left: 18px;
+      margin-bottom: 10px;
+    }
+    .setup-list li { margin-bottom: 4px; }
+    
+    .tracker-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding-top: 10px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      flex-wrap: wrap;
+    }
+    .sets-badge {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #34d399;
+      background: rgba(16, 185, 129, 0.15);
+      padding: 4px 10px;
+      border-radius: 8px;
+    }
+    .weight-input-wrap {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .weight-input-wrap label {
+      font-size: 0.76rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .weight-input {
+      width: 80px;
+      background: var(--card2);
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      padding: 5px 8px;
+      color: white;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.88rem;
+      text-align: center;
+      outline: none;
+    }
+    .weight-input:focus {
+      border-color: var(--teal-light);
+    }
+    .btn-done {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 50px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: transparent;
+      color: var(--muted);
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-done.completed {
+      background: rgba(16, 185, 129, 0.25);
+      color: #6ee7b7;
+      border-color: rgba(16, 185, 129, 0.5);
+    }
+
+    /* RPM HERO CARD */
+    .rpm-hero {
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.2), rgba(244, 63, 94, 0.2));
+      border: 1.5px solid rgba(245, 158, 11, 0.4);
+      border-radius: 18px;
+      padding: 20px;
+      margin-bottom: 16px;
+    }
+    .rpm-hero h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.35rem;
+      color: #fde68a;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .rule-pill {
+      background: rgba(0, 0, 0, 0.35);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 12px;
+      padding: 12px 14px;
+      margin-bottom: 8px;
+    }
+    .rule-title {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: white;
+      margin-bottom: 3px;
+    }
+    .rule-desc {
+      font-size: 0.85rem;
+      color: #cbd5e1;
+      line-height: 1.4;
+    }
+
+    /* CLASS MATRIX */
+    .class-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 14px;
+      border-radius: 12px;
+      background: var(--card2);
+      border: 1px solid var(--card-border);
+      margin-bottom: 10px;
+    }
+    .class-status-pill {
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 6px;
+      white-space: nowrap;
+      margin-top: 2px;
+    }
+    .status-green { background: rgba(16, 185, 129, 0.25); color: #6ee7b7; border: 1px solid rgba(16, 185, 129, 0.4); }
+    .status-yellow { background: rgba(245, 158, 11, 0.25); color: #fde68a; border: 1px solid rgba(245, 158, 11, 0.4); }
+    .status-pause { background: rgba(244, 63, 94, 0.25); color: #fecdd3; border: 1px solid rgba(244, 63, 94, 0.4); }
+
+    .btn-print {
+      display: block;
+      width: 100%;
+      background: var(--teal);
+      color: white;
+      border: none;
+      border-radius: 12px;
+      padding: 14px;
+      font-family: 'Outfit', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: background 0.2s;
+    }
+    .btn-print:hover { background: var(--teal-light); }
+
+    @media print {
+      body { background: white !important; color: black !important; padding: 0 !important; }
+      .card, .header, .rpm-hero, .class-item { background: white !important; border: 1px solid #cbd5e1 !important; color: #0f172a !important; box-shadow: none !important; }
+      .card-title, h1, h2, .rule-title { color: #0f172a !important; }
+      .guardrail-box { background: #fff1f2 !important; color: #be123c !important; border-color: #f43f5e !important; }
+      .btn-print, .filter-tabs { display: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="header">
+    <div class="badge">GoodLife Fitness Routine</div>
+    <h1>GoodLife Circuit &amp; RPM Guide 🏢</h1>
+    <div class="subtitle">Protected Strength, Glute &amp; Arm Sculpting &amp; Smart RPM Guidelines</div>
+  </div>
+
+  <!-- Filter Tabs -->
+  <div class="filter-tabs">
+    <button class="filter-btn active" onclick="filterSection('all', this)">All (Full Tour)</button>
+    <button class="filter-btn" onclick="filterSection('lower', this)">🦿 Lower Body (Glutes)</button>
+    <button class="filter-btn" onclick="filterSection('upper', this)">🏹 Upper Body (Arms &amp; Back)</button>
+    <button class="filter-btn" onclick="filterSection('rpm', this)">🚴 RPM Cycling Guide</button>
+    <button class="filter-btn" onclick="filterSection('classes', this)">🧘 Class Compass</button>
+  </div>
+
+  <!-- SECTION: RPM MASTER GUIDE -->
+  <div class="section-block" id="sec-rpm">
+    <div class="rpm-hero">
+      <h2>🚴 Les Mills RPM: 100% Green Light!</h2>
+      <p style="font-size:0.9rem; color:#fef3c7; margin-bottom:12px;">
+        Because you have done RPM many times in the past, your muscle memory and cadence coordination are already locked in! Cycling is <strong>zero ground impact</strong> (saves joints and feet) and acts as a <strong>powerful lymphatic fluid pump</strong> to de-puff your legs.
+      </p>
+
+      <div class="rule-pill">
+        <div class="rule-title">🛡️ Setup Rule #1: Handlebars HIGH (C-Sign Hip Protection)</div>
+        <div class="rule-desc">
+          Set handlebars <strong>1 to 2 notches HIGHER than your saddle</strong>. This keeps your pelvis upright and prevents deep hip flexion (&lt; 60°), stopping anterior femoral pinching and psoas irritation completely!
+        </div>
+      </div>
+
+      <div class="rule-pill">
+        <div class="rule-title">⚡ Setup Rule #2: Cadence over Heavy Knee Grinding</div>
+        <div class="rule-desc">
+          Keep your pedals spinning smoothly between <strong>70 to 90 RPM</strong>. Never grind below 60 RPM with extreme torque—smooth cadence builds cardiovascular endurance and tones without knee or sacroiliac strain.
+        </div>
+      </div>
+
+      <div class="rule-pill">
+        <div class="rule-title">🍑 Setup Rule #3: Glute Drive on Standing Climbs</div>
+        <div class="rule-desc">
+          When standing out of the saddle, keep your chest proud and hips floating over the nose of the saddle. Drive through your <strong>heels and mid-foot</strong> to activate glutes and hamstrings rather than pushing through toes.
+        </div>
+      </div>
+
+      <div class="rule-pill" style="border-color: rgba(244, 63, 94, 0.4);">
+        <div class="rule-title" style="color:#fecdd3;">⚠️ The Hip Whisper Rule</div>
+        <div class="rule-desc">
+          If you ever feel even a slight pinch in your front hip or groin during a climb, <strong>sit down immediately</strong>, back the resistance off one turn, and ride the flat road. You never have to match the instructor's resistance call!
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION: LOWER BODY CIRCUIT -->
+  <div class="section-block" id="sec-lower">
+    <div style="font-family:'Outfit',sans-serif; font-weight:700; font-size:1.15rem; color:#5eead4; margin:16px 0 10px; display:flex; align-items:center; gap:6px;">
+      🦿 Part A: Lower Body Sculpt &amp; Pelvic Stability
+    </div>
+
+    <!-- Machine 1: Leg Press -->
+    <div class="card machine-card" id="card-legpress">
+      <div class="card-top">
+        <div>
+          <div class="card-title">1. Seated Leg Press Machine</div>
+          <div style="font-size:0.8rem; color:var(--muted); margin-top:2px;">Target: Glutes, Hamstrings &amp; Quads</div>
+        </div>
+        <span class="target-badge">🍑 Glute Focus</span>
+      </div>
+      <ul class="setup-list">
+        <li>Sit back firmly with lower back and sacrum flat against backrest.</li>
+        <li>Place feet <strong>high and shoulder-width apart</strong> on the footplate (feet high shifts load directly into glutes &amp; off knees).</li>
+      </ul>
+      <div class="guardrail-box">
+        <strong>🛡️ SOMA PROTECTION GUARDRAIL:</strong>
+        Stop at <strong>90 degrees!</strong> Do NOT let the sled come down so deep that your knees hit your chest or your lower back peels off the pad. Stop at 90°, drive through heels, and <em>never lock your knees at the top</em>.
+      </div>
+      <div class="tracker-row">
+        <span class="sets-badge">3 sets × 10–12 reps</span>
+        <div class="weight-input-wrap">
+          <label>Pin / Weight:</label>
+          <input type="text" class="weight-input" placeholder="e.g. 70 lb" onchange="saveWeight('legpress', this.value)" id="w-legpress">
+        </div>
+        <button class="btn-done" onclick="toggleDone('card-legpress')"><span>✓</span> Done</button>
+      </div>
+    </div>
+
+    <!-- Machine 2: Hip Abduction -->
+    <div class="card machine-card" id="card-abduct">
+      <div class="card-top">
+        <div>
+          <div class="card-title">2. Seated Hip Abduction (Outer Thigh)</div>
+          <div style="font-size:0.8rem; color:var(--muted); margin-top:2px;">Target: Gluteus Medius (Upper Glute "Shelf")</div>
+        </div>
+        <span class="target-badge">🍑 Glute Lift</span>
+      </div>
+      <ul class="setup-list">
+        <li>Pads set on outside of knees. Lean torso forward 10–15° with flat back.</li>
+        <li>Smoothly press knees outward against pads, hold squeeze for 1 second.</li>
+        <li>Control the return (2 seconds)—do not let weights slam together.</li>
+      </ul>
+      <div class="guardrail-box">
+        <strong>🛡️ SOMA PROTECTION GUARDRAIL:</strong>
+        Do not arch your lower back to force the pads wider. Keep your core gently braced and pelvis anchored to the seat.
+      </div>
+      <div class="tracker-row">
+        <span class="sets-badge">3 sets × 12–15 reps</span>
+        <div class="weight-input-wrap">
+          <label>Pin / Weight:</label>
+          <input type="text" class="weight-input" placeholder="e.g. 60 lb" onchange="saveWeight('abduct', this.value)" id="w-abduct">
+        </div>
+        <button class="btn-done" onclick="toggleDone('card-abduct')"><span>✓</span> Done</button>
+      </div>
+    </div>
+
+    <!-- Machine 3: Seated Leg Curl -->
+    <div class="card machine-card" id="card-legcurl">
+      <div class="card-top">
+        <div>
+          <div class="card-title">3. Seated Leg Curl Machine</div>
+          <div style="font-size:0.8rem; color:var(--muted); margin-top:2px;">Target: Hamstrings &amp; Posterior Chain Tone</div>
+        </div>
+        <span class="target-badge">🦵 Hamstrings</span>
+      </div>
+      <ul class="setup-list">
+        <li>Back flat against rear pad; lap thigh pad locked snugly over quads.</li>
+        <li>Lower leg roller sits just below calves (above Achilles tendon).</li>
+        <li>Pull heels smoothly down and back toward seat, squeeze 1s, return slow.</li>
+      </ul>
+      <div class="guardrail-box">
+        <strong>🛡️ SOMA PROTECTION GUARDRAIL:</strong>
+        Do not point toes inward. Keep feet flexed and straight forward to balance inner and outer hamstring tendons.
+      </div>
+      <div class="tracker-row">
+        <span class="sets-badge">3 sets × 10–12 reps</span>
+        <div class="weight-input-wrap">
+          <label>Pin / Weight:</label>
+          <input type="text" class="weight-input" placeholder="e.g. 45 lb" onchange="saveWeight('legcurl', this.value)" id="w-legcurl">
+        </div>
+        <button class="btn-done" onclick="toggleDone('card-legcurl')"><span>✓</span> Done</button>
+      </div>
+    </div>
+
+    <!-- Machine 4: Calf Raise -->
+    <div class="card machine-card" id="card-calf">
+      <div class="card-top">
+        <div>
+          <div class="card-title">4. Standing or Seated Calf Press</div>
+          <div style="font-size:0.8rem; color:var(--muted); margin-top:2px;">Target: Lower Leg Tone &amp; Lymphatic Drainage</div>
+        </div>
+        <span class="target-badge">💧 Fluid Flush</span>
+      </div>
+      <ul class="setup-list">
+        <li>Balls of feet on edge of platform; heels hanging off.</li>
+        <li>Press up high onto toes, pause 1 second, lower down below platform level.</li>
+        <li>Acts as a physical muscle pump to drain fluid from ankles and knees!</li>
+      </ul>
+      <div class="tracker-row">
+        <span class="sets-badge">2 sets × 15 reps</span>
+        <div class="weight-input-wrap">
+          <label>Pin / Weight:</label>
+          <input type="text" class="weight-input" placeholder="e.g. 50 lb" onchange="saveWeight('calf', this.value)" id="w-calf">
+        </div>
+        <button class="btn-done" onclick="toggleDone('card-calf')"><span>✓</span> Done</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION: UPPER BODY CIRCUIT -->
+  <div class="section-block" id="sec-upper">
+    <div style="font-family:'Outfit',sans-serif; font-weight:700; font-size:1.15rem; color:#a5b4fc; margin:16px 0 10px; display:flex; align-items:center; gap:6px;">
+      🏹 Part B: Upper Body Posture &amp; Sculpt
+    </div>
+
+    <!-- Machine 5: Lat Pulldown -->
+    <div class="card machine-card" id="card-latpull">
+      <div class="card-top">
+        <div>
+          <div class="card-title">5. Lat Pulldown Machine</div>
+          <div style="font-size:0.8rem; color:var(--muted); margin-top:2px;">Target: Upper Back &amp; Hourglass Taper</div>
+        </div>
+        <span class="target-badge">🏹 Back Sculpt</span>
+      </div>
+      <ul class="setup-list">
+        <li>Thigh pads locked firmly over quads. Grasp bar wider than shoulders.</li>
+        <li>Slight backward lean (10°), chest proud.</li>
+      </ul>
+      <div class="guardrail-box">
+        <strong>🛡️ SOMA PROTECTION GUARDRAIL:</strong>
+        Pull bar strictly to your <strong>collarbone / upper chest</strong>. <strong>NEVER pull behind your neck!</strong> Behind-the-neck pulling strains cervical vertebrae and causes severe trapezius stiffness. Drive elbows toward ribcage.
+      </div>
+      <div class="tracker-row">
+        <span class="sets-badge">3 sets × 10–12 reps</span>
+        <div class="weight-input-wrap">
+          <label>Pin / Weight:</label>
+          <input type="text" class="weight-input" placeholder="e.g. 50 lb" onchange="saveWeight('latpull', this.value)" id="w-latpull">
+        </div>
+        <button class="btn-done" onclick="toggleDone('card-latpull')"><span>✓</span> Done</button>
+      </div>
+    </div>
+
+    <!-- Machine 6: Seated Row -->
+    <div class="card machine-card" id="card-row">
+      <div class="card-top">
+        <div>
+          <div class="card-title">6. Seated Cable Row (Chest-Supported)</div>
+          <div style="font-size:0.8rem; color:var(--muted); margin-top:2px;">Target: Mid-Back, Rhomboids &amp; Open Posture</div>
+        </div>
+        <span class="target-badge">✨ Posture Decompress</span>
+      </div>
+      <ul class="setup-list">
+        <li>Chest resting against front pad (takes all stress off lumbar spine).</li>
+        <li>Grasp neutral handles (palms facing each other).</li>
+        <li>Pull elbows back past ribs, squeeze shoulder blades together for 1 second.</li>
+      </ul>
+      <div class="guardrail-box">
+        <strong>🛡️ SOMA PROTECTION GUARDRAIL:</strong>
+        Keep shoulders pressed down away from your ears. Do NOT shrug into your neck or upper traps.
+      </div>
+      <div class="tracker-row">
+        <span class="sets-badge">3 sets × 10–12 reps</span>
+        <div class="weight-input-wrap">
+          <label>Pin / Weight:</label>
+          <input type="text" class="weight-input" placeholder="e.g. 45 lb" onchange="saveWeight('row', this.value)" id="w-row">
+        </div>
+        <button class="btn-done" onclick="toggleDone('card-row')"><span>✓</span> Done</button>
+      </div>
+    </div>
+
+    <!-- Machine 7: Chest Press -->
+    <div class="card machine-card" id="card-chestpress">
+      <div class="card-top">
+        <div>
+          <div class="card-title">7. Seated Chest Press Machine</div>
+          <div style="font-size:0.8rem; color:var(--muted); margin-top:2px;">Target: Pectorals &amp; Front Shoulders</div>
+        </div>
+        <span class="target-badge">🛡️ Shoulder Safe</span>
+      </div>
+      <ul class="setup-list">
+        <li>Seat height adjusted so handles line up with <strong>mid-chest (nipple line)</strong>.</li>
+        <li>Press handles forward smoothly, pausing before elbows lock out.</li>
+      </ul>
+      <div class="guardrail-box">
+        <strong>🛡️ SOMA PROTECTION GUARDRAIL:</strong>
+        Tuck elbows at <strong>45 degrees</strong> (arrow shape). Flaring elbows out wide at 90 degrees pinches the front shoulder joint capsule.
+      </div>
+      <div class="tracker-row">
+        <span class="sets-badge">3 sets × 10 reps</span>
+        <div class="weight-input-wrap">
+          <label>Pin / Weight:</label>
+          <input type="text" class="weight-input" placeholder="e.g. 35 lb" onchange="saveWeight('chestpress', this.value)" id="w-chestpress">
+        </div>
+        <button class="btn-done" onclick="toggleDone('card-chestpress')"><span>✓</span> Done</button>
+      </div>
+    </div>
+
+    <!-- Machine 8: Lateral Raise -->
+    <div class="card machine-card" id="card-latraise">
+      <div class="card-top">
+        <div>
+          <div class="card-title">8. Shoulder Lateral Raise Machine / Cable</div>
+          <div style="font-size:0.8rem; color:var(--muted); margin-top:2px;">Target: Side Deltoid Sculpting</div>
+        </div>
+        <span class="target-badge">💪 Sleeveless Tone</span>
+      </div>
+      <ul class="setup-list">
+        <li>Padded arms against sides of forearms. Sit tall with chest open.</li>
+        <li>Raise arms out to sides until parallel to floor, hold 1s, return slow.</li>
+      </ul>
+      <div class="tracker-row">
+        <span class="sets-badge">3 sets × 12 reps (Light Weight)</span>
+        <div class="weight-input-wrap">
+          <label>Pin / Weight:</label>
+          <input type="text" class="weight-input" placeholder="e.g. 25 lb" onchange="saveWeight('latraise', this.value)" id="w-latraise">
+        </div>
+        <button class="btn-done" onclick="toggleDone('card-latraise')"><span>✓</span> Done</button>
+      </div>
+    </div>
+
+    <!-- Machine 9: Tricep Pushdown -->
+    <div class="card machine-card" id="card-tricep">
+      <div class="card-top">
+        <div>
+          <div class="card-title">9. Cable Tricep Rope Pushdown</div>
+          <div style="font-size:0.8rem; color:var(--muted); margin-top:2px;">Target: Back of the Arms (Toned Triceps)</div>
+        </div>
+        <span class="target-badge">➰ Arm Firming</span>
+      </div>
+      <ul class="setup-list">
+        <li>High cable pulley with rope attachment. Pin elbows against ribcage.</li>
+        <li>Push straight down and <strong>flare rope ends apart at the bottom</strong>.</li>
+        <li>Squeeze triceps for 1 second, control return up to 90 degrees.</li>
+      </ul>
+      <div class="tracker-row">
+        <span class="sets-badge">3 sets × 12 reps</span>
+        <div class="weight-input-wrap">
+          <label>Pin / Weight:</label>
+          <input type="text" class="weight-input" placeholder="e.g. 25 lb" onchange="saveWeight('tricep', this.value)" id="w-tricep">
+        </div>
+        <button class="btn-done" onclick="toggleDone('card-tricep')"><span>✓</span> Done</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION: GROUP FITNESS COMPASS -->
+  <div class="section-block" id="sec-classes">
+    <div style="font-family:'Outfit',sans-serif; font-weight:700; font-size:1.15rem; color:#fde68a; margin:16px 0 10px; display:flex; align-items:center; gap:6px;">
+      🧘 GoodLife Class Compass
+    </div>
+
+    <div class="class-item">
+      <span class="class-status-pill status-green">🟢 Green Light</span>
+      <div>
+        <div style="font-weight:700; font-size:0.95rem; color:white;">Les Mills RPM (Cycling)</div>
+        <div style="font-size:0.84rem; color:#cbd5e1; margin-top:3px;">
+          Zero ground impact + huge lymphatic fluid pump. Follow the 3 golden setup rules (Handlebars HIGH, 70–90 RPM cadence, glute drive). 100% approved!
+        </div>
+      </div>
+    </div>
+
+    <div class="class-item">
+      <span class="class-status-pill status-green">🟢 Green Light</span>
+      <div>
+        <div style="font-weight:700; font-size:0.95rem; color:white;">Les Mills BodyFlow / BodyBalance</div>
+        <div style="font-size:0.84rem; color:#cbd5e1; margin-top:3px;">
+          Yoga, Tai Chi &amp; Pilates fusion. Amazing for parasympathetic recovery, opening tight hips, and lengthening the spine. Highly recommended!
+        </div>
+      </div>
+    </div>
+
+    <div class="class-item">
+      <span class="class-status-pill status-green">🟢 Green Light</span>
+      <div>
+        <div style="font-weight:700; font-size:0.95rem; color:white;">Les Mills Core (CXWORX)</div>
+        <div style="font-size:0.84rem; color:#cbd5e1; margin-top:3px;">
+          30-minute core, hip and glute sling integration using resistance bands and light plates. Excellent for pelvic floor and lower back stability.
+        </div>
+      </div>
+    </div>
+
+    <div class="class-item">
+      <span class="class-status-pill status-yellow">🟡 Yellow Light</span>
+      <div>
+        <div style="font-weight:700; font-size:0.95rem; color:white;">Les Mills BodyPump (Modify With Care)</div>
+        <div style="font-size:0.84rem; color:#cbd5e1; margin-top:3px;">
+          High repetition barbell endurance. <strong>Mandatory rule:</strong> Use warm-up / lightest plates only. Never squat past 90°, avoid lunges if hips are tight, and stop clean &amp; press at chest height.
+        </div>
+      </div>
+    </div>
+
+    <div class="class-item">
+      <span class="class-status-pill status-pause">🔴 Pause For Now</span>
+      <div>
+        <div style="font-weight:700; font-size:0.95rem; color:white;">High-Impact Aerobics (BodyCombat, BodyAttack, GRIT)</div>
+        <div style="font-size:0.84rem; color:#cbd5e1; margin-top:3px;">
+          Repetitive high-impact jumping and explosive kicks can trigger sacroiliac joint strain, plantar foot pain, and elevated cortisol fluid rebound. Wait until your joint foundation is completely solid!
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button class="btn-print" onclick="window.print()">🖨️ Print GoodLife Gym Guide</button>
+</div>
+
+<script>
+  function filterSection(sec, btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    const rpm = document.getElementById('sec-rpm');
+    const lower = document.getElementById('sec-lower');
+    const upper = document.getElementById('sec-upper');
+    const classes = document.getElementById('sec-classes');
+
+    if (sec === 'all') {
+      rpm.style.display = 'block';
+      lower.style.display = 'block';
+      upper.style.display = 'block';
+      classes.style.display = 'block';
+    } else if (sec === 'lower') {
+      rpm.style.display = 'none';
+      lower.style.display = 'block';
+      upper.style.display = 'none';
+      classes.style.display = 'none';
+    } else if (sec === 'upper') {
+      rpm.style.display = 'none';
+      lower.style.display = 'none';
+      upper.style.display = 'block';
+      classes.style.display = 'none';
+    } else if (sec === 'rpm') {
+      rpm.style.display = 'block';
+      lower.style.display = 'none';
+      upper.style.display = 'none';
+      classes.style.display = 'none';
+    } else if (sec === 'classes') {
+      rpm.style.display = 'none';
+      lower.style.display = 'none';
+      upper.style.display = 'none';
+      classes.style.display = 'block';
+    }
+  }
+
+  function toggleDone(cardId) {
+    const card = document.getElementById(cardId);
+    const btn = card.querySelector('.btn-done');
+    const isDone = btn.classList.toggle('completed');
+    btn.innerHTML = isDone ? '<span>✓</span> Completed' : '<span>✓</span> Done';
+    localStorage.setItem('gl_' + cardId, isDone ? '1' : '0');
+  }
+
+  function saveWeight(key, val) {
+    localStorage.setItem('gl_w_' + key, val);
+  }
+
+  // Load saved weights and states
+  window.addEventListener('DOMContentLoaded', () => {
+    ['legpress', 'abduct', 'legcurl', 'calf', 'latpull', 'row', 'chestpress', 'latraise', 'tricep'].forEach(k => {
+      const savedW = localStorage.getItem('gl_w_' + k);
+      const input = document.getElementById('w-' + k);
+      if (savedW && input) input.value = savedW;
+
+      const cardId = 'card-' + k;
+      const isDone = localStorage.getItem('gl_' + cardId) === '1';
+      const card = document.getElementById(cardId);
+      if (card && isDone) {
+        const btn = card.querySelector('.btn-done');
+        if (btn) {
+          btn.classList.add('completed');
+          btn.innerHTML = '<span>✓</span> Completed';
+        }
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

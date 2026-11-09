@@ -50,9 +50,25 @@ Your body still cycles hormonally even without a period. Your **Oura ring temper
 ### Yoga: 2x/Week (Wed & Thu at Yoga Haus, 8:15-9:15 AM)
 - Continue as-is — excellent for mobility, stress, and nervous system regulation
 
-### Cardio/Walking: 2-3x/Week
-- [ ] Power walk with mom and pup (30+ min, any day)
-- [ ] Optional: 10-15 min post-dinner walk on non-strength days (aids digestion, lowers evening cortisol)
+### Cardio & Class Options: 2-3x/Week
+- [ ] **GoodLife Les Mills RPM (Cycling):** 45 min zero-impact ride. *Setup Rules:* Handlebars HIGH (1–2 notches above saddle for C-sign/psoas protection), cadence 70–90 RPM, drive climbs through heels/glutes.
+- [ ] **GoodLife Les Mills BodyFlow / BodyBalance:** Yoga, Tai Chi & Pilates blend (active recovery).
+- [ ] **Power walk with mom and pup:** (30+ min, any day)
+- [ ] **Optional:** 10-15 min post-dinner walk on non-strength days (aids digestion, lowers evening cortisol)
+
+### 🏢 GoodLife Fitness Circuit (Gym Alternative to Home Strength)
+When training at GoodLife, use the selectorized pin-select circuit for built-in back/spine support and smooth resistance:
+* **Lower Body Circuit:**
+  1. **Seated Leg Press:** 3 × 10–12 (Feet high & wide; **STOP at 90°** to protect psoas/hips).
+  2. **Seated Hip Abduction:** 3 × 12–15 (Lean forward 10–15° with flat back; glute shelf sculpt).
+  3. **Seated Leg Curl:** 3 × 10–12 (Posterior chain balance; keep feet straight).
+  4. **Standing/Seated Calf Raise:** 2 × 15 (Lymphatic drainage fluid pump).
+* **Upper Body Circuit:**
+  1. **Lat Pulldown:** 3 × 10–12 (To upper chest/collarbone; **NEVER behind neck**).
+  2. **Chest-Supported Cable Row:** 3 × 10–12 (Neutral grip; squeeze shoulder blades; neck relaxed).
+  3. **Seated Chest Press Machine:** 3 × 10 (Handles at mid-chest; elbows tucked at 45°).
+  4. **Lateral Raise Machine / Cables:** 3 × 12 (Side deltoid sculpt; scapular plane).
+  5. **Cable Tricep Rope Pushdown:** 3 × 12 (Elbows pinned to ribs; flare rope at bottom).
 
 ---
 

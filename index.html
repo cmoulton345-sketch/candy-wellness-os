@@ -328,6 +328,7 @@
   <div class="nav-tabs">
     <button class="nav-tab active" onclick="showPage('today',this)">Today</button>
     <button class="nav-tab" onclick="showPage('workout',this)">Workout</button>
+    <button class="nav-tab" onclick="showPage('goodlife',this)" style="color:#5eead4; font-weight:700;">🏢 GoodLife</button>
     <button class="nav-tab" onclick="showPage('hip-relief',this)" style="color:var(--teal); font-weight:700;">🦵 Hip &amp; Psoas</button>
     <button class="nav-tab" onclick="showPage('nutrition',this)">Nutrition</button>
     <button class="nav-tab" onclick="showPage('anti-inflammatory',this)" style="color:var(--rose);">🔥 Anti-Inflammatory</button>
@@ -437,6 +438,13 @@
       <button class="phase-btn push-btn selected" onclick="setWorkoutPhase('push')">Push</button>
       <button class="phase-btn protect-btn" onclick="setWorkoutPhase('protect')">Protect</button>
     </div>
+  <!-- GoodLife Gym Callout Banner -->
+  <div class="alert-box teal" style="display:flex; justify-content:space-between; align-items:center; cursor:pointer; background:rgba(13,148,136,0.2); border:1px solid rgba(13,148,136,0.45); border-radius:12px; padding:12px 16px; margin-bottom:14px;" onclick="showPage('goodlife', document.querySelector('.nav-tab[onclick*=\'goodlife\']'))">
+    <div>
+      <strong style="color:#5eead4; font-size:0.9rem;">🏢 Going to GoodLife Fitness Today?</strong>
+      <div style="font-size:0.78rem; color:var(--text); opacity:0.9; margin-top:3px;">Tap here for the 9-Machine Pin-Select Circuit, weight/pin trackers &amp; RPM cycling rules!</div>
+    </div>
+    <span style="font-size:1.3rem; margin-left:10px;">👉</span>
   </div>
 
   <!-- Hip Flexor / Psoas Alert Callout -->
@@ -1261,6 +1269,429 @@
 5. WORKOUT SWAPS: No deep squats or lunges. Swap with Chair Box Squats and Banded Glute Bridges.</div>
   </div>
 </div>
+
+<!-- ══ GOODLIFE FITNESS GYM, NEWBODY & RPM ══ -->
+<div class="page" id="page-goodlife">
+  <div class="page-header">
+    <h1>GoodLife Fitness Hub 🏢</h1>
+    <p>Protected Strength, Glute &amp; Arm Sculpting, Machine Pin Trackers, NewBody Class &amp; RPM Cycling Rules.</p>
+  </div>
+
+  <!-- Tuesday NewBody Class Spotlight Banner -->
+  <div style="background:linear-gradient(135deg, rgba(16, 185, 129, 0.25), rgba(13, 148, 136, 0.3)); border:1.5px solid rgba(16, 185, 129, 0.45); border-radius:16px; padding:18px; margin-bottom:16px;">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+      <span style="font-size:0.75rem; font-weight:800; text-transform:uppercase; letter-spacing:0.05em; padding:3px 10px; border-radius:50px; background:rgba(16, 185, 129, 0.3); color:#6ee7b7; border:1px solid rgba(16, 185, 129, 0.5);">⭐ TOMORROW: TUESDAY 9:45 AM</span>
+      <span style="font-size:0.8rem; font-weight:700; color:#5eead4;">Day 9 Peak Glow 💖</span>
+    </div>
+    <h3 style="font-family:'Outfit',sans-serif; font-size:1.25rem; color:white; margin-bottom:6px;">
+      ✨ GoodLife NewBody Class Protection Plan
+    </h3>
+    <p style="font-size:0.86rem; color:#cbd5e1; margin-bottom:10px; line-height:1.45;">
+      NewBody is GoodLife’s signature low-impact muscular conditioning class. Doing this at <strong>9:45 AM on Day 9</strong> is a masterstroke: it will act as an internal <strong>lymphatic fluid pump</strong> to de-puff your tissues, sculpt lean tone, and leave you glowing when Joe arrives Tuesday night!
+    </p>
+
+    <div style="background:rgba(0,0,0,0.3); border:1px solid rgba(255,255,255,0.1); border-radius:10px; padding:10px 12px; margin-bottom:6px;">
+      <div style="font-family:'Outfit',sans-serif; font-weight:700; font-size:0.88rem; color:#5eead4;">1. Grab Light Dumbbells (3 lb or 5 lb max)</div>
+      <div style="font-size:0.8rem; color:#e2e8f0; margin-top:2px;">NewBody uses high reps with short rests. Light weights create sculpted tone without straining your neck, rotator cuffs, or lower back.</div>
+    </div>
+
+    <div style="background:rgba(0,0,0,0.3); border:1px solid rgba(255,255,255,0.1); border-radius:10px; padding:10px 12px; margin-bottom:6px;">
+      <div style="font-family:'Outfit',sans-serif; font-weight:700; font-size:0.88rem; color:#5eead4;">2. Hip Flexor / Psoas Guardrail (C-Sign Safe)</div>
+      <div style="font-size:0.8rem; color:#e2e8f0; margin-top:2px;"><strong>No deep lunges or deep squats past 90°!</strong> If forward lunges are cued, swap to shallow step-back reverse lunges or hip hinges. If high-knee running is cued, take the low-impact grounded march.</div>
+    </div>
+
+    <div style="background:rgba(0,0,0,0.3); border:1px solid rgba(255,255,255,0.1); border-radius:10px; padding:10px 12px;">
+      <div style="font-family:'Outfit',sans-serif; font-weight:700; font-size:0.88rem; color:#5eead4;">3. Pre-Class Fuel (8:15 AM - 8:30 AM)</div>
+      <div style="font-size:0.8rem; color:#e2e8f0; margin-top:2px;">Fairlife 30g protein shake or 2 eggs &amp; sourdough toast + 16 oz water. Morning BHRT (BiEst 1/2 pump + Testosterone 1 pump) taken as normal.</div>
+    </div>
+  </div>
+
+  <!-- Filter Buttons -->
+  <div style="display:flex; gap:6px; overflow-x:auto; padding-bottom:8px; margin-bottom:14px; scrollbar-width:none;">
+    <button class="filter-btn active" onclick="filterGL('all', this)" style="padding:7px 13px; border-radius:50px; border:1px solid var(--border); background:var(--teal); color:white; font-family:'Outfit',sans-serif; font-size:0.8rem; font-weight:700; cursor:pointer;">All</button>
+    <button class="filter-btn" onclick="filterGL('newbody', this)" style="padding:7px 13px; border-radius:50px; border:1px solid var(--border); background:var(--card2); color:var(--muted); font-family:'Outfit',sans-serif; font-size:0.8rem; font-weight:600; cursor:pointer;">✨ NewBody Class</button>
+    <button class="filter-btn" onclick="filterGL('lower', this)" style="padding:7px 13px; border-radius:50px; border:1px solid var(--border); background:var(--card2); color:var(--muted); font-family:'Outfit',sans-serif; font-size:0.8rem; font-weight:600; cursor:pointer;">🦿 Lower Body Circuit</button>
+    <button class="filter-btn" onclick="filterGL('upper', this)" style="padding:7px 13px; border-radius:50px; border:1px solid var(--border); background:var(--card2); color:var(--muted); font-family:'Outfit',sans-serif; font-size:0.8rem; font-weight:600; cursor:pointer;">🏹 Upper Body Circuit</button>
+    <button class="filter-btn" onclick="filterGL('rpm', this)" style="padding:7px 13px; border-radius:50px; border:1px solid var(--border); background:var(--card2); color:var(--muted); font-family:'Outfit',sans-serif; font-size:0.8rem; font-weight:600; cursor:pointer;">🚴 RPM Cycling</button>
+    <button class="filter-btn" onclick="filterGL('classes', this)" style="padding:7px 13px; border-radius:50px; border:1px solid var(--border); background:var(--card2); color:var(--muted); font-family:'Outfit',sans-serif; font-size:0.8rem; font-weight:600; cursor:pointer;">🧘 Class Compass</button>
+  </div>
+
+  <!-- RPM HERO -->
+  <div id="gl-sec-rpm" style="background:linear-gradient(135deg, rgba(245, 158, 11, 0.2), rgba(244, 63, 94, 0.2)); border:1.5px solid rgba(245, 158, 11, 0.4); border-radius:16px; padding:18px; margin-bottom:14px;">
+    <h3 style="font-family:'Outfit',sans-serif; font-size:1.25rem; color:#fde68a; margin-bottom:6px; display:flex; align-items:center; gap:8px;">
+      🚴 Les Mills RPM: 100% Green Light!
+    </h3>
+    <p style="font-size:0.86rem; color:#fef3c7; margin-bottom:10px; line-height:1.45;">
+      You have done RPM many times before—your muscle memory is intact! RPM is <strong>zero ground impact</strong> (protects joints/feet) and acts as a <strong>powerful lymphatic fluid pump</strong> to de-puff your legs.
+    </p>
+
+    <div style="background:rgba(0,0,0,0.35); border:1px solid rgba(255,255,255,0.12); border-radius:10px; padding:10px 12px; margin-bottom:8px;">
+      <div style="font-family:'Outfit',sans-serif; font-weight:700; font-size:0.88rem; color:white;">🛡️ Rule #1: Handlebars HIGH (C-Sign Hip Protection)</div>
+      <div style="font-size:0.8rem; color:#cbd5e1; margin-top:2px;">Set handlebars <strong>1 to 2 notches HIGHER than your saddle</strong>. This keeps your pelvis upright and stops anterior femoral pinching and psoas irritation!</div>
+    </div>
+
+    <div style="background:rgba(0,0,0,0.35); border:1px solid rgba(255,255,255,0.12); border-radius:10px; padding:10px 12px; margin-bottom:8px;">
+      <div style="font-family:'Outfit',sans-serif; font-weight:700; font-size:0.88rem; color:white;">⚡ Rule #2: Cadence over Heavy Knee Grinding</div>
+      <div style="font-size:0.8rem; color:#cbd5e1; margin-top:2px;">Spin smooth at <strong>70 to 90 RPM</strong>. Never grind below 60 RPM with extreme torque—protects patellar tendons and SI joint.</div>
+    </div>
+
+    <div style="background:rgba(0,0,0,0.35); border:1px solid rgba(255,255,255,0.12); border-radius:10px; padding:10px 12px; margin-bottom:8px;">
+      <div style="font-family:'Outfit',sans-serif; font-weight:700; font-size:0.88rem; color:white;">🍑 Rule #3: Glute Drive on Standing Climbs</div>
+      <div style="font-size:0.8rem; color:#cbd5e1; margin-top:2px;">When standing, keep hips over saddle nose and drive through <strong>heels and mid-foot</strong> to fire glutes, not toes.</div>
+    </div>
+
+    <div style="background:rgba(244, 63, 94, 0.15); border:1px solid rgba(244, 63, 94, 0.4); border-radius:10px; padding:10px 12px;">
+      <div style="font-family:'Outfit',sans-serif; font-weight:700; font-size:0.88rem; color:#fecdd3;">⚠️ The Hip Whisper Rule</div>
+      <div style="font-size:0.8rem; color:#ffe4e6; margin-top:2px;">If you feel even a slight pinch in your front hip during a climb, <strong>sit down immediately</strong> and ride the flat road.</div>
+    </div>
+  </div>
+
+  <!-- LOWER BODY SECTION -->
+  <div id="gl-sec-lower">
+    <div style="font-family:'Outfit',sans-serif; font-weight:700; font-size:1.05rem; color:#5eead4; margin:16px 0 10px;">
+      🦿 Part A: Lower Body Sculpt (Glutes, Hamstrings &amp; Calves)
+    </div>
+
+    <!-- Machine 1: Leg Press -->
+    <div class="card" id="glcard-legpress" style="margin-bottom:12px;">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:8px;">
+        <div>
+          <div style="font-family:'Outfit',sans-serif; font-size:1.05rem; font-weight:700; color:white;">1. Seated Leg Press Machine</div>
+          <div style="font-size:0.76rem; color:var(--muted);">Target: Firm Glutes, Hamstrings &amp; Quads</div>
+        </div>
+        <span style="font-size:0.7rem; font-weight:700; padding:2px 8px; border-radius:50px; background:rgba(99,102,241,0.25); color:#a5b4fc;">🍑 Glute Focus</span>
+      </div>
+      <div style="font-size:0.82rem; color:#cbd5e1; margin-bottom:8px;">
+        • Sit back firmly. Place feet <strong>high &amp; shoulder-width apart</strong> on footplate.<br>
+        <span style="color:#fda4af; font-weight:600;">🛡️ SOMA GUARDRAIL:</span> <strong>Stop at 90°!</strong> Never let knees compress chest or back peel off pad. Drive through heels; do not lock knees.
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:center; padding-top:8px; border-top:1px solid var(--border); flex-wrap:wrap; gap:8px;">
+        <span style="font-size:0.78rem; font-weight:700; color:#34d399; background:rgba(16,185,129,0.15); padding:3px 8px; border-radius:6px;">3 sets × 10–12 reps</span>
+        <div style="display:flex; align-items:center; gap:6px;">
+          <span style="font-size:0.74rem; color:var(--muted);">PIN:</span>
+          <input type="text" placeholder="e.g. 70 lb" style="width:75px; background:var(--card2); border:1px solid var(--border); border-radius:6px; padding:4px 6px; color:white; font-size:0.82rem; text-align:center;" onchange="localStorage.setItem('glw_legpress', this.value)" id="glin-legpress">
+        </div>
+        <button onclick="toggleGLDone('glcard-legpress')" class="gldone-btn" style="padding:5px 12px; border-radius:50px; border:1px solid var(--border); background:transparent; color:var(--muted); font-size:0.78rem; font-weight:700; cursor:pointer;">✓ Done</button>
+      </div>
+    </div>
+
+    <!-- Machine 2: Hip Abduction -->
+    <div class="card" id="glcard-abduct" style="margin-bottom:12px;">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:8px;">
+        <div>
+          <div style="font-family:'Outfit',sans-serif; font-size:1.05rem; font-weight:700; color:white;">2. Seated Hip Abduction (Outer Thigh)</div>
+          <div style="font-size:0.76rem; color:var(--muted);">Target: Gluteus Medius (Upper Glute "Shelf")</div>
+        </div>
+        <span style="font-size:0.7rem; font-weight:700; padding:2px 8px; border-radius:50px; background:rgba(99,102,241,0.25); color:#a5b4fc;">🍑 Glute Lift</span>
+      </div>
+      <div style="font-size:0.82rem; color:#cbd5e1; margin-bottom:8px;">
+        • Pads outside knees. Lean torso forward 10–15° with flat back.<br>
+        <span style="color:#fda4af; font-weight:600;">🛡️ SOMA GUARDRAIL:</span> Push smoothly outward, hold squeeze 1s, return slow (2s). Do not arch lower back.
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:center; padding-top:8px; border-top:1px solid var(--border); flex-wrap:wrap; gap:8px;">
+        <span style="font-size:0.78rem; font-weight:700; color:#34d399; background:rgba(16,185,129,0.15); padding:3px 8px; border-radius:6px;">3 sets × 12–15 reps</span>
+        <div style="display:flex; align-items:center; gap:6px;">
+          <span style="font-size:0.74rem; color:var(--muted);">PIN:</span>
+          <input type="text" placeholder="e.g. 60 lb" style="width:75px; background:var(--card2); border:1px solid var(--border); border-radius:6px; padding:4px 6px; color:white; font-size:0.82rem; text-align:center;" onchange="localStorage.setItem('glw_abduct', this.value)" id="glin-abduct">
+        </div>
+        <button onclick="toggleGLDone('glcard-abduct')" class="gldone-btn" style="padding:5px 12px; border-radius:50px; border:1px solid var(--border); background:transparent; color:var(--muted); font-size:0.78rem; font-weight:700; cursor:pointer;">✓ Done</button>
+      </div>
+    </div>
+
+    <!-- Machine 3: Seated Leg Curl -->
+    <div class="card" id="glcard-legcurl" style="margin-bottom:12px;">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:8px;">
+        <div>
+          <div style="font-family:'Outfit',sans-serif; font-size:1.05rem; font-weight:700; color:white;">3. Seated Leg Curl Machine</div>
+          <div style="font-size:0.76rem; color:var(--muted);">Target: Hamstrings &amp; Posterior Tone</div>
+        </div>
+        <span style="font-size:0.7rem; font-weight:700; padding:2px 8px; border-radius:50px; background:rgba(99,102,241,0.25); color:#a5b4fc;">🦵 Hamstrings</span>
+      </div>
+      <div style="font-size:0.82rem; color:#cbd5e1; margin-bottom:8px;">
+        • Lap pad snug over thighs; roller pad just below calves.<br>
+        <span style="color:#fda4af; font-weight:600;">🛡️ SOMA GUARDRAIL:</span> Pull heels down/back, hold 1s. Keep feet straight (do not turn toes inward) to protect knees.
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:center; padding-top:8px; border-top:1px solid var(--border); flex-wrap:wrap; gap:8px;">
+        <span style="font-size:0.78rem; font-weight:700; color:#34d399; background:rgba(16,185,129,0.15); padding:3px 8px; border-radius:6px;">3 sets × 10–12 reps</span>
+        <div style="display:flex; align-items:center; gap:6px;">
+          <span style="font-size:0.74rem; color:var(--muted);">PIN:</span>
+          <input type="text" placeholder="e.g. 45 lb" style="width:75px; background:var(--card2); border:1px solid var(--border); border-radius:6px; padding:4px 6px; color:white; font-size:0.82rem; text-align:center;" onchange="localStorage.setItem('glw_legcurl', this.value)" id="glin-legcurl">
+        </div>
+        <button onclick="toggleGLDone('glcard-legcurl')" class="gldone-btn" style="padding:5px 12px; border-radius:50px; border:1px solid var(--border); background:transparent; color:var(--muted); font-size:0.78rem; font-weight:700; cursor:pointer;">✓ Done</button>
+      </div>
+    </div>
+
+    <!-- Machine 4: Calf Raise -->
+    <div class="card" id="glcard-calf" style="margin-bottom:12px;">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:8px;">
+        <div>
+          <div style="font-family:'Outfit',sans-serif; font-size:1.05rem; font-weight:700; color:white;">4. Calf Press (Lymphatic Pump)</div>
+          <div style="font-size:0.76rem; color:var(--muted);">Target: Lower Leg Tone &amp; Fluid Flush</div>
+        </div>
+        <span style="font-size:0.7rem; font-weight:700; padding:2px 8px; border-radius:50px; background:rgba(16,185,129,0.25); color:#6ee7b7;">💧 Fluid Dump</span>
+      </div>
+      <div style="font-size:0.82rem; color:#cbd5e1; margin-bottom:8px;">
+        • Balls of feet on edge; press up high, pause 1s, lower below platform level for gentle stretch. Mechanically drains pooled leg fluid!
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:center; padding-top:8px; border-top:1px solid var(--border); flex-wrap:wrap; gap:8px;">
+        <span style="font-size:0.78rem; font-weight:700; color:#34d399; background:rgba(16,185,129,0.15); padding:3px 8px; border-radius:6px;">2 sets × 15 reps</span>
+        <div style="display:flex; align-items:center; gap:6px;">
+          <span style="font-size:0.74rem; color:var(--muted);">PIN:</span>
+          <input type="text" placeholder="e.g. 50 lb" style="width:75px; background:var(--card2); border:1px solid var(--border); border-radius:6px; padding:4px 6px; color:white; font-size:0.82rem; text-align:center;" onchange="localStorage.setItem('glw_calf', this.value)" id="glin-calf">
+        </div>
+        <button onclick="toggleGLDone('glcard-calf')" class="gldone-btn" style="padding:5px 12px; border-radius:50px; border:1px solid var(--border); background:transparent; color:var(--muted); font-size:0.78rem; font-weight:700; cursor:pointer;">✓ Done</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- UPPER BODY SECTION -->
+  <div id="gl-sec-upper">
+    <div style="font-family:'Outfit',sans-serif; font-weight:700; font-size:1.05rem; color:#a5b4fc; margin:16px 0 10px;">
+      🏹 Part B: Upper Body Sculpt (Back, Arms &amp; Posture)
+    </div>
+
+    <!-- Machine 5: Lat Pulldown -->
+    <div class="card" id="glcard-latpull" style="margin-bottom:12px;">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:8px;">
+        <div>
+          <div style="font-family:'Outfit',sans-serif; font-size:1.05rem; font-weight:700; color:white;">5. Lat Pulldown Machine</div>
+          <div style="font-size:0.76rem; color:var(--muted);">Target: Sleek Upper Back &amp; Hourglass Taper</div>
+        </div>
+        <span style="font-size:0.7rem; font-weight:700; padding:2px 8px; border-radius:50px; background:rgba(99,102,241,0.25); color:#a5b4fc;">🏹 Back Sculpt</span>
+      </div>
+      <div style="font-size:0.82rem; color:#cbd5e1; margin-bottom:8px;">
+        • Wide-to-neutral grip. Slight lean back (10°), chest proud.<br>
+        <span style="color:#fda4af; font-weight:600;">🛡️ SOMA GUARDRAIL:</span> Pull bar to <strong>upper collarbone</strong>. <strong>NEVER behind neck!</strong> Drive elbows to ribs to protect cervical spine.
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:center; padding-top:8px; border-top:1px solid var(--border); flex-wrap:wrap; gap:8px;">
+        <span style="font-size:0.78rem; font-weight:700; color:#34d399; background:rgba(16,185,129,0.15); padding:3px 8px; border-radius:6px;">3 sets × 10–12 reps</span>
+        <div style="display:flex; align-items:center; gap:6px;">
+          <span style="font-size:0.74rem; color:var(--muted);">PIN:</span>
+          <input type="text" placeholder="e.g. 50 lb" style="width:75px; background:var(--card2); border:1px solid var(--border); border-radius:6px; padding:4px 6px; color:white; font-size:0.82rem; text-align:center;" onchange="localStorage.setItem('glw_latpull', this.value)" id="glin-latpull">
+        </div>
+        <button onclick="toggleGLDone('glcard-latpull')" class="gldone-btn" style="padding:5px 12px; border-radius:50px; border:1px solid var(--border); background:transparent; color:var(--muted); font-size:0.78rem; font-weight:700; cursor:pointer;">✓ Done</button>
+      </div>
+    </div>
+
+    <!-- Machine 6: Row -->
+    <div class="card" id="glcard-row" style="margin-bottom:12px;">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:8px;">
+        <div>
+          <div style="font-family:'Outfit',sans-serif; font-size:1.05rem; font-weight:700; color:white;">6. Seated Cable Row (Chest-Supported)</div>
+          <div style="font-size:0.76rem; color:var(--muted);">Target: Mid-Back, Rhomboids &amp; Open Shoulders</div>
+        </div>
+        <span style="font-size:0.7rem; font-weight:700; padding:2px 8px; border-radius:50px; background:rgba(99,102,241,0.25); color:#a5b4fc;">✨ Posture Open</span>
+      </div>
+      <div style="font-size:0.82rem; color:#cbd5e1; margin-bottom:8px;">
+        • Chest against pad (saves lumbar spine). Neutral grip handles.<br>
+        <span style="color:#fda4af; font-weight:600;">🛡️ SOMA GUARDRAIL:</span> Pull elbows back past ribs, squeeze blades 1s. Keep shoulders down away from ears (no shrugging into neck).
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:center; padding-top:8px; border-top:1px solid var(--border); flex-wrap:wrap; gap:8px;">
+        <span style="font-size:0.78rem; font-weight:700; color:#34d399; background:rgba(16,185,129,0.15); padding:3px 8px; border-radius:6px;">3 sets × 10–12 reps</span>
+        <div style="display:flex; align-items:center; gap:6px;">
+          <span style="font-size:0.74rem; color:var(--muted);">PIN:</span>
+          <input type="text" placeholder="e.g. 45 lb" style="width:75px; background:var(--card2); border:1px solid var(--border); border-radius:6px; padding:4px 6px; color:white; font-size:0.82rem; text-align:center;" onchange="localStorage.setItem('glw_row', this.value)" id="glin-row">
+        </div>
+        <button onclick="toggleGLDone('glcard-row')" class="gldone-btn" style="padding:5px 12px; border-radius:50px; border:1px solid var(--border); background:transparent; color:var(--muted); font-size:0.78rem; font-weight:700; cursor:pointer;">✓ Done</button>
+      </div>
+    </div>
+
+    <!-- Machine 7: Chest Press -->
+    <div class="card" id="glcard-chestpress" style="margin-bottom:12px;">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:8px;">
+        <div>
+          <div style="font-family:'Outfit',sans-serif; font-size:1.05rem; font-weight:700; color:white;">7. Seated Chest Press Machine</div>
+          <div style="font-size:0.76rem; color:var(--muted);">Target: Pectorals &amp; Front Shoulders</div>
+        </div>
+        <span style="font-size:0.7rem; font-weight:700; padding:2px 8px; border-radius:50px; background:rgba(99,102,241,0.25); color:#a5b4fc;">🛡️ Shoulder Safe</span>
+      </div>
+      <div style="font-size:0.82rem; color:#cbd5e1; margin-bottom:8px;">
+        • Seat height: handles line up with <strong>mid-chest (nipple line)</strong>.<br>
+        <span style="color:#fda4af; font-weight:600;">🛡️ SOMA GUARDRAIL:</span> Keep elbows tucked at <strong>45°</strong> (arrow shape). Flaring at 90° pinches the anterior shoulder capsule.
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:center; padding-top:8px; border-top:1px solid var(--border); flex-wrap:wrap; gap:8px;">
+        <span style="font-size:0.78rem; font-weight:700; color:#34d399; background:rgba(16,185,129,0.15); padding:3px 8px; border-radius:6px;">3 sets × 10 reps</span>
+        <div style="display:flex; align-items:center; gap:6px;">
+          <span style="font-size:0.74rem; color:var(--muted);">PIN:</span>
+          <input type="text" placeholder="e.g. 35 lb" style="width:75px; background:var(--card2); border:1px solid var(--border); border-radius:6px; padding:4px 6px; color:white; font-size:0.82rem; text-align:center;" onchange="localStorage.setItem('glw_chestpress', this.value)" id="glin-chestpress">
+        </div>
+        <button onclick="toggleGLDone('glcard-chestpress')" class="gldone-btn" style="padding:5px 12px; border-radius:50px; border:1px solid var(--border); background:transparent; color:var(--muted); font-size:0.78rem; font-weight:700; cursor:pointer;">✓ Done</button>
+      </div>
+    </div>
+
+    <!-- Machine 8: Lateral Raise -->
+    <div class="card" id="glcard-latraise" style="margin-bottom:12px;">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:8px;">
+        <div>
+          <div style="font-family:'Outfit',sans-serif; font-size:1.05rem; font-weight:700; color:white;">8. Shoulder Lateral Raise Machine / Cable</div>
+          <div style="font-size:0.76rem; color:var(--muted);">Target: Side Deltoid Sculpting (Sleeveless Tone)</div>
+        </div>
+        <span style="font-size:0.7rem; font-weight:700; padding:2px 8px; border-radius:50px; background:rgba(99,102,241,0.25); color:#a5b4fc;">💪 Delts</span>
+      </div>
+      <div style="font-size:0.82rem; color:#cbd5e1; margin-bottom:8px;">
+        • Padded arms against forearms. Raise to sides until parallel to floor, pause 1s. Keep thumbs slightly higher than pinkies (scapular plane).
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:center; padding-top:8px; border-top:1px solid var(--border); flex-wrap:wrap; gap:8px;">
+        <span style="font-size:0.78rem; font-weight:700; color:#34d399; background:rgba(16,185,129,0.15); padding:3px 8px; border-radius:6px;">3 sets × 12 reps</span>
+        <div style="display:flex; align-items:center; gap:6px;">
+          <span style="font-size:0.74rem; color:var(--muted);">PIN:</span>
+          <input type="text" placeholder="e.g. 25 lb" style="width:75px; background:var(--card2); border:1px solid var(--border); border-radius:6px; padding:4px 6px; color:white; font-size:0.82rem; text-align:center;" onchange="localStorage.setItem('glw_latraise', this.value)" id="glin-latraise">
+        </div>
+        <button onclick="toggleGLDone('glcard-latraise')" class="gldone-btn" style="padding:5px 12px; border-radius:50px; border:1px solid var(--border); background:transparent; color:var(--muted); font-size:0.78rem; font-weight:700; cursor:pointer;">✓ Done</button>
+      </div>
+    </div>
+
+    <!-- Machine 9: Tricep Pushdown -->
+    <div class="card" id="glcard-tricep" style="margin-bottom:12px;">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:8px;">
+        <div>
+          <div style="font-family:'Outfit',sans-serif; font-size:1.05rem; font-weight:700; color:white;">9. Cable Tricep Rope Pushdown</div>
+          <div style="font-size:0.76rem; color:var(--muted);">Target: Back of the Arms (Toned Triceps)</div>
+        </div>
+        <span style="font-size:0.7rem; font-weight:700; padding:2px 8px; border-radius:50px; background:rgba(99,102,241,0.25); color:#a5b4fc;">➰ Arm Firming</span>
+      </div>
+      <div style="font-size:0.82rem; color:#cbd5e1; margin-bottom:8px;">
+        • High cable with rope. Pin elbows to ribs. Push straight down and <strong>flare rope ends apart at bottom</strong>, squeezing triceps 1s.
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:center; padding-top:8px; border-top:1px solid var(--border); flex-wrap:wrap; gap:8px;">
+        <span style="font-size:0.78rem; font-weight:700; color:#34d399; background:rgba(16,185,129,0.15); padding:3px 8px; border-radius:6px;">3 sets × 12 reps</span>
+        <div style="display:flex; align-items:center; gap:6px;">
+          <span style="font-size:0.74rem; color:var(--muted);">PIN:</span>
+          <input type="text" placeholder="e.g. 25 lb" style="width:75px; background:var(--card2); border:1px solid var(--border); border-radius:6px; padding:4px 6px; color:white; font-size:0.82rem; text-align:center;" onchange="localStorage.setItem('glw_tricep', this.value)" id="glin-tricep">
+        </div>
+        <button onclick="toggleGLDone('glcard-tricep')" class="gldone-btn" style="padding:5px 12px; border-radius:50px; border:1px solid var(--border); background:transparent; color:var(--muted); font-size:0.78rem; font-weight:700; cursor:pointer;">✓ Done</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CLASSES SECTION -->
+  <div id="gl-sec-classes">
+    <div style="font-family:'Outfit',sans-serif; font-weight:700; font-size:1.05rem; color:#fde68a; margin:16px 0 10px;">
+      🧘 GoodLife Class Compass (What to Take &amp; What to Modify)
+    </div>
+
+    <div style="display:flex; align-items:flex-start; gap:10px; padding:12px; border-radius:12px; background:var(--card2); border:1px solid var(--border); margin-bottom:8px;">
+      <span style="font-size:0.7rem; font-weight:800; padding:2px 7px; border-radius:6px; background:rgba(16,185,129,0.25); color:#6ee7b7; white-space:nowrap; margin-top:2px;">🟢 GREEN</span>
+      <div>
+        <div style="font-weight:700; font-size:0.9rem; color:white;">GoodLife NewBody (Conditioning &amp; Sculpt)</div>
+        <div style="font-size:0.8rem; color:#cbd5e1; margin-top:2px;">Signature total body toning class using light dumbbells and bodyweight. Masterstroke for Day 9 fluid clearing! Use 3–5 lb weights max and keep lunges shallow.</div>
+      </div>
+    </div>
+
+    <div style="display:flex; align-items:flex-start; gap:10px; padding:12px; border-radius:12px; background:var(--card2); border:1px solid var(--border); margin-bottom:8px;">
+      <span style="font-size:0.7rem; font-weight:800; padding:2px 7px; border-radius:6px; background:rgba(16,185,129,0.25); color:#6ee7b7; white-space:nowrap; margin-top:2px;">🟢 GREEN</span>
+      <div>
+        <div style="font-weight:700; font-size:0.9rem; color:white;">Les Mills RPM (Cycling)</div>
+        <div style="font-size:0.8rem; color:#cbd5e1; margin-top:2px;">Zero impact on joints/feet + powerful lymphatic drainage pump. Follow the 3 golden setup rules (bars HIGH, 70-90 RPM cadence, glute drive).</div>
+      </div>
+    </div>
+
+    <div style="display:flex; align-items:flex-start; gap:10px; padding:12px; border-radius:12px; background:var(--card2); border:1px solid var(--border); margin-bottom:8px;">
+      <span style="font-size:0.7rem; font-weight:800; padding:2px 7px; border-radius:6px; background:rgba(16,185,129,0.25); color:#6ee7b7; white-space:nowrap; margin-top:2px;">🟢 GREEN</span>
+      <div>
+        <div style="font-weight:700; font-size:0.9rem; color:white;">Les Mills BodyFlow / BodyBalance</div>
+        <div style="font-size:0.8rem; color:#cbd5e1; margin-top:2px;">Yoga, Tai Chi &amp; Pilates fusion. Amazing for parasympathetic recovery, opening tight hips, and lengthening the spine.</div>
+      </div>
+    </div>
+
+    <div style="display:flex; align-items:flex-start; gap:10px; padding:12px; border-radius:12px; background:var(--card2); border:1px solid var(--border); margin-bottom:8px;">
+      <span style="font-size:0.7rem; font-weight:800; padding:2px 7px; border-radius:6px; background:rgba(16,185,129,0.25); color:#6ee7b7; white-space:nowrap; margin-top:2px;">🟢 GREEN</span>
+      <div>
+        <div style="font-weight:700; font-size:0.9rem; color:white;">Les Mills Core (CXWORX)</div>
+        <div style="font-size:0.8rem; color:#cbd5e1; margin-top:2px;">30-min focused core, hip &amp; glute sling integration. Excellent for pelvic floor and lower back stability.</div>
+      </div>
+    </div>
+
+    <div style="display:flex; align-items:flex-start; gap:10px; padding:12px; border-radius:12px; background:var(--card2); border:1px solid var(--border); margin-bottom:8px;">
+      <span style="font-size:0.7rem; font-weight:800; padding:2px 7px; border-radius:6px; background:rgba(245,158,11,0.25); color:#fde68a; white-space:nowrap; margin-top:2px;">🟡 MODIFY</span>
+      <div>
+        <div style="font-weight:700; font-size:0.9rem; color:white;">Les Mills BodyPump (Light Plates Only)</div>
+        <div style="font-size:0.8rem; color:#cbd5e1; margin-top:2px;">High-rep barbell endurance. Mandatory: warm-up/lightest plates only. Never squat past 90°; avoid deep lunges.</div>
+      </div>
+    </div>
+
+    <div style="display:flex; align-items:flex-start; gap:10px; padding:12px; border-radius:12px; background:var(--card2); border:1px solid var(--border); margin-bottom:8px;">
+      <span style="font-size:0.7rem; font-weight:800; padding:2px 7px; border-radius:6px; background:rgba(244,63,94,0.25); color:#fecdd3; white-space:nowrap; margin-top:2px;">🔴 PAUSE</span>
+      <div>
+        <div style="font-weight:700; font-size:0.9rem; color:white;">High-Impact Aerobics (BodyCombat, BodyAttack, GRIT)</div>
+        <div style="font-size:0.8rem; color:#cbd5e1; margin-top:2px;">Repetitive jumping and high-impact burpees can trigger SI joint strain and cortisol spikes. Wait until your joint baseline is bulletproof!</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function filterGL(sec, btn) {
+  document.querySelectorAll('#page-goodlife .filter-btn').forEach(b => {
+    b.style.background = 'var(--card2)';
+    b.style.color = 'var(--muted)';
+    b.style.fontWeight = '600';
+  });
+  btn.style.background = 'var(--teal)';
+  btn.style.color = 'white';
+  btn.style.fontWeight = '700';
+
+  const rpm = document.getElementById('gl-sec-rpm');
+  const lower = document.getElementById('gl-sec-lower');
+  const upper = document.getElementById('gl-sec-upper');
+  const classes = document.getElementById('gl-sec-classes');
+
+  if (sec === 'all') {
+    rpm.style.display = 'block'; lower.style.display = 'block'; upper.style.display = 'block'; classes.style.display = 'block';
+  } else if (sec === 'newbody') {
+    rpm.style.display = 'none'; lower.style.display = 'none'; upper.style.display = 'none'; classes.style.display = 'block';
+  } else if (sec === 'lower') {
+    rpm.style.display = 'none'; lower.style.display = 'block'; upper.style.display = 'none'; classes.style.display = 'none';
+  } else if (sec === 'upper') {
+    rpm.style.display = 'none'; lower.style.display = 'none'; upper.style.display = 'block'; classes.style.display = 'none';
+  } else if (sec === 'rpm') {
+    rpm.style.display = 'block'; lower.style.display = 'none'; upper.style.display = 'none'; classes.style.display = 'none';
+  } else if (sec === 'classes') {
+    rpm.style.display = 'none'; lower.style.display = 'none'; upper.style.display = 'none'; classes.style.display = 'block';
+  }
+}
+
+function toggleGLDone(cardId) {
+  const card = document.getElementById(cardId);
+  const btn = card.querySelector('.gldone-btn');
+  const isDone = btn.classList.toggle('completed');
+  if (isDone) {
+    btn.style.background = 'rgba(16, 185, 129, 0.25)';
+    btn.style.color = '#6ee7b7';
+    btn.style.borderColor = 'rgba(16, 185, 129, 0.5)';
+    btn.innerText = '✓ Completed';
+  } else {
+    btn.style.background = 'transparent';
+    btn.style.color = 'var(--muted)';
+    btn.style.borderColor = 'var(--border)';
+    btn.innerText = '✓ Done';
+  }
+  localStorage.setItem('gl_' + cardId, isDone ? '1' : '0');
+}
+
+// Load saved weights on page load
+window.addEventListener('DOMContentLoaded', () => {
+  ['legpress', 'abduct', 'legcurl', 'calf', 'latpull', 'row', 'chestpress', 'latraise', 'tricep'].forEach(k => {
+    const savedW = localStorage.getItem('glw_' + k);
+    const input = document.getElementById('glin-' + k);
+    if (savedW && input) input.value = savedW;
+
+    const cardId = 'glcard-' + k;
+    const isDone = localStorage.getItem('gl_' + cardId) === '1';
+    const card = document.getElementById(cardId);
+    if (card && isDone) {
+      const btn = card.querySelector('.gldone-btn');
+      if (btn) {
+        btn.classList.add('completed');
+        btn.style.background = 'rgba(16, 185, 129, 0.25)';
+        btn.style.color = '#6ee7b7';
+        btn.style.borderColor = 'rgba(16, 185, 129, 0.5)';
+        btn.innerText = '✓ Completed';
+      }
+    }
+  });
+});
+</script>
 
 <script>
 function copyHipResetSummary() {

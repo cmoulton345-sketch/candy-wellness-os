@@ -2,6 +2,19 @@
 
 > **Active Log:** Voice & Persona Interactions with Candy
 
+- **2026-11-09 (Midday)** (SOMA):
+  - **GoodLife Fitness Return: 9-Machine Pin Circuit, RPM Cycling Guidelines & Tuesday 9:45 AM NewBody Class (Cycle 5, Day 8):**
+    - Candy's Plan: Returning to GoodLife Fitness for upper/lower selectorized circuit and group fitness classes. Inquired specifically about **RPM cycling** (done many times before) and scheduled **GoodLife NewBody class for tomorrow (Tuesday, Nov 10, 9:45 AM)**.
+    - Clinical & Somatic Triage:
+      1. *GoodLife NewBody Class (Tuesday 9:45 AM / Day 9 Peak Glow):* Total-body low-impact conditioning using light dumbbells and bodyweight. Masterstroke for Cycle Day 9: acts as an internal lymphatic pump to drain lingering weekend water, sculpts lean tone, and triggers a radiant endorphin post-workout glow in time for Joe's Tuesday evening homecoming! Guardrails: 3–5 lb weights max, keep lunges shallow (C-sign safe), and fuel 1.5h prior with 30g protein.
+      2. *Les Mills RPM Cycling (100% Green Light):* Zero impact on joints/feet + major venous/lymphatic fluid drainage. Prescribed 3 Golden Setup Rules: Handlebars HIGH (1–2 notches above saddle to prevent deep hip flexion / psoas pinching), cadence 70–90 RPM (protects patella & SI joint), glute drive on standing climbs. "Hip Whisper Rule": sit down immediately if hip flexor pinches.
+      3. *9-Machine Pin-Select Circuit:* Built protected machine flow with built-in back support: Leg Press (high & wide feet, 90° stop), Hip Abduction (glute shelf), Leg Curl, Calf Press, Lat Pulldown (to collarbone, never behind neck), Seated Row, Chest Press (45° elbows), Lateral Raise, Tricep Rope Pushdown.
+    - App & System Architecture:
+      - Updated `index.html`, `wellness_and_mobility/candy_wellness_os.html`, and `wellness_and_mobility/index.html` with a dedicated **`🏢 GoodLife` navigation tab**, Workout page callout banner, and interactive `page-goodlife` with weight persistence (`localStorage`), done checkmarks, and NewBody spotlight.
+      - Built standalone guides: `wellness_and_mobility/goodlife_circuit_and_class_guide.md`, `.html`, and root `goodlife_circuit_guide.html`.
+      - Added Card #16 to `share_links.html`.
+      - Updated `wellness_and_mobility/candys_movement_routine.md` and `candy_cycle_calendar_sept_oct_2026.html` (Nov 10 cell updated with 9:45 AM NewBody class).
+
 - **2026-11-09 (Morning)** (SOMA):
   - **Monday Fluid Flush Kickoff (-0.6 lbs), Thermal Divergence Decoded & Bed Pressure Triage (Cycle 5, Day 8):**
     - Biometrics: Scale **151.7 lbs** (**-0.6 lb fluid drop overnight** down from 152.3 lbs; confirms sodium/glycogen lymphatic drainage has begun), Oura Ring Temp **+0.1°F** (flat cool follicular baseline), Forehead Temp **36.6°C** (rock-solid non-febrile core), Oral Temp **37.2°C** (local mucosal vasodilation secondary to Sunday evening's histamine flare + bedtime oral progesterone GABA), Readiness **87 🟢** (Optimal green recovery rebound!), Sleep **83 🌙** (deep GABA restoration).
