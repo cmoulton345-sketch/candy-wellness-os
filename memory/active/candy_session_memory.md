@@ -2,6 +2,16 @@
 
 > **Active Log:** Voice & Persona Interactions with Candy
 
+- **2026-11-09 (Afternoon)** (SOMA & AVA):
+  - **Acute C-Sign Flare Triage, Massage Instructions & Mobile App Tab Hierarchy Bugfix (Cycle 5, Day 8):**
+    - *Acute C-Sign / Anterior Hip Pinch Triage:* Candy reported acute C-sign pain and tried quadruped rockbacks, which were "very painful". Soma immediately ordered quadruped rockbacks STOPPED. Reminded Candy that joint centration and psoas release must NEVER be forced into acute pain. Prescribed 100% passive **90/90 Psoas Lounge (Constructive Rest)**: calves elevated on couch/chair at 90°, lower back flat on floor, gentle heating pad on anterior hip/groin, and slow 4-in / 7-out melting vagal breathing for 10–15 minutes to allow gravity to seat the femoral head back into the acetabulum with zero muscular load. Paused Tuesday's 9:45 AM NewBody class until hip joint pain-free status is confirmed.
+    - *Massage Therapy Directives:* Candy stepped out for a massage appointment. Instructed her on exact directives for the massage therapist:
+      1. **DO:** Deep, slow, soothing release of the glutes (glute med/max), piriformis, TFL, quadratus lumborum (QL), thoracolumbar fascia, and mid-thoracic spine. Gentle diaphragmatic breathing release.
+      2. **DO NOT:** Aggressive, deep, pinpoint digging directly into the acute anterior hip crease / inguinal ligament, and NO aggressive passive hip extension or lunge stretching (which forces the irritated femoral head anteriorly against the labrum).
+    - *Mobile App "Empty Tabs" Root Cause & Permanent Fix:*
+      - **Root Cause Diagnosed:** `<div class="phase-banner push" id="phase-banner-workout">` at line 431 was missing its closing `</div>`. This unclosed div caused `<div class="page" id="page-workout">` to remain unclosed, swallowing all 8 subsequent pages (`page-nutrition`, `page-anti-inflammatory`, `page-tapping`, `page-emergency`, `page-harvest`, `page-supplements`, `page-hip-relief`, `page-goodlife`) as nested children of `page-workout`. Because `.page` has `display: none` when inactive, selecting any tab hid `page-workout`, which rendered all child pages completely blank and empty on phone screens.
+      - **Fix Implemented:** Added the missing closing `</div>` to `phase-banner-workout` in `index.html`, `wellness_and_mobility/candy_wellness_os.html`, and `wellness_and_mobility/index.html`. Enhanced `showPage` to automatically resolve and highlight the corresponding top nav tab button when triggered via in-app banner links. Verified 0 HTML tag errors and confirmed all 10 pages are direct top-level siblings under `<body>`.
+
 - **2026-11-09 (Midday)** (SOMA):
   - **GoodLife Fitness Return: 9-Machine Pin Circuit, RPM Cycling Guidelines & Tuesday 9:45 AM NewBody Class (Cycle 5, Day 8):**
     - Candy's Plan: Returning to GoodLife Fitness for upper/lower selectorized circuit and group fitness classes. Inquired specifically about **RPM cycling** (done many times before) and scheduled **GoodLife NewBody class for tomorrow (Tuesday, Nov 10, 9:45 AM)**.

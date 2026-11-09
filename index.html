@@ -438,6 +438,8 @@
       <button class="phase-btn push-btn selected" onclick="setWorkoutPhase('push')">Push</button>
       <button class="phase-btn protect-btn" onclick="setWorkoutPhase('protect')">Protect</button>
     </div>
+  </div>
+
   <!-- GoodLife Gym Callout Banner -->
   <div class="alert-box teal" style="display:flex; justify-content:space-between; align-items:center; cursor:pointer; background:rgba(13,148,136,0.2); border:1px solid rgba(13,148,136,0.45); border-radius:12px; padding:12px 16px; margin-bottom:14px;" onclick="showPage('goodlife', document.querySelector('.nav-tab[onclick*=\'goodlife\']'))">
     <div>
@@ -1870,7 +1872,11 @@ function showPage(id, btn) {
   document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
   const page = document.getElementById('page-'+id);
   if (page) page.classList.add('active');
-  if (btn) btn.classList.add('active');
+  let targetBtn = btn;
+  if (!targetBtn || !targetBtn.classList || !targetBtn.classList.contains('nav-tab')) {
+    targetBtn = document.querySelector(`.nav-tab[onclick*="'${id}'"]`);
+  }
+  if (targetBtn && targetBtn.classList) targetBtn.classList.add('active');
   try {
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
   } catch(e) {
