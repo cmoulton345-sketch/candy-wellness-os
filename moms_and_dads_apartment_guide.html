@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Darlene & Steven Duncan — Senior Apartment Action Plan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #0f141c;
+      --card-bg: #18202c;
+      --card-border: rgba(255, 255, 255, 0.08);
+      --accent-emerald: #10b981;
+      --accent-emerald-glow: rgba(16, 185, 129, 0.2);
+      --accent-blue: #38bdf8;
+      --accent-amber: #f59e0b;
+      --text-main: #f1f5f9;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+      --radius-lg: 16px;
+      --radius-md: 12px;
+      --shadow-card: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--bg-dark);
+      color: var(--text-main);
+      line-height: 1.6;
+      padding-bottom: 80px;
+    }
+
+    .container {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 30px 20px;
+    }
+
+    /* HEADER */
+    .header {
+      background: linear-gradient(135deg, rgba(24, 32, 44, 0.95), rgba(15, 20, 28, 0.98));
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      padding: 30px;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow-card);
+      position: relative;
+      overflow: hidden;
+    }
+    .header::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 4px;
+      background: linear-gradient(90deg, #10b981, #38bdf8, #818cf8);
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 14px;
+      background: rgba(16, 185, 129, 0.15);
+      color: #34d399;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+    h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    .header p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      max-width: 780px;
+    }
+    .header-actions {
+      display: flex;
+      gap: 12px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 0.92rem;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s ease;
+    }
+    .btn-primary {
+      background: #10b981;
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.3);
+    }
+    .btn-primary:hover { background: #059669; }
+    .btn-outline {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-main);
+      border: 1px solid var(--card-border);
+    }
+    .btn-outline:hover { background: rgba(255, 255, 255, 0.1); }
+
+    /* SUMMARY BANNER */
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .summary-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-md);
+      padding: 20px;
+    }
+    .summary-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 6px;
+    }
+    .summary-val {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .summary-sub {
+      font-size: 0.85rem;
+      color: var(--accent-emerald);
+      margin-top: 4px;
+    }
+
+    /* NAVIGATION TABS */
+    .tabs {
+      display: flex;
+      gap: 8px;
+      border-bottom: 1px solid var(--card-border);
+      margin-bottom: 24px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+    }
+    .tab-btn {
+      padding: 12px 18px;
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+    .tab-btn:hover { color: #fff; background: rgba(255, 255, 255, 0.04); }
+    .tab-btn.active {
+      color: #fff;
+      background: rgba(16, 185, 129, 0.15);
+      border-bottom: 2px solid var(--accent-emerald);
+    }
+
+    /* TAB CONTENT */
+    .tab-pane { display: none; }
+    .tab-pane.active { display: block; }
+
+    /* CARDS */
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      padding: 26px;
+      margin-bottom: 20px;
+      box-shadow: var(--shadow-card);
+    }
+    .card-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .card p {
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    /* TABLE */
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-md);
+      margin-top: 14px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.9rem;
+    }
+    th {
+      background: rgba(255, 255, 255, 0.04);
+      padding: 14px 16px;
+      font-weight: 700;
+      color: var(--text-main);
+      border-bottom: 1px solid var(--card-border);
+    }
+    td {
+      padding: 14px 16px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      color: var(--text-muted);
+    }
+    tr:last-child td { border-bottom: none; }
+    tr.highlight {
+      background: rgba(16, 185, 129, 0.08);
+    }
+    tr.highlight td {
+      color: #fff;
+      font-weight: 600;
+    }
+
+    /* IMAGE GALLERY */
+    .img-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px;
+      margin-top: 18px;
+    }
+    .img-box {
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      background: #0b0f15;
+    }
+    .img-box img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+    .img-box:hover img {
+      transform: scale(1.02);
+    }
+    .img-caption {
+      padding: 12px 16px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      background: rgba(24, 32, 44, 0.9);
+      border-top: 1px solid var(--card-border);
+    }
+
+    /* CONTACT BOX */
+    .contact-box {
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(56, 189, 248, 0.05));
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      margin-top: 16px;
+    }
+    .contact-title {
+      font-weight: 700;
+      color: #34d399;
+      margin-bottom: 6px;
+    }
+
+    /* LIST */
+    ul.check-list {
+      list-style: none;
+      margin: 12px 0;
+    }
+    ul.check-list li {
+      position: relative;
+      padding-left: 28px;
+      margin-bottom: 10px;
+      color: var(--text-muted);
+    }
+    ul.check-list li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--accent-emerald);
+      font-weight: 800;
+    }
+
+    /* PRINT STYLES */
+    @media print {
+      body { background: #fff !important; color: #111 !important; font-size: 11pt; }
+      .header { background: #fff !important; border: 1px solid #ccc !important; color: #000 !important; }
+      .header h1 { color: #000 !important; }
+      .card { background: #fff !important; border: 1px solid #ddd !important; box-shadow: none !important; break-inside: avoid; }
+      .card-title { color: #000 !important; }
+      .tabs, .header-actions { display: none !important; }
+      .tab-pane { display: block !important; margin-bottom: 30px; }
+      table { border: 1px solid #ccc !important; }
+      th, td { color: #111 !important; border-bottom: 1px solid #eee !important; }
+      .summary-card { background: #f8fafc !important; border: 1px solid #ddd !important; }
+      .summary-val { color: #000 !important; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="badge">Verified Plan & Status</div>
+    <h1>Darlene & Steven Duncan</h1>
+    <p>Comprehensive Senior Living Plan, Application Record & Saint John Housing Comparison. Synchronized with Candy & Joe's 16-month house sale.</p>
+    <div class="header-actions">
+      <button class="btn btn-primary" onclick="window.print()">🖨️ Print Full Guide</button>
+      <a href="tel:5066436004" class="btn btn-outline">📞 Call Valerie Farrah (506-643-6004)</a>
+    </div>
+  </header>
+
+  <!-- QUICK STATS -->
+  <div class="summary-grid">
+    <div class="summary-card">
+      <div class="summary-label">Top Choice Residence</div>
+      <div class="summary-val">Saint Andrew’s</div>
+      <div class="summary-sub">134 University Ave, Millidgeville</div>
+    </div>
+    <div class="summary-card">
+      <div class="summary-label">Target Unit</div>
+      <div class="summary-val">2 Bedrooms</div>
+      <div class="summary-sub">Standard or Deluxe (Dad's Art Studio)</div>
+    </div>
+    <div class="summary-card">
+      <div class="summary-label">Household Income</div>
+      <div class="summary-val">$43,000 / yr</div>
+      <div class="summary-sub">Safely under $57,500 2-bed ceiling!</div>
+    </div>
+    <div class="summary-card">
+      <div class="summary-label">Estimated Rent</div>
+      <div class="summary-val">~$1,025 / mo</div>
+      <div class="summary-sub">30% income (Saves $1,000+/mo)</div>
+    </div>
+  </div>
+
+  <!-- TABS -->
+  <div class="tabs">
+    <button class="tab-btn active" onclick="switchTab('tab-top-pick')">🎯 Saint Andrew’s House</button>
+    <button class="tab-btn" onclick="switchTab('tab-financial')">💰 Budget & Eligibility</button>
+    <button class="tab-btn" onclick="switchTab('tab-art-room')">🎨 Dad's Art Studio</button>
+    <button class="tab-btn" onclick="switchTab('tab-comparison')">🗺️ Saint John Comparison</button>
+    <button class="tab-btn" onclick="switchTab('tab-checklist')">✅ 16-Month Checklist</button>
+  </div>
+
+  <!-- TAB 1: SAINT ANDREWS -->
+  <div id="tab-top-pick" class="tab-pane active">
+    <div class="card">
+      <div class="card-title">🏢 Saint Andrew’s House Inc. (The Winning Plan)</div>
+      <p>Saint Andrew’s House is an intimate 18-unit independent senior community built in 1992, operated by <strong>The Church of St. John & St. Stephen Home Inc.</strong> Located directly in Millidgeville on University Avenue, it provides dignified, quiet, accessible community living right beside Rockwood Park and the Saint John Regional Hospital.</p>
+      
+      <div class="contact-box">
+        <div class="contact-title">📋 Direct Contact & Application Office</div>
+        <p><strong>Housing Coordinator:</strong> Valerie Farrah<br>
+        <strong>Direct Phone:</strong> (506) 643-6004 | <strong>Main Office:</strong> (506) 643-6001<br>
+        <strong>Office Address:</strong> 130 University Avenue, Saint John, NB, E2K 4K3<br>
+        <strong>Apartment Building Address:</strong> 134 University Avenue, Saint John, NB</p>
+      </div>
+
+      <div style="margin-top: 20px;">
+        <h4 style="color:#fff; margin-bottom:8px;">Building Unit Breakdown (18 Units Total):</h4>
+        <ul class="check-list">
+          <li><strong>12 One-Bedroom Units</strong></li>
+          <li><strong>2 Standard Two-Bedroom Units</strong></li>
+          <li><strong>4 Deluxe Two-Bedroom Units</strong> (Total of 6 Two-Bedroom suites for Dad's art room!)</li>
+          <li><strong>Amenities:</strong> Multipurpose social/activity room, laundry facilities on-site, 100% non-smoking, secure entry, and parking.</li>
+        </ul>
+      </div>
+
+      <div class="img-grid">
+        <div class="img-box">
+          <img src="moms_and_dads_housing/images/millidgeville_senior_apartments.jpg" alt="Millidgeville Senior Living Setting">
+          <div class="img-caption">Suburban, tree-lined senior independent living in Millidgeville, Saint John.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB 2: FINANCIAL -->
+  <div id="tab-financial" class="tab-pane">
+    <div class="card">
+      <div class="card-title">💵 Income Eligibility & Cash Flow Breakdown</div>
+      <p>Valerie Farrah confirmed that rent is strictly capped at <strong>30% of gross monthly income</strong>, and income thresholds are set by NB Housing:</p>
+      
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Unit Size</th>
+              <th>NB Housing Maximum Limit</th>
+              <th>Darlene & Steven's Income</th>
+              <th>Eligibility Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1-Bedroom Unit</td>
+              <td>$45,000 / year</td>
+              <td>$43,000 / year</td>
+              <td><span style="color:#10b981; font-weight:700;">✓ Eligible</span> ($2,000 cushion)</td>
+            </tr>
+            <tr class="highlight">
+              <td>2-Bedroom Unit (Target)</td>
+              <td>$57,500 / year</td>
+              <td>$43,000 / year</td>
+              <td><span style="color:#10b981; font-weight:700;">✓ 100% Guaranteed Eligible</span> ($14,500 cushion!)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div style="margin-top: 24px;">
+        <h4 style="color:#fff; margin-bottom: 8px;">The Monthly Debt Payoff Roadmap (16-Month Horizon)</h4>
+        <p>Because Candy and Joe have 16 months before selling the house, both the car and personal loan will be completely paid off before Mom and Dad move in:</p>
+        <ul class="check-list">
+          <li><strong>Car Payment ($300/mo):</strong> Paid off at the end of 2026 &rarr; <span style="color:#10b981;">+$300/mo cash freed</span></li>
+          <li><strong>Personal Loan ($500/mo):</strong> Paid off in 2027 &rarr; <span style="color:#10b981;">+$500/mo cash freed</span></li>
+          <li><strong>Total Debt Eliminated:</strong> <strong style="color:#fff;">+$800.00 / month</strong> in pure cash flow!</li>
+          <li><strong>Total Monthly Pension:</strong> ~$4,100.00 / month</li>
+          <li><strong>Subsidized Rent at Saint Andrew's:</strong> ~$1,025.00 / month</li>
+          <li><strong>Remaining Net Cash Buffer:</strong> <strong>+$1,600+ every single month</strong> for groceries, gas, savings, and peace of mind!</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB 3: ART ROOM -->
+  <div id="tab-art-room" class="tab-pane">
+    <div class="card">
+      <div class="card-title">🎨 Dad's Art Studio Space Solutions</div>
+      <p>Dad currently paints in a laundry room sharing space with a water heater and deep freezer. Here is how his creative space is prioritized:</p>
+      
+      <div style="margin-bottom: 20px;">
+        <h4 style="color:#fff; margin-bottom: 6px;">Plan A: The Full 2-Bedroom Suite (At Saint Andrew’s House)</h4>
+        <p>With their 2-bedroom application locked in, Dad gets a private room with a closing door, natural daylight, and full storage. Mom gets an undisturbed bedroom and a clean living room.</p>
+      </div>
+
+      <div style="margin-bottom: 20px;">
+        <h4 style="color:#fff; margin-bottom: 6px;">Plan B: The Sectional & Compact Sunny Nook (If Ever Squeezed in 1-Bed)</h4>
+        <p>If ever in a 1-bedroom suite, their L-shaped sectional couch naturally partitions the living room, allowing Dad a dedicated 4' x 5' sunny window nook with an easel and rolling cart:</p>
+      </div>
+
+      <div class="img-grid">
+        <div class="img-box">
+          <img src="moms_and_dads_housing/images/art_room_sectional_floorplan.png" alt="Sectional Floor Plan">
+          <div class="img-caption">2D Floor Plan: Sectional naturally defines the room with Dad's 4'x5' art nook by the balcony.</div>
+        </div>
+        <div class="img-box">
+          <img src="moms_and_dads_housing/images/sectional_art_nook_concept.jpg" alt="3D Sectional Rendering">
+          <div class="img-caption">3D Concept: L-shaped sectional lounge with sunny artist easel by the glass door.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB 4: COMPARISON -->
+  <div id="tab-comparison" class="tab-pane">
+    <div class="card">
+      <div class="card-title">🗺️ Saint John Senior & Rental Market Matrix</div>
+      <p>Comparing Saint Andrew’s House against all alternatives explored:</p>
+      
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Building / Option</th>
+              <th>Neighborhood</th>
+              <th>Estimated Cost</th>
+              <th>Pros & Cons</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="highlight">
+              <td><strong>Saint Andrew’s House</strong></td>
+              <td>Millidgeville</td>
+              <td>~$1,025 / mo</td>
+              <td><strong>Top Pick.</strong> 2-bedroom, subsidized, prime area, keeps $1,600+ monthly savings.</td>
+            </tr>
+            <tr>
+              <td><strong>Hillcrest Village</strong></td>
+              <td>West Side</td>
+              <td>~$950–$1,150 / mo</td>
+              <td><strong>#1 Backup.</strong> 26 two-bedroom units, non-profit, quiet ridge on Manawagonish.</td>
+            </tr>
+            <tr>
+              <td><strong>Loch Lomond Villa</strong></td>
+              <td>East Side</td>
+              <td>~$950–$1,150 / mo</td>
+              <td>Independent senior apartment buildings (Milestone/Cornerstone). Great non-profit campus.</td>
+            </tr>
+            <tr>
+              <td><strong>The Venetian</strong></td>
+              <td>Millidgeville</td>
+              <td>~$1,950–$2,100 / mo + power</td>
+              <td>1-Bed + Den luxury concrete building. Den fits art, but costs double.</td>
+            </tr>
+            <tr>
+              <td><strong>SeaLedge Court</strong></td>
+              <td>West Side / Milford</td>
+              <td>$1,900 / mo + power</td>
+              <td>Brand new, elevator, heat pump, but $2,050+ all-in is too expensive.</td>
+            </tr>
+            <tr>
+              <td><strong>Château de Champlain</strong></td>
+              <td>Millidgeville</td>
+              <td>$3,595–$4,600 / mo</td>
+              <td>All-inclusive retirement home. Kitchenette only (no stove), open-air balcony.</td>
+            </tr>
+            <tr>
+              <td><strong>Shannex (Parkland)</strong></td>
+              <td>Millidgeville</td>
+              <td>$4,800–$6,500+ / mo</td>
+              <td>Luxury assisted retirement campus. Exceeds their entire monthly pension.</td>
+            </tr>
+            <tr>
+              <td><strong>Renting a House</strong></td>
+              <td>Saint John / Valley</td>
+              <td>$2,200–$2,500 / mo all-in</td>
+              <td>Huge winter heating bills ($400+), snow shoveling & ice hazards for seniors.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB 5: CHECKLIST -->
+  <div id="tab-checklist" class="tab-pane">
+    <div class="card">
+      <div class="card-title">✅ 16-Month Timeline & Action Checklist</div>
+      <p>Step-by-step milestones to secure their apartment without stress:</p>
+      
+      <ul class="check-list">
+        <li><strong>Application Submitted:</strong> Form delivered to Valerie Farrah at 130 University Ave with "2 Bedrooms" clearly marked.</li>
+        <li><strong>Target Move-in Window Communicated:</strong> Valerie informed that ideal move-in is in 12–16 months to match house sale.</li>
+        <li><strong>Every 6 Months:</strong> Quick 2-minute friendly check-in call to (506) 643-6004 to confirm active status.</li>
+        <li><strong>CRA Notice of Assessment (NOA):</strong> Kept in a family folder ready to hand over prior to lease signing.</li>
+        <li><strong>Tenant Insurance Policy:</strong> Secured through local broker (~$20/month) when keys are offered.</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  function switchTab(tabId) {
+    document.querySelectorAll('.tab-pane').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+    
+    document.getElementById(tabId).classList.add('active');
+    event.currentTarget.classList.add('active');
+  }
+</script>
+
+</body>
+</html>
