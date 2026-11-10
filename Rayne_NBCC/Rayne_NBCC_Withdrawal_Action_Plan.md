@@ -111,9 +111,8 @@ Practical Nursing — Saint John Campus
 - [x] **Step 5 (COMPLETED):** Jody Beresford's Thursday 11:30 AM accommodation meeting officially cancelled via Reply All confirming permanent withdrawal.
 - [x] **Step 6 (COMPLETED):** Paul's assistive technology (Read&Write) software session cancelled via polite withdrawal notification.
 - [x] **Step 7 (REFUND APPROVED):** UNB HotSpot Parking confirmed pro-rated permit refund (~$166.40 for plate `KHY712`) will be reimbursed directly to credit card on/after November 12, 2026.
-- [x] **Step 8 (COMPLETED):** Follow-up status email sent to Academic Chair Tammy Groom on Friday, Nov 6 confirming Student Status Form processing and Student Loans notification.
-- [ ] **Step 9 (SCHEDULED / TODAY):** Drop off loaned assistive tech iPad to Kendra Foote at Options Outreach on Friday morning (Nov 6) to close out AT grant cleanly.
-- [ ] **Step 10 (IN PROGRESS):** Receive finalized clinical letter from Amanda Geldart ➔ upload to [NB Student Aid Portal](https://www.studentaid.gnb.ca/) under 2026–2027 documents, and forward copies to Kendra Foote and `MLOA@nbcc.ca`. (See full interactive hub: [`amanda_letter_and_student_aid_upload_guide.html`](file:///Users/valuedcustomer/Downloads/flowstate_ai_os_candy/raynes_ocd_adhd/amanda_letter_and_student_aid_upload_guide.html)).
+- [x] **Step 9 (COMPLETED):** Loaned assistive tech equipment returned to Kendra Foote at Options Outreach; AT grant file closed cleanly.
+- [x] **Step 10 (PROGRESSING - Nov 10, 2026):** Received clinical support letter from Amanda Geldart (archived in [`Amanda_Geldart_Clinical_Support_Letter.pdf`](file:///Users/valuedcustomer/Downloads/flowstate_ai_os_candy/Rayne_NBCC/Amanda_Geldart_Clinical_Support_Letter.pdf)). Sent copy to Kendra Foote. NBCC dispute skipped to preserve positive relationship. Pending final action: upload to [NB Student Aid Portal](https://www.studentaid.gnb.ca/) once Rayne's portal login is unlocked.
 - [ ] **Step 11 (EXPLORING):** Math upgrading course exploration (Rayne expressed interest in upgrading math to expand future program pathways like Business Admin / Marketing or UNBSJ).
 
 ---

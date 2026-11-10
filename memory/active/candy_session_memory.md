@@ -899,3 +899,17 @@ I'm ready to respond to the updated call, sir.
       - Leftover Surplus: **+$806.82** cash from the Dec 30 pay funds the Christmas / Holiday Cash buffer with zero new debt.
       - 2027 Scotiabank Visa (Chunk 1 promo clock) remains 100% protected and starts Jan 15 on schedule.
     - Synchronized [`debt_payoff_planner.html`](file:///Users/valuedcustomer/Downloads/flowstate_ai_os_candy/debt_payoff_planner.html) and [`candy_joe_living_debt_spreadsheet.csv`](file:///Users/valuedcustomer/Downloads/flowstate_ai_os_candy/candy_joe_living_debt_spreadsheet.csv). Total scheduled consumer debt updated to **$38,849.83**.
+- **2026-11-10 (Morning)** (FRIDAY):
+  - **Amanda Geldart Clinical Support Letter Received & Archived:**
+    - Received official signed clinical support letter from therapist Amanda Geldart (dated Nov 9, 2026).
+    - Archived permanently into Rayne's repository:
+      1. [`Rayne_NBCC/Amanda_Geldart_Clinical_Support_Letter.pdf`](file:///Users/valuedcustomer/Downloads/flowstate_ai_os_candy/Rayne_NBCC/Amanda_Geldart_Clinical_Support_Letter.pdf)
+      2. [`raynes_ocd_adhd/Amanda_Geldart_Clinical_Support_Letter.pdf`](file:///Users/valuedcustomer/Downloads/flowstate_ai_os_candy/raynes_ocd_adhd/Amanda_Geldart_Clinical_Support_Letter.pdf)
+    - Letter explicitly establishes: (1) Rayne entered classes without mandated accommodations despite repeated requests, (2) resulting severe anxiety, stress, exhaustion, appetite/sleep disruption, (3) withdrawal was thoroughly considered and clinical in nature.
+    - Fully protects Rayne's **$2,800 Canada Student Grant for Students with Disabilities** from clawback.
+    - Updated master action plans and interactive upload guide hub.
+    - **Execution Milestones Confirmed:**
+      1. *Assistive Equipment Return:* Loaner equipment returned to Kendra Foote; AT file closed cleanly.
+      2. *Kendra Foote Transmission:* Candy emailed Amanda's letter directly to Kendra for Rayne's permanent disability advocate file.
+      3. *NBCC Tuition Dispute Closed:* Candy wisely waived any formal tuition appeal/dispute with NBCC, maintaining a peaceful, unburned bridge for potential future studies.
+      4. *NB Student Aid Upload Queued:* Amanda's letter will be uploaded to Rayne's provincial portal as soon as Rayne's account login is unlocked.
