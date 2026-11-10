@@ -20,8 +20,9 @@ Take 45–60 minutes before bed
    • 1 Scoop (5g – 10g hydrolyzed peptides)
    • Supports EDS ligaments, joint cushions & stomach lining
 
-3. CANPREV GLYCINE POWDER:
-   • 1 Level Teaspoon (3 grams)
+3. GLYCINE POWDER (3g TARGET DOSE):
+   • 1 Level Measuring Teaspoon OR ½ of the 5g Scoop (~3 grams)
+   • 💡 (Mom takes 1 full 5g scoop; Rayne takes 1 level tsp or ½ scoop!)
    • Relaxes muscles, calms brainstem, promotes deep sleep
 
 4. VITAMIN C POWDER (GENTLE STOMACH DOSE):
