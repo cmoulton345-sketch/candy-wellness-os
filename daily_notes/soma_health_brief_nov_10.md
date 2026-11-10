@@ -18,7 +18,7 @@
 | **Physical Wins** | **Hip Flexor Relief!** | 🦵 **Clamshell & Leg Lift Triumph:** Jessica Valant routine centrated femur & shut off psoas spasm! |
 | **Physical Hotspots** | **Thumb Joint & Tender Breasts** | 🦴 CMC joint estrogen sensitivity + breast response to Day 9 estrogen + 100mg oral progesterone capsule. |
 | **Fueling Strategy** | **Masterclass 80g+ Daytime Protein** | 🥗 Oats + protein + blueberries (45g) & Tuna Greek yogurt rice cakes (35g); 7 PM kitchen close anchor. |
-| **Tuesday BHRT** | **BiEst 1/2 Pump AM + T 1 Pump AM** | 🧴 Daytime: BiEst + Testosterone; Nighttime: 100mg oral progesterone capsule (cream paused OFF). |
+| **Tuesday BHRT** | **BiEst 1/2 Pump AM + T 1 Pump AM** | 🧴 Daytime: BiEst + Testosterone; Nighttime: 150mg oral capsule PAUSED (48h reset for breast tissue; 100mg resumes Thursday). |
 
 ---
 
@@ -34,14 +34,13 @@ It is the simultaneous combination of two powerful, natural hormonal events:
 1. **Cycle Day 9 Pre-Ovulatory Estrogen Climb:**
    * Your ovaries are on a healthy ~25-day rhythm. Days 8 through 11 are your steep follicular estrogen ramp as dominant follicles swell with fluid and pump natural estradiol into your bloodstream.
    * Combined with your daily **1/2 pump of BiEst**, estrogen is stimulating the growth and vascular blood flow of your breast **milk ducts (*ductal epithelium*)**.
-2. **The 100mg Oral Progesterone Capsule (Last Night):**
-   * Unlike topical cream (which was paused for the follicular phase), your oral capsule provides continuous GABA sleep support.
-   * Progesterone specifically binds to receptors in your **lobuloalveolar glandular tissue** (the glands at the ends of the ducts), prompting them to retain cellular fluid and swell.
-   * **The Dynamic:** When active progesterone receptor stimulation meets rising pre-ovulatory estrogen, your breast tissue becomes noticeably sensitive, full, and tender!
-3. **Short Sleep / Red Recovery Index:**
-   * 5 hours 44 minutes of sleep with a red recovery index slightly elevates morning cortisol and aldosterone, prompting temporary fluid retention in glandular tissues.
-
-**Takeaway:** This is 100% benign, expected breast tissue responsiveness to your natural cycle plus your nightly capsule. Release all worry—it is not a setback, and it is definitely not alcohol!
+2. **The 150mg Oral Progesterone Bridge Discovery (50% Too Strong!):**
+   * You've been bridging with your remaining **150 mg progesterone capsules** while waiting for the new 100 mg prescription to be dispensed.
+   * **150 mg is 50% higher than your new baseline!** Stacking 150 mg oral progesterone on top of your natural pre-ovulatory estrogen surge triggered acute **lobuloalveolar glandular engorgement** and breast fullness.
+3. **The 48-Hour Reset Action Plan:**
+   * **Pause the 150mg capsule tonight (Tuesday) and tomorrow (Wednesday).**
+   * Because micronized progesterone has a rapid half-life, this 48-hour break allows the tissue excess to clear cleanly and gives your breasts immediate relief!
+   * Your new **100 mg prescription arrives Thursday (Nov 12)** for safe, balanced nightly resumption without breast stacking!
 
 ---
 
