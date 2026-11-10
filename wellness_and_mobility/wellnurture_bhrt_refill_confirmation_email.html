@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WellNurtureMD BHRT Refill Confirmation Email</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b1329;
+      --card-bg: #131f3d;
+      --card-border: rgba(255, 255, 255, 0.1);
+      --teal: #0d9488;
+      --teal-light: #14b8a6;
+      --emerald: #10b981;
+      --amber: #f59e0b;
+      --rose: #f43f5e;
+      --indigo: #6366f1;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 24px 16px 60px;
+      display: flex;
+      justify-content: center;
+    }
+    .container {
+      max-width: 680px;
+      width: 100%;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 24px;
+      padding: 24px 20px;
+      background: linear-gradient(135deg, rgba(13, 148, 136, 0.25), rgba(99, 102, 241, 0.22));
+      border: 1px solid var(--card-border);
+      border-radius: 18px;
+    }
+    .badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 4px 12px;
+      border-radius: 999px;
+      background: rgba(13, 148, 136, 0.25);
+      color: #5eead4;
+      border: 1px solid rgba(13, 148, 136, 0.4);
+      margin-bottom: 10px;
+    }
+    h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.65rem;
+      font-weight: 800;
+      margin-bottom: 6px;
+      color: #fff;
+    }
+    .subtitle {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+    }
+    .card-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+      color: #fff;
+    }
+    .alert-box {
+      background: rgba(245, 158, 11, 0.1);
+      border-left: 4px solid var(--amber);
+      border-radius: 8px;
+      padding: 12px 14px;
+      margin-bottom: 14px;
+      font-size: 0.9rem;
+    }
+    .script-box {
+      background: #0f172a;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 12px;
+      padding: 18px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-size: 0.88rem;
+      line-height: 1.65;
+      color: #e2e8f0;
+      white-space: pre-wrap;
+    }
+    .btn-copy {
+      display: inline-block;
+      margin-top: 14px;
+      background: var(--teal);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 22px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      width: 100%;
+      text-align: center;
+    }
+    .btn-copy:hover {
+      background: var(--teal-light);
+    }
+    strong { color: #fff; }
+    p { margin-bottom: 10px; font-size: 0.92rem; color: #cbd5e1; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="badge">CLINICAL COORDINATION • WELLNURTUREMD</div>
+      <h1>BHRT Protocol Confirmation & Urgent Refills</h1>
+      <div class="subtitle">Dr. Jenna Weeks, ND • Follow-up from November 5, 2026 Consultation</div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">💡 Why 150 mg Was Hurting Your Breasts</div>
+      <div class="alert-box">
+        <strong>The Missing Diagnostic Link:</strong><br>
+        Taking your remaining <strong>150 mg capsule</strong> right during your <strong>Cycle Day 9 pre-ovulatory estrogen surge</strong> explains 100% of the breast tenderness you felt today! 150 mg is 50% stronger than your new 100 mg target dose. It caused acute glandular fluid retention. Getting the 100 mg capsules filled right now will relieve that pressure!
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">✉️ Official Email to WellNurtureMD</div>
+      <p>Click below to copy this message directly to your clipboard, fill in your pharmacy name, and send:</p>
+
+      <div class="script-box" id="email-text">Subject: BHRT Protocol Confirmation & Urgent Prescription Refills — Candy Moulton (Nov 5 Consult Follow-Up)
+
+Dear Dr. Jenna and the WellNurtureMD Team,
+
+Thank you so much for our consultation on Thursday, November 5. I wanted to follow up and officially confirm the updated BHRT protocol we agreed on, and request that the new prescriptions and refills be sent over to my pharmacy as soon as possible so I can pick them up this week.
+
+Here is the summary of our updated protocol:
+
+1. BiEst (Estrogen Cream) — REFILL NEEDED NOW:
+   • New Dose: 1/2 pump every morning continuously (decreased from 1 pump).
+   • Status: My current bottle is almost empty. I need this refill sent to the pharmacy right away so I can pick it up today/tomorrow without missing a day.
+
+2. Oral Micronized Progesterone Capsule (100 mg) — URGENT REFILL NEEDED:
+   • New Dose: 100 mg capsule every night before bed continuously (for GABA sleep, emotional buffer, and histamine stabilization).
+   • Clinical Note: I am currently bridging with my old 150 mg capsules while waiting for the new prescription, and the 150 mg is proving to be too strong right now—it is causing acute breast tenderness and glandular swelling alongside my natural pre-ovulatory estrogen surge. Getting the 100 mg capsules dispensed right away will allow me to drop to the correct dose and relieve this tenderness immediately.
+
+3. Topical Progesterone Cream (Compounded 3.75 Strength) — REFILL FOR ON-WINDOW:
+   • New Protocol: Cyclic dosing (~2 weeks ON / ~2 weeks OFF), triggered by my Oura ring ovulation temperature spike.
+   • Refill Specification: Compounded at 3.75 strength so that the target dose is 1 pump nightly during the active 2-week luteal window. (I am currently in my follicular OFF window, so I have time for the compounding pharmacy to prepare this).
+
+4. Testosterone Cream — REFILL ON FILE:
+   • Dose: 1 pump every morning, Monday to Friday (weekends OFF: Saturday & Sunday).
+
+PHARMACY DETAILS FOR TRANSMISSION:
+Please fax or transmit these prescriptions to my pharmacy:
+• Pharmacy Name: [Insert Pharmacy Name — e.g., Simply For Life / Compounding Pharmacy]
+• Location / Address: [Insert Address, e.g., Rothesay Ave, Saint John, NB]
+• Phone / Fax: [Insert Phone & Fax if available, or "On file"]
+
+Thank you so much for your ongoing care and support. Please let me know once these have been transmitted so I can contact the pharmacy to arrange pickup!
+
+Warmly,
+
+Candy Moulton
+Phone: [Your Phone Number]
+DOB: [Your Date of Birth]</div>
+
+      <button class="btn-copy" onclick="copyEmail()">📋 Copy Email to Clipboard</button>
+    </div>
+  </div>
+
+  <script>
+    function copyEmail() {
+      const text = document.getElementById('email-text').innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        alert('📋 Email copied to clipboard! Ready to paste and send to WellNurtureMD.');
+      });
+    }
+  </script>
+</body>
+</html>
