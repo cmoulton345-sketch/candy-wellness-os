@@ -649,14 +649,14 @@
       </div>
       <div class="hero-stat">
         <div class="hero-label">Current Phase Status</div>
-        <div class="hero-val" style="color:#34d399;">10mg (20mg Starts Sun Nov 8)</div>
-        <div class="hero-sub">Weekend Step-Up Plan</div>
+        <div class="hero-val" style="color:#34d399;">Day 3 on Vyvanse 20mg</div>
+        <div class="hero-sub">Phase 2 Active Onboarding</div>
       </div>
     </div>
 
     <!-- CLINICAL BANNER -->
     <div class="clinical-banner no-print">
-      💡 <strong>Phase 2 Plan (10mg → 20mg):</strong> Rayne is finishing Friday (Nov 6) and Saturday (Nov 7) on <strong>10mg Vyvanse</strong>. On <strong>Sunday, Nov 8</strong>, she officially begins <strong>20mg Vyvanse</strong> in a calm weekend home environment while remaining steady on <strong>50mg Fluoxetine</strong>. Over the coming month, we will monitor executive function, emotional affect (ensuring zero flatness), lunch appetite, and afternoon wear-off.
+      💡 <strong>Live Clinical Check-In (Nov 10 — Day 3 on 20mg):</strong> Rayne stepped up to <strong>20mg Vyvanse</strong> on Sunday, Nov 8. Over Days 1–3, she has reported being tired, feeling slightly "OCD-like", and having daily headaches (chronic pattern). Her belly has also been actively bugging her. <strong>Next Step:</strong> Preparing family doctor visit for (1) Dr. Beth Carson allergy referral; (2) Ferritin / Iron panel (oral absorption check); (3) GI / Belly pain evaluation.
     </div>
 
     <!-- VIEW 1: INTERACTIVE CARDS -->
@@ -1287,18 +1287,18 @@
         dayNumber: 22,
         v20Day: 1,
         dose: '20mg',
-        taken: false,
-        focus: 0,
-        focusLabel: 'Day 1 (20mg)',
-        mood: '',
-        appetite: '',
-        headache: '',
-        sleep: 'Pending',
-        ocd: 'Stable',
+        taken: true,
+        focus: 3,
+        focusLabel: '3 / 5',
+        mood: 'Tired / A bit OCD-like',
+        appetite: 'Normal',
+        headache: 'Yes (Daily)',
+        sleep: 'Fair',
+        ocd: 'A bit OCD-like',
         thumbPicking: 'Low',
         pms: false,
         fluShot: false,
-        notes: 'OFFICIAL STEP-UP: Day 1 on Vyvanse 20mg. Taken at 8:00 AM with protein breakfast. Weekend home environment to monitor focus, affect, appetite, and wear-off.'
+        notes: 'Day 1 on Vyvanse 20mg. Slower energy throughout day; headache present (daily pattern). Noted feeling a bit OCD-like.'
       },
       {
         date: '2026-11-09',
@@ -1306,18 +1306,18 @@
         dayNumber: 23,
         v20Day: 2,
         dose: '20mg',
-        taken: false,
-        focus: 0,
-        focusLabel: 'Pending',
-        mood: '',
-        appetite: '',
-        headache: '',
-        sleep: 'Pending',
-        ocd: 'Stable',
+        taken: true,
+        focus: 3,
+        focusLabel: '3 / 5',
+        mood: 'Tired / A bit OCD-like',
+        appetite: 'Normal',
+        headache: 'Yes (Daily)',
+        sleep: 'Fair',
+        ocd: 'A bit OCD-like',
         thumbPicking: 'Low',
         pms: false,
         fluShot: false,
-        notes: 'Phase 2: Day 2 on Vyvanse 20mg + Fluoxetine 50mg.'
+        notes: 'Day 2 on 20mg. Continued tiredness and daily headache. Belly bugging her. Took Nighttime Glycine (3g / 1 tsp) + Collagen.'
       },
       {
         date: '2026-11-10',
@@ -1325,18 +1325,18 @@
         dayNumber: 24,
         v20Day: 3,
         dose: '20mg',
-        taken: false,
-        focus: 0,
-        focusLabel: 'Pending',
-        mood: '',
-        appetite: '',
-        headache: '',
+        taken: true,
+        focus: 3,
+        focusLabel: '3 / 5',
+        mood: 'Tired / Low energy',
+        appetite: 'Normal',
+        headache: 'Yes (Daily)',
         sleep: 'Pending',
-        ocd: 'Stable',
+        ocd: 'A bit OCD-like',
         thumbPicking: 'Low',
         pms: false,
         fluShot: false,
-        notes: 'Phase 2: Day 3 on Vyvanse 20mg + Fluoxetine 50mg.'
+        notes: 'Day 3 on 20mg. Daily headaches persist; low energy and tired. Belly actively bugging her. Planning family doctor visit for full allergy referral (Dr. Carson), iron/ferritin panel, and GI/belly evaluation.'
       },
       {
         date: '2026-11-11',
@@ -1875,7 +1875,7 @@
     // STORAGE HANDLER
     function getStoredData() {
       try {
-        const data = localStorage.getItem('rayne_med_tracker_v5');
+        const data = localStorage.getItem('rayne_med_tracker_v7');
         if (data) return JSON.parse(data);
       } catch (e) {
         console.error('Error reading localStorage', e);
@@ -1885,7 +1885,7 @@
 
     function saveStoredData(data) {
       try {
-        localStorage.setItem('rayne_med_tracker_v5', JSON.stringify(data));
+        localStorage.setItem('rayne_med_tracker_v7', JSON.stringify(data));
       } catch (e) {
         console.error('Error saving localStorage', e);
       }
@@ -1902,7 +1902,7 @@
 
     function renderCards() {
       const container = document.getElementById('cards-container');
-      const todayStr = '2026-11-06';
+      const todayStr = '2026-11-10';
       
       container.innerHTML = activeData.map(item => {
         const isToday = item.date === todayStr;
@@ -2134,7 +2134,7 @@
     // CLIPBOARD EXPORT FOR SOMA
     function copyUpdateForSoma() {
       // Pick today or recent logged entries
-      const today = activeData.find(d => d.date === '2026-11-06') || activeData[activeData.length - 1];
+      const today = activeData.find(d => d.date === '2026-11-10') || activeData[activeData.length - 1];
       
       const text = `Rayne Medication & Symptom Update (${today.displayDate}):
 - Vyvanse 10mg Taken: ${today.taken ? 'Yes (8:00 AM w/ food)' : 'No'}

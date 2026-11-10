@@ -192,24 +192,25 @@
 
 ### Week 1 on 20 mg: Official Titration & Onboarding (Nov 8 – Nov 14)
 * **Sun, Nov 8 (Day 1 on Vyvanse 20mg — Official Step-Up Day):**
-  * Taken at 8:00 AM w/ Protein Breakfast? [ ] Yes  [ ] No
-  * Focus & Executive Function (1-5): _____
-  * Mood & Affect (Vibrant vs. Flat / Blah): ____________________________________
-  * Lunch Appetite (12–2 PM): _________________________________________________
-  * Physical / Headaches / Vitals: _____________________________________________
-  * Afternoon Rebound (3:30–5:00 PM): __________________________________________
-  * Evening Settling & Sleep Onset: ___________________________________________
-  * OCD Loops & General Notes: Weekend home environment to observe first 20mg response.
+  * Taken at 8:00 AM w/ Food? [x] Yes (20 mg Vyvanse + 50 mg Prozac + Slynd)
+  * Focus & Executive Function (1-5): **3 / 5**
+  * Mood & Affect: **Felt tired; noted feeling a bit "OCD-like"**
+  * Physical / Headaches / Vitals: **Headache present** (noted daily headache pattern)
+  * Notes: First day on 20 mg. Slower energy; experienced headache and slight OCD stickiness.
 
-* **Mon, Nov 9 (Day 2 on 20mg — First Weekday on 20mg):**
-  * Taken 8am w/ Food? [ ] Yes | Focus: ___ | Mood: __________________________
-  * Lunch Appetite: _____________ | Headaches/Physical: _______________________
-  * Rebound/Evening: ___________ | Sleep: ____________ | OCD: ________________
+* **Mon, Nov 9 (Day 2 on 20mg):**
+  * Taken 8am w/ Food? [x] Yes (20 mg Vyvanse + 50 mg Prozac + Slynd)
+  * Focus: **3 / 5** | Mood: **Tired / A bit OCD-like**
+  * Physical / Headaches: **Headache present**
+  * GI / Belly: **Belly bugging her**
+  * Notes: Continued tiredness and daily headache. Prepped new Glycine (1 level tsp ~3g) + Collagen nighttime drink.
 
-* **Tue, Nov 10 (Day 3 on 20mg):**
-  * Taken 8am w/ Food? [ ] Yes | Focus: ___ | Mood: __________________________
-  * Lunch Appetite: _____________ | Headaches/Physical: _______________________
-  * Rebound/Evening: ___________ | Sleep: ____________ | OCD: ________________
+* **Tue, Nov 10 (Day 3 on 20mg — Today):**
+  * Taken 8am w/ Food? [x] Yes (20 mg Vyvanse + 50 mg Prozac + Slynd)
+  * Focus: **3 / 5** | Mood: **Tired / Low energy**
+  * Physical / Headaches: **Daily headache continues** (chronic pattern; checking connection to low ferritin / vascular tension)
+  * GI / Belly: **Belly actively bugging her** — Rayne specifically wants to discuss with family doctor
+  * Doctor Action Plan: Preparing family doctor visit for (1) Dr. Beth Carson allergy referral (nuts/cross-reactions); (2) Serum Ferritin & Iron saturation check (evaluating oral iron response vs. malabsorption); (3) GI / Belly pain evaluation (Celiac screen, gastric irritation from oral iron/GERD).
 
 * **Wed, Nov 11 (Day 4 on 20mg):**
   * Taken 8am w/ Food? [ ] Yes | Focus: ___ | Mood: __________________________

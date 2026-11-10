@@ -2,25 +2,26 @@
 **Date:** November 2026  
 **Patient:** Rayne Moulton  
 **Underlying Conditions:** Ehlers-Danlos Syndrome (EDS), OCD, ADHD, Chronic Fatigue, Recurrent Headaches, Severe Tree Nut Allergies  
-**Current Medications:** Fluoxetine 50 mg, Vyvanse 10 mg, Slynd (drospirenone) 4 mg, Daily Oral Iron  
+**Current Medications:** Fluoxetine 50 mg, Vyvanse 20 mg (titrated Nov 8), Slynd (drospirenone) 4 mg, Daily Oral Iron  
 
 ---
 
 ## 1. Oral Iron Follow-Up & Suspected Malabsorption
-* **Context:** Rayne has been taking oral iron supplements daily for several months to treat chronic fatigue, weakness, and persistent headaches.
-* **Clinical Concern:** Her energy levels, headaches, and physical stamina have not noticeably improved. 
+* **Context:** Rayne has been taking daily oral iron supplements for several months to treat chronic fatigue, weakness, and persistent headaches.
+* **Clinical Concern:** Her energy levels, daily headaches, and physical stamina have not improved. Daily headaches persist and she remains exhausted.
 * **Requested Labs:**
-  * **Serum Ferritin**
+  * **Serum Ferritin** (measures tissue storage; crucial for resolving low-iron headaches and cellular fatigue)
   * **CBC with Differential** (evaluating hemoglobin, hematocrit, and MCV/MCH)
   * **Total Iron & Total Iron Binding Capacity (TIBC)**
   * **% Transferrin Saturation**
 * **Next Steps if Levels Remain Unchanged:** If her ferritin and iron saturation remain low despite months of oral adherence, this points to **oral iron refractoriness or gut malabsorption**. We would like to discuss:
   * Evaluating potential underlying GI absorption barriers (e.g., Celiac disease).
-  * Referral for an **IV iron infusion (e.g., Monoferric or Venofer)** to bypass gastric absorption, replenish tissue iron stores directly, and relieve iron-starvation headaches and fatigue.
+  * Referral for an **IV iron infusion (e.g., Monoferric or Venofer)** to bypass gastric absorption, replenish tissue iron stores directly, and relieve iron-starvation headaches and fatigue without irritating her stomach.
 
 ---
 
-## 2. GI, Celiac & Comprehensive Annual Blood Work Panel
+## 2. GI, Belly Pain & Comprehensive Blood Work Panel
+* **Patient Self-Report:** Rayne specifically requested to address her **belly pain** at this visit. It has been actively bugging her with chronic cramping, bloating, and daily heartburn/GERD. Furthermore, daily oral iron supplements are notoriously hard on the gastric lining and may be exacerbating her stomach ache.
 Given Rayne’s EDS (where connective tissue laxity commonly drives gastric dysmotility, lower esophageal sphincter laxity/GERD, and malabsorption), we request the following comprehensive investigations:
 
 1. **Celiac Disease Screening:**
