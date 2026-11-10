@@ -1,91 +1,63 @@
-# Rayne's Clinical Letter & Student Aid Portal Upload Guide
+# Rayne's Clinical Letter & NB Student Aid Portal Upload Guide
 
 **Student:** Rayne Moulton  
 **NBCC Student ID:** `5110565`  
-**Target Date:** Week of November 2–6, 2026 (Upon receipt of letter from Amanda Geldart)  
-**Primary Objective:** Legally protect Rayne's **$2,800 Canada Student Grant for Students with Disabilities**, ensure zero loan clawback, cancel all Winter 2027 funding, and maintain 100% good standing for future studies.
+**NSLSC Loan Account:** `B-160956` (Canada–New Brunswick Integrated Student Loan)  
+**Status as of Nov 10, 2026:** Letter received, emailed to Kendra Foote, equipment returned. Ready for NB Student Aid upload upon portal unlock.  
+**Primary Objective:** Legally protect Rayne's **$2,800 Canada Student Grant for Students with Disabilities**, ensure zero loan clawback, maintain $0 winter balance, and keep 100% good standing for future studies.
 
 ---
 
-## 1. Quick Clarity: The Division of Roles
+## ⚡ Quick-Action Launchpad: When Rayne's Account is Unlocked
 
-| Who | Their Actual Function | What They Touch |
-| :--- | :--- | :--- |
-| **Kendra Foote**<br>*(Options Outreach)* | **Community Advocate & Case Manager** | • Coordinates the **Easter Seals loaner laptop return**.<br>• Keeps Rayne's local disability advocacy file open for 2027.<br>• *Note:* Kendra does **not** work for NB Student Aid or NBCC, so she has no administrative access to push "cancel" on a government loan. |
-| **Tammy Groom & NBCC Registrar**<br>*(Academic Chair & Records)* | **The Official Reporting Channel** | • Tammy Groom signed and initiated the withdrawal form with the Registrar (`studentrecords@nbcc.ca`).<br>• NBCC is legally required to electronically notify **New Brunswick Student Financial Services**.<br>• **This is what automatically terminates the Winter 2027 disbursement ($0 owed).** |
-| **Amanda Geldart**<br>*(Therapist)* | **The Clinical Protective Shield** | • Provides the official medical/psychological letter establishing that Rayne withdrew due to documented health and accommodation barriers.<br>• **Protects the $2,800 Canada Student Disability Grant** from being clawed back or converted into repayable debt. |
+When you are ready to upload Amanda's letter to the provincial student aid site, here is the exact 60-second cheat sheet:
 
----
-
-## 2. Step-by-Step Action Plan (When Amanda's Letter Arrives)
-
-### Step 1: Upload to Rayne's NB Student Aid Portal (Primary Government Repository)
-
-1. **Log in** to Rayne’s account on the [New Brunswick Student Financial Services Portal](https://www.studentaid.gnb.ca/).
-2. Locate the **"Upload Documents"** or **"Submit Documents"** tab under her active **2026–2027 Application**.
-3. **Select Document Category:**
-   * Choose **"Medical Documentation"**, **"Appeal"**, or **"Supporting Documentation / Other"** from the dropdown menu.
-4. **Description / Note to Enter:**
+1. **Go to the Portal:** [New Brunswick Student Financial Services (studentaid.gnb.ca)](https://www.studentaid.gnb.ca/)
+2. **Log In:** Sign in to Rayne’s student account.
+3. **Locate Documents Tab:** Click on Rayne's active **2026–2027 Application** ➔ click **"Upload Documents"** (or "Submit Documents").
+4. **Choose Category:** Select **"Medical Documentation"**, **"Appeal"**, or **"Supporting Documentation / Other"** from the dropdown menu.
+5. **Paste This Exact Note into the Description / Memo Box:**
    ```text
    Clinical support documentation for medical withdrawal — Rayne Moulton
    ```
-5. **Attach & Submit:** Upload Amanda’s PDF letter and click Submit.
-6. *Outcome:* The document attaches permanently to her provincial file, granting her official medical exemption status.
+6. **Attach the PDF:**
+   * Select `Rayne M. Support Letter.pdf` directly from your **Desktop**  
+   * *(Permanent archive backup also located in your project at: [`Rayne_NBCC/Amanda_Geldart_Clinical_Support_Letter.pdf`](file:///Users/valuedcustomer/Downloads/flowstate_ai_os_candy/Rayne_NBCC/Amanda_Geldart_Clinical_Support_Letter.pdf))*
+7. **Click Submit:** That's it! The provincial medical exemption is permanently locked into the government database.
 
 ---
 
-### Step 2: Forward Copy to Kendra Foote (Options Outreach)
+## 📊 Confirmed Loan & Grant Status (Verified Nov 10, 2026)
 
-* **To:** Kendra Foote (`kendra@optionsoutreach.com` / or her primary work email)
-* **CC:** `traycan@hotmail.com`
-* **Subject:** `Clinical Support Letter — Rayne Moulton (Disability File & Equipment Return)`
-* **Body Draft:**
-  ```text
-  Hi Kendra,
-
-  I hope you are having a wonderful week!
-
-  Attached is the clinical support letter from Rayne's therapist, Amanda Geldart, documenting her medical withdrawal from NBCC. We have also uploaded a copy directly to Rayne's NB Student Aid portal.
-
-  Could you please keep this on file with Rayne's Options Outreach profile to ensure her permanent disability status remains fully protected for future post-secondary applications?
-
-  Also, as discussed, we will be dropping off the Easter Seals loaner laptop to your office [insert day, e.g. Wednesday, Nov 4 around Rayne's therapy appointment]. We have Rayne's login PIN/password ready on a sticky note for your team.
-
-  Thank you so much again for all your kindness, guidance, and support for Rayne.
-
-  Warm regards,
-
-  Candy and Rayne Moulton
-  ```
+| Account & Item | Current Status | Details |
+| :--- | :--- | :--- |
+| **NSLSC Loan # B-160956** | **$3,572.00 Owing** | Status: **In Study** ($0/mo payment). Only reflects Fall 2026 loan portion. Permanently **0.00% interest**. Shifts to 6-month grace period once withdrawal finishes processing. |
+| **Winter 2027 Disbursement** | **$0.00 (Cancelled)** | NBCC never billed for Winter; $0 second disbursement released or owed. |
+| **$2,800 Disability Grant** | **Protected Free Money** | Amanda's clinical letter certifies medical withdrawal grounds, preventing grant conversion into repayable loan debt. |
+| **Assistive Technology Loan** | **Closed Cleanly** | Loaner equipment returned to Kendra Foote at Options Outreach. |
+| **NBCC Institutional Standing** | **Clean / In Good Standing** | Tammy Groom processed official *Student Status Form*. Tuition dispute waived to maintain positive relations for potential future studies. |
 
 ---
 
-### Step 3: Forward Copy to NBCC Central Medical (`MLOA@nbcc.ca`)
+## ✅ Completed Milestones & Status Checklist
 
-* **To:** `MLOA@nbcc.ca`
-* **CC:** `traycan@hotmail.com`
-* **Subject:** `Confidential Clinical Documentation — Rayne Moulton (Student ID: 5110565)`
-* **Body Draft:**
-  ```text
-  Dear NBCC Medical Documentation / Student Records Team,
-
-  Please find attached the official clinical support letter from therapist Amanda Geldart regarding Rayne Moulton (Student ID: 5110565). 
-
-  Following Academic Chair Tammy Groom's initiation of Rayne's student-initiated withdrawal from the Practical Nursing program, this documentation confirms her withdrawal on medical/health grounds for her permanent student record.
-
-  Thank you for placing this confidentially in her file.
-
-  Sincerely,
-
-  Rayne Moulton (and Candy Moulton)
-  NBCC Student ID: 5110565
-  ```
+- [x] **Tammy Groom Initiated Withdrawal:** Official withdrawal submitted to Registrar (Completed Oct 28).
+- [x] **Easter Seals Assistive Tech Return:** Loaner equipment returned to Kendra Foote (Completed Nov 6).
+- [x] **Receive Letter from Amanda Geldart:** Official clinical support letter received and archived (Nov 10, 2026).
+- [x] **Forward Copy to Kendra Foote:** Emailed Amanda's letter to Kendra for Rayne’s permanent Options Outreach file (Nov 10, 2026).
+- [x] **NBCC Tuition Dispute Closed:** Waived formal dispute to maintain peaceful goodwill and keep future doors open (Nov 10, 2026).
+- [x] **NSLSC Verification:** Verified dashboard confirms $3,572.00 balance, $0 winter debt, 0% interest (Nov 10, 2026).
+- [ ] **Upload to NB Student Aid Portal:** **PENDING ACCOUNT UNLOCK.** Upload `Rayne M. Support Letter.pdf` to [studentaid.gnb.ca](https://www.studentaid.gnb.ca/) under 2026–2027 Medical Documentation.
 
 ---
 
-## 3. Financial & Grant Safeguards Confirmed
+## 📂 Archival File Locations
 
-* **$2,800 Canada Student Grant for Students with Disabilities:** Safeguarded under federal/provincial medical accommodation rules; zero clawback.
-* **Winter 2027 Loan Disbursement:** Automatically cancelled by NBCC Registrar reporting; $0 owed for Term 2.
-* **Fall 2026 Student Loan Balance:** Enters the standard 6-month non-repayment grace period (0.00% interest permanently).
-* **Future Post-Secondary:** Permanent Disability (PD) status stays permanently unlocked on Rayne’s Student Aid profile. When she applies for UNBSJ or other programs in 2027, she qualifies immediately without reapplying for disability verification.
+* **Desktop Copy (Ready for browser upload):**  
+  `/Users/valuedcustomer/Desktop/Rayne M. Support Letter.pdf`
+* **Rayne NBCC Records:**  
+  [`Rayne_NBCC/Amanda_Geldart_Clinical_Support_Letter.pdf`](file:///Users/valuedcustomer/Downloads/flowstate_ai_os_candy/Rayne_NBCC/Amanda_Geldart_Clinical_Support_Letter.pdf)
+* **Rayne OCD & ADHD Hub:**  
+  [`raynes_ocd_adhd/Amanda_Geldart_Clinical_Support_Letter.pdf`](file:///Users/valuedcustomer/Downloads/flowstate_ai_os_candy/raynes_ocd_adhd/Amanda_Geldart_Clinical_Support_Letter.pdf)
+* **Interactive 1-Click Browser Hub:**  
+  [`Rayne_NBCC/amanda_letter_and_student_aid_upload_guide.html`](file:///Users/valuedcustomer/Downloads/flowstate_ai_os_candy/Rayne_NBCC/amanda_letter_and_student_aid_upload_guide.html)
