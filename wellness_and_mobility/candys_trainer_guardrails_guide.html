@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Candy's GoodLife Trainer Programming Guide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b1329;
+      --card-bg: #131f3d;
+      --card-border: rgba(255, 255, 255, 0.1);
+      --teal: #0d9488;
+      --teal-light: #14b8a6;
+      --emerald: #10b981;
+      --amber: #f59e0b;
+      --rose: #f43f5e;
+      --indigo: #6366f1;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 24px 16px 60px;
+      display: flex;
+      justify-content: center;
+    }
+    .container {
+      max-width: 680px;
+      width: 100%;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 24px;
+      padding: 24px 20px;
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.22), rgba(13, 148, 136, 0.25));
+      border: 1px solid var(--card-border);
+      border-radius: 18px;
+    }
+    .badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 4px 12px;
+      border-radius: 999px;
+      background: rgba(99, 102, 241, 0.25);
+      color: #a5b4fc;
+      border: 1px solid rgba(99, 102, 241, 0.4);
+      margin-bottom: 10px;
+    }
+    h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.65rem;
+      font-weight: 800;
+      margin-bottom: 6px;
+      color: #fff;
+    }
+    .subtitle {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+    }
+    .card-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+      color: #fff;
+    }
+    .avoid-box {
+      background: rgba(244, 63, 94, 0.1);
+      border-left: 4px solid var(--rose);
+      border-radius: 8px;
+      padding: 12px 14px;
+      margin-bottom: 12px;
+      font-size: 0.9rem;
+    }
+    .green-box {
+      background: rgba(16, 185, 129, 0.1);
+      border-left: 4px solid var(--emerald);
+      border-radius: 8px;
+      padding: 12px 14px;
+      margin-bottom: 12px;
+      font-size: 0.9rem;
+    }
+    .script-box {
+      background: #0f172a;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 12px;
+      padding: 16px;
+      font-family: monospace;
+      font-size: 0.85rem;
+      line-height: 1.6;
+      color: #e2e8f0;
+      white-space: pre-wrap;
+      position: relative;
+    }
+    .btn-copy {
+      display: inline-block;
+      margin-top: 10px;
+      background: var(--teal);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 18px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-copy:hover {
+      background: var(--teal-light);
+    }
+    strong { color: #fff; }
+    p { margin-bottom: 10px; font-size: 0.92rem; color: #cbd5e1; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="badge">GOODLIFE FITNESS • PROGRAMMING COMPASS</div>
+      <h1>Trainer Guardrails & Safe Swaps</h1>
+      <div class="subtitle">What to Avoid, What to Celebrate & Copy-Pastable Script</div>
+    </div>
+
+    <!-- AVOID CARD -->
+    <div class="card">
+      <div class="card-title">🛑 What to Avoid (Red Light List)</div>
+      
+      <div class="avoid-box">
+        <strong>1. No Deep Squats Below 90°:</strong> Dropping deep causes anterior femoral glide, where the ball of the thigh bone pinches the front hip capsule and labrum (C-sign).
+      </div>
+      <div class="avoid-box">
+        <strong>2. No Deep Walking Lunges or Bulgarian Split Squats:</strong> Deep trailing-leg hip extension under load irritates the psoas and hip flexor.
+      </div>
+      <div class="avoid-box">
+        <strong>3. No Deep Leg Presses:</strong> Sled must NOT descend so far that knees push into chest or lower back rounds off the pad. Stop at 90°!
+      </div>
+      <div class="avoid-box">
+        <strong>4. No Behind-the-Neck Movements:</strong> Pulling or pressing behind the neck causes severe cervical and rotator cuff impingement.
+      </div>
+      <div class="avoid-box">
+        <strong>5. No Standing Bent-Over Barbell Rows:</strong> Unsupported lumbar loading strains spinal facet joints.
+      </div>
+      <div class="avoid-box">
+        <strong>6. No Flat-Palm Floor Pushups / Bent-Wrist Barbell Presses:</strong> Protects the thumb CMC basal joint from hyperextension compression.
+      </div>
+      <div class="avoid-box">
+        <strong>7. No Exhausting HIIT / CrossFit to Failure:</strong> Spikes cortisol and causes 4-day inflammatory fluid holding in perimenopause.
+      </div>
+    </div>
+
+    <!-- GREEN LIGHT CARD -->
+    <div class="card">
+      <div class="card-title">🟢 What Candy Thrives On (Green Light List)</div>
+      <div class="green-box">
+        <strong>Box Squats to Bench (90°):</strong> Sitting back to a box at 90°, driving through heels to recruit glutes with zero front hip pinch.
+      </div>
+      <div class="green-box">
+        <strong>Seated Leg Press (High & Wide Feet, 90° Stop):</strong> Maximum glute and hamstring loading with zero spinal compression.
+      </div>
+      <div class="green-box">
+        <strong>Seated Hip Abduction Machine:</strong> The ultimate glute shelf builder (gluteus medius) to stabilize the pelvis.
+      </div>
+      <div class="green-box">
+        <strong>Chest-Supported Machine Rows:</strong> Chest pad supports the lower back while strengthening upper posture muscles.
+      </div>
+      <div class="green-box">
+        <strong>Lat Pulldown to Upper Chest:</strong> Wide/neutral grip pulled to collarbone to widen the lats and narrow the waistline.
+      </div>
+      <div class="green-box">
+        <strong>Neutral-Grip Dumbbell Presses & Machines:</strong> Keeps wrists straight to protect thumb joints.
+      </div>
+    </div>
+
+    <!-- SCRIPT CARD -->
+    <div class="card">
+      <div class="card-title">📋 Copy-Pastable Message to Your Trainer</div>
+      <p>Send this directly to your trainer—trainers love clear, professional guidance:</p>
+      <div class="script-box" id="trainer-script">Hey! I'm really excited for the program at GoodLife. To help you design the best fit for my body, here are a few biomechanical parameters and things my body does best with:
+
+1. HIPS / LOWER BODY:
+- I have a sensitive front hip flexor (anterior hip pinch / C-sign).
+- Please NO squats below 90 degrees, deep walking lunges, or Bulgarian split squats.
+- I do amazing with Box Squats to a bench (stopping at 90°), Seated Leg Press (stopping at 90° with feet high on the plate), the Hip Abduction machine, and Glute Bridges/Thrusts.
+
+2. UPPER BODY & NECK:
+- My neck and lower back do best when my back is supported.
+- Please NO behind-the-neck pulldowns or upright barbell rows.
+- I do great with Chest-Supported Rows, Lat Pulldowns pulled to the upper chest, Seated Chest Press machines, and Cable Tricep pushdowns.
+
+3. WRISTS / THUMBS:
+- I have a sensitive thumb joint, so neutral-grip dumbbells or machines with straight wrists work much better for me than straight barbell pressing or floor pushups on flat hands.
+
+4. OVERALL STYLE:
+- My goal is lean muscle tone, glute sculpting, posture, and joint longevity.
+- 3 days a week, 10–12 reps with controlled form and moderate rest works best for my recovery.
+
+Thank you so much—excited to get started!</div>
+      <button class="btn-copy" onclick="copyScript()">📋 Copy Message to Clipboard</button>
+    </div>
+  </div>
+
+  <script>
+    function copyScript() {
+      const text = document.getElementById('trainer-script').innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        alert('📋 Trainer message copied to clipboard! Ready to paste and send.');
+      });
+    }
+  </script>
+</body>
+</html>
