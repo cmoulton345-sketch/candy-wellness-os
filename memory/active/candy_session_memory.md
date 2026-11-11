@@ -19,7 +19,17 @@
       1. **Side / Ovary Pain:** Reconfirmed dominant right Graafian follicle swelling (20–25mm pre-ovulatory capsule stretch) sensitized by morning spin RPM's repetitive hip flexion pumping and increased pelvic vascular blood flow. 100% benign ovulatory physiology; prescribed localized warmth.
       2. **Breast Tenderness:** 24 hours into oral progesterone pause. Being a lipophilic hormone stored in glandular fat cells, 48–72 hours are required for glandular tissue to fully decongest. Noticeable softening expected by Day 11–12 (Thursday/Friday).
       3. **Late-Afternoon Mood Dip ("Not too bad"):** Classic 4:30 PM neurochemical convergence: (1) 40mg Vyvanse dopamine wear-off, (2) post-spin central nervous system glycogen/adrenaline drop, and (3) Day 1 recalibration off 150mg synthetic GABA progesterone metabolite.
-      4. **Evening Action Plan:** Warm heating pad on right lower belly/pelvis, grounding protein dinner before 7 PM kitchen close, 5–10 min Legs Up the Wall, and sleep setup on newly arriving 2.9" cooling gel topper!
+    - *Evening Physio Architecture Built (7:40 PM): Candy's 8-Minute Hip Impingement, C-Sign & Squat Gateway Routine:*
+      - *Clinical Diagnosis of Candy's Current Movements:*
+        1. **Pilates straight-leg front kicks:** Actively pinch the anterior labrum and psoas tendon when the femur lacks posterior glide. Paused for 2 weeks.
+        2. **Prone belly leg lifts:** Lumbar erectors fire before the glute, arching the lower back and driving SI joint shear. Replaced with low-back safe 45° quadruped kickback.
+        3. **Flat clamshells:** Great open-chain isolation, but lack closed-chain lateral stability needed for walking, lunging, and squatting.
+      - *The 4 Evidence-Based Physio Movements Prescribed:*
+        1. **Posterior-Glide Heel-Dig Bridge (10 reps, 3s hold):** Isometric heel pull forces hamstrings & deep glute max co-contraction, mechanically pulling the femoral head posteriorly into the acetabulum and shutting off psoas defensive spasm.
+        2. **Modified Side-Plank "Knee Bridge" Clamshell (6–8 reps/side):** Lifts bottom hip off floor, forcing bottom glute medius into closed-chain stability while top glute medius works dynamically.
+        3. **45° Quadruped Glute Kickback (8–10 reps/side):** Isolates glute max without lumbar hyperextension ("tea cup on lower back" cue).
+        4. **Elevated Box Squat Sit-to-Stand with Mini-Band (8–10 reps):** Keeps hip flexion above 90°, band fires glute medius to prevent valgus collapse, proving to the nervous system that squatting can be 100% pinch-free!
+      - *Deliverables Deployed:* Created `wellness_and_mobility/hip_impingement_physio_routine.md`, interactive app `wellness_and_mobility/hip_impingement_physio_routine.html` (mirrored to root `hip_impingement_physio_routine.html`), and integrated Card #18 into `share_links.html`.
     - *System Sync:* Updated `candys_hormones.md` (Day 10 entry), `candy_cycle_calendar_sept_oct_2026.html` (advanced TODAY ⭐ to Nov 11), created `daily_notes/soma_health_brief_nov_11.md` & `.html`, and committed to GitHub main.
 
 - **2026-11-10 (Afternoon)** (FRIDAY):
