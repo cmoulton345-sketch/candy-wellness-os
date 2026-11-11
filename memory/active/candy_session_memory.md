@@ -10,6 +10,7 @@
     - *Progesterone Pause Night 1 Complete:* Executed "No pill last night" flawlessly. Natural sleep stack (journey lady herbal sleep tea, glycine, vitamin C, collagen, 2 ginger capsules) delivered deep restorative sleep (Score: 84) with zero morning grogginess, while pausing the 150mg capsule allows breast glandular engorgement to deflate cleanly.
     - *Morning Puffiness Triage:* Explained transient puffiness as the triad of Day 10 estradiol vascular permeability, post-dinner digestive water, and overnight supine fluid redistribution. Will flush rapidly with hydration and movement today.
     - *Amazon Mattress Topper Delivery:* YUGYVOB 2.9" Cooling Gel 7-Zone Topper arrives today (Nov 11) to eliminate mechanical pressure points permanently and replicate the pain-free sleep experienced on Rayne's bed.
+    - *Movement Update (Spin RPM with Rayne & Missy):* Candy reported feeling "not too bad" after completing Tuesday's GoodLife NewBody class (hip and joints held up excellently!). Doing spin RPM this morning with Rayne and Missy. Confirmed RPM is the ultimate zero-impact lymphatic fluid pump to drain morning puffiness. Emphasized 3 setup rules: Handlebars HIGH (protects right follicle & anterior hip), soft open grip (protects thumbs), 70–90 RPM cadence.
     - *System Sync:* Updated `candys_hormones.md` (Day 10 entry), `candy_cycle_calendar_sept_oct_2026.html` (advanced TODAY ⭐ to Nov 11), created `daily_notes/soma_health_brief_nov_11.md` & `.html`, and committed to GitHub main.
 
 - **2026-11-10 (Afternoon)** (FRIDAY):

@@ -101,6 +101,6 @@ The **YUGYVOB 2.9-Inch Cooling Gel 7-Zone Mattress Topper** is scheduled for del
 ### 📋 Today's Movement & Protocol Summary:
 * **Morning BHRT:** BiEst **1/2 pump AM** + Testosterone **1 pump AM** (forearm/inner thigh).
 * **Progesterone:** **PAUSED (OFF)**.
-* **Gym / GoodLife:** Gentle cardio or low-impact circuit. Keep weights light (2–3 lbs), use an open hook grip to protect your healing thumbs, and keep all squats/lunges shallow (above 90°) to honor your hip.
+* **Gym / GoodLife (Spin RPM with Rayne & Missy! 🚴):** Zero ground impact cardio + masterclass lymphatic pump to drain morning puffiness! Setup Rules: Handlebars HIGH (1–2 notches above saddle to keep pelvis upright and protect your right ovary follicle & anterior hip), soft open grip on bars (protects thumb CMC joint), smooth cadence at 70–90 RPM (no heavy grinding).
 * **Hydration:** 24–32 oz fresh water with a pinch of electrolytes to flush the facial puffiness.
 * **Night Routine:** Unbox & lay out the mattress topper, enjoy your journey lady tea + glycine + vit C + collagen + 2 ginger, and soak in another restorative 80+ sleep night with Joe! 💖
