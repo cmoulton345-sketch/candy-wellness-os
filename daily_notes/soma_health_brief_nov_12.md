@@ -81,4 +81,15 @@ NewBody is fantastic today to drain the tight fingers and flush your lymphatics.
 
 ---
 
-*You are rocking Cycle Day 11, Candy. Enjoy your NewBody workout with Rayne at GoodLife!* 🌸💪✨
+## 🏆 5. Post-Workout Win: Somatic Intelligence in Action!
+
+* **Class Completed:** Candy survived NewBody class with Rayne!
+* **The Knee Lift Modification Decoded:**
+  * Knee lifts demand high-velocity active hip flexion (firing the **iliopsoas** and **rectus femoris**).
+  * In someone with a history of **anterior hip impingement / C-sign**, flexing past 90 degrees can cause mechanical pinching of the femoral neck against the acetabular rim.
+  * Furthermore, on **Cycle Day 11**, the mature **22–25 mm right Graafian follicle** sits directly adjacent to the iliopsoas tendon at the pelvic brim. High knee lifts compress this swollen follicle between the tensed psoas and abdominal wall!
+  * **Switching to Step Touches:** An absolute **masterclass in somatic self-advocacy**. Step touches kept movement in the frontal plane, stimulated lymphatic circulation to clear finger puffiness, kept the heart rate elevated, and protected the right ovary and hip flexors 100%.
+
+---
+
+*You are rocking Cycle Day 11, Candy! Refuel with protein and hydration!* 🌸💪✨
