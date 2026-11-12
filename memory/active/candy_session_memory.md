@@ -964,4 +964,14 @@ I'm ready to respond to the updated call, sir.
       - Relaxed/open grip on hand weights to avoid strain on tight digital joints.
       - Keep squats/lunges shallow (above 90°) to protect hip flexor C-sign and right ovary.
       - Dynamic aerobic stepping serves as an active lymphatic pump to mobilize finger puffiness.
-    - Ecosystem Synced: Updated `candy_cycle_calendar_sept_oct_2026.html` (Day 11 live status), `candys_hormones.md` (Cycle 5 Day 11 table entry), created `daily_notes/soma_health_brief_nov_12.md`.
+    - **DIM Clinical Evaluation & Protocol Safeguards:**
+      - Evaluated taking DIM (Diindolylmethane) for acute pre-ovulatory breast tenderness. Clinical decision to **HOLD OFF**:
+        1. BiEst was just stepped down to 1/2 pump on Nov 6; adding DIM risks accelerating E2 clearance too quickly and stripping synovial joint fluid (endangering the hip flexor C-sign, lower back, and neck).
+        2. Breast tenderness is a natural, temporary 48-hour pre-ovulatory wave that resolves post-ovulation and normalizes when cyclic progesterone resumes.
+        3. DIM has mild anti-androgen receptor affinity, which could interfere with her compounded Testosterone cream (1 pump M–F).
+        4. Maintained protocol purity: one variable at a time during this 3-month trial of Dr. Jenna's new prescription. Prioritized food-first cruciferous intake and supportive sports bra.
+    - **Living Ecosystem Synced & Saved:**
+      - Updated `wellness_and_mobility/candy_cycle_calendar_sept_oct_2026.html` with Day 11 live badge, biometrics, NewBody guardrails, and DIM hold-off clinical tag.
+      - Updated `wellness_and_mobility/candys_hormones.md` with Day 11 entry including DIM evaluation.
+      - Upgraded `wellness_and_mobility/doctor_consultation_one_sheet.md` and both `.html` versions (`wellness_and_mobility/doctor_consultation_one_sheet.html` & `doctor_consultation_one_sheet.html`) to post-consultation living summary format with active 1/2 pump BiEst regimen, cyclic progesterone rules, Nov 12 biometrics row (149.7 lbs), DIM clinical decision card, and updated action items.
+      - Backed up and pushed to GitHub remote `origin main`.
