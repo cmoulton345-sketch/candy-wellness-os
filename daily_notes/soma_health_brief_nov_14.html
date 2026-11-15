@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soma's Health & Recovery Brief — Nov 14, 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b1329;
+      --card-bg: #131f3d;
+      --card-border: rgba(255, 255, 255, 0.1);
+      --teal: #0d9488;
+      --teal-light: #14b8a6;
+      --emerald: #10b981;
+      --amber: #f59e0b;
+      --rose: #f43f5e;
+      --indigo: #6366f1;
+      --blue: #3b82f6;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 24px 16px 60px;
+      display: flex;
+      justify-content: center;
+    }
+    .container {
+      max-width: 680px;
+      width: 100%;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 24px;
+      padding: 24px 20px;
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.22), rgba(16, 185, 129, 0.22));
+      border: 1px solid var(--card-border);
+      border-radius: 18px;
+    }
+    .badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 4px 12px;
+      border-radius: 999px;
+      background: rgba(245, 158, 11, 0.25);
+      color: #fde68a;
+      border: 1px solid rgba(245, 158, 11, 0.45);
+      margin-bottom: 10px;
+    }
+    h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.65rem;
+      font-weight: 800;
+      margin-bottom: 6px;
+      color: #fff;
+    }
+    .subtitle {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+    }
+    .card-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+      color: #fff;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    .metric-box {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 12px;
+      padding: 12px 14px;
+    }
+    .metric-label {
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 4px;
+    }
+    .metric-val {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .highlight-box {
+      background: rgba(16, 185, 129, 0.1);
+      border-left: 4px solid var(--emerald);
+      border-radius: 8px;
+      padding: 12px 14px;
+      margin-top: 10px;
+      font-size: 0.88rem;
+    }
+    .warning-box {
+      background: rgba(245, 158, 11, 0.1);
+      border-left: 4px solid var(--amber);
+      border-radius: 8px;
+      padding: 12px 14px;
+      margin-top: 10px;
+      font-size: 0.88rem;
+    }
+    p {
+      margin-bottom: 12px;
+      font-size: 0.92rem;
+      color: #cbd5e1;
+    }
+    ul {
+      margin-left: 20px;
+      margin-bottom: 12px;
+      font-size: 0.9rem;
+      color: #cbd5e1;
+    }
+    li {
+      margin-bottom: 6px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="badge">Cycle 5 • Day 13 Protect Entry &amp; Wine Recovery 🟡</div>
+      <h1>🌸 Morning Health &amp; Mobility Brief</h1>
+      <div class="subtitle">Saturday, November 14, 2026 • Curated by Soma for Candy</div>
+    </div>
+
+    <!-- BIOMETRICS CARD -->
+    <div class="card">
+      <div class="card-title">⚡ Saturday Biometrics Snapshot</div>
+      <div class="grid">
+        <div class="metric-box">
+          <div class="metric-label">Oura Temp Shift</div>
+          <div class="metric-val" style="color: #fde68a;">+0.7°F 🌡️</div>
+          <div style="font-size: 0.75rem; color: #fef3c7;">3rd rise (+0.3° &rarr; +0.5° &rarr; +0.7°)</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">Sleep &amp; Heart Rate</div>
+          <div class="metric-val" style="color: #93c5fd;">Sleep 75 🌙 • HR ↑</div>
+          <div style="font-size: 0.75rem; color: var(--muted);">Resilient sleep post-red wine!</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">Oral / Head Temp</div>
+          <div class="metric-val">36.5° / 37.0°C</div>
+          <div style="font-size: 0.75rem; color: var(--muted);">Wine vasodilation (Non-febrile)</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">Tonight's BHRT Milestone</div>
+          <div class="metric-val" style="color: #6ee7b7;">Night 1 of 14! 🧴</div>
+          <div style="font-size: 0.75rem; color: #a7f3d0;">Start 1 1/2 pumps Pg cream PM</div>
+        </div>
+      </div>
+      <div class="highlight-box">
+        <strong>🛡️ Smart Move Last Night:</strong> Skipping progesterone on Friday night when enjoying red wine was 100% the right call—it kept your liver free to clear the wine without hormone-stacking or morning grogginess!
+      </div>
+    </div>
+
+    <!-- SYMPTOM DECODE CARD -->
+    <div class="card">
+      <div class="card-title">🍷 Red Wine &amp; Day 13 Biology Decoded</div>
+      <ul>
+        <li><strong>Why Your Heart Rate Was Up All Night:</strong> Breaking down red wine activates sympathetic nervous system recovery mode overnight, keeping resting heart rate elevated and dipping Readiness—even while you scored a super resilient <strong>75 Sleep Score</strong>!</li>
+        <li><strong>Why Temps Are Warm (+0.7°F Ring / 36.5°C Mouth / 37.0°C Head):</strong> A combination of your confirmed <strong>3rd consecutive ovulatory temperature rise</strong> + harmless surface vasodilation from clearing Friday's wine (zero fever!).</li>
+        <li><strong>Why You Woke Up Puffy (Tight Fingers, Sore Thumbs &amp; Sore Breasts):</strong> Classic 24–48 hour ADH/aldosterone water rebound in your fingers (pressing on the thumb joints), plus a temporary <strong>hepatic estrogen backlog</strong> (your liver prioritized clearing wine over circulating estrogen overnight, making breasts tender).</li>
+        <li><strong>Why You Feel "A Bit Dizzy" (With Zero Headache! 🎉):</strong> Alcohol shifts water <em>out of your bloodstream</em> and into your finger tissues while dilating blood vessels (37.0°C), which slightly lowers standing blood pressure.</li>
+        <li><strong>🥣 10/10 Breakfast Win Before Coffee:</strong> Eating <strong>oats, strawberries, Greek yogurt + 1/2 Fairlife (~38g protein!)</strong> with your Vyvanse before coffee buffers your nervous system beautifully. <strong>Tip:</strong> Sip 12–16 oz of electrolyte water alongside your coffee to refill your bloodstream and stop the dizziness!</li>
+      </ul>
+    </div>
+
+    <!-- PROGESTERONE KICKOFF CARD -->
+    <div class="card" style="border: 1px solid var(--emerald); background: rgba(16, 185, 129, 0.08);">
+      <div class="card-title" style="color: #6ee7b7;">🧴 Tonight Is Official Night 1 of 14 (1 1/2 Pumps Cream!)</div>
+      <p>By bedtime tonight (~24h post-wine), your liver will be completely clear—making tonight the dream time to start <strong>Night 1 of your 14-Day Progesterone Cream (1 1/2 pumps)</strong>:</p>
+      <ul>
+        <li><strong>Drops Your Heart Rate Back Down:</strong> Activates soothing GABA and vagal tone so your overnight heart rate and Readiness rebound tomorrow!</li>
+        <li><strong>Helps Flush Wine Puffiness:</strong> Fresh progesterone competes with aldosterone receptors in your kidneys, helping release the red wine water rebound!</li>
+        <li><strong>Saturday Checklist:</strong> <strong>BiEst 1/2 pump AM</strong>, <strong>Testosterone OFF</strong> (weekend rule), sip BioSteel electrolytes + dandelion/peppermint tea, and apply <strong>1 1/2 pumps Progesterone Cream at bedtime tonight</strong>!</li>
+      </ul>
+    </div>
+
+    <!-- 4:45 PM AFTERNOON TRIAGE CARD -->
+    <div class="card" style="border: 1px solid var(--rose); background: rgba(244, 63, 94, 0.08);">
+      <div class="card-title" style="color: #fda4af;">⚡ 4:45 PM Triage: Right Ovary Pain Radiating Down Leg &amp; Back</div>
+      <div class="highlight-box" style="margin-bottom: 12px;">
+        <strong>💍 Afternoon Win:</strong> Your rings are looser and hands are less puffy—your morning hydration pulled that wine fluid right out of your fingers!
+      </div>
+      <p><strong>1. Why Is It Radiating Down Your Leg &amp; Into Your Lower Back?</strong></p>
+      <ul>
+        <li>Your <strong>22–25mm right ovarian follicle</strong> is rupturing/ovulating right now (peak <em>Mittelschmerz</em>), releasing a tiny splash of <strong>prostaglandin fluid</strong> inside the right pelvis.</li>
+        <li>Your right ovary sits directly on top of your <strong>right psoas muscle and the obturator/femoral nerves (L2–L4)</strong> that run into your lower back and down your thigh. The prostaglandin fluid irritates that nerve pathway and makes the psoas guard!</li>
+      </ul>
+      <p><strong>2. Advil vs. Tylenol &rarr; Take ADVIL (With Food &amp; Water First!):</strong></p>
+      <ul>
+        <li><strong>Why Advil Wins:</strong> Advil directly blocks the <strong>prostaglandins</strong> irritating your right ovary and leg nerve (Tylenol does not stop prostaglandins or inflammation). Plus, Tylenol uses the liver (which just cleared last night's red wine), while Advil spares your liver!</li>
+        <li><strong>Eat &amp; Drink FIRST:</strong> Because you are under-eaten and under-hydrated today (driving that 4:45 PM moody, tired, sluggish crash!), <strong>eat a quick meal/snack and drink 12–16 oz of water FIRST</strong>, then take your Advil.</li>
+        <li><strong>Positioning Relief:</strong> Put a <strong>heating pad</strong> over your right lower belly/hip and rest your <strong>calves up on the couch at 90°</strong> to take all tension off the right psoas and leg nerve!</li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>

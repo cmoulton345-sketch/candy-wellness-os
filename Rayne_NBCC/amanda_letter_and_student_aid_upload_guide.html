@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rayne’s Student Aid & Clinical Letter Upload Guide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #090e1a;
+      --card: #121c33;
+      --card-inner: rgba(255, 255, 255, 0.04);
+      --border: rgba(255, 255, 255, 0.1);
+      --teal: #0d9488;
+      --teal-light: #2dd4bf;
+      --blue: #3b82f6;
+      --gold: #f59e0b;
+      --emerald: #10b981;
+      --rose: #f43f5e;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 32px 16px 60px;
+    }
+    .container {
+      max-width: 820px;
+      margin: 0 auto;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(13, 148, 136, 0.15);
+      border: 1px solid var(--teal);
+      color: var(--teal-light);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 12px;
+    }
+    h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      color: white;
+      margin-bottom: 8px;
+    }
+    .subhead {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 24px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+    .card-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: white;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 12px;
+    }
+    .table-wrap {
+      overflow-x: auto;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+    }
+    th, td {
+      padding: 12px 14px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    th {
+      color: var(--muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      letter-spacing: 0.5px;
+    }
+    td strong {
+      color: white;
+    }
+    .step-box {
+      background: var(--card-inner);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 18px;
+    }
+    .step-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    .step-tag {
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 6px;
+    }
+    .tag-blue { background: rgba(59, 130, 246, 0.2); color: #93c5fd; }
+    .tag-teal { background: rgba(13, 148, 136, 0.2); color: var(--teal-light); }
+    .tag-gold { background: rgba(245, 158, 11, 0.2); color: #fde047; }
+    .step-num {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: white;
+    }
+    ol, ul {
+      padding-left: 20px;
+      margin-bottom: 12px;
+      color: #cbd5e1;
+      font-size: 0.95rem;
+    }
+    li {
+      margin-bottom: 6px;
+    }
+    .code-box {
+      background: #090e1a;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 8px;
+      padding: 12px 14px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.88rem;
+      color: #7dd3fc;
+      margin: 10px 0;
+      position: relative;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+    .btn {
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      cursor: pointer;
+      border: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.15s ease;
+      text-decoration: none;
+    }
+    .btn-teal { background: var(--teal); color: white; }
+    .btn-teal:hover { background: #0f766e; }
+    .btn-blue { background: var(--blue); color: white; }
+    .btn-blue:hover { background: #2563eb; }
+    .btn-outline {
+      background: rgba(255, 255, 255, 0.06);
+      color: white;
+      border: 1px solid var(--border);
+    }
+    .btn-outline:hover { background: rgba(255, 255, 255, 0.12); }
+    .actions-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+    .checklist-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      margin-bottom: 10px;
+      cursor: pointer;
+      transition: background 0.15s ease;
+    }
+    .checklist-row:hover {
+      background: rgba(255, 255, 255, 0.05);
+    }
+    .checkbox {
+      width: 22px;
+      height: 22px;
+      border-radius: 6px;
+      border: 2px solid var(--teal);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+      transition: all 0.2s ease;
+    }
+    .checkbox.checked {
+      background: var(--teal);
+      color: white;
+    }
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: var(--emerald);
+      color: white;
+      padding: 12px 24px;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      opacity: 0;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 2000;
+      pointer-events: none;
+    }
+    .toast.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+    .info-callout {
+      background: rgba(59, 130, 246, 0.08);
+      border-left: 4px solid var(--blue);
+      padding: 14px 16px;
+      border-radius: 0 8px 8px 0;
+      margin-top: 14px;
+      font-size: 0.92rem;
+      color: #bfdbfe;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="header">
+      <div class="badge" style="background: rgba(16, 185, 129, 0.15); border-color: var(--emerald); color: #6ee7b7;">✓ Letter Received &amp; Archived (Nov 10, 2026)</div>
+      <h1>Amanda’s Clinical Letter &amp; Student Aid Guide</h1>
+      <p class="subhead">Everything you need in one place to upload Amanda’s therapy letter to NB Student Financial Services once Rayne's portal is unlocked, legally safeguarding her $2,800 disability grant.</p>
+    </div>
+
+    <!-- QUICK LAUNCHPAD: WHEN PORTAL UNLOCKS -->
+    <div class="card" style="border: 2px solid var(--teal); background: linear-gradient(180deg, #132247 0%, #0d1730 100%);">
+      <div class="card-title" style="color: var(--teal-light);">
+        <span>⚡</span> Quick Launchpad: When Rayne's Account is Unlocked
+      </div>
+      <p style="margin-bottom: 14px; color: #cbd5e1; font-size: 0.95rem;">
+        When Rayne's provincial portal login is ready, follow these 3 quick clicks to permanently protect her $2,800 grant:
+      </p>
+
+      <div class="step-box" style="border-left-color: var(--teal-light); background: rgba(13, 148, 136, 0.08);">
+        <ol style="margin-left: 20px; line-height: 1.8; color: #f1f5f9;">
+          <li>Open the provincial portal: <a href="https://www.studentaid.gnb.ca/" target="_blank" style="color: var(--teal-light); font-weight: 700; text-decoration: underline;">studentaid.gnb.ca</a></li>
+          <li>Log in to Rayne’s account ➔ select her active <strong>2026–2027 Application</strong> ➔ click <strong>"Upload Documents"</strong>.</li>
+          <li>Select Category: <strong>"Medical Documentation"</strong> or <strong>"Supporting Documentation"</strong>.</li>
+          <li>Paste this exact note into the description field:</li>
+        </ol>
+
+        <div class="code-box" id="memoText" style="margin-top: 10px; font-weight: 600; color: #5eead4;">Clinical support documentation for medical withdrawal — Rayne Moulton</div>
+
+        <div class="actions-row">
+          <button class="btn btn-teal" onclick="copyText('memoText', 'Memo description copied!')">📋 Copy Note Text</button>
+          <a href="https://www.studentaid.gnb.ca/" target="_blank" class="btn btn-blue">🌐 Open NB Student Aid Portal</a>
+        </div>
+
+        <p style="margin-top: 14px; font-size: 0.88rem; color: #94a3b8;">
+          📁 <strong>File to attach:</strong> Select <code>Rayne M. Support Letter.pdf</code> right from your <strong>Desktop</strong> (or open local backup: <a href="Amanda_Geldart_Clinical_Support_Letter.pdf" target="_blank" style="color: var(--teal-light); text-decoration: underline;">Amanda_Geldart_Clinical_Support_Letter.pdf</a>).
+        </p>
+      </div>
+    </div>
+
+    <!-- CONFIRMED LOAN & REPAYMENT SNAPSHOT -->
+    <div class="card">
+      <div class="card-title">
+        <span>📊</span> Confirmed Loan Status (Verified Nov 10, 2026)
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Account / Item</th>
+              <th>Status</th>
+              <th>Key Details</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>NSLSC Loan # B-160956</strong><br><small style="color:var(--muted)">Federal Servicer Dashboard</small></td>
+              <td><span style="display:inline-block; padding:3px 8px; border-radius:12px; background:rgba(16,185,129,0.2); color:#6ee7b7; font-weight:700;">In Study ($0/mo)</span></td>
+              <td>Total balance is only <strong>$3,572.00</strong> (Fall 2026 net loan). <strong>0.00% permanent interest</strong>. Automatically moves to 6-month grace period once withdrawal finishes processing.</td>
+            </tr>
+            <tr>
+              <td><strong>Winter 2027 Funding</strong></td>
+              <td><span style="display:inline-block; padding:3px 8px; border-radius:12px; background:rgba(16,185,129,0.2); color:#6ee7b7; font-weight:700;">$0.00 (Cancelled)</span></td>
+              <td>NBCC never billed for Winter; second loan disbursement completely cancelled ($0 owed).</td>
+            </tr>
+            <tr>
+              <td><strong>$2,800 Disability Grant</strong></td>
+              <td><span style="display:inline-block; padding:3px 8px; border-radius:12px; background:rgba(59,130,246,0.2); color:#93c5fd; font-weight:700;">Protected Free Money</span></td>
+              <td>Amanda's clinical letter certifies medical withdrawal grounds, protecting it from conversion into debt.</td>
+            </tr>
+            <tr>
+              <td><strong>Assistive Tech Loaner</strong></td>
+              <td><span style="display:inline-block; padding:3px 8px; border-radius:12px; background:rgba(16,185,129,0.2); color:#6ee7b7; font-weight:700;">Returned &amp; Closed</span></td>
+              <td>Easter Seals loaner equipment returned to Kendra Foote at Options Outreach.</td>
+            </tr>
+            <tr>
+              <td><strong>NBCC Standing</strong></td>
+              <td><span style="display:inline-block; padding:3px 8px; border-radius:12px; background:rgba(16,185,129,0.2); color:#6ee7b7; font-weight:700;">Clean &amp; Unburned</span></td>
+              <td>Official withdrawal processed. Tuition dispute waived to preserve positive relations for any future studies.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- LIVING CHECKLIST -->
+    <div class="card">
+      <div class="card-title">
+        <span>✅</span> Action Tracker &amp; Milestones
+      </div>
+
+      <div class="checklist-row">
+        <div class="checkbox" style="background: rgba(16,185,129,0.3); color: var(--emerald);">✓</div>
+        <div><strong>Tammy Groom Initiated Withdrawal:</strong> Tammy submitted official withdrawal form to Registrar (Completed Oct 28).</div>
+      </div>
+
+      <div class="checklist-row">
+        <div class="checkbox" style="background: rgba(16,185,129,0.3); color: var(--emerald);">✓</div>
+        <div><strong>Assistive Tech Return:</strong> Loaner equipment returned to Kendra Foote at Options Outreach (Completed Nov 6).</div>
+      </div>
+
+      <div class="checklist-row">
+        <div class="checkbox" style="background: rgba(16,185,129,0.3); color: var(--emerald);">✓</div>
+        <div><strong>Receive Letter from Amanda Geldart:</strong> Clinical letter received and permanently archived in Rayne's files (Completed Nov 10).</div>
+      </div>
+
+      <div class="checklist-row">
+        <div class="checkbox" style="background: rgba(16,185,129,0.3); color: var(--emerald);">✓</div>
+        <div><strong>Forward to Kendra Foote (Options Outreach):</strong> Sent copy to Kendra for Rayne’s permanent disability advocate file (Completed Nov 10).</div>
+      </div>
+
+      <div class="checklist-row">
+        <div class="checkbox" style="background: rgba(16,185,129,0.3); color: var(--emerald);">✓</div>
+        <div><strong>NBCC Dispute Waived:</strong> Chose peace of mind; avoided tuition dispute to protect future academic standing (Completed Nov 10).</div>
+      </div>
+
+      <div class="checklist-row" style="background: rgba(245,158,11,0.08); border-radius: 8px; padding: 10px;">
+        <div class="checkbox" id="c3" style="border: 2px dashed var(--gold); color: var(--gold);">⏳</div>
+        <div><strong>Upload to NB Student Aid Portal:</strong> <strong>PENDING ACCOUNT UNLOCK.</strong> Ready to upload <code>Rayne M. Support Letter.pdf</code> to <a href="https://www.studentaid.gnb.ca/" target="_blank" style="color:#93c5fd; text-decoration:underline;">studentaid.gnb.ca</a> under Medical Documentation.</div>
+      </div>
+
+      <div class="info-callout" style="border-left-color: var(--emerald); color: #d1fae5; background: rgba(16, 185, 129, 0.08);">
+        💡 <strong>Peace of Mind Locked In:</strong> Every prerequisite step is finished. Whenever Rayne's account is unlocked, this single upload completes the entire transition.
+      </div>
+    </div>
+
+  </div>
+
+  <div class="toast" id="toast">✓ Copied to clipboard!</div>
+
+  <script>
+    function copyText(elemId, toastMsg) {
+      const text = document.getElementById(elemId).innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        showToast(toastMsg || '✓ Copied to clipboard!');
+      }).catch(() => {
+        showToast('✓ Copied to clipboard!');
+      });
+    }
+
+    function showToast(msg) {
+      const t = document.getElementById('toast');
+      t.innerText = msg;
+      t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), 2600);
+    }
+
+    function toggleCheck(id) {
+      const el = document.getElementById(id);
+      if (el.innerText === '✓') {
+        el.innerText = '';
+        el.classList.remove('checked');
+        localStorage.setItem('aid_check_' + id, '0');
+      } else {
+        el.innerText = '✓';
+        el.classList.add('checked');
+        localStorage.setItem('aid_check_' + id, '1');
+      }
+    }
+
+    // Load saved states
+    window.onload = function() {
+      ['c1', 'c2', 'c3', 'c4', 'c5', 'c6'].forEach(id => {
+        const val = localStorage.getItem('aid_check_' + id);
+        const el = document.getElementById(id);
+        if (id === 'c1' && val === null) {
+          el.innerText = '✓';
+          el.classList.add('checked');
+        } else if (val === '1') {
+          el.innerText = '✓';
+          el.classList.add('checked');
+        } else if (val === '0') {
+          el.innerText = '';
+          el.classList.remove('checked');
+        }
+      });
+    };
+  </script>
+</body>
+</html>

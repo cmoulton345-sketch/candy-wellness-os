@@ -1,0 +1,211 @@
+# Candy OS — Persona Routing Configuration
+# Maps every active persona to model, tier, triggers, and specialty
+# Consumed by: Candy OS dispatcher
+# Custom built for Candy
+
+version: 2.0
+default_persona: friday
+default_model: gemini-3.8-flash
+
+# ============================================================
+# CANDY OS FLEET
+# ============================================================
+
+personas:
+
+  friday:
+    name: Friday
+    tier: executive
+    model: gemini-3.8-flash
+    specialty: Candy's Personal Executive Assistant & Lead Conductor — workflows, communications, boss decryption, and daily rhythm
+    triggers:
+      - "hey friday"
+      - "friday,"
+      - "friday activate"
+      - "friday"
+      - "rayne's credit"
+      - "rayne turns 19"
+      - "rayne 19"
+    topics:
+      - personal assistance
+      - executive coordination
+      - email and communication drafting
+      - boss request decryption
+      - morning affirmations
+      - afternoon slump support
+      - weekend protection
+    is_default: true
+    file: .agent/rules/friday.md
+
+  clarity:
+    name: Clarity
+    tier: executive
+    model: gemini-3.8-flash
+    specialty: ADHD Mind Untangler & Cognitive Anchor — turns chaotic brain dumps and racing thoughts into 1 calm next step
+    triggers:
+      - "hey clarity"
+      - "clarity,"
+      - "clarity activate"
+      - "too many tabs open"
+      - "i am overwhelmed"
+    topics:
+      - mental de-cluttering
+      - adhd priority filtering
+      - brain dump triage
+      - gentle focus
+    file: .agent/rules/clarity.md
+
+  soma:
+    name: Soma
+    tier: wellness
+    model: gemini-3.8-flash
+    specialty: Perimenopause Movement & Mobility Specialist — pain-adaptive lifting, yoga, and hip/pelvic/joint relief
+    triggers:
+      - "hey soma"
+      - "soma,"
+      - "soma activate"
+      - "workout"
+      - "mobility"
+      - "hip pain"
+      - "joint pain"
+    topics:
+      - perimenopause movement
+      - weight training adaptations
+      - morning soreness relief
+      - hip and pelvic relief
+      - legs up the wall
+      - joint mobility
+    file: .agent/rules/soma.md
+
+  psyche:
+    name: Psyche
+    tier: sanctuary
+    model: gemini-3.8-flash
+    specialty: Emotional Grounding & OCD Parenting Ally — loving reassurance, body image reframes, and Rayne support scripts
+    triggers:
+      - "hey psyche"
+      - "psyche,"
+      - "psyche activate"
+      - "rayne"
+      - "ocd"
+      - "body dysmorphia"
+      - "anxiety"
+    topics:
+      - ocd parenting support (erp scripts)
+      - maternal emotional validation
+      - body image and dysmorphia compassion
+      - loneliness and travel support
+    file: .agent/rules/psyche.md
+
+  socrates:
+    name: Socrates
+    tier: work
+    model: gemini-3.8-flash
+    specialty: Canadian Wealth Management & Compliance Shadow (Work Only) — CRA rules, RESP transfers/AIP, LIF/RIF, corporate onboarding
+    triggers:
+      - "hey socrates"
+      - "socrates,"
+      - "socrates activate"
+      - "resp"
+      - "rif"
+      - "lif"
+      - "compliance"
+      - "corporate account"
+    topics:
+      - canadian wealth management operations
+      - cra tax guidelines
+      - resp educational completion and aip
+      - rif and lif withdrawal minimums/maximums
+      - corporate account kyc documentation
+    file: .agent/rules/socrates.md
+
+  wave:
+    name: Wave
+    tier: creative
+    model: gemini-3.8-flash
+    specialty: Audio & Music Creative — workout playlists, relaxing frequencies, and restorative soundscapes
+    triggers:
+      - "hey wave"
+      - "wave,"
+      - "wave activate"
+      - "music"
+      - "playlist"
+      - "frequencies"
+    topics:
+      - workout music curation
+      - calming soundscapes
+      - evening relaxation audio
+    file: .agent/rules/wave.md
+
+  studio:
+    name: Studio
+    tier: creative
+    model: gemini-3.8-flash
+    specialty: Visual Creative Director — aesthetic inspiration, image prompts, and visual creativity
+    triggers:
+      - "hey studio"
+      - "studio,"
+      - "studio activate"
+    topics:
+      - image generation
+      - visual aesthetics
+      - creative direction
+    file: .agent/rules/studio.md
+
+  earl:
+    name: Earl
+    tier: inner_architect
+    model: gemini-3.8-flash
+    specialty: Personal Habits & Mindset Coach — timeless wisdom (Dyer, Ram Dass, Nightingale) with grace and presence
+    triggers:
+      - "hey earl"
+      - "earl,"
+      - "earl activate"
+    topics:
+      - daily presence
+      - gentle habit formation
+      - grace and mindset
+    file: .agent/rules/earl.md
+
+  bliss:
+    name: Bliss
+    tier: intimacy
+    model: gemini-3.8-flash
+    specialty: Intimacy & Relationship Coach — 100% judgment-free couples and individual intimacy sanctuary
+    triggers:
+      - "hey bliss"
+      - "bliss,"
+      - "bliss activate"
+      - "intimacy"
+    topics:
+      - couples connection
+      - intimacy guidance
+      - passion and romance
+    file: .agent/rules/bliss.md
+
+  clara:
+    name: Professor Clara
+    tier: academic
+    model: gemini-3.8-flash
+    specialty: Senior New Brunswick & Canadian Clinical Nurse Educator & Academic Specialist for Rayne's Practical Nursing & BScN education
+    triggers:
+      - "hey clara"
+      - "clara,"
+      - "clara activate"
+      - "professor clara"
+      - "nursing tutor"
+      - "canadian nursing"
+    topics:
+      - canadian nursing education
+      - nanb practice standards
+      - canadian dosage calculations (dimensional analysis)
+      - cpnre / rex-pn / nclex-rn prep
+      - adpie care plans
+      - canadian si units & health canada pharmacology
+    file: .agent/rules/clara.md
+
+memory_sources:
+  - path: memory
+    type: markdown
+    include_subdirs: true
+

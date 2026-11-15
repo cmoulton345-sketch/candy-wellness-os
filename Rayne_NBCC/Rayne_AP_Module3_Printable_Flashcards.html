@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Rayne's Printable Flashcards — Anatomy & Physiology Module 3 (Integumentary System)</title>
+  <style>
+    @page {
+      size: letter portrait;
+      margin: 0.5in;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Helvetica Neue', Arial, sans-serif; background: #f4f4f9; color: #111; padding: 20px; }
+
+    .no-print {
+      background: #880e4f;
+      color: white;
+      padding: 15px 20px;
+      border-radius: 8px;
+      margin-bottom: 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .print-btn {
+      background: #e91e63;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    .print-btn:hover { background: #c2185b; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+
+    .card-box {
+      border: 2px dashed #666;
+      border-radius: 8px;
+      padding: 18px;
+      background: white;
+      min-height: 230px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      page-break-inside: avoid;
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      font-weight: bold;
+      color: #880e4f;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 6px;
+      margin-bottom: 10px;
+    }
+
+    .card-title { font-size: 1.05rem; font-weight: bold; color: #111; margin-bottom: 10px; }
+    .card-body { font-size: 0.95rem; line-height: 1.4; color: #333; flex-grow: 1; }
+    .card-footer { font-size: 0.75rem; color: #888; text-align: right; margin-top: 10px; border-top: 1px dashed #eee; padding-top: 4px; }
+
+    @media print {
+      body { background: white; padding: 0; }
+      .no-print { display: none !important; }
+      .grid { gap: 12px; }
+      .card-box { border: 1px dashed #444; box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="no-print">
+    <div>
+      <h2 style="margin-bottom: 4px;">🖨️ Rayne's Printable A&P Flashcards (Module 3: Integumentary System)</h2>
+      <p style="opacity: 0.9;">Click the button on the right to open your printer menu and print index cards!</p>
+    </div>
+    <button class="print-btn" onclick="window.print()">🖨️ Print Flashcards Now</button>
+  </div>
+
+  <div class="grid">
+
+    <!-- Card 1 -->
+    <div class="card-box">
+      <div>
+        <div class="card-header"><span>A&P MODULE 3</span><span>CARD #1</span></div>
+        <div class="card-title">Q: What is the Epidermis and its vascularity?</div>
+        <div class="card-body">
+          <strong>A:</strong> Outermost layer composed of stratified squamous epithelium. It is <strong>nonvascular</strong> (no blood vessels) and receives nutrients via diffusion from the underlying dermis.
+        </div>
+      </div>
+      <div class="card-footer">Anatomy & Physiology (HCSS1087A)</div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="card-box">
+      <div>
+        <div class="card-header"><span>A&P MODULE 3</span><span>CARD #2</span></div>
+        <div class="card-title">Q: What are the 5 Epidermal Layers (Deep to Surface)?</div>
+        <div class="card-body">
+          1. <strong>Stratum Basale:</strong> Deepest layer; active mitosis.<br>
+          2. <strong>Stratum Spinosum:</strong> Cellular strength.<br>
+          3. <strong>Stratum Granulosum:</strong> Keratin production.<br>
+          4. <strong>Stratum Lucidum:</strong> Found ONLY in thick skin.<br>
+          5. <strong>Stratum Corneum:</strong> Outermost dead keratinized cells.
+        </div>
+      </div>
+      <div class="card-footer">Anatomy & Physiology (HCSS1087A)</div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="card-box">
+      <div>
+        <div class="card-header"><span>A&P MODULE 3</span><span>CARD #3</span></div>
+        <div class="card-title">Q: Keratinocytes vs Melanocytes</div>
+        <div class="card-body">
+          <strong>Keratinocytes (95%):</strong> Produce tough waterproof protein <em>keratin</em>.<br>
+          <strong>Melanocytes (5%):</strong> Produce pigment <em>melanin</em> to absorb UV light and give skin color.
+        </div>
+      </div>
+      <div class="card-footer">Anatomy & Physiology (HCSS1087A)</div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="card-box">
+      <div>
+        <div class="card-header"><span>A&P MODULE 3</span><span>CARD #4</span></div>
+        <div class="card-title">Q: What is the Dermis and its 2 Layers?</div>
+        <div class="card-body">
+          Middle connective layer 20x thicker than epidermis.<br>
+          • <strong>Papillary Layer:</strong> Dermal papillae (fingerprints) & touch receptors.<br>
+          • <strong>Reticular Layer:</strong> Collagen, elastin, glands, hair follicles, & Pacinian corpuscles.
+        </div>
+      </div>
+      <div class="card-footer">Anatomy & Physiology (HCSS1087A)</div>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="card-box">
+      <div>
+        <div class="card-header"><span>A&P MODULE 3</span><span>CARD #5</span></div>
+        <div class="card-title">Q: What is the Hypodermis (Subcutaneous Tissue)?</div>
+        <div class="card-body">
+          <strong>A:</strong> Foundation layer beneath skin composed mainly of <strong>adipose (fat) tissue</strong>. Functions: energy storage, thermal insulation, shock absorption, and attaching skin to underlying tissues.
+        </div>
+      </div>
+      <div class="card-footer">Anatomy & Physiology (HCSS1087A)</div>
+    </div>
+
+    <!-- Card 6 -->
+    <div class="card-box">
+      <div>
+        <div class="card-header"><span>A&P MODULE 3</span><span>CARD #6</span></div>
+        <div class="card-title">Q: 3 Components of Hair & Arrector Pili Muscle</div>
+        <div class="card-body">
+          • <strong>Shaft:</strong> Visible part.<br>
+          • <strong>Root:</strong> Hidden in follicle.<br>
+          • <strong>Papilla/Bulb:</strong> Blood-nourished base where growth begins.<br>
+          • <strong>Arrector Pili:</strong> Muscle that contracts for "goosebumps".
+        </div>
+      </div>
+      <div class="card-footer">Anatomy & Physiology (HCSS1087A)</div>
+    </div>
+
+    <!-- Card 7 -->
+    <div class="card-box">
+      <div>
+        <div class="card-header"><span>A&P MODULE 3</span><span>CARD #7</span></div>
+        <div class="card-title">Q: 3 Components of a Nail & Cyanosis</div>
+        <div class="card-body">
+          • <strong>Nail Body:</strong> Visible plate of hardened keratin.<br>
+          • <strong>Nail Root:</strong> Hidden under cuticle.<br>
+          • <strong>Lunula:</strong> White crescent near root.<br>
+          • <strong>Cyanosis:</strong> Bluish nail beds from poor oxygen blood perfusion.
+        </div>
+      </div>
+      <div class="card-footer">Anatomy & Physiology (HCSS1087A)</div>
+    </div>
+
+    <!-- Card 8 -->
+    <div class="card-box">
+      <div>
+        <div class="card-header"><span>A&P MODULE 3</span><span>CARD #8</span></div>
+        <div class="card-title">Q: Eccrine vs Apocrine Sweat Glands</div>
+        <div class="card-body">
+          <strong>Eccrine Glands:</strong> Abundant all over body; thin watery sweat for cooling and waste removal.<br>
+          <strong>Apocrine Glands:</strong> Axilla & groin; thicker fluid producing odor when acted on by skin bacteria.
+        </div>
+      </div>
+      <div class="card-footer">Anatomy & Physiology (HCSS1087A)</div>
+    </div>
+
+    <!-- Card 9 -->
+    <div class="card-box">
+      <div>
+        <div class="card-header"><span>A&P MODULE 3</span><span>CARD #9</span></div>
+        <div class="card-title">Q: Sebaceous Glands & Sebum</div>
+        <div class="card-body">
+          <strong>A:</strong> Oil glands attached to hair follicles that secrete <strong>sebum</strong> to prevent drying. Blocked ducts form whiteheads (pimples) or blackheads (oxidized sebum).
+        </div>
+      </div>
+      <div class="card-footer">Anatomy & Physiology (HCSS1087A)</div>
+    </div>
+
+    <!-- Card 10 -->
+    <div class="card-box">
+      <div>
+        <div class="card-header"><span>A&P MODULE 3</span><span>CARD #10</span></div>
+        <div class="card-title">Q: Meissner's Corpuscle</div>
+        <div class="card-body">
+          <strong>A:</strong> Cutaneous mechanoreceptor located in dermal papillae responsible for sensing <strong>texture and light vibration / touch</strong>.
+        </div>
+      </div>
+      <div class="card-footer">Anatomy & Physiology (HCSS1087A)</div>
+    </div>
+
+    <!-- Card 11 -->
+    <div class="card-box">
+      <div>
+        <div class="card-header"><span>A&P MODULE 3</span><span>CARD #11</span></div>
+        <div class="card-title">Q: Pacinian Corpuscle</div>
+        <div class="card-body">
+          <strong>A:</strong> Deep mechanoreceptor located in reticular dermis/hypodermis responsible for sensing <strong>deep pressure and fast vibration</strong>.
+        </div>
+      </div>
+      <div class="card-footer">Anatomy & Physiology (HCSS1087A)</div>
+    </div>
+
+    <!-- Card 12 -->
+    <div class="card-box">
+      <div>
+        <div class="card-header"><span>A&P MODULE 3</span><span>CARD #12</span></div>
+        <div class="card-title">Q: Ruffini's End Organ</div>
+        <div class="card-body">
+          <strong>A:</strong> Sensory mechanoreceptor responsible for detecting <strong>skin stretch</strong>.
+        </div>
+      </div>
+      <div class="card-footer">Anatomy & Physiology (HCSS1087A)</div>
+    </div>
+
+    <!-- Card 13 -->
+    <div class="card-box">
+      <div>
+        <div class="card-header"><span>A&P MODULE 3</span><span>CARD #13</span></div>
+        <div class="card-title">Q: End Bulb of Krause</div>
+        <div class="card-body">
+          <strong>A:</strong> Cutaneous thermoreceptor specialized for detecting <strong>cold temperatures</strong>.
+        </div>
+      </div>
+      <div class="card-footer">Anatomy & Physiology (HCSS1087A)</div>
+    </div>
+
+    <!-- Card 14 -->
+    <div class="card-box">
+      <div>
+        <div class="card-header"><span>A&P MODULE 3</span><span>CARD #14</span></div>
+        <div class="card-title">Q: Merkel's Disc & Free Nerve Endings</div>
+        <div class="card-body">
+          • <strong>Merkel's Disc:</strong> Sustained touch and pressure.<br>
+          • <strong>Free Nerve Endings:</strong> Unencapsulated nerve endings signaling <strong>pain and itch</strong>.
+        </div>
+      </div>
+      <div class="card-footer">Anatomy & Physiology (HCSS1087A)</div>
+    </div>
+
+    <!-- Card 15 -->
+    <div class="card-box">
+      <div>
+        <div class="card-header"><span>A&P MODULE 3</span><span>CARD #15</span></div>
+        <div class="card-title">Q: 6 Core Functions of the Skin</div>
+        <div class="card-body">
+          1. <strong>Protection</strong> (microbes, UV, toxins)<br>
+          2. <strong>Temp Regulation</strong> (sweating & shivering)<br>
+          3. <strong>Sensation</strong> (tactile & temperature)<br>
+          4. <strong>Excretion</strong> (sweat & urea)<br>
+          5. <strong>Vitamin D Synthesis</strong> (UV light → liver/kidney)<br>
+          6. <strong>Absorption</strong> (transdermal patches)
+        </div>
+      </div>
+      <div class="card-footer">Anatomy & Physiology (HCSS1087A)</div>
+    </div>
+
+  </div>
+
+</body>
+</html>

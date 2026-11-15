@@ -1,0 +1,30 @@
+Vocabulary terms for Module 1 
+Introduction to the body
+Term | Definition | 
+Anatomy | Study of the structures of the human body. | 
+Physiology | Study of the functions of living organisms and their parts; how body structures work. | 
+Biology | Study of all forms of life. | 
+Levels of Organization | The hierarchy of increasing complexity from chemicals to the complete organism. | 
+Organ | Structure composed of different tissues that performs a specific function. | 
+Organ System | Group of organs working together to perform major body functions. | 
+Organism | The complete living individual; the highest level of organization. | 
+Body Cavity | Internal space within the body that contains organs. | 
+Ventral Cavity | Major body cavity located at the front of the body. | 
+Dorsal Cavity | Major body cavity located at the back of the body. | 
+Thoracic Cavity | Upper division of the ventral cavity containing the lungs and heart region. | 
+Mediastinum | Middle compartment of the thoracic cavity between the lungs; contains the heart and other structures. | 
+Pleural Cavities | Cavities containing the right and left lungs. | 
+Abdominopelvic Cavity | Lower division of the ventral cavity containing abdominal and pelvic cavities. | 
+Abdominal Cavity | Contains the stomach, intestines, liver, gallbladder, pancreas, and spleen. | 
+Pelvic Cavity | Contains reproductive organs, urinary bladder, and lower intestine. | 
+Abdominal Quadrants | Four sections used to aid assessment and diagnosis. | 
+Abdominal Regions | Nine sections used to more precisely locate organs and symptoms. | 
+Cranial Cavity | Dorsal cavity that contains the brain and space within the skull. | 
+Spinal Cavity | Dorsal cavity that contains the spinal cord within the vertebral column. | 
+Homeostasis | State in which the body's internal environment remains stable and balanced. | 
+Feedback Mechanism | Process that helps maintain homeostasis through responses to change. | 
+Negative Feedback Loop | Response reverses or reduces a stimulus to return the body to a set point. | 
+Positive Feedback Loop | Response reinforces a stimulus, pushing a process toward completion. | 
+Receptor | Detects a change or stimulus and sends information to the control center. | 
+Effector | Causes or brings about the response needed to restore balance. | 
+Anatomical Directional Terms | Standard vocabulary used to describe body locations and relationships. | 

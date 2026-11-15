@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Elaine's Neurological Care & MS Advocacy Tracker — Soma Health OS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #080c1d;
+      --surface: #0f1733;
+      --card: #162044;
+      --card-hover: #1d2b5c;
+      --border: rgba(255, 255, 255, 0.12);
+      --indigo: #6366f1;
+      --indigo-light: #818cf8;
+      --indigo-dim: rgba(99, 102, 241, 0.15);
+      --blue: #3b82f6;
+      --blue-light: #60a5fa;
+      --blue-dim: rgba(59, 130, 246, 0.15);
+      --purple: #a855f7;
+      --purple-dim: rgba(168, 85, 247, 0.15);
+      --amber: #f59e0b;
+      --amber-dim: rgba(245, 158, 11, 0.15);
+      --rose: #f43f5e;
+      --rose-dim: rgba(244, 63, 94, 0.15);
+      --emerald: #10b981;
+      --emerald-dim: rgba(16, 185, 129, 0.15);
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-sub: #cbd5e1;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      padding-bottom: 90px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* TOP BAR */
+    header {
+      background: rgba(15, 23, 51, 0.95);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 14px 20px;
+    }
+    .header-top {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .brand-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .brand-icon {
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, #6366f1, #3b82f6);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      box-shadow: 0 4px 14px rgba(99, 102, 241, 0.35);
+    }
+    .brand-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: -0.2px;
+    }
+    .brand-sub {
+      font-size: 0.82rem;
+      color: var(--indigo-light);
+      font-weight: 500;
+    }
+    .btn-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn {
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 0.84rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+    .btn:hover {
+      background: var(--card-hover);
+      transform: translateY(-1px);
+    }
+    .btn-primary {
+      background: var(--indigo);
+      border-color: var(--indigo-light);
+      color: white;
+    }
+    .btn-primary:hover {
+      background: #4f46e5;
+    }
+    .btn-emerald {
+      background: var(--emerald);
+      border-color: #34d399;
+      color: white;
+    }
+    .btn-emerald:hover { background: #059669; }
+
+    /* CONTAINER */
+    .container {
+      max-width: 1080px;
+      margin: 24px auto 0;
+      padding: 0 16px;
+    }
+
+    /* BANNER */
+    .status-banner {
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.2) 0%, rgba(59, 130, 246, 0.1) 100%);
+      border: 1px solid rgba(129, 140, 248, 0.35);
+      border-radius: 14px;
+      padding: 16px 20px;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .banner-text h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #c7d2fe;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .banner-text p {
+      font-size: 0.88rem;
+      color: var(--text-sub);
+      margin-top: 4px;
+    }
+
+    /* NAV TABS */
+    .nav-tabs {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 24px;
+      scrollbar-width: thin;
+    }
+    .tab-btn {
+      padding: 10px 18px;
+      border-radius: 10px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .tab-btn.active {
+      background: var(--indigo);
+      color: white;
+      border-color: var(--indigo-light);
+      box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+    }
+
+    /* TAB CONTENT */
+    .tab-pane {
+      display: none;
+      animation: fadeIn 0.25s ease;
+    }
+    .tab-pane.active {
+      display: block;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* GRID & CARDS */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 18px;
+      margin-bottom: 24px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+    }
+    .card-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: white;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+    .card-title .badge {
+      font-size: 0.72rem;
+      padding: 2px 8px;
+      border-radius: 6px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .badge-indigo { background: var(--indigo-dim); color: #a5b4fc; border: 1px solid rgba(165, 180, 252, 0.3); }
+    .badge-blue { background: var(--blue-dim); color: #93c5fd; border: 1px solid rgba(147, 197, 253, 0.3); }
+    .badge-amber { background: var(--amber-dim); color: #fcd34d; border: 1px solid rgba(252, 211, 77, 0.3); }
+    .badge-rose { background: var(--rose-dim); color: #fda4af; border: 1px solid rgba(253, 164, 175, 0.3); }
+
+    /* DATA LISTS */
+    .data-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      font-size: 0.9rem;
+    }
+    .data-row:last-child { border-bottom: none; }
+    .data-label { color: var(--text-muted); }
+    .data-val { font-weight: 600; color: #f1f5f9; text-align: right; }
+
+    /* CLINICAL BOXES */
+    .callout {
+      border-left: 4px solid var(--indigo);
+      background: rgba(99, 102, 241, 0.08);
+      padding: 14px 16px;
+      border-radius: 0 10px 10px 0;
+      margin: 14px 0;
+      font-size: 0.9rem;
+      color: #e0e7ff;
+      line-height: 1.5;
+    }
+    .callout-rose {
+      border-left-color: var(--rose);
+      background: rgba(244, 63, 94, 0.08);
+      color: #ffe4e6;
+    }
+    .callout-amber {
+      border-left-color: var(--amber);
+      background: rgba(245, 158, 11, 0.08);
+      color: #fef3c7;
+    }
+
+    /* QUESTIONNAIRE ITEMS */
+    .q-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 14px;
+    }
+    .q-num {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--indigo-light);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+    .q-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 8px;
+    }
+    .q-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+    .q-input {
+      width: 100%;
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px 12px;
+      color: white;
+      font-family: inherit;
+      font-size: 0.88rem;
+      resize: vertical;
+      min-height: 60px;
+    }
+    .q-input:focus {
+      outline: none;
+      border-color: var(--indigo-light);
+    }
+
+    /* LOG ENTRIES */
+    .log-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      margin-top: 12px;
+    }
+    .log-table th {
+      text-align: left;
+      padding: 10px;
+      background: rgba(0, 0, 0, 0.3);
+      color: var(--text-muted);
+      font-weight: 600;
+      border-bottom: 1px solid var(--border);
+    }
+    .log-table td {
+      padding: 12px 10px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      vertical-align: top;
+    }
+
+    /* FORM STYLES */
+    .form-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .form-group label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+    .form-control {
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 9px 12px;
+      color: white;
+      font-family: inherit;
+      font-size: 0.88rem;
+    }
+    .form-control:focus {
+      outline: none;
+      border-color: var(--indigo);
+    }
+
+    /* TOAST */
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: #6366f1;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+      opacity: 0;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 2000;
+      pointer-events: none;
+    }
+    .toast.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+
+    /* PRINT STYLES */
+    @media print {
+      body {
+        background: white !important;
+        color: black !important;
+        padding-bottom: 0;
+      }
+      header, .nav-tabs, .btn, .status-banner, .toast {
+        display: none !important;
+      }
+      .tab-pane {
+        display: block !important;
+        page-break-after: always;
+      }
+      .card {
+        background: white !important;
+        border: 1px solid #ccc !important;
+        box-shadow: none !important;
+        color: black !important;
+        margin-bottom: 16px !important;
+      }
+      .card-title, .brand-title, .q-title {
+        color: black !important;
+      }
+      .callout {
+        background: #f8fafc !important;
+        color: black !important;
+        border-left: 4px solid #333 !important;
+      }
+      .data-val { color: black !important; }
+      .q-item { background: #fafafa !important; border-color: #ddd !important; }
+      .q-input { background: white !important; color: black !important; border: 1px solid #ccc !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-top">
+      <div class="brand-wrap">
+        <div class="brand-icon">🧠</div>
+        <div>
+          <div class="brand-title">Elaine's Neurological &amp; MS Care Tracker</div>
+          <div class="brand-sub">Soma Health Intelligence OS • MRI &amp; Specialist Advocacy</div>
+        </div>
+      </div>
+      <div class="btn-group">
+        <button class="btn btn-primary" onclick="copyNeuroBrief()">📋 Copy for Soma / Neurologist</button>
+        <button class="btn btn-emerald" onclick="window.print()">🖨️ Print Clinical Sheet</button>
+        <a href="share_links.html" class="btn">🔗 Hub</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <!-- STATUS BANNER -->
+    <div class="status-banner">
+      <div class="banner-text">
+        <h3>⚡ Targeted Goal: Brain &amp; Full Spine MRI Requisition</h3>
+        <p>Overcoming primary care dismissal with objective deficit mapping. Staged for Candy's kitchen-table intake in December following the Florida trip.</p>
+      </div>
+      <div style="display:flex; gap:8px;">
+        <span class="badge badge-rose" style="font-size:0.85rem; padding: 6px 12px;">Doctor Dismissal Barrier</span>
+        <span class="badge badge-indigo" style="font-size:0.85rem; padding: 6px 12px;">Rocket Doctor Staged</span>
+      </div>
+    </div>
+
+    <!-- TABS -->
+    <div class="nav-tabs">
+      <button class="tab-btn active" onclick="switchTab('overview')">📋 Case Overview &amp; Advocacy</button>
+      <button class="tab-btn" onclick="switchTab('deficits')">⚡ Neurological Deficit Checklist</button>
+      <button class="tab-btn" onclick="switchTab('uhthoff')">☀️ Florida Heat Test (Uhthoff's)</button>
+      <button class="tab-btn" onclick="switchTab('script')">🛡️ Doctor Script &amp; Rocket Doctor</button>
+      <button class="tab-btn" onclick="switchTab('questionnaire')">☕ December Coffee Intake</button>
+      <button class="tab-btn" onclick="switchTab('logger')">📝 Live Deficit Episode Log</button>
+    </div>
+
+    <!-- TAB 1: OVERVIEW -->
+    <div id="tab-overview" class="tab-pane active">
+      <div class="grid-2">
+        <!-- ADVOCACY SNAPSHOT -->
+        <div class="card">
+          <div class="card-title">
+            <span>🛡️ Case Status &amp; Clinical Targets</span>
+            <span class="badge badge-indigo">Priority</span>
+          </div>
+          <div class="data-row">
+            <span class="data-label">Patient:</span>
+            <span class="data-val">Elaine (Christina's Wife)</span>
+          </div>
+          <div class="data-row">
+            <span class="data-label">Partner / Spouse:</span>
+            <span class="data-val">Christina (Dedicated MCAS Track)</span>
+          </div>
+          <div class="data-row">
+            <span class="data-label">Working Clinical Concern:</span>
+            <span class="data-val" style="color:#a5b4fc;">Suspected Multiple Sclerosis (MS)</span>
+          </div>
+          <div class="data-row">
+            <span class="data-label">Family Doctor Posture:</span>
+            <span class="data-val" style="color:#f87171;">Dismissive / Refusing to Investigate</span>
+          </div>
+          <div class="data-row">
+            <span class="data-label">Primary Imaging Goal:</span>
+            <span class="data-val" style="color:#93c5fd;">MRI Brain + Cervical &amp; Thoracic Spine (+/- Contrast)</span>
+          </div>
+          <div class="data-row">
+            <span class="data-label">Virtual Requisition Bridge:</span>
+            <span class="data-val" style="color:#34d399;">Rocket Doctor Canada</span>
+          </div>
+          <div class="callout callout-rose" style="margin-top:16px;">
+            <strong>The Cost of Delay:</strong> In demyelinating disease, early diagnosis and treatment (Disease-Modifying Therapies / DMTs) protect against irreversible axonal transection. Every month of delay due to GP gatekeeping is unacceptable.
+          </div>
+        </div>
+
+        <!-- THE MCDONALD CRITERIA -->
+        <div class="card">
+          <div class="card-title">
+            <span>📖 The McDonald Diagnostic Criteria</span>
+            <span class="badge badge-blue">Neurology Standard</span>
+          </div>
+          <p style="font-size:0.88rem; color:var(--text-sub); margin-bottom:12px;">
+            To formally diagnose MS, neurologists look for <strong>Dissemination in Space (DIS)</strong> and <strong>Dissemination in Time (DIT)</strong>:
+          </p>
+          <div style="background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:12px; margin-bottom:10px;">
+            <div style="font-weight:700; color:#818cf8; font-size:0.88rem;">1. Dissemination in Space (DIS)</div>
+            <div style="font-size:0.82rem; color:var(--text-muted); margin-top:4px;">
+              Lesions in at least 2 of the 4 classic CNS regions: periventricular, juxtacortical/cortical, infratentorial, or spinal cord. (Confirmed only by MRI).
+            </div>
+          </div>
+          <div style="background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:12px;">
+            <div style="font-weight:700; color:#818cf8; font-size:0.88rem;">2. Dissemination in Time (DIT)</div>
+            <div style="font-size:0.82rem; color:var(--text-muted); margin-top:4px;">
+              Evidence of separate neurological attacks occurring at different times, or simultaneous enhancing (new) and non-enhancing (old) lesions on MRI.
+            </div>
+          </div>
+          <div class="callout" style="margin-top:14px;">
+            Our goal in December is to document Elaine's past episodes so we fulfill the "Dissemination in Time" clinical history on paper.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 2: DEFICIT CHECKLIST -->
+    <div id="tab-deficits" class="tab-pane">
+      <div class="card" style="margin-bottom:20px;">
+        <div class="card-title">
+          <span>⚡ Focal Neurological Deficit Checklist</span>
+          <span class="badge badge-indigo">Audit</span>
+        </div>
+        <p style="font-size:0.88rem; color:var(--text-sub); margin-bottom:16px;">
+          Review these hallmark neurological symptoms with Elaine in December. Check each deficit that has ever occurred:
+        </p>
+
+        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:16px;">
+          <!-- SENSORY -->
+          <div style="background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:16px;">
+            <div style="font-weight:700; color:#818cf8; margin-bottom:8px; display:flex; align-items:center; gap:6px;">
+              <span>🔌 Sensory &amp; Paresthesia</span>
+            </div>
+            <label style="display:block; font-size:0.85rem; margin-bottom:6px;"><input type="checkbox" id="def-numb"> Unilateral numbness in hands, fingers, or feet</label>
+            <label style="display:block; font-size:0.85rem; margin-bottom:6px;"><input type="checkbox" id="def-pins"> Persistent pins-and-needles / electric sensations</label>
+            <label style="display:block; font-size:0.85rem; margin-bottom:6px;"><input type="checkbox" id="def-hug"> The "MS Hug" (tight band squeezing ribs/chest)</label>
+            <label style="display:block; font-size:0.85rem; margin-bottom:6px;"><input type="checkbox" id="def-burn"> Burning skin sensations with no rash</label>
+            <label style="display:block; font-size:0.85rem;"><input type="checkbox" id="def-lhermitte"> <strong>Lhermitte's Sign:</strong> Electric shock down spine when bending neck chin-to-chest</label>
+          </div>
+
+          <!-- MOTOR & GAIT -->
+          <div style="background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:16px;">
+            <div style="font-weight:700; color:#3b82f6; margin-bottom:8px; display:flex; align-items:center; gap:6px;">
+              <span>🚶 Motor, Gait &amp; Cerebellar</span>
+            </div>
+            <label style="display:block; font-size:0.85rem; margin-bottom:6px;"><input type="checkbox" id="def-footdrop"> Foot drop (dragging toes, scuffing shoes on floor)</label>
+            <label style="display:block; font-size:0.85rem; margin-bottom:6px;"><input type="checkbox" id="def-buckle"> Knee buckling or sudden leg weakness</label>
+            <label style="display:block; font-size:0.85rem; margin-bottom:6px;"><input type="checkbox" id="def-balance"> Loss of balance, stumbling, or wall-walking</label>
+            <label style="display:block; font-size:0.85rem; margin-bottom:6px;"><input type="checkbox" id="def-clumsy"> Hand clumsiness (dropping cups, struggling with buttons)</label>
+            <label style="display:block; font-size:0.85rem;"><input type="checkbox" id="def-spasm"> Painful muscle stiffness or spasms (spasticity)</label>
+          </div>
+
+          <!-- OPTIC & CRANIAL -->
+          <div style="background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:16px;">
+            <div style="font-weight:700; color:#f43f5e; margin-bottom:8px; display:flex; align-items:center; gap:6px;">
+              <span>👁️ Optic Nerve &amp; Cranial</span>
+            </div>
+            <label style="display:block; font-size:0.85rem; margin-bottom:6px;"><input type="checkbox" id="def-optic"> Optic Neuritis (blurred/dim vision in one eye)</label>
+            <label style="display:block; font-size:0.85rem; margin-bottom:6px;"><input type="checkbox" id="def-eyepain"> Pain behind the eyeball when looking around</label>
+            <label style="display:block; font-size:0.85rem; margin-bottom:6px;"><input type="checkbox" id="def-color"> Color desaturation (reds looking faded or grey)</label>
+            <label style="display:block; font-size:0.85rem;"><input type="checkbox" id="def-diplopia"> Diplopia (double vision or visual ghosting)</label>
+          </div>
+
+          <!-- FATIGUE & AUTONOMIC -->
+          <div style="background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:16px;">
+            <div style="font-weight:700; color:#a855f7; margin-bottom:8px; display:flex; align-items:center; gap:6px;">
+              <span>⚡ Central Fatigue &amp; Bladder</span>
+            </div>
+            <label style="display:block; font-size:0.85rem; margin-bottom:6px;"><input type="checkbox" id="def-fatigue"> Severe "lead blanket" neurological exhaustion</label>
+            <label style="display:block; font-size:0.85rem; margin-bottom:6px;"><input type="checkbox" id="def-bladder"> Bladder urgency (sudden inability to hold urine)</label>
+            <label style="display:block; font-size:0.85rem; margin-bottom:6px;"><input type="checkbox" id="def-vertigo"> True spinning sensation (vertigo) without ear infection</label>
+            <label style="display:block; font-size:0.85rem;"><input type="checkbox" id="def-cog"> "Cog-fog" (difficulty word-finding or multitasking)</label>
+          </div>
+        </div>
+        <button class="btn btn-primary" onclick="saveDeficitChecklist()" style="margin-top:16px;">💾 Save Checked Deficits</button>
+      </div>
+    </div>
+
+    <!-- TAB 3: UHTHOFF'S PHENOMENON (FLORIDA) -->
+    <div id="tab-uhthoff" class="tab-pane">
+      <div class="card">
+        <div class="card-title">
+          <span>☀️ Florida Climate &amp; The Uhthoff's Phenomenon Test</span>
+          <span class="badge badge-amber">Clinical Evidence</span>
+        </div>
+        <div class="callout callout-amber">
+          <strong>What is Uhthoff's Phenomenon?</strong> In Multiple Sclerosis, demyelinated nerve axons conduct electrical signals with a very fragile safety margin. An increase in body temperature of even <strong>0.5°C</strong> (from Florida sunshine, humidity, walking, or hot baths) blocks conduction, causing existing neurological symptoms to dramatically flare. Crucially, <strong>the symptoms improve once the body cools down</strong>.
+        </div>
+
+        <div style="margin-top:16px;">
+          <div class="form-group" style="margin-bottom:14px;">
+            <label>Florida Heat &amp; Sun Observation Notes (To record in December)</label>
+            <textarea id="uhthoff-notes" class="q-input" placeholder="Did Elaine's legs feel like lead when out in the Florida heat? Did her vision blur in the sunshine? Did sitting in air-conditioning with ice water restore her strength?"></textarea>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Reversible Heat Effect Observed?</label>
+              <select id="uhthoff-observed" class="form-control">
+                <option value="Yes - Classic Uhthoff's (Flares in heat, clears in AC)">Yes - Classic Uhthoff's (Flares in heat, clears in AC)</option>
+                <option value="Severe Weakness Outdoors">Severe weakness outdoors</option>
+                <option value="Unsure / Stayed in AC mostly">Unsure / Stayed in AC mostly</option>
+                <option value="No noticeable temperature effect">No noticeable temperature effect</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Primary Symptom Triggered by Heat</label>
+              <input type="text" id="uhthoff-symptom" class="form-control" placeholder="e.g. Leg heaviness, blurred vision, numbness">
+            </div>
+          </div>
+          <button class="btn btn-primary" onclick="saveUhthoffData()" style="margin-top:10px;">💾 Save Heat Sensitivity Record</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 4: DOCTOR SCRIPT & ROCKET DOCTOR -->
+    <div id="tab-script" class="tab-pane">
+      <div class="card" style="margin-bottom:20px;">
+        <div class="card-title">
+          <span>🛡️ Exact Script for Bypassing a Dismissive Doctor</span>
+          <span class="badge badge-indigo">Script</span>
+        </div>
+        <p style="font-size:0.88rem; color:var(--text-sub); margin-bottom:12px;">
+          Doctors brush off emotional statements like <em>"I feel awful and tired."</em> They cannot brush off medical terms and objective deficits. Hand them this exact sheet or read this script:
+        </p>
+
+        <div style="background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:16px; font-size:0.92rem; color:#e0e7ff; line-height:1.6; margin-bottom:14px;">
+          "Doctor, we are not asking for a guess or a stress prescription today. Elaine is experiencing discrete, multi-focal central nervous system deficits including objective paresthesias, unilateral motor weakness/foot drop, and classic Uhthoff's phenomenon where nerve conduction fails in heat and recovers in cooling. 
+          <br><br>
+          Under standard clinical guidelines, these symptoms meet the threshold for central demyelinating disease. <strong>We require an outpatient requisition today for an MRI of the Brain and Cervical/Thoracic Spine with and without contrast, and a direct referral to a regional MS / Neurology Clinic.</strong> 
+          <br><br>
+          If you are unwilling to order this requisition today, please document your formal refusal and rationale in Elaine's chart right now so we have it for our records."
+        </div>
+        <div class="callout callout-rose">
+          <strong>Why this works:</strong> Doctors are legally and professionally terrified of writing <em>"Patient presented with focal motor deficits; physician refused MRI"</em> in a medical chart. 9 times out of 10, they print the requisition.
+        </div>
+      </div>
+
+      <!-- ROCKET DOCTOR PATHWAY -->
+      <div class="card">
+        <div class="card-title">
+          <span>🚀 The Rocket Doctor Backup Protocol</span>
+          <span class="badge badge-emerald">Virtual Care</span>
+        </div>
+        <p style="font-size:0.88rem; color:var(--text-sub); margin-bottom:12px;">
+          If the GP refuses or stalls, we immediately bypass them via Rocket Doctor Canada:
+        </p>
+        <ol style="font-size:0.88rem; color:var(--text-muted); padding-left:20px; line-height:1.6;">
+          <li>Go to <strong>rocketdoctor.ca</strong> and book a virtual physician appointment (covered by provincial health care in Ontario/Alberta/BC or modest telehealth fee).</li>
+          <li>In the pre-intake box, paste the summary generated by our <strong>"📋 Copy for Soma / Neurologist"</strong> button.</li>
+          <li>Request: <em>"Comprehensive neurological workup: Brain + Cervical/Thoracic Spine MRI with contrast requisition to rule out demyelinating disease, plus baseline autoimmune labs (ANA, B12, TSH)."</em></li>
+          <li>Rocket Doctor issues the requisition directly to Elaine's local hospital or imaging clinic.</li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- TAB 5: KITCHEN TABLE QUESTIONNAIRE -->
+    <div id="tab-questionnaire" class="tab-pane">
+      <div class="card" style="margin-bottom:18px;">
+        <div class="card-title">
+          <span>☕ December Kitchen-Table Intake Prompts (For Candy)</span>
+          <span class="badge badge-indigo">Meeting Script</span>
+        </div>
+        <p style="font-size:0.88rem; color:var(--text-sub); margin-bottom:16px;">
+          When sitting with Elaine in December, ask these 5 core questions to lock down her medical paper trail:
+        </p>
+
+        <div class="q-item">
+          <div class="q-num">Question 1 • The Chronological Beginning</div>
+          <div class="q-title">When was the very first time you noticed something felt "off" with your nerves or muscles?</div>
+          <div class="q-desc">What year or month? What was the symptom (numb patch, eye blur, sudden stumble)? Did it resolve and come back later?</div>
+          <textarea id="q-first-event" class="q-input" placeholder="Record the first episode timeline..."></textarea>
+        </div>
+
+        <div class="q-item">
+          <div class="q-num">Question 2 • Active Daily Deficits</div>
+          <div class="q-title">Right now, today, what parts of your body are numb, tingling, or weak?</div>
+          <div class="q-desc">Be specific: Left leg? Right hand? Fingers? Squeezing around the ribs (MS hug)?</div>
+          <textarea id="q-active-deficits" class="q-input" placeholder="Describe exact physical locations and sensations..."></textarea>
+        </div>
+
+        <div class="q-item">
+          <div class="q-num">Question 3 • The Neck Flex (Lhermitte's Test)</div>
+          <div class="q-title">When you bend your head forward so your chin touches your chest, what happens?</div>
+          <div class="q-desc">Do you feel a zap, buzz, or vibration shooting down your spine or into your legs?</div>
+          <textarea id="q-lhermitte-result" class="q-input" placeholder="Record neck-flex sensation..."></textarea>
+        </div>
+
+        <div class="q-item">
+          <div class="q-num">Question 4 • Eye &amp; Vision History</div>
+          <div class="q-title">Have you ever had an episode where one eye hurt to move, or everything looked blurry or washed out?</div>
+          <div class="q-desc">Optic neuritis is often the very first clinical attack in MS and is huge diagnostic proof.</div>
+          <textarea id="q-vision-history" class="q-input" placeholder="Record any eye pain or temporary vision changes..."></textarea>
+        </div>
+
+        <div class="q-item">
+          <div class="q-num">Question 5 • Family Doctor Barriers</div>
+          <div class="q-title">What did the family doctor say when you brought this up?</div>
+          <div class="q-desc">Did they claim it was stress, menopause, or a pinched nerve? Did they do basic bloodwork?</div>
+          <textarea id="q-gp-barrier" class="q-input" placeholder="Record what the doctor said and refused to do..."></textarea>
+        </div>
+
+        <button class="btn btn-primary" onclick="saveElaineIntake()" style="width:100%; justify-content:center; padding:12px; font-size:0.95rem;">
+          💾 Save Elaine's December Intake Record
+        </button>
+      </div>
+    </div>
+
+    <!-- TAB 6: LIVE DEFICIT LOGGER -->
+    <div id="tab-logger" class="tab-pane">
+      <div class="card" style="margin-bottom:20px;">
+        <div class="card-title">
+          <span>📝 Log a Neurological Episode / Flare</span>
+          <span class="badge badge-rose">New Event</span>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Date &amp; Time</label>
+            <input type="datetime-local" id="log-date" class="form-control">
+          </div>
+          <div class="form-group">
+            <label>Deficit Category</label>
+            <select id="log-cat" class="form-control">
+              <option value="Motor / Gait (Foot drop/Fall)">Motor / Gait (Foot drop/Fall)</option>
+              <option value="Sensory (Numbness/Tingling)">Sensory (Numbness/Tingling)</option>
+              <option value="Vision (Blur/Pain)">Vision (Blur/Pain)</option>
+              <option value="Heat Flare (Uhthoff's)">Heat Flare (Uhthoff's)</option>
+              <option value="Severe Neuro Fatigue">Severe Neuro Fatigue</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Severity</label>
+            <select id="log-sev" class="form-control">
+              <option value="Moderate Flare">Moderate Flare</option>
+              <option value="Severe / Near Fall">Severe / Near Fall</option>
+              <option value="Mild Transient">Mild Transient</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group" style="margin-bottom:12px;">
+          <label>Deficit Description &amp; Functional Impact</label>
+          <input type="text" id="log-notes" class="form-control" placeholder="e.g. Right foot dragging on rug, lost balance while walking. Resolved slightly after 1 hr rest.">
+        </div>
+        <button class="btn btn-primary" onclick="addNeuroLogEntry()">➕ Add Episode Entry</button>
+      </div>
+
+      <!-- SAVED LOGS TABLE -->
+      <div class="card">
+        <div class="card-title" style="justify-content:space-between;">
+          <span>📋 Recorded Neurological History</span>
+          <button class="btn" onclick="clearNeuroLogs()" style="font-size:0.75rem; padding:4px 8px;">Clear Log</button>
+        </div>
+        <div style="overflow-x:auto;">
+          <table class="log-table">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Category</th>
+                <th>Severity</th>
+                <th>Clinical Presentation</th>
+              </tr>
+            </thead>
+            <tbody id="log-tbody">
+              <!-- Rendered via JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast">✓ Saved to memory!</div>
+
+  <script>
+    // TAB SWITCHER
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+      
+      const targetPane = document.getElementById('tab-' + tabId);
+      if (targetPane) targetPane.classList.add('active');
+      
+      const activeBtn = Array.from(document.querySelectorAll('.tab-btn')).find(b => b.getAttribute('onclick').includes(tabId));
+      if (activeBtn) activeBtn.classList.add('active');
+    }
+
+    // TOAST
+    function showToast(msg) {
+      const t = document.getElementById('toast');
+      t.innerText = msg;
+      t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), 2500);
+    }
+
+    // LOCAL STORAGE KEYS
+    const STORAGE_KEY = 'elaine_ms_data_v1';
+
+    // LOAD STORED DATA
+    function loadData() {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if (!raw) {
+        initDefaultLogs();
+        return;
+      }
+      try {
+        const data = JSON.parse(raw);
+        if (data.uhthoffNotes) document.getElementById('uhthoff-notes').value = data.uhthoffNotes;
+        if (data.uhthoffObserved) document.getElementById('uhthoff-observed').value = data.uhthoffObserved;
+        if (data.uhthoffSymptom) document.getElementById('uhthoff-symptom').value = data.uhthoffSymptom;
+
+        if (data.qFirstEvent) document.getElementById('q-first-event').value = data.qFirstEvent;
+        if (data.qActiveDeficits) document.getElementById('q-active-deficits').value = data.qActiveDeficits;
+        if (data.qLhermitteResult) document.getElementById('q-lhermitte-result').value = data.qLhermitteResult;
+        if (data.qVisionHistory) document.getElementById('q-vision-history').value = data.qVisionHistory;
+        if (data.qGpBarrier) document.getElementById('q-gp-barrier').value = data.qGpBarrier;
+
+        if (data.deficits) {
+          for (let k in data.deficits) {
+            const el = document.getElementById(k);
+            if (el) el.checked = data.deficits[k];
+          }
+        }
+
+        renderLogs(data.logs || []);
+      } catch(e) {
+        console.error(e);
+      }
+    }
+
+    function initDefaultLogs() {
+      const defaultLogs = [
+        {
+          date: '2026-10-20 14:00',
+          cat: 'Sensory (Numbness/Tingling)',
+          sev: 'Moderate Flare',
+          notes: 'Right hand numbness and loss of tactile sensation lasting 4 days. GP claimed carpal tunnel without EMG.'
+        },
+        {
+          date: '2026-10-27 16:30',
+          cat: 'Motor / Gait (Foot drop/Fall)',
+          sev: 'Severe / Near Fall',
+          notes: 'Right toe caught carpet twice; knees felt weak/buckling after walking 20 minutes outdoors.'
+        }
+      ];
+      saveRawData({ logs: defaultLogs });
+      renderLogs(defaultLogs);
+    }
+
+    function getRawData() {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      return raw ? JSON.parse(raw) : {};
+    }
+
+    function saveRawData(newData) {
+      const current = getRawData();
+      const merged = Object.assign(current, newData);
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(merged));
+    }
+
+    function saveDeficitChecklist() {
+      const checkboxes = document.querySelectorAll('#tab-deficits input[type="checkbox"]');
+      const obj = {};
+      checkboxes.forEach(cb => { obj[cb.id] = cb.checked; });
+      saveRawData({ deficits: obj });
+      showToast('✓ Checked deficits saved!');
+    }
+
+    function saveUhthoffData() {
+      saveRawData({
+        uhthoffNotes: document.getElementById('uhthoff-notes').value,
+        uhthoffObserved: document.getElementById('uhthoff-observed').value,
+        uhthoffSymptom: document.getElementById('uhthoff-symptom').value
+      });
+      showToast('✓ Heat sensitivity record saved!');
+    }
+
+    function saveElaineIntake() {
+      saveRawData({
+        qFirstEvent: document.getElementById('q-first-event').value,
+        qActiveDeficits: document.getElementById('q-active-deficits').value,
+        qLhermitteResult: document.getElementById('q-lhermitte-result').value,
+        qVisionHistory: document.getElementById('q-vision-history').value,
+        qGpBarrier: document.getElementById('q-gp-barrier').value
+      });
+      showToast('✓ Elaine December intake saved!');
+    }
+
+    function addNeuroLogEntry() {
+      const date = document.getElementById('log-date').value || new Date().toISOString().slice(0, 16).replace('T', ' ');
+      const cat = document.getElementById('log-cat').value;
+      const sev = document.getElementById('log-sev').value;
+      const notes = document.getElementById('log-notes').value.trim() || 'No additional notes';
+
+      const data = getRawData();
+      const logs = data.logs || [];
+      logs.unshift({ date, cat, sev, notes });
+      saveRawData({ logs });
+      renderLogs(logs);
+
+      document.getElementById('log-notes').value = '';
+      showToast('✓ Deficit episode logged!');
+    }
+
+    function renderLogs(logs) {
+      const tbody = document.getElementById('log-tbody');
+      tbody.innerHTML = '';
+      if (!logs || logs.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="4" style="text-align:center; color:var(--text-muted); padding:16px;">No entries recorded yet.</td></tr>';
+        return;
+      }
+      logs.forEach(l => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td style="font-family:'JetBrains Mono', monospace; font-size:0.8rem; color:var(--text-muted);">${l.date}</td>
+          <td style="font-weight:600; color:#a5b4fc;">${l.cat}</td>
+          <td><span class="badge ${l.sev.includes('Severe') ? 'badge-rose' : (l.sev.includes('Moderate') ? 'badge-amber' : 'badge-indigo')}">${l.sev}</span></td>
+          <td style="color:var(--text-sub);">${l.notes}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    function clearNeuroLogs() {
+      if (confirm('Clear all recorded neurological episode logs?')) {
+        saveRawData({ logs: [] });
+        renderLogs([]);
+        showToast('Logs cleared.');
+      }
+    }
+
+    // COPY CARE BRIEF FOR SOMA / NEUROLOGIST
+    function copyNeuroBrief() {
+      const data = getRawData();
+      let text = `### 🧠 Elaine's Neurological Clinical Profile & MS Advocacy Brief\n`;
+      text += `* **Patient:** Elaine | **Target:** Brain & Cervical/Thoracic Spine MRI with Contrast\n`;
+      text += `* **Advocate:** Candy Moulton (via Soma Health OS)\n`;
+      text += `* **Family Doctor Barrier:** Dismissive; Rocket Doctor Canada staged for immediate requisition\n\n`;
+      text += `#### Clinical Timeline & Intake:\n`;
+      text += `* **First Historical Event:** ${data.qFirstEvent || 'Pending December intake'}\n`;
+      text += `* **Active Current Deficits:** ${data.qActiveDeficits || 'Pending December intake'}\n`;
+      text += `* **Lhermitte's Neck Flex Sign:** ${data.qLhermitteResult || 'Pending December intake'}\n`;
+      text += `* **Optic / Eye History:** ${data.qVisionHistory || 'Pending December intake'}\n`;
+      text += `* **Uhthoff's Heat Sensitivity:** ${data.uhthoffObserved || 'Not recorded yet'} (${data.uhthoffNotes || 'None'})\n`;
+      text += `* **Doctor Refusal History:** ${data.qGpBarrier || 'Pending December intake'}\n`;
+
+      navigator.clipboard.writeText(text).then(() => {
+        showToast('📋 Copied brief to clipboard! Ready to paste to Soma.');
+      }).catch(() => {
+        prompt('Copy clinical brief below:', text);
+      });
+    }
+
+    // INITIALIZE
+    window.onload = function() {
+      const now = new Date();
+      now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+      document.getElementById('log-date').value = now.toISOString().slice(0, 16);
+      loadData();
+    };
+  </script>
+</body>
+</html>

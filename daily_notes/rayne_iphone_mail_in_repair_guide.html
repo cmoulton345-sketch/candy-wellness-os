@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rayne's iPhone 17 Pro — Apple Mail-In Repair Guide</title>
+  <style>
+    :root {
+      --primary: #0284c7;
+      --primary-dark: #0369a1;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text: #0f172a;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --success: #16a34a;
+      --success-bg: #f0fdf4;
+      --warning-bg: #fffbeb;
+      --warning-border: #fde68a;
+      --warning-text: #92400e;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 24px 16px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .header-card {
+      background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+      color: white;
+      padding: 28px 24px;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px -5px rgba(2, 132, 199, 0.25);
+      margin-bottom: 24px;
+    }
+
+    .header-card h1 {
+      font-size: 26px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .badge-pill {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(4px);
+      color: #ffffff;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 9999px;
+      margin-top: 6px;
+    }
+
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 14px;
+      font-size: 13px;
+      opacity: 0.9;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+
+    .card h2 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-bottom: 2px solid #f1f5f9;
+      padding-bottom: 10px;
+    }
+
+    .status-banner {
+      background: var(--success-bg);
+      border: 1px solid #bbf7d0;
+      color: #14532d;
+      padding: 16px;
+      border-radius: 12px;
+      margin-bottom: 18px;
+      font-size: 14px;
+    }
+
+    .status-banner strong {
+      color: #15803d;
+      font-size: 15px;
+    }
+
+    .checklist {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .checklist-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 12px 14px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+    }
+
+    .checklist-item input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+      accent-color: var(--primary);
+      margin-top: 3px;
+      flex-shrink: 0;
+      cursor: pointer;
+    }
+
+    .item-content {
+      flex: 1;
+    }
+
+    .item-title {
+      font-weight: 600;
+      font-size: 15px;
+      color: var(--text);
+      margin-bottom: 2px;
+    }
+
+    .item-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .item-path {
+      display: inline-block;
+      background: #e2e8f0;
+      padding: 2px 8px;
+      border-radius: 6px;
+      font-family: monospace;
+      font-size: 12px;
+      margin-top: 4px;
+      color: #334155;
+    }
+
+    .steps-list {
+      list-style-type: decimal;
+      padding-left: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-size: 14px;
+    }
+
+    .steps-list li {
+      padding-left: 6px;
+    }
+
+    .steps-list strong {
+      color: var(--primary-dark);
+    }
+
+    .alert-box {
+      background: var(--warning-bg);
+      border-left: 4px solid #f59e0b;
+      padding: 14px 16px;
+      border-radius: 8px;
+      color: var(--warning-text);
+      font-size: 13px;
+      margin-top: 14px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .contact-card {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px;
+    }
+
+    .contact-title {
+      font-size: 12px;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--text-muted);
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+
+    .contact-value {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .contact-value a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .print-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #0f172a;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: background 0.2s;
+    }
+
+    .print-btn:hover {
+      background: #334155;
+    }
+
+    @media print {
+      body {
+        background: white;
+        padding: 0;
+      }
+      .container {
+        max-width: 100%;
+      }
+      .header-card {
+        background: #0284c7 !important;
+        color: white !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .print-btn {
+        display: none;
+      }
+      .card {
+        box-shadow: none;
+        page-break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <div class="header-card">
+      <h1>📱 Rayne's iPhone 17 Pro — Apple Mail-In Repair</h1>
+      <span class="badge-pill">✅ 100% Covered Under Apple Limited Warranty ($0.00 Cost)</span>
+      <div class="meta-row">
+        <span><strong>Date:</strong> October 29, 2026</span>
+        <span><strong>Prepared by:</strong> Friday (Personal AI Assistant)</span>
+        <span><strong>Courier:</strong> Purolator / UPS (Home Delivery & Return)</span>
+      </div>
+    </div>
+
+    <!-- Diagnosis Card -->
+    <div class="card">
+      <h2>🔍 Hardware Diagnosis Summary</h2>
+      <div class="status-banner">
+        <strong>Confirmed Fault:</strong> The internal bottom right loudspeaker module has failed. Audio is forced exclusively through the small top earpiece receiver, leaving all music, apps, and media quiet and muffled.
+      </div>
+      <p style="font-size: 14px; color: #475569;">
+        This was officially verified through Apple Remote Diagnostics and the Voice Memos speaker test. Apple has authorized a full Mail-In repair/device replacement under manufacturer warranty.
+      </p>
+    </div>
+
+    <!-- Send-Off Checklist Card -->
+    <div class="card">
+      <h2>📋 Send-Off Checklist (Do Before Sealing the Box)</h2>
+      <ul class="checklist">
+        <li class="checklist-item">
+          <input type="checkbox" id="check-backup">
+          <div class="item-content">
+            <label for="check-backup" class="item-title">1. Run a Fresh iCloud Backup</label>
+            <div class="item-desc">Safeguards 100% of photos, messages, contacts, and app logins.</div>
+            <div class="item-path">Settings &gt; [Rayne's Name] &gt; iCloud &gt; iCloud Backup &gt; Back Up Now</div>
+          </div>
+        </li>
+
+        <li class="checklist-item">
+          <input type="checkbox" id="check-findmy">
+          <div class="item-content">
+            <label for="check-findmy" class="item-title">2. Turn OFF "Find My iPhone" (Mandatory)</label>
+            <div class="item-desc">Apple technicians cannot legally service or touch internal parts if Activation Lock is on. Enter Apple Account password when prompted.</div>
+            <div class="item-path">Settings &gt; [Rayne's Name] &gt; Find My &gt; Find My iPhone &gt; Toggle OFF</div>
+          </div>
+        </li>
+
+        <li class="checklist-item">
+          <input type="checkbox" id="check-sim">
+          <div class="item-content">
+            <label for="check-sim" class="item-title">3. Remove SIM Card for Backup Phone</label>
+            <div class="item-desc">Pop out the physical nano-SIM tray using a paperclip so Rayne can use her spare phone. If eSIM, transfer to backup device in Cellular settings.</div>
+          </div>
+        </li>
+
+        <li class="checklist-item">
+          <input type="checkbox" id="check-case">
+          <div class="item-content">
+            <label for="check-case" class="item-title">4. Remove Case, Screen Accessories &amp; Cords</label>
+            <div class="item-desc">Send the bare phone only. Keep cases, chargers, cords, and pop-sockets at home (Apple discards accessories sent in boxes).</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Shipping Steps Card -->
+    <div class="card">
+      <h2>🚚 Packaging &amp; Shipping Instructions</h2>
+      <ol class="steps-list">
+        <li><strong>Box Arrival:</strong> Purolator or UPS will deliver a pre-padded Apple shipping box directly to your door in Quispamsis (typically 1–2 business days).</li>
+        <li><strong>Pack the Phone:</strong> Slide the bare iPhone into the protective center sleeve and seal the box using the included peel-and-stick adhesive strip.</li>
+        <li><strong>Return Label:</strong> Affix the included prepaid return shipping label to the outside of the box over the original label.</li>
+        <li><strong>Courier Dispatch:</strong> Hand the box to the courier or drop it off at any local Purolator/UPS shipping location in KV or Saint John. <em>(Take a quick photo of the return tracking number on the label!)</em></li>
+        <li><strong>Return Delivery:</strong> Apple repairs or swaps the device within 24–48 hours at their central facility and express-couriers it back to your doorstep (typically 3–5 business days total).</li>
+      </ol>
+      <div class="alert-box">
+        <strong>💡 Backup Phone Note:</strong> While the 17 Pro is away, Rayne can use her previous iPhone. Simply insert her SIM card, sign in with her Apple ID, and tap <em>Restore from iCloud Backup</em> to load everything right where she left off!
+      </div>
+    </div>
+
+    <!-- Contact & Reference Card -->
+    <div class="card">
+      <h2>📞 Apple Support &amp; Repair Reference</h2>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <div class="contact-title">Apple Support Canada</div>
+          <div class="contact-value"><a href="tel:18002633394">1-800-263-3394</a></div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-title">Check Repair Status</div>
+          <div class="contact-value"><a href="https://mysupport.apple.com" target="_blank">mysupport.apple.com</a></div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-title">Repair / Case Number</div>
+          <div class="contact-value" style="color: #64748b; font-style: italic;">From Advisor / Email</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Accompanying Note: Options Outreach Card -->
+    <div class="card" style="border-left: 4px solid #0284c7;">
+      <h2>🏫 Options Outreach / Easter Seals Laptop Coordination</h2>
+      <div class="status-banner" style="background: #f0f9ff; border-color: #bae6fd; color: #0369a1;">
+        <strong>Drop-Off Target:</strong> Wednesday, November 4th (around Rayne's 1:00 PM appointment with Amanda Geldart) OR Monday/Tuesday (Nov 2–3).
+      </div>
+      <ul style="padding-left: 20px; font-size: 14px; color: #334155; display: flex; flex-direction: column; gap: 8px;">
+        <li><strong>Laptop Reset:</strong> Rayne does <em>not</em> need to reset the computer; Easter Seals performs certified wiping. Place a sticky note with her PIN/password on the lid.</li>
+        <li><strong>Disability Grant Safeguard:</strong> Her Permanent Disability status stays permanently active with Student Financial Services. Canada Student Grants ($2,800/yr) and Assistive Tech grants will be ready when she re-enrolls.</li>
+      </ul>
+    </div>
+
+    <div style="text-align: center; margin-top: 10px;">
+      <button class="print-btn" onclick="window.print()">🖨️ Print or Save as PDF</button>
+    </div>
+
+  </div>
+
+</body>
+</html>

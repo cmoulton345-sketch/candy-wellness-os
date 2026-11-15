@@ -1,0 +1,1667 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//NBCC Practical Nursing Decoded Schedule//Rayne Schedule 2026//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Rayne NBCC Nursing Schedule (Fall 2026)
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1001@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20260908T083000
+DTEND:20260908T162000
+SUMMARY:Orientation (Orientation)
+DESCRIPTION:Course: Orientation (Orientation)\nInstructor: NBCC Staff\nDelivery Mode: On Campus
+LOCATION:On Campus
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1002@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20260909T083000
+DTEND:20260909T152000
+SUMMARY:Orientation (Orientation)
+DESCRIPTION:Course: Orientation (Orientation)\nInstructor: NBCC Staff\nDelivery Mode: On Campus
+LOCATION:On Campus
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1003@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20260909T153000
+DTEND:20260909T162000
+SUMMARY:Student Union Activities (Student Union Activities)
+DESCRIPTION:Course: Student Union Activities (Student Union Activities)\nInstructor: Student Union\nDelivery Mode: \nNote: Uniforms at 1:30pm
+LOCATION:
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1004@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20260910T083000
+DTEND:20260910T102000
+SUMMARY:Communications 1 (NCSI1182B)
+DESCRIPTION:Course: Communications 1 (NCSI1182B)\nInstructor: Shannon\nDelivery Mode: Virtual (Online Independent Work)
+LOCATION:Virtual (Online Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1005@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20260910T103000
+DTEND:20260910T122000
+SUMMARY:Nursing Skills Theory 1 (NCSI1183D)
+DESCRIPTION:Course: Nursing Skills Theory 1 (NCSI1183D)\nInstructor: Lisa\nDelivery Mode: Virtual (Online Independent Work)
+LOCATION:Virtual (Online Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1006@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20260910T133000
+DTEND:20260910T162000
+SUMMARY:Anatomy and Physiology (HCSS1087A)
+DESCRIPTION:Course: Anatomy and Physiology (HCSS1087A)\nInstructor: Jessica\nDelivery Mode: Virtual (Online Independent Work)
+LOCATION:Virtual (Online Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1007@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20260911T083000
+DTEND:20260911T112000
+SUMMARY:Nursing in Canada Healthcare System (NCSI1180A)
+DESCRIPTION:Course: Nursing in Canada Healthcare System (NCSI1180A)\nInstructor: Rhonda\nDelivery Mode: On Campus
+LOCATION:On Campus
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1008@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20260911T113000
+DTEND:20260911T122000
+SUMMARY:Introduction to Medical Terminology (HCSS1086AA)
+DESCRIPTION:Course: Introduction to Medical Terminology (HCSS1086AA)\nInstructor: Keri\nDelivery Mode: On Campus
+LOCATION:On Campus
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1009@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20260911T133000
+DTEND:20260911T142000
+SUMMARY:Work Safely (SECU1322C)
+DESCRIPTION:Course: Work Safely (SECU1322C)\nInstructor: Lisa\nDelivery Mode: On Campus
+LOCATION:On Campus
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1010@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20260911T143000
+DTEND:20260911T162000
+SUMMARY:Focused Learning (Focused Lrng)
+DESCRIPTION:Course: Focused Learning (Focused Lrng)\nInstructor: Self-Directed\nDelivery Mode: Online (Independent Work)
+LOCATION:Online (Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1011@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20260914T083000
+DTEND:20260914T102000
+SUMMARY:Nursing Skills Theory 1 (NCSI1183D)
+DESCRIPTION:Course: Nursing Skills Theory 1 (NCSI1183D)\nInstructor: Lisa\nDelivery Mode: Virtual (Online Independent Work)
+LOCATION:Virtual (Online Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1012@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20260914T103000
+DTEND:20260914T122000
+SUMMARY:Communications 1 (NCSI1182B)
+DESCRIPTION:Course: Communications 1 (NCSI1182B)\nInstructor: Shannon\nDelivery Mode: Virtual (Online Independent Work)
+LOCATION:Virtual (Online Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1013@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20260914T133000
+DTEND:20260914T162000
+SUMMARY:Anatomy and Physiology (HCSS1087A)
+DESCRIPTION:Course: Anatomy and Physiology (HCSS1087A)\nInstructor: Jessica\nDelivery Mode: Virtual (Online Independent Work)
+LOCATION:Virtual (Online Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1014@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20260915T083000
+DTEND:20260915T112000
+SUMMARY:Anatomy and Physiology (HCSS1087A)
+DESCRIPTION:Course: Anatomy and Physiology (HCSS1087A)\nInstructor: Jessica\nDelivery Mode: On Campus
+LOCATION:On Campus
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1015@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20260915T113000
+DTEND:20260915T122000
+SUMMARY:Focused Learning (Focused Lrng)
+DESCRIPTION:Course: Focused Learning (Focused Lrng)\nInstructor: Self-Directed\nDelivery Mode: Online (Independent Work)
+LOCATION:Online (Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1016@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20260915T133000
+DTEND:20260915T162000
+SUMMARY:Nursing in Canada Healthcare System (NCSI1180A)
+DESCRIPTION:Course: Nursing in Canada Healthcare System (NCSI1180A)\nInstructor: Rhonda\nDelivery Mode: On Campus
+LOCATION:On Campus
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1017@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20260916T083000
+DTEND:20260916T112000
+SUMMARY:Nursing Skills Theory 1 (NCSI1183D)
+DESCRIPTION:Course: Nursing Skills Theory 1 (NCSI1183D)\nInstructor: Lisa\nDelivery Mode: Virtual (Online Independent Work)
+LOCATION:Virtual (Online Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1018@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20260916T113000
+DTEND:20260916T122000
+SUMMARY:Work Safely (SECU1322C)
+DESCRIPTION:Course: Work Safely (SECU1322C)\nInstructor: Lisa\nDelivery Mode: Online (Independent Work)
+LOCATION:Online (Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1019@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20260916T133000
+DTEND:20260916T152000
+SUMMARY:Communications 1 (NCSI1182B)
+DESCRIPTION:Course: Communications 1 (NCSI1182B)\nInstructor: Shannon\nDelivery Mode: Virtual (Online Independent Work)
+LOCATION:Virtual (Online Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1020@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20260916T153000
+DTEND:20260916T162000
+SUMMARY:Student Union Activities (Student Union Activities)
+DESCRIPTION:Course: Student Union Activities (Student Union Activities)\nInstructor: Student Union\nDelivery Mode: 
+LOCATION:
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1021@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20260917T083000
+DTEND:20260917T112000
+SUMMARY:Communications 1 (NCSI1182B)
+DESCRIPTION:Course: Communications 1 (NCSI1182B)\nInstructor: Shannon\nDelivery Mode: Virtual (Online Independent Work)
+LOCATION:Virtual (Online Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1022@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20260917T113000
+DTEND:20260917T122000
+SUMMARY:Focused Learning (Focused Lrng)
+DESCRIPTION:Course: Focused Learning (Focused Lrng)\nInstructor: Self-Directed\nDelivery Mode: Online (Independent Work)
+LOCATION:Online (Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1023@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20260917T133000
+DTEND:20260917T162000
+SUMMARY:Anatomy and Physiology (HCSS1087A)
+DESCRIPTION:Course: Anatomy and Physiology (HCSS1087A)\nInstructor: Jessica\nDelivery Mode: Virtual (Online Independent Work)
+LOCATION:Virtual (Online Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1024@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20260918T083000
+DTEND:20260918T112000
+SUMMARY:Nursing in Canada Healthcare System (NCSI1180A)
+DESCRIPTION:Course: Nursing in Canada Healthcare System (NCSI1180A)\nInstructor: Rhonda\nDelivery Mode: On Campus
+LOCATION:On Campus
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1025@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20260918T113000
+DTEND:20260918T122000
+SUMMARY:Work Safely (SECU1322C)
+DESCRIPTION:Course: Work Safely (SECU1322C)\nInstructor: Lisa\nDelivery Mode: Online (Independent Work)
+LOCATION:Online (Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1026@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20260918T133000
+DTEND:20260918T162000
+SUMMARY:Focused Learning (Focused Lrng)
+DESCRIPTION:Course: Focused Learning (Focused Lrng)\nInstructor: Self-Directed\nDelivery Mode: Online (Independent Work)
+LOCATION:Online (Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1027@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20260921T083000
+DTEND:20260921T102000
+SUMMARY:Nursing Skills Theory 1 (NCSI1183D)
+DESCRIPTION:Course: Nursing Skills Theory 1 (NCSI1183D)\nInstructor: Lisa\nDelivery Mode: Virtual (Online Independent Work)
+LOCATION:Virtual (Online Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1028@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20260921T103000
+DTEND:20260921T122000
+SUMMARY:Communications 1 (NCSI1182B)
+DESCRIPTION:Course: Communications 1 (NCSI1182B)\nInstructor: Shannon\nDelivery Mode: Virtual (Online Independent Work)
+LOCATION:Virtual (Online Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1029@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20260921T133000
+DTEND:20260921T162000
+SUMMARY:Anatomy and Physiology (HCSS1087A)
+DESCRIPTION:Course: Anatomy and Physiology (HCSS1087A)\nInstructor: Jessica\nDelivery Mode: Virtual (Online Independent Work)
+LOCATION:Virtual (Online Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1030@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20260922T083000
+DTEND:20260922T112000
+SUMMARY:Anatomy and Physiology (HCSS1087A)
+DESCRIPTION:Course: Anatomy and Physiology (HCSS1087A)\nInstructor: Jessica\nDelivery Mode: On Campus
+LOCATION:On Campus
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1031@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20260922T113000
+DTEND:20260922T122000
+SUMMARY:Focused Learning (Focused Lrng)
+DESCRIPTION:Course: Focused Learning (Focused Lrng)\nInstructor: Self-Directed\nDelivery Mode: On Campus
+LOCATION:On Campus
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1032@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20260922T133000
+DTEND:20260922T162000
+SUMMARY:Nursing in Canada Healthcare System (NCSI1180A)
+DESCRIPTION:Course: Nursing in Canada Healthcare System (NCSI1180A)\nInstructor: Rhonda\nDelivery Mode: On Campus
+LOCATION:On Campus
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1033@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20260923T083000
+DTEND:20260923T112000
+SUMMARY:Nursing Skills Theory 1 (NCSI1183D)
+DESCRIPTION:Course: Nursing Skills Theory 1 (NCSI1183D)\nInstructor: Lisa\nDelivery Mode: Virtual (Online Independent Work)
+LOCATION:Virtual (Online Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1034@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20260923T113000
+DTEND:20260923T122000
+SUMMARY:Work Safely (SECU1322C)
+DESCRIPTION:Course: Work Safely (SECU1322C)\nInstructor: Lisa\nDelivery Mode: Online (Independent Work)
+LOCATION:Online (Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1035@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20260923T133000
+DTEND:20260923T152000
+SUMMARY:Communications 1 (NCSI1182B)
+DESCRIPTION:Course: Communications 1 (NCSI1182B)\nInstructor: Shannon\nDelivery Mode: Virtual (Online Independent Work)
+LOCATION:Virtual (Online Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1036@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20260923T153000
+DTEND:20260923T162000
+SUMMARY:Student Union Activities (Student Union Activities)
+DESCRIPTION:Course: Student Union Activities (Student Union Activities)\nInstructor: Student Union\nDelivery Mode: 
+LOCATION:
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1037@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20260924T083000
+DTEND:20260924T102000
+SUMMARY:Communications 1 (NCSI1182B)
+DESCRIPTION:Course: Communications 1 (NCSI1182B)\nInstructor: Shannon\nDelivery Mode: Online (Independent Work)
+LOCATION:Online (Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1038@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20260924T103000
+DTEND:20260924T112000
+SUMMARY:Work Safely (SECU1322C)
+DESCRIPTION:Course: Work Safely (SECU1322C)\nInstructor: Lisa\nDelivery Mode: Online (Independent Work)
+LOCATION:Online (Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1039@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20260924T113000
+DTEND:20260924T122000
+SUMMARY:Focused Learning (Focused Lrng)
+DESCRIPTION:Course: Focused Learning (Focused Lrng)\nInstructor: Self-Directed\nDelivery Mode: Online (Independent Work)
+LOCATION:Online (Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1040@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20260924T133000
+DTEND:20260924T162000
+SUMMARY:Anatomy and Physiology (HCSS1087A)
+DESCRIPTION:Course: Anatomy and Physiology (HCSS1087A)\nInstructor: Jessica\nDelivery Mode: Online (Independent Work)
+LOCATION:Online (Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1041@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20260925T083000
+DTEND:20260925T112000
+SUMMARY:Nursing in Canada Healthcare System (NCSI1180A)
+DESCRIPTION:Course: Nursing in Canada Healthcare System (NCSI1180A)\nInstructor: Rhonda\nDelivery Mode: On Campus
+LOCATION:On Campus
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1042@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20260925T113000
+DTEND:20260925T122000
+SUMMARY:Work Safely (SECU1322C)
+DESCRIPTION:Course: Work Safely (SECU1322C)\nInstructor: Lisa\nDelivery Mode: Online (Independent Work)
+LOCATION:Online (Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1043@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20260925T133000
+DTEND:20260925T162000
+SUMMARY:Focused Learning (Focused Lrng)
+DESCRIPTION:Course: Focused Learning (Focused Lrng)\nInstructor: Self-Directed\nDelivery Mode: Online (Independent Work)
+LOCATION:Online (Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1044@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20260928T083000
+DTEND:20260928T102000
+SUMMARY:Nursing Skills Theory 1 (NCSI1183D)
+DESCRIPTION:Course: Nursing Skills Theory 1 (NCSI1183D)\nInstructor: Lisa\nDelivery Mode: Virtual (Online Independent Work)
+LOCATION:Virtual (Online Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1045@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20260928T103000
+DTEND:20260928T122000
+SUMMARY:Communications 1 (NCSI1182B)
+DESCRIPTION:Course: Communications 1 (NCSI1182B)\nInstructor: Shannon\nDelivery Mode: Virtual (Online Independent Work)
+LOCATION:Virtual (Online Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1046@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20260928T133000
+DTEND:20260928T162000
+SUMMARY:Nursing in Canada Healthcare System (NCSI1180A)
+DESCRIPTION:Course: Nursing in Canada Healthcare System (NCSI1180A)\nInstructor: Rhonda\nDelivery Mode: Virtual (Online Independent Work)
+LOCATION:Virtual (Online Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1047@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20260929T083000
+DTEND:20260929T112000
+SUMMARY:Anatomy and Physiology (HCSS1087A)
+DESCRIPTION:Course: Anatomy and Physiology (HCSS1087A)\nInstructor: Jessica\nDelivery Mode: On Campus
+LOCATION:On Campus
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1048@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20260929T113000
+DTEND:20260929T122000
+SUMMARY:Work Safely (SECU1322C)
+DESCRIPTION:Course: Work Safely (SECU1322C)\nInstructor: Lisa\nDelivery Mode: Online (Independent Work)
+LOCATION:Online (Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1049@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20260929T133000
+DTEND:20260929T162000
+SUMMARY:Nursing in Canada Healthcare System (NCSI1180A)
+DESCRIPTION:Course: Nursing in Canada Healthcare System (NCSI1180A)\nInstructor: Rhonda\nDelivery Mode: On Campus
+LOCATION:On Campus
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1050@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261001T083000
+DTEND:20261001T102000
+SUMMARY:Introduction to Medical Terminology (HCSS1086AA)
+DESCRIPTION:Course: Introduction to Medical Terminology (HCSS1086AA)\nInstructor: Keri\nDelivery Mode: Online (Independent Work)
+LOCATION:Online (Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1051@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261001T103000
+DTEND:20261001T122000
+SUMMARY:Communications 1 (NCSI1182B)
+DESCRIPTION:Course: Communications 1 (NCSI1182B)\nInstructor: Shannon\nDelivery Mode: Online (Independent Work)
+LOCATION:Online (Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1052@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261001T133000
+DTEND:20261001T162000
+SUMMARY:Anatomy and Physiology (HCSS1087A)
+DESCRIPTION:Course: Anatomy and Physiology (HCSS1087A)\nInstructor: Jessica\nDelivery Mode: Online (Independent Work)
+LOCATION:Online (Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1053@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261002T083000
+DTEND:20261002T162000
+SUMMARY:Nursing Skills Lab 1 (NCSI1184D)
+DESCRIPTION:Course: Nursing Skills Lab 1 (NCSI1184D)\nInstructor: Brett\nDelivery Mode: On Campus Lab\nNote: Instructors: Brett, Lisa, Rhonda, Shannon, Maria (casual)
+LOCATION:On Campus Lab
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1054@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261005T083000
+DTEND:20261005T102000
+SUMMARY:Nursing Skills Theory 1 (NCSI1183D)
+DESCRIPTION:Course: Nursing Skills Theory 1 (NCSI1183D)\nInstructor: Lisa\nDelivery Mode: Virtual (Online Independent Work)
+LOCATION:Virtual (Online Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1055@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261005T103000
+DTEND:20261005T122000
+SUMMARY:Communications 1 (NCSI1182B)
+DESCRIPTION:Course: Communications 1 (NCSI1182B)\nInstructor: Shannon\nDelivery Mode: Virtual (Online Independent Work)
+LOCATION:Virtual (Online Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1056@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261005T133000
+DTEND:20261005T162000
+SUMMARY:Anatomy and Physiology (HCSS1087A)
+DESCRIPTION:Course: Anatomy and Physiology (HCSS1087A)\nInstructor: Jessica\nDelivery Mode: Virtual (Online Independent Work)
+LOCATION:Virtual (Online Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1057@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261006T083000
+DTEND:20261006T112000
+SUMMARY:Anatomy and Physiology (HCSS1087A)
+DESCRIPTION:Course: Anatomy and Physiology (HCSS1087A)\nInstructor: Jessica\nDelivery Mode: On Campus
+LOCATION:On Campus
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1058@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261006T113000
+DTEND:20261006T122000
+SUMMARY:Focused Learning (Focused Lrng)
+DESCRIPTION:Course: Focused Learning (Focused Lrng)\nInstructor: Self-Directed\nDelivery Mode: Online (Independent Work)
+LOCATION:Online (Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1059@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261006T133000
+DTEND:20261006T162000
+SUMMARY:Nursing in Canada Healthcare System (NCSI1180A)
+DESCRIPTION:Course: Nursing in Canada Healthcare System (NCSI1180A)\nInstructor: Rhonda\nDelivery Mode: On Campus
+LOCATION:On Campus
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1060@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261007T083000
+DTEND:20261007T112000
+SUMMARY:Nursing Skills Theory 1 (NCSI1183D)
+DESCRIPTION:Course: Nursing Skills Theory 1 (NCSI1183D)\nInstructor: Lisa\nDelivery Mode: Virtual (Online Independent Work)
+LOCATION:Virtual (Online Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1061@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261007T113000
+DTEND:20261007T122000
+SUMMARY:Work Safely (SECU1322C)
+DESCRIPTION:Course: Work Safely (SECU1322C)\nInstructor: Lisa\nDelivery Mode: Online (Independent Work)
+LOCATION:Online (Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1062@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261007T133000
+DTEND:20261007T152000
+SUMMARY:Communications 1 (NCSI1182B)
+DESCRIPTION:Course: Communications 1 (NCSI1182B)\nInstructor: Shannon\nDelivery Mode: Virtual (Online Independent Work)
+LOCATION:Virtual (Online Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1063@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261007T153000
+DTEND:20261007T162000
+SUMMARY:Student Union Activities (Student Union Activities)
+DESCRIPTION:Course: Student Union Activities (Student Union Activities)\nInstructor: Student Union\nDelivery Mode: 
+LOCATION:
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1064@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261008T083000
+DTEND:20261008T102000
+SUMMARY:Introduction to Medical Terminology (HCSS1086AA)
+DESCRIPTION:Course: Introduction to Medical Terminology (HCSS1086AA)\nInstructor: Keri\nDelivery Mode: Online (Independent Work)
+LOCATION:Online (Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1065@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261008T103000
+DTEND:20261008T122000
+SUMMARY:Communications 1 (NCSI1182B)
+DESCRIPTION:Course: Communications 1 (NCSI1182B)\nInstructor: Shannon\nDelivery Mode: Online (Independent Work)
+LOCATION:Online (Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1066@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261008T133000
+DTEND:20261008T162000
+SUMMARY:Anatomy and Physiology (HCSS1087A)
+DESCRIPTION:Course: Anatomy and Physiology (HCSS1087A)\nInstructor: Jessica\nDelivery Mode: Online (Independent Work)
+LOCATION:Online (Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1067@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261009T083000
+DTEND:20261009T162000
+SUMMARY:Nursing Skills Lab 1 (NCSI1184D)
+DESCRIPTION:Course: Nursing Skills Lab 1 (NCSI1184D)\nInstructor: Brett\nDelivery Mode: On Campus Lab\nNote: Instructors: Brett, Lisa, Rhonda, Shannon, Maria (casual)
+LOCATION:On Campus Lab
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1068@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261013T083000
+DTEND:20261013T092000
+SUMMARY:Focused Learning (Focused Lrng)
+DESCRIPTION:Course: Focused Learning (Focused Lrng)\nInstructor: Self-Directed\nDelivery Mode: Online (Independent Work)
+LOCATION:Online (Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1069@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261013T093000
+DTEND:20261013T122000
+SUMMARY:EXAM: Anatomy and Physiology
+DESCRIPTION:Course: Anatomy and Physiology (HCSS1087A)\nInstructor: Jessica\nDelivery Mode: Exam (On Campus / Online)\nNote: A&P Exam 9:30-12:30
+LOCATION:Exam (On Campus / Online)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1070@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261013T133000
+DTEND:20261013T162000
+SUMMARY:Nursing in Canada Healthcare System (NCSI1180A)
+DESCRIPTION:Course: Nursing in Canada Healthcare System (NCSI1180A)\nInstructor: Rhonda\nDelivery Mode: On Campus
+LOCATION:On Campus
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1071@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261014T083000
+DTEND:20261014T112000
+SUMMARY:Nursing Skills Theory 1 (NCSI1183D)
+DESCRIPTION:Course: Nursing Skills Theory 1 (NCSI1183D)\nInstructor: Lisa\nDelivery Mode: Virtual (Online Independent Work)
+LOCATION:Virtual (Online Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1072@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261014T113000
+DTEND:20261014T122000
+SUMMARY:Work Safely (SECU1322C)
+DESCRIPTION:Course: Work Safely (SECU1322C)\nInstructor: Lisa\nDelivery Mode: Online (Independent Work)
+LOCATION:Online (Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1073@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261014T133000
+DTEND:20261014T152000
+SUMMARY:Communications 1 (NCSI1182B)
+DESCRIPTION:Course: Communications 1 (NCSI1182B)\nInstructor: Shannon\nDelivery Mode: Virtual (Online Independent Work)
+LOCATION:Virtual (Online Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1074@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261014T153000
+DTEND:20261014T162000
+SUMMARY:Student Union Activities (Student Union Activities)
+DESCRIPTION:Course: Student Union Activities (Student Union Activities)\nInstructor: Student Union\nDelivery Mode: 
+LOCATION:
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1075@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261015T083000
+DTEND:20261015T102000
+SUMMARY:Introduction to Medical Terminology (HCSS1086AA)
+DESCRIPTION:Course: Introduction to Medical Terminology (HCSS1086AA)\nInstructor: Keri\nDelivery Mode: Online (Independent Work)
+LOCATION:Online (Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1076@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261015T103000
+DTEND:20261015T122000
+SUMMARY:Communications 1 (NCSI1182B)
+DESCRIPTION:Course: Communications 1 (NCSI1182B)\nInstructor: Shannon\nDelivery Mode: Online (Independent Work)
+LOCATION:Online (Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1077@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261015T133000
+DTEND:20261015T162000
+SUMMARY:Anatomy and Physiology (HCSS1087A)
+DESCRIPTION:Course: Anatomy and Physiology (HCSS1087A)\nInstructor: Jessica\nDelivery Mode: Online (Independent Work)
+LOCATION:Online (Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1078@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261016T083000
+DTEND:20261016T162000
+SUMMARY:Nursing Skills Lab 1 (NCSI1184D)
+DESCRIPTION:Course: Nursing Skills Lab 1 (NCSI1184D)\nInstructor: Brett\nDelivery Mode: On Campus Lab\nNote: Instructors: Brett, Lisa, Rhonda, Shannon, Maria (casual)
+LOCATION:On Campus Lab
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1079@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261019T083000
+DTEND:20261019T102000
+SUMMARY:Nursing Skills Theory 1 (NCSI1183D)
+DESCRIPTION:Course: Nursing Skills Theory 1 (NCSI1183D)\nInstructor: Lisa\nDelivery Mode: Virtual (Online Independent Work)
+LOCATION:Virtual (Online Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1080@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261019T103000
+DTEND:20261019T122000
+SUMMARY:Geriatric Concepts (NCSI1181B)
+DESCRIPTION:Course: Geriatric Concepts (NCSI1181B)\nInstructor: Keri\nDelivery Mode: Virtual (Online Independent Work)
+LOCATION:Virtual (Online Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1081@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261019T133000
+DTEND:20261019T162000
+SUMMARY:Anatomy and Physiology (HCSS1087A)
+DESCRIPTION:Course: Anatomy and Physiology (HCSS1087A)\nInstructor: Jessica\nDelivery Mode: Virtual (Online Independent Work)
+LOCATION:Virtual (Online Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1082@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261020T083000
+DTEND:20261020T112000
+SUMMARY:Anatomy and Physiology (HCSS1087A)
+DESCRIPTION:Course: Anatomy and Physiology (HCSS1087A)\nInstructor: Jessica\nDelivery Mode: On Campus
+LOCATION:On Campus
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1083@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261020T113000
+DTEND:20261020T122000
+SUMMARY:Focused Learning (Focused Lrng)
+DESCRIPTION:Course: Focused Learning (Focused Lrng)\nInstructor: Self-Directed\nDelivery Mode: Online (Independent Work)
+LOCATION:Online (Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1084@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261020T133000
+DTEND:20261020T162000
+SUMMARY:EXAM: Communications 1
+DESCRIPTION:Course: Communications 1 (NCSI1182B)\nInstructor: Shannon\nDelivery Mode: Exam (On Campus / Online)\nNote: Exam 1:30-4:30
+LOCATION:Exam (On Campus / Online)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1085@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261021T083000
+DTEND:20261021T112000
+SUMMARY:Nursing Skills Theory 1 (NCSI1183D)
+DESCRIPTION:Course: Nursing Skills Theory 1 (NCSI1183D)\nInstructor: Lisa\nDelivery Mode: Virtual (Online Independent Work)
+LOCATION:Virtual (Online Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1086@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261021T113000
+DTEND:20261021T122000
+SUMMARY:Work Safely (SECU1322C)
+DESCRIPTION:Course: Work Safely (SECU1322C)\nInstructor: Lisa\nDelivery Mode: Online (Independent Work)
+LOCATION:Online (Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1087@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261021T133000
+DTEND:20261021T152000
+SUMMARY:Geriatric Concepts (NCSI1181B)
+DESCRIPTION:Course: Geriatric Concepts (NCSI1181B)\nInstructor: Keri\nDelivery Mode: Virtual (Online Independent Work)
+LOCATION:Virtual (Online Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1088@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261021T153000
+DTEND:20261021T162000
+SUMMARY:Student Union Activities (Student Union Activities)
+DESCRIPTION:Course: Student Union Activities (Student Union Activities)\nInstructor: Student Union\nDelivery Mode: 
+LOCATION:
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1089@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261022T083000
+DTEND:20261022T102000
+SUMMARY:Introduction to Medical Terminology (HCSS1086AA)
+DESCRIPTION:Course: Introduction to Medical Terminology (HCSS1086AA)\nInstructor: Keri\nDelivery Mode: Online (Independent Work)
+LOCATION:Online (Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1090@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261022T103000
+DTEND:20261022T122000
+SUMMARY:Geriatric Concepts (NCSI1181B)
+DESCRIPTION:Course: Geriatric Concepts (NCSI1181B)\nInstructor: Keri\nDelivery Mode: Online (Independent Work)
+LOCATION:Online (Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1091@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261022T133000
+DTEND:20261022T162000
+SUMMARY:Anatomy and Physiology (HCSS1087A)
+DESCRIPTION:Course: Anatomy and Physiology (HCSS1087A)\nInstructor: Jessica\nDelivery Mode: Online (Independent Work)
+LOCATION:Online (Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1092@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261023T083000
+DTEND:20261023T162000
+SUMMARY:Nursing Skills Lab 1 (NCSI1184D)
+DESCRIPTION:Course: Nursing Skills Lab 1 (NCSI1184D)\nInstructor: Brett\nDelivery Mode: On Campus Lab\nNote: Instructors: Brett, Lisa, Rhonda, Shannon, Maria (casual)
+LOCATION:On Campus Lab
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1093@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261102T083000
+DTEND:20261102T102000
+SUMMARY:Nursing Skills Theory 1 (NCSI1183D)
+DESCRIPTION:Course: Nursing Skills Theory 1 (NCSI1183D)\nInstructor: Lisa\nDelivery Mode: Virtual (Online Independent Work)
+LOCATION:Virtual (Online Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1094@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261102T103000
+DTEND:20261102T122000
+SUMMARY:Geriatric Concepts (NCSI1181B)
+DESCRIPTION:Course: Geriatric Concepts (NCSI1181B)\nInstructor: Keri\nDelivery Mode: Virtual (Online Independent Work)
+LOCATION:Virtual (Online Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1095@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261102T133000
+DTEND:20261102T162000
+SUMMARY:Anatomy and Physiology (HCSS1087A)
+DESCRIPTION:Course: Anatomy and Physiology (HCSS1087A)\nInstructor: Jessica\nDelivery Mode: Virtual (Online Independent Work)
+LOCATION:Virtual (Online Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1096@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261103T083000
+DTEND:20261103T112000
+SUMMARY:Anatomy and Physiology (HCSS1087A)
+DESCRIPTION:Course: Anatomy and Physiology (HCSS1087A)\nInstructor: Jessica\nDelivery Mode: On Campus
+LOCATION:On Campus
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1097@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261103T113000
+DTEND:20261103T122000
+SUMMARY:Focused Learning (Focused Lrng)
+DESCRIPTION:Course: Focused Learning (Focused Lrng)\nInstructor: Self-Directed\nDelivery Mode: Online (Independent Work)
+LOCATION:Online (Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1098@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261103T133000
+DTEND:20261103T162000
+SUMMARY:Nursing in Canada Healthcare System (NCSI1180A)
+DESCRIPTION:Course: Nursing in Canada Healthcare System (NCSI1180A)\nInstructor: Rhonda\nDelivery Mode: On Campus
+LOCATION:On Campus
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1099@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261104T083000
+DTEND:20261104T112000
+SUMMARY:Nursing Skills Theory 1 (NCSI1183D)
+DESCRIPTION:Course: Nursing Skills Theory 1 (NCSI1183D)\nInstructor: Lisa\nDelivery Mode: Virtual (Online Independent Work)
+LOCATION:Virtual (Online Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1100@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261104T113000
+DTEND:20261104T122000
+SUMMARY:Work Safely (SECU1322C)
+DESCRIPTION:Course: Work Safely (SECU1322C)\nInstructor: Lisa\nDelivery Mode: Online (Independent Work)
+LOCATION:Online (Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1101@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261104T133000
+DTEND:20261104T152000
+SUMMARY:Geriatric Concepts (NCSI1181B)
+DESCRIPTION:Course: Geriatric Concepts (NCSI1181B)\nInstructor: Keri\nDelivery Mode: Virtual (Online Independent Work)
+LOCATION:Virtual (Online Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1102@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261104T153000
+DTEND:20261104T162000
+SUMMARY:Student Union Activities (Student Union Activities)
+DESCRIPTION:Course: Student Union Activities (Student Union Activities)\nInstructor: Student Union\nDelivery Mode: 
+LOCATION:
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1103@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261105T083000
+DTEND:20261105T102000
+SUMMARY:Introduction to Medical Terminology (HCSS1086AA)
+DESCRIPTION:Course: Introduction to Medical Terminology (HCSS1086AA)\nInstructor: Keri\nDelivery Mode: Online (Independent Work)
+LOCATION:Online (Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1104@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261105T103000
+DTEND:20261105T122000
+SUMMARY:Geriatric Concepts (NCSI1181B)
+DESCRIPTION:Course: Geriatric Concepts (NCSI1181B)\nInstructor: Keri\nDelivery Mode: Online (Independent Work)
+LOCATION:Online (Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1105@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261105T133000
+DTEND:20261105T162000
+SUMMARY:Anatomy and Physiology (HCSS1087A)
+DESCRIPTION:Course: Anatomy and Physiology (HCSS1087A)\nInstructor: Jessica\nDelivery Mode: Online (Independent Work)
+LOCATION:Online (Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1106@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261106T083000
+DTEND:20261106T162000
+SUMMARY:Nursing Skills Lab 1 (NCSI1184D)
+DESCRIPTION:Course: Nursing Skills Lab 1 (NCSI1184D)\nInstructor: Brett\nDelivery Mode: On Campus Lab\nNote: Instructors: Brett, Lisa, Rhonda, Shannon, Maria (casual)
+LOCATION:On Campus Lab
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1107@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261109T083000
+DTEND:20261109T102000
+SUMMARY:Nursing Skills Theory 1 (NCSI1183D)
+DESCRIPTION:Course: Nursing Skills Theory 1 (NCSI1183D)\nInstructor: Lisa\nDelivery Mode: Virtual (Online Independent Work)
+LOCATION:Virtual (Online Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1108@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261109T103000
+DTEND:20261109T122000
+SUMMARY:Geriatric Concepts (NCSI1181B)
+DESCRIPTION:Course: Geriatric Concepts (NCSI1181B)\nInstructor: Keri\nDelivery Mode: Virtual (Online Independent Work)
+LOCATION:Virtual (Online Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1109@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261109T133000
+DTEND:20261109T162000
+SUMMARY:Anatomy and Physiology (HCSS1087A)
+DESCRIPTION:Course: Anatomy and Physiology (HCSS1087A)\nInstructor: Jessica\nDelivery Mode: Virtual (Online Independent Work)
+LOCATION:Virtual (Online Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1110@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261110T083000
+DTEND:20261110T112000
+SUMMARY:Anatomy and Physiology (HCSS1087A)
+DESCRIPTION:Course: Anatomy and Physiology (HCSS1087A)\nInstructor: Jessica\nDelivery Mode: On Campus
+LOCATION:On Campus
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1111@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261110T113000
+DTEND:20261110T122000
+SUMMARY:Work Safely (SECU1322C)
+DESCRIPTION:Course: Work Safely (SECU1322C)\nInstructor: Lisa\nDelivery Mode: Online (Independent Work)
+LOCATION:Online (Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1112@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261110T133000
+DTEND:20261110T162000
+SUMMARY:Nursing in Canada Healthcare System (NCSI1180A)
+DESCRIPTION:Course: Nursing in Canada Healthcare System (NCSI1180A)\nInstructor: Rhonda\nDelivery Mode: On Campus
+LOCATION:On Campus
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1113@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261112T083000
+DTEND:20261112T102000
+SUMMARY:Introduction to Medical Terminology (HCSS1086AA)
+DESCRIPTION:Course: Introduction to Medical Terminology (HCSS1086AA)\nInstructor: Keri\nDelivery Mode: Online (Independent Work)
+LOCATION:Online (Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1114@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261112T103000
+DTEND:20261112T122000
+SUMMARY:Geriatric Concepts (NCSI1181B)
+DESCRIPTION:Course: Geriatric Concepts (NCSI1181B)\nInstructor: Keri\nDelivery Mode: Online (Independent Work)
+LOCATION:Online (Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1115@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261112T133000
+DTEND:20261112T162000
+SUMMARY:Anatomy and Physiology (HCSS1087A)
+DESCRIPTION:Course: Anatomy and Physiology (HCSS1087A)\nInstructor: Jessica\nDelivery Mode: Online (Independent Work)
+LOCATION:Online (Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1116@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261113T083000
+DTEND:20261113T162000
+SUMMARY:Nursing Skills Lab 1 (NCSI1184D)
+DESCRIPTION:Course: Nursing Skills Lab 1 (NCSI1184D)\nInstructor: Brett\nDelivery Mode: On Campus Lab\nNote: Instructors: Brett, Lisa, Rhonda, Shannon, Maria (casual)
+LOCATION:On Campus Lab
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1117@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261116T083000
+DTEND:20261116T102000
+SUMMARY:Nursing Skills Theory 1 (NCSI1183D)
+DESCRIPTION:Course: Nursing Skills Theory 1 (NCSI1183D)\nInstructor: Lisa\nDelivery Mode: Virtual (Online Independent Work)
+LOCATION:Virtual (Online Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1118@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261116T103000
+DTEND:20261116T122000
+SUMMARY:Geriatric Concepts (NCSI1181B)
+DESCRIPTION:Course: Geriatric Concepts (NCSI1181B)\nInstructor: Keri\nDelivery Mode: Virtual (Online Independent Work)
+LOCATION:Virtual (Online Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1119@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261116T133000
+DTEND:20261116T162000
+SUMMARY:Anatomy and Physiology (HCSS1087A)
+DESCRIPTION:Course: Anatomy and Physiology (HCSS1087A)\nInstructor: Jessica\nDelivery Mode: Virtual (Online Independent Work)
+LOCATION:Virtual (Online Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1120@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261117T083000
+DTEND:20261117T112000
+SUMMARY:Anatomy and Physiology (HCSS1087A)
+DESCRIPTION:Course: Anatomy and Physiology (HCSS1087A)\nInstructor: Jessica\nDelivery Mode: On Campus
+LOCATION:On Campus
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1121@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261117T113000
+DTEND:20261117T122000
+SUMMARY:Focused Learning (Focused Lrng)
+DESCRIPTION:Course: Focused Learning (Focused Lrng)\nInstructor: Self-Directed\nDelivery Mode: Online (Independent Work)
+LOCATION:Online (Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1122@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261117T133000
+DTEND:20261117T162000
+SUMMARY:Nursing in Canada Healthcare System (NCSI1180A)
+DESCRIPTION:Course: Nursing in Canada Healthcare System (NCSI1180A)\nInstructor: Rhonda\nDelivery Mode: On Campus
+LOCATION:On Campus
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1123@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261118T083000
+DTEND:20261118T112000
+SUMMARY:Nursing Skills Theory 1 (NCSI1183D)
+DESCRIPTION:Course: Nursing Skills Theory 1 (NCSI1183D)\nInstructor: Lisa\nDelivery Mode: Virtual (Online Independent Work)
+LOCATION:Virtual (Online Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1124@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261118T113000
+DTEND:20261118T122000
+SUMMARY:Work Safely (SECU1322C)
+DESCRIPTION:Course: Work Safely (SECU1322C)\nInstructor: Lisa\nDelivery Mode: Online (Independent Work)
+LOCATION:Online (Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1125@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261118T133000
+DTEND:20261118T152000
+SUMMARY:Geriatric Concepts (NCSI1181B)
+DESCRIPTION:Course: Geriatric Concepts (NCSI1181B)\nInstructor: Keri\nDelivery Mode: Virtual (Online Independent Work)
+LOCATION:Virtual (Online Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1126@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261118T153000
+DTEND:20261118T162000
+SUMMARY:Student Union Activities (Student Union Activities)
+DESCRIPTION:Course: Student Union Activities (Student Union Activities)\nInstructor: Student Union\nDelivery Mode: 
+LOCATION:
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1127@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261119T083000
+DTEND:20261119T102000
+SUMMARY:Introduction to Medical Terminology (HCSS1086AA)
+DESCRIPTION:Course: Introduction to Medical Terminology (HCSS1086AA)\nInstructor: Keri\nDelivery Mode: Online (Independent Work)
+LOCATION:Online (Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1128@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261119T103000
+DTEND:20261119T122000
+SUMMARY:Geriatric Concepts (NCSI1181B)
+DESCRIPTION:Course: Geriatric Concepts (NCSI1181B)\nInstructor: Keri\nDelivery Mode: Online (Independent Work)
+LOCATION:Online (Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1129@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261119T133000
+DTEND:20261119T162000
+SUMMARY:Anatomy and Physiology (HCSS1087A)
+DESCRIPTION:Course: Anatomy and Physiology (HCSS1087A)\nInstructor: Jessica\nDelivery Mode: Online (Independent Work)
+LOCATION:Online (Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1130@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261120T083000
+DTEND:20261120T162000
+SUMMARY:Nursing Skills Lab 1 (NCSI1184D)
+DESCRIPTION:Course: Nursing Skills Lab 1 (NCSI1184D)\nInstructor: Brett\nDelivery Mode: On Campus Lab\nNote: Instructors: Brett, Lisa, Rhonda, Shannon, Maria (casual)
+LOCATION:On Campus Lab
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1131@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261123T083000
+DTEND:20261123T102000
+SUMMARY:Nursing Skills Theory 1 (NCSI1183D)
+DESCRIPTION:Course: Nursing Skills Theory 1 (NCSI1183D)\nInstructor: Lisa\nDelivery Mode: Virtual (Online Independent Work)
+LOCATION:Virtual (Online Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1132@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261123T103000
+DTEND:20261123T122000
+SUMMARY:Geriatric Concepts (NCSI1181B)
+DESCRIPTION:Course: Geriatric Concepts (NCSI1181B)\nInstructor: Keri\nDelivery Mode: Virtual (Online Independent Work)
+LOCATION:Virtual (Online Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1133@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261123T133000
+DTEND:20261123T162000
+SUMMARY:Anatomy and Physiology (HCSS1087A)
+DESCRIPTION:Course: Anatomy and Physiology (HCSS1087A)\nInstructor: Jessica\nDelivery Mode: Virtual (Online Independent Work)
+LOCATION:Virtual (Online Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1134@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261124T083000
+DTEND:20261124T112000
+SUMMARY:Anatomy and Physiology (HCSS1087A)
+DESCRIPTION:Course: Anatomy and Physiology (HCSS1087A)\nInstructor: Jessica\nDelivery Mode: On Campus
+LOCATION:On Campus
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1135@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261124T113000
+DTEND:20261124T122000
+SUMMARY:Focused Learning (Focused Lrng)
+DESCRIPTION:Course: Focused Learning (Focused Lrng)\nInstructor: Self-Directed\nDelivery Mode: Online (Independent Work)
+LOCATION:Online (Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1136@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261124T133000
+DTEND:20261124T162000
+SUMMARY:Nursing in Canada Healthcare System (NCSI1180A)
+DESCRIPTION:Course: Nursing in Canada Healthcare System (NCSI1180A)\nInstructor: Rhonda\nDelivery Mode: On Campus
+LOCATION:On Campus
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1137@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261125T083000
+DTEND:20261125T112000
+SUMMARY:Nursing Skills Theory 1 (NCSI1183D)
+DESCRIPTION:Course: Nursing Skills Theory 1 (NCSI1183D)\nInstructor: Lisa\nDelivery Mode: Virtual (Online Independent Work)
+LOCATION:Virtual (Online Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1138@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261125T113000
+DTEND:20261125T122000
+SUMMARY:Work Safely (SECU1322C)
+DESCRIPTION:Course: Work Safely (SECU1322C)\nInstructor: Lisa\nDelivery Mode: Online (Independent Work)
+LOCATION:Online (Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1139@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261125T133000
+DTEND:20261125T152000
+SUMMARY:Geriatric Concepts (NCSI1181B)
+DESCRIPTION:Course: Geriatric Concepts (NCSI1181B)\nInstructor: Keri\nDelivery Mode: Virtual (Online Independent Work)
+LOCATION:Virtual (Online Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1140@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261125T153000
+DTEND:20261125T162000
+SUMMARY:Student Union Activities (Student Union Activities)
+DESCRIPTION:Course: Student Union Activities (Student Union Activities)\nInstructor: Student Union\nDelivery Mode: 
+LOCATION:
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1141@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261126T083000
+DTEND:20261126T102000
+SUMMARY:Nursing in Canada Healthcare System (NCSI1180A)
+DESCRIPTION:Course: Nursing in Canada Healthcare System (NCSI1180A)\nInstructor: Rhonda\nDelivery Mode: Online (Independent Work)
+LOCATION:Online (Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1142@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261126T103000
+DTEND:20261126T122000
+SUMMARY:Geriatric Concepts (NCSI1181B)
+DESCRIPTION:Course: Geriatric Concepts (NCSI1181B)\nInstructor: Keri\nDelivery Mode: Online (Independent Work)
+LOCATION:Online (Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1143@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261126T133000
+DTEND:20261126T162000
+SUMMARY:Anatomy and Physiology (HCSS1087A)
+DESCRIPTION:Course: Anatomy and Physiology (HCSS1087A)\nInstructor: Jessica\nDelivery Mode: Online (Independent Work)
+LOCATION:Online (Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1144@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261127T083000
+DTEND:20261127T162000
+SUMMARY:Nursing Skills Lab 1 (NCSI1184D)
+DESCRIPTION:Course: Nursing Skills Lab 1 (NCSI1184D)\nInstructor: Brett\nDelivery Mode: On Campus Lab\nNote: Instructors: Brett, Lisa, Rhonda, Shannon, Maria (casual)
+LOCATION:On Campus Lab
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1145@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261130T083000
+DTEND:20261130T092000
+SUMMARY:Focused Learning (Focused Lrng)
+DESCRIPTION:Course: Focused Learning (Focused Lrng)\nInstructor: Self-Directed\nDelivery Mode: Online (Independent Work)
+LOCATION:Online (Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1146@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261130T093000
+DTEND:20261130T122000
+SUMMARY:EXAM: Introduction to Medical Terminology
+DESCRIPTION:Course: Introduction to Medical Terminology (HCSS1086AA)\nInstructor: Keri\nDelivery Mode: Exam (On Campus / Online)\nNote: EXAM 9:30-12:20
+LOCATION:Exam (On Campus / Online)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1147@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261130T133000
+DTEND:20261130T162000
+SUMMARY:EXAM: Nursing Skills Theory 1
+DESCRIPTION:Course: Nursing Skills Theory 1 (NCSI1183D)\nInstructor: Lisa\nDelivery Mode: Exam (On Campus / Online)\nNote: EXAM 1:30-4:20
+LOCATION:Exam (On Campus / Online)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1148@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261201T083000
+DTEND:20261201T092000
+SUMMARY:Focused Learning (Focused Lrng)
+DESCRIPTION:Course: Focused Learning (Focused Lrng)\nInstructor: Self-Directed\nDelivery Mode: Online (Independent Work)
+LOCATION:Online (Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1149@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261201T093000
+DTEND:20261201T122000
+SUMMARY:EXAM: Nursing in Canada Healthcare System
+DESCRIPTION:Course: Nursing in Canada Healthcare System (NCSI1180A)\nInstructor: Rhonda\nDelivery Mode: Exam (On Campus / Online)\nNote: EXAM 9:30-12:20
+LOCATION:Exam (On Campus / Online)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1150@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261201T133000
+DTEND:20261201T162000
+SUMMARY:EXAM: Geriatric Concepts
+DESCRIPTION:Course: Geriatric Concepts (NCSI1181B)\nInstructor: Keri\nDelivery Mode: Exam (On Campus / Online)\nNote: EXAM 1:30-4:20
+LOCATION:Exam (On Campus / Online)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1151@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261202T083000
+DTEND:20261202T092000
+SUMMARY:Focused Learning (Focused Lrng)
+DESCRIPTION:Course: Focused Learning (Focused Lrng)\nInstructor: Self-Directed\nDelivery Mode: Online (Independent Work)
+LOCATION:Online (Independent Work)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1152@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261202T093000
+DTEND:20261202T122000
+SUMMARY:EXAM: Anatomy and Physiology
+DESCRIPTION:Course: Anatomy and Physiology (HCSS1087A)\nInstructor: Jessica\nDelivery Mode: Exam (On Campus / Online)\nNote: EXAM 9:30-12:20
+LOCATION:Exam (On Campus / Online)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1153@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261202T133000
+DTEND:20261202T142000
+SUMMARY:Virtual Dementia Workshop (Virtual Dementia)
+DESCRIPTION:Course: Virtual Dementia Workshop (Virtual Dementia)\nInstructor: Brett, Lindsey, Lisa, Kim, Betty, Rhonda, Jessica, Keri\nDelivery Mode: On Campus\nNote: Virtual Dementia 1-4 (Brett, Lindsey, Lisa, Kim, Betty, Rhonda, Jessica, Keri)
+LOCATION:On Campus
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1154@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261202T143000
+DTEND:20261202T162000
+SUMMARY:Virtual Dementia Workshop (Virtual Dementia)
+DESCRIPTION:Course: Virtual Dementia Workshop (Virtual Dementia)\nInstructor: Brett, Lindsey, Lisa, Kim, Betty, Rhonda, Jessica, Keri\nDelivery Mode: On Campus\nNote: Virtual Dementia 1-4
+LOCATION:On Campus
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1155@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261203T083000
+DTEND:20261203T162000
+SUMMARY:Virtual Dementia Workshop (Virtual Dementia)
+DESCRIPTION:Course: Virtual Dementia Workshop (Virtual Dementia)\nInstructor: Brett, Lindsey, Lisa, Kim, Betty, Rhonda, Jessica, Keri\nDelivery Mode: On Campus\nNote: Virtual Dementia Workshop (Brett, Lindsey, Lisa, Kim, Betty, Rhonda, Jessica, Keri)
+LOCATION:On Campus
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1156@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261204T083000
+DTEND:20261204T162000
+SUMMARY:Virtual Dementia Workshop (Virtual Dementia)
+DESCRIPTION:Course: Virtual Dementia Workshop (Virtual Dementia)\nInstructor: Brett, Lindsey, Lisa, Kim, Betty, Rhonda, Jessica, Keri\nDelivery Mode: On Campus\nNote: Virtual Dementia Workshop (Brett, Lindsey, Lisa, Kim, Betty, Rhonda, Jessica, Keri)
+LOCATION:On Campus
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1157@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261207T083000
+DTEND:20261207T162000
+SUMMARY:Nursing Skills & Assessment Clinical 1 (NCSI1185D)
+DESCRIPTION:Course: Nursing Skills & Assessment Clinical 1 (NCSI1185D)\nInstructor: Brett\nDelivery Mode: Off Campus Clinical\nNote: Off Campus Clinical (40 hrs total/week)
+LOCATION:Off Campus Clinical
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1158@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261208T083000
+DTEND:20261208T162000
+SUMMARY:Nursing Skills & Assessment Clinical 1 (NCSI1185D)
+DESCRIPTION:Course: Nursing Skills & Assessment Clinical 1 (NCSI1185D)\nInstructor: Brett\nDelivery Mode: Off Campus Clinical\nNote: Off Campus Clinical
+LOCATION:Off Campus Clinical
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1159@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261209T083000
+DTEND:20261209T162000
+SUMMARY:Nursing Skills & Assessment Clinical 1 (NCSI1185D)
+DESCRIPTION:Course: Nursing Skills & Assessment Clinical 1 (NCSI1185D)\nInstructor: Brett\nDelivery Mode: Off Campus Clinical\nNote: Off Campus Clinical
+LOCATION:Off Campus Clinical
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1160@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261210T083000
+DTEND:20261210T162000
+SUMMARY:Nursing Skills & Assessment Clinical 1 (NCSI1185D)
+DESCRIPTION:Course: Nursing Skills & Assessment Clinical 1 (NCSI1185D)\nInstructor: Brett\nDelivery Mode: Off Campus Clinical\nNote: Off Campus Clinical
+LOCATION:Off Campus Clinical
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1161@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261211T083000
+DTEND:20261211T162000
+SUMMARY:Nursing Skills & Assessment Clinical 1 (NCSI1185D)
+DESCRIPTION:Course: Nursing Skills & Assessment Clinical 1 (NCSI1185D)\nInstructor: Brett\nDelivery Mode: Off Campus Clinical\nNote: Off Campus Clinical
+LOCATION:Off Campus Clinical
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1162@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261214T083000
+DTEND:20261214T162000
+SUMMARY:Nursing Skills & Assessment Clinical 1 (NCSI1185D)
+DESCRIPTION:Course: Nursing Skills & Assessment Clinical 1 (NCSI1185D)\nInstructor: Brett\nDelivery Mode: Off Campus Clinical\nNote: Off Campus Clinical (40 hrs total/week)
+LOCATION:Off Campus Clinical
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1163@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261215T083000
+DTEND:20261215T162000
+SUMMARY:Nursing Skills & Assessment Clinical 1 (NCSI1185D)
+DESCRIPTION:Course: Nursing Skills & Assessment Clinical 1 (NCSI1185D)\nInstructor: Brett\nDelivery Mode: Off Campus Clinical\nNote: Off Campus Clinical
+LOCATION:Off Campus Clinical
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1164@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261216T083000
+DTEND:20261216T162000
+SUMMARY:Nursing Skills & Assessment Clinical 1 (NCSI1185D)
+DESCRIPTION:Course: Nursing Skills & Assessment Clinical 1 (NCSI1185D)\nInstructor: Brett\nDelivery Mode: Off Campus Clinical\nNote: Off Campus Clinical
+LOCATION:Off Campus Clinical
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1165@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261217T083000
+DTEND:20261217T162000
+SUMMARY:Nursing Skills & Assessment Clinical 1 (NCSI1185D)
+DESCRIPTION:Course: Nursing Skills & Assessment Clinical 1 (NCSI1185D)\nInstructor: Brett\nDelivery Mode: Off Campus Clinical\nNote: Off Campus Clinical
+LOCATION:Off Campus Clinical
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:rayne-nbcc-2026-1166@schedule
+DTSTAMP:20260910T223617Z
+DTSTART:20261218T083000
+DTEND:20261218T162000
+SUMMARY:Nursing Skills & Assessment Clinical 1 (NCSI1185D)
+DESCRIPTION:Course: Nursing Skills & Assessment Clinical 1 (NCSI1185D)\nInstructor: Brett\nDelivery Mode: Off Campus Clinical\nNote: Off Campus Clinical
+LOCATION:Off Campus Clinical
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

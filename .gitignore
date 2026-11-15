@@ -1,0 +1,96 @@
+# OS generated files
+.DS_Store
+Thumbs.db
+desktop.ini
+ehthumbs.db
+
+# Editor directories and files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temp files
+*.tmp
+*.bak
+*.log
+*.exe
+~$*
+_temp/
+
+# Node (if ever used)
+node_modules/
+
+# Wrangler local state (caches, R2 blobs, sqlite)
+.wrangler/state/
+.wrangler/tmp/
+.wrangler/cache/
+.wrangler/cloudflare_api_v4_user_tokens.txt
+
+.env
+.env.local
+.env.vps
+
+# n8n workflow files (may contain embedded API keys)
+n8n_workflows/*.json
+
+# Test/scratch files
+test*.pdf
+
+# Service log rotation (keep current, ignore dated)
+services/*-202*.log
+
+# Gemini scratch files
+.gemini/scratch/
+
+git-sync.log
+
+# Voice engine runtime state
+speak.pid
+stop.flag
+stop_speech.txt
+.speak_active
+
+
+# Private Personal, Financial, Therapy, Resume & Clinical Files (Laptop Only — Never Public)
+memory/
+.agent/
+.gemini/
+references/
+finance_procedures/
+joe_bc_relocation/
+parenting_and_grounding/
+christina_mcas/
+elaine_ms_neuro/
+candy_joe_living_bills_tracker.html
+candy_joe_living_debt_spreadsheet.csv
+debt_payoff_planner.html
+Candys_New_Meal_Plan.docx
+wellness_and_mobility/*.docx
+wellness_and_mobility/*.md
+wellness_and_mobility/*.txt
+daily_notes/*.md
+moms_and_dads_apartment_guide.md
+moms_and_dads_housing/*.md
+cell_phone_swap_guide.md
+dr_hui_booking_email.txt
+*Resume*
+*Cover_Letter*
+*Amanda_Geldart*
+raynes_ocd_adhd/*.md
+raynes_ocd_adhd/*.pdf
+raynes_ocd_adhd/*.docx
+raynes_ocd_adhd/Rayne_19th_Birthday_Credit_Starter_Guide.html
+raynes_ocd_adhd/Rayne_Medication_Tracking_Sheet.html
+raynes_ocd_adhd/Rayne_Family_Doctor_Request_Note.html
+raynes_ocd_adhd/Rayne_NP_Visit_and_Lab_Panel_Nov5.html
+raynes_ocd_adhd/Rayne_NBCC_Withdrawal_Action_Plan.html
+raynes_ocd_adhd/rayne_post_secondary_pivot_and_student_loans.html
+Rayne_NBCC/*.docx
+Rayne_NBCC/*.md
+Rayne_NBCC/*.pdf
+Rayne_NBCC/Rayne_NBCC_Withdrawal_Action_Plan.html
+voice_queue.jsonl
+*.py
+*.ps1

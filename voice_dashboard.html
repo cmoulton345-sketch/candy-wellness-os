@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ax — Voice Interface</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        /* === RESET & BASE === */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body {
+            width: 100%; height: 100%; overflow: hidden;
+            background: #06060c;
+            font-family: 'Inter', -apple-system, sans-serif;
+            color: #e0e0e0;
+        }
+
+        /* === LAYOUT === */
+        #app {
+            display: grid;
+            grid-template-columns: 1fr 380px;
+            width: 100vw; height: 100vh;
+        }
+
+        /* === ORB CONTAINER === */
+        #orb-container {
+            position: relative;
+            overflow: hidden;
+            background: radial-gradient(ellipse at center, #0d0d18 0%, #06060c 70%);
+        }
+        #orb-container canvas { display: block; }
+
+        /* === ORB HUD OVERLAYS === */
+        #hud-persona {
+            position: absolute;
+            top: 40px; left: 0; right: 0;
+            text-align: center;
+            pointer-events: none;
+            z-index: 10;
+        }
+        #hud-persona-name {
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            font-size: 28px;
+            letter-spacing: 12px;
+            text-transform: uppercase;
+            color: var(--persona-color, #00A8FF);
+            text-shadow: 0 0 30px var(--persona-color, #00A8FF),
+                         0 0 60px color-mix(in srgb, var(--persona-color, #00A8FF) 40%, transparent);
+            transition: color 1s ease, text-shadow 1s ease;
+        }
+        #hud-state {
+            position: absolute;
+            bottom: 40px; left: 0; right: 0;
+            text-align: center;
+            pointer-events: none;
+            z-index: 10;
+        }
+        #hud-state-text {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 300;
+            font-size: 13px;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.35);
+            transition: color 0.5s ease;
+        }
+        #hud-state-text.active { color: var(--persona-color, #00A8FF); }
+        #hud-state-text.thinking {
+            animation: thinking-pulse 1.2s ease-in-out infinite;
+        }
+        @keyframes thinking-pulse {
+            0%, 100% { opacity: 0.4; }
+            50% { opacity: 1; }
+        }
+
+        /* === SIDE PANEL === */
+        #panel {
+            display: flex;
+            flex-direction: column;
+            background: rgba(10, 10, 18, 0.92);
+            backdrop-filter: blur(24px);
+            border-left: 1px solid rgba(255, 255, 255, 0.06);
+            z-index: 20;
+        }
+
+        /* Panel Header */
+        #panel-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 20px 24px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            flex-shrink: 0;
+        }
+        #persona-dot {
+            width: 10px; height: 10px;
+            border-radius: 50%;
+            background: var(--persona-color, #00A8FF);
+            box-shadow: 0 0 8px var(--persona-color, #00A8FF);
+            transition: background 1s ease, box-shadow 1s ease;
+        }
+        #panel-persona-name {
+            font-weight: 500;
+            font-size: 14px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--persona-color, #00A8FF);
+            transition: color 1s ease;
+            flex: 1;
+        }
+        #mode-badge {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10px;
+            font-weight: 400;
+            letter-spacing: 2px;
+            padding: 4px 10px;
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.06);
+            color: rgba(255, 255, 255, 0.4);
+            text-transform: uppercase;
+        }
+        #mode-badge.active {
+            background: rgba(0, 255, 136, 0.12);
+            color: #00ff88;
+        }
+
+        /* Conversation Log */
+        #conversation-log {
+            flex: 1;
+            overflow-y: auto;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(255,255,255,0.08) transparent;
+        }
+        #conversation-log::-webkit-scrollbar { width: 4px; }
+        #conversation-log::-webkit-scrollbar-thumb {
+            background: rgba(255,255,255,0.1);
+            border-radius: 2px;
+        }
+
+        .msg {
+            padding: 10px 14px;
+            border-radius: 8px;
+            font-size: 13px;
+            line-height: 1.55;
+            animation: msg-in 0.3s ease-out;
+        }
+        @keyframes msg-in {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .msg-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 4px;
+        }
+        .msg-icon { font-size: 11px; }
+        .msg-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10px;
+            font-weight: 500;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+        .msg-time {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10px;
+            color: rgba(255, 255, 255, 0.2);
+            margin-left: auto;
+        }
+        .msg-text {
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 13px;
+        }
+
+        .msg-heard {
+            background: rgba(255, 255, 255, 0.03);
+            border-left: 2px solid rgba(255, 255, 255, 0.15);
+        }
+        .msg-heard .msg-label { color: rgba(255, 255, 255, 0.45); }
+
+        .msg-response {
+            background: rgba(255, 255, 255, 0.02);
+            border-left: 2px solid var(--msg-color, #00A8FF);
+        }
+        .msg-response .msg-label { color: var(--msg-color, #00A8FF); }
+
+        .msg-system {
+            background: transparent;
+            border: none;
+            text-align: center;
+            padding: 6px;
+        }
+        .msg-system .msg-text {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10px;
+            color: rgba(255, 255, 255, 0.2);
+            letter-spacing: 1px;
+        }
+
+        /* Thinking indicator */
+        .msg-thinking {
+            background: rgba(255, 255, 255, 0.02);
+            border-left: 2px solid var(--msg-color, #00A8FF);
+        }
+        .thinking-dots span {
+            display: inline-block;
+            width: 6px; height: 6px;
+            border-radius: 50%;
+            background: var(--msg-color, #00A8FF);
+            margin: 0 2px;
+            animation: dot-pulse 1.4s ease-in-out infinite;
+        }
+        .thinking-dots span:nth-child(2) { animation-delay: 0.2s; }
+        .thinking-dots span:nth-child(3) { animation-delay: 0.4s; }
+        @keyframes dot-pulse {
+            0%, 80%, 100% { opacity: 0.15; transform: scale(0.8); }
+            40% { opacity: 1; transform: scale(1.1); }
+        }
+
+        #panel-input-container {
+            display: flex;
+            gap: 8px;
+            padding: 12px 16px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            background: rgba(0, 0, 0, 0.25);
+        }
+        #user-input {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 6px;
+            padding: 8px 12px;
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        #user-input:focus {
+            border-color: var(--persona-color, #00A8FF);
+        }
+        #send-btn {
+            background: var(--persona-color, #00A8FF);
+            color: #06060c;
+            border: none;
+            border-radius: 6px;
+            padding: 8px 14px;
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 600;
+            font-size: 11px;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: opacity 0.2s, background 0.5s ease;
+        }
+        #send-btn:hover { opacity: 0.85; }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div id="orb-container">
+            <div id="hud-persona">
+                <div id="hud-persona-name">AX</div>
+            </div>
+            <div id="hud-state">
+                <div id="hud-state-text">SLEEP</div>
+            </div>
+        </div>
+        <div id="panel">
+            <div id="panel-header">
+                <div id="persona-dot"></div>
+                <div id="panel-persona-name">AX</div>
+                <div id="mode-badge">SLEEP</div>
+            </div>
+            <div id="conversation-log">
+                <div class="msg msg-system">
+                    <p class="msg-text">— VOICE INTERFACE INITIALIZED —</p>
+                </div>
+            </div>
+            <div id="panel-input-container">
+                <input type="text" id="user-input" placeholder="Speak or type 'Hey Soma'..." />
+                <button id="send-btn">SEND</button>
+            </div>
+            <div id="panel-footer">
+                <div id="conn-dot"></div>
+                <div id="conn-text">DISCONNECTED</div>
+            </div>
+        </div>
+    </div>
+
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.164.1/build/three.module.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.164.1/examples/jsm/"
+        }
+    }
+    </script>
+
+    <script type="module">
+    import * as THREE from 'three';
+    import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
+    import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
+    import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
+
+    // =========================================================
+    // PERSONA COLOR & ACCENT PALETTES
+    // =========================================================
+    const PERSONA_PALETTES = {
+        ax:       { main: new THREE.Color(0x00A8FF), accent: new THREE.Color(0xFF64B4), hex: '#00A8FF' },
+        jarvis:   { main: new THREE.Color(0xFFB800), accent: new THREE.Color(0xFF4500), hex: '#FFB800' },
+        soma:     { main: new THREE.Color(0x00E5A0), accent: new THREE.Color(0x00B0FF), hex: '#00E5A0' },
+        bliss:    { main: new THREE.Color(0xFF69B4), accent: new THREE.Color(0xB088F9), hex: '#FF69B4' },
+        elder:    { main: new THREE.Color(0x9B59B6), accent: new THREE.Color(0xFF8C00), hex: '#9B59B6' },
+        uncle_g:  { main: new THREE.Color(0xFF3333), accent: new THREE.Color(0xFFB800), hex: '#FF3333' },
+        psyche:   { main: new THREE.Color(0xB088F9), accent: new THREE.Color(0xFF64B4), hex: '#B088F9' },
+        voss:     { main: new THREE.Color(0xA0B0C8), accent: new THREE.Color(0x00CED1), hex: '#A0B0C8' },
+        keller:   { main: new THREE.Color(0xFF8C00), accent: new THREE.Color(0xFF007F), hex: '#FF8C00' },
+        earl:     { main: new THREE.Color(0x2ECC71), accent: new THREE.Color(0xF1C40F), hex: '#2ECC71' },
+        nate:     { main: new THREE.Color(0x00CED1), accent: new THREE.Color(0x6495ED), hex: '#00CED1' },
+        jeeves:   { main: new THREE.Color(0xC9A95C), accent: new THREE.Color(0xFFD700), hex: '#C9A95C' },
+        foreman:  { main: new THREE.Color(0xC88C50), accent: new THREE.Color(0xFF5500), hex: '#C88C50' },
+        socrates: { main: new THREE.Color(0x6495ED), accent: new THREE.Color(0x9370DB), hex: '#6495ED' },
+        sentry:   { main: new THREE.Color(0xFF4500), accent: new THREE.Color(0xFFD700), hex: '#FF4500' },
+        envoy:    { main: new THREE.Color(0x00FA9A), accent: new THREE.Color(0x00C8FF), hex: '#00FA9A' },
+        stephen:  { main: new THREE.Color(0x9370DB), accent: new THREE.Color(0xFF69B4), hex: '#9370DB' },
+        web_builder: { main: new THREE.Color(0xFF007F), accent: new THREE.Color(0x00E5FF), hex: '#FF007F' },
+        studio:   { main: new THREE.Color(0xFF6482), accent: new THREE.Color(0xFFB800), hex: '#FF6482' },
+        wave:     { main: new THREE.Color(0x50C8FF), accent: new THREE.Color(0xFF64B4), hex: '#50C8FF' },
+        skeptical_researcher: { main: new THREE.Color(0xB4C88C), accent: new THREE.Color(0x00E5A0), hex: '#B4C88C' },
+        default:  { main: new THREE.Color(0x00A8FF), accent: new THREE.Color(0xFF64B4), hex: '#00A8FF' },
+    };
+
+    function getPersonaPalette(persona) {
+        const key = (persona || 'ax').toLowerCase().replace(/\s+/g, '_');
+        return PERSONA_PALETTES[key] || PERSONA_PALETTES.default;
+    }
+
+    // =========================================================
+    // STATE
+    // =========================================================
+    let currentPersona = 'ax';
+    let currentMode = 'sleep'; // sleep, listening, thinking, speaking
+    let targetMainColor = new THREE.Color(0x00A8FF);
+    let targetAccentColor = new THREE.Color(0xFF64B4);
+    let currentMainColor = new THREE.Color(0x00A8FF);
+    let currentAccentColor = new THREE.Color(0xFF64B4);
+
+    let targetBloom = 0.8;
+    let currentBloom = 0.8;
+    let pulseImpulse = 0;
+    let burstTimer = 0;
+
+    // =========================================================
+    // GLOW PARTICLE TEXTURE
+    // =========================================================
+    function createGlowTexture() {
+        const canvas = document.createElement('canvas');
+        canvas.width = 64; canvas.height = 64;
+        const ctx = canvas.getContext('2d');
+        const grad = ctx.createRadialGradient(32, 32, 0, 32, 32, 32);
+        grad.addColorStop(0, 'rgba(255,255,255,1)');
+        grad.addColorStop(0.2, 'rgba(255,255,255,0.7)');
+        grad.addColorStop(0.5, 'rgba(255,255,255,0.15)');
+        grad.addColorStop(1, 'rgba(255,255,255,0)');
+        ctx.fillStyle = grad;
+        ctx.fillRect(0, 0, 64, 64);
+        return new THREE.CanvasTexture(canvas);
+    }
+
+    // =========================================================
+    // THREE.JS SCENE SETUP
+    // =========================================================
+    const container = document.getElementById('orb-container');
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(45, 1, 0.1, 100);
+    camera.position.set(0, 0, 6.5);
+
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setClearColor(0x06060c);
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    renderer.toneMappingExposure = 1.2;
+    container.appendChild(renderer.domElement);
+
+    // Post-processing Bloom Pass
+    const composer = new EffectComposer(renderer);
+    composer.addPass(new RenderPass(scene, camera));
+    const bloomPass = new UnrealBloomPass(
+        new THREE.Vector2(window.innerWidth, window.innerHeight),
+        0.8,    // strength
+        0.6,    // radius
+        0.15    // threshold
+    );
+    composer.addPass(bloomPass);
+
+    const glowTex = createGlowTexture();
+
+    // =========================================================
+    // 3D WAVE RIBBON SYSTEM (SILK AUDIO WAVEFORM)
+    // =========================================================
+    const COLS = 160;  // horizontal resolution across X axis
+    const ROWS = 50;   // depth ribbons across Z axis
+    const TOTAL_PARTICLES = COLS * ROWS;
+
+    const positions = new Float32Array(TOTAL_PARTICLES * 3);
+    const basePositions = new Float32Array(TOTAL_PARTICLES * 3);
+    const colors = new Float32Array(TOTAL_PARTICLES * 3);
+
+    for (let r = 0; r < ROWS; r++) {
+        const z = (r / (ROWS - 1) - 0.5) * 2.2;
+        for (let c = 0; c < COLS; c++) {
+            const x = (c / (COLS - 1) - 0.5) * 11.0;
+            const idx = (r * COLS + c) * 3;
+
+            basePositions[idx] = x;
+            basePositions[idx + 1] = 0;
+            basePositions[idx + 2] = z;
+
+            positions[idx] = x;
+            positions[idx + 1] = 0;
+            positions[idx + 2] = z;
+
+            colors[idx] = 0.0;
+            colors[idx + 1] = 0.65;
+            colors[idx + 2] = 1.0;
+        }
+    }
+
+    const waveGeo = new THREE.BufferGeometry();
+    waveGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+    waveGeo.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+
+    const waveMat = new THREE.PointsMaterial({
+        size: 0.038,
+        map: glowTex,
+        vertexColors: true,
+        transparent: true,
+        opacity: 0.85,
+        blending: THREE.AdditiveBlending,
+        depthWrite: false,
+        sizeAttenuation: true,
+    });
+
+    const waveParticles = new THREE.Points(waveGeo, waveMat);
+    scene.add(waveParticles);
+
+    // --- Secondary Glowing Silk Line Strands ---
+    const STRAND_COUNT = 6;
+    const strandGeometries = [];
+    const strandMaterials = [];
+    const strandLines = [];
+
+    for (let s = 0; s < STRAND_COUNT; s++) {
+        const sPositions = new Float32Array(COLS * 3);
+        const sColors = new Float32Array(COLS * 3);
+        for (let c = 0; c < COLS; c++) {
+            const x = (c / (COLS - 1) - 0.5) * 11.0;
+            sPositions[c * 3] = x;
+            sPositions[c * 3 + 1] = 0;
+            sPositions[c * 3 + 2] = (s / (STRAND_COUNT - 1) - 0.5) * 1.8;
+        }
+        const geo = new THREE.BufferGeometry();
+        geo.setAttribute('position', new THREE.BufferAttribute(sPositions, 3));
+        geo.setAttribute('color', new THREE.BufferAttribute(sColors, 3));
+        
+        const mat = new THREE.LineBasicMaterial({
+            vertexColors: true,
+            transparent: true,
+            opacity: 0.7 - s * 0.09,
+            blending: THREE.AdditiveBlending,
+            linewidth: 2.0
+        });
+        const line = new THREE.Line(geo, mat);
+        scene.add(line);
+        strandGeometries.push(geo);
+        strandMaterials.push(mat);
+        strandLines.push(line);
+    }
+
+    // Ambient floating particles
+    const ambientCount = 200;
+    const ambientPositions = new Float32Array(ambientCount * 3);
+    for (let i = 0; i < ambientCount; i++) {
+        ambientPositions[i * 3] = (Math.random() - 0.5) * 14.0;
+        ambientPositions[i * 3 + 1] = (Math.random() - 0.5) * 6.0;
+        ambientPositions[i * 3 + 2] = (Math.random() - 0.5) * 4.0;
+    }
+    const ambientGeo = new THREE.BufferGeometry();
+    ambientGeo.setAttribute('position', new THREE.BufferAttribute(ambientPositions, 3));
+    const ambientMat = new THREE.PointsMaterial({
+        color: 0x00A8FF, size: 0.025, map: glowTex,
+        transparent: true, opacity: 0.3,
+        blending: THREE.AdditiveBlending, depthWrite: false, sizeAttenuation: true,
+    });
+    const ambientParticles = new THREE.Points(ambientGeo, ambientMat);
+    scene.add(ambientParticles);
+
+    // =========================================================
+    // RESIZE HANDLER
+    // =========================================================
+    function onResize() {
+        const w = container.clientWidth;
+        const h = container.clientHeight;
+        camera.aspect = w / h;
+        camera.updateProjectionMatrix();
+        renderer.setSize(w, h);
+        composer.setSize(w, h);
+    }
+    window.addEventListener('resize', onResize);
+    onResize();
+
+    // =========================================================
+    // COLOR UPDATE (persona color system)
+    // =========================================================
+    function setPersonaColor(persona) {
+        const p = getPersonaPalette(persona);
+        targetMainColor.copy(p.main);
+        targetAccentColor.copy(p.accent);
+
+        // Update CSS variables
+        document.documentElement.style.setProperty('--persona-color', p.hex);
+        ambientMat.color.copy(p.main);
+    }
+
+    // =========================================================
+    // STATE TRANSITIONS
+    // =========================================================
+    function triggerSpinBurst(intensity = 1.0) {
+        pulseImpulse = (0.4 + Math.random() * 0.6) * intensity;
+        burstTimer = 0.5;
+    }
+
+    function setState(newMode) {
+        if (currentMode === newMode) return;
+        currentMode = newMode;
+
+        const hudState = document.getElementById('hud-state-text');
+        const modeBadge = document.getElementById('mode-badge');
+
+        hudState.classList.remove('active', 'thinking');
+        triggerSpinBurst(1.2);
+
+        switch (newMode) {
+            case 'sleep':
+                targetBloom = 0.5;
+                hudState.textContent = 'SLEEP';
+                modeBadge.textContent = 'SLEEP';
+                modeBadge.classList.remove('active');
+                break;
+            case 'listening':
+                targetBloom = 1.2;
+                hudState.textContent = 'LISTENING';
+                hudState.classList.add('active');
+                modeBadge.textContent = 'ACTIVE';
+                modeBadge.classList.add('active');
+                break;
+            case 'thinking':
+                targetBloom = 1.6;
+                hudState.textContent = 'THINKING';
+                hudState.classList.add('active', 'thinking');
+                break;
+            case 'speaking':
+                targetBloom = 2.2;
+                hudState.textContent = 'SPEAKING';
+                hudState.classList.add('active');
+                break;
+        }
+    }
+
+    // =========================================================
+    // DYNAMIC ANIMATION LOOP (SILK AUDIO WAVEFORM MOTION)
+    // =========================================================
+    const clock = new THREE.Clock();
+    const tempColor = new THREE.Color();
+
+    function animate() {
+        requestAnimationFrame(animate);
+        const dt = Math.min(clock.getDelta(), 0.05);
+        const time = clock.getElapsedTime();
+
+        // --- Smooth bloom & impulse decay ---
+        currentBloom += (targetBloom - currentBloom) * dt * 4;
+        bloomPass.strength = currentBloom + pulseImpulse * 0.8;
+        pulseImpulse *= Math.exp(-dt * 4.0);
+
+        // --- Smooth color morphing to active persona palette ---
+        currentMainColor.lerp(targetMainColor, dt * 6);
+        currentAccentColor.lerp(targetAccentColor, dt * 6);
+
+        // --- Wave Motion & Dynamic Parameters ---
+        let waveSpeed = 1.2;
+        let waveAmp = 0.45;
+        let frequency = 1.1;
+
+        if (currentMode === 'speaking') {
+            waveSpeed = 2.8;
+            waveAmp = 1.6 + pulseImpulse * 1.2;
+            frequency = 1.6;
+        } else if (currentMode === 'thinking') {
+            waveSpeed = 3.5;
+            waveAmp = 0.9;
+            frequency = 2.4;
+        } else if (currentMode === 'listening') {
+            waveSpeed = 1.4;
+            waveAmp = 0.65;
+            frequency = 1.2;
+        } else { // sleep
+            waveSpeed = 0.6;
+            waveAmp = 0.35;
+            frequency = 0.9;
+        }
+
+        // --- Update Particle Mesh Wave ---
+        const posArr = waveGeo.attributes.position.array;
+        const colArr = waveGeo.attributes.color.array;
+
+        for (let r = 0; r < ROWS; r++) {
+            const zNorm = r / (ROWS - 1);
+            const rowOffset = (zNorm - 0.5) * 2.2;
+            const phaseShift = r * 0.12;
+
+            for (let c = 0; c < COLS; c++) {
+                const idx = (r * COLS + c) * 3;
+                const x = basePositions[idx];
+
+                // Envelope shaping (smooth attenuation near screen borders)
+                const xNorm = (x + 5.5) / 11.0;
+                const envelope = Math.sin(xNorm * Math.PI);
+
+                // Fluid multi-harmonic sine wave formula
+                const waveY = (
+                    Math.sin(x * frequency * 1.2 + time * waveSpeed + phaseShift) * 0.7 +
+                    Math.cos(x * frequency * 0.7 - time * waveSpeed * 0.8 + rowOffset * 1.5) * 0.5 +
+                    Math.sin(x * frequency * 2.5 + time * waveSpeed * 1.4 + phaseShift * 2.0) * 0.25
+                ) * waveAmp * envelope;
+
+                const waveZ = rowOffset + Math.sin(x * 0.9 + time * 0.8 + phaseShift) * 0.35 * envelope;
+
+                posArr[idx] = x;
+                posArr[idx + 1] = waveY;
+                posArr[idx + 2] = waveZ;
+
+                // Color gradient along wave length and crest peaks
+                const colorBlend = Math.min(1.0, Math.max(0.0, Math.sin(xNorm * Math.PI) * 0.5 + (waveY / (waveAmp * 1.5 + 0.1)) * 0.5));
+                tempColor.copy(currentMainColor).lerp(currentAccentColor, colorBlend);
+
+                colArr[idx] = tempColor.r;
+                colArr[idx + 1] = tempColor.g;
+                colArr[idx + 2] = tempColor.b;
+            }
+        }
+        waveGeo.attributes.position.needsUpdate = true;
+        waveGeo.attributes.color.needsUpdate = true;
+
+        // --- Update Silk Line Strands ---
+        for (let s = 0; s < STRAND_COUNT; s++) {
+            const sGeo = strandGeometries[s];
+            const sPosArr = sGeo.attributes.position.array;
+            const sColArr = sGeo.attributes.color.array;
+            const sPhase = s * 0.4;
+
+            for (let c = 0; c < COLS; c++) {
+                const x = (c / (COLS - 1) - 0.5) * 11.0;
+                const xNorm = c / (COLS - 1);
+                const envelope = Math.sin(xNorm * Math.PI);
+
+                const lineY = (
+                    Math.sin(x * frequency * 1.1 + time * waveSpeed * 1.1 + sPhase) * 0.8 +
+                    Math.cos(x * frequency * 1.8 - time * waveSpeed * 0.9 + sPhase) * 0.4
+                ) * waveAmp * envelope;
+
+                sPosArr[c * 3] = x;
+                sPosArr[c * 3 + 1] = lineY;
+                sPosArr[c * 3 + 2] = (s / (STRAND_COUNT - 1) - 0.5) * 1.8 + Math.sin(x * 0.8 + time) * 0.2;
+
+                const colorBlend = Math.min(1.0, Math.max(0.0, Math.sin(xNorm * Math.PI) * 0.4 + (lineY / (waveAmp * 1.5 + 0.1)) * 0.6));
+                tempColor.copy(currentMainColor).lerp(currentAccentColor, colorBlend);
+
+                sColArr[c * 3] = tempColor.r;
+                sColArr[c * 3 + 1] = tempColor.g;
+                sColArr[c * 3 + 2] = tempColor.b;
+            }
+            sGeo.attributes.position.needsUpdate = true;
+            sGeo.attributes.color.needsUpdate = true;
+        }
+
+        // Render
+        composer.render();
+    }
+
+    // =========================================================
+    // CONVERSATION PANEL
+    // =========================================================
+    function addMessage(type, text, persona) {
+        const log = document.getElementById('conversation-log');
+        const msg = document.createElement('div');
+        const time = new Date().toLocaleTimeString('en-US', { hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' });
+        const palette = getPersonaPalette(persona || currentPersona);
+
+        // Remove thinking indicator if present
+        const thinking = log.querySelector('.msg-thinking');
+        if (thinking && type !== 'thinking') thinking.remove();
+
+        if (type === 'heard') {
+            msg.className = 'msg msg-heard';
+            msg.innerHTML = `
+                <div class="msg-header">
+                    <span class="msg-icon">🎤</span>
+                    <span class="msg-label">YOU</span>
+                    <span class="msg-time">${time}</span>
+                </div>
+                <p class="msg-text">${escapeHtml(text)}</p>`;
+        } else if (type === 'response') {
+            msg.className = 'msg msg-response';
+            msg.style.setProperty('--msg-color', palette.hex);
+            const name = (persona || currentPersona).toUpperCase().replace('_', ' ');
+            msg.innerHTML = `
+                <div class="msg-header">
+                    <span class="msg-icon">◆</span>
+                    <span class="msg-label">${name}</span>
+                    <span class="msg-time">${time}</span>
+                </div>
+                <p class="msg-text">${escapeHtml(text)}</p>`;
+        } else if (type === 'thinking') {
+            if (thinking) return; // already showing
+            msg.className = 'msg msg-thinking';
+            msg.style.setProperty('--msg-color', palette.hex);
+            const name = (persona || currentPersona).toUpperCase().replace('_', ' ');
+            msg.innerHTML = `
+                <div class="msg-header">
+                    <span class="msg-icon">◆</span>
+                    <span class="msg-label">${name}</span>
+                </div>
+                <div class="thinking-dots"><span></span><span></span><span></span></div>`;
+        } else if (type === 'system') {
+            msg.className = 'msg msg-system';
+            msg.innerHTML = `<p class="msg-text">— ${escapeHtml(text)} —</p>`;
+        }
+
+        log.appendChild(msg);
+        log.scrollTop = log.scrollHeight;
+
+        // Keep log trimmed (max 100 messages)
+        while (log.children.length > 100) {
+            log.removeChild(log.firstChild);
+        }
+    }
+
+    function escapeHtml(text) {
+        const div = document.createElement('div');
+        div.textContent = text;
+        return div.innerHTML;
+    }
+
+    function updatePersonaDisplay(persona) {
+        currentPersona = persona;
+        setPersonaColor(persona);
+        const name = persona.toUpperCase().replace('_', ' ');
+        document.getElementById('hud-persona-name').textContent = name;
+        document.getElementById('panel-persona-name').textContent = name;
+    }
+
+    // =========================================================
+    // WEBSOCKET CLIENT (auto-reconnect)
+    // =========================================================
+    const WS_URL = 'ws://localhost:8765';
+    let ws = null;
+    let reconnectTimer = null;
+
+    function connectWebSocket() {
+        if (ws && ws.readyState <= 1) return;
+
+        try {
+            ws = new WebSocket(WS_URL);
+        } catch (e) {
+            scheduleReconnect();
+            return;
+        }
+
+        ws.onopen = () => {
+            document.getElementById('conn-dot').classList.add('connected');
+            document.getElementById('conn-text').textContent = 'CONNECTED';
+            addMessage('system', 'WebSocket connected');
+            if (reconnectTimer) { clearTimeout(reconnectTimer); reconnectTimer = null; }
+        };
+
+        ws.onclose = () => {
+            document.getElementById('conn-dot').classList.remove('connected');
+            document.getElementById('conn-text').textContent = 'DISCONNECTED';
+            scheduleReconnect();
+        };
+
+        ws.onerror = () => {
+            ws.close();
+        };
+
+        ws.onmessage = (event) => {
+            try {
+                const data = JSON.parse(event.data);
+                handleEvent(data);
+            } catch (e) {
+                console.error('WS parse error:', e);
+            }
+        };
+    }
+
+    function scheduleReconnect() {
+        if (reconnectTimer) return;
+        reconnectTimer = setTimeout(() => {
+            reconnectTimer = null;
+            connectWebSocket();
+        }, 2000);
+    }
+
+    function handleEvent(data) {
+        switch (data.type) {
+            case 'wake':
+                updatePersonaDisplay(data.persona);
+                setState('listening');
+                burstTimer = 0.6; // trigger burst animation
+                triggerSpinBurst(1.8);
+                addMessage('system', `${data.persona.toUpperCase()} activated`);
+                break;
+
+            case 'heard':
+                addMessage('heard', data.text, data.persona);
+                triggerSpinBurst(1.4);
+                break;
+
+            case 'thinking':
+                setState('thinking');
+                triggerSpinBurst(1.2);
+                addMessage('thinking', '', data.persona);
+                break;
+
+            case 'speaking':
+                setState('speaking');
+                triggerSpinBurst(1.6);
+                addMessage('response', data.text, data.persona);
+                break;
+
+            case 'speaking_done':
+                setState('listening');
+                break;
+
+            case 'persona_switch':
+                updatePersonaDisplay(data.persona);
+                burstTimer = 0.6;
+                triggerSpinBurst(2.0);
+                addMessage('system', `Switched to ${data.persona.toUpperCase()}`);
+                break;
+
+            case 'sleep':
+                setState('sleep');
+                addMessage('system', 'Entering sleep mode');
+                break;
+
+            case 'mode_change':
+                if (data.mode === 'SLEEP') setState('sleep');
+                else setState('listening');
+                break;
+
+            case 'error':
+                addMessage('system', `Error: ${data.message}`);
+                break;
+        }
+    }
+
+    // =========================================================
+    // USER INPUT PROMPT HANDLER
+    // =========================================================
+    function sendUserPrompt() {
+        const input = document.getElementById('user-input');
+        const text = input.value.trim();
+        if (!text || !ws || ws.readyState !== 1) return;
+        ws.send(JSON.stringify({ type: 'user_prompt', text: text }));
+        input.value = '';
+    }
+
+    document.getElementById('send-btn').addEventListener('click', sendUserPrompt);
+    document.getElementById('user-input').addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') sendUserPrompt();
+    });
+
+    // =========================================================
+    // INITIALIZE
+    // =========================================================
+    setPersonaColor('ax');
+    setState('sleep');
+    animate();
+    connectWebSocket();
+
+    console.log('%c Ax Voice Interface — Online ', 
+        'background: #0a0a14; color: #00A8FF; font-size: 14px; padding: 8px 16px; border: 1px solid #00A8FF;');
+
+    </script>
+</body>
+</html>

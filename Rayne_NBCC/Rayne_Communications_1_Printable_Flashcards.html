@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Rayne's Printable Flashcards — Communications 1 (Modules 1-3)</title>
+  <style>
+    @page {
+      size: letter portrait;
+      margin: 0.5in;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      background: #f4f4f9;
+      color: #111;
+      padding: 20px;
+    }
+
+    .no-print {
+      background: #0f4c81;
+      color: white;
+      padding: 15px 20px;
+      border-radius: 8px;
+      margin-bottom: 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .print-btn {
+      background: #20b2aa;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    .print-btn:hover {
+      background: #178a84;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+
+    .card-box {
+      border: 2px dashed #666;
+      border-radius: 8px;
+      padding: 18px;
+      background: white;
+      min-height: 230px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      page-break-inside: avoid;
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      font-weight: bold;
+      color: #0f4c81;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 6px;
+      margin-bottom: 10px;
+    }
+
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: bold;
+      color: #111;
+      margin-bottom: 10px;
+    }
+
+    .card-body {
+      font-size: 0.95rem;
+      line-height: 1.4;
+      color: #333;
+      flex-grow: 1;
+    }
+
+    .card-footer {
+      font-size: 0.75rem;
+      color: #888;
+      text-align: right;
+      margin-top: 10px;
+      border-top: 1px dashed #eee;
+      padding-top: 4px;
+    }
+
+    @media print {
+      body {
+        background: white;
+        padding: 0;
+      }
+
+      .no-print {
+        display: none !important;
+      }
+
+      .grid {
+        gap: 12px;
+      }
+
+      .card-box {
+        border: 1px dashed #444;
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="no-print">
+    <div>
+      <h2 style="margin-bottom: 4px;">🖨️ Rayne's Printable Flashcards (Modules 1 to 3)</h2>
+      <p style="opacity: 0.9;">Click the button on the right to open your printer menu and print index cards!</p>
+    </div>
+    <button class="print-btn" onclick="window.print()">🖨️ Print Flashcards Now</button>
+  </div>
+
+  <div class="grid">
+
+    <!-- Card 1 -->
+    <div class="card-box">
+      <div>
+        <div class="card-header">
+          <span>MODULE 1</span>
+          <span>CARD #1</span>
+        </div>
+        <div class="card-title">Q: What is Communication?</div>
+        <div class="card-body">
+          <strong>A:</strong> A complex, ongoing two-way process of sharing ideas, thoughts, and feelings. It involves a sender encoding a message, transmitting through a channel, a receiver decoding the message, and providing feedback to complete the cycle.
+        </div>
+      </div>
+      <div class="card-footer">Communications 1 (NCSI1182B)</div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="card-box">
+      <div>
+        <div class="card-header">
+          <span>MODULE 1</span>
+          <span>CARD #2</span>
+        </div>
+        <div class="card-title">Q: What is Nonverbal Communication & why is it crucial?</div>
+        <div class="card-body">
+          <strong>A:</strong> Physical gestures, facial expressions, body posture, eye contact, tone, pitch, and proxemics. It accounts for <strong>80–93%</strong> of face-to-face impact. When words and body language conflict, receivers trust body language!
+        </div>
+      </div>
+      <div class="card-footer">Communications 1 (NCSI1182B)</div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="card-box">
+      <div>
+        <div class="card-header">
+          <span>MODULE 1</span>
+          <span>CARD #3</span>
+        </div>
+        <div class="card-title">Q: What are the 4 Zones of Proxemics (Space)?</div>
+        <div class="card-body">
+          <strong>1. Intimate Space:</strong> 0–45 cm (0–18 in)<br>
+          <strong>2. Personal Distance:</strong> 45 cm–1.2 m (18 in–3.5 ft)<br>
+          <strong>3. Social Distance:</strong> 1.2 m–3.6 m (3.5–12 ft)<br>
+          <strong>4. Public Distance:</strong> 3.6 m+ (12 ft+)
+        </div>
+      </div>
+      <div class="card-footer">Communications 1 (NCSI1182B)</div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="card-box">
+      <div>
+        <div class="card-header">
+          <span>MODULE 1</span>
+          <span>CARD #4</span>
+        </div>
+        <div class="card-title">Q: What is Metacommunication?</div>
+        <div class="card-body">
+          <strong>A:</strong> Broad term for all factors (verbal/nonverbal cues, posture, eye contact, expressions) that provide instructions on <strong>how to interpret</strong> the message being delivered.
+        </div>
+      </div>
+      <div class="card-footer">Communications 1 (NCSI1182B)</div>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="card-box">
+      <div>
+        <div class="card-header">
+          <span>MODULE 1</span>
+          <span>CARD #5</span>
+        </div>
+        <div class="card-title">Q: Congruent vs Incongruent Communication</div>
+        <div class="card-body">
+          <strong>Congruent:</strong> Spoken words and nonverbal body language match.<br>
+          <strong>Incongruent:</strong> Words and body language conflict (e.g., saying "No pain" while grimacing). <em>Nurse must explore incongruence!</em>
+        </div>
+      </div>
+      <div class="card-footer">Communications 1 (NCSI1182B)</div>
+    </div>
+
+    <!-- Card 6 -->
+    <div class="card-box">
+      <div>
+        <div class="card-header">
+          <span>MODULE 1</span>
+          <span>CARD #6</span>
+        </div>
+        <div class="card-title">Q: Social vs Professional Therapeutic Communication</div>
+        <div class="card-body">
+          <strong>Social:</strong> Casual conversation, unwritten rules, driven by mutual pleasure.<br>
+          <strong>Therapeutic:</strong> Goal-directed, purposeful, evidence-based clinical interaction bound by legal/ethical standards.
+        </div>
+      </div>
+      <div class="card-footer">Communications 1 (NCSI1182B)</div>
+    </div>
+
+    <!-- Card 7 -->
+    <div class="card-box">
+      <div>
+        <div class="card-header">
+          <span>MODULE 2</span>
+          <span>CARD #7</span>
+        </div>
+        <div class="card-title">Q: What is Respect in Nursing Communication?</div>
+        <div class="card-body">
+          <strong>A:</strong> Valuing patient knowledge, opinions, and dignity. Always address patients by preferred name. Avoid patronizing terms like "Honey", "Dear", or "Sweetie", and avoid "How are <em>we</em> feeling today?"
+        </div>
+      </div>
+      <div class="card-footer">Communications 1 (NCSI1182B)</div>
+    </div>
+
+    <!-- Card 8 -->
+    <div class="card-box">
+      <div>
+        <div class="card-header">
+          <span>MODULE 2</span>
+          <span>CARD #8</span>
+        </div>
+        <div class="card-title">Q: What are Roach's 6 C's of Caring?</div>
+        <div class="card-body">
+          <strong>1. Compassion</strong> (feeling with patient)<br>
+          <strong>2. Competence</strong> (knowledge & skill)<br>
+          <strong>3. Confidence</strong> (fostering trust)<br>
+          <strong>4. Conscience</strong> (ethical integrity)<br>
+          <strong>5. Commitment</strong> (pledge to care)<br>
+          <strong>6. Comportment</strong> (professional demeanor)
+        </div>
+      </div>
+      <div class="card-footer">Communications 1 (NCSI1182B)</div>
+    </div>
+
+    <!-- Card 9 -->
+    <div class="card-box">
+      <div>
+        <div class="card-header">
+          <span>MODULE 2</span>
+          <span>CARD #9</span>
+        </div>
+        <div class="card-title">Q: What is Swanson's Caring Theory (1991)?</div>
+        <div class="card-body">
+          <strong>Knowing:</strong> Understanding the meaning of an event in the patient's life.<br>
+          <strong>Being:</strong> Emotionally present and sharing feelings.<br>
+          <strong>Doing:</strong> Performing nursing interventions to preserve integrity.
+        </div>
+      </div>
+      <div class="card-footer">Communications 1 (NCSI1182B)</div>
+    </div>
+
+    <!-- Card 10 -->
+    <div class="card-box">
+      <div>
+        <div class="card-header">
+          <span>MODULE 2</span>
+          <span>CARD #10</span>
+        </div>
+        <div class="card-title">Q: What is Mutuality in Nursing?</div>
+        <div class="card-body">
+          <strong>A:</strong> Collaborative relationship where nurse and patient share decision-making, agree on health goals, and work as equal partners. Respects patient autonomy even if choices differ from nurse's opinion.
+        </div>
+      </div>
+      <div class="card-footer">Communications 1 (NCSI1182B)</div>
+    </div>
+
+    <!-- Card 11 -->
+    <div class="card-box">
+      <div>
+        <div class="card-header">
+          <span>MODULE 2</span>
+          <span>CARD #11</span>
+        </div>
+        <div class="card-title">Q: What is Empowerment vs Disempowerment?</div>
+        <div class="card-body">
+          <strong>Empowerment:</strong> Assisting patients to take charge of their health with tools & education.<br>
+          <strong>Disempowerment:</strong> Paternalistic "I know best" attitude stripping patient control.
+        </div>
+      </div>
+      <div class="card-footer">Communications 1 (NCSI1182B)</div>
+    </div>
+
+    <!-- Card 12 -->
+    <div class="card-box">
+      <div>
+        <div class="card-header">
+          <span>MODULE 2</span>
+          <span>CARD #12</span>
+        </div>
+        <div class="card-title">Q: What is Empathy vs Sympathy?</div>
+        <div class="card-body">
+          <strong>Empathy:</strong> Understanding another's feelings nonjudgmentally while maintaining professional objectivity.<br>
+          <strong>Sympathy:</strong> Feeling pity/sorrow, which can blur clinical judgment.
+        </div>
+      </div>
+      <div class="card-footer">Communications 1 (NCSI1182B)</div>
+    </div>
+
+    <!-- Card 13 -->
+    <div class="card-box">
+      <div>
+        <div class="card-header">
+          <span>MODULE 3</span>
+          <span>CARD #13</span>
+        </div>
+        <div class="card-title">Q: Why is False Reassurance harmful?</div>
+        <div class="card-body">
+          <strong>A:</strong> Saying "Don't worry, everything will be fine" offers ungrounded hope, invalidates genuine patient fears, destroys trust, and blocks the patient from expressing true feelings.
+        </div>
+      </div>
+      <div class="card-footer">Communications 1 (NCSI1182B)</div>
+    </div>
+
+    <!-- Card 14 -->
+    <div class="card-box">
+      <div>
+        <div class="card-header">
+          <span>MODULE 3</span>
+          <span>CARD #14</span>
+        </div>
+        <div class="card-title">Q: Bias vs Stereotype — What is the difference?</div>
+        <div class="card-body">
+          <strong>Bias:</strong> Personal preference, like, or dislike interfering with impartiality.<br>
+          <strong>Stereotype:</strong> Fixed, preconceived idea attributing specific traits to ALL members of a group.
+        </div>
+      </div>
+      <div class="card-footer">Communications 1 (NCSI1182B)</div>
+    </div>
+
+    <!-- Card 15 -->
+    <div class="card-box">
+      <div>
+        <div class="card-header">
+          <span>MODULE 3</span>
+          <span>CARD #15</span>
+        </div>
+        <div class="card-title">Q: Why is Giving Advice non-therapeutic?</div>
+        <div class="card-body">
+          <strong>A:</strong> Stating "If I were you..." takes away patient decision-making and fosters dependence.<br>
+          <em>Therapeutic alternative:</em> <strong>Reflecting</strong> (e.g., "What options are you considering?").
+        </div>
+      </div>
+      <div class="card-footer">Communications 1 (NCSI1182B)</div>
+    </div>
+
+    <!-- Card 16 -->
+    <div class="card-box">
+      <div>
+        <div class="card-header">
+          <span>MODULE 3</span>
+          <span>CARD #16</span>
+        </div>
+        <div class="card-title">Q: Why is Arguing with a patient harmful?</div>
+        <div class="card-body">
+          <strong>A:</strong> Challenging or arguing patient perceptions implies they are lying or misinformed, destroys rapport, displays unprofessional behavior, and escalates conflict.
+        </div>
+      </div>
+      <div class="card-footer">Communications 1 (NCSI1182B)</div>
+    </div>
+
+    <!-- Card 17 -->
+    <div class="card-box">
+      <div>
+        <div class="card-header">
+          <span>MODULE 3</span>
+          <span>CARD #17</span>
+        </div>
+        <div class="card-title">Q: How does Anxiety affect patient communication?</div>
+        <div class="card-body">
+          <strong>A:</strong> High anxiety causes distracted thinking, hyper-focus on negative cues, overthinking sentences, and impaired listening. Nurses must respond with calm, slow, unhurried, clear statements.
+        </div>
+      </div>
+      <div class="card-footer">Communications 1 (NCSI1182B)</div>
+    </div>
+
+    <!-- Card 18 -->
+    <div class="card-box">
+      <div>
+        <div class="card-header">
+          <span>MODULE 3</span>
+          <span>CARD #18</span>
+        </div>
+        <div class="card-title">Q: 4 Strategies to Reduce Patient Anxiety</div>
+        <div class="card-body">
+          1. Active listening & validating feelings.<br>
+          2. Honest, simple explanations of procedures.<br>
+          3. Calm, slow, firm, unhurried communication.<br>
+          4. Teach deep breathing & relaxation exercises.
+        </div>
+      </div>
+      <div class="card-footer">Communications 1 (NCSI1182B)</div>
+    </div>
+
+  </div>
+
+</body>
+</html>

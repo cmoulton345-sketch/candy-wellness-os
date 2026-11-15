@@ -1,0 +1,138 @@
+ANATOMY & PHYSIOLOGY (HCSS1087A) - MASTER FLASHCARDS (MODULES 1, 3, 4 & CELL)
+Target Student: Rayne Moulton (Practical Nursing / NBCC)
+Instructor: Jessica Freeze Snyder (NBCC - Saint John)
+
+
+MODULE 1: INTRODUCTION TO THE BODY & HOMEOSTASIS
+
+FLASHCARD 1
+FRONT: What are the 6 Levels of Body Organization (Simplest to Complex)?
+BACK:
+1. Chemical: Atoms and molecules.
+2. Cellular: Cells (basic unit of life).
+3. Tissue: Group of similar cells.
+4. Organ: Group of tissues working together.
+5. Organ System: Group of organs contributing to a function.
+6. Organism: The complete living human being.
+
+FLASHCARD 2
+FRONT: What is Homeostasis?
+BACK: The state of relative internal body balance and stability maintained by self-regulating feedback mechanisms despite external changes.
+
+FLASHCARD 3
+FRONT: Negative Feedback vs Positive Feedback Loops
+BACK:
+Negative Feedback: Opposes or negates a change to restore normal levels (example: regulating body temperature, blood glucose).
+Positive Feedback: Enhances or amplifies a change occurring in the body (example: uterine contractions during childbirth, blood clotting cascade).
+
+FLASHCARD 4
+FRONT: What are the 2 Major Body Cavities & Subdivisions?
+BACK:
+Ventral (Front) Cavity: Thoracic (Mediastinum and Pleural) and Abdominopelvic (Abdominal and Pelvic).
+Dorsal (Back) Cavity: Cranial (brain) and Spinal (spinal cord).
+
+FLASHCARD 5
+FRONT: What are the 4 Abdominopelvic Quadrants & Key Organs?
+BACK:
+RUQ: Liver, gallbladder, right kidney.
+LUQ: Stomach, spleen, pancreas, left kidney.
+RLQ: Appendix, cecum, right ovary/fallopian tube.
+LLQ: Sigmoid colon, left ovary/fallopian tube.
+
+
+CELL BIOLOGY: HUMAN CELL STRUCTURE & FUNCTION
+
+FLASHCARD 6
+FRONT: Plasma Membrane
+BACK: Semipermeable lipid bilayer enclosing cell contents (cytoplasm). Delicate yet strong membrane that controls what enters and exits the cell.
+
+FLASHCARD 7
+FRONT: Nucleus
+BACK: The cell's "control center" managing genetic material (DNA organized into chromosomes) that directs growth, division, and cell function.
+
+FLASHCARD 8
+FRONT: Ribosomes
+BACK: The "protein factories" of the cell. Synthesize proteins; found floating free in cytoplasm or attached to Endoplasmic Reticulum (ER).
+
+FLASHCARD 9
+FRONT: Mitochondria
+BACK: The "powerhouse" of the cell. Extracts energy from nutrients and converts it into ATP (adenosine triphosphate) chemical energy.
+
+
+MODULE 3: THE INTEGUMENTARY SYSTEM
+
+FLASHCARD 10
+FRONT: Epidermis Vascularity & Cells
+BACK: Outermost nonvascular layer (no blood vessels). 95% Keratinocytes (waterproof keratin protein) and 5% Melanocytes (melanin skin color pigment).
+
+FLASHCARD 11
+FRONT: Dermis & Dermal Papillae
+BACK: Middle layer 20x thicker than epidermis packed with collagen and elastin. Dermal papillae in papillary layer form unique fingerprints and footprints.
+
+FLASHCARD 12
+FRONT: Hypodermis (Subcutaneous Tissue)
+BACK: Foundation layer under skin composed mostly of adipose (fat) tissue for insulation, cushioning, energy storage, and attaching skin to underlying structures.
+
+FLASHCARD 13
+FRONT: Eccrine vs Apocrine Sweat Glands
+BACK:
+Eccrine: All over body; thin watery sweat for cooling and waste excretion.
+Apocrine: Axilla and groin; thicker fluid producing body odor when broken down by skin bacteria.
+
+FLASHCARD 14
+FRONT: Cutaneous Mechanoreceptors (Sensory Receptors)
+BACK:
+Meissner's: Light touch / texture.
+Pacinian: Deep pressure / vibration.
+Krause: Cold sensation.
+Ruffini: Skin stretch.
+Free Nerve Endings: Pain and itch.
+
+
+MODULE 4: THE SKELETAL SYSTEM & JOINTS
+
+FLASHCARD 15
+FRONT: What are the 5 Functions of the Skeletal System?
+BACK:
+1. Support and shape
+2. Protection of vital organs
+3. Movement (tendon levers)
+4. Mineral storage (calcium)
+5. Hematopoiesis (blood cell production in red bone marrow)
+
+FLASHCARD 16
+FRONT: What are the 5 Types of Bones with Examples?
+BACK:
+1. Long Bones: Femur, humerus, tibia.
+2. Short Bones: Carpals, tarsals.
+3. Flat Bones: Scapula, sternum, ribs, cranium.
+4. Irregular Bones: Vertebrae, sacrum, mandible.
+5. Sesamoid Bones: Patella (embedded in tendon).
+
+FLASHCARD 17
+FRONT: Structure of a Long Bone
+BACK:
+Diaphysis: Shaft containing medullary cavity (yellow marrow).
+Epiphysis: Bone ends containing red marrow; site of growth at epiphyseal plate.
+Periosteum: Strong fibrous membrane covering bone exterior.
+Articular Cartilage: Hyaline cartilage cushioning bone ends.
+
+FLASHCARD 18
+FRONT: Axial vs Appendicular Skeleton
+BACK:
+Axial (80 bones): Skull, hyoid, vertebral column, ribs, sternum.
+Appendicular (126 bones): Pectoral girdle, upper limbs, pelvic girdle, lower limbs.
+
+FLASHCARD 19
+FRONT: 3 Types of Cartilage
+BACK:
+Hyaline (Articular): Smooth glass-like; covers bone ends at joints and connects ribs to sternum.
+Elastic: Springy; found in ear and epiglottis.
+Fibrocartilage: Tough and fibrous; found in intervertebral discs and pubic symphysis.
+
+FLASHCARD 20
+FRONT: 3 Functional Joint Classifications
+BACK:
+Synarthroses: Immovable joints (example: skull sutures).
+Amphiarthroses: Slightly movable joints (example: pubic symphysis, intervertebral joints).
+Diarthroses: Freely movable synovial joints (example: shoulder, hip, knee, elbow).
