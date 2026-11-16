@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Candy's 6 Tiny Meals All-Day Fridge Printout</title>
+  <title>Candy's 6 Tiny Keto Meals & Joe's Carnivore Fridge Magnet</title>
   <style>
     :root {
       --primary: #0f766e;
@@ -29,16 +29,16 @@
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
       color: var(--text);
       background-color: #f1f5f9;
-      line-height: 1.38;
+      line-height: 1.36;
       margin: 0;
-      padding: 24px 16px;
+      padding: 22px 16px;
     }
 
     .page-container {
       max-width: 860px;
       margin: 0 auto;
       background: #ffffff;
-      padding: 28px 34px;
+      padding: 26px 32px;
       border-radius: 10px;
       box-shadow: 0 4px 16px rgba(0,0,0,0.08);
     }
@@ -49,7 +49,7 @@
       top: 12px;
       z-index: 1000;
       max-width: 860px;
-      margin: 0 auto 18px auto;
+      margin: 0 auto 16px auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -84,6 +84,8 @@
     .btn-print:hover { background: #059669; }
     .btn-copy { background: #475569; color: #ffffff; }
     .btn-copy:hover { background: #334155; }
+    .btn-phone { background: #0284c7; color: #ffffff; }
+    .btn-phone:hover { background: #0369a1; }
 
     .toast {
       position: fixed;
@@ -103,7 +105,7 @@
     .header-box {
       border-bottom: 2.5px solid var(--primary);
       padding-bottom: 10px;
-      margin-bottom: 12px;
+      margin-bottom: 11px;
     }
 
     .header-top {
@@ -113,14 +115,14 @@
     }
 
     .header-title {
-      font-size: 21px;
+      font-size: 20.5px;
       font-weight: 800;
       color: #0f172a;
       margin: 0;
     }
 
     .header-sub {
-      font-size: 12.5px;
+      font-size: 12.2px;
       color: var(--muted);
       margin-top: 2px;
     }
@@ -148,7 +150,7 @@
       border: 1px solid var(--border);
       border-radius: 6px;
       padding: 6px 10px;
-      font-size: 12px;
+      font-size: 11.8px;
       text-align: center;
     }
 
@@ -158,20 +160,20 @@
       display: block;
     }
 
-    /* 5-Item Prep Box */
+    /* Tandem Prep Box */
     .prep-box {
       background: var(--primary-light);
       border: 1.5px solid #99f6e4;
       border-radius: 8px;
       padding: 9px 14px;
-      margin-bottom: 12px;
-      font-size: 12.5px;
+      margin-bottom: 11px;
+      font-size: 12px;
     }
 
     .prep-title {
       font-weight: 800;
       color: var(--primary);
-      font-size: 13px;
+      font-size: 12.8px;
       margin-bottom: 4px;
     }
 
@@ -185,14 +187,14 @@
     .meals-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      margin-bottom: 12px;
+      gap: 9px;
+      margin-bottom: 11px;
     }
 
     .meal-card {
       border: 1.5px solid var(--border);
       border-radius: 8px;
-      padding: 10px 13px;
+      padding: 9px 12px;
       background: #ffffff;
       page-break-inside: avoid;
     }
@@ -207,21 +209,21 @@
       justify-content: space-between;
       align-items: center;
       border-bottom: 1px solid rgba(0,0,0,0.08);
-      padding-bottom: 5px;
-      margin-bottom: 7px;
+      padding-bottom: 4px;
+      margin-bottom: 6px;
     }
 
     .meal-time {
-      font-size: 13.5px;
+      font-size: 13px;
       font-weight: 800;
       color: #0f172a;
     }
 
     .meal-macros {
-      font-size: 11px;
+      font-size: 10.8px;
       font-weight: 800;
-      background: rgba(255,255,255,0.85);
-      padding: 2px 7px;
+      background: rgba(255,255,255,0.88);
+      padding: 2px 6px;
       border-radius: 4px;
       border: 1px solid rgba(0,0,0,0.1);
       color: #0f766e;
@@ -231,14 +233,14 @@
       list-style: none;
       margin: 0;
       padding: 0;
-      font-size: 12.2px;
+      font-size: 12px;
     }
 
     .meal-list li {
       display: flex;
       align-items: flex-start;
       gap: 7px;
-      margin-bottom: 5px;
+      margin-bottom: 4px;
     }
 
     .sq {
@@ -253,20 +255,20 @@
     }
 
     .pill-strip {
-      margin-top: 6px;
+      margin-top: 5px;
       padding-top: 5px;
       border-top: 1px dashed rgba(0,0,0,0.14);
-      font-size: 11.5px;
+      font-size: 11.2px;
       color: #1e293b;
     }
 
     /* 7-Day Fridge Tracker Table */
     .tracker-title {
-      font-size: 13px;
+      font-size: 12.5px;
       font-weight: 800;
       color: #0f172a;
       text-transform: uppercase;
-      margin-bottom: 6px;
+      margin-bottom: 5px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -275,27 +277,27 @@
     .tracker-table {
       width: 100%;
       border-collapse: collapse;
-      font-size: 11.5px;
+      font-size: 11.2px;
       text-align: center;
       margin-bottom: 8px;
     }
 
     .tracker-table th, .tracker-table td {
       border: 1px solid var(--border);
-      padding: 5px 6px;
+      padding: 4px 5px;
     }
 
     .tracker-table th {
       background: #f1f5f9;
       color: #0f172a;
       font-weight: 700;
-      font-size: 11px;
+      font-size: 10.5px;
     }
 
     .circle-chk {
       display: inline-block;
-      width: 14px;
-      height: 14px;
+      width: 13px;
+      height: 13px;
       border: 1.5px solid #64748b;
       border-radius: 50%;
     }
@@ -331,13 +333,14 @@
 <body>
 
   <div class="no-print-bar">
-    <span>🍓 Candy's 6 Tiny Meals All-Day Reset (1-Page Fridge Printout)</span>
-    <div style="display: flex; gap: 8px;">
+    <span>🥑🥩 Candy's "6 Tiny Keto Meals" + Joe's Carnivore Fridge Magnet</span>
+    <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+      <button class="btn btn-phone" onclick="copyPhoneLink()">📱 Copy Phone App Link</button>
       <button class="btn btn-copy" id="copy-btn" onclick="copyTinyPlan()">📋 Copy Text</button>
-      <button class="btn btn-print" onclick="window.print()">🖨️ Print 1-Page Fridge Sheet</button>
+      <button class="btn btn-print" onclick="window.print()">🖨️ Print Fridge Magnet</button>
     </div>
   </div>
-  <div class="toast" id="toast">✓ Copied 6 Tiny Meals plan to clipboard!</div>
+  <div class="toast" id="toast">✓ Copied to clipboard!</div>
 
   <div class="page-container">
 
@@ -345,126 +348,125 @@
     <div class="header-box">
       <div class="header-top">
         <div>
-          <h1 class="header-title">🍓 Candy’s "6 Tiny Meals All-Day" Fridge Schedule</h1>
+          <h1 class="header-title">🥑🥩 Candy’s "6 Tiny Keto Meals" &amp; Joe’s Carnivore Fridge Magnet</h1>
           <div class="header-sub">
-            Fist-Sized Mini-Meals Every 2.5 Hours • Same Simple Breakfasts &amp; Lunches • Built for <strong>Ozempic + Progesterone + HistaminX</strong>
+            Zero Processed Foods • Fist-Sized Keto Mini-Meals Every 2.5 Hours • Cook the <strong>Exact Same Meats as Joe</strong> • Built for <strong>Ozempic + Ketone Strips</strong>
           </div>
         </div>
-        <span class="fridge-badge">🧲 1-Page Fridge Plan</span>
+        <span class="fridge-badge">🧲 Fridge Magnet</span>
       </div>
 
       <div class="macro-strip">
-        <div class="macro-pill"><strong>~1,420 kcal</strong>Daily Calorie Target</div>
-        <div class="macro-pill"><strong>~145g Protein</strong>Preserves Muscle &amp; Curbs Cravings</div>
-        <div class="macro-pill"><strong>Every 2.5 Hours</strong>Tiny Fist-Sized Portions</div>
-        <div class="macro-pill"><strong>🛑 NO Probiotic</strong>HistaminX AM/PM Active</div>
+        <div class="macro-pill"><strong>~1,400 kcal</strong>Daily Calorie Target</div>
+        <div class="macro-pill"><strong>~140g Protein</strong>Preserves Muscle &amp; Tone</div>
+        <div class="macro-pill"><strong>~30g Net Carbs</strong>Turns Ketone Strips Purple!</div>
+        <div class="macro-pill"><strong>🛑 0% Processed</strong>No Bread/Oats/Rice/Alcohol</div>
       </div>
     </div>
 
-    <!-- 5-Item Daily Prep Box -->
+    <!-- Tandem Prep Box -->
     <div class="prep-box">
-      <div class="prep-title">🛒 ONLY 4–5 THINGS TO GRAB EACH MORNING (FEEDS YOU ALL DAY WITH ZERO THINKING!):</div>
+      <div class="prep-title">🥩🥑 HOW CANDY (CLEAN KETO) &amp; JOE (CARNIVORE) EAT THE EXACT SAME FOOD EVERY DAY:</div>
       <div class="prep-grid">
-        <div>• <strong>1. Breakfast Base:</strong> Lactose-Free Greek Yogurt (or LF Cottage Cheese) + Strawberries &amp; GF Oats</div>
-        <div>• <strong>2. Protein Shake:</strong> <strong>1 Bottle Fairlife Core Power (26g)</strong> <em>(Drink ½ at 8:30 AM, ½ at 11:00 AM)</em></div>
-        <div>• <strong>3. Lunch Protein:</strong> <strong>6 oz Shredded Chicken Breast OR 1 Can Tuna</strong> <em>(Eat ½ at 1:30 PM, ½ at 4:00 PM)</em></div>
-        <div>• <strong>4. Crunch &amp; De-Puff:</strong> <strong>1 Whole Cucumber + 3 Plain Rice Cakes</strong> <em>(Flushes sodium &amp; water retention!)</em></div>
+        <div>• <strong>1. Shared Meats (Cook Once!):</strong> Steak, Lean Burger Patties, Shredded Chicken, Wild Salmon, Pork, Tuna</div>
+        <div>• <strong>2. Joe’s Plate (Crohn's Carnivore):</strong> Meat/Fish + Sea Salt + Butter/Tallow (Zero fiber/plants so gut wall heals!)</div>
+        <div>• <strong>3. Candy’s Keto Sides:</strong> Cucumber, Baby Spinach, Zucchini, Avocado, Strawberries, Pumpkin/Chia Seeds, LF Greek Yogurt &amp; Fairlife</div>
+        <div>• <strong>4. Cut 100% Out (For Ketosis):</strong> ❌ NO Oats, NO Rice Cakes, NO Potatoes/Rice, NO Bread/Pasta, NO Egg Yolks, NO Alcohol</div>
       </div>
     </div>
 
-    <!-- 6 Tiny Meals Grid -->
+    <!-- 6 Tiny Keto Meals Grid -->
     <div class="meals-grid">
 
       <!-- MEAL 1: 8:30 AM -->
       <div class="meal-card bf-card">
         <div class="meal-head">
-          <span class="meal-time">☀️ 1. 8:30 AM — Tiny Breakfast #1</span>
-          <span class="meal-macros">~250 kcal • 28g Protein</span>
+          <span class="meal-time">☀️ 1. 8:30 AM — Tiny Keto Breakfast #1</span>
+          <span class="meal-macros">~240 kcal • 29g P • 8g Carb</span>
         </div>
         <ul class="meal-list">
-          <li><span class="sq"></span><div><strong>1/2 cup Lactose-Free Greek Yogurt</strong> + <strong>1/4 cup Strawberries</strong> + <strong>2 tbsp GF Oats</strong></div></li>
-          <li><span class="sq"></span><div><strong>1/2 bottle Fairlife Core Power</strong> <em>(put other half in fridge for 11:00 AM!)</em><br><span style="font-size:11px; color:var(--muted);">*Warm Swap: 3 Egg Whites scrambled w/ spinach + ½ Fairlife</span></div></li>
+          <li><span class="sq"></span><div><strong>Option A (Creamy Keto Bowl):</strong> <strong>1/2 cup LF Greek Yogurt</strong> + <strong>1/4 cup Strawberries</strong> + <strong>1 tbsp Chia/Pumpkin Seeds</strong> + <strong>1/2 Fairlife Shake</strong> <em>(NO oats!)</em></div></li>
+          <li><span class="sq"></span><div><strong>Option B (Warm Keto Scramble):</strong> <strong>4 Egg Whites</strong> scrambled in 1 tsp Olive Oil with <strong>Baby Spinach + 1/4 Avocado</strong></div></li>
         </ul>
         <div class="pill-strip">
-          💊 <strong>Take With Meal #1:</strong> <strong>1 cap HistaminX</strong> + <strong>B-Complex</strong> + <strong>Vit D3</strong> + <strong>IBS Meds</strong> + <strong>Vyvanse</strong> (+ <strong>BiEst ½ pump</strong> &amp; Mon–Fri <strong>Testosterone 1 pump</strong>)<br>
-          ☕ <strong>9:15 AM:</strong> <strong>1 Cup Coffee</strong> (30–45 mins after protein) • ❌ <em>NO Probiotic!</em>
+          💊 <strong>Morning Pills:</strong> <strong>1 cap HistaminX</strong> + <strong>B-Complex</strong> + <strong>Vit D3</strong> + <strong>IBS Meds</strong> + <strong>Vyvanse</strong> (+ <strong>BiEst ½ pump</strong> &amp; Mon–Fri <strong>Testosterone 1 pump</strong>)<br>
+          ☕ <strong>9:15 AM:</strong> <strong>1 Cup Coffee + Tall BioSteel Water</strong> • ❌ <em>NO Probiotic!</em>
         </div>
       </div>
 
       <!-- MEAL 2: 11:00 AM -->
       <div class="meal-card bf-card">
         <div class="meal-head">
-          <span class="meal-time">🍓 2. 11:00 AM — Tiny Breakfast #2</span>
-          <span class="meal-macros">~200 kcal • 18g Protein</span>
+          <span class="meal-time">🥑 2. 11:00 AM — Tiny Keto Breakfast #2</span>
+          <span class="meal-macros">~190 kcal • 19g P • 4g Carb</span>
         </div>
         <ul class="meal-list">
           <li><span class="sq"></span><div><strong>The other 1/2 bottle of Fairlife Core Power</strong></div></li>
-          <li><span class="sq"></span><div><strong>1 Plain Rice Cake</strong> <em>(with 1 tsp SunButter or 1 tbsp pumpkin seeds)</em><br><span style="font-size:11px; color:var(--muted);">*Or Swap: 1/2 cup LF Cottage Cheese / Greek Yogurt + berries</span></div></li>
+          <li><span class="sq"></span><div><strong>1 tbsp Pumpkin Seeds</strong> <em>(or 2 slices Turkey Breast wrapped around Cucumber slices — NO rice cakes!)</em></div></li>
         </ul>
         <div class="pill-strip">
-          ✨ <strong>Why It Works:</strong> Same morning foods split into two tiny portions—zero decision fatigue and zero stomach heaviness on Ozempic!
+          🔥 <strong>Why It Works:</strong> Skipping the oats &amp; rice cakes keeps morning insulin flat so your body burns pure fat &amp; ketones all morning!
         </div>
       </div>
 
       <!-- MEAL 3: 1:30 PM -->
       <div class="meal-card lunch-card">
         <div class="meal-head">
-          <span class="meal-time">🍗 3. 1:30 PM — Mini Lunch #1</span>
-          <span class="meal-macros">~220 kcal • 26g Protein</span>
+          <span class="meal-time">🍗 3. 1:30 PM — Mini Keto Lunch #1</span>
+          <span class="meal-macros">~230 kcal • 26g P • 3g Carb</span>
         </div>
         <ul class="meal-list">
-          <li><span class="sq"></span><div><strong>3 oz Shredded Chicken Breast</strong> <em>(or <strong>1/2 can Tuna</strong> mixed with olive oil &amp; sea salt)</em></div></li>
-          <li><span class="sq"></span><div><strong>1/2 Sliced Cucumber</strong> <em>(natural diuretic!)</em> + <strong>1 Plain Rice Cake</strong> (or 4 Mary's Crackers)</div></li>
+          <li><span class="sq"></span><div><strong>3 oz Shredded Chicken, Burger Patty, Steak Strips, or 1/2 Can Tuna</strong> <em>(same meat Joe eats!)</em></div></li>
+          <li><span class="sq"></span><div><strong>1/2 Sliced Cucumber</strong> <em>(flushes water!)</em> + <strong>1/4 Avocado</strong> <em>(or 1 tbsp Olive Oil / Avocado Oil Mayo)</em> + Sea Salt</div></li>
         </ul>
         <div class="pill-strip">
-          ✨ <strong>Prep Trick:</strong> Plate 6 oz chicken (or 1 whole can tuna) + 1 cucumber in the morning; eat <strong>half at 1:30 PM</strong> and <strong>half at 4:00 PM</strong>!
+          ✨ <strong>Zero-Thinking Prep:</strong> Plate 6 oz meat/tuna + 1 cucumber + 1/2 avocado in the morning; eat <strong>half at 1:30 PM</strong> and <strong>half at 4:00 PM</strong>!
         </div>
       </div>
 
       <!-- MEAL 4: 4:00 PM -->
       <div class="meal-card lunch-card">
         <div class="meal-head">
-          <span class="meal-time">🍗 4. 4:00 PM — Mini Lunch #2 (Repeat!)</span>
-          <span class="meal-macros">~220 kcal • 26g Protein</span>
+          <span class="meal-time">🍗 4. 4:00 PM — Mini Keto Lunch #2 (Repeat!)</span>
+          <span class="meal-macros">~230 kcal • 26g P • 3g Carb</span>
         </div>
         <ul class="meal-list">
-          <li><span class="sq"></span><div><strong>The other 3 oz Shredded Chicken Breast</strong> <em>(or the <strong>other 1/2 can of Tuna</strong>)</em></div></li>
-          <li><span class="sq"></span><div><strong>The other 1/2 Sliced Cucumber</strong> + <strong>1 Plain Rice Cake</strong></div></li>
+          <li><span class="sq"></span><div><strong>The other 3 oz Chicken, Burger Patty, Steak, or Tuna</strong></div></li>
+          <li><span class="sq"></span><div><strong>The other 1/2 Sliced Cucumber</strong> + <strong>1/4 Avocado</strong> <em>(or 1 tbsp Pumpkin Seeds)</em></div></li>
         </ul>
         <div class="pill-strip">
-          🛡️ <strong>Crash Shield:</strong> Stops the 4:00 PM Vyvanse drop cold so you never walk into the kitchen tired, grumpy, or starving at 6:00 PM!
+          🛡️ <strong>Ketone Crash Shield:</strong> Steady fat + protein at 4:00 PM keeps your brain sharp as Vyvanse wears off and kills 6:00 PM cravings!
         </div>
       </div>
 
       <!-- MEAL 5: 6:15 PM -->
       <div class="meal-card supper-card">
         <div class="meal-head">
-          <span class="meal-time">🍽️ 5. 6:15 PM — Small Palm-Sized Supper</span>
-          <span class="meal-macros">~350 kcal • 30g Protein</span>
+          <span class="meal-time">🥩 5. 6:15 PM — Tandem Supper With Joe!</span>
+          <span class="meal-macros">~360 kcal • 32g P • 5g Carb</span>
         </div>
         <ul class="meal-list">
-          <li><span class="sq"></span><div><strong>4 oz Baked Salmon, Chicken, or Lean Beef/Turkey</strong> <em>(olive oil, sea salt, herbs — NO garlic/onion powder!)</em></div></li>
-          <li><span class="sq"></span><div><strong>1/2 cup Zucchini or Carrots</strong> + <strong>1/2 small Baked Yellow Potato</strong> <em>(or 1/3 cup white rice)</em></div></li>
+          <li><span class="sq"></span><div><strong>Both You &amp; Joe:</strong> <strong>4–5 oz Grilled Steak, Burger Patty, Wild Salmon, or Chicken</strong> <em>(sea salt &amp; herbs — NO garlic/onion powder!)</em></div></li>
+          <li><span class="sq"></span><div><strong>Candy's Keto Side:</strong> <strong>1 cup Sautéed Zucchini, Asparagus, or Baby Spinach</strong> in Olive Oil <em>(NO potato/rice!)</em></div></li>
         </ul>
         <div class="pill-strip">
-          💊 <strong>Take With Supper:</strong> <strong>1 cap HistaminX (2nd dose)</strong> + <strong>2 NutraSea Omega-3 Softgels</strong> (+ 1 cap Histamine Nutrients once arrived)
+          💊 <strong>Take With Supper:</strong> <strong>1 cap HistaminX (2nd dose)</strong> + <strong>2 NutraSea Omega-3 Softgels</strong>
         </div>
       </div>
 
       <!-- MEAL 6: 9:00 PM -->
       <div class="meal-card night-card">
         <div class="meal-head">
-          <span class="meal-time">🌙 6. 9:00 PM — Nighttime Gut &amp; Sleep Drink</span>
-          <span class="meal-macros">~90 kcal • 18g Protein</span>
+          <span class="meal-time">🌙 6. 9:00 PM — Zero-Carb Gut Drink &amp; Ketone Check</span>
+          <span class="meal-macros">~90 kcal • 18g P • 0g Carb</span>
         </div>
         <ul class="meal-list">
-          <li><span class="sq"></span><div>Mix in <strong>500 ml Water + 1 scoop BioSteel</strong> (45 mins before bed):<br>
-          • <strong>1–2 scoops Collagen Powder</strong> (seals gut lining &amp; joints)<br>
-          • <strong>1 tsp (3g) Glycine Powder</strong> (deep REM sleep)<br>
-          • <strong>3/4 tsp (4,000mg) Vitamin C Powder</strong> (clears histamine)</div></li>
+          <li><span class="sq"></span><div>Mix in <strong>500 ml Water + 1 scoop BioSteel</strong> (100% Keto!):<br>
+          • <strong>1–2 scoops Collagen</strong> + <strong>1 tsp Glycine</strong> + <strong>3/4 tsp (4,000mg) Vit C</strong></div></li>
+          <li><span class="sq"></span><div>🧪 <strong>Check Ketone Strip</strong> + Apply <strong>1 1/2 pumps Progesterone Cream</strong> <em>(Nov 14 – Nov 27 • 🛑 STOP Nov 28)</em></div></li>
         </ul>
         <div class="pill-strip">
-          🌸 <strong>Bedtime Cream:</strong> <strong>1 1/2 pumps Progesterone Cream</strong> <em>(Nov 14 – Nov 27 • 🛑 STOP Nov 28)</em>
+          💜 <strong>Why Ketosis Melts Pain:</strong> Ketones (BHB) directly turn off joint/hip inflammation and flush 3–5 lbs of water in 48–72 hours!
         </div>
       </div>
 
@@ -472,19 +474,20 @@
 
     <!-- 7-Day Pen Check-Off Tracker -->
     <div class="tracker-title">
-      <span>✏️ 7-Day Fridge Pen Tracker (Check Off Each Mini-Meal &amp; Pill Window)</span>
-      <span style="font-size: 11px; font-weight: 600; color: var(--muted);">Goal: 8–10 Glasses Water Daily</span>
+      <span>✏️ 7-Day Fridge Magnet Tracker (Check Off Each Keto Mini-Meal + Ketone Strip!)</span>
+      <span style="font-size: 11px; font-weight: 600; color: var(--muted);">Goal: 8–10 Glasses BioSteel Water Daily</span>
     </div>
     <table class="tracker-table">
       <thead>
         <tr>
           <th>Day</th>
-          <th>8:30 AM<br>Meal #1 + Pills</th>
-          <th>11:00 AM<br>Meal #2</th>
-          <th>1:30 PM<br>Meal #3</th>
-          <th>4:00 PM<br>Meal #4</th>
-          <th>6:15 PM<br>Meal #5 + HistaminX</th>
-          <th>9:00 PM<br>Night Drink + Prog Cream</th>
+          <th>8:30 AM<br>Keto #1 + Pills</th>
+          <th>11:00 AM<br>Keto #2</th>
+          <th>1:30 PM<br>Keto #3</th>
+          <th>4:00 PM<br>Keto #4</th>
+          <th>6:15 PM<br>Supper w/ Joe</th>
+          <th>9:00 PM<br>Drink + Prog Cream</th>
+          <th>🧪 Ketone Strip<br>(Pink / Purple?)</th>
         </tr>
       </thead>
       <tbody>
@@ -496,6 +499,7 @@
           <td><span class="circle-chk"></span></td>
           <td><span class="circle-chk"></span></td>
           <td><span class="circle-chk"></span></td>
+          <td>[ ] Yes &nbsp; ____</td>
         </tr>
         <tr>
           <td><strong>Tue</strong></td>
@@ -505,6 +509,7 @@
           <td><span class="circle-chk"></span></td>
           <td><span class="circle-chk"></span></td>
           <td><span class="circle-chk"></span></td>
+          <td>[ ] Yes &nbsp; ____</td>
         </tr>
         <tr>
           <td><strong>Wed</strong></td>
@@ -514,6 +519,7 @@
           <td><span class="circle-chk"></span></td>
           <td><span class="circle-chk"></span></td>
           <td><span class="circle-chk"></span></td>
+          <td>[ ] Yes &nbsp; ____</td>
         </tr>
         <tr>
           <td><strong>Thu</strong></td>
@@ -523,6 +529,7 @@
           <td><span class="circle-chk"></span></td>
           <td><span class="circle-chk"></span></td>
           <td><span class="circle-chk"></span></td>
+          <td>[ ] Yes &nbsp; ____</td>
         </tr>
         <tr>
           <td><strong>Fri</strong></td>
@@ -532,6 +539,7 @@
           <td><span class="circle-chk"></span></td>
           <td><span class="circle-chk"></span></td>
           <td><span class="circle-chk"></span></td>
+          <td>[ ] Yes &nbsp; ____</td>
         </tr>
         <tr>
           <td><strong>Sat</strong></td>
@@ -541,6 +549,7 @@
           <td><span class="circle-chk"></span></td>
           <td><span class="circle-chk"></span></td>
           <td><span class="circle-chk"></span></td>
+          <td>[ ] Yes &nbsp; ____</td>
         </tr>
         <tr>
           <td><strong>Sun</strong></td>
@@ -550,48 +559,61 @@
           <td><span class="circle-chk"></span></td>
           <td><span class="circle-chk"></span></td>
           <td><span class="circle-chk"></span></td>
+          <td>[ ] Yes &nbsp; ____</td>
         </tr>
       </tbody>
     </table>
 
     <div class="footer-note">
-      <span>Candy OS • 100% Tree-Nut Free • No Egg Yolks • No Garlic/Onion Powder • No Synthetic Folic Acid</span>
-      <span>Updated Nov 15, 2026 • Soma &amp; Jarvis</span>
+      <span>Candy OS • Clean Keto + Joe's Carnivore Tandem • 100% Tree-Nut Free • No Egg Yolks • No Garlic/Onion Powder</span>
+      <span>Updated Nov 16, 2026 • Soma &amp; Jarvis</span>
     </div>
 
   </div>
 
   <script>
+    function copyPhoneLink() {
+      const url = 'https://cmoulton345-sketch.github.io/candy-wellness-os/';
+      navigator.clipboard.writeText(url).then(() => {
+        const toast = document.getElementById('toast');
+        toast.textContent = '📱 Copied Phone App Link: ' + url;
+        toast.style.display = 'block';
+        setTimeout(() => { toast.style.display = 'none'; }, 3000);
+      });
+    }
+
     function copyTinyPlan() {
-      const text = `CANDY'S 6 TINY MEALS ALL-DAY RESET (~1,420 kcal | 145g Protein)
+      const text = `CANDY'S 6 TINY KETO MEALS + JOE'S CARNIVORE TANDEM (~1,400 kcal | 140g P | ~30g Net Carbs)
 
-☀️ 1. 8:30 AM — TINY BREAKFAST #1 (~250 kcal | 28g P)
-- 1/2 cup LF Greek Yogurt + 1/4 cup Strawberries + 2 tbsp GF Oats
-- 1/2 bottle Fairlife Core Power (save other half for 11 AM)
+☀️ 1. 8:30 AM — TINY KETO BREAKFAST #1 (~240 kcal | 29g P | 8g C)
+- Option A: 1/2 cup LF Greek Yogurt + 1/4 cup Strawberries + 1 tbsp Chia/Pumpkin Seeds + 1/2 Fairlife (NO oats!)
+- Option B: 4 Egg Whites scrambled in Olive Oil with Baby Spinach + 1/4 Avocado
 - Morning Pills: 1 cap HistaminX + B-Complex + Vit D3 + IBS Meds + Vyvanse (+ BiEst 1/2 pump & Mon-Fri Testosterone 1 pump)
-- 9:15 AM: 1 cup Coffee (NO Probiotic!)
+- 9:15 AM: 1 cup Coffee + BioSteel Water (NO Probiotic!)
 
-🍓 2. 11:00 AM — TINY BREAKFAST #2 (~200 kcal | 18g P)
-- The other 1/2 bottle of Fairlife Core Power + 1 Plain Rice Cake
+🥑 2. 11:00 AM — TINY KETO BREAKFAST #2 (~190 kcal | 19g P | 4g C)
+- The other 1/2 bottle of Fairlife Core Power + 1 tbsp Pumpkin Seeds (or Turkey + Cucumber — NO rice cakes!)
 
-🍗 3. 1:30 PM — MINI LUNCH #1 (~220 kcal | 26g P)
-- 3 oz Shredded Chicken Breast (or 1/2 can Tuna in olive oil & sea salt)
-- 1/2 sliced Cucumber + 1 Plain Rice Cake
+🍗 3. 1:30 PM — MINI KETO LUNCH #1 (~230 kcal | 26g P | 3g C)
+- 3 oz Shredded Chicken, Burger Patty, Steak, or 1/2 can Tuna
+- 1/2 sliced Cucumber + 1/4 Avocado (or Olive Oil/Avocado Mayo) + Sea Salt
 
-🍗 4. 4:00 PM — MINI LUNCH #2 (~220 kcal | 26g P)
-- The other 3 oz Shredded Chicken Breast (or other 1/2 can Tuna)
-- The other 1/2 sliced Cucumber + 1 Plain Rice Cake
+🍗 4. 4:00 PM — MINI KETO LUNCH #2 (~230 kcal | 26g P | 3g C)
+- The other 3 oz Chicken, Burger Patty, Steak, or Tuna
+- The other 1/2 sliced Cucumber + 1/4 Avocado
 
-🍽️ 5. 6:15 PM — SMALL SUPPER (~350 kcal | 30g P)
-- 4 oz Salmon, Chicken, or Lean Beef/Turkey + 1/2 cup Zucchini/Carrots + 1/2 small baked Yellow Potato
+🥩 5. 6:15 PM — TANDEM SUPPER WITH JOE (~360 kcal | 32g P | 5g C)
+- Both You & Joe: 4-5 oz Steak, Burger Patty, Wild Salmon, or Chicken
+- Candy's Side: 1 cup Sautéed Zucchini, Asparagus, or Spinach in Olive Oil (NO potato/rice!)
 - Supper Pills: 1 cap HistaminX + 2 NutraSea Omega-3 Softgels
 
-🌙 6. 9:00 PM — NIGHTTIME GUT DRINK + PROGESTERONE CREAM (~90 kcal | 18g P)
+🌙 6. 9:00 PM — ZERO-CARB GUT DRINK + KETONE STRIP + PROGESTERONE CREAM (~90 kcal | 18g P | 0g C)
 - 500ml water + BioSteel + 1-2 scoops Collagen + 1 tsp Glycine + 3/4 tsp Vit C
-- Bedtime: 1 1/2 pumps Progesterone Cream (Nov 14 - Nov 27 • STOP Nov 28)`;
+- Test Ketone Strip + Apply 1 1/2 pumps Progesterone Cream (Nov 14 - Nov 27 • STOP Nov 28)`;
 
       navigator.clipboard.writeText(text).then(() => {
         const toast = document.getElementById('toast');
+        toast.textContent = '✓ Copied 6 Tiny Keto Meals plan to clipboard!';
         toast.style.display = 'block';
         setTimeout(() => { toast.style.display = 'none'; }, 2500);
       });
