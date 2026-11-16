@@ -3,12 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dr. Jenna Weeks ND — Clinical Supplement Protocol & Shopping List</title>
+  <title>Candy's Daily Fridge Checklist & Dr. Jenna Supplement Protocol</title>
   <style>
     :root {
       --primary: #1e3a8a;
       --primary-light: #eff6ff;
       --accent: #0284c7;
+      --teal: #0f766e;
+      --teal-light: #f0fdfa;
+      --teal-border: #5eead4;
       --text: #1e293b;
       --text-muted: #64748b;
       --border: #cbd5e1;
@@ -19,6 +22,9 @@
       --success-bg: #f0fdf4;
       --success-border: #86efac;
       --success-text: #166534;
+      --purple-bg: #faf5ff;
+      --purple-border: #d8b4fe;
+      --purple-text: #6b21a8;
     }
 
     * {
@@ -31,16 +37,16 @@
       background-color: #f1f5f9;
       line-height: 1.45;
       margin: 0;
-      padding: 30px 20px;
+      padding: 28px 20px;
     }
 
     .page-container {
-      max-width: 860px;
+      max-width: 880px;
       margin: 0 auto;
       background: #ffffff;
-      padding: 36px 40px;
-      border-radius: 8px;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+      padding: 34px 38px;
+      border-radius: 10px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.07);
     }
 
     /* Floating No-Print Toolbar */
@@ -51,35 +57,45 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: #1e293b;
+      flex-wrap: wrap;
+      gap: 10px;
+      background: #0f172a;
       color: #ffffff;
       padding: 12px 20px;
       border-radius: 8px;
       margin-bottom: 24px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      box-shadow: 0 4px 14px rgba(0,0,0,0.2);
     }
 
     .no-print-bar span {
-      font-weight: 600;
+      font-weight: 700;
       font-size: 14px;
     }
 
     .print-btn {
-      background: #0284c7;
+      background: #0d9488;
       color: #ffffff;
       border: none;
-      padding: 8px 18px;
+      padding: 9px 16px;
       border-radius: 6px;
-      font-size: 14px;
-      font-weight: 600;
+      font-size: 13.5px;
+      font-weight: 700;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
-      gap: 8px;
+      gap: 7px;
       transition: background 0.15s ease;
     }
 
     .print-btn:hover {
+      background: #0f766e;
+    }
+
+    .print-btn.secondary {
+      background: #0284c7;
+    }
+
+    .print-btn.secondary:hover {
       background: #0369a1;
     }
 
@@ -87,14 +103,14 @@
       background: #475569;
       color: #ffffff;
       border: none;
-      padding: 8px 16px;
+      padding: 9px 14px;
       border-radius: 6px;
-      font-size: 14px;
+      font-size: 13.5px;
       font-weight: 600;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
       transition: background 0.15s ease;
     }
 
@@ -119,9 +135,9 @@
 
     /* Header */
     .header-box {
-      border-bottom: 2px solid var(--primary);
-      padding-bottom: 14px;
-      margin-bottom: 20px;
+      border-bottom: 2.5px solid var(--primary);
+      padding-bottom: 12px;
+      margin-bottom: 18px;
     }
 
     .header-top {
@@ -140,15 +156,15 @@
     }
 
     .badge-clinical {
-      background: var(--primary-light);
-      color: var(--primary);
-      padding: 4px 10px;
+      background: var(--teal-light);
+      color: var(--teal);
+      padding: 5px 12px;
       border-radius: 9999px;
-      font-size: 11px;
-      font-weight: 700;
+      font-size: 11.5px;
+      font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.5px;
-      border: 1px solid #bfdbfe;
+      border: 1.5px solid var(--teal-border);
     }
 
     .header-meta {
@@ -156,27 +172,209 @@
       grid-template-columns: repeat(4, 1fr);
       gap: 10px;
       background: var(--card-bg);
-      padding: 10px 14px;
+      padding: 9px 14px;
       border-radius: 6px;
       border: 1px solid var(--border);
-      font-size: 12.5px;
-      margin-top: 10px;
+      font-size: 12px;
+      margin-top: 8px;
     }
 
     .header-meta div strong {
       color: var(--primary);
       display: block;
-      font-size: 11px;
+      font-size: 10.5px;
       text-transform: uppercase;
       letter-spacing: 0.5px;
+    }
+
+    /* FRIDGE HERO SECTION */
+    .fridge-section {
+      border: 2px solid #0d9488;
+      border-radius: 10px;
+      padding: 18px 20px;
+      background: #ffffff;
+      margin-bottom: 24px;
+    }
+
+    .fridge-banner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #f0fdfa;
+      border: 1.5px solid #99f6e4;
+      border-radius: 8px;
+      padding: 10px 14px;
+      margin-bottom: 14px;
+    }
+
+    .fridge-banner h2 {
+      margin: 0;
+      font-size: 17px;
+      font-weight: 800;
+      color: #0f766e;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .fridge-banner span {
+      font-size: 12px;
+      font-weight: 700;
+      color: #115e59;
+    }
+
+    .fridge-step-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+
+    .fridge-box {
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      padding: 14px 16px;
+      background: #f8fafc;
+    }
+
+    .fridge-box.morning-box {
+      border-color: #38bdf8;
+      background: #f0f9ff;
+      grid-column: 1 / -1;
+    }
+
+    .fridge-box.supper-box {
+      border-color: #fbbf24;
+      background: #fffbeb;
+    }
+
+    .fridge-box.bhrt-box {
+      border-color: var(--purple-border);
+      background: var(--purple-bg);
+    }
+
+    .fridge-box h3 {
+      margin: 0 0 10px 0;
+      font-size: 15px;
+      font-weight: 800;
+      color: #0f172a;
+      border-bottom: 1.5px solid rgba(0,0,0,0.08);
+      padding-bottom: 6px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .fridge-box h3 small {
+      font-size: 11.5px;
+      font-weight: 600;
+      color: #475569;
+    }
+
+    .morning-columns {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 14px;
+    }
+
+    .check-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .check-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      margin-bottom: 7px;
+      font-size: 13px;
+      line-height: 1.38;
+    }
+
+    .chk-sq {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      min-width: 16px;
+      border: 2px solid #0f766e;
+      border-radius: 3px;
+      background: #ffffff;
+      margin-top: 1px;
+    }
+
+    .highlight-new {
+      background: #dcfce7;
+      color: #166534;
+      font-weight: 800;
+      font-size: 10.5px;
+      padding: 1px 6px;
+      border-radius: 4px;
+      border: 1px solid #86efac;
+      margin-left: 4px;
+      text-transform: uppercase;
+    }
+
+    .retired-banner {
+      margin-top: 10px;
+      background: #fef2f2;
+      border: 1.5px dashed #f87171;
+      border-radius: 6px;
+      padding: 8px 12px;
+      font-size: 12.5px;
+      color: #991b1b;
+    }
+
+    /* Nighttime Drink Card */
+    .cocktail-card {
+      background: #f0fdf4;
+      border: 2px solid #4ade80;
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin-bottom: 6px;
+      page-break-inside: avoid;
+    }
+
+    .cocktail-card h3 {
+      margin: 0 0 6px 0;
+      color: var(--success-text);
+      font-size: 15px;
+      font-weight: 800;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .cocktail-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 10px;
+      font-size: 12.5px;
+    }
+
+    .cocktail-item {
+      background: #ffffff;
+      border: 1.5px solid var(--success-border);
+      padding: 9px 11px;
+      border-radius: 6px;
+    }
+
+    .cocktail-item strong {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: #14532d;
+      font-size: 13px;
+      margin-bottom: 2px;
     }
 
     /* Warnings Banner */
     .alert-box {
       border-radius: 6px;
       padding: 10px 14px;
-      font-size: 12.5px;
-      margin-bottom: 18px;
+      font-size: 12px;
+      margin-top: 12px;
       page-break-inside: avoid;
     }
 
@@ -186,11 +384,7 @@
       color: var(--danger-text);
     }
 
-    .alert-box strong {
-      font-weight: 700;
-    }
-
-    /* Section Titles */
+    /* Section Titles for Shopping Reference */
     .section-title {
       font-size: 15px;
       font-weight: 700;
@@ -255,86 +449,11 @@
       background: #ffffff;
     }
 
-    /* Nighttime Drink Card */
-    .cocktail-card {
-      background: #f0fdf4;
-      border: 1.5px solid var(--success-border);
-      border-radius: 6px;
-      padding: 14px 18px;
-      margin-bottom: 18px;
-      page-break-inside: avoid;
-    }
-
-    .cocktail-card h3 {
-      margin: 0 0 6px 0;
-      color: var(--success-text);
-      font-size: 14px;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .cocktail-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-      margin-top: 10px;
-      font-size: 12px;
-    }
-
-    .cocktail-item {
-      background: #ffffff;
-      border: 1px solid var(--success-border);
-      padding: 8px 10px;
-      border-radius: 4px;
-    }
-
-    .cocktail-item strong {
-      display: block;
-      color: #14532d;
-      font-size: 12px;
-    }
-
-    /* Schedule Timeline */
-    .timeline-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-      margin-bottom: 18px;
-      page-break-inside: avoid;
-    }
-
-    .timeline-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: 12px 14px;
-      font-size: 12px;
-    }
-
-    .timeline-card h4 {
-      margin: 0 0 8px 0;
-      color: var(--primary);
-      font-size: 13px;
-      font-weight: 700;
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 4px;
-    }
-
-    .timeline-card ul {
-      margin: 0;
-      padding-left: 16px;
-    }
-
-    .timeline-card li {
-      margin-bottom: 4px;
-    }
-
     /* Footer Signoff */
     .footer-box {
       border-top: 1px solid var(--border);
-      padding-top: 12px;
+      padding-top: 10px;
+      margin-top: 14px;
       font-size: 11px;
       color: var(--text-muted);
       display: flex;
@@ -361,54 +480,53 @@
         display: none !important;
       }
 
-      .section-title {
-        margin-top: 14px;
+      body.print-fridge-only .shopping-reference-section {
+        display: none !important;
+      }
+
+      .fridge-section {
+        border-width: 1.5px;
+        padding: 12px 14px;
         margin-bottom: 8px;
       }
 
-      .supp-table {
-        margin-bottom: 12px;
+      .fridge-box {
+        padding: 10px 12px;
       }
 
-      .supp-table th, .supp-table td {
-        padding: 5px 8px;
+      .check-list li {
+        font-size: 12px;
+        margin-bottom: 5px;
       }
 
       .cocktail-card {
         padding: 10px 14px;
-        margin-bottom: 12px;
-      }
-
-      .timeline-grid {
-        margin-bottom: 12px;
       }
 
       @page {
-        margin: 12mm 14mm;
+        margin: 10mm 12mm;
       }
     }
   </style>
 </head>
-<body>
+<body class="print-fridge-only">
 
   <!-- Floating Print Bar -->
   <div class="no-print-bar">
-    <span>🖨️ Dr. Jenna Weeks ND — Complete Clinical Supplement Protocol</span>
-    <div style="display: flex; gap: 10px; align-items: center;">
+    <span>🧲 Candy's Daily Fridge Sheet (Morning, Supper &amp; Nighttime Drink)</span>
+    <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
       <button class="copy-btn" id="copy-btn" onclick="copyShoppingList()">
-        📋 Copy Text List
+        📋 Copy Fridge Checklist
       </button>
-      <button class="print-btn" onclick="window.print()">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <polyline points="6 9 6 2 18 2 18 9"></polyline>
-          <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
-          <rect x="6" y="14" width="12" height="8"></rect>
-        </svg>
-        Print / Save as PDF
+      <button class="print-btn" onclick="printFridgeOnly()">
+        🖨️ Print 1-Page Fridge Sheet
+      </button>
+      <button class="print-btn secondary" onclick="printFullSheet()">
+        📄 Print Full Sheet + Shopping List
       </button>
     </div>
   </div>
-  <div class="toast" id="toast">✓ Copied shopping list to clipboard!</div>
+  <div class="toast" id="toast">✓ Copied fridge checklist to clipboard!</div>
 
   <div class="page-container">
 
@@ -416,244 +534,353 @@
     <div class="header-box">
       <div class="header-top">
         <div>
-          <h1 class="header-title">Clinical Supplement Protocol & Shopping List</h1>
-          <div style="font-size: 13px; color: var(--text-muted); margin-top: 3px;">
-            Prescribed by <strong>Dr. Jenna Weeks, ND</strong> • Targeted to <strong>PureGenomics DNA & Canada Food Lab Results</strong>
+          <h1 class="header-title">Candy’s Daily Fridge Checklist &amp; Nighttime Drink</h1>
+          <div style="font-size: 12.5px; color: var(--text-muted); margin-top: 2px;">
+            Updated <strong>Nov 15, 2026 (Cycle 5, Day 14)</strong> • Prescribed by <strong>Dr. Jenna Weeks, ND</strong> • HistaminX Active &amp; Probiotic Retired
           </div>
         </div>
-        <span class="badge-clinical">Patient Protocol</span>
+        <span class="badge-clinical">🧲 Fridge Sheet</span>
       </div>
 
       <div class="header-meta">
-        <div><strong>Patient</strong> Candy Moulton</div>
-        <div><strong>Primary Pharmacy</strong> Simply For Life (Rothesay Ave)</div>
-        <div><strong>Online Dispensary</strong> Fullscript / Seeking Health</div>
-        <div><strong>Core Genetics</strong> MTHFR C677T • FADS1 • CYP1A2</div>
+        <div><strong>Morning Rule</strong> Protein Breakfast BEFORE Coffee</div>
+        <div><strong>HistaminX</strong> 1 Cap Breakfast + 1 Cap Supper</div>
+        <div><strong>Probiotic Status</strong> 🛑 STOPPED (Retired Nov 15)</div>
+        <div><strong>Progesterone Cream</strong> 1½ Pumps Nightly (Nov 14–27)</div>
       </div>
     </div>
 
-    <!-- Red Alert Clinical Safety Warning -->
-    <div class="alert-box danger">
-      <strong>🚨 CRITICAL SAFETY & GENETIC RULES:</strong><br>
-      • <strong>DO NOT TAKE CIPROFLOXACIN (Antibiotic):</strong> High risk of Achilles tendon rupture due to your MMP3 genetic variant.<br>
-      • <strong>AVOID SYNTHETIC FOLIC ACID & CYANOCOBALAMIN:</strong> Due to MTHFR C677T & MTR mutations, your body cannot convert synthetic folic acid. Always verify your B-vitamins use activated <strong>L-5-MTHF</strong> and <strong>Methylcobalamin</strong>.<br>
-      • <strong>3–5 DAY ROLL-OUT RULE:</strong> Introduce only <strong>ONE</strong> new supplement every 3 to 5 days to allow your body to comfortably adapt.
-    </div>
-
-    <!-- PART 1: SIMPLY FOR LIFE (ROTHESAY AVE) -->
-    <div class="section-title">
-      <span>🛒 Part 1: Simply For Life In-Store List (Rothesay Ave, Saint John)</span>
-      <span class="section-subtitle">Show this exact section to store staff</span>
-    </div>
-
-    <table class="supp-table">
-      <thead>
-        <tr>
-          <th class="col-chk">Buy</th>
-          <th class="col-name">Supplement & Clinical Brand</th>
-          <th class="col-dose">Dosage & Frequency</th>
-          <th class="col-target">Biological Purpose / Gene Target</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="col-chk"><span class="checkbox-box"></span></td>
-          <td class="col-name">AOR Advanced B Complex</td>
-          <td class="col-dose"><strong>1 capsule daily</strong> (morning with food)</td>
-          <td class="col-target"><strong>MTHFR C677T & MTR/TCN2:</strong> Delivers activated L-5-MTHF, Methyl-B12, and P-5-P (B6) to clear homocysteine. Buy 1 bottle.</td>
-        </tr>
-        <tr>
-          <td class="col-chk"><span class="checkbox-box"></span></td>
-          <td class="col-name">NutraSea HP Omega-3 Extra Strength</td>
-          <td class="col-dose"><strong>2 softgels daily</strong> (lunch or dinner)</td>
-          <td class="col-target"><strong>FADS1 gene:</strong> Inability to convert plant ALA. Delivers ~1,500mg direct active EPA/DHA for joint and heart protection.</td>
-        </tr>
-        <tr>
-          <td class="col-chk"><span class="checkbox-box"></span></td>
-          <td class="col-name">CanPrev D3 & K2 Liquid Drops</td>
-          <td class="col-dose"><strong>3 drops daily</strong> (morning with food/fat)</td>
-          <td class="col-target"><strong>Triple-risk D3 gene defect</strong> (CYP2R1, DHCR7, GC): Delivers 3,000 IU D3 + 100mcg K2 for bone and immune support.</td>
-        </tr>
-        <tr>
-          <td class="col-chk"><span class="checkbox-box"></span></td>
-          <td class="col-name">CanPrev Collagen Powder</td>
-          <td class="col-dose"><strong>1 to 2 scoops nightly</strong></td>
-          <td class="col-target">Connective tissue repair, joint cushioning, and gut mucosal lining restoration.</td>
-        </tr>
-        <tr>
-          <td class="col-chk"><span class="checkbox-box"></span></td>
-          <td class="col-name">CanPrev Glycine Powder</td>
-          <td class="col-dose"><strong>1 tsp (3g) nightly</strong></td>
-          <td class="col-target">Natural <strong>methylation buffer</strong>, deep restorative REM sleep support, and muscle/collagen synthesis.</td>
-        </tr>
-        <tr>
-          <td class="col-chk"><span class="checkbox-box"></span></td>
-          <td class="col-name">Vitamin C Powder (CanPrev or AOR)</td>
-          <td class="col-dose"><strong>3/4 tsp (4,000 mg) nightly</strong></td>
-          <td class="col-target">Essential cofactor for collagen synthesis, master antioxidant defense, and adrenal support.</td>
-        </tr>
-        <tr>
-          <td class="col-chk"><span class="checkbox-box"></span></td>
-          <td class="col-name">CanPrev Zinc + Copper (25mg)</td>
-          <td class="col-dose"><strong>1 capsule every 2nd or 3rd day</strong></td>
-          <td class="col-target"><strong>SLC30A8 zinc pathway:</strong> Balanced with copper to preserve immune and enzymatic health.</td>
-        </tr>
-        <tr>
-          <td class="col-chk"><span class="checkbox-box"></span></td>
-          <td class="col-name">CanPrev Resveratrol</td>
-          <td class="col-dose"><strong>1 capsule daily</strong> (morning)</td>
-          <td class="col-target"><strong>NQO1 & CRP inflammation:</strong> Master cellular antioxidant and vascular protection.</td>
-        </tr>
-        <tr>
-          <td class="col-chk"><span class="checkbox-box"></span></td>
-          <td class="col-name">CanPrev Vitamin E (400 IU)</td>
-          <td class="col-dose"><strong>1 capsule every 3 days</strong></td>
-          <td class="col-target">Cell membrane lipid protection. <em>Note: Buy 1 bottle only, then transition to raw sunflower seeds.</em></td>
-        </tr>
-        <tr>
-          <td class="col-chk"><span class="checkbox-box"></span></td>
-          <td class="col-name">BioSteel Electrolytes (Sugar-Free)</td>
-          <td class="col-dose"><strong>1 scoop daily</strong> (in water)</td>
-          <td class="col-target">Cellular hydration, joint lubrication, and GI electrolyte balance on Ozempic.</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <!-- PART 2: FULLSCRIPT / SEEKING HEALTH -->
-    <div class="section-title">
-      <span>📦 Part 2: Online Order (Fullscript / Seeking Health Link)</span>
-      <span class="section-subtitle">Ordered via Dr. Jenna's dispensary link</span>
-    </div>
-
-    <table class="supp-table">
-      <thead>
-        <tr>
-          <th class="col-chk">Order</th>
-          <th class="col-name">Product Name</th>
-          <th class="col-dose">Dosage & Frequency</th>
-          <th class="col-target">Biological Purpose / Gene Target</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="col-chk"><span class="checkbox-box"></span></td>
-          <td class="col-name">Seeking Health HistaminX</td>
-          <td class="col-dose"><strong>1 cap breakfast + 1 cap supper</strong></td>
-          <td class="col-target"><strong>AOC1/DAO gene support:</strong> Clears histamine buildup, skin itching, and mid-cycle histamine flares (take for 4 weeks).</td>
-        </tr>
-        <tr>
-          <td class="col-chk"><span class="checkbox-box"></span></td>
-          <td class="col-name">Seeking Health Histamine Nutrients</td>
-          <td class="col-dose"><strong>1 cap with largest meal</strong></td>
-          <td class="col-target">Nutritional co-factors to assist intestinal and systemic DAO breakdown during heavier meals.</td>
-        </tr>
-        <tr>
-          <td class="col-chk"><span class="checkbox-box"></span></td>
-          <td class="col-name">Vitamin A Liquid Drops (Retinol)</td>
-          <td class="col-dose"><strong>1 drop (10,000 IU) daily</strong> (morning)</td>
-          <td class="col-target"><strong>BCMO1 gene defect:</strong> Impaired beta-carotene conversion. Provides direct pre-formed active Retinol for mucosal immunity and skin integrity.</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <!-- PART 3: NIGHTTIME GUT & JOINT REPAIR COCKTAIL -->
-    <div class="cocktail-card">
-      <h3>🌙 Nighttime Gut & Joint Repair Drink (Drink 45 Minutes Before Bed)</h3>
-      <div style="font-size: 12px; color: #166534;">
-        Stir or shake the following ingredients into <strong>500 ml of water</strong> with <strong>1 scoop of BioSteel Electrolytes</strong>. Sip slowly over 20–30 minutes:
+    <!-- ================================================================= -->
+    <!-- HERO SECTION: 1-PAGE FRIDGE DAILY ROUTINE                         -->
+    <!-- ================================================================= -->
+    <div class="fridge-section">
+      <div class="fridge-banner">
+        <h2>☀️ 🍽️ 🌙 Daily Supplement, Medication &amp; BHRT Routine</h2>
+        <span>Check off daily • Always take morning pills with breakfast &amp; 8 oz water</span>
       </div>
-      <div class="cocktail-grid">
-        <div class="cocktail-item">
-          <strong>1 to 2 Scoops</strong>
-          CanPrev Collagen Powder (Joints & Gut)
+
+      <div class="fridge-step-grid">
+
+        <!-- STEP 1: MORNING -->
+        <div class="fridge-box morning-box">
+          <h3>
+            <span>☀️ STEP 1: MORNING ROUTINE (With Protein Breakfast — Before Coffee!)</span>
+            <small>Take together with food &amp; full glass of water</small>
+          </h3>
+
+          <div class="morning-columns">
+            <!-- Left Column: Core Daily Pills -->
+            <div>
+              <div style="font-size: 11.5px; font-weight: 800; color: #0369a1; text-transform: uppercase; margin-bottom: 6px; letter-spacing: 0.4px;">
+                💊 Core Morning Handful (With Food):
+              </div>
+              <ul class="check-list">
+                <li>
+                  <span class="chk-sq"></span>
+                  <div><strong>Seeking Health HistaminX — 1 Capsule</strong> <span class="highlight-new">Started Nov 15</span><br><span style="font-size: 11.5px; color: #475569;">Clears histamine, puffiness, sore breasts &amp; gut mast cells.</span></div>
+                </li>
+                <li>
+                  <span class="chk-sq"></span>
+                  <div><strong>B-Complex (Activated L-5-MTHF) — 1 Capsule</strong><br><span style="font-size: 11.5px; color: #475569;">Cellular energy, mood &amp; MTHFR methylation.</span></div>
+                </li>
+                <li>
+                  <span class="chk-sq"></span>
+                  <div><strong>Vitamin D3 (+ K2) — Daily Dose (3 Drops)</strong><br><span style="font-size: 11.5px; color: #475569;">Fat-soluble immune, bone &amp; hormone receptor support.</span></div>
+                </li>
+                <li>
+                  <span class="chk-sq"></span>
+                  <div><strong>IBS Meds — Morning Dose</strong><br><span style="font-size: 11.5px; color: #475569;">Keeps bowel motility moving smoothly on Ozempic &amp; Progesterone.</span></div>
+                </li>
+                <li>
+                  <span class="chk-sq"></span>
+                  <div><strong>Vyvanse — Morning Dose</strong><br><span style="font-size: 11.5px; color: #475569;">Take with 30g+ protein breakfast (wait 30–60 mins before 1 cup coffee).</span></div>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Right Column: Morning Creams + Additional Dr. Jenna Drops/Caps -->
+            <div>
+              <div style="font-size: 11.5px; font-weight: 800; color: #6b21a8; text-transform: uppercase; margin-bottom: 6px; letter-spacing: 0.4px;">
+                🌸 Morning BHRT Creams &amp; Add-Ons:
+              </div>
+              <ul class="check-list">
+                <li>
+                  <span class="chk-sq"></span>
+                  <div><strong>BiEst (Estrogen Cream) — 1/2 Pump</strong><br><span style="font-size: 11.5px; color: #475569;">Apply every morning continuously.</span></div>
+                </li>
+                <li>
+                  <span class="chk-sq"></span>
+                  <div><strong>Testosterone Cream — 1 Pump (Mon–Fri)</strong><br><span style="font-size: 11.5px; color: #475569;">Apply Mon–Fri mornings • <strong>OFF Saturday &amp; Sunday</strong>.</span></div>
+                </li>
+                <li>
+                  <span class="chk-sq"></span>
+                  <div><strong>As Stocked (Dr. Jenna Add-Ons):</strong><br><span style="font-size: 11.5px; color: #475569;">• <strong>Resveratrol:</strong> 1 cap AM &nbsp;|&nbsp; • <strong>Vit A Drops:</strong> 1 drop AM<br>• <strong>Zinc+Copper:</strong> Every 2–3 days &nbsp;|&nbsp; • <strong>Vit E:</strong> Every 3 days</span></div>
+                </li>
+              </ul>
+
+              <div class="retired-banner">
+                <strong>🛑 RETIRED / STOPPED (As of Nov 15):</strong><br>
+                ❌ <strong>NO Probiotic</strong> — Stopped after 6 months to prevent upper-gut fermentation/gas on Ozempic &amp; lower histamine load.
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="cocktail-item">
-          <strong>1 Teaspoon (3 grams)</strong>
-          CanPrev Glycine Powder (Sleep & Methylation)
+
+        <!-- STEP 2: LUNCH / SUPPER -->
+        <div class="fridge-box supper-box">
+          <h3>
+            <span>🍽️ STEP 2: LUNCH / SUPPER</span>
+            <small>Always with food</small>
+          </h3>
+          <ul class="check-list">
+            <li>
+              <span class="chk-sq"></span>
+              <div><strong>Seeking Health HistaminX — 1 Capsule</strong> <span class="highlight-new">With Supper</span><br><span style="font-size: 11.5px; color: #475569;">2nd daily dose to keep overnight histamine &amp; morning puffiness down.</span></div>
+            </li>
+            <li>
+              <span class="chk-sq"></span>
+              <div><strong>NutraSea HP Omega-3 — 2 Softgels</strong><br><span style="font-size: 11.5px; color: #475569;">Take with lunch or supper (~1,500mg EPA/DHA for joints).</span></div>
+            </li>
+            <li>
+              <span class="chk-sq"></span>
+              <div><strong>Histamine Nutrients — 1 Capsule</strong><br><span style="font-size: 11.5px; color: #475569;">Take with largest or higher-histamine meal (once arrived).</span></div>
+            </li>
+            <li>
+              <span class="chk-sq"></span>
+              <div><strong>Atrantil (If Needed for Left-Side Bloat):</strong><br><span style="font-size: 11.5px; color: #475569;">Take mid-meal with lunch/supper &amp; 8 oz water (stay upright 30 mins).</span></div>
+            </li>
+          </ul>
         </div>
-        <div class="cocktail-item">
-          <strong>3/4 Teaspoon (4,000 mg)</strong>
-          Vitamin C Powder (Collagen Binding)
+
+        <!-- STEP 4: BEDTIME BHRT CREAM -->
+        <div class="fridge-box bhrt-box">
+          <h3>
+            <span>🌸 STEP 4: BEDTIME HORMONE CREAM</span>
+            <small>2 Weeks ON / 2 Weeks OFF</small>
+          </h3>
+          <ul class="check-list">
+            <li>
+              <span class="chk-sq"></span>
+              <div><strong>Progesterone Cream — 1 1/2 Pumps at Bedtime</strong><br><span style="font-size: 11.5px; color: #581c87;">Using current bottle for your 14-day luteal phase.</span></div>
+            </li>
+            <li>
+              <span class="chk-sq"></span>
+              <div><strong>Active 14-Night Window (Cycle 5):</strong><br><span style="font-size: 11.5px; color: #581c87;">• <strong>START:</strong> Saturday, Nov 14 (Night 1)<br>• <strong>LAST NIGHT (Night 14):</strong> Friday, Nov 27<br>• <strong>🛑 STOP CREAM:</strong> Saturday, Nov 28</span></div>
+            </li>
+            <li>
+              <span class="chk-sq"></span>
+              <div><strong>5-Min Legs Up the Wall / 90-90 Decompression:</strong><br><span style="font-size: 11.5px; color: #581c87;">Drains pelvic/leg fluid &amp; relaxes psoas before sleep.</span></div>
+            </li>
+          </ul>
         </div>
+
+      </div>
+
+      <!-- STEP 3: NIGHTTIME GUT & JOINT REPAIR COCKTAIL -->
+      <div class="cocktail-card">
+        <h3>
+          <span>🌙 STEP 3: NIGHTTIME GUT &amp; JOINT REPAIR DRINK (45 Minutes Before Bed)</span>
+          <span style="font-size: 12px; font-weight: 700; color: #15803d;">Mix in 500 ml Water + 1 Scoop BioSteel Electrolytes</span>
+        </h3>
+        <div style="font-size: 12px; color: #166534;">
+          Replaces your probiotic! Directly seals your gut mucosal lining, cushions sore finger/thumb/hip joints, buffers methylation, and triggers deep REM sleep:
+        </div>
+        <div class="cocktail-grid">
+          <div class="cocktail-item">
+            <strong><span class="chk-sq"></span> 1 to 2 Scoops</strong>
+            <strong>CanPrev Collagen Powder</strong><br>
+            <span style="font-size: 11.5px; color: #475569;">Seals gut lining &amp; repairs joint cartilage</span>
+          </div>
+          <div class="cocktail-item">
+            <strong><span class="chk-sq"></span> 1 Teaspoon (3g)</strong>
+            <strong>CanPrev Glycine Powder</strong><br>
+            <span style="font-size: 11.5px; color: #475569;">Deep restorative sleep &amp; methylation buffer</span>
+          </div>
+          <div class="cocktail-item">
+            <strong><span class="chk-sq"></span> 3/4 Teaspoon (4,000 mg)</strong>
+            <strong>Vitamin C Powder</strong><br>
+            <span style="font-size: 11.5px; color: #475569;">Locks in collagen &amp; natural mast-cell antihistamine</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Red Alert Clinical Safety Warning -->
+      <div class="alert-box danger">
+        <strong>🚨 CRITICAL SAFETY REMINDERS:</strong>
+        • <strong>NO CIPROFLOXACIN (Antibiotic):</strong> High risk of Achilles tendon rupture (MMP3 gene). &nbsp;|&nbsp;
+        • <strong>NO SYNTHETIC FOLIC ACID:</strong> Must use activated <strong>L-5-MTHF</strong> &amp; <strong>Methylcobalamin</strong> (MTHFR C677T). &nbsp;|&nbsp;
+        • <strong>COFFEE RULE:</strong> Max 1 cup AM after protein breakfast (slow CYP1A2 gene).
       </div>
     </div>
 
-    <!-- PART 4: DAILY INTAKE SCHEDULE AT A GLANCE -->
-    <div class="section-title">
-      <span>⏰ Part 4: Daily Dosing Schedule at a Glance</span>
-      <span class="section-subtitle">Keep this on the fridge or bathroom counter</span>
-    </div>
-
-    <div class="timeline-grid">
-      <div class="timeline-card">
-        <h4>☀️ Morning (With Breakfast)</h4>
-        <ul>
-          <li><strong>AOR B-Complex:</strong> 1 capsule</li>
-          <li><strong>Vitamin D3 + K2:</strong> 3 liquid drops</li>
-          <li><strong>Vitamin A Retinol:</strong> 1 liquid drop</li>
-          <li><strong>CanPrev Resveratrol:</strong> 1 capsule</li>
-          <li><strong>Seeking Health HistaminX:</strong> 1 capsule</li>
-          <li><strong>Zinc + Copper:</strong> 1 cap (every 2nd or 3rd day)</li>
-          <li><strong>Vitamin E:</strong> 1 cap (every 3rd day)</li>
-        </ul>
+    <!-- ================================================================= -->
+    <!-- SHOPPING LIST REFERENCE SECTION (HIDDEN IN 1-PAGE FRIDGE PRINT)   -->
+    <!-- ================================================================= -->
+    <div class="shopping-reference-section">
+      <div class="section-title">
+        <span>🛒 Reference Part 1: Simply For Life In-Store List (Rothesay Ave, Saint John)</span>
+        <span class="section-subtitle">Show this section to store staff when restocking</span>
       </div>
 
-      <div class="timeline-card">
-        <h4>🥗 Lunch / Supper</h4>
-        <ul>
-          <li><strong>NutraSea HP Omega-3:</strong> 2 softgels with lunch or dinner</li>
-          <li><strong>Histamine Nutrients:</strong> 1 capsule with largest/high-histamine meal</li>
-          <li><strong>Seeking Health HistaminX:</strong> 1 capsule with supper</li>
-          <li><strong>BioSteel Electrolytes:</strong> 1 scoop in water throughout the day</li>
-        </ul>
+      <table class="supp-table">
+        <thead>
+          <tr>
+            <th class="col-chk">Buy</th>
+            <th class="col-name">Supplement &amp; Clinical Brand</th>
+            <th class="col-dose">Dosage &amp; Frequency</th>
+            <th class="col-target">Biological Purpose / Gene Target</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="col-chk"><span class="checkbox-box"></span></td>
+            <td class="col-name">AOR Advanced B Complex</td>
+            <td class="col-dose"><strong>1 capsule daily</strong> (morning with food)</td>
+            <td class="col-target"><strong>MTHFR C677T &amp; MTR/TCN2:</strong> Delivers activated L-5-MTHF, Methyl-B12, and P-5-P (B6) to clear homocysteine. Buy 1 bottle.</td>
+          </tr>
+          <tr>
+            <td class="col-chk"><span class="checkbox-box"></span></td>
+            <td class="col-name">NutraSea HP Omega-3 Extra Strength</td>
+            <td class="col-dose"><strong>2 softgels daily</strong> (lunch or dinner)</td>
+            <td class="col-target"><strong>FADS1 gene:</strong> Inability to convert plant ALA. Delivers ~1,500mg direct active EPA/DHA for joint and heart protection.</td>
+          </tr>
+          <tr>
+            <td class="col-chk"><span class="checkbox-box"></span></td>
+            <td class="col-name">CanPrev D3 &amp; K2 Liquid Drops</td>
+            <td class="col-dose"><strong>3 drops daily</strong> (morning with food/fat)</td>
+            <td class="col-target"><strong>Triple-risk D3 gene defect</strong> (CYP2R1, DHCR7, GC): Delivers 3,000 IU D3 + 100mcg K2 for bone and immune support.</td>
+          </tr>
+          <tr>
+            <td class="col-chk"><span class="checkbox-box"></span></td>
+            <td class="col-name">CanPrev Collagen Powder</td>
+            <td class="col-dose"><strong>1 to 2 scoops nightly</strong></td>
+            <td class="col-target">Connective tissue repair, joint cushioning, and gut mucosal lining restoration.</td>
+          </tr>
+          <tr>
+            <td class="col-chk"><span class="checkbox-box"></span></td>
+            <td class="col-name">CanPrev Glycine Powder</td>
+            <td class="col-dose"><strong>1 tsp (3g) nightly</strong></td>
+            <td class="col-target">Natural <strong>methylation buffer</strong>, deep restorative REM sleep support, and muscle/collagen synthesis.</td>
+          </tr>
+          <tr>
+            <td class="col-chk"><span class="checkbox-box"></span></td>
+            <td class="col-name">Vitamin C Powder (CanPrev or AOR)</td>
+            <td class="col-dose"><strong>3/4 tsp (4,000 mg) nightly</strong></td>
+            <td class="col-target">Essential cofactor for collagen synthesis, master antioxidant defense, and adrenal support.</td>
+          </tr>
+          <tr>
+            <td class="col-chk"><span class="checkbox-box"></span></td>
+            <td class="col-name">CanPrev Zinc + Copper (25mg)</td>
+            <td class="col-dose"><strong>1 capsule every 2nd or 3rd day</strong></td>
+            <td class="col-target"><strong>SLC30A8 zinc pathway:</strong> Balanced with copper to preserve immune and enzymatic health.</td>
+          </tr>
+          <tr>
+            <td class="col-chk"><span class="checkbox-box"></span></td>
+            <td class="col-name">CanPrev Resveratrol</td>
+            <td class="col-dose"><strong>1 capsule daily</strong> (morning)</td>
+            <td class="col-target"><strong>NQO1 &amp; CRP inflammation:</strong> Master cellular antioxidant and vascular protection.</td>
+          </tr>
+          <tr>
+            <td class="col-chk"><span class="checkbox-box"></span></td>
+            <td class="col-name">CanPrev Vitamin E (400 IU)</td>
+            <td class="col-dose"><strong>1 capsule every 3 days</strong></td>
+            <td class="col-target">Cell membrane lipid protection. <em>Note: Buy 1 bottle only, then transition to raw sunflower seeds.</em></td>
+          </tr>
+          <tr>
+            <td class="col-chk"><span class="checkbox-box"></span></td>
+            <td class="col-name">BioSteel Electrolytes (Sugar-Free)</td>
+            <td class="col-dose"><strong>1 scoop daily</strong> (in water)</td>
+            <td class="col-target">Cellular hydration, joint lubrication, and GI electrolyte balance on Ozempic.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="section-title">
+        <span>📦 Reference Part 2: Online Order (Fullscript / Seeking Health Link)</span>
+        <span class="section-subtitle">Ordered via Dr. Jenna's dispensary link</span>
       </div>
 
-      <div class="timeline-card">
-        <h4>🌙 45 Mins Before Bed</h4>
-        <ul>
-          <li><strong>Gut & Joint Repair Drink:</strong> Collagen + Glycine + Vitamin C in 500ml water</li>
-          <li><strong>Legs Up the Wall:</strong> 5–10 minutes for pelvic/lumbar decompression</li>
-          <li><strong>Screen Shutdown:</strong> Let glycine induce natural deep parasympathetic sleep</li>
-        </ul>
-      </div>
+      <table class="supp-table">
+        <thead>
+          <tr>
+            <th class="col-chk">Order</th>
+            <th class="col-name">Product Name</th>
+            <th class="col-dose">Dosage &amp; Frequency</th>
+            <th class="col-target">Biological Purpose / Gene Target</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="col-chk"><span class="checkbox-box"></span></td>
+            <td class="col-name">Seeking Health HistaminX</td>
+            <td class="col-dose"><strong>1 cap breakfast + 1 cap supper</strong></td>
+            <td class="col-target"><strong>AOC1/DAO gene support:</strong> Clears histamine buildup, skin itching, and mid-cycle histamine flares (take for 4 weeks — STARTED NOV 15).</td>
+          </tr>
+          <tr>
+            <td class="col-chk"><span class="checkbox-box"></span></td>
+            <td class="col-name">Seeking Health Histamine Nutrients</td>
+            <td class="col-dose"><strong>1 cap with largest meal</strong></td>
+            <td class="col-target">Nutritional co-factors to assist intestinal and systemic DAO breakdown during heavier meals.</td>
+          </tr>
+          <tr>
+            <td class="col-chk"><span class="checkbox-box"></span></td>
+            <td class="col-name">Vitamin A Liquid Drops (Retinol)</td>
+            <td class="col-dose"><strong>1 drop (10,000 IU) daily</strong> (morning)</td>
+            <td class="col-target"><strong>BCMO1 gene defect:</strong> Impaired beta-carotene conversion. Provides direct pre-formed active Retinol for mucosal immunity and skin integrity.</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
 
     <!-- Footer -->
     <div class="footer-box">
-      <div>Prepared for Candy Moulton • Candy OS Wellness & Mobility</div>
-      <div>Confidential & Personal Health Blueprint • Dr. Jenna Weeks, ND Protocol</div>
+      <div>Prepared for Candy Moulton • Candy OS Wellness &amp; Mobility</div>
+      <div>Updated Nov 15, 2026 • Dr. Jenna Weeks, ND Protocol</div>
     </div>
 
   </div>
 
   <script>
+    function printFridgeOnly() {
+      document.body.classList.add('print-fridge-only');
+      window.print();
+    }
+
+    function printFullSheet() {
+      document.body.classList.remove('print-fridge-only');
+      window.print();
+      setTimeout(() => {
+        document.body.classList.add('print-fridge-only');
+      }, 500);
+    }
+
     function copyShoppingList() {
-      const text = `DR. JENNA WEEKS ND — CLINICAL SUPPLEMENT SHOPPING LIST
+      const text = `CANDY'S DAILY FRIDGE CHECKLIST (UPDATED NOV 15, 2026)
 
-PART 1: SIMPLY FOR LIFE (ROTHESAY AVE, SAINT JOHN)
-1. AOR Advanced B Complex (1 cap daily AM with food) - Activated L-5-MTHF & Methyl-B12. Buy 1 bottle.
-2. NutraSea HP Omega-3 Extra Strength (2 softgels daily with lunch or dinner) - ~1,500mg EPA/DHA.
-3. CanPrev D3 & K2 Liquid Drops (3 drops daily AM with food) - 3,000 IU D3 + 100mcg K2.
-4. CanPrev Collagen Powder (1 to 2 scoops nightly in bedtime drink).
-5. CanPrev Glycine Powder (1 tsp / 3g nightly in bedtime drink).
-6. Vitamin C Powder - CanPrev or AOR (3/4 tsp / 4,000 mg nightly in bedtime drink).
-7. CanPrev Zinc + Copper 25mg (1 cap every 2nd or 3rd day).
-8. CanPrev Resveratrol (1 cap daily AM).
-9. CanPrev Vitamin E 400 IU (1 cap every 3 days - 1 bottle only, then sunflower seeds).
-10. BioSteel Electrolytes Sugar-Free (1 scoop daily in water).
+☀️ STEP 1: MORNING (With Protein Breakfast + 8 oz Water — Before Coffee!)
+[ ] Seeking Health HistaminX — 1 capsule (Started Nov 15)
+[ ] B-Complex (Activated L-5-MTHF) — 1 capsule
+[ ] Vitamin D3 (+ K2) — Daily dose (3 drops)
+[ ] IBS Meds — Morning dose
+[ ] Vyvanse — Morning dose (with protein breakfast)
+[ ] BiEst (Estrogen Cream) — 1/2 pump every morning
+[ ] Testosterone Cream — 1 pump Mon–Fri (OFF Sat & Sun)
+*Optional/As Stocked: Resveratrol (1 cap), Vit A (1 drop), Zinc+Copper (every 2-3 days), Vit E (every 3 days)
+🛑 STOPPED: NO Probiotic (retired Nov 15 after 6 months to prevent bloating & histamine buildup)
 
-PART 2: FULLSCRIPT / SEEKING HEALTH (ONLINE)
-1. Seeking Health HistaminX (1 cap with breakfast + 1 cap with supper for 4 weeks).
-2. Seeking Health Histamine Nutrients (1 cap with largest/heaviest meal).
-3. Vitamin A Liquid Drops Retinol (1 drop / 10,000 IU daily AM).
+🍽️ STEP 2: LUNCH / SUPPER (With Food)
+[ ] Seeking Health HistaminX — 1 capsule with supper
+[ ] NutraSea HP Omega-3 — 2 softgels with lunch or supper
+[ ] Histamine Nutrients — 1 capsule with largest meal (as needed)
 
-NIGHTTIME REPAIR DRINK (45 MINS BEFORE BED)
-- 1-2 scoops Collagen + 1 tsp Glycine + 3/4 tsp Vit C in 500ml water with BioSteel.
+🌙 STEP 3: NIGHTTIME GUT & JOINT REPAIR DRINK (45 Mins Before Bed)
+Mix in 500 ml water + 1 scoop BioSteel Electrolytes:
+[ ] 1 to 2 scoops CanPrev Collagen Powder
+[ ] 1 tsp (3g) CanPrev Glycine Powder
+[ ] 3/4 tsp (4,000 mg) Vitamin C Powder
 
-CRITICAL RULES:
-- NO CIPROFLOXACIN antibiotic (MMP3 gene tendon rupture risk).
-- NO synthetic folic acid or cyanocobalamin (must be L-5-MTHF & methylcobalamin).
-- Introduce 1 new supplement every 3-5 days.`;
+🌸 STEP 4: BEDTIME PROGESTERONE CREAM (2 Weeks ON / 2 Weeks OFF)
+[ ] Progesterone Cream — 1 1/2 pumps at bedtime (Nov 14 – Nov 27 • STOP Nov 28)`;
 
       navigator.clipboard.writeText(text).then(() => {
         const toast = document.getElementById('toast');
@@ -663,7 +890,7 @@ CRITICAL RULES:
         btn.style.background = '#10b981';
         setTimeout(() => {
           toast.style.display = 'none';
-          btn.textContent = '📋 Copy Text List';
+          btn.textContent = '📋 Copy Fridge Checklist';
           btn.style.background = '#475569';
         }, 2500);
       }).catch(err => {

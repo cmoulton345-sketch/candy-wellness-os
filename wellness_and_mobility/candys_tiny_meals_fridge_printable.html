@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Candy's 6 Tiny Meals All-Day Fridge Printout</title>
+  <style>
+    :root {
+      --primary: #0f766e;
+      --primary-light: #f0fdfa;
+      --blue: #1e3a8a;
+      --blue-light: #eff6ff;
+      --amber: #b45309;
+      --amber-light: #fffbeb;
+      --rose: #9f1239;
+      --rose-light: #fff1f2;
+      --purple: #6b21a8;
+      --purple-light: #faf5ff;
+      --green: #166534;
+      --green-light: #f0fdf4;
+      --text: #1e293b;
+      --muted: #475569;
+      --border: #cbd5e1;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: var(--text);
+      background-color: #f1f5f9;
+      line-height: 1.38;
+      margin: 0;
+      padding: 24px 16px;
+    }
+
+    .page-container {
+      max-width: 860px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 28px 34px;
+      border-radius: 10px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
+
+    /* Floating Print Toolbar */
+    .no-print-bar {
+      position: sticky;
+      top: 12px;
+      z-index: 1000;
+      max-width: 860px;
+      margin: 0 auto 18px auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      background: #0f172a;
+      color: #ffffff;
+      padding: 12px 18px;
+      border-radius: 8px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+    }
+
+    .no-print-bar span {
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .btn {
+      border: none;
+      padding: 9px 16px;
+      border-radius: 6px;
+      font-size: 13.5px;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+    }
+
+    .btn-print { background: #10b981; color: #ffffff; }
+    .btn-print:hover { background: #059669; }
+    .btn-copy { background: #475569; color: #ffffff; }
+    .btn-copy:hover { background: #334155; }
+
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #10b981;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 13px;
+      display: none;
+      z-index: 2000;
+    }
+
+    /* Header */
+    .header-box {
+      border-bottom: 2.5px solid var(--primary);
+      padding-bottom: 10px;
+      margin-bottom: 12px;
+    }
+
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .header-title {
+      font-size: 21px;
+      font-weight: 800;
+      color: #0f172a;
+      margin: 0;
+    }
+
+    .header-sub {
+      font-size: 12.5px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    .fridge-badge {
+      background: var(--primary-light);
+      color: var(--primary);
+      border: 1.5px solid #5eead4;
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 11.5px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .macro-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .macro-pill {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 6px 10px;
+      font-size: 12px;
+      text-align: center;
+    }
+
+    .macro-pill strong {
+      color: var(--primary);
+      font-size: 13.5px;
+      display: block;
+    }
+
+    /* 5-Item Prep Box */
+    .prep-box {
+      background: var(--primary-light);
+      border: 1.5px solid #99f6e4;
+      border-radius: 8px;
+      padding: 9px 14px;
+      margin-bottom: 12px;
+      font-size: 12.5px;
+    }
+
+    .prep-title {
+      font-weight: 800;
+      color: var(--primary);
+      font-size: 13px;
+      margin-bottom: 4px;
+    }
+
+    .prep-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 4px 16px;
+    }
+
+    /* 6 Tiny Meals Grid */
+    .meals-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .meal-card {
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      padding: 10px 13px;
+      background: #ffffff;
+      page-break-inside: avoid;
+    }
+
+    .meal-card.bf-card { border-color: #38bdf8; background: #f0f9ff; }
+    .meal-card.lunch-card { border-color: #fbbf24; background: #fffbeb; }
+    .meal-card.supper-card { border-color: #fb7185; background: #fff1f2; }
+    .meal-card.night-card { border-color: #4ade80; background: #f0fdf4; }
+
+    .meal-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      padding-bottom: 5px;
+      margin-bottom: 7px;
+    }
+
+    .meal-time {
+      font-size: 13.5px;
+      font-weight: 800;
+      color: #0f172a;
+    }
+
+    .meal-macros {
+      font-size: 11px;
+      font-weight: 800;
+      background: rgba(255,255,255,0.85);
+      padding: 2px 7px;
+      border-radius: 4px;
+      border: 1px solid rgba(0,0,0,0.1);
+      color: #0f766e;
+    }
+
+    .meal-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      font-size: 12.2px;
+    }
+
+    .meal-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 7px;
+      margin-bottom: 5px;
+    }
+
+    .sq {
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      min-width: 14px;
+      border: 1.8px solid #0f766e;
+      border-radius: 3px;
+      background: #ffffff;
+      margin-top: 2px;
+    }
+
+    .pill-strip {
+      margin-top: 6px;
+      padding-top: 5px;
+      border-top: 1px dashed rgba(0,0,0,0.14);
+      font-size: 11.5px;
+      color: #1e293b;
+    }
+
+    /* 7-Day Fridge Tracker Table */
+    .tracker-title {
+      font-size: 13px;
+      font-weight: 800;
+      color: #0f172a;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .tracker-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 11.5px;
+      text-align: center;
+      margin-bottom: 8px;
+    }
+
+    .tracker-table th, .tracker-table td {
+      border: 1px solid var(--border);
+      padding: 5px 6px;
+    }
+
+    .tracker-table th {
+      background: #f1f5f9;
+      color: #0f172a;
+      font-weight: 700;
+      font-size: 11px;
+    }
+
+    .circle-chk {
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      border: 1.5px solid #64748b;
+      border-radius: 50%;
+    }
+
+    .footer-note {
+      display: flex;
+      justify-content: space-between;
+      font-size: 10.5px;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      padding-top: 6px;
+    }
+
+    @media print {
+      body {
+        background: #ffffff;
+        padding: 0;
+      }
+      .page-container {
+        max-width: 100%;
+        padding: 0;
+        box-shadow: none;
+      }
+      .no-print-bar {
+        display: none !important;
+      }
+      @page {
+        margin: 8mm 10mm;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="no-print-bar">
+    <span>🍓 Candy's 6 Tiny Meals All-Day Reset (1-Page Fridge Printout)</span>
+    <div style="display: flex; gap: 8px;">
+      <button class="btn btn-copy" id="copy-btn" onclick="copyTinyPlan()">📋 Copy Text</button>
+      <button class="btn btn-print" onclick="window.print()">🖨️ Print 1-Page Fridge Sheet</button>
+    </div>
+  </div>
+  <div class="toast" id="toast">✓ Copied 6 Tiny Meals plan to clipboard!</div>
+
+  <div class="page-container">
+
+    <!-- Header -->
+    <div class="header-box">
+      <div class="header-top">
+        <div>
+          <h1 class="header-title">🍓 Candy’s "6 Tiny Meals All-Day" Fridge Schedule</h1>
+          <div class="header-sub">
+            Fist-Sized Mini-Meals Every 2.5 Hours • Same Simple Breakfasts &amp; Lunches • Built for <strong>Ozempic + Progesterone + HistaminX</strong>
+          </div>
+        </div>
+        <span class="fridge-badge">🧲 1-Page Fridge Plan</span>
+      </div>
+
+      <div class="macro-strip">
+        <div class="macro-pill"><strong>~1,420 kcal</strong>Daily Calorie Target</div>
+        <div class="macro-pill"><strong>~145g Protein</strong>Preserves Muscle &amp; Curbs Cravings</div>
+        <div class="macro-pill"><strong>Every 2.5 Hours</strong>Tiny Fist-Sized Portions</div>
+        <div class="macro-pill"><strong>🛑 NO Probiotic</strong>HistaminX AM/PM Active</div>
+      </div>
+    </div>
+
+    <!-- 5-Item Daily Prep Box -->
+    <div class="prep-box">
+      <div class="prep-title">🛒 ONLY 4–5 THINGS TO GRAB EACH MORNING (FEEDS YOU ALL DAY WITH ZERO THINKING!):</div>
+      <div class="prep-grid">
+        <div>• <strong>1. Breakfast Base:</strong> Lactose-Free Greek Yogurt (or LF Cottage Cheese) + Strawberries &amp; GF Oats</div>
+        <div>• <strong>2. Protein Shake:</strong> <strong>1 Bottle Fairlife Core Power (26g)</strong> <em>(Drink ½ at 8:30 AM, ½ at 11:00 AM)</em></div>
+        <div>• <strong>3. Lunch Protein:</strong> <strong>6 oz Shredded Chicken Breast OR 1 Can Tuna</strong> <em>(Eat ½ at 1:30 PM, ½ at 4:00 PM)</em></div>
+        <div>• <strong>4. Crunch &amp; De-Puff:</strong> <strong>1 Whole Cucumber + 3 Plain Rice Cakes</strong> <em>(Flushes sodium &amp; water retention!)</em></div>
+      </div>
+    </div>
+
+    <!-- 6 Tiny Meals Grid -->
+    <div class="meals-grid">
+
+      <!-- MEAL 1: 8:30 AM -->
+      <div class="meal-card bf-card">
+        <div class="meal-head">
+          <span class="meal-time">☀️ 1. 8:30 AM — Tiny Breakfast #1</span>
+          <span class="meal-macros">~250 kcal • 28g Protein</span>
+        </div>
+        <ul class="meal-list">
+          <li><span class="sq"></span><div><strong>1/2 cup Lactose-Free Greek Yogurt</strong> + <strong>1/4 cup Strawberries</strong> + <strong>2 tbsp GF Oats</strong></div></li>
+          <li><span class="sq"></span><div><strong>1/2 bottle Fairlife Core Power</strong> <em>(put other half in fridge for 11:00 AM!)</em><br><span style="font-size:11px; color:var(--muted);">*Warm Swap: 3 Egg Whites scrambled w/ spinach + ½ Fairlife</span></div></li>
+        </ul>
+        <div class="pill-strip">
+          💊 <strong>Take With Meal #1:</strong> <strong>1 cap HistaminX</strong> + <strong>B-Complex</strong> + <strong>Vit D3</strong> + <strong>IBS Meds</strong> + <strong>Vyvanse</strong> (+ <strong>BiEst ½ pump</strong> &amp; Mon–Fri <strong>Testosterone 1 pump</strong>)<br>
+          ☕ <strong>9:15 AM:</strong> <strong>1 Cup Coffee</strong> (30–45 mins after protein) • ❌ <em>NO Probiotic!</em>
+        </div>
+      </div>
+
+      <!-- MEAL 2: 11:00 AM -->
+      <div class="meal-card bf-card">
+        <div class="meal-head">
+          <span class="meal-time">🍓 2. 11:00 AM — Tiny Breakfast #2</span>
+          <span class="meal-macros">~200 kcal • 18g Protein</span>
+        </div>
+        <ul class="meal-list">
+          <li><span class="sq"></span><div><strong>The other 1/2 bottle of Fairlife Core Power</strong></div></li>
+          <li><span class="sq"></span><div><strong>1 Plain Rice Cake</strong> <em>(with 1 tsp SunButter or 1 tbsp pumpkin seeds)</em><br><span style="font-size:11px; color:var(--muted);">*Or Swap: 1/2 cup LF Cottage Cheese / Greek Yogurt + berries</span></div></li>
+        </ul>
+        <div class="pill-strip">
+          ✨ <strong>Why It Works:</strong> Same morning foods split into two tiny portions—zero decision fatigue and zero stomach heaviness on Ozempic!
+        </div>
+      </div>
+
+      <!-- MEAL 3: 1:30 PM -->
+      <div class="meal-card lunch-card">
+        <div class="meal-head">
+          <span class="meal-time">🍗 3. 1:30 PM — Mini Lunch #1</span>
+          <span class="meal-macros">~220 kcal • 26g Protein</span>
+        </div>
+        <ul class="meal-list">
+          <li><span class="sq"></span><div><strong>3 oz Shredded Chicken Breast</strong> <em>(or <strong>1/2 can Tuna</strong> mixed with olive oil &amp; sea salt)</em></div></li>
+          <li><span class="sq"></span><div><strong>1/2 Sliced Cucumber</strong> <em>(natural diuretic!)</em> + <strong>1 Plain Rice Cake</strong> (or 4 Mary's Crackers)</div></li>
+        </ul>
+        <div class="pill-strip">
+          ✨ <strong>Prep Trick:</strong> Plate 6 oz chicken (or 1 whole can tuna) + 1 cucumber in the morning; eat <strong>half at 1:30 PM</strong> and <strong>half at 4:00 PM</strong>!
+        </div>
+      </div>
+
+      <!-- MEAL 4: 4:00 PM -->
+      <div class="meal-card lunch-card">
+        <div class="meal-head">
+          <span class="meal-time">🍗 4. 4:00 PM — Mini Lunch #2 (Repeat!)</span>
+          <span class="meal-macros">~220 kcal • 26g Protein</span>
+        </div>
+        <ul class="meal-list">
+          <li><span class="sq"></span><div><strong>The other 3 oz Shredded Chicken Breast</strong> <em>(or the <strong>other 1/2 can of Tuna</strong>)</em></div></li>
+          <li><span class="sq"></span><div><strong>The other 1/2 Sliced Cucumber</strong> + <strong>1 Plain Rice Cake</strong></div></li>
+        </ul>
+        <div class="pill-strip">
+          🛡️ <strong>Crash Shield:</strong> Stops the 4:00 PM Vyvanse drop cold so you never walk into the kitchen tired, grumpy, or starving at 6:00 PM!
+        </div>
+      </div>
+
+      <!-- MEAL 5: 6:15 PM -->
+      <div class="meal-card supper-card">
+        <div class="meal-head">
+          <span class="meal-time">🍽️ 5. 6:15 PM — Small Palm-Sized Supper</span>
+          <span class="meal-macros">~350 kcal • 30g Protein</span>
+        </div>
+        <ul class="meal-list">
+          <li><span class="sq"></span><div><strong>4 oz Baked Salmon, Chicken, or Lean Beef/Turkey</strong> <em>(olive oil, sea salt, herbs — NO garlic/onion powder!)</em></div></li>
+          <li><span class="sq"></span><div><strong>1/2 cup Zucchini or Carrots</strong> + <strong>1/2 small Baked Yellow Potato</strong> <em>(or 1/3 cup white rice)</em></div></li>
+        </ul>
+        <div class="pill-strip">
+          💊 <strong>Take With Supper:</strong> <strong>1 cap HistaminX (2nd dose)</strong> + <strong>2 NutraSea Omega-3 Softgels</strong> (+ 1 cap Histamine Nutrients once arrived)
+        </div>
+      </div>
+
+      <!-- MEAL 6: 9:00 PM -->
+      <div class="meal-card night-card">
+        <div class="meal-head">
+          <span class="meal-time">🌙 6. 9:00 PM — Nighttime Gut &amp; Sleep Drink</span>
+          <span class="meal-macros">~90 kcal • 18g Protein</span>
+        </div>
+        <ul class="meal-list">
+          <li><span class="sq"></span><div>Mix in <strong>500 ml Water + 1 scoop BioSteel</strong> (45 mins before bed):<br>
+          • <strong>1–2 scoops Collagen Powder</strong> (seals gut lining &amp; joints)<br>
+          • <strong>1 tsp (3g) Glycine Powder</strong> (deep REM sleep)<br>
+          • <strong>3/4 tsp (4,000mg) Vitamin C Powder</strong> (clears histamine)</div></li>
+        </ul>
+        <div class="pill-strip">
+          🌸 <strong>Bedtime Cream:</strong> <strong>1 1/2 pumps Progesterone Cream</strong> <em>(Nov 14 – Nov 27 • 🛑 STOP Nov 28)</em>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 7-Day Pen Check-Off Tracker -->
+    <div class="tracker-title">
+      <span>✏️ 7-Day Fridge Pen Tracker (Check Off Each Mini-Meal &amp; Pill Window)</span>
+      <span style="font-size: 11px; font-weight: 600; color: var(--muted);">Goal: 8–10 Glasses Water Daily</span>
+    </div>
+    <table class="tracker-table">
+      <thead>
+        <tr>
+          <th>Day</th>
+          <th>8:30 AM<br>Meal #1 + Pills</th>
+          <th>11:00 AM<br>Meal #2</th>
+          <th>1:30 PM<br>Meal #3</th>
+          <th>4:00 PM<br>Meal #4</th>
+          <th>6:15 PM<br>Meal #5 + HistaminX</th>
+          <th>9:00 PM<br>Night Drink + Prog Cream</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Mon</strong></td>
+          <td><span class="circle-chk"></span></td>
+          <td><span class="circle-chk"></span></td>
+          <td><span class="circle-chk"></span></td>
+          <td><span class="circle-chk"></span></td>
+          <td><span class="circle-chk"></span></td>
+          <td><span class="circle-chk"></span></td>
+        </tr>
+        <tr>
+          <td><strong>Tue</strong></td>
+          <td><span class="circle-chk"></span></td>
+          <td><span class="circle-chk"></span></td>
+          <td><span class="circle-chk"></span></td>
+          <td><span class="circle-chk"></span></td>
+          <td><span class="circle-chk"></span></td>
+          <td><span class="circle-chk"></span></td>
+        </tr>
+        <tr>
+          <td><strong>Wed</strong></td>
+          <td><span class="circle-chk"></span></td>
+          <td><span class="circle-chk"></span></td>
+          <td><span class="circle-chk"></span></td>
+          <td><span class="circle-chk"></span></td>
+          <td><span class="circle-chk"></span></td>
+          <td><span class="circle-chk"></span></td>
+        </tr>
+        <tr>
+          <td><strong>Thu</strong></td>
+          <td><span class="circle-chk"></span></td>
+          <td><span class="circle-chk"></span></td>
+          <td><span class="circle-chk"></span></td>
+          <td><span class="circle-chk"></span></td>
+          <td><span class="circle-chk"></span></td>
+          <td><span class="circle-chk"></span></td>
+        </tr>
+        <tr>
+          <td><strong>Fri</strong></td>
+          <td><span class="circle-chk"></span></td>
+          <td><span class="circle-chk"></span></td>
+          <td><span class="circle-chk"></span></td>
+          <td><span class="circle-chk"></span></td>
+          <td><span class="circle-chk"></span></td>
+          <td><span class="circle-chk"></span></td>
+        </tr>
+        <tr>
+          <td><strong>Sat</strong></td>
+          <td><span class="circle-chk"></span></td>
+          <td><span class="circle-chk"></span></td>
+          <td><span class="circle-chk"></span></td>
+          <td><span class="circle-chk"></span></td>
+          <td><span class="circle-chk"></span></td>
+          <td><span class="circle-chk"></span></td>
+        </tr>
+        <tr>
+          <td><strong>Sun</strong></td>
+          <td><span class="circle-chk"></span></td>
+          <td><span class="circle-chk"></span></td>
+          <td><span class="circle-chk"></span></td>
+          <td><span class="circle-chk"></span></td>
+          <td><span class="circle-chk"></span></td>
+          <td><span class="circle-chk"></span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="footer-note">
+      <span>Candy OS • 100% Tree-Nut Free • No Egg Yolks • No Garlic/Onion Powder • No Synthetic Folic Acid</span>
+      <span>Updated Nov 15, 2026 • Soma &amp; Jarvis</span>
+    </div>
+
+  </div>
+
+  <script>
+    function copyTinyPlan() {
+      const text = `CANDY'S 6 TINY MEALS ALL-DAY RESET (~1,420 kcal | 145g Protein)
+
+☀️ 1. 8:30 AM — TINY BREAKFAST #1 (~250 kcal | 28g P)
+- 1/2 cup LF Greek Yogurt + 1/4 cup Strawberries + 2 tbsp GF Oats
+- 1/2 bottle Fairlife Core Power (save other half for 11 AM)
+- Morning Pills: 1 cap HistaminX + B-Complex + Vit D3 + IBS Meds + Vyvanse (+ BiEst 1/2 pump & Mon-Fri Testosterone 1 pump)
+- 9:15 AM: 1 cup Coffee (NO Probiotic!)
+
+🍓 2. 11:00 AM — TINY BREAKFAST #2 (~200 kcal | 18g P)
+- The other 1/2 bottle of Fairlife Core Power + 1 Plain Rice Cake
+
+🍗 3. 1:30 PM — MINI LUNCH #1 (~220 kcal | 26g P)
+- 3 oz Shredded Chicken Breast (or 1/2 can Tuna in olive oil & sea salt)
+- 1/2 sliced Cucumber + 1 Plain Rice Cake
+
+🍗 4. 4:00 PM — MINI LUNCH #2 (~220 kcal | 26g P)
+- The other 3 oz Shredded Chicken Breast (or other 1/2 can Tuna)
+- The other 1/2 sliced Cucumber + 1 Plain Rice Cake
+
+🍽️ 5. 6:15 PM — SMALL SUPPER (~350 kcal | 30g P)
+- 4 oz Salmon, Chicken, or Lean Beef/Turkey + 1/2 cup Zucchini/Carrots + 1/2 small baked Yellow Potato
+- Supper Pills: 1 cap HistaminX + 2 NutraSea Omega-3 Softgels
+
+🌙 6. 9:00 PM — NIGHTTIME GUT DRINK + PROGESTERONE CREAM (~90 kcal | 18g P)
+- 500ml water + BioSteel + 1-2 scoops Collagen + 1 tsp Glycine + 3/4 tsp Vit C
+- Bedtime: 1 1/2 pumps Progesterone Cream (Nov 14 - Nov 27 • STOP Nov 28)`;
+
+      navigator.clipboard.writeText(text).then(() => {
+        const toast = document.getElementById('toast');
+        toast.style.display = 'block';
+        setTimeout(() => { toast.style.display = 'none'; }, 2500);
+      });
+    }
+  </script>
+</body>
+</html>
