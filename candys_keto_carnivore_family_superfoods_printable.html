@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Candy, Joe & Rayne — Keto/Carnivore Superfoods, Watch-Out & High-Histamine Fridge Guide</title>
+  <style>
+    :root {
+      --green: #166534;
+      --green-bg: #f0fdf4;
+      --green-border: #86efac;
+      --teal: #0f766e;
+      --teal-bg: #f0fdfa;
+      --teal-border: #5eead4;
+      --red: #991b1b;
+      --red-bg: #fef2f2;
+      --red-border: #f87171;
+      --amber: #92400e;
+      --amber-bg: #fffbeb;
+      --amber-border: #fbbf24;
+      --blue: #1e3a8a;
+      --blue-bg: #eff6ff;
+      --blue-border: #93c5fd;
+      --text: #1e293b;
+      --muted: #475569;
+      --border: #cbd5e1;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: var(--text);
+      background-color: #f1f5f9;
+      line-height: 1.35;
+      margin: 0;
+      padding: 20px 14px;
+    }
+
+    .page-container {
+      max-width: 880px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 24px 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
+
+    /* Floating Print Bar */
+    .no-print-bar {
+      position: sticky;
+      top: 12px;
+      z-index: 1000;
+      max-width: 880px;
+      margin: 0 auto 16px auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      background: #0f172a;
+      color: #ffffff;
+      padding: 12px 18px;
+      border-radius: 8px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+    }
+
+    .no-print-bar span {
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .btn {
+      border: none;
+      padding: 9px 16px;
+      border-radius: 6px;
+      font-size: 13.5px;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn-print { background: #10b981; color: #ffffff; }
+    .btn-print:hover { background: #059669; }
+    .btn-copy { background: #475569; color: #ffffff; }
+    .btn-copy:hover { background: #334155; }
+
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #10b981;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 13px;
+      display: none;
+      z-index: 2000;
+    }
+
+    /* Header */
+    .header-box {
+      border-bottom: 2.5px solid var(--teal);
+      padding-bottom: 8px;
+      margin-bottom: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .header-title {
+      font-size: 20px;
+      font-weight: 800;
+      color: #0f172a;
+      margin: 0;
+    }
+
+    .header-sub {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    .badge {
+      background: var(--teal-bg);
+      color: var(--teal);
+      border: 1.5px solid var(--teal-border);
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    /* Section Headers */
+    .sec-title {
+      font-size: 13.5px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      padding: 6px 12px;
+      border-radius: 6px;
+      margin: 10px 0 8px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .sec-green { background: var(--green-bg); color: var(--green); border: 1.5px solid var(--green-border); }
+    .sec-blue { background: var(--blue-bg); color: var(--blue); border: 1.5px solid var(--blue-border); }
+    .sec-red { background: var(--red-bg); color: var(--red); border: 1.5px solid var(--red-border); }
+    .sec-amber { background: var(--amber-bg); color: var(--amber); border: 1.5px solid var(--amber-border); }
+
+    /* Grids */
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 9px;
+      margin-bottom: 10px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .box {
+      border: 1.5px solid var(--border);
+      border-radius: 7px;
+      padding: 9px 11px;
+      background: #ffffff;
+      font-size: 11.8px;
+      page-break-inside: avoid;
+    }
+
+    .box h4 {
+      margin: 0 0 5px 0;
+      font-size: 12.5px;
+      font-weight: 800;
+      color: #0f172a;
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      padding-bottom: 3px;
+    }
+
+    .box ul {
+      margin: 0;
+      padding-left: 15px;
+    }
+
+    .box li {
+      margin-bottom: 3.5px;
+    }
+
+    /* Combo Table */
+    .combo-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 11.5px;
+      margin-bottom: 10px;
+    }
+
+    .combo-table th, .combo-table td {
+      border: 1px solid var(--border);
+      padding: 6px 8px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .combo-table th {
+      background: #f8fafc;
+      font-weight: 800;
+      color: #0f172a;
+      font-size: 11px;
+      text-transform: uppercase;
+    }
+
+    .footer-note {
+      display: flex;
+      justify-content: space-between;
+      font-size: 10.5px;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      padding-top: 6px;
+      margin-top: 6px;
+    }
+
+    @media print {
+      body { background: #ffffff; padding: 0; }
+      .page-container { max-width: 100%; padding: 0; box-shadow: none; }
+      .no-print-bar { display: none !important; }
+      @page { margin: 7mm 9mm; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="no-print-bar">
+    <span>🧲 Candy, Joe &amp; Rayne — Family Keto/Carnivore Superfoods, Watch-Out &amp; Histamine Fridge Sheet</span>
+    <div style="display: flex; gap: 8px;">
+      <button class="btn btn-copy" onclick="copyGuideText()">📋 Copy Text</button>
+      <button class="btn btn-print" onclick="window.print()">🖨️ Print 1-Page Fridge Sheet</button>
+    </div>
+  </div>
+  <div class="toast" id="toast">✓ Copied Superfoods &amp; Histamine Guide to clipboard!</div>
+
+  <div class="page-container">
+
+    <!-- Header -->
+    <div class="header-box">
+      <div>
+        <h1 class="header-title">🥩🥑 Family Keto &amp; Carnivore Superfoods + Watch-Out Fridge Guide</h1>
+        <div class="header-sub">
+          <strong>Candy</strong> (Clean Anti-Inflammatory Keto) • <strong>Joe</strong> (Crohn's Autoimmune Carnivore) • <strong>Rayne</strong> (100% Tree-Nut Free Brain Fuel)
+        </div>
+      </div>
+      <span class="badge">🧲 Fridge Guide</span>
+    </div>
+
+    <!-- ================================================================= -->
+    <!-- SECTION 1: GREEN LIGHT FAMILY SUPERFOODS                          -->
+    <!-- ================================================================= -->
+    <div class="sec-title sec-green">
+      <span>🟢 PART 1: GREEN-LIGHT SUPERFOODS (Cook &amp; Combine for the Whole House!)</span>
+      <span style="font-size: 11px;">100% Zero-Processed • Tree-Nut Free • Low-Inflammation</span>
+    </div>
+
+    <div class="grid-3">
+      <!-- Box 1: Shared Meats -->
+      <div class="box" style="border-color: #86efac; background: #f0fdf4;">
+        <h4>🥩 1. Shared Super-Proteins (Candy + Joe + Rayne)</h4>
+        <ul>
+          <li><strong>Fresh Beef &amp; Steak:</strong> Sirloin, Strip Loin, Tenderloin, Extra-Lean Ground Beef Burgers <em>(iron, zinc, B12, carnitine)</em></li>
+          <li><strong>Fresh Poultry:</strong> Chicken Breast, Chicken Thighs, Extra-Lean Ground Turkey <em>(low-histamine &amp; dopamine fuel)</em></li>
+          <li><strong>Wild Fish:</strong> Wild Salmon, Trout, Cod, Haddock, Canned Tuna in Water/Olive Oil <em>(Omega-3 joint shield)</em></li>
+          <li><strong>Eggs (Customized):</strong> <strong>Egg Whites</strong> for Candy; <strong>Whole Eggs</strong> for Joe &amp; Rayne</li>
+          <li><strong>Clean Dairy:</strong> Fairlife Core Power, LF Greek Yogurt, LF Cottage Cheese, Goat Feta</li>
+        </ul>
+      </div>
+
+      <!-- Box 2: Candy & Rayne Keto Veggies & Berries -->
+      <div class="box" style="border-color: #5eead4; background: #f0fdfa;">
+        <h4>🥒 2. Candy &amp; Rayne’s De-Puffing Veggies &amp; Berries</h4>
+        <ul>
+          <li><strong>Cucumber:</strong> #1 natural kidney diuretic to flush sodium &amp; loosen tight rings!</li>
+          <li><strong>Asparagus &amp; Zucchini:</strong> Gently flushes luteal water retention &amp; feeds gut lining</li>
+          <li><strong>Leafy Greens (DNA Safe):</strong> <strong>Baby Spinach, Arugula (Rocket), Kale, Watercress</strong></li>
+          <li><strong>Low-FODMAP Veggies:</strong> Green Beans, Carrots, Bell Peppers, Broccoli florets</li>
+          <li><strong>Low-Carb Super Berries:</strong> <strong>Strawberries, Blueberries, Raspberries, Blackberries</strong> <em>(natural quercetin!)</em></li>
+        </ul>
+      </div>
+
+      <!-- Box 3: Super Fats, Seeds & Herbs -->
+      <div class="box" style="border-color: #93c5fd; background: #eff6ff;">
+        <h4>🥑 3. Super-Fats, Nut-Free Seeds &amp; Healing Herbs</h4>
+        <ul>
+          <li><strong>Avocado &amp; Avocado Oil:</strong> Potassium + hormone-building monounsaturated fat</li>
+          <li><strong>Extra-Virgin Olive Oil &amp; Garlic-Infused Olive Oil:</strong> All the garlic flavor with <strong>ZERO FODMAP bloat!</strong></li>
+          <li><strong>Grass-Fed Butter / Ghee / Beef Tallow:</strong> Ideal for Joe's Crohn's &amp; cooking steaks</li>
+          <li><strong>Nut-Free Seeds (Rayne Safe!):</strong> <strong>Pumpkin Seeds (Pepitas), Chia Seeds, Hemp Hearts, SunButter</strong></li>
+          <li><strong>Anti-Pain Herbs:</strong> Fresh Ginger, Turmeric + Black Pepper, Rosemary, Oregano, Sea Salt</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ================================================================= -->
+    <!-- SECTION 2: EASY 3-WAY FAMILY MEAL COMBINATIONS                    -->
+    <!-- ================================================================= -->
+    <div class="sec-title sec-blue">
+      <span>🍽️ PART 2: HOW TO COMBINE 1 DINNER FOR ALL 3 OF YOU (Zero Extra Cooking!)</span>
+      <span style="font-size: 11px;">Cook 1 Meat → Plate 3 Ways in 2 Minutes</span>
+    </div>
+
+    <table class="combo-table">
+      <thead>
+        <tr>
+          <th style="width: 22%;">Shared Family Protein</th>
+          <th style="width: 26%;">🥩 Joe (Crohn's Carnivore)</th>
+          <th style="width: 28%;">🥑 Candy (Clean Keto Tiny Meal)</th>
+          <th style="width: 24%;">🌟 Rayne (Balanced Brain Fuel)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>1. Steakhouse Night</strong><br><em>(Sirloin / Strip Steak)</em></td>
+          <td>Grilled Steak + Grass-Fed Butter/Tallow + Sea Salt</td>
+          <td>4 oz Steak Strips + Sautéed Zucchini &amp; Asparagus in Olive Oil</td>
+          <td>Steak + Zucchini + Baked Yellow Potato or Jasmine Rice</td>
+        </tr>
+        <tr>
+          <td><strong>2. Burger Patty Night</strong><br><em>(Lean Ground Beef/Turkey)</em></td>
+          <td>2 Burger Patties + Melted Butter or Cheddar (if tolerated) + Salt</td>
+          <td>Burger Patty over Baby Spinach &amp; Cucumber + 1/4 Avocado + Olive Oil</td>
+          <td>Burger on Bun (or Bowl) + Homemade Oven Potato Wedges</td>
+        </tr>
+        <tr>
+          <td><strong>3. Wild Salmon Night</strong><br><em>(Baked w/ Lemon &amp; Dill)</em></td>
+          <td>Wild Salmon Fillet + Butter + Crispy Pan Skin + Sea Salt</td>
+          <td>4 oz Wild Salmon + Sliced Cucumber &amp; Sautéed Baby Spinach</td>
+          <td>Wild Salmon + Rice + Steamed Carrots or Green Beans</td>
+        </tr>
+        <tr>
+          <td><strong>4. Shredded Chicken</strong><br><em>(Oregano, Salt, Garlic Oil)</em></td>
+          <td>Chicken Thighs/Breast cooked in Butter or Tallow + Salt</td>
+          <td>3–4 oz Chicken + Cucumber + 1/4 Avocado + Crumbled Goat Feta</td>
+          <td>Chicken Quesadilla / Taco Rice Bowl + Strawberries</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- ================================================================= -->
+    <!-- SECTION 3 & 4: WATCH-OUT FOODS & HIGH-HISTAMINE LIST              -->
+    <!-- ================================================================= -->
+    <div class="grid-2">
+
+      <!-- Left: Candy's Personal Watch-Out List -->
+      <div>
+        <div class="sec-title sec-red" style="margin-top: 2px;">
+          <span>🚫 PART 3: CANDY’S "WATCH OUT / AVOID" LIST</span>
+        </div>
+        <div class="box" style="border-color: var(--red-border); background: var(--red-bg);">
+          <h4>🧬 1. Your DNA &amp; Canada Food Test "RED LIGHT" Foods</h4>
+          <ul>
+            <li>❌ <strong>NO Egg Yolks:</strong> Tested Red Sensitive <em>(Egg whites are 100% Green!)</em></li>
+            <li>❌ <strong>NO Romaine Lettuce, Butter Lettuce, or Raw Celery:</strong> Tested Red <em>(Use Spinach, Arugula, Kale &amp; Cucumber instead!)</em></li>
+            <li>❌ <strong>NO Sweet Potatoes, Maple Syrup, or Flaxseed:</strong> Tested Red + FADS1 gene cannot convert flax <em>(Use Chia/Pumpkin Seeds!)</em></li>
+          </ul>
+          <h4 style="margin-top: 7px;">🎈 2. IBS Bloating, Ketosis Blockers &amp; Household Rules</h4>
+          <ul>
+            <li>❌ <strong>NO Garlic or Onions (Fresh or Powder):</strong> #1 cause of left-sided IBS gas/pain! Check spice blends &amp; restaurant meats.</li>
+            <li>❌ <strong>NO Bread, Pasta, Rice, Potatoes, Oats, or Sugar:</strong> Switches off Ketosis &amp; holds 3–4 lbs of water.</li>
+            <li>❌ <strong>NO Sugar-Free "Maltitol/Sorbitol" Keto Bars:</strong> Ferments into severe gas on Ozempic.</li>
+            <li>🚨 <strong>NO TREE NUTS IN HOUSE (Rayne):</strong> No walnuts, cashews, pecans, pistachios, hazelnuts, or Brazil nuts.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Right: High-Histamine Foods List -->
+      <div>
+        <div class="sec-title sec-amber" style="margin-top: 2px;">
+          <span>🔥 PART 4: HIGH-HISTAMINE FOODS (Puffiness &amp; Itch)</span>
+        </div>
+        <div class="box" style="border-color: var(--amber-border); background: var(--amber-bg);">
+          <h4>⚠️ 1. The #1 Keto/Carnivore Histamine Trap: Aged &amp; Leftover Meat</h4>
+          <ul>
+            <li>⚠️ <strong>Cured / Processed Meats:</strong> <strong>Bacon, Pepperoni, Salami, Deli Cold Cuts, Beef Jerky, Hot Dogs, Smoked Salmon, Canned Fish</strong> <em>(Freshly cooked meat has almost ZERO histamine; cured/aged meat is packed with it!)</em></li>
+            <li>⚠️ <strong>3-Day-Old Fridge Leftovers &amp; 24-Hr Bone Broth:</strong> Histamine grows on cooked meat sitting in the fridge! <strong>Fix:</strong> Cook fresh or freeze extra cooked meat portions right away!</li>
+          </ul>
+          <h4 style="margin-top: 7px;">🍷 2. Histamine Drinks, Ferments &amp; Liberators</h4>
+          <ul>
+            <li>⚠️ <strong>Alcohol (Red Wine, Beer, Champagne):</strong> Contains histamine AND blocks your DAO enzyme from clearing estrogen (causes sore breasts &amp; 48h puffiness!).</li>
+            <li>⚠️ <strong>Fermented Foods &amp; Vinegars:</strong> Sauerkraut, Kimchi, Kombucha, Soy Sauce, Balsamic Vinegar <em>(Use Coconut Aminos or Apple Cider Vinegar/Olive Oil)</em>.</li>
+            <li>⚠️ <strong>Aged Cheeses:</strong> Aged Cheddar, Parmesan, Blue Cheese, Gouda <em>(Stick to fresh Goat Feta, Mozzarella, LF Cottage Cheese &amp; LF Greek Yogurt!)</em>.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-note">
+      <span>Candy OS • Family Superfoods, Intolerance &amp; Histamine Fridge Reference</span>
+      <span>Take Seeking Health HistaminX (1 Cap Breakfast + 1 Cap Supper) • Updated Nov 16, 2026</span>
+    </div>
+
+  </div>
+
+  <script>
+    function copyGuideText() {
+      const text = `CANDY, JOE & RAYNE — KETO/CARNIVORE SUPERFOODS, WATCH-OUT & HIGH-HISTAMINE GUIDE
+
+🟢 PART 1: GREEN-LIGHT FAMILY SUPERFOODS
+1. Shared Proteins (Candy + Joe + Rayne): Fresh Sirloin/Strip Steak, Lean Ground Beef/Turkey Burgers, Chicken Breast/Thighs, Wild Salmon, Cod/Haddock, Egg Whites (Candy) / Whole Eggs (Joe & Rayne), Fairlife Shakes, LF Greek Yogurt, LF Cottage Cheese.
+2. Candy & Rayne De-Puffing Veggies & Berries: Cucumber (#1 diuretic), Asparagus, Zucchini, Baby Spinach, Arugula, Kale, Green Beans, Strawberries, Blueberries, Raspberries.
+3. Super-Fats & Nut-Free Seeds: Avocado, Extra-Virgin Olive Oil, Garlic-Infused Olive Oil (zero bloat!), Grass-Fed Butter/Ghee/Tallow (for Joe), Pumpkin Seeds, Chia Seeds, Hemp Hearts, SunButter.
+
+🚫 PART 3: CANDY'S WATCH-OUT / AVOID LIST
+- Red Light Food Test: NO Egg Yolks, NO Romaine/Butter Lettuce, NO Raw Celery, NO Sweet Potatoes, NO Maple Syrup, NO Flaxseed.
+- IBS & Keto Rules: NO Garlic/Onion (fresh or powder), NO Bread/Pasta/Rice/Potatoes/Oats, NO Maltitol/Sorbitol Keto bars.
+- Household Rule (Rayne): 100% TREE-NUT FREE (No walnuts, cashews, pecans, pistachios).
+
+🔥 PART 4: HIGH-HISTAMINE FOODS TO WATCH OUT FOR
+- Aged/Cured Meats: Bacon, Pepperoni, Salami, Deli Meats, Jerky, Smoked Fish, 24-Hr Bone Broth, and cooked meat sitting in the fridge >48 hours (freeze extras immediately!).
+- Drinks & Ferments: Red Wine, Beer, Sauerkraut, Kombucha, Soy Sauce, Balsamic Vinegar.
+- Aged Dairy: Aged Cheddar, Parmesan, Blue Cheese (use Goat Feta, Mozzarella, LF Cottage Cheese/Greek Yogurt instead).`;
+
+      navigator.clipboard.writeText(text).then(() => {
+        const toast = document.getElementById('toast');
+        toast.style.display = 'block';
+        setTimeout(() => { toast.style.display = 'none'; }, 2500);
+      });
+    }
+  </script>
+</body>
+</html>
